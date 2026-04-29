@@ -1,4 +1,4 @@
-const root = document.documentElement;
+﻿const root = document.documentElement;
 const body = document.body;
 const page = body.dataset.page || "home";
 const servicePageKey = body.dataset.service || "";
@@ -6,12 +6,92 @@ const siteData = window.siteData;
 const savedLang = localStorage.getItem("fosagri-lang");
 let currentLang = savedLang || "fr";
 let heroSliderStarted = false;
+let headerScrollInitialized = false;
 
 const qs = (selector) => document.querySelector(selector);
 const qsa = (selector) => [...document.querySelectorAll(selector)];
 
+function initScrollHeader() {
+  if (headerScrollInitialized) return;
+
+  const header = document.querySelector(".site-header");
+  if (!header) return;
+
+  headerScrollInitialized = true;
+
+  const isHome = (document.body.dataset.page || "home") === "home";
+  const topThreshold = 12;
+  const directionThreshold = 6;
+  const hideThreshold = 72;
+  let lastScrollTop = window.scrollY || document.documentElement.scrollTop || 0;
+  let ticking = false;
+
+  const showTransparent = () => {
+    header.classList.remove("is-scrolled", "is-hidden");
+    header.style.transform = "translateY(0)";
+    header.style.opacity = "1";
+    header.style.pointerEvents = "auto";
+  };
+
+  const showSolid = () => {
+    header.classList.add("is-scrolled");
+    header.classList.remove("is-hidden");
+    header.style.transform = "translateY(0)";
+    header.style.opacity = "1";
+    header.style.pointerEvents = "auto";
+  };
+
+  const hideHeader = () => {
+    header.classList.add("is-hidden");
+    if (isHome) {
+      header.classList.remove("is-scrolled");
+    } else {
+      header.classList.add("is-scrolled");
+    }
+    header.style.transform = "translateY(calc(-100% - 0.75rem))";
+    header.style.opacity = "0";
+    header.style.pointerEvents = "none";
+  };
+
+  const updateHeaderState = () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
+    const delta = scrollTop - lastScrollTop;
+
+    if (scrollTop <= topThreshold) {
+      showTransparent();
+      lastScrollTop = 0;
+      ticking = false;
+      return;
+    }
+
+    if (delta > directionThreshold && scrollTop > hideThreshold) {
+      hideHeader();
+    } else if (delta < -directionThreshold) {
+      showSolid();
+    } else if (!isHome && !header.classList.contains("is-hidden")) {
+      showSolid();
+    }
+
+    lastScrollTop = Math.max(0, scrollTop);
+    ticking = false;
+  };
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(updateHeaderState);
+    },
+    { passive: true }
+  );
+
+  updateHeaderState();
+}
+
 function setLanguage(lang) {
   currentLang = lang === "ar" ? "ar" : "fr";
+  window.currentLang = currentLang;
   localStorage.setItem("fosagri-lang", currentLang);
   root.lang = currentLang;
   root.dir = currentLang === "ar" ? "rtl" : "ltr";
@@ -52,15 +132,17 @@ function renderServices() {
   container.innerHTML = siteData.services
     .map((service) => {
       const content = service[currentLang];
+      const href = service.href || "#services";
+      const description = content?.description || content?.excerpt || "";
       return `
-        <article class="service-card">
+        <a href="${href}" class="service-card">
           <div class="service-icon" aria-hidden="true">
             <i class="fa-solid ${service.icon}"></i>
           </div>
           <h3>${content.title}</h3>
-          <p>${content.description}</p>
-          <a href="${service.href}" class="service-link">${siteData.translations[currentLang].services.more}</a>
-        </article>
+          <p>${description}</p>
+          <span class="service-link">${siteData.translations[currentLang]?.services?.more || ""}</span>
+        </a>
       `;
     })
     .join("");
@@ -70,18 +152,51 @@ function renderNews() {
   const newsItems = siteData.news;
   if (!newsItems) return;
 
-  const categories = [
-    "Portée Stratégique",
-    "Gouvernance",
-    "Formation & Développement",
-    "Direction Digitale",
-    "Comité Innovation",
-    "Ressources Humaines"
-  ];
+  const categories = {
+    fr: [
+      "Portee strategique",
+      "Gouvernance",
+      "Formation & Developpement",
+      "Direction digitale",
+      "Comite innovation",
+      "Ressources humaines"
+    ],
+    ar: [
+      "بعد استراتيجي",
+      "الحكامة",
+      "التكوين والتطوير",
+      "التحول الرقمي",
+      "لجنة الابتكار",
+      "الموارد البشرية"
+    ]
+  };
+
+  const localizeNewsDate = (dateStr) => {
+    if (currentLang !== "ar") return dateStr;
+    const monthMap = {
+      Janvier: "يناير",
+      Fevrier: "فبراير",
+      Mars: "مارس",
+      Avril: "أبريل",
+      Mai: "ماي",
+      Juin: "يونيو",
+      Juillet: "يوليوز",
+      Aout: "غشت",
+      Septembre: "شتنبر",
+      Octobre: "أكتوبر",
+      Novembre: "نونبر",
+      Decembre: "دجنبر"
+    };
+    const match = dateStr.match(/^(\d{1,2})\s+(.+)\s+(\d{4})$/);
+    if (!match) return dateStr;
+    const [, day, month, year] = match;
+    return `${day} ${monthMap[month] || month} ${year}`;
+  };
 
   const getMeta = (index, item) => {
-    const cat = categories[index % categories.length];
-    return `${cat} • ${item.date}`;
+    const activeCategories = categories[currentLang] || categories.fr;
+    const cat = activeCategories[index % activeCategories.length];
+    return `${cat} • ${localizeNewsDate(item.date)}`;
   };
 
   // --- DESKTOP RENDER ---
@@ -93,7 +208,7 @@ function renderNews() {
     slider.innerHTML = sliderItems
       .map((item, index) => {
         const content = item[currentLang];
-        const imageUrl = getNewsImageUrl(index);
+        const imageUrl = getNewsImageUrl(index, item);
         return `
           <a href="#" class="news-slide-mini ${index === 0 ? "active" : ""}" data-mini-index="${index}">
               <img src="${imageUrl}" alt="${content.title}">
@@ -133,7 +248,7 @@ function renderNews() {
     mobileContainer.innerHTML = newsItems
       .map((item, index) => {
         const content = item[currentLang];
-        const imageUrl = getNewsImageUrl(index);
+        const imageUrl = getNewsImageUrl(index, item);
         return `
           <article class="news-card" data-news-index="${index}">
             <div class="news-media" style="background-image: url('${imageUrl}')" aria-hidden="true"></div>
@@ -149,7 +264,11 @@ function renderNews() {
   }
 }
 
-function getNewsImageUrl(index) {
+function getNewsImageUrl(index, item) {
+  if (item?.image) {
+    return item.image.startsWith("./assets/") ? item.image.slice(2) : item.image.replace(/^\.\//, "assets/");
+  }
+
   // Map index to existing news images or placeholders
   const images = [
     "assets/news-images/Programme de vacances et loisirs 2025.webp",
@@ -182,24 +301,218 @@ window.goToMiniSlide = function (index) {
 };
 
 
-function renderEvents() {
-  const container = qs("#events-timeline");
-  if (!container) return;
-  container.innerHTML = siteData.events
-    .map((item) => {
-      const content = item[currentLang];
+/* =====================================================
+   AGENDA - Interactive Calendar + Tabbed Events
+   ===================================================== */
+(function () {
+  const MONTH_NAMES_FR = ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre"];
+  const MONTH_NAMES_AR = ["يناير", "فبراير", "مارس", "أبريل", "ماي", "يونيو", "يوليوز", "غشت", "شتنبر", "أكتوبر", "نونبر", "دجنبر"];
+  const WEEKDAYS_FR = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"];
+  const WEEKDAYS_AR = ["الاث", "الثل", "الأر", "الخم", "الجم", "السب", "الأح"];
+
+  let calYear, calMonth, activeTab = "upcoming", selectedDate = null;
+
+  function parseDate(str) {
+    // Format: DD/MM/YYYY
+    const parts = str.split("/");
+    if (parts.length !== 3) return null;
+    return new Date(+parts[2], +parts[1] - 1, +parts[0]);
+  }
+
+  function formatDateKey(d) {
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  }
+
+  function getEventDates() {
+    const map = {};
+    (siteData.events || []).forEach(ev => {
+      const d = parseDate(ev.date);
+      if (!d) return;
+      const key = formatDateKey(d);
+      if (!map[key]) map[key] = [];
+      map[key].push(ev);
+    });
+    return map;
+  }
+
+  function renderCalendar() {
+    const labelEl = document.getElementById("cal-month-label");
+    const wdEl = document.getElementById("cal-weekdays");
+    const daysEl = document.getElementById("cal-days");
+    if (!labelEl || !wdEl || !daysEl) return;
+
+    const lang = window.currentLang || "fr";
+    const months = lang === "ar" ? MONTH_NAMES_AR : MONTH_NAMES_FR;
+    const weekdays = lang === "ar" ? WEEKDAYS_AR : WEEKDAYS_FR;
+
+    labelEl.textContent = `${months[calMonth]} ${calYear}`;
+
+    wdEl.innerHTML = weekdays.map(d => `<div class="cal-weekday">${d}</div>`).join("");
+
+    const today = new Date();
+    const todayKey = formatDateKey(today);
+    const eventDates = getEventDates();
+
+    // First day of month (0=Sun, 1=Mon...) -> offset to Mon-first
+    const firstDay = new Date(calYear, calMonth, 1).getDay();
+    const offset = (firstDay === 0) ? 6 : firstDay - 1;
+    const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+
+    let html = "";
+    for (let i = 0; i < offset; i++) {
+      html += `<button class="cal-day is-empty" tabindex="-1" aria-hidden="true"></button>`;
+    }
+    for (let d = 1; d <= daysInMonth; d++) {
+      const dateObj = new Date(calYear, calMonth, d);
+      const key = formatDateKey(dateObj);
+      const isPast = dateObj < today && key !== todayKey;
+      const hasEvent = !!eventDates[key];
+      const isToday = key === todayKey;
+      const isSelected = key === selectedDate;
+      let cls = "cal-day";
+      if (isPast) cls += " is-past";
+      if (hasEvent) cls += " has-event";
+      if (isToday) cls += " is-today";
+      if (isSelected) cls += " is-selected";
+      html += `<button class="${cls}" data-date="${key}" aria-label="${d} ${months[calMonth]} ${calYear}">${d}</button>`;
+    }
+    daysEl.innerHTML = html;
+
+    // Click handlers on days
+    daysEl.querySelectorAll(".cal-day:not(.is-empty)").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const d = btn.dataset.date;
+        if (selectedDate === d) {
+          selectedDate = null;
+        } else {
+          selectedDate = d;
+        }
+        renderCalendar();
+        renderAgendaList();
+      });
+    });
+  }
+
+  function renderAgendaList() {
+    const listEl = document.getElementById("agenda-list");
+    const filterLabel = document.getElementById("agenda-filter-label");
+    if (!listEl) return;
+
+    const lang = window.currentLang || "fr";
+    const months = lang === "ar" ? MONTH_NAMES_AR : MONTH_NAMES_FR;
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+
+    let events = (siteData.events || []).map(ev => {
+      const d = parseDate(ev.date);
+      return { ...ev, _date: d };
+    }).filter(ev => ev._date !== null);
+
+    // Filter by tab
+    if (activeTab === "upcoming") {
+      events = events.filter(ev => ev._date >= today);
+      events.sort((a, b) => a._date - b._date);
+    } else {
+      events = events.filter(ev => ev._date < today);
+      events.sort((a, b) => b._date - a._date);
+    }
+
+    // Filter by selected date
+    if (selectedDate) {
+      events = events.filter(ev => formatDateKey(ev._date) === selectedDate);
+      const [y, m, d] = selectedDate.split("-");
+      const label = lang === "ar"
+        ? `${d} ${months[+m - 1]} ${y}`
+        : `${d} ${months[+m - 1]} ${y}`;
+      filterLabel.textContent = `Filtre : ${label}`;
+    } else {
+      filterLabel.textContent = "";
+    }
+
+    if (events.length === 0) {
+      listEl.innerHTML = `<div class="agenda-empty">${lang === "ar" ? "لا يوجد حدث لهذه الفترة" : "Aucun evenement pour cette periode"}</div>`;
+      return;
+    }
+
+    listEl.innerHTML = events.map(ev => {
+      const content = ev[lang] || ev.fr;
+      const isPast = ev._date < today;
+      const day = String(ev._date.getDate()).padStart(2, "0");
+      const mon = months[ev._date.getMonth()].substring(0, 3).toUpperCase();
+      const yr = ev._date.getFullYear();
+      const iconBg = ev.iconBg || "#e8f5ee";
+      const iconColor = ev.iconColor || "#1f6a43";
+      const iconClass = ev.icon || "fa-calendar-day";
+      const typeBg = ev.typeColor ? ev.typeColor + "18" : "#e8f5ee";
+      const typeCol = ev.typeColor || "#1f6a43";
+      const typeLabel = lang === "ar" ? (ev.typeAr || ev.type || "") : (ev.type || "");
+      const loc = lang === "ar" ? (ev.locationAr || ev.location || "") : (ev.location || "");
+      const time = ev.time || "";
       return `
-        <article class="timeline-item">
-          <div class="timeline-date">${item.date}</div>
-          <div class="timeline-card">
-            <h3>${content.title}</h3>
-            <p>${content.excerpt}</p>
+        <article class="agenda-event-card${isPast ? " is-past" : ""}">
+          <div class="event-date-block">
+            <span class="edb-day">${day}</span>
+            <span class="edb-month">${mon}</span>
+            <span class="edb-year">${yr}</span>
           </div>
-        </article>
-      `;
-    })
-    .join("");
+          <div class="event-icon-circle" style="background:${iconBg};color:${iconColor}">
+            <i class="fa-solid ${iconClass}"></i>
+          </div>
+          <div class="event-body">
+            <p class="event-title">${content.title}</p>
+            <p class="event-excerpt">${content.excerpt}</p>
+            <div class="event-meta">
+              ${loc ? `<span><i class="fa-solid fa-location-dot"></i> ${loc}</span>` : ""}
+              ${time ? `<span><i class="fa-regular fa-clock"></i> ${time}</span>` : ""}
+            </div>
+          </div>
+          <div class="event-side">
+            ${typeLabel ? `<span class="event-type-badge" style="background:${typeBg};color:${typeCol}">${typeLabel}</span>` : ""}
+            <a href="#agenda-calendar" class="event-detail-link">${lang === "ar" ? "عرض التفاصيل" : "Voir details"} <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>`;
+    }).join("");
+  }
+
+  function initAgenda() {
+    const today = new Date();
+    calYear = today.getFullYear();
+    calMonth = today.getMonth();
+
+    const prevBtn = document.getElementById("cal-prev");
+    const nextBtn = document.getElementById("cal-next");
+    if (prevBtn) prevBtn.addEventListener("click", () => {
+      calMonth--; if (calMonth < 0) { calMonth = 11; calYear--; }
+      renderCalendar();
+    });
+    if (nextBtn) nextBtn.addEventListener("click", () => {
+      calMonth++; if (calMonth > 11) { calMonth = 0; calYear++; }
+      renderCalendar();
+    });
+
+    document.querySelectorAll(".agenda-tab").forEach(tab => {
+      tab.addEventListener("click", () => {
+        activeTab = tab.dataset.tab;
+        selectedDate = null;
+        document.querySelectorAll(".agenda-tab").forEach(t => t.classList.remove("is-active"));
+        tab.classList.add("is-active");
+        renderCalendar();
+        renderAgendaList();
+      });
+    });
+
+    renderCalendar();
+    renderAgendaList();
+  }
+
+  window.__initAgenda = initAgenda;
+  window.__rerenderAgenda = function () { renderCalendar(); renderAgendaList(); };
+})();
+
+function renderEvents() {
+  // Agenda is now initialized via initAgenda after all data is ready
+  if (window.__initAgenda) window.__initAgenda();
 }
+
 
 function renderStats() {
   const container = qs("#stats-grid");
@@ -207,9 +520,9 @@ function renderStats() {
 
   container.innerHTML = siteData.stats
     .map(
-      (item) => `
+      (item, index) => `
         <article class="stat-card">
-          <div class="stat-icon" aria-hidden="true"><i class="fa-solid ${item.icon}"></i></div>
+          <div class="stat-icon" aria-hidden="true"><i class="fa-solid ${item.icon || ["fa-users", "fa-file-signature", "fa-map-location-dot", "fa-coins"][index] || "fa-chart-line"}"></i></div>
           <strong>${item.value}</strong>
           <span>${item[currentLang]}</span>
         </article>
@@ -219,7 +532,7 @@ function renderStats() {
 
   const quote = qs("#testimonial-quote");
   const author = qs("#testimonial-author");
-  if (quote && author) {
+  if (quote && author && siteData.testimonials?.[currentLang]) {
     quote.textContent = siteData.testimonials[currentLang].quote;
     author.textContent = siteData.testimonials[currentLang].author;
   }
@@ -489,7 +802,7 @@ function renderPartners() {
 
 function renderServicePage() {
   if (page !== "service") return;
-  const service = siteData.services.find((item) => item.key === servicePageKey);
+  const service = siteData.services.find((item) => item.key === servicePageKey || item.id === servicePageKey);
   if (!service) return;
 
   const content = service[currentLang];
@@ -499,8 +812,8 @@ function renderServicePage() {
   const icon = qs("#service-icon");
 
   if (title) title.textContent = content.title;
-  if (description) description.textContent = content.description;
-  if (detail) detail.textContent = content.detail;
+  if (description) description.textContent = content.description || content.excerpt || "";
+  if (detail) detail.textContent = content.detail || content.excerpt || "";
   if (icon) icon.className = `fa-solid ${service.icon}`;
 }
 
@@ -515,6 +828,7 @@ function renderPage() {
   renderServicePage();
   initRevealAnimations();
   initNewsSlider();
+  initHeroSlider();
 }
 
 function initMenu() {
@@ -575,7 +889,9 @@ function initHeroSlider() {
 
   slides.forEach((slide) => {
     const image = slide.dataset.image;
-    slide.style.backgroundImage = `url("${image}")`;
+    if (image) {
+      slide.style.backgroundImage = `url("${image}")`;
+    }
   });
 
   let activeIndex = 0;
@@ -593,14 +909,48 @@ function initHeroSlider() {
     .join("");
 
   const dots = qsa(".hero-dot");
+  let slideTimeout;
+
+  const nextSlide = () => {
+    const nextIndex = (activeIndex + 1) % slides.length;
+    setActiveSlide(nextIndex);
+  };
+
+  const scheduleNext = () => {
+    clearTimeout(slideTimeout);
+    const currentSlide = slides[activeIndex];
+    const video = currentSlide.querySelector("video");
+
+    if (!video) {
+      slideTimeout = setTimeout(nextSlide, 5000);
+    }
+  };
+
   const setActiveSlide = (index) => {
     activeIndex = index;
     slides.forEach((slide, slideIndex) => {
-      slide.classList.toggle("is-active", slideIndex === index);
+      const isActive = slideIndex === index;
+      slide.classList.toggle("is-active", isActive);
+
+      const video = slide.querySelector("video");
+      if (video) {
+        if (isActive) {
+          video.loop = false;
+          video.currentTime = 0;
+          video.play().catch(() => { });
+          video.onended = nextSlide;
+        } else {
+          video.pause();
+          video.onended = null;
+        }
+      }
     });
+
     dots.forEach((dot, dotIndex) => {
       dot.classList.toggle("is-active", dotIndex === index);
     });
+
+    scheduleNext();
   };
 
   dots.forEach((dot) => {
@@ -609,10 +959,8 @@ function initHeroSlider() {
     });
   });
 
-  setInterval(() => {
-    const nextIndex = (activeIndex + 1) % slides.length;
-    setActiveSlide(nextIndex);
-  }, 5000);
+  // Initialize the first slide
+  setActiveSlide(0);
 
   heroSliderStarted = true;
 }
@@ -685,6 +1033,7 @@ function initMobileNewsSlider() {
   const next = qs("#news-next");
   const dotsHost = qs("#news-dots");
   if (!track || !prev || !next || !dotsHost) return;
+  const viewport = track.closest(".news-viewport");
 
   const cards = qsa(".news-card");
   if (!cards.length) return;
@@ -739,6 +1088,10 @@ function initMobileNewsSlider() {
     }, 4500);
   };
 
+  const stopAuto = () => {
+    clearInterval(window.__newsAutoTimer);
+  };
+
   prev.onclick = () => {
     goTo(currentIndex - 1);
     startAuto();
@@ -754,6 +1107,11 @@ function initMobileNewsSlider() {
     update();
   });
 
+  if (viewport) {
+    viewport.onmouseenter = stopAuto;
+    viewport.onmouseleave = startAuto;
+  }
+
   renderDots();
   update();
   startAuto();
@@ -762,44 +1120,9 @@ function initMobileNewsSlider() {
 initMenu();
 initLangButtons();
 initForm();
-// Hero is now a video — no slider initialization needed
+initHeroSlider();
+initScrollHeader();
 setLanguage(currentLang);
-
-// Header scroll behavior:
-// - Transparent over hero, gets background after scrolling past it
-// - Hides on scroll-down, reveals on scroll-up
-(function initScrollHeader() {
-  const header = document.querySelector('.site-header');
-  if (!header) return;
-
-  const heroSection = document.querySelector('.hero');
-  const isHome = (document.body.dataset.page || "home") === "home";
-  let lastScrollTop = 0;
-
-  function onScroll() {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const heroBottom = heroSection ? heroSection.offsetHeight - header.offsetHeight : 200;
-
-    // Toggle solid background when past hero OR if on a secondary page
-    if (scrollTop > heroBottom || !isHome) {
-      header.classList.add('is-scrolled');
-    } else {
-      header.classList.remove('is-scrolled');
-    }
-
-    // Hide on scroll-down past a threshold, show on scroll-up
-    if (scrollTop > lastScrollTop && scrollTop > 120) {
-      header.classList.add('is-hidden');
-    } else {
-      header.classList.remove('is-hidden');
-    }
-
-    lastScrollTop = Math.max(0, scrollTop);
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll(); // run once on load
-})();
 
 // Back to top button
 (function initBackToTop() {
@@ -812,3 +1135,4 @@ setLanguage(currentLang);
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 })();
+

@@ -6,24 +6,24 @@
         home: "Accueil",
         foundation: "La Fondation",
         services: "Prestations",
-        news: "Actualites",
+        news: "Actualités",
         events: "Agenda solidaire",
         contact: "Contact",
         member: "Espace adherent"
       },
       hero: {
-        eyebrow: "Nous servons, nous soutenons, nous rapprochons",
-        title: "Au service des femmes et des hommes du ministere",
-        description:
-          "FOS-Agri accompagne les agents du ministere a travers des services sociaux, medico-sociaux, educatifs et solidaires dedies a eux et a leurs familles.",
+        eyebrow: "Fondation pour la Promotion des Oeuvres Sociales",
+        title: "Au service de la famille du Ministere de l'Agriculture",
+        description: "Accompagner, soutenir et valoriser l'engagement des femmes et des hommes du secteur agricole a travers des prestations sociales innovantes et de proximite.",
+        ctaPrincipal: "Decouvrir nos prestations",
+        ctaSecondary: "Actualite FOS",
         ctaServices: "Decouvrir les services",
         ctaContact: "Nous contacter"
       },
       about: {
         tag: "La Fondation",
         title: "Un accompagnement social structure, proche et national",
-        body:
-          "La Fondation pour la Promotion des Oeuvres Sociales du Personnel du Ministere de l'Agriculture centralise des prestations, des conventions et des programmes solidaires de FOS-Agri.",
+        body: "La Fondation pour la Promotion des Oeuvres Sociales du Personnel du Ministere de l'Agriculture centralise des prestations, des conventions et des programmes solidaires de FOS-Agri.",
         missionTitle: "Mission",
         missionBody: "Servir les adherents, soutenir les familles et rapprocher les services sur l'ensemble du territoire.",
         scopeTitle: "Perimetre",
@@ -45,13 +45,20 @@
       events: {
         tag: "Agenda solidaire",
         title: "Campagnes, rencontres et actions terrain",
-        subtitle: "Selection d'evenements et d'initiatives de FOS-Agri."
-      },
-      stats: {
-        tag: "Chiffres cles",
-        title: "Des programmes qui prennent forme dans la duree",
-        travel: { label: "voyages" },
-        school: { label: "appuis a la scolarisation" }
+        subtitle: "Selection d'evenements et d'initiatives de FOS-Agri.",
+        viewAllLink: "Voir tout l'agenda",
+        calendar: "Calendrier",
+        legendUpcoming: "Événements à venir",
+        legendImportant: "Événements importants",
+        legendPast: "Passé",
+        hint: "Cliquez sur une date pour voir les événements prévus pour ce jour.",
+        tabUpcoming: "À venir",
+        tabPast: "Historique",
+        viewAll: "Voir tous les événements à venir",
+        subscribeTitle: "Restez informé",
+        subscribeBody: "Ne manquez aucun événement important de FOS-Agri.",
+        subscribeBtn: "S'abonner à l'agenda",
+        subscribeBtnHtml: "<i class=\"fa-regular fa-bell\"></i> S'abonner a l'agenda"
       },
       testimonials: {
         tag: "Temoignage"
@@ -59,11 +66,10 @@
       map: {
         tag: "Presence nationale",
         title: "Un reseau de proximite a travers le Maroc",
-        subtitle:
-          "Selectionnez une region ou survolez une ville pour afficher une delegation ou un point de presence."
+        subtitle: "Selectionnez une region ou survolez une ville pour afficher une delegation ou un point de presence."
       },
       region: {
-        contact: "Contacter la délégation"
+        contact: "Contacter la delegation"
       },
       member: {
         memberTag: "Espace adherent",
@@ -84,16 +90,18 @@
         title: "Parlons de vos besoins",
         subtitle: "Coordonnees officielles pour faciliter la prise de contact.",
         phone1: "+212 5 37 77 47 48",
-        address: "461 Avenue Hassan II, Agdal - Rabat",
-        formName: "Nom complet",
-        formEmail: "Adresse e-mail",
-        formSubject: "Sujet",
-        formMessage: "Message",
-        formSubmit: "Envoyer"
+        address: "461 Avenue Hassan II, Agdal - Rabat"
+      },
+      stats: {
+        tag: "Chiffres cles",
+        title: "Une fondation dynamique et engagée",
+        members: "Adhérents actifs",
+        conventions: "Conventions signées",
+        coverage: "Couverture nationale",
+        budget: "Budget investi"
       },
       footer: {
-        about:
-          "Fondation pour la promotion des oeuvres sociales du personnel du ministere de l'agriculture.",
+        about: "Fondation pour la promotion des oeuvres sociales du personnel du ministere de l'agriculture.",
         usefulTitle: "Liens utiles",
         useful1: "Appels d'offres",
         useful2: "FAQ",
@@ -103,39 +111,11 @@
         quick2: "Programme social",
         quick3: "Actualites",
         contactTitle: "Coordonnees",
-        copy: "2026 FOS-Agri - Ministere de l'Agriculture"
-      },
-      pages: {
-        adherent: {
-          kicker: "Espace adherent",
-          title: "Consulter l'extranet et les services personnalises",
-          intro:
-            "Retrouvez les prestations, conventions et informations pratiques de l'espace adherent FOS-Agri.",
-          card1Title: "Acces rapide",
-          card1Body: "Accedez a l'extranet pour consulter les services et informations pratiques.",
-          card2Title: "Prestations",
-          card2Body: "Explorez les prestations sociales, medico-sociales et les dispositifs d'accompagnement.",
-          card3Title: "Conventions",
-          card3Body: "Retrouvez les conventions et avantages utiles pour vous et votre famille.",
-          cta: "Acceder a l'extranet",
-          back: "Retour a l'accueil"
-        },
-        club: {
-          kicker: "Club Agri",
-          title: "Decouvrir les avantages et les partenariats",
-          intro:
-            "Explorez les conventions, avantages et opportunites lies au Club Agri et aux partenaires.",
-          card1Title: "Avantages",
-          card1Body: "Decouvrez les benefices negocies avec les partenaires publics et prives.",
-          card2Title: "Partenariats",
-          card2Body: "Consultez les marques et institutions qui accompagnent les programmes FOS-Agri.",
-          card3Title: "Actualites utiles",
-          card3Body: "Retrouvez les annonces et conventions mises en avant dans la plateforme.",
-          cta: "Voir les partenaires",
-          back: "Retour a l'accueil"
-        }
-      },
-      formNotice: "Merci. Votre message a bien été pris en compte."
+        copy: "2026 FOS-Agri - Ministere de l'Agriculture",
+        legal: "© 2025 FOS-Agri. Tous droits réservés.",
+        privacy: "Confidentialité",
+        terms: "Mentions légales"
+      }
     },
     ar: {
       brand: { subtitle: "وزارة الفلاحة" },
@@ -149,24 +129,24 @@
         member: "فضاء المنخرط"
       },
       hero: {
-        eyebrow: "نخدم، ندعم، نقرّب",
-        title: "مؤسسة اجتماعية في خدمة نساء ورجال وزارة الفلاحة",
-        description:
-          "تجمع فوس-أكري الخدمات الاجتماعية وشبه الطبية والتعليمية والتضامنية الموجهة لموظفي وزارة الفلاحة وأسرهم.",
+        eyebrow: "مؤسسة النهوض بالأعمال الاجتماعية",
+        title: "في خدمة أسرة وزارة الفلاحة",
+        description: "مواكبة ودعم وتثمين التزام نساء ورجال القطاع الفلاحي من خلال خدمات اجتماعية مبتكرة وقريبة.",
+        ctaPrincipal: "اكتشف خدماتنا",
+        ctaSecondary: "أخبار المؤسسة",
         ctaServices: "اكتشف الخدمات",
         ctaContact: "تواصل معنا"
       },
       about: {
         tag: "المؤسسة",
         title: "مواكبة اجتماعية منظمة وقريبة وعلى الصعيد الوطني",
-        body:
-          "تجمع مؤسسة النهوض بالأعمال الاجتماعية لموظفي وزارة الفلاحة مختلف الخدمات والاتفاقيات والبرامج التضامنية لمؤسسة فوس-أكري.",
+        body: "تجمع مؤسسة النهوض بالأعمال الاجتماعية لموظفي وزارة الفلاحة مختلف الخدمات والاتفاقيات والبرامج التضامنية لمؤسسة فوس-أكري.",
         missionTitle: "المهمة",
-        missionBody: "خدمة المنخرطين، دعم الأسر، وتقريب الخدمات عبر مختلف جهات المملكة.",
+        missionBody: "خدمة المنخرطين ودعم الأسر وتقريب الخدمات عبر مختلف جهات المملكة.",
         scopeTitle: "مجالات التدخل",
-        scopeBody: "الاحتياط الطبي والاجتماعي، الترفيه، التمدرس، السكن، المشاريع الشخصية، واتفاقيات الشركاء.",
+        scopeBody: "الاحتياط الطبي والاجتماعي والترفيه والتمدرس والسكن والمشاريع الشخصية واتفاقيات الشركاء.",
         promiseTitle: "وعدنا",
-        promiseBody: "تجربة واضحة، ثنائية اللغة وسهلة الولوج، تبرز الخدمات الأساسية والمعلومات العملية."
+        promiseBody: "تجربة واضحة وثنائية اللغة وسهلة الولوج تبرز الخدمات الأساسية والمعلومات العملية."
       },
       services: {
         tag: "الخدمات",
@@ -182,13 +162,20 @@
       events: {
         tag: "الأجندة التضامنية",
         title: "حملات ولقاءات ومبادرات ميدانية",
-        subtitle: "مجموعة من الأحداث والمبادرات الميدانية لمؤسسة فوس-أكري."
-      },
-      stats: {
-        tag: "أرقام رئيسية",
-        title: "برامج تتجسد على المدى الطويل",
-        travel: { label: "رحلات" },
-        school: { label: "دعم للتمدرس" }
+        subtitle: "مجموعة من الأحداث والمبادرات الميدانية لمؤسسة فوس-أكري.",
+        viewAllLink: "عرض الأجندة كاملة",
+        calendar: "المفكرة",
+        legendUpcoming: "أحداث قادمة",
+        legendImportant: "أحداث هامة",
+        legendPast: "أحداث سابقة",
+        hint: "انقر على تاريخ لعرض الأحداث المقررة في ذلك اليوم.",
+        tabUpcoming: "قادمة",
+        tabPast: "الأرشيف",
+        viewAll: "عرض جميع الأحداث القادمة",
+        subscribeTitle: "ابقوا على اطلاع",
+        subscribeBody: "لا تفوتوا أي حدث مهم من أحداث فوس-أكري.",
+        subscribeBtn: "الاشتراك في الأجندة",
+        subscribeBtnHtml: "<i class=\"fa-regular fa-bell\"></i> الاشتراك في الأجندة"
       },
       testimonials: {
         tag: "شهادة"
@@ -220,12 +207,15 @@
         title: "لنتحدث عن احتياجاتكم",
         subtitle: "بيانات الاتصال الرسمية لتسهيل التواصل.",
         phone1: "+212 5 37 77 47 48",
-        address: "461 شارع الحسن الثاني، أكدال - الرباط",
-        formName: "الاسم الكامل",
-        formEmail: "البريد الإلكتروني",
-        formSubject: "الموضوع",
-        formMessage: "الرسالة",
-        formSubmit: "إرسال"
+        address: "461 شارع الحسن الثاني، أكدال - الرباط"
+      },
+      stats: {
+        tag: "أرقام رئيسية",
+        title: "مؤسسة ديناميكية وملتزمة",
+        members: "منخرط نشط",
+        conventions: "اتفاقية موقعة",
+        coverage: "تغطية وطنية",
+        budget: "ميزانية مستثمرة"
       },
       footer: {
         about: "مؤسسة النهوض بالأعمال الاجتماعية لموظفي وزارة الفلاحة.",
@@ -238,168 +228,138 @@
         quick2: "البرنامج الاجتماعي",
         quick3: "المستجدات",
         contactTitle: "بيانات الاتصال",
-        copy: "2026 فوس-أكري - وزارة الفلاحة"
-      },
-      pages: {
-        adherent: {
-          kicker: "فضاء المنخرط",
-          title: "الاطلاع على الإكسترانت والخدمات المخصصة",
-          intro: "اعثر على الخدمات والاتفاقيات والمعلومات العملية داخل فضاء المنخرط فوس-أكري.",
-          card1Title: "ولوج سريع",
-          card1Body: "ادخل إلى الإكسترانت للاطلاع على الخدمات والمعلومات العملية.",
-          card2Title: "الخدمات",
-          card2Body: "استكشف الخدمات الاجتماعية وشبه الطبية وآليات المواكبة.",
-          card3Title: "الاتفاقيات",
-          card3Body: "اعثر على الاتفاقيات والامتيازات المفيدة لك ولأسرتك.",
-          cta: "الدخول إلى الإكسترانت",
-          back: "العودة إلى الرئيسية"
-        },
-        club: {
-          kicker: "كلوب أكري",
-          title: "اكتشف الامتيازات والشراكات",
-          intro: "استكشف الاتفاقيات والامتيازات والفرص المرتبطة بكلوب أكري والشركاء.",
-          card1Title: "امتيازات",
-          card1Body: "اكتشف الامتيازات التي تم التفاوض بشأنها مع الشركاء العموميين والخواص.",
-          card2Title: "شراكات",
-          card2Body: "اطلع على المؤسسات والعلامات التي تواكب برامج فوس-أكري.",
-          card3Title: "مستجدات مفيدة",
-          card3Body: "اعثر على الإعلانات والاتفاقيات التي تم إبرازها داخل المنصة.",
-          cta: "عرض الشركاء",
-          back: "العودة إلى الرئيسية"
-        }
-      },
-      formNotice: "شكرا لكم. تم استلام رسالتكم بنجاح."
+        copy: "2026 فوس-أكري - وزارة الفلاحة",
+        legal: "© 2025 فوس-أكري. جميع الحقوق محفوظة.",
+        privacy: "الخصوصية",
+        terms: "إشعار قانوني"
+      }
     }
   },
   services: [
     {
-      key: "prevoyance",
-      icon: "fa-heart-pulse",
-      href: "services/prevoyance.html",
-      fr: {
-        title: "Prevoyance medico-sociale",
-        description: "Soutenir nos adherents face aux aleas de la sante.",
-        detail:
-          "Centre medico-social, planning et specialites, assurance maladie complementaire, assistance medicale et transport sanitaire, aide aux personnes aux besoins specifiques."
-      },
-      ar: {
-        title: "الاحتياط الطبي والاجتماعي",
-        description: "دعم المنخرطين في مواجهة التحديات المرتبطة بالصحة.",
-        detail:
-          "مركز طبي اجتماعي، برمجة وتخصصات، تأمين صحي تكميلي، مواكبة طبية ونقل صحي، ودعم للأشخاص ذوي الاحتياجات الخاصة."
-      }
-    },
-    {
-      key: "culture",
-      icon: "fa-umbrella-beach",
-      href: "services/culture-loisirs-voyages.html",
-      fr: {
-        title: "Culture, loisirs et voyages",
-        description: "Appuyer nos adherents pour l'acces a des prestations de loisirs et bien-etre.",
-        detail:
-          "Programme de voyages, sorties culturelles, activites de detente et offres partenaires dediees aux adherents et a leurs familles."
-      },
-      ar: {
-        title: "الثقافة والترفيه والأسفار",
-        description: "تمكين المنخرطين من خدمات الترفيه والرفاه.",
-        detail:
-          "برنامج الرحلات، الخرجات الثقافية، الأنشطة الترفيهية والعروض الخاصة بالمنخرطين وأسرهم."
-      }
-    },
-    {
-      key: "formation",
-      icon: "fa-graduation-cap",
-      href: "services/formation-scolarisation.html",
-      fr: {
-        title: "Formation et scolarisation",
-        description: "Encourager l'excellence scolaire des enfants et la formation continue.",
-        detail:
-          "Appui a la scolarisation, actions d'accompagnement educatif et renforcement des competences a travers des dispositifs de formation."
-      },
-      ar: {
-        title: "التكوين والتمدرس",
-        description: "تشجيع التميز الدراسي للأبناء والتكوين المستمر.",
-        detail:
-          "دعم التمدرس، المواكبة التربوية، وتقوية الكفاءات عبر آليات للتكوين."
-      }
-    },
-    {
-      key: "logement",
-      icon: "fa-house",
-      href: "services/acces-logement.html",
-      fr: {
-        title: "Acces au logement",
-        description: "Accompagner nos adherents dans la realisation de leurs projets de logement.",
-        detail:
-          "Journees portes ouvertes, conventions speciales logement et accompagnement dans la recherche d'opportunites adaptees."
-      },
-      ar: {
-        title: "ولوج السكن",
-        description: "مواكبة المنخرطين في إنجاز مشاريعهم السكنية.",
-        detail:
-          "أيام مفتوحة، اتفاقيات خاصة بالسكن، ومرافقة في البحث عن الفرص المناسبة."
-      }
-    },
-    {
-      key: "projets",
-      icon: "fa-briefcase",
+      key: "projets-personnels",
+      id: "personal-projects",
       href: "services/projets-personnels.html",
+      icon: "fa-house-chimney",
       fr: {
-        title: "Appui aux projets personnels",
-        description: "Accompagner nos adherents dans la realisation de leurs projets personnels.",
-        detail:
-          "Orientations, partenariats et dispositifs de soutien pour concretiser des projets individuels et familiaux."
+        title: "Projets Personnels",
+        excerpt: "Accompagnement dans vos projets d'acquisition ou de construction de logement.",
+        detail: "Accompagnement administratif et orientation pour vos projets personnels et demandes de financement."
       },
       ar: {
-        title: "دعم المشاريع الشخصية",
-        description: "مواكبة المنخرطين في إنجاز مشاريعهم الشخصية.",
-        detail:
-          "توجيهات وشراكات وآليات مواكبة من أجل إنجاح المشاريع الفردية والأسرية."
+        title: "مشاريع شخصية",
+        excerpt: "مواكبة في مشاريعكم لاقتناء أو بناء السكن.",
+        detail: "مواكبة إدارية وتوجيه من أجل مشاريعكم الشخصية وطلبات التمويل."
       }
     },
     {
-      key: "education",
-      icon: "fa-book-open-reader",
-      href: "services/education-culture.html",
+      key: "prevoyance",
+      id: "health",
+      href: "services/prevoyance.html",
+      icon: "fa-heart-pulse",
       fr: {
-        title: "Education et culture",
-        description: "Faire beneficier nos adherents de differents partenariats et conventions.",
-        detail:
-          "Conventions educatives et culturelles, acces elargi a des offres partenaires et valorisation du developpement personnel."
+        title: "Santé & Prévoyance",
+        excerpt: "Couverture médicale complémentaire et assistance pour vous et votre famille.",
+        detail: "Prestations de santé, conventions médicales et accompagnement des adhérents et de leurs ayants droit."
       },
       ar: {
-        title: "التربية والثقافة",
-        description: "تمكين المنخرطين من مختلف الشراكات والاتفاقيات.",
-        detail:
-          "اتفاقيات تربوية وثقافية، وتوسيع الولوج إلى عروض الشركاء، وتعزيز التطور الشخصي."
+        title: "الصحة والاحتياط",
+        excerpt: "تغطية صحية تكميلية ومساعدة لكم ولعائلاتكم.",
+        detail: "خدمات صحية واتفاقيات طبية ومواكبة للمنخرطين وذوي الحقوق."
+      }
+    },
+    {
+      key: "aides-sociales",
+      id: "social-aid",
+      href: "index.html#services",
+      icon: "fa-hand-holding-heart",
+      fr: {
+        title: "Aides Sociales",
+        excerpt: "Soutien financier pour les grands événements de la vie (mariage, naissance, retraite).",
+        detail: "Soutiens exceptionnels et aides ciblées pour accompagner les moments importants de la vie."
+      },
+      ar: {
+        title: "المساعدات الاجتماعية",
+        excerpt: "دعم مالي لمواكبة الأحداث الكبرى في الحياة (زواج، ولادة، تقاعد).",
+        detail: "دعم استثنائي ومساعدات موجهة لمواكبة المحطات الكبرى في الحياة."
+      }
+    },
+    {
+      key: "formation-scolarisation",
+      id: "education",
+      href: "services/formation-scolarisation.html",
+      icon: "fa-graduation-cap",
+      fr: {
+        title: "Éducation & Formation",
+        excerpt: "Bourses d'excellence et aides scolaires pour la réussite de vos enfants.",
+        detail: "Bourses, appui à la scolarisation et accompagnement des parcours de formation."
+      },
+      ar: {
+        title: "التربية والتكوين",
+        excerpt: "منح التميز ومساعدات مدرسية لضمان نجاح أبنائكم.",
+        detail: "منح ومواكبة للتمدرس ودعم لمسارات التكوين."
+      }
+    },
+    {
+      key: "culture-loisirs-voyages",
+      id: "leisure",
+      href: "services/culture-loisirs-voyages.html",
+      icon: "fa-umbrella-beach",
+      fr: {
+        title: "Vacances & Loisirs",
+        excerpt: "Centres d'estivage, voyages organisés et conventions de transport.",
+        detail: "Programmes de vacances, loisirs familiaux et offres partenaires à tarifs préférentiels."
+      },
+      ar: {
+        title: "الاصطياف والترفيه",
+        excerpt: "مراكز الاصطياف، رحلات منظمة واتفاقيات للنقل.",
+        detail: "برامج الاصطياف والترفيه العائلي وعروض الشركاء بأسعار تفضيلية."
+      }
+    },
+    {
+      key: "education-culture",
+      id: "conventions",
+      href: "services/education-culture.html",
+      icon: "fa-file-signature",
+      fr: {
+        title: "Conventions",
+        excerpt: "Large réseau de partenaires offrant des tarifs préférentiels.",
+        detail: "Conventions et partenariats pour faciliter l'accès à des services utiles aux adhérents."
+      },
+      ar: {
+        title: "الاتفاقيات",
+        excerpt: "شبكة واسعة من الشركاء تقدم أسعاراً تفضيلية.",
+        detail: "اتفاقيات وشراكات لتسهيل الولوج إلى خدمات مفيدة للمنخرطين."
       }
     }
   ],
   news: [
     {
-      date: "20/02/2025",
+      date: "20 Mars 2024",
       fr: {
         title: "Programme de vacances et loisirs 2025",
         excerpt: "Calendrier des activites et inscriptions ouvertes pour les adherents."
       },
       ar: {
         title: "برنامج العطل والترفيه 2025",
-        excerpt: "جدولة الأنشطة وفتح التسجيل لفائدة المنخرطين."
-      }
+        excerpt: "جدولة الانشطة وفتح التسجيلات لفائدة المنخرطين."
+      },
+      image: "./news-images/Programme de vacances et loisirs 2025.webp"
     },
     {
-      date: "05/03/2025",
+      date: "15 Mars 2024",
       fr: {
         title: "Convention avec le cabinet de pathologie Bouregreg",
         excerpt: "Remises preferentielles pour les adherents, conjoints et enfants a Rabat."
       },
       ar: {
-        title: "اتفاقية مع مختبر بوريكريك للباثولوجيا",
-        excerpt: "تخفيضات تفضيلية للمنخرطين والأزواج والأبناء بالرباط."
-      }
+        title: "اتفاقية مع مختبر بوريكراك للتشريح المرضي",
+        excerpt: "تخفيضات تفضيلية لفائدة المنخرطين والازواج والابناء بالرباط."
+      },
+      image: "./news-images/convention-pathologie-bouregreg.jpg"
     },
     {
-      date: "28/02/2025",
+      date: "10 Mars 2024",
       fr: {
         title: "Operation Omra 2025 - dispositions logistiques",
         excerpt: "Publication des dispositions logistiques relatives au deroulement de l'operation."
@@ -407,32 +367,35 @@
       ar: {
         title: "عملية العمرة 2025 - الترتيبات اللوجستيكية",
         excerpt: "نشر الترتيبات اللوجستيكية المتعلقة بسير العملية."
-      }
+      },
+      image: "./news-images/operation-omra-2025.jpg"
     },
     {
-      date: "14/03/2025",
+      date: "08 Mars 2024",
       fr: {
         title: "Partenariat a tarifs preferentiels pour l'activite sportive",
         excerpt: "Convention avec Joude Gestion Sport pour des remises aux adherents."
       },
       ar: {
-        title: "شراكة بتعريفات تفضيلية للأنشطة الرياضية",
-        excerpt: "اتفاقية مع Joude Gestion Sport تمنح تخفيضات لفائدة المنخرطين."
-      }
+        title: "شراكة باسعار تفضيلية للانشطة الرياضية",
+        excerpt: "اتفاقية مع جود سبور لتخفيضات موجهة للمنخرطين."
+      },
+      image: "./news-images/partenariat-activite-sportive.jpg"
     },
     {
-      date: "12/02/2025",
+      date: "04 Mars 2024",
       fr: {
         title: "Nouvelle convention de sante",
         excerpt: "Avantages exclusifs pour les adherents et leurs familles."
       },
       ar: {
         title: "اتفاقية صحية جديدة",
-        excerpt: "امتيازات حصرية لفائدة المنخرطين وأسرهم."
-      }
+        excerpt: "امتيازات حصرية لفائدة المنخرطين وافراد اسرهم."
+      },
+      image: "https://images.unsplash.com/photo-1576671081837-49000212a370?auto=format&fit=crop&w=900&q=80"
     },
     {
-      date: "30/01/2025",
+      date: "28 Fevrier 2024",
       fr: {
         title: "Campagne d'information regionale",
         excerpt: "Rencontres de proximite autour des prestations et conventions FOS-Agri."
@@ -440,72 +403,108 @@
       ar: {
         title: "حملة تواصل جهوية",
         excerpt: "لقاءات للقرب حول خدمات واتفاقيات فوس-أكري."
-      }
+      },
+      image: "./news-images/Campagne d'information regionale.jpg"
     }
   ],
   events: [
     {
-      date: "10/01/2026",
+      date: "14/03/2026",
+      time: "09:30 - 12:30",
+      location: "Rabat",
+      locationAr: "الرباط",
+      type: "Rencontre",
+      typeAr: "لقاء",
+      typeColor: "#d4a017",
+      icon: "fa-handshake",
       fr: {
-        title: "Campagne de collecte du sang",
-        excerpt: "Collecte organisee a Rabat, grande salle du complexe DBAGH."
+        title: "Rencontre régionale des adhérents",
+        excerpt: "Session d'information et d'écoute autour des prestations sociales et des besoins exprimés."
       },
       ar: {
-        title: "حملة للتبرع بالدم",
-        excerpt: "حملة منظمة بالرباط بالقاعة الكبرى لمركب الدباغ."
+        title: "لقاء جهوي للمنخرطين",
+        excerpt: "جلسة إخبارية وإنصات حول الخدمات الاجتماعية والحاجيات المعبر عنها."
       }
     },
     {
-      date: "08/12/2025",
+      date: "05/04/2026",
+      time: "08:45 - 13:00",
+      location: "Casablanca",
+      locationAr: "الدار البيضاء",
+      type: "Action Terrain",
+      typeAr: "عمل ميداني",
+      typeColor: "#1f6a43",
+      icon: "fa-leaf",
       fr: {
-        title: "Journees portes ouvertes AL OMRANE",
-        excerpt: "Special logement a Kenitra, Temara et Rabat."
+        title: "Campagne d'accompagnement social",
+        excerpt: "Déplacement de proximité pour orienter les agents et présenter les conventions en cours."
       },
       ar: {
-        title: "أيام الأبواب المفتوحة العمران",
-        excerpt: "برنامج خاص بالسكن بالقنيطرة وتمارة والرباط."
+        title: "حملة للمواكبة الاجتماعية",
+        excerpt: "تنقل ميداني لتوجيه الموظفين وتقديم الاتفاقيات الجارية."
       }
     },
     {
-      date: "06/07/2025",
+      date: "02/05/2026",
+      time: "09:00 - 16:00",
+      location: "Marrakech",
+      locationAr: "مراكش",
+      type: "Formation",
+      typeAr: "تكوين",
+      typeColor: "#1f6a43",
+      icon: "fa-seedling",
       fr: {
-        title: "Camps d'ete pour enfants",
-        excerpt: "Ouverture des inscriptions et accompagnement des familles adherentes."
+        title: "Formation : Irrigation durable",
+        excerpt: "Session dédiée aux techniques modernes d'irrigation pour une agriculture durable."
       },
       ar: {
-        title: "مخيمات صيفية للأطفال",
-        excerpt: "فتح التسجيل ومواكبة الأسر المنخرطة."
+        title: "تكوين : الري المستدام",
+        excerpt: "دورة مخصصة للتقنيات الحديثة في الري من أجل فلاحة مستدامة."
       }
     },
     {
-      date: "22/05/2025",
+      date: "17/05/2026",
+      time: "10:00 - 15:00",
+      location: "Fes",
+      locationAr: "فاس",
+      type: "Rencontre",
+      typeAr: "لقاء",
+      typeColor: "#d4a017",
+      icon: "fa-users",
       fr: {
-        title: "Convention pharmacie",
-        excerpt: "Remises preferentielles a Agadir pour les adherents et leurs familles."
+        title: "Rencontre des cooperatives agricoles",
+        excerpt: "Echange d'experiences et bonnes pratiques entre cooperatives partenaires."
       },
       ar: {
-        title: "اتفاقية مع صيدلية",
-        excerpt: "تخفيضات تفضيلية بأكادير لفائدة المنخرطين وأسرهم."
+        title: "لقاء التعاونيات الفلاحية",
+        excerpt: "تبادل الخبرات والممارسات الجيدة بين التعاونيات الشريكة."
+      }
+    },
+    {
+      date: "28/05/2026",
+      time: "08:30 - 13:00",
+      location: "Meknes",
+      locationAr: "مكناس",
+      type: "Action Terrain",
+      typeAr: "عمل ميداني",
+      typeColor: "#1f6a43",
+      icon: "fa-tree",
+      fr: {
+        title: "Campagne de plantation d'oliviers",
+        excerpt: "Action terrain de reboisement et de valorisation des filieres oleicoles."
+      },
+      ar: {
+        title: "حملة غرس أشجار الزيتون",
+        excerpt: "عمل ميداني لإعادة التشجير وتثمين سلاسل إنتاج الزيتون."
       }
     }
   ],
   stats: [
-    { value: "700", icon: "fa-plane-departure", fr: "Voyages", ar: "رحلات" },
-    { value: "174", icon: "fa-masks-theater", fr: "Sorties culturelles", ar: "خرجات ثقافية" },
-    { value: "206", icon: "fa-kaaba", fr: "Omra et pelerinage", ar: "العمرة والحج" },
-    { value: "2080", icon: "fa-school", fr: "Appui a la scolarisation", ar: "دعم التمدرس" }
+    { value: "45k", icon: "fa-users", fr: "Membres", ar: "منخرط" },
+    { value: "120", icon: "fa-file-signature", fr: "Conventions", ar: "اتفاقية" },
+    { value: "12", icon: "fa-map-location-dot", fr: "Régions", ar: "جهة" },
+    { value: "25M", icon: "fa-coins", fr: "Budget", ar: "ميزانية" }
   ],
-  testimonials: {
-    fr: {
-      quote:
-        "La plateforme clarifie les prestations et rapproche l'information utile pour les adherents et leurs familles.",
-      author: "FOS-Agri"
-    },
-    ar: {
-      quote: "توضح المنصة الخدمات وتقرب المعلومة العملية لفائدة المنخرطين وأسرهم.",
-      author: "فوس-أكري"
-    }
-  },
   regions: [
     {
       key: "rabat-sale-kenitra",
@@ -733,26 +732,9 @@
     }
   ],
   partners: [
-    {
-      name: "SNTL",
-      logo: "assets/partenaires/sntl.png"
-    },
-    {
-      name: "Salafin",
-      logo: "assets/partenaires/salafin.png?v=2"
-    },
-    {
-      name: "BMCI",
-      logo: "assets/partenaires/bmci.png"
-    },
-    {
-      name: "WAFA",
-      logo: "assets/partenaires/wafa.png"
-    },
-    {
-      name: "WAFAINJAD",
-      logo: "assets/partenaires/wafainjad.png"
-    }
+    { name: "SNTL", logo: "assets/partenaires/sntl.png" },
+    { name: "BMCI", logo: "assets/partenaires/bmci.png" },
+    { name: "Wafa Assurance", logo: "assets/partenaires/wafa.png" }
   ]
 };
 
