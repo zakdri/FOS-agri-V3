@@ -48,13 +48,16 @@
       </nav>
 
       <div class="nav-actions">
-        <div class="lang-select-wrap desktop-only">
-          <select class="lang-select" aria-label="Choix de langue">
-            <option value="fr">FR</option>
-            <option value="ar">AR</option>
-            <option value="zgh">ⵜⵎⵣⵉⵖⵜ</option>
-          </select>
-          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        <div class="lang-select-wrap desktop-only" id="lang-dropdown-wrap" role="combobox" aria-label="Choix de langue" aria-expanded="false" aria-haspopup="listbox">
+          <button class="lang-select" id="lang-dropdown-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+            <span id="lang-dropdown-label">FR</span>
+            <i class="fa-solid fa-chevron-down lang-chevron" aria-hidden="true"></i>
+          </button>
+          <ul class="lang-dropdown-panel" id="lang-dropdown-panel" role="listbox" aria-label="Langue">
+            <li class="lang-dropdown-option" role="option" data-lang="fr" tabindex="0">FR — Français</li>
+            <li class="lang-dropdown-option" role="option" data-lang="ar" tabindex="0">AR — العربية</li>
+            <li class="lang-dropdown-option" role="option" data-lang="zgh" tabindex="0">ⵜⵎⵣⵉⵖⵜ</li>
+          </ul>
         </div>
         <a class="btn-cta-nav desktop-only" href="#member-space" data-i18n="nav.member">Espace adherent</a>
       </div>
@@ -684,7 +687,7 @@
     <div class="container footer-bottom">
       <div class="footer-meta">
         <p data-i18n="footer.copy">© 2026 FOS-Agri - Ministère de l'Agriculture</p>
-        <p class="footer-credit" data-i18n-html="footer.credit">Website created by <a href="https://neonovia.com/" target="_blank" rel="noopener noreferrer">NEONOVIA</a></p>
+        <p class="footer-credit" data-i18n-html="footer.credit">Powered by <a href="https://neonovia.com/" target="_blank" rel="noopener noreferrer">NEONOVIA</a></p>
       </div>
       <div class="footer-social">
         <a href="https://www.facebook.com/FOS.Agri" target="_blank" class="footer-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>

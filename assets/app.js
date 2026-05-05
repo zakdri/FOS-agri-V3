@@ -1,4 +1,4 @@
-﻿const root = document.documentElement;
+const root = document.documentElement;
 const body = document.body;
 const page = body.dataset.page || "home";
 const servicePageKey = body.dataset.service || "";
@@ -28,6 +28,9 @@ function getTranslationValue(key, lang = currentLang) {
       return value;
     }
   }
+  if (lang !== "fr") {
+    console.warn(`[i18n] Missing translation key "${key}" for lang="${lang}". Falling back to FR.`);
+  }
   return null;
 }
 
@@ -36,9 +39,18 @@ function syncLanguageControls() {
     btn.classList.toggle("is-active", btn.dataset.lang === currentLang);
   });
 
-  qsa(".lang-select").forEach((select) => {
-    select.value = currentLang;
-  });
+  // Sync custom dropdown label + selected state
+  const labelEl = qs("#lang-dropdown-label");
+  const options = qsa(".lang-dropdown-option");
+  if (labelEl && options.length) {
+    const activeOpt = options.find((o) => o.dataset.lang === currentLang);
+    if (activeOpt) {
+      // Show only the short code (FR / AR / ⵜⵎⵣⵉⵖⵜ) in the button
+      labelEl.textContent = activeOpt.dataset.lang === "fr" ? "FR" :
+                            activeOpt.dataset.lang === "ar" ? "AR" : "ⵜⵎⵣⵉⵖⵜ";
+    }
+    options.forEach((o) => o.classList.toggle("is-selected", o.dataset.lang === currentLang));
+  }
 }
 
 function initScrollHeader() {
@@ -912,12 +924,72 @@ function initMenu() {
 }
 
 function initLangButtons() {
+  // Mobile buttons
   qsa(".lang-btn").forEach((btn) => {
     btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
   });
 
-  qsa(".lang-select").forEach((select) => {
-    select.addEventListener("change", () => setLanguage(select.value));
+  // Custom desktop dropdown
+  const wrap = qs("#lang-dropdown-wrap");
+  const btn  = qs("#lang-dropdown-btn");
+  const panel = qs("#lang-dropdown-panel");
+  if (!wrap || !btn || !panel) return;
+
+  const openDropdown = () => {
+    wrap.classList.add("is-open");
+    btn.setAttribute("aria-expanded", "true");
+    wrap.setAttribute("aria-expanded", "true");
+    // Focus first option
+    const first = panel.querySelector(".lang-dropdown-option");
+    if (first) first.focus();
+  };
+
+  const closeDropdown = () => {
+    wrap.classList.remove("is-open");
+    btn.setAttribute("aria-expanded", "false");
+    wrap.setAttribute("aria-expanded", "false");
+  };
+
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    wrap.classList.contains("is-open") ? closeDropdown() : openDropdown();
+  });
+
+  qsa(".lang-dropdown-option").forEach((opt) => {
+    opt.addEventListener("click", () => {
+      setLanguage(opt.dataset.lang);
+      closeDropdown();
+      btn.focus();
+    });
+    opt.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        setLanguage(opt.dataset.lang);
+        closeDropdown();
+        btn.focus();
+      } else if (e.key === "Escape") {
+        closeDropdown();
+        btn.focus();
+      } else if (e.key === "ArrowDown") {
+        e.preventDefault();
+        const next = opt.nextElementSibling;
+        if (next) next.focus();
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        const prev = opt.previousElementSibling;
+        if (prev) prev.focus();
+      }
+    });
+  });
+
+  // Close on outside click
+  document.addEventListener("click", (e) => {
+    if (!wrap.contains(e.target)) closeDropdown();
+  });
+
+  // Close on Escape globally
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeDropdown();
   });
 }
 

@@ -117,7 +117,7 @@ window.siteData = {
         quick3: "Actualites",
         contactTitle: "Coordonnees",
         copy: "© 2026 FOS-Agri - Ministère de l'Agriculture",
-        credit: "Website created by <a href='https://neonovia.com/' target='_blank' rel='noopener noreferrer'>NEONOVIA</a>",
+        credit: "Powered by <a href='https://neonovia.com/' target='_blank' rel='noopener noreferrer'>NEONOVIA</a>",
         legal: "© 2025 FOS-Agri. Tous droits réservés.",
         privacy: "Confidentialité",
         terms: "Mentions légales"
@@ -267,7 +267,7 @@ window.siteData = {
         quick3: "المستجدات",
         contactTitle: "بيانات الاتصال",
         copy: "© 2026 فوس-أكري - وزارة الفلاحة",
-        credit: "Website created by <a href='https://neonovia.com/' target='_blank' rel='noopener noreferrer'>NEONOVIA</a>",
+        credit: "Powered by <a href='https://neonovia.com/' target='_blank' rel='noopener noreferrer'>NEONOVIA</a>",
         legal: "© 2025 فوس-أكري. جميع الحقوق محفوظة.",
         privacy: "الخصوصية",
         terms: "إشعار قانوني"
@@ -417,7 +417,7 @@ window.siteData = {
         quick3: "ⵉⵎⵉⵏⵉⴷⵏ",
         contactTitle: "ⵉⵙⴰⵍⵏ ⵏ ⵓⵎⵢⴰⵡⴰⴹ",
         copy: "© 2026 FOS-Agri - ⵜⴰⵎⴰⵣⵔⵜ ⵏ ⵜⴼⵍⴰⵃⵜ",
-        credit: "Website created by <a href='https://neonovia.com/' target='_blank' rel='noopener noreferrer'>NEONOVIA</a>",
+        credit: "Powered by <a href='https://neonovia.com/' target='_blank' rel='noopener noreferrer'>NEONOVIA</a>",
         legal: "© 2025 FOS-Agri. ⴽⵓⵍⵍⵓ ⵉⵣⵔⴼⴰⵏ ⵎⵎⴰⵍⵏ.",
         privacy: "ⵜⴰⵙⵓⵜⵔⵜ",
         terms: "ⵜⵉⵍⴰⵍ ⵜⴰⵏⴰⵎⵓⵔⴰⵏⵜ"
@@ -449,6 +449,20 @@ window.siteData = {
         }
       },
       formNotice: "ⵜⵜⵓⵣⵏ ⵜⵉⵣⵎⵎⴰⵔⵜ ⵏⵏⵓⵏ. ⴰⵏⵎⵎⴰⵍ ⴷⴰⵔⵙ ⴷⴰⵔⵓⵏ."
+    }
+  },
+  testimonials: {
+    fr: {
+      quote: "La plateforme clarifie les prestations et rapproche l'information utile pour les adhérents et leurs familles.",
+      author: "FOS-Agri"
+    },
+    ar: {
+      quote: "توضح المنصة الخدمات وتقرب المعلومات المفيدة للمنخرطين وأسرهم.",
+      author: "فوس-أكري"
+    },
+    zgh: {
+      quote: "ⵜⴰⴱⵓⵔⵜ ⴰⴷ ⵜⵙⴰⴼⴰⵔⴷ ⵉⵎⴰⵍⴰⵙⵙⵏ ⴷ ⵜⵙⵙⵉⵡⴹ ⵉⵙⴰⵍⵏ ⵉⵏⴼⴰⵏ ⵉ ⵉⵎⵣⵔⴰⵢⵏ ⴷ ⵜⵡⴰⵛⵓⵍⵉⵏ ⵏⵏⵙⵏ.",
+      author: "FOS-Agri"
     }
   },
   services: [

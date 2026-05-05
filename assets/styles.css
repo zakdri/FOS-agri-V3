@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --bg: #f7f4eb;
   --surface: #ffffff;
   --surface-soft: #f2f7f2;
@@ -436,6 +436,9 @@ textarea {
   background: rgba(31, 106, 67, 0.08);
 }
 
+/* ============================
+   Custom Language Dropdown
+   ============================ */
 .lang-select-wrap {
   position: relative;
   display: inline-flex;
@@ -446,18 +449,25 @@ textarea {
   display: inline-flex;
 }
 
+/* The trigger button — matches the old native select appearance */
 .lang-select {
-  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   border: 1px solid rgba(31, 106, 67, 0.14);
   background: rgba(255, 255, 255, 0.92);
   color: var(--green-deep);
   min-width: 8.25rem;
-  padding: 0.72rem 2.55rem 0.72rem 1rem;
+  padding: 0.72rem 1rem;
   border-radius: 999px;
   font-weight: 700;
+  font-size: inherit;
+  font-family: inherit;
   cursor: pointer;
   box-shadow: 0 12px 28px rgba(31, 53, 38, 0.08);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+  justify-content: space-between;
 }
 
 .lang-select:hover,
@@ -468,13 +478,110 @@ textarea {
   outline: none;
 }
 
-.lang-select-wrap i {
-  position: absolute;
-  right: 1rem;
+.lang-chevron {
+  font-size: 0.75rem;
   color: var(--green);
   pointer-events: none;
-  font-size: 0.8rem;
+  transition: transform 0.25s ease;
+  margin-left: 0.25rem;
 }
+
+.lang-select-wrap.is-open .lang-chevron {
+  transform: rotate(180deg);
+}
+
+/* Options panel — hidden by default */
+.lang-dropdown-panel {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 13rem;
+  list-style: none;
+  margin: 0;
+  padding: 0.4rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(31, 106, 67, 0.12);
+  box-shadow: 0 16px 40px rgba(31, 53, 38, 0.14), 0 2px 8px rgba(31, 53, 38, 0.06);
+  z-index: 50;
+  overflow: hidden;
+  animation: ddFadeIn 0.18s ease;
+}
+
+@keyframes ddFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.lang-select-wrap.is-open .lang-dropdown-panel {
+  display: block;
+}
+
+.lang-dropdown-option {
+  padding: 0.65rem 1rem;
+  border-radius: 0.65rem;
+  color: var(--green-deep);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.lang-dropdown-option:hover,
+.lang-dropdown-option:focus {
+  background: rgba(31, 106, 67, 0.08);
+  color: var(--green);
+  outline: none;
+}
+
+.lang-dropdown-option.is-selected {
+  background: var(--green);
+  color: #fff;
+}
+
+/* === Transparent-header overrides (over hero) === */
+.site-header:not(.is-scrolled) .lang-select {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.24);
+  color: #fff;
+  box-shadow: none;
+}
+
+.site-header:not(.is-scrolled) .lang-select #lang-dropdown-label {
+  color: #fff;
+}
+
+.site-header:not(.is-scrolled) .lang-chevron {
+  color: #fff;
+}
+
+/* Glass panel when transparent header */
+.site-header:not(.is-scrolled) .lang-dropdown-panel {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+}
+
+.site-header:not(.is-scrolled) .lang-dropdown-option {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.site-header:not(.is-scrolled) .lang-dropdown-option:hover,
+.site-header:not(.is-scrolled) .lang-dropdown-option:focus {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.site-header:not(.is-scrolled) .lang-dropdown-option.is-selected {
+  background: rgba(255, 255, 255, 0.28);
+  color: #fff;
+}
+
 
 .lang-btn {
   border: 0;
