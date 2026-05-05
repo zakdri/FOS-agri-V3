@@ -5,11 +5,13 @@
       nav: {
         home: "Accueil",
         foundation: "La Fondation",
+        about: "La Fondation",
         services: "Prestations",
         news: "Actualités",
         events: "Agenda solidaire",
         contact: "Contact",
-        member: "Espace adherent"
+        member: "Espace adherent",
+        memberSpace: "Espace adherent"
       },
       hero: {
         eyebrow: "Fondation pour la Promotion des Oeuvres Sociales",
@@ -115,18 +117,47 @@
         legal: "© 2025 FOS-Agri. Tous droits réservés.",
         privacy: "Confidentialité",
         terms: "Mentions légales"
-      }
+      },
+      pages: {
+        adherent: {
+          kicker: "Espace adherent",
+          title: "Un espace d'information et d'orientation pour les adherents",
+          intro: "Retrouvez ici les reperes utiles pour acceder aux prestations, suivre les conventions et prendre contact avec FOS-Agri.",
+          cta: "Contacter FOS-Agri",
+          card1Title: "Acceder aux prestations",
+          card1Body: "Identifiez rapidement les services, les aides et les conventions adaptes a votre situation et a celle de votre famille.",
+          card2Title: "Suivre les conventions",
+          card2Body: "Consultez les dispositifs en cours, les partenaires disponibles et les informations pratiques utiles a vos demarches.",
+          card3Title: "Obtenir un accompagnement",
+          card3Body: "Les equipes FOS-Agri restent a votre ecoute pour vous orienter, vous informer et faciliter vos demandes."
+        },
+        club: {
+          kicker: "Club Agri",
+          title: "Des avantages negocies avec nos partenaires",
+          intro: "Le Club Agri rassemble des conventions, des offres preferees et des opportunites utiles aux adherents de FOS-Agri.",
+          cta: "Voir les partenaires",
+          card1Title: "Offres partenaires",
+          card1Body: "Retrouvez des services, des remises et des avantages negocies aupres d'un reseau de partenaires fiables.",
+          card2Title: "Avantages negocies",
+          card2Body: "Profitez d'accords preferentiels pensés pour les adherents, leurs familles et leurs besoins du quotidien.",
+          card3Title: "Un reseau utile au quotidien",
+          card3Body: "Le Club Agri rapproche les adherents d'un ecosysteme de partenaires publics et prives mobilises a leurs cotes."
+        }
+      },
+      formNotice: "Votre message a bien ete envoye. Nous vous recontacterons rapidement."
     },
     ar: {
       brand: { subtitle: "وزارة الفلاحة" },
       nav: {
         home: "الرئيسية",
         foundation: "المؤسسة",
+        about: "المؤسسة",
         services: "الخدمات",
         news: "المستجدات",
         events: "الأجندة التضامنية",
         contact: "اتصل بنا",
-        member: "فضاء المنخرط"
+        member: "فضاء المنخرط",
+        memberSpace: "فضاء المنخرط"
       },
       hero: {
         eyebrow: "مؤسسة النهوض بالأعمال الاجتماعية",
@@ -232,7 +263,180 @@
         legal: "© 2025 فوس-أكري. جميع الحقوق محفوظة.",
         privacy: "الخصوصية",
         terms: "إشعار قانوني"
-      }
+      },
+      pages: {
+        adherent: {
+          kicker: "فضاء المنخرط",
+          title: "فضاء للإعلام والتوجيه لفائدة المنخرطين",
+          intro: "اعثروا هنا على المعالم الأساسية للولوج إلى الخدمات وتتبع الاتفاقيات وأخذ الاتصال بمؤسسة فوس-أكري.",
+          cta: "الاتصال بفوس-أكري",
+          card1Title: "الولوج إلى الخدمات",
+          card1Body: "تعرفوا بسرعة على الخدمات والمساعدات والاتفاقيات الملائمة لوضعيتكم ووضعية أسركم.",
+          card2Title: "تتبع الاتفاقيات",
+          card2Body: "اطلعوا على الأجهزة الجارية والشركاء المتاحين والمعطيات العملية المفيدة لمساطركم.",
+          card3Title: "الحصول على المواكبة",
+          card3Body: "تبقى فرق فوس-أكري رهن إشارتكم للتوجيه والإخبار وتسهيل معالجة طلباتكم."
+        },
+        club: {
+          kicker: "كلوب أكري",
+          title: "امتيازات تم التفاوض بشأنها مع شركائنا",
+          intro: "يجمع كلوب أكري اتفاقيات وعروضا تفضيلية وفرصا عملية مفيدة لمنخرطي فوس-أكري.",
+          cta: "عرض الشركاء",
+          card1Title: "عروض الشركاء",
+          card1Body: "اكتشفوا خدمات وتخفيضات وامتيازات تم التفاوض بشأنها مع شبكة من الشركاء الموثوقين.",
+          card2Title: "امتيازات تفاوضية",
+          card2Body: "استفيدوا من اتفاقيات تفضيلية موجهة للمنخرطين وأسرهم واحتياجاتهم اليومية.",
+          card3Title: "شبكة مفيدة يوميا",
+          card3Body: "يقرب كلوب أكري المنخرطين من منظومة من الشركاء العموميين والخواص المجندين إلى جانبهم."
+        }
+      },
+      formNotice: "تم إرسال رسالتكم بنجاح. سنتواصل معكم في أقرب وقت."
+    },
+    zgh: {
+      brand: { subtitle: "ⵜⴰⵎⴰⵣⵔⵜ ⵏ ⵜⴼⵍⴰⵃⵜ" },
+      nav: {
+        home: "ⴰⵙⵏⵓⴱⴳ",
+        foundation: "ⵜⴰⴷⵓⵙⵉ",
+        about: "ⵜⴰⴷⵓⵙⵉ",
+        services: "ⵉⵎⴰⵍⴰⵙⵙⵏ",
+        news: "ⵉⵎⵉⵏⵉⴷⵏ",
+        events: "ⴰⵎⵙⴰⵔⵓ ⵏ ⵜⵎⵙⵙⵉ",
+        contact: "ⴰⵎⵢⴰⵡⴰⴹ",
+        member: "ⴰⵙⴰⵢⵍⴰ ⵏ ⵓⵎⵣⵔⴰⵢ",
+        memberSpace: "ⴰⵙⴰⵢⵍⴰ ⵏ ⵓⵎⵣⵔⴰⵢ"
+      },
+      hero: {
+        eyebrow: "ⵜⴰⴷⵓⵙⵉ ⵏ ⵓⵙⵙⴼⵍⴷ ⵏ ⵉⴳⵓⵍⵏ ⵉⵏⵎⴰⵍⴰⵏ",
+        title: "ⴳ ⵓⵎⴻⵣⵣⵓⵔ ⵏ ⵜⵡⴰⵛⵓⵍⵜ ⵏ ⵜⴰⵎⴰⵣⵔⵜ ⵏ ⵜⴼⵍⴰⵃⵜ",
+        description: "ⴰⴷ ⵏⴼⴽ ⴰⵎⵎⴰⵏ, ⴰⵏⴱⴹ ⴷ ⴰⵙⵙⵎⵖⵔ ⵉ ⵜⵎⵜⵜⴰⵏⵜ ⵏ ⵓⴳⵔⴰⵡ ⴰⴼⵍⴰⵃⵉ ⵙ ⵉⵎⴰⵍⴰⵙⵙⵏ ⵉⵏⵎⴰⵍⴰⵏ ⵉⵜⵜⵡⴰⴽⵙⵏ.",
+        ctaPrincipal: "ⵙⵙⵏ ⵉⵎⴰⵍⴰⵙⵙⵏ ⵏⵏⵖ",
+        ctaSecondary: "ⵉⵎⵉⵏⵉⴷⵏ ⵏ FOS-Agri",
+        ctaServices: "ⵙⵙⵏ ⵉⵎⴰⵍⴰⵙⵙⵏ",
+        ctaContact: "ⴰⵎⵢⴰⵡⴰⴹ ⴷ ⵏⴽⴽⵏⵉ"
+      },
+      about: {
+        tag: "ⵜⴰⴷⵓⵙⵉ",
+        title: "ⴰⵎⵎⴰⵏ ⴰⵏⵎⴰⵍⴰⵏ ⵉⵍⵍⴰⵏ ⵉⵣⴷⵉ ⴷ ⴰⵎⵓⵔⴰⵏ",
+        body: "ⵜⴰⴷⵓⵙⵉ ⵏ ⵓⵙⵙⴼⵍⴷ ⵏ ⵉⴳⵓⵍⵏ ⵉⵏⵎⴰⵍⴰⵏ ⵏ ⵓⵎⴷⴰⵏ ⵏ ⵜⴰⵎⴰⵣⵔⵜ ⵏ ⵜⴼⵍⴰⵃⵜ ⵜⵙⵎⵓⵏ ⵉⵎⴰⵍⴰⵙⵙⵏ, ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⴷ ⵉⵙⵏⴰⵎⴰⵍⵏ ⵏ FOS-Agri.",
+        missionTitle: "ⵜⴰⵡⵓⵔⵉ",
+        missionBody: "ⴰⴷ ⵏⵅⴷⴻⵎ ⵉ ⵉⵎⵣⵔⴰⵢⵏ, ⴰⴷ ⵏⴱⴹ ⵜⵉⵡⴰⵛⵓⵍⵉⵏ ⴷ ⴰⴷ ⵏⵙⵙⵉⵡⴹ ⵉⵎⴰⵍⴰⵙⵙⵏ ⴳ ⵎⴻⵔⵔⴰ ⵜⵎⵏⴰⴹⵉⵏ.",
+        scopeTitle: "ⵜⴰⵙⵉⵔⵜ",
+        scopeBody: "ⴰⵃⵟⵟⵓ ⴰⵎⴰⴹⴰⵏ, ⴰⵙⵔⴼ, ⴰⵙⵍⵎⴷ, ⴰⵙⴽⵯⵍ, ⵉⵙⵏⴼⴰⵔⵏ ⵉⵎⴰⵏⵙⴰⵏ ⴷ ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⵏ ⵉⵎⵎⴷⴷⴰⵏ.",
+        promiseTitle: "ⴰⵍⵍⴰⵍ ⵏⵏⵖ",
+        promiseBody: "ⵜⴰⵔⵎⵉⵜ ⵜⴰⴼⵔⴰⵔⵜ, ⵜⴰⴷⴰⵢⵏⵉⵏⵜ ⴷ ⵜⴰⵙⵙⴰⵔⵓⵜ ⵙ ⵓⵍⵍⵓⵢ ⵉ ⵎⴻⵔⵔⴰ."
+      },
+      services: {
+        tag: "ⵉⵎⴰⵍⴰⵙⵙⵏ",
+        title: "ⴰⴽⴽⵯ ⴰⵏⴰⵎⵎⴰⵙ ⵏ ⵓⵎⵎⴰⵏ",
+        link: "ⴽⵛⵎ ⵖⵔ ⵓⵙⴰⵢⵍⴰ ⵏ ⵓⵎⵣⵔⴰⵢ",
+        more: "ⵙⵙⵏ ⵓⴳⴳⴰⵔ"
+      },
+      news: {
+        tag: "ⵉⵎⵉⵏⵉⴷⵏ",
+        title: "ⵉⵏⴼⵓⵙⵏ ⵏ FOS-Agri",
+        more: "ⵓⴳⴳⴰⵔ ⵏ ⵉⵎⵉⵏⵉⴷⵏ"
+      },
+      events: {
+        tag: "ⴰⵎⵙⴰⵔⵓ ⵏ ⵜⵎⵙⵙⵉ",
+        title: "ⵜⵉⴽⵎⵉⵏ, ⵉⵎⵍⴰⵏ ⴷ ⵉⵙⵏⴽⴻⵔⵏ ⵏ ⵓⴽⴰⵍ",
+        subtitle: "ⴰⴼⵔⴰⵏ ⵏ ⵉⵙⴳⵔⴰⵡⵏ ⴷ ⵉⵙⵏⴽⴻⵔⵏ ⵏ FOS-Agri.",
+        viewAllLink: "ⵙⵙⵏ ⴰⵎⵙⴰⵔⵓ ⴽⵓⵍⵍⵓ",
+        calendar: "ⴰⵡⵉⵏⴰⵙ",
+        legendUpcoming: "ⵉⵙⴳⵔⴰⵡⵏ ⵉⴷ ⴷⴷⵓⵏ",
+        legendImportant: "ⵉⵙⴳⵔⴰⵡⵏ ⵉⵅⴰⵜⴰⵔⵏ",
+        legendPast: "ⵉⵣⵔⵉ",
+        hint: "ⴽⴽⵉ ⵅⴼ ⵓⵙⴰⴽⵓⴷ ⴰⴷ ⵜⵥⵕⵜ ⵉⵙⴳⵔⴰⵡⵏ ⵏ ⵡⴰⵙⵙ.",
+        tabUpcoming: "ⵉⴷ ⴷⴷⵓⵏ",
+        tabPast: "ⴰⵎⴰⵣⵔⴰⵢ",
+        viewAll: "ⵙⵙⵏ ⴽⵓⵍⵍⵓ ⵉⵙⴳⵔⴰⵡⵏ ⵉⴷ ⴷⴷⵓⵏ",
+        subscribeTitle: "ⵇⵇⵉⵎ ⵜⵙⵙⵏⵜ",
+        subscribeBody: "ⵓⵔ ⵜⵜⵓⵜ ⵓⵍⴰ ⵢⴰⵏ ⵓⵙⴳⵔⴰⵡ ⵉⵅⴰⵜⴰⵔ ⵏ FOS-Agri.",
+        subscribeBtn: "ⵎⵎⴰⵍ ⵖⵔ ⵓⵎⵙⴰⵔⵓ",
+        subscribeBtnHtml: "<i class=\"fa-regular fa-bell\"></i> ⵎⵎⴰⵍ ⵖⵔ ⵓⵎⵙⴰⵔⵓ"
+      },
+      testimonials: {
+        tag: "ⵜⴰⵏⴰⵢⵜ"
+      },
+      map: {
+        tag: "ⴰⵙⵉⵍⵉ ⴰⵏⴰⵎⵓⵔ",
+        title: "ⴰⵥⴰⵡⴰⵏ ⵏ ⵓⵣⴷⵉ ⴳ ⵎⵔⵔⵓⴽ",
+        subtitle: "ⴼⵔⵏ ⵜⴰⵎⵏⴰⴹⵜ ⵏⵖ ⵙⵎⵎⵔ ⵅⴼ ⵜⴰⵎⴷⵉⵏⵜ ⴰⴷ ⵜⵥⵕⵜ ⵜⴰⵎⵏⵉⴹⵜ ⵏ ⵓⵣⴷⵉ."
+      },
+      region: {
+        contact: "ⴰⵎⵢⴰⵡⴰⴹ ⴷ ⵜⵎⵏⵉⴹⵜ"
+      },
+      member: {
+        memberTag: "ⴰⵙⴰⵢⵍⴰ ⵏ ⵓⵎⵣⵔⴰⵢ",
+        memberTitle: "ⵥⵕ ⴰⴽⵙⵜⵔⴰⵏⴰⵜ ⴷ ⵉⵎⴰⵍⴰⵙⵙⵏ ⵉⵜⵜⵓⵙⵜⴰⵢⵏ",
+        memberBody: "ⴰⴼ ⵉⵎⴰⵍⴰⵙⵙⵏ, ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⴷ ⵉⵙⴰⵍⵏ ⵉⵏⴼⴰⵏ ⴳ ⵓⵙⴰⵢⵍⴰ ⵏ FOS-Agri.",
+        memberCta: "ⴽⵛⵎ ⵖⵔ ⵓⵍⴽⵙⵜⵔⴰⵏⴰⵜ",
+        clubTag: "ⴽⵍⵓⴱ Agri",
+        clubTitle: "ⵙⵙⵏ ⵉⵎⵏⴼⴰⵄ ⴷ ⵜⵉⵎⵙⴰⵙⴽⴰⵏ",
+        clubBody: "ⵙⵙⵏ ⵜⵉⵎⵙⴰⵙⴽⴰⵏ, ⵉⵎⵏⴼⴰⵄⵏ ⴷ ⵉⴼⴳⴰⵏ ⵉⵜⵜⵓⵣⴷⵉⵏ ⴷ ⴽⵍⵓⴱ Agri ⴷ ⵉⵎⵎⴷⴷⴰⵏ.",
+        clubCta: "ⵙⵙⵏ ⵉⵎⵎⴷⴷⴰⵏ"
+      },
+      partners: {
+        tag: "ⵉⵎⵎⴷⴷⴰⵏ",
+        title: "ⴰⵥⴰⵡⴰⵏ ⵉⵖⵓⵙⴰⵏ ⵏ ⵉⵎⵎⴷⴷⴰⵏ ⵏ ⵓⵎⴰⵜⴰⵢ ⴷ ⵓⵙⵍⵉⴳ ⵉⵙⵙⵓⵙⵎⵏ ⴰⵙⴻⵎⴰⵔ ⵏ ⵉⵙⵏⴰⵎⴰⵍⵏ"
+      },
+      contact: {
+        tag: "ⴰⵎⵢⴰⵡⴰⴹ",
+        title: "ⴰⴷ ⵏⵎⵎⴰⵍ ⵅⴼ ⵉⵙⵔⵙⴰⵏ ⵏⵏⵓⵏ",
+        subtitle: "ⵉⵙⴰⵍⵏ ⵏ ⵓⵎⵢⴰⵡⴰⴹ ⵉⵏⵙⵎⵉⵔⵏ ⵉ ⵓⵙⴻⵀⵀⴻⵍ ⵏ ⵓⵎⵢⴰⵡⴰⴹ.",
+        phone1: "+212 5 37 77 47 48",
+        address: "461 Avenue Hassan II, Agdal - Rabat"
+      },
+      stats: {
+        tag: "ⵉⵎⴹⴰⵏⵏ ⵉⵅⴰⵜⴰⵔⵏ",
+        title: "ⵜⴰⴷⵓⵙⵉⵜ ⵜⵉⵏⴰⵎⵉⴽⵜ ⴷ ⵢⵉⵣⴷⵉⵏ",
+        members: "ⵉⵎⵣⵔⴰⵢⵏ ⵉⵔⵎⵉⵏ",
+        conventions: "ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⵉⵜⵜⵓⵣⵎⵎⴻⵎⵏ",
+        coverage: "ⴰⵙⵙⴱⵓⵖⵍ ⴰⵏⴰⵎⵓⵔ",
+        budget: "ⴰⵙⵎⵉⵍ"
+      },
+      footer: {
+        about: "ⵜⴰⴷⵓⵙⵉ ⵏ ⵓⵙⵙⴼⵍⴷ ⵏ ⵉⴳⵓⵍⵏ ⵉⵏⵎⴰⵍⴰⵏ ⵏ ⵓⵎⴷⴰⵏ ⵏ ⵜⴰⵎⴰⵣⵔⵜ ⵏ ⵜⴼⵍⴰⵃⵜ.",
+        usefulTitle: "ⵉⵙⵖⵡⴰⵏ ⵉⵏⴼⴰⵏ",
+        useful1: "ⵜⵉⵙⵓⵜⵔⴰ ⵏ ⵜⵉⵙⵎⵙⴽⴰⵍ",
+        useful2: "FAQ",
+        useful3: "ⴰⵙⴳⴳⵯⴰⵙ ⵏ ⵓⵎⵉⵏⵉⴷ",
+        quickTitle: "ⴰⴽⵛⵛⵓⵎ ⴰⵣⵔⴰⵡ",
+        quick1: "ⵜⴰⴱⵓⵔⵜ ⵏ ⵓⵎⵙⴽⴰⵔ",
+        quick2: "ⴰⵙⵏⴰⵎⴰⵍ ⴰⵏⵎⴰⵍⴰⵏ",
+        quick3: "ⵉⵎⵉⵏⵉⴷⵏ",
+        contactTitle: "ⵉⵙⴰⵍⵏ ⵏ ⵓⵎⵢⴰⵡⴰⴹ",
+        copy: "2026 FOS-Agri - ⵜⴰⵎⴰⵣⵔⵜ ⵏ ⵜⴼⵍⴰⵃⵜ",
+        legal: "© 2025 FOS-Agri. ⴽⵓⵍⵍⵓ ⵉⵣⵔⴼⴰⵏ ⵎⵎⴰⵍⵏ.",
+        privacy: "ⵜⴰⵙⵓⵜⵔⵜ",
+        terms: "ⵜⵉⵍⴰⵍ ⵜⴰⵏⴰⵎⵓⵔⴰⵏⵜ"
+      },
+      pages: {
+        adherent: {
+          kicker: "ⴰⵙⴰⵢⵍⴰ ⵏ ⵓⵎⵣⵔⴰⵢ",
+          title: "ⴰⵙⴰⵢⵍⴰ ⵏ ⵓⵎⵣⵔⴰⵢ ⵉ ⵓⵙⵏⵎⵍ",
+          intro: "ⴷⴰ ⴰⴷ ⵜⴰⴼⴷ ⵉⵎⵙⴽⴰⵔⵏ ⵉⵅⴰⵜⴰⵔⵏ ⵉ ⵜⴽⵛⵎⵜ ⵖⵔ ⵉⵎⴰⵍⴰⵙⵙⵏ, ⵜⵜⴰⴱⴰⵄⵜ ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⴷ ⴰⵎⵢⴰⵡⴰⴹ ⴷ FOS-Agri.",
+          cta: "ⴰⵎⵢⴰⵡⴰⴹ ⴷ FOS-Agri",
+          card1Title: "ⴽⵛⵎ ⵖⵔ ⵉⵎⴰⵍⴰⵙⵙⵏ",
+          card1Body: "ⵙⵙⵏ ⵙ ⵓⵣⵔⴰⵡ ⵎⴰⵏ ⵉⵎⴰⵍⴰⵙⵙⵏ, ⵜⵉⵡⵉⵙⵉⵏ ⴷ ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⵉⵔⴰⵏ ⵉ ⵏⴽⴽⵏⵉ ⴷ ⵜⵡⴰⵛⵓⵍⵜ ⵏⵏⵓⵏ.",
+          card2Title: "ⵜⵜⴰⴱⴰⵄ ⵜⵉⵎⵙⴰⵙⴽⴰⵏ",
+          card2Body: "ⵥⵕ ⵉⴳⴰⵎⴰⵏ ⵉⵍⵍⴰⵏ, ⵉⵎⵎⴷⴷⴰⵏ ⴷ ⵉⵙⴰⵍⵏ ⵉⵏⴼⴰⵏ ⵉⵜⵜⵓⵙⵎⵔⵙⵏ ⵉ ⵜⵙⵓⵜⵔⴰⵏ.",
+          card3Title: "ⴰⵡⵉ ⴰⵎⵎⴰⵏ",
+          card3Body: "ⵜⵉⵔⵎⵜ ⵏ FOS-Agri ⵜⵃⴰⴹⵕ ⴰⴷ ⵜⴼⴽ ⵜⴰⵔⴰⵔⴰ, ⴰⵙⵏⵎⵍ ⴷ ⵓⵎⵎⴰⵏ ⵅⴼ ⵜⵙⵓⵜⵔⴰⵏ."
+        },
+        club: {
+          kicker: "ⴽⵍⵓⴱ Agri",
+          title: "ⵉⵎⵏⴼⴰⵄ ⵉⵜⵜⵓⵎⵙⴰⵙⴽⴰⵏ ⴷ ⵉⵎⵎⴷⴷⴰⵏ",
+          intro: "ⴽⵍⵓⴱ Agri ⵉⵙⵎⵓⵏ ⵜⵉⵎⵙⴰⵙⴽⴰⵏ, ⵉⵙⵓⴼⴰⵖⵏ ⵉⵜⵜⵓⴼⴽⴰⵏ ⴷ ⵉⴼⴳⴰⵏ ⵉⵏⴼⴰⵏ ⵉ ⵉⵎⵣⵔⴰⵢⵏ.",
+          cta: "ⵙⵙⵏ ⵉⵎⵎⴷⴷⴰⵏ",
+          card1Title: "ⵉⵙⵓⴼⴰⵖ ⵏ ⵉⵎⵎⴷⴷⴰⵏ",
+          card1Body: "ⵙⵙⵏ ⵉⵙⵓⴼⴰⵖⵏ, ⵜⵉⵅⴼⵉⴹⵉⵏ ⴷ ⵉⵎⵏⴼⴰⵄⵏ ⵉⵜⵜⵓⴼⴽⴰⵏ ⵙ ⵜⵉⵎⵙⴰⵙⴽⴰⵏ.",
+          card2Title: "ⵉⵎⵏⴼⴰⵄ ⵉⵜⵜⵓⵎⵙⴰⵙⴽⴰⵏ",
+          card2Body: "ⵙⵙⵏ ⴰⵎⴰⵔⵣⵓ, ⵉⵅⴼⵉⴹⵏ ⴷ ⵜⵉⵎⵎⵓⵔⴰ ⵏ ⴽⵍⵓⴱ Agri.",
+          card3Title: "ⴰⵥⴰⵡⴰⵏ ⵉⵏⴼⴰⵏ",
+          card3Body: "ⴽⵍⵓⴱ Agri ⵉⵙⵙⵉⵡⴹ ⵉⵎⵣⵔⴰⵢⵏ ⵖⵔ ⵓⵏⴰⵎⵎⴰⵙ ⵏ ⵉⵎⵎⴷⴷⴰⵏ ⵏ ⵓⵎⴰⵜⴰⵢ ⴷ ⵓⵙⵍⵉⴳ."
+        }
+      },
+      formNotice: "ⵜⵜⵓⵣⵏ ⵜⵉⵣⵎⵎⴰⵔⵜ ⵏⵏⵓⵏ. ⴰⵏⵎⵎⴰⵍ ⴷⴰⵔⵙ ⴷⴰⵔⵓⵏ."
     }
   },
   services: [
@@ -250,6 +454,11 @@
         title: "مشاريع شخصية",
         excerpt: "مواكبة في مشاريعكم لاقتناء أو بناء السكن.",
         detail: "مواكبة إدارية وتوجيه من أجل مشاريعكم الشخصية وطلبات التمويل."
+      },
+      zgh: {
+        title: "ⵉⵙⵏⴼⴰⵔⵏ ⵉⵎⴰⵏⵙⴰⵏ",
+        excerpt: "ⴰⵎⵎⴰⵏ ⴳ ⵉⵙⵏⴼⴰⵔⵏ ⵏⵏⵓⵏ ⵏ ⵓⵙⵖⵣⵏ ⵏⵖ ⵓⵙⴱⴷⴷ ⵏ ⵓⵙⴽⵯⵍ.",
+        detail: "ⴰⵎⵎⴰⵏ ⴰⴷⵎⵉⵏⵉⵙⵜⵔⴰⵜⵉⴼ ⴷ ⵓⵙⵏⵎⵍ ⵉ ⵉⵙⵏⴼⴰⵔⵏ ⵉⵎⴰⵏⵙⴰⵏ ⴷ ⵜⵉⵙⵓⵜⵔⴰ ⵏ ⵓⵙⵎⵉⵍ."
       }
     },
     {
@@ -266,6 +475,11 @@
         title: "الصحة والاحتياط",
         excerpt: "تغطية صحية تكميلية ومساعدة لكم ولعائلاتكم.",
         detail: "خدمات صحية واتفاقيات طبية ومواكبة للمنخرطين وذوي الحقوق."
+      },
+      zgh: {
+        title: "ⵜⴰⴷⵓⵙⵉⵜ ⴷ ⵓⵃⵟⵟⵓ",
+        excerpt: "ⴰⵙⴻⴱⴳⵔ ⴰⵎⴰⴹⴰⵏ ⴰⵙⵎⴰⴷⴰⵢ ⴷ ⵜⴰⵡⵉⵙⵉ ⵉ ⵏⴽⴽⵏⵉ ⴷ ⵜⵡⴰⵛⵓⵍⵜ ⵏⵏⵓⵏ.",
+        detail: "ⵉⵎⴰⵍⴰⵙⵙⵏ ⵏ ⵜⴷⵓⵙⵉ, ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⵏ ⵜⴷⵓⵙⵉ ⴷ ⵓⵎⵎⴰⵏ ⵏ ⵉⵎⵣⵔⴰⵢⵏ ⴷ ⵡⵉⴷ ⵉⵙ ⵉⵍⴰ ⵓⵣⵔⴼ."
       }
     },
     {
@@ -282,6 +496,11 @@
         title: "المساعدات الاجتماعية",
         excerpt: "دعم مالي لمواكبة الأحداث الكبرى في الحياة (زواج، ولادة، تقاعد).",
         detail: "دعم استثنائي ومساعدات موجهة لمواكبة المحطات الكبرى في الحياة."
+      },
+      zgh: {
+        title: "ⵜⵉⵡⵉⵙⵉ ⵜⵉⵏⵎⴰⵍⵉⵏ",
+        excerpt: "ⴰⵎⵎⴰⵏ ⵏ ⵓⵙⵎⵉⵍ ⵉ ⵜⵉⵎⵙⴽⵔⵉⵏ ⵉⵎⵇⵇⵓⵔⵏ ⵏ ⵜⵎⵓⴷⵔⵜ.",
+        detail: "ⵉⵎⵎⴰⵏ ⵉⵖⵔⵉⴱⵏ ⴷ ⵜⵉⵡⵉⵙⵉ ⵉⵜⵜⵓⵙⵙⵖⵣⵏ ⵉ ⵓⵎⵎⴰⵏ ⵏ ⵜⵉⵣⵎⵔⵉⵏ ⵉⵅⴰⵜⴰⵔⵏ."
       }
     },
     {
@@ -298,6 +517,11 @@
         title: "التربية والتكوين",
         excerpt: "منح التميز ومساعدات مدرسية لضمان نجاح أبنائكم.",
         detail: "منح ومواكبة للتمدرس ودعم لمسارات التكوين."
+      },
+      zgh: {
+        title: "ⴰⵙⵍⵎⴷ ⴷ ⵓⵙⴳⵎⵉ",
+        excerpt: "ⵜⵉⵎⵏⴰⵢ ⵏ ⵓⴼⴰⵔⵙ ⴷ ⵜⵉⵡⵉⵙⵉ ⵏ ⵓⵙⴽⵯⵍ ⵉ ⵓⵙⵙⴳⵎⴹ ⵏ ⵜⴰⵔⵡⴰ ⵏⵏⵓⵏ.",
+        detail: "ⵜⵉⵎⵏⴰⵢ, ⴰⵎⵎⴰⵏ ⵏ ⵓⵙⴽⵯⵍ ⴷ ⵓⵎⵎⴰⵏ ⵏ ⵉⴱⵔⵉⴷⵏ ⵏ ⵓⵙⴳⵎⵉ."
       }
     },
     {
@@ -314,6 +538,11 @@
         title: "الاصطياف والترفيه",
         excerpt: "مراكز الاصطياف، رحلات منظمة واتفاقيات للنقل.",
         detail: "برامج الاصطياف والترفيه العائلي وعروض الشركاء بأسعار تفضيلية."
+      },
+      zgh: {
+        title: "ⵉⵡⵙⵙⴰⵏ ⵏ ⵓⵙⵔⴼ ⴷ ⵓⵔⴰⵔ",
+        excerpt: "ⵉⵎⵔⴽⴰⵣ ⵏ ⵓⵙⵔⴼ, ⵉⵏⵉⴳⵏ ⵉⵜⵜⵓⵙⵏⵜⵍⵏ ⴷ ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⵏ ⵓⵙⵙⵉⵡⴹ.",
+        detail: "ⵉⵙⵏⴰⵎⴰⵍⵏ ⵏ ⵓⵙⵔⴼ, ⴰⵔⴰⵔ ⵏ ⵜⵡⴰⵛⵓⵍⵜ ⴷ ⵉⵙⵓⴼⴰⵖⵏ ⵏ ⵉⵎⵎⴷⴷⴰⵏ ⵙ ⵜⵉⵖⴼⵉⴹⵉⵏ."
       }
     },
     {
@@ -330,6 +559,11 @@
         title: "الاتفاقيات",
         excerpt: "شبكة واسعة من الشركاء تقدم أسعاراً تفضيلية.",
         detail: "اتفاقيات وشراكات لتسهيل الولوج إلى خدمات مفيدة للمنخرطين."
+      },
+      zgh: {
+        title: "ⵜⵉⵎⵙⴰⵙⴽⴰⵏ",
+        excerpt: "ⴰⵥⴰⵡⴰⵏ ⴰⵎⵇⵇⵓⵔ ⵏ ⵉⵎⵎⴷⴷⴰⵏ ⵉⵜⵜⴼⴽⴰⵏ ⵜⵉⵖⴼⵉⴹⵉⵏ.",
+        detail: "ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⴷ ⵜⵉⵎⵙⴷⵓⴽⴽⴰⵍ ⵉ ⵓⵙⴻⵀⵀⴻⵍ ⵏ ⵓⴽⵛⵛⵓⵎ ⵖⵔ ⵉⵎⴰⵍⴰⵙⵙⵏ ⵉⵏⴼⴰⵏ."
       }
     }
   ],
@@ -344,6 +578,10 @@
         title: "برنامج العطل والترفيه 2025",
         excerpt: "جدولة الانشطة وفتح التسجيلات لفائدة المنخرطين."
       },
+      zgh: {
+        title: "ⴰⵙⵏⴰⵎⴰⵍ ⵏ ⵓⵙⵔⴼ ⴷ ⵓⵔⴰⵔ 2025",
+        excerpt: "ⴰⵡⵉⵏⴰⵙ ⵏ ⵜⵉⵎⵙⴽⵔⵉⵏ ⴷ ⵓⵔⵣⵣⵓ ⵏ ⵓⵣⵎⵎⴻⵎ ⵉ ⵉⵎⵣⵔⴰⵢⵏ."
+      },
       image: "./news-images/Programme de vacances et loisirs 2025.webp"
     },
     {
@@ -355,6 +593,10 @@
       ar: {
         title: "اتفاقية مع مختبر بوريكراك للتشريح المرضي",
         excerpt: "تخفيضات تفضيلية لفائدة المنخرطين والازواج والابناء بالرباط."
+      },
+      zgh: {
+        title: "ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⴷ ⵍⴽⴰⴱⵉⵏⵉ ⵏ Bouregreg",
+        excerpt: "ⵜⵉⵖⴼⵉⴹⵉⵏ ⵉ ⵉⵎⵣⵔⴰⵢⵏ, ⵉⵎⵢⴰⴳⴳⴰⵏ ⴷ ⵜⴰⵔⵡⴰ ⴳ ⵔⵔⴱⴰⵟ."
       },
       image: "./news-images/convention-pathologie-bouregreg.jpg"
     },
@@ -368,6 +610,10 @@
         title: "عملية العمرة 2025 - الترتيبات اللوجستيكية",
         excerpt: "نشر الترتيبات اللوجستيكية المتعلقة بسير العملية."
       },
+      zgh: {
+        title: "ⵄⵓⵎⵔⴰ 2025 - ⵜⵉⵙⵖⵓⵏⵉⵏ ⵏ ⵍⵓⵊⵉⵙⵜⵉⴽ",
+        excerpt: "ⴰⵙⵙⵓⴼⵖ ⵏ ⵜⵉⵙⵖⵓⵏⵉⵏ ⵏ ⵍⵓⵊⵉⵙⵜⵉⴽ ⵉⵣⴷⵉⵏ ⴷ ⵓⵙⵉⵔ ⵏ ⵜⵎⵀⵍⴰ."
+      },
       image: "./news-images/operation-omra-2025.jpg"
     },
     {
@@ -379,6 +625,10 @@
       ar: {
         title: "شراكة باسعار تفضيلية للانشطة الرياضية",
         excerpt: "اتفاقية مع جود سبور لتخفيضات موجهة للمنخرطين."
+      },
+      zgh: {
+        title: "ⵜⵉⵎⵙⴷⵓⴽⴽⴰⵍ ⵙ ⵜⵉⵖⴼⵉⴹⵉⵏ ⵉ ⵓⵏⴰⵎⵎⴰⵙ ⴰⵎⵔⵣⵉ",
+        excerpt: "ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⴷ Joude Gestion Sport ⵉ ⵜⵉⵖⴼⵉⴹⵉⵏ ⵏ ⵉⵎⵣⵔⴰⵢⵏ."
       },
       image: "./news-images/partenariat-activite-sportive.jpg"
     },
@@ -392,6 +642,10 @@
         title: "اتفاقية صحية جديدة",
         excerpt: "امتيازات حصرية لفائدة المنخرطين وافراد اسرهم."
       },
+      zgh: {
+        title: "ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⵜⴰⴷⵓⵙⵉⵜ ⵜⴰⵎⴰⵢⵏⵓⵜ",
+        excerpt: "ⵉⵎⵏⴼⴰⵄⵏ ⵉⵎⵥⵍⵉⵏ ⵉ ⵉⵎⵣⵔⴰⵢⵏ ⴷ ⵜⵡⴰⵛⵓⵍⵉⵏ ⵏⵏⵙⵏ."
+      },
       image: "https://images.unsplash.com/photo-1576671081837-49000212a370?auto=format&fit=crop&w=900&q=80"
     },
     {
@@ -404,6 +658,10 @@
         title: "حملة تواصل جهوية",
         excerpt: "لقاءات للقرب حول خدمات واتفاقيات فوس-أكري."
       },
+      zgh: {
+        title: "ⵜⴰⴽⵎⵉⵜ ⵏ ⵓⵙⵉⵏⴼⵓ ⴰⵎⵏⴰⴹ",
+        excerpt: "ⵉⵎⵍⴰⵏ ⵏ ⵓⵣⴷⵉ ⵅⴼ ⵉⵎⴰⵍⴰⵙⵙⵏ ⴷ ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⵏ FOS-Agri."
+      },
       image: "./news-images/Campagne d'information regionale.jpg"
     }
   ],
@@ -413,8 +671,10 @@
       time: "09:30 - 12:30",
       location: "Rabat",
       locationAr: "الرباط",
+      locationZgh: "ⵕⵕⴱⴰⵟ",
       type: "Rencontre",
       typeAr: "لقاء",
+      typeZgh: "ⴰⵎⵍⴰⵍ",
       typeColor: "#d4a017",
       icon: "fa-handshake",
       fr: {
@@ -424,6 +684,10 @@
       ar: {
         title: "لقاء جهوي للمنخرطين",
         excerpt: "جلسة إخبارية وإنصات حول الخدمات الاجتماعية والحاجيات المعبر عنها."
+      },
+      zgh: {
+        title: "ⴰⵎⵍⴰⵍ ⴰⵎⵏⴰⴹ ⵏ ⵉⵎⵣⵔⴰⵢⵏ",
+        excerpt: "ⵜⴰⵎⵙⴽⵔⵜ ⵏ ⵓⵙⵉⵏⴼⵓ ⴷ ⵓⵙⵍⵍⵍⵉ ⵅⴼ ⵉⵎⴰⵍⴰⵙⵙⵏ ⵉⵏⵎⴰⵍⴰⵏ ⴷ ⵉⵙⵔⵙⴰⵏ ⵉⵜⵜⵓⵙⵙⵏⵎⵍⵏ."
       }
     },
     {
@@ -431,8 +695,10 @@
       time: "08:45 - 13:00",
       location: "Casablanca",
       locationAr: "الدار البيضاء",
+      locationZgh: "ⴽⴰⵣⴰⴱⵍⴰⵏⴽⴰ",
       type: "Action Terrain",
       typeAr: "عمل ميداني",
+      typeZgh: "ⴰⵙⵏⴽⴻⵔ ⵏ ⵓⴽⴰⵍ",
       typeColor: "#1f6a43",
       icon: "fa-leaf",
       fr: {
@@ -442,6 +708,10 @@
       ar: {
         title: "حملة للمواكبة الاجتماعية",
         excerpt: "تنقل ميداني لتوجيه الموظفين وتقديم الاتفاقيات الجارية."
+      },
+      zgh: {
+        title: "ⵜⴰⴽⵎⵉⵜ ⵏ ⵓⵎⵎⴰⵏ ⴰⵏⵎⴰⵍⴰⵏ",
+        excerpt: "ⴰⵎⵓⴷⴷⵓ ⵏ ⵓⵣⴷⵉ ⵉ ⵓⵙⵏⵎⵍ ⵏ ⵉⵎⵙⴽⴰⵔⵏ ⴷ ⵓⵙⵙⴽⵏ ⵏ ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⵉⵍⵍⴰⵏ."
       }
     },
     {
@@ -449,8 +719,10 @@
       time: "09:00 - 16:00",
       location: "Marrakech",
       locationAr: "مراكش",
+      locationZgh: "ⵎⵕⵕⴰⴽⵯⵛ",
       type: "Formation",
       typeAr: "تكوين",
+      typeZgh: "ⴰⵙⴳⵎⵉ",
       typeColor: "#1f6a43",
       icon: "fa-seedling",
       fr: {
@@ -460,6 +732,10 @@
       ar: {
         title: "تكوين : الري المستدام",
         excerpt: "دورة مخصصة للتقنيات الحديثة في الري من أجل فلاحة مستدامة."
+      },
+      zgh: {
+        title: "ⴰⵙⴳⵎⵉ : ⴰⵙⵙⵡⵓ ⴰⵎⴻⵣⴳⵓ",
+        excerpt: "ⵜⴰⵎⵙⴽⵔⵜ ⵉⵜⵜⵓⵙⵙⵖⵣⵏ ⵉ ⵜⴻⴽⵏⵉⴽⵉⵏ ⵜⵉⵎⴰⵢⵏⵓⵜⵉⵏ ⵏ ⵓⵙⵙⵡⵓ."
       }
     },
     {
@@ -467,8 +743,10 @@
       time: "10:00 - 15:00",
       location: "Fes",
       locationAr: "فاس",
+      locationZgh: "ⴼⴰⵙ",
       type: "Rencontre",
       typeAr: "لقاء",
+      typeZgh: "ⴰⵎⵍⴰⵍ",
       typeColor: "#d4a017",
       icon: "fa-users",
       fr: {
@@ -478,6 +756,10 @@
       ar: {
         title: "لقاء التعاونيات الفلاحية",
         excerpt: "تبادل الخبرات والممارسات الجيدة بين التعاونيات الشريكة."
+      },
+      zgh: {
+        title: "ⴰⵎⵍⴰⵍ ⵏ ⵜⵉⵎⵙⵎⵓⵏⵉⵏ ⵜⵉⴼⵍⴰⵃⵉⵏ",
+        excerpt: "ⴰⵎⵢⴰⴳⴳⵉ ⵏ ⵜⵉⵔⵎⵉⵜⵉⵏ ⴷ ⵜⵎⵙⵙⴱⵓⵔⵉⵏ ⵉⵍⵀⴰⵏ ⴳⵔ ⵜⵉⵎⵙⵎⵓⵏⵉⵏ."
       }
     },
     {
@@ -485,8 +767,10 @@
       time: "08:30 - 13:00",
       location: "Meknes",
       locationAr: "مكناس",
+      locationZgh: "ⵎⴽⵏⴰⵙ",
       type: "Action Terrain",
       typeAr: "عمل ميداني",
+      typeZgh: "ⴰⵙⵏⴽⴻⵔ ⵏ ⵓⴽⴰⵍ",
       typeColor: "#1f6a43",
       icon: "fa-tree",
       fr: {
@@ -496,14 +780,18 @@
       ar: {
         title: "حملة غرس أشجار الزيتون",
         excerpt: "عمل ميداني لإعادة التشجير وتثمين سلاسل إنتاج الزيتون."
+      },
+      zgh: {
+        title: "ⵜⴰⴽⵎⵉⵜ ⵏ ⵓⵖⵔⵙ ⵏ ⵉⵣⵎⵔⴰⵏ",
+        excerpt: "ⴰⵙⵏⴽⴻⵔ ⵏ ⵓⴽⴰⵍ ⵉ ⵓⵙⵍⴰⵍⵉ ⴷ ⵓⵙⵎⵖⵔ ⵏ ⵉⴼⵔⵓⵖⵏ ⵏ ⵓⵣⵎⵔ."
       }
     }
   ],
   stats: [
-    { value: "45k", icon: "fa-users", fr: "Membres", ar: "منخرط" },
-    { value: "120", icon: "fa-file-signature", fr: "Conventions", ar: "اتفاقية" },
-    { value: "12", icon: "fa-map-location-dot", fr: "Régions", ar: "جهة" },
-    { value: "25M", icon: "fa-coins", fr: "Budget", ar: "ميزانية" }
+    { value: "45k", icon: "fa-users", fr: "Membres", ar: "منخرط", zgh: "ⵉⵎⵣⵔⴰⵢⵏ" },
+    { value: "120", icon: "fa-file-signature", fr: "Conventions", ar: "اتفاقية", zgh: "ⵜⵉⵎⵙⴰⵙⴽⴰⵏ" },
+    { value: "12", icon: "fa-map-location-dot", fr: "Régions", ar: "جهة", zgh: "ⵜⵉⵎⵏⴰⴹⵉⵏ" },
+    { value: "25M", icon: "fa-coins", fr: "Budget", ar: "ميزانية", zgh: "ⴰⵙⵎⵉⵍ" }
   ],
   regions: [
     {
@@ -519,6 +807,11 @@
         name: "الدار البيضاء - سطات",
         delegate: "المقر",
         details: "نقطة اتصال جهوية للاستشارة والتنسيق والولوج إلى الخدمات."
+      },
+      zgh: {
+        name: "ⴽⴰⵣⴰⴱⵍⴰⵏⴽⴰ-ⵙⵟⴰⵜ",
+        delegate: "ⴰⵎⵇⵇⴰⵔ",
+        details: "ⵜⴰⵎⵙⴽⴰⵔⵜ ⵏ ⵓⵎⵢⴰⵡⴰⴹ ⴰⵎⵏⴰⴹ ⵉ ⵓⵙⵏⵎⵍ, ⵓⵙⵙⵎⴷ ⴷ ⵓⴽⵛⵛⵓⵎ ⵖⵔ ⵉⵎⴰⵍⴰⵙⵙⵏ."
       }
     },
     {
@@ -534,6 +827,11 @@
         name: "مراكش - آسفي",
         delegate: "صلة جهوية",
         details: "توجيه وتتبع الملفات عبر صلة محلية موجهة للمستفيدين."
+      },
+      zgh: {
+        name: "ⵎⵕⵕⴰⴽⵯⵛ-ⴰⵙⴼⵉ",
+        delegate: "ⴰⵣⴷⵉ ⴰⵎⵏⴰⴹ",
+        details: "ⴰⵙⵏⵎⵍ ⴷ ⵜⵜⴰⴱⴰⵄ ⵏ ⵉⴼⴰⵢⵍⵏ ⵙ ⵢⴰⵏ ⵓⵣⴷⵉ ⴰⴷⴰⵖⴰⵔ ⵉ ⵉⵙⴼⴰⵢⴷⵏ."
       }
     },
     {
@@ -549,6 +847,11 @@
         name: "بني ملال - خنيفرة",
         delegate: "حضور ترابي",
         details: "دعم إداري وتتبع الطلبات الاجتماعية لفائدة المستفيدين بالجهة."
+      },
+      zgh: {
+        name: "ⴱⵏⵉ ⵎⵍⵍⴰⵍ-ⵅⵏⵉⴼⵔⴰ",
+        delegate: "ⴰⵙⵉⵍⵉ ⴰⴽⴰⵍⴰⵏ",
+        details: "ⴰⵎⵎⴰⵏ ⴰⴷⵎⵉⵏⵉⵙⵜⵔⴰⵜⵉⴼ ⴷ ⵜⵜⴰⴱⴰⵄ ⵏ ⵜⵉⵙⵓⵜⵔⴰ ⵜⵉⵏⵎⴰⵍⵉⵏ ⵉ ⵉⵙⴼⴰⵢⴷⵏ ⵏ ⵜⵎⵏⴰⴹⵜ."
       }
     },
     {
@@ -564,6 +867,11 @@
         name: "الرباط - سلا - القنيطرة",
         delegate: "صلة الشمال",
         details: "استقبال وتوجيه المنخرطين وربطهم بالخدمات والأنشطة الاجتماعية المحلية."
+      },
+      zgh: {
+        name: "ⵕⵕⴱⴰⵟ-ⵙⵍⴰ-ⵇⵏⵉⵟⵕⴰ",
+        delegate: "ⴰⵣⴷⵉ ⵏ ⵓⵏⴰⵎⵎⴰⵙ",
+        details: "ⴰⵎⵎⵔⵣⵓ ⴷ ⵓⵙⵏⵎⵍ ⵏ ⵉⵎⵣⵔⴰⵢⵏ, ⴰⵣⴷⵉ ⵏ ⵉⵎⴰⵍⴰⵙⵙⵏ ⴷ ⵉⵙⵏⴽⴻⵔⵏ ⵉⵏⵎⴰⵍⴰⵏ ⵉⴷⴰⵖⴰⵔⵏ."
       }
     },
     {
@@ -579,6 +887,11 @@
         name: "درعة - تافيلالت",
         delegate: "صلة القرب",
         details: "صلة للقرب من اجل الاعلام والتتبع والمواكبة."
+      },
+      zgh: {
+        name: "ⴷⵔⴰⵄ-ⵜⴰⴼⵉⵍⴰⵍⵜ",
+        delegate: "ⴰⵣⴷⵉ ⵏ ⵓⵣⴷⵉ",
+        details: "ⴰⵣⴷⵉ ⵏ ⵓⵣⴷⵉ ⵉ ⵓⵙⵉⵏⴼⵓ, ⵜⵜⴰⴱⴰⵄ ⴷ ⵓⵎⵎⴰⵏ."
       }
     },
     {
@@ -594,6 +907,11 @@
         name: "فاس - مكناس",
         delegate: "صلة القرب",
         details: "صلة للقرب من اجل الاعلام والتتبع والمواكبة."
+      },
+      zgh: {
+        name: "ⴼⴰⵙ-ⵎⴽⵏⴰⵙ",
+        delegate: "ⴰⵣⴷⵉ ⵏ ⵓⵣⴷⵉ",
+        details: "ⴰⵣⴷⵉ ⵏ ⵓⵣⴷⵉ ⵉ ⵓⵙⵉⵏⴼⵓ, ⵜⵜⴰⴱⴰⵄ ⴷ ⵓⵎⵎⴰⵏ."
       }
     },
     {
@@ -609,6 +927,11 @@
         name: "سوس - ماسة",
         delegate: "فضاء استقبال",
         details: "استقبال المنخرطين وتقديم معلومات حول برامج الدعم الجهوية."
+      },
+      zgh: {
+        name: "ⵙⵓⵙ-ⵎⴰⵙⵙⴰ",
+        delegate: "ⴰⵎⴽⴰⵏ ⵏ ⵓⵙⵍⵍⵉ",
+        details: "ⴰⵎⵎⵔⵣⵓ ⵏ ⵉⵎⵣⵔⴰⵢⵏ ⴷ ⵓⵙⵉⵏⴼⵓ ⵅⴼ ⵉⵙⵏⴰⵎⴰⵍⵏ ⵏ ⵓⵎⵎⴰⵏ ⴰⵎⵏⴰⴹ."
       }
     },
     {
@@ -624,6 +947,11 @@
         name: "كلميم - واد نون",
         delegate: "صلة الاعلام",
         details: "الإعلام والتوجيه ودعم المنخرطين في المساطر الاجتماعية."
+      },
+      zgh: {
+        name: "ⴳⵯⵍⵎⵉⵎ-ⵡⴰⴷ ⵏⵓⵏ",
+        delegate: "ⴰⵣⴷⵉ ⵏ ⵓⵙⵉⵏⴼⵓ",
+        details: "ⴰⵙⵉⵏⴼⵓ ⴷ ⵓⵙⵏⵎⵍ ⵏ ⵉⵎⵣⵔⴰⵢⵏ, ⴰⵎⵎⴰⵏ ⵉ ⵜⵉⵙⵓⵜⵔⴰ ⵜⵉⵏⵎⴰⵍⵉⵏ."
       }
     },
     {
@@ -639,6 +967,11 @@
         name: "العيون - الساقية الحمراء",
         delegate: "صلة الاعلام",
         details: "الإعلام والتوجيه ودعم المنخرطين في المساطر الاجتماعية."
+      },
+      zgh: {
+        name: "ⵍⵄⵢⵓⵏ-ⵙⴰⴽⵢⴰ ⵍⵃⵎⵔⴰ",
+        delegate: "ⴰⵣⴷⵉ ⵏ ⵓⵙⵉⵏⴼⵓ",
+        details: "ⴰⵙⵉⵏⴼⵓ ⴷ ⵓⵙⵏⵎⵍ ⵏ ⵉⵎⵣⵔⴰⵢⵏ, ⴰⵎⵎⴰⵏ ⵉ ⵜⵉⵙⵓⵜⵔⴰ ⵜⵉⵏⵎⴰⵍⵉⵏ."
       }
     },
     {
@@ -654,6 +987,11 @@
         name: "طنجة - تطوان - الحسيمة",
         delegate: "حضور محلي",
         details: "مواكبة قريبة وتتبع للطلبات المحلية."
+      },
+      zgh: {
+        name: "ⵟⵏⵊⴰ-ⵜⵉⵟⵡⴰⵏ-ⴰⵍ ⵃⵓⵙⵉⵎⴰ",
+        delegate: "ⴰⵙⵉⵍⵉ ⴰⴷⴰⵖⴰⵔ",
+        details: "ⴰⵎⵎⴰⵏ ⵏ ⵓⵣⴷⵉ ⴷ ⵜⵜⴰⴱⴰⵄ ⵏ ⵜⵉⵙⵓⵜⵔⴰ ⵜⴰⴷⴰⵖⴰⵔⵉⵏ."
       }
     },
     {
@@ -669,6 +1007,11 @@
         name: "الداخلة - وادي الذهب",
         delegate: "صلة محلية",
         details: "صلة محلية للولوج إلى الخدمات والمعلومات الاجتماعية."
+      },
+      zgh: {
+        name: "ⴷⴷⴰⵅⵍⴰ-ⵡⴰⴷⵉ ⴷⴷⴰⵀⴰⴱ",
+        delegate: "ⴰⵣⴷⵉ ⴰⴷⴰⵖⴰⵔ",
+        details: "ⴰⵣⴷⵉ ⴰⴷⴰⵖⴰⵔ ⵉ ⵓⴽⵛⵛⵓⵎ ⵖⵔ ⵉⵎⴰⵍⴰⵙⵙⵏ ⴷ ⵉⵙⴰⵍⵏ ⵉⵏⵎⴰⵍⴰⵏ."
       }
     },
     {
@@ -684,6 +1027,11 @@
         name: "الشرق",
         delegate: "هوائي ترابي",
         details: "معلومة جهوية وربط بالاتفاقيات المفيدة لفائدة المنخرطين."
+      },
+      zgh: {
+        name: "ⴰⵛⵛⵔⵇ",
+        delegate: "ⴰⵙⵉⵍⵉ ⴰⴽⴰⵍⴰⵏ",
+        details: "ⴰⵙⵉⵏⴼⵓ ⴰⵎⵏⴰⴹ ⴷ ⵓⵣⴷⵉ ⵏ ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⵉⵏⴼⴰⵏ ⵉ ⵉⵎⵣⵔⴰⵢⵏ."
       }
     }
   ],
@@ -692,43 +1040,50 @@
       key: "rabat",
       color: "#1f6a43",
       fr: { name: "Rabat", text: "Siege FOS-Agri et point de coordination des conventions et services sociaux." },
-      ar: { name: "الرباط", text: "المقر الرئيسي لفوس-أكري ونقطة تنسيق الاتفاقيات والخدمات الاجتماعية." }
+      ar: { name: "الرباط", text: "المقر الرئيسي لفوس-أكري ونقطة تنسيق الاتفاقيات والخدمات الاجتماعية." },
+      zgh: { name: "ⵕⵕⴱⴰⵟ", text: "ⴰⵎⵇⵇⴰⵔ ⴰⵎⵇⵇⵔⴰⵏ ⵏ FOS-Agri ⴷ ⵜⴰⵎⵙⴽⴰⵔⵜ ⵏ ⵓⵙⵙⵎⴷ ⵏ ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⴷ ⵉⵎⴰⵍⴰⵙⵙⵏ ⵉⵏⵎⴰⵍⴰⵏ." }
     },
     {
       key: "casa",
       color: "#c8a44d",
       fr: { name: "Casablanca", text: "Relais partenarial pour les avantages et l'orientation des adherents." },
-      ar: { name: "الدار البيضاء", text: "صلة بالشركاء لتقريب الامتيازات وتوجيه المنخرطين." }
+      ar: { name: "الدار البيضاء", text: "صلة بالشركاء لتقريب الامتيازات وتوجيه المنخرطين." },
+      zgh: { name: "ⴽⴰⵣⴰⴱⵍⴰⵏⴽⴰ", text: "ⴰⵣⴷⵉ ⵏ ⵉⵎⵎⴷⴷⴰⵏ ⵉ ⵉⵎⵏⴼⴰⵄⵏ ⴷ ⵓⵙⵏⵎⵍ ⵏ ⵉⵎⵣⵔⴰⵢⵏ." }
     },
     {
       key: "fes",
       color: "#1f6a43",
       fr: { name: "Fes", text: "Point de proximite autour de la scolarisation, de l'information et des conventions." },
-      ar: { name: "فاس", text: "نقطة قرب حول التمدرس والمعلومة والاتفاقيات." }
+      ar: { name: "فاس", text: "نقطة قرب حول التمدرس والمعلومة والاتفاقيات." },
+      zgh: { name: "ⴼⴰⵙ", text: "ⴰⵎⴽⴰⵏ ⵏ ⵓⵣⴷⵉ ⵅⴼ ⵓⵙⴽⵯⵍ, ⵓⵙⵉⵏⴼⵓ ⴷ ⵜⵉⵎⵙⴰⵙⴽⴰⵏ." }
     },
     {
       key: "marrakech",
       color: "#c8a44d",
       fr: { name: "Marrakech", text: "Relais des programmes sociaux, des campagnes et des actions terrain." },
-      ar: { name: "مراكش", text: "صلة ببرامج الدعم والحملات والمبادرات الميدانية." }
+      ar: { name: "مراكش", text: "صلة ببرامج الدعم والحملات والمبادرات الميدانية." },
+      zgh: { name: "ⵎⵕⵕⴰⴽⵯⵛ", text: "ⴰⵣⴷⵉ ⵏ ⵉⵙⵏⴰⵎⴰⵍⵏ ⵉⵏⵎⴰⵍⴰⵏ, ⵜⵉⴽⵎⵉⵏ ⴷ ⵉⵙⵏⴽⴻⵔⵏ ⵏ ⵓⴽⴰⵍ." }
     },
     {
       key: "agadir",
       color: "#1f6a43",
       fr: { name: "Agadir", text: "Suivi local des conventions de sante et des avantages pour les familles." },
-      ar: { name: "أكادير", text: "تتبع محلي للاتفاقيات الصحية والامتيازات الموجهة للأسر." }
+      ar: { name: "أكادير", text: "تتبع محلي للاتفاقيات الصحية والامتيازات الموجهة للأسر." },
+      zgh: { name: "ⴰⴳⴰⴷⵉⵔ", text: "ⵜⵜⴰⴱⴰⵄ ⴰⴷⴰⵖⴰⵔ ⵏ ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⵏ ⵜⴷⵓⵙⵉ ⴷ ⵉⵎⵏⴼⴰⵄⵏ ⵉ ⵜⵡⴰⵛⵓⵍⵉⵏ." }
     },
     {
       key: "tanger",
       color: "#c8a44d",
       fr: { name: "Tanger", text: "Presence nord pour l'information, les partenariats et l'accompagnement des adherents." },
-      ar: { name: "طنجة", text: "حضور بالشمال للمعلومة والشراكات ومواكبة المنخرطين." }
+      ar: { name: "طنجة", text: "حضور بالشمال للمعلومة والشراكات ومواكبة المنخرطين." },
+      zgh: { name: "ⵟⵏⵊⴰ", text: "ⴰⵙⵉⵍⵉ ⴳ ⵓⵏⴰⵎⵎⴰⵙ ⵉ ⵓⵙⵉⵏⴼⵓ, ⵜⵉⵎⵙⴷⵓⴽⴽⴰⵍ ⴷ ⵓⵎⵎⴰⵏ ⵏ ⵉⵎⵣⵔⴰⵢⵏ." }
     },
     {
       key: "oujda",
       color: "#1f6a43",
       fr: { name: "Oujda", text: "Point d'ecoute pour les services de proximite dans l'Oriental." },
-      ar: { name: "وجدة", text: "نقطة استقبال لخدمات القرب بجهة الشرق." }
+      ar: { name: "وجدة", text: "نقطة استقبال لخدمات القرب بجهة الشرق." },
+      zgh: { name: "ⵡⵓⵊⴷⴰ", text: "ⴰⵎⴽⴰⵏ ⵏ ⵓⵙⵍⵍⵉ ⵉ ⵉⵎⴰⵍⴰⵙⵙⵏ ⵏ ⵓⵣⴷⵉ ⴳ ⵓⵛⵛⵔⵇ." }
     }
   ],
   partners: [

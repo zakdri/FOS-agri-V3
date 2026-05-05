@@ -35,6 +35,10 @@ html[dir="rtl"] body {
   font-family: "Tajawal", sans-serif;
 }
 
+html[lang="zgh"] body {
+  font-family: "Noto Sans Tifinagh", "Poppins", sans-serif;
+}
+
 /* Always display phone numbers left-to-right regardless of page language */
 a[href^="tel:"] span,
 [class*="phone"] span,

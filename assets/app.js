@@ -7,9 +7,28 @@ const savedLang = localStorage.getItem("fosagri-lang");
 let currentLang = savedLang || "fr";
 let heroSliderStarted = false;
 let headerScrollInitialized = false;
+const SUPPORTED_LANGS = new Set(["fr", "ar", "zgh"]);
 
 const qs = (selector) => document.querySelector(selector);
 const qsa = (selector) => [...document.querySelectorAll(selector)];
+
+function getLocalizedEntry(entry, lang = currentLang) {
+  return entry?.[lang] || entry?.fr || entry?.ar || null;
+}
+
+function getTranslationValue(key, lang = currentLang) {
+  const branches = [siteData.translations?.[lang], siteData.translations?.fr, siteData.translations?.ar];
+  for (const branch of branches) {
+    let value = branch;
+    key.split(".").forEach((part) => {
+      value = value?.[part];
+    });
+    if (typeof value === "string") {
+      return value;
+    }
+  }
+  return null;
+}
 
 function initScrollHeader() {
   if (headerScrollInitialized) return;
@@ -90,7 +109,7 @@ function initScrollHeader() {
 }
 
 function setLanguage(lang) {
-  currentLang = lang === "ar" ? "ar" : "fr";
+  currentLang = SUPPORTED_LANGS.has(lang) ? lang : "fr";
   window.currentLang = currentLang;
   localStorage.setItem("fosagri-lang", currentLang);
   root.lang = currentLang;
@@ -98,22 +117,14 @@ function setLanguage(lang) {
   body.dataset.lang = currentLang;
 
   qsa("[data-i18n]").forEach((node) => {
-    const parts = node.dataset.i18n.split(".");
-    let value = siteData.translations[currentLang];
-    parts.forEach((part) => {
-      value = value?.[part];
-    });
+    const value = getTranslationValue(node.dataset.i18n, currentLang);
     if (typeof value === "string") {
       node.textContent = value;
     }
   });
 
   qsa("[data-i18n-html]").forEach((node) => {
-    const parts = node.dataset.i18nHtml.split(".");
-    let value = siteData.translations[currentLang];
-    parts.forEach((part) => {
-      value = value?.[part];
-    });
+    const value = getTranslationValue(node.dataset.i18nHtml, currentLang);
     if (typeof value === "string") {
       node.innerHTML = value;
     }
@@ -131,7 +142,7 @@ function renderServices() {
   if (!container) return;
   container.innerHTML = siteData.services
     .map((service) => {
-      const content = service[currentLang];
+      const content = getLocalizedEntry(service);
       const href = service.href || "#services";
       const description = content?.description || content?.excerpt || "";
       return `
@@ -141,7 +152,7 @@ function renderServices() {
           </div>
           <h3>${content.title}</h3>
           <p>${description}</p>
-          <span class="service-link">${siteData.translations[currentLang]?.services?.more || ""}</span>
+          <span class="service-link">${getTranslationValue("services.more", currentLang) || ""}</span>
         </a>
       `;
     })
@@ -168,25 +179,48 @@ function renderNews() {
       "التحول الرقمي",
       "لجنة الابتكار",
       "الموارد البشرية"
+    ],
+    zgh: [
+      "ⴰⵙⵓⵍⴰⵏ ⴰⵎⵓⵙⵙⵓ",
+      "ⴰⵏⴰⴹⴰⵎ",
+      "ⴰⵙⴳⵎⵉ ⴷ ⵜⵏⴼⵍⵉⵜ",
+      "ⴰⵙⵏⴼⵍ ⴰⵎⴰⵜⴰⵢ",
+      "ⴰⵙⵇⵇⵉⵎ ⵏ ⵓⵙⵏⴽⴻⵔ",
+      "ⵉⵎⴰⵍⴰⵙⵏ ⵉⵎⴷⴰⵏⵏ"
     ]
   };
 
   const localizeNewsDate = (dateStr) => {
-    if (currentLang !== "ar") return dateStr;
-    const monthMap = {
-      Janvier: "يناير",
-      Fevrier: "فبراير",
-      Mars: "مارس",
-      Avril: "أبريل",
-      Mai: "ماي",
-      Juin: "يونيو",
-      Juillet: "يوليوز",
-      Aout: "غشت",
-      Septembre: "شتنبر",
-      Octobre: "أكتوبر",
-      Novembre: "نونبر",
-      Decembre: "دجنبر"
-    };
+    if (currentLang === "fr") return dateStr;
+    const monthMap = currentLang === "ar"
+      ? {
+        Janvier: "يناير",
+        Fevrier: "فبراير",
+        Mars: "مارس",
+        Avril: "أبريل",
+        Mai: "ماي",
+        Juin: "يونيو",
+        Juillet: "يوليوز",
+        Aout: "غشت",
+        Septembre: "شتنبر",
+        Octobre: "أكتوبر",
+        Novembre: "نونبر",
+        Decembre: "دجنبر"
+      }
+      : {
+        Janvier: "ⵉⵏⵏⴰⵢⵔ",
+        Fevrier: "ⴼⵓⵕⴰⵕ",
+        Mars: "ⵎⴰⵕⵚ",
+        Avril: "ⵉⴱⵔⵉⵔ",
+        Mai: "ⵎⴰⵢⵢⵓ",
+        Juin: "ⵢⵓⵏⵢⵓ",
+        Juillet: "ⵢⵓⵍⵢⵓⵣ",
+        Aout: "ⵖⵓⵛⵜ",
+        Septembre: "ⵛⵓⵜⴰⵏⴱⵉⵔ",
+        Octobre: "ⴽⵜⵓⴱⵔ",
+        Novembre: "ⵏⵓⵡⴰⵏⴱⵉⵔ",
+        Decembre: "ⴷⵓⵊⴰⵏⴱⵉⵔ"
+      };
     const match = dateStr.match(/^(\d{1,2})\s+(.+)\s+(\d{4})$/);
     if (!match) return dateStr;
     const [, day, month, year] = match;
@@ -207,7 +241,7 @@ function renderNews() {
 
     slider.innerHTML = sliderItems
       .map((item, index) => {
-        const content = item[currentLang];
+        const content = getLocalizedEntry(item);
         const imageUrl = getNewsImageUrl(index, item);
         return `
           <a href="#" class="news-slide-mini ${index === 0 ? "active" : ""}" data-mini-index="${index}">
@@ -226,7 +260,7 @@ function renderNews() {
     list.innerHTML = (newsItems.slice(3, 6).length > 0 ? newsItems.slice(3, 6) : newsItems.slice(0, 3))
       .map((item, index) => {
         const actualIndex = newsItems.indexOf(item);
-        const content = item[currentLang];
+        const content = getLocalizedEntry(item);
         const imageUrl = getNewsImageUrl(actualIndex);
         return `
           <a href="#" class="news-item-mini">
@@ -247,7 +281,7 @@ function renderNews() {
   if (mobileContainer) {
     mobileContainer.innerHTML = newsItems
       .map((item, index) => {
-        const content = item[currentLang];
+        const content = getLocalizedEntry(item);
         const imageUrl = getNewsImageUrl(index, item);
         return `
           <article class="news-card" data-news-index="${index}">
@@ -307,8 +341,10 @@ window.goToMiniSlide = function (index) {
 (function () {
   const MONTH_NAMES_FR = ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre"];
   const MONTH_NAMES_AR = ["يناير", "فبراير", "مارس", "أبريل", "ماي", "يونيو", "يوليوز", "غشت", "شتنبر", "أكتوبر", "نونبر", "دجنبر"];
+  const MONTH_NAMES_ZGH = ["ⵉⵏⵏⴰⵢⵔ", "ⴼⵓⵕⴰⵕ", "ⵎⴰⵕⵚ", "ⵉⴱⵔⵉⵔ", "ⵎⴰⵢⵢⵓ", "ⵢⵓⵏⵢⵓ", "ⵢⵓⵍⵢⵓⵣ", "ⵖⵓⵛⵜ", "ⵛⵓⵜⴰⵏⴱⵉⵔ", "ⴽⵜⵓⴱⵔ", "ⵏⵓⵡⴰⵏⴱⵉⵔ", "ⴷⵓⵊⴰⵏⴱⵉⵔ"];
   const WEEKDAYS_FR = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"];
   const WEEKDAYS_AR = ["الاث", "الثل", "الأر", "الخم", "الجم", "السب", "الأح"];
+  const WEEKDAYS_ZGH = ["ⴰⵢⵏ", "ⴰⵙⵉ", "ⴰⴽⵕ", "ⴰⴽⵡ", "ⴰⵙⵉⵎ", "ⴰⵙⵉⴹ", "ⴰⵙⴰ"];
 
   let calYear, calMonth, activeTab = "upcoming", selectedDate = null;
 
@@ -342,8 +378,8 @@ window.goToMiniSlide = function (index) {
     if (!labelEl || !wdEl || !daysEl) return;
 
     const lang = window.currentLang || "fr";
-    const months = lang === "ar" ? MONTH_NAMES_AR : MONTH_NAMES_FR;
-    const weekdays = lang === "ar" ? WEEKDAYS_AR : WEEKDAYS_FR;
+    const months = lang === "ar" ? MONTH_NAMES_AR : lang === "zgh" ? MONTH_NAMES_ZGH : MONTH_NAMES_FR;
+    const weekdays = lang === "ar" ? WEEKDAYS_AR : lang === "zgh" ? WEEKDAYS_ZGH : WEEKDAYS_FR;
 
     labelEl.textContent = `${months[calMonth]} ${calYear}`;
 
@@ -399,8 +435,11 @@ window.goToMiniSlide = function (index) {
     if (!listEl) return;
 
     const lang = window.currentLang || "fr";
-    const months = lang === "ar" ? MONTH_NAMES_AR : MONTH_NAMES_FR;
+    const months = lang === "ar" ? MONTH_NAMES_AR : lang === "zgh" ? MONTH_NAMES_ZGH : MONTH_NAMES_FR;
     const today = new Date(); today.setHours(0, 0, 0, 0);
+    const filterPrefix = lang === "ar" ? "تصفية :" : lang === "zgh" ? "ⴰⵙⵜⴰⵢ :" : "Filtre :";
+    const emptyLabel = lang === "ar" ? "لا يوجد حدث لهذه الفترة" : lang === "zgh" ? "ⵓⵔ ⵉⵍⵉ ⵓⵙⴳⵔⴰⵡ ⵉ ⵜⵉⵣⵉ ⴰⴷ" : "Aucun evenement pour cette periode";
+    const detailsLabel = lang === "ar" ? "عرض التفاصيل" : lang === "zgh" ? "ⵙⴽⵏ ⵉⴼⵔⴰⴹ" : "Voir details";
 
     let events = (siteData.events || []).map(ev => {
       const d = parseDate(ev.date);
@@ -423,18 +462,18 @@ window.goToMiniSlide = function (index) {
       const label = lang === "ar"
         ? `${d} ${months[+m - 1]} ${y}`
         : `${d} ${months[+m - 1]} ${y}`;
-      filterLabel.textContent = `Filtre : ${label}`;
+      filterLabel.textContent = `${filterPrefix} ${label}`;
     } else {
       filterLabel.textContent = "";
     }
 
     if (events.length === 0) {
-      listEl.innerHTML = `<div class="agenda-empty">${lang === "ar" ? "لا يوجد حدث لهذه الفترة" : "Aucun evenement pour cette periode"}</div>`;
+      listEl.innerHTML = `<div class="agenda-empty">${emptyLabel}</div>`;
       return;
     }
 
     listEl.innerHTML = events.map(ev => {
-      const content = ev[lang] || ev.fr;
+      const content = getLocalizedEntry(ev, lang);
       const isPast = ev._date < today;
       const day = String(ev._date.getDate()).padStart(2, "0");
       const mon = months[ev._date.getMonth()].substring(0, 3).toUpperCase();
@@ -444,8 +483,8 @@ window.goToMiniSlide = function (index) {
       const iconClass = ev.icon || "fa-calendar-day";
       const typeBg = ev.typeColor ? ev.typeColor + "18" : "#e8f5ee";
       const typeCol = ev.typeColor || "#1f6a43";
-      const typeLabel = lang === "ar" ? (ev.typeAr || ev.type || "") : (ev.type || "");
-      const loc = lang === "ar" ? (ev.locationAr || ev.location || "") : (ev.location || "");
+      const typeLabel = lang === "ar" ? (ev.typeAr || ev.type || "") : lang === "zgh" ? (ev.typeZgh || ev.type || "") : (ev.type || "");
+      const loc = lang === "ar" ? (ev.locationAr || ev.location || "") : lang === "zgh" ? (ev.locationZgh || ev.location || "") : (ev.location || "");
       const time = ev.time || "";
       return `
         <article class="agenda-event-card${isPast ? " is-past" : ""}">
@@ -467,7 +506,7 @@ window.goToMiniSlide = function (index) {
           </div>
           <div class="event-side">
             ${typeLabel ? `<span class="event-type-badge" style="background:${typeBg};color:${typeCol}">${typeLabel}</span>` : ""}
-            <a href="#agenda-calendar" class="event-detail-link">${lang === "ar" ? "عرض التفاصيل" : "Voir details"} <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#agenda-calendar" class="event-detail-link">${detailsLabel} <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </article>`;
     }).join("");
@@ -524,7 +563,7 @@ function renderStats() {
         <article class="stat-card">
           <div class="stat-icon" aria-hidden="true"><i class="fa-solid ${item.icon || ["fa-users", "fa-file-signature", "fa-map-location-dot", "fa-coins"][index] || "fa-chart-line"}"></i></div>
           <strong>${item.value}</strong>
-          <span>${item[currentLang]}</span>
+          <span>${item[currentLang] || item.fr || item.ar || ""}</span>
         </article>
       `
     )
@@ -597,7 +636,7 @@ function renderRegions() {
 
   const updateRegionContent = (key) => {
     const region = getRegion(key);
-    const content = region[currentLang];
+    const content = getLocalizedEntry(region);
     card.innerHTML = `
       <h3>${content.name}</h3>
       <p class="region-subtitle">${content.delegate}</p>
@@ -644,7 +683,7 @@ function renderRegions() {
 
       if (isStateful) {
         const target = mapMount.__pathCenters?.get(key) || region.target;
-        const content = region[currentLang];
+        const content = getLocalizedEntry(region);
 
         // Draw dot
         const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
@@ -805,7 +844,7 @@ function renderServicePage() {
   const service = siteData.services.find((item) => item.key === servicePageKey || item.id === servicePageKey);
   if (!service) return;
 
-  const content = service[currentLang];
+  const content = getLocalizedEntry(service);
   const title = qs("#service-title");
   const description = qs("#service-description");
   const detail = qs("#service-detail");
@@ -876,7 +915,7 @@ function initForm() {
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    alert(siteData.translations[currentLang].formNotice);
+    alert(getTranslationValue("formNotice", currentLang) || getTranslationValue("formNotice", "fr") || "");
     form.reset();
   });
 }
