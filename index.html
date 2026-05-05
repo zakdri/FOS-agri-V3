@@ -1,8 +1,8 @@
-﻿<html lang="fr" dir="ltr"><head>
+<html lang="fr" dir="ltr"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FOS-Agri | Fondation pour la promotion des Å“uvres sociales</title>
-  <meta name="description" content="FOS-Agri - Fondation pour la promotion des Å“uvres sociales du personnel du ministÃ¨re de l'agriculture.">
+  <title>FOS-Agri | Fondation pour la promotion des œuvres sociales</title>
+  <meta name="description" content="FOS-Agri - Fondation pour la promotion des œuvres sociales du personnel du ministère de l'agriculture.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tifinagh:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700;800&amp;family=Tajawal:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
         </span>
       </button>
 
-            <nav class="site-nav" id="site-menu" aria-label="Navigation principale">
+      <nav class="site-nav" id="site-menu" aria-label="Navigation principale">
         <a href="#hero" data-i18n="nav.home">Accueil</a>
         <a href="#about" data-i18n="nav.foundation">La Fondation</a>
         <a href="#services" data-i18n="nav.services">Prestations</a>
@@ -40,13 +40,21 @@
         <a href="#events" data-i18n="nav.events">Agenda solidaire</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
         <a class="member-link mobile-only btn-cta-nav" href="#member-space" data-i18n="nav.member">Espace adherent</a>
-      </nav>
-
-      <div class="nav-actions">
-        <div class="lang-toggle" role="group" aria-label="Choix de langue">
+        <div class="lang-toggle mobile-nav-lang" role="group" aria-label="Choix de langue">
           <button class="lang-btn is-active" type="button" data-lang="fr">FR</button>
           <button class="lang-btn" type="button" data-lang="ar">AR</button>
           <button class="lang-btn" type="button" data-lang="zgh">ⵜⵎⵣⵉⵖⵜ</button>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="lang-select-wrap desktop-only">
+          <select class="lang-select" aria-label="Choix de langue">
+            <option value="fr">FR</option>
+            <option value="ar">AR</option>
+            <option value="zgh">ⵜⵎⵣⵉⵖⵜ</option>
+          </select>
+          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
         </div>
         <a class="btn-cta-nav desktop-only" href="#member-space" data-i18n="nav.member">Espace adherent</a>
       </div>
@@ -117,7 +125,7 @@
           <article class="news-card reveal-on-scroll is-visible" data-news-index="0">
             <div class="news-media" style="background-image: url('assets/news-images/Programme de vacances et loisirs 2025.webp')" aria-hidden="true"></div>
             <div class="news-body">
-              <span class="news-date">PortÃ©e StratÃ©gique â€¢ 20/02/2025</span>
+              <span class="news-date">Portée Stratégique • 20/02/2025</span>
               <h3>Programme de vacances et loisirs 2025</h3>
               <p>Calendrier des activites et inscriptions ouvertes pour les adherents.</p>
             </div>
@@ -126,7 +134,7 @@
           <article class="news-card reveal-on-scroll is-visible" data-news-index="1">
             <div class="news-media" style="background-image: url('assets/news-images/convention-pathologie-bouregreg.jpg')" aria-hidden="true"></div>
             <div class="news-body">
-              <span class="news-date">Gouvernance â€¢ 05/03/2025</span>
+              <span class="news-date">Gouvernance • 05/03/2025</span>
               <h3>Convention avec le cabinet de pathologie Bouregreg</h3>
               <p>Remises preferentielles pour les adherents, conjoints et enfants a Rabat.</p>
             </div>
@@ -135,7 +143,7 @@
           <article class="news-card reveal-on-scroll is-visible" data-news-index="2">
             <div class="news-media" style="background-image: url('assets/news-images/operation-omra-2025.jpg')" aria-hidden="true"></div>
             <div class="news-body">
-              <span class="news-date">Formation &amp; DÃ©veloppement â€¢ 28/02/2025</span>
+              <span class="news-date">Formation &amp; Développement • 28/02/2025</span>
               <h3>Operation Omra 2025 - dispositions logistiques</h3>
               <p>Publication des dispositions logistiques relatives au deroulement de l'operation.</p>
             </div>
@@ -144,7 +152,7 @@
           <article class="news-card reveal-on-scroll is-visible" data-news-index="3">
             <div class="news-media" style="background-image: url('assets/news-images/partenariat-activite-sportive.jpg')" aria-hidden="true"></div>
             <div class="news-body">
-              <span class="news-date">Direction Digitale â€¢ 14/03/2025</span>
+              <span class="news-date">Direction Digitale • 14/03/2025</span>
               <h3>Partenariat a tarifs preferentiels pour l'activite sportive</h3>
               <p>Convention avec Joude Gestion Sport pour des remises aux adherents.</p>
             </div>
@@ -153,7 +161,7 @@
           <article class="news-card reveal-on-scroll is-visible" data-news-index="4">
             <div class="news-media" style="background-image: url('https://images.unsplash.com/photo-1576671081837-49000212a370?auto=format&amp;fit=crop&amp;w=900&amp;q=80')" aria-hidden="true"></div>
             <div class="news-body">
-              <span class="news-date">ComitÃ© Innovation â€¢ 12/02/2025</span>
+              <span class="news-date">Comité Innovation • 12/02/2025</span>
               <h3>Nouvelle convention de sante</h3>
               <p>Avantages exclusifs pour les adherents et leurs familles.</p>
             </div>
@@ -162,7 +170,7 @@
           <article class="news-card reveal-on-scroll is-visible" data-news-index="5">
             <div class="news-media" style="background-image: url('assets/news-images/Campagne d'information regionale.jpg')" aria-hidden="true"></div>
             <div class="news-body">
-              <span class="news-date">Ressources Humaines â€¢ 30/01/2025</span>
+              <span class="news-date">Ressources Humaines • 30/01/2025</span>
               <h3>Campagne d'information regionale</h3>
               <p>Rencontres de proximite autour des prestations et conventions FOS-Agri.</p>
             </div>
@@ -340,7 +348,7 @@
           </div>
           <div class="event-side">
             <span class="event-type-badge" style="background:#1f6a4318;color:#1f6a43">Formation</span>
-            <a href="#agenda-calendar" class="event-detail-link">Voir dÃ©tails <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#agenda-calendar" class="event-detail-link">Voir détails <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </article>
         <article class="agenda-event-card">
@@ -362,7 +370,7 @@
           </div>
           <div class="event-side">
             <span class="event-type-badge" style="background:#c8a44d18;color:#c8a44d">Rencontre</span>
-            <a href="#agenda-calendar" class="event-detail-link">Voir dÃ©tails <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#agenda-calendar" class="event-detail-link">Voir détails <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </article>
         <article class="agenda-event-card">
@@ -384,7 +392,7 @@
           </div>
           <div class="event-side">
             <span class="event-type-badge" style="background:#1f6a4318;color:#1f6a43">Action Terrain</span>
-            <a href="#agenda-calendar" class="event-detail-link">Voir dÃ©tails <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#agenda-calendar" class="event-detail-link">Voir détails <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </article></div>
             <div class="agenda-view-all-wrap">
@@ -468,7 +476,7 @@
               <p id="region-title">Rabat-Sale-Kenitra</p>
             </div>
             <p id="region-text">Accueil et orientation des adherents, relais des services et actions sociales locales.</p>
-            <a href="#contact" class="btn btn-primary" style="margin-top: 1rem; width: 100%; border-radius: 999px; font-size: 0.95rem; padding: 0.75rem 1.5rem; text-align: center; text-decoration: none; display: inline-block;" data-i18n="region.contact">Contacter la dÃ©lÃ©gation</a>
+            <a href="#contact" class="btn btn-primary" style="margin-top: 1rem; width: 100%; border-radius: 999px; font-size: 0.95rem; padding: 0.75rem 1.5rem; text-align: center; text-decoration: none; display: inline-block;" data-i18n="region.contact">Contacter la délégation</a>
           </div>
         </div>
         <div class="map-stage">
@@ -674,7 +682,10 @@
       </div>
     </div>
     <div class="container footer-bottom">
-      <p data-i18n="footer.copy">2026 FOS-Agri - Ministere de l'Agriculture</p>
+      <div class="footer-meta">
+        <p data-i18n="footer.copy">© 2026 FOS-Agri - Ministère de l'Agriculture</p>
+        <p class="footer-credit" data-i18n-html="footer.credit">Website created by <a href="https://neonovia.com/" target="_blank" rel="noopener noreferrer">NEONOVIA</a></p>
+      </div>
       <div class="footer-social">
         <a href="https://www.facebook.com/FOS.Agri" target="_blank" class="footer-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/fos.agri/" target="_blank" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -684,16 +695,8 @@
     </div>
   </footer>
 
-  <button class="back-to-top is-visible" id="back-to-top" aria-label="Retour en haut">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
-
   <script src="assets/data.js"></script>
   <script src="assets/app.js"></script>
-
-
-<div id="preact-border-shadow-host" popover="manual" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; padding: 0px; margin: 0px; inset: 0px; position: fixed; width: 100vw; height: 100vh; background: transparent; pointer-events: none;"></div><div id="preact-border-shadow-host" popover="manual" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; padding: 0px; margin: 0px; inset: 0px; position: fixed; width: 100vw; height: 100vh; background: transparent; pointer-events: none;"></div><div id="preact-border-shadow-host" popover="manual" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; padding: 0px; margin: 0px; inset: 0px; position: fixed; width: 100vw; height: 100vh; background: transparent; pointer-events: none;"></div><div id="preact-border-shadow-host" popover="manual" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; padding: 0px; margin: 0px; inset: 0px; position: fixed; width: 100vw; height: 100vh; background: transparent; pointer-events: none;"></div><div id="preact-border-shadow-host" popover="manual" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; padding: 0px; margin: 0px; inset: 0px; position: fixed; width: 100vw; height: 100vh; background: transparent; pointer-events: none;"></div></body></html>
-
-
-
+</body>
+</html>
 

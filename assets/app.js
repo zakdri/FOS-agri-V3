@@ -11,6 +11,7 @@ const SUPPORTED_LANGS = new Set(["fr", "ar", "zgh"]);
 
 const qs = (selector) => document.querySelector(selector);
 const qsa = (selector) => [...document.querySelectorAll(selector)];
+const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)");
 
 function getLocalizedEntry(entry, lang = currentLang) {
   return entry?.[lang] || entry?.fr || entry?.ar || null;
@@ -28,6 +29,16 @@ function getTranslationValue(key, lang = currentLang) {
     }
   }
   return null;
+}
+
+function syncLanguageControls() {
+  qsa(".lang-btn").forEach((btn) => {
+    btn.classList.toggle("is-active", btn.dataset.lang === currentLang);
+  });
+
+  qsa(".lang-select").forEach((select) => {
+    select.value = currentLang;
+  });
 }
 
 function initScrollHeader() {
@@ -130,10 +141,7 @@ function setLanguage(lang) {
     }
   });
 
-  qsa(".lang-btn").forEach((btn) => {
-    btn.classList.toggle("is-active", btn.dataset.lang === currentLang);
-  });
-
+  syncLanguageControls();
   renderPage();
 }
 
@@ -907,6 +915,10 @@ function initLangButtons() {
   qsa(".lang-btn").forEach((btn) => {
     btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
   });
+
+  qsa(".lang-select").forEach((select) => {
+    select.addEventListener("change", () => setLanguage(select.value));
+  });
 }
 
 function initForm() {
@@ -1005,14 +1017,26 @@ function initHeroSlider() {
 }
 
 function initRevealAnimations() {
+  const staggerSelector = ".service-card, .service-box, .news-card, .news-slide-mini, .news-item-mini, .timeline-item, .agenda-event-card, .stat-card, .partner-card, .contact-item, .member-card";
   const targets = qsa(
-    ".intro-grid > *, .section-head, .service-card, .news-card, .timeline-item, .stat-card, .testimonial-card, .region-card, .member-card, .partner-card, .contact-item"
+    ".section-head, .intro-grid > *, .service-card, .service-box, .service-summary, .news-card, .news-slide-mini, .news-item-mini, .timeline-item, .agenda-event-card, .stat-card, .testimonial-card, .region-card, .member-card, .partner-card, .contact-item, .footer-grid > div"
   );
   if (!targets.length) return;
 
-  targets.forEach((item) => item.classList.add("reveal-on-scroll"));
+  targets.forEach((item) => {
+    item.classList.add("reveal-on-scroll");
 
-  if (!("IntersectionObserver" in window)) {
+    const siblings = item.parentElement
+      ? [...item.parentElement.children].filter((child) => child.matches?.(staggerSelector))
+      : [];
+
+    if (siblings.length > 1 && item.matches?.(staggerSelector)) {
+      const delay = Math.min(siblings.indexOf(item), 5) * 70;
+      item.style.transitionDelay = `${delay}ms`;
+    }
+  });
+
+  if (prefersReducedMotion?.matches || !("IntersectionObserver" in window)) {
     targets.forEach((item) => item.classList.add("is-visible"));
     return;
   }
@@ -1163,15 +1187,60 @@ initHeroSlider();
 initScrollHeader();
 setLanguage(currentLang);
 
-// Back to top button
-(function initBackToTop() {
-  const btn = qs("#back-to-top");
-  if (!btn) return;
-  window.addEventListener("scroll", () => {
-    btn.classList.toggle("is-visible", window.scrollY > 400);
-  }, { passive: true });
-  btn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+function initFloatingSocialButton() {
+  qs("#back-to-top")?.remove();
+  if (qs(".floating-social")) return;
+
+  const socialLinks = qsa(".footer-social-link")
+    .filter((link) => link.getAttribute("href") && link.getAttribute("href") !== "#")
+    .map((link) => ({
+      href: link.href,
+      label: link.getAttribute("aria-label") || "Social link",
+      html: link.innerHTML
+    }))
+    .filter((link, index, list) => list.findIndex((item) => item.href === link.href) === index);
+
+  if (!socialLinks.length) return;
+
+  const host = document.createElement("div");
+  host.className = "floating-social";
+  host.innerHTML = `
+    <div class="floating-social-links" aria-label="Liens sociaux rapides">
+      ${socialLinks
+        .map(
+          (link) => `
+            <a class="floating-social-link" href="${link.href}" target="_blank" rel="noopener noreferrer" aria-label="${link.label}">
+              ${link.html}
+            </a>
+          `
+        )
+        .join("")}
+    </div>
+    <button class="floating-social-main" type="button" aria-label="Ouvrir les liens sociaux">
+      <i class="fa-solid fa-share-nodes"></i>
+    </button>
+  `;
+
+  document.body.appendChild(host);
+
+  const toggle = host.querySelector(".floating-social-main");
+  const close = () => host.classList.remove("is-open");
+  const toggleOpen = () => host.classList.toggle("is-open");
+
+  toggle?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    toggleOpen();
   });
-})();
+
+  document.addEventListener("click", (event) => {
+    if (!host.classList.contains("is-open")) return;
+    if (!host.contains(event.target)) close();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") close();
+  });
+}
+
+initFloatingSocialButton();
 

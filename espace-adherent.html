@@ -45,10 +45,13 @@
       </nav>
 
       <div class="nav-actions">
-        <div class="lang-toggle desktop-only" role="group" aria-label="Choix de langue">
-          <button class="lang-btn is-active" type="button" data-lang="fr">FR</button>
-          <button class="lang-btn" type="button" data-lang="ar">AR</button>
-          <button class="lang-btn" type="button" data-lang="zgh">ⵜⵎⵣⵉⵖⵜ</button>
+        <div class="lang-select-wrap desktop-only">
+          <select class="lang-select" aria-label="Choix de langue">
+            <option value="fr">FR</option>
+            <option value="ar">AR</option>
+            <option value="zgh">ⵜⵎⵣⵉⵖⵜ</option>
+          </select>
+          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
         </div>
         <a class="btn-cta-nav desktop-only" href="index.html#member-space" data-i18n="nav.member"></a>
       </div>
@@ -145,7 +148,10 @@
       </div>
     </div>
     <div class="container footer-bottom">
-      <p data-i18n="footer.copy"></p>
+      <div class="footer-meta">
+        <p data-i18n="footer.copy"></p>
+        <p class="footer-credit" data-i18n-html="footer.credit"></p>
+      </div>
       <div class="footer-social">
         <a href="https://www.facebook.com/FOS.Agri" target="_blank" class="footer-social-link" aria-label="Facebook"><i
             class="fa-brands fa-facebook-f"></i></a>

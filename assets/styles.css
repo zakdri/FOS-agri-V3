@@ -207,7 +207,7 @@ textarea {
 }
 
 /* ============================
-   CTA Nav Button ("Espace adhÃ©rent")
+   CTA Nav Button ("Espace adherent")
    ============================ */
 .btn-cta-nav {
   display: inline-flex;
@@ -295,6 +295,17 @@ textarea {
 
 .site-header:not(.is-scrolled) .lang-btn.is-active {
   background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
+.site-header:not(.is-scrolled) .lang-select {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.24);
+  color: #fff;
+  box-shadow: none;
+}
+
+.site-header:not(.is-scrolled) .lang-select-wrap i {
   color: #fff;
 }
 
@@ -425,6 +436,46 @@ textarea {
   background: rgba(31, 106, 67, 0.08);
 }
 
+.lang-select-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.lang-select-wrap.desktop-only {
+  display: inline-flex;
+}
+
+.lang-select {
+  appearance: none;
+  border: 1px solid rgba(31, 106, 67, 0.14);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--green-deep);
+  min-width: 8.25rem;
+  padding: 0.72rem 2.55rem 0.72rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(31, 53, 38, 0.08);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.lang-select:hover,
+.lang-select:focus-visible {
+  border-color: rgba(31, 106, 67, 0.34);
+  box-shadow: 0 16px 32px rgba(31, 53, 38, 0.12);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.lang-select-wrap i {
+  position: absolute;
+  right: 1rem;
+  color: var(--green);
+  pointer-events: none;
+  font-size: 0.8rem;
+}
+
 .lang-btn {
   border: 0;
   background: transparent;
@@ -521,7 +572,7 @@ textarea {
 }
 
 /* ============================
-   HERO â€” VIDEO BACKGROUND
+   HERO - VIDEO BACKGROUND
    ============================ */
 .hero {
   position: relative;
@@ -731,7 +782,7 @@ textarea {
   margin-top: 2.2rem;
 }
 
-/* Hero primary button â€” orange/gold inspired by inspiration */
+/* Hero primary button - orange/gold inspired by inspiration */
 .btn-hero-primary {
   display: inline-flex;
   align-items: center;
@@ -758,7 +809,7 @@ textarea {
   color: #fff;
 }
 
-/* Hero secondary button â€” ghost style */
+/* Hero secondary button - ghost style */
 .btn-hero-secondary {
   display: inline-flex;
   align-items: center;
@@ -1083,7 +1134,7 @@ html[dir="rtl"] .partners-track {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Service card refresh â€” Glassmorphism for background photo */
+/* Service card refresh - glassmorphism for background photo */
 .service-card {
   position: relative;
   overflow: hidden;
@@ -1401,7 +1452,7 @@ html[dir="rtl"] .partners-track {
 }
 
 /* ============================
-   EVENTS / AGENDA â€” Light theme
+   EVENTS / AGENDA - Light theme
    ============================ */
 .events-section {
   background: #f5f7f4;
@@ -1922,7 +1973,7 @@ html[dir="rtl"] .partners-track {
 
 
 /* ============================
-   AGENDA â€” NEW CALENDAR LAYOUT
+   AGENDA - NEW CALENDAR LAYOUT
    ============================ */
 .agenda-layout {
   display: grid;
@@ -3218,13 +3269,14 @@ html[dir="rtl"] .partners-track {
 
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(26px);
-  transition: opacity 0.75s ease, transform 0.75s ease;
+  transform: translateY(26px) scale(0.985);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
 }
 
 .reveal-on-scroll.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 .site-footer {
@@ -3564,9 +3616,13 @@ html[dir="rtl"] .service-layout {
     display: none;
   }
 
+  .lang-select-wrap {
+    display: none;
+  }
+
   .mobile-nav-lang {
     display: flex !important;
-    margin-top: 1rem;
+    margin-top: 0.85rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--line);
     justify-content: center;
@@ -3574,12 +3630,6 @@ html[dir="rtl"] .service-layout {
     order: 11;
     background: #fff;
     /* Solid background */
-  }
-
-  .mobile-nav-lang .lang-toggle {
-    background: rgba(31, 106, 67, 0.12);
-    /* Slightly darker for contrast on white */
-    opacity: 1;
   }
 
   .site-header .site-nav a,
@@ -3611,6 +3661,15 @@ html[dir="rtl"] .service-layout {
   .footer-grid,
   .service-layout {
     grid-template-columns: 1fr;
+  }
+
+  .floating-social {
+    bottom: 1.1rem;
+    right: 1.1rem;
+  }
+
+  html[dir="rtl"] .floating-social {
+    left: 1.1rem;
   }
 
   .services-grid,
@@ -3745,6 +3804,30 @@ html[dir="rtl"] .service-layout {
   display: none;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll,
+  .floating-social-links,
+  .floating-social-main,
+  .floating-social-link,
+  .lang-select,
+  .site-nav,
+  .menu-toggle,
+  .btn,
+  .service-card,
+  .news-card,
+  .timeline-card,
+  .stat-card,
+  .partner-card {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* Mobile overrides */
 
 /* Footer social icons */
@@ -3754,6 +3837,26 @@ html[dir="rtl"] .service-layout {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footer-meta p {
+  margin: 0;
+}
+
+.footer-credit {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.92rem;
+}
+
+html[dir="rtl"] .footer-meta {
+  text-align: right;
+  align-items: flex-end;
 }
 
 .footer-social {
@@ -3779,43 +3882,96 @@ html[dir="rtl"] .service-layout {
   transform: translateY(-3px);
 }
 
-/* Back to top button */
-.back-to-top {
+/* Floating social button */
+.floating-social {
   position: fixed;
   bottom: 1.75rem;
   right: 1.75rem;
   z-index: 99;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  border: none;
-  background: var(--green);
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-  box-shadow: 0 4px 20px rgba(31, 106, 67, 0.35);
-  opacity: 0;
-  transform: translateY(12px);
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
 }
 
-.back-to-top.is-visible {
+.floating-social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.65rem;
+  opacity: 0;
+  transform: translateY(0.85rem) scale(0.94);
+  pointer-events: none;
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.floating-social.is-open .floating-social-links {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
   pointer-events: auto;
 }
 
-.back-to-top:hover {
-  background: var(--gold);
-  color: #1f3526;
+.floating-social-main,
+.floating-social-link {
+  display: grid;
+  place-items: center;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.22s ease, background 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
 }
 
-html[dir="rtl"] .back-to-top {
+.floating-social-main {
+  width: 3.3rem;
+  height: 3.3rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green), var(--green-deep));
+  color: #fff;
+  font-size: 1rem;
+  box-shadow: 0 16px 32px rgba(31, 106, 67, 0.28);
+}
+
+.floating-social-main:hover,
+.floating-social-main:focus-visible {
+  background: var(--gold);
+  color: #1f3526;
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.floating-social-main i {
+  transition: transform 0.22s ease;
+}
+
+.floating-social.is-open .floating-social-main i {
+  transform: rotate(45deg);
+}
+
+.floating-social-link {
+  width: 2.85rem;
+  height: 2.85rem;
+  border-radius: 50%;
+  background: rgba(20, 63, 43, 0.96);
+  color: #fff;
+  box-shadow: 0 12px 26px rgba(15, 47, 31, 0.22);
+}
+
+.floating-social-link:hover,
+.floating-social-link:focus-visible {
+  background: var(--gold);
+  color: #1f3526;
+  transform: translateY(-2px);
+  outline: none;
+}
+
+html[dir="rtl"] .floating-social {
   right: auto;
   left: 1.75rem;
+  align-items: flex-start;
+}
+
+html[dir="rtl"] .floating-social-links {
+  align-items: flex-start;
 }
 
 #main-content {

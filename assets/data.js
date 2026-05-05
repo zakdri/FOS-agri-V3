@@ -1,4 +1,4 @@
-﻿window.siteData = {
+window.siteData = {
   translations: {
     fr: {
       brand: { subtitle: "Ministere de l'agriculture" },
@@ -100,7 +100,10 @@
         members: "Adhérents actifs",
         conventions: "Conventions signées",
         coverage: "Couverture nationale",
-        budget: "Budget investi"
+        budget: "Budget investi",
+        school: {
+          label: "Bourses et aides scolaires"
+        }
       },
       footer: {
         about: "Fondation pour la promotion des oeuvres sociales du personnel du ministere de l'agriculture.",
@@ -113,7 +116,8 @@
         quick2: "Programme social",
         quick3: "Actualites",
         contactTitle: "Coordonnees",
-        copy: "2026 FOS-Agri - Ministere de l'Agriculture",
+        copy: "© 2026 FOS-Agri - Ministère de l'Agriculture",
+        credit: "Website created by <a href='https://neonovia.com/' target='_blank' rel='noopener noreferrer'>NEONOVIA</a>",
         legal: "© 2025 FOS-Agri. Tous droits réservés.",
         privacy: "Confidentialité",
         terms: "Mentions légales"
@@ -246,7 +250,10 @@
         members: "منخرط نشط",
         conventions: "اتفاقية موقعة",
         coverage: "تغطية وطنية",
-        budget: "ميزانية مستثمرة"
+        budget: "ميزانية مستثمرة",
+        school: {
+          label: "المنح والمساعدات المدرسية"
+        }
       },
       footer: {
         about: "مؤسسة النهوض بالأعمال الاجتماعية لموظفي وزارة الفلاحة.",
@@ -259,7 +266,8 @@
         quick2: "البرنامج الاجتماعي",
         quick3: "المستجدات",
         contactTitle: "بيانات الاتصال",
-        copy: "2026 فوس-أكري - وزارة الفلاحة",
+        copy: "© 2026 فوس-أكري - وزارة الفلاحة",
+        credit: "Website created by <a href='https://neonovia.com/' target='_blank' rel='noopener noreferrer'>NEONOVIA</a>",
         legal: "© 2025 فوس-أكري. جميع الحقوق محفوظة.",
         privacy: "الخصوصية",
         terms: "إشعار قانوني"
@@ -392,7 +400,10 @@
         members: "ⵉⵎⵣⵔⴰⵢⵏ ⵉⵔⵎⵉⵏ",
         conventions: "ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⵉⵜⵜⵓⵣⵎⵎⴻⵎⵏ",
         coverage: "ⴰⵙⵙⴱⵓⵖⵍ ⴰⵏⴰⵎⵓⵔ",
-        budget: "ⴰⵙⵎⵉⵍ"
+        budget: "ⴰⵙⵎⵉⵍ",
+        school: {
+          label: "ⵜⵉⵎⵏⴰⵢ ⴷ ⵜⵉⵡⵉⵙⵉ ⵏ ⵓⵙⴽⵯⵍ"
+        }
       },
       footer: {
         about: "ⵜⴰⴷⵓⵙⵉ ⵏ ⵓⵙⵙⴼⵍⴷ ⵏ ⵉⴳⵓⵍⵏ ⵉⵏⵎⴰⵍⴰⵏ ⵏ ⵓⵎⴷⴰⵏ ⵏ ⵜⴰⵎⴰⵣⵔⵜ ⵏ ⵜⴼⵍⴰⵃⵜ.",
@@ -405,7 +416,8 @@
         quick2: "ⴰⵙⵏⴰⵎⴰⵍ ⴰⵏⵎⴰⵍⴰⵏ",
         quick3: "ⵉⵎⵉⵏⵉⴷⵏ",
         contactTitle: "ⵉⵙⴰⵍⵏ ⵏ ⵓⵎⵢⴰⵡⴰⴹ",
-        copy: "2026 FOS-Agri - ⵜⴰⵎⴰⵣⵔⵜ ⵏ ⵜⴼⵍⴰⵃⵜ",
+        copy: "© 2026 FOS-Agri - ⵜⴰⵎⴰⵣⵔⵜ ⵏ ⵜⴼⵍⴰⵃⵜ",
+        credit: "Website created by <a href='https://neonovia.com/' target='_blank' rel='noopener noreferrer'>NEONOVIA</a>",
         legal: "© 2025 FOS-Agri. ⴽⵓⵍⵍⵓ ⵉⵣⵔⴼⴰⵏ ⵎⵎⴰⵍⵏ.",
         privacy: "ⵜⴰⵙⵓⵜⵔⵜ",
         terms: "ⵜⵉⵍⴰⵍ ⵜⴰⵏⴰⵎⵓⵔⴰⵏⵜ"
