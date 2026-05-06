@@ -81,7 +81,7 @@ window.siteData = {
         clubTag: "Club Agri",
         clubTitle: "Decouvrir les avantages et les partenariats",
         clubBody: "Explorez les conventions, avantages et opportunites lies au Club Agri et aux partenaires.",
-        clubCta: "Voir les partenaires"
+        clubCta: "Acceder au Club AGRI"
       },
       partners: {
         tag: "Partenaires",
@@ -139,7 +139,7 @@ window.siteData = {
           kicker: "Club Agri",
           title: "Des avantages negocies avec nos partenaires",
           intro: "Le Club Agri rassemble des conventions, des offres preferees et des opportunites utiles aux adherents de FOS-Agri.",
-          cta: "Voir les partenaires",
+          cta: "Acceder au Club AGRI",
           card1Title: "Offres partenaires",
           card1Body: "Retrouvez des services, des remises et des avantages negocies aupres d'un reseau de partenaires fiables.",
           card2Title: "Avantages negocies",

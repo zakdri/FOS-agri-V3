@@ -1130,7 +1130,7 @@ textarea {
    SERVICES SECTION
    ============================ */
 .services-section {
-  background-image: url('./Prestations.png');
+  background-image: url('./Moroccan_family.jpeg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1142,7 +1142,7 @@ textarea {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(8, 38, 22, 0.9) 0%, rgba(31, 106, 67, 0.85) 50%, rgba(200, 164, 77, 0.6) 100%);
+  background: linear-gradient(135deg, rgba(8, 38, 22, 0.84) 0%, rgba(31, 106, 67, 0.78) 50%, rgba(200, 164, 77, 0.52) 100%);
   pointer-events: none;
 }
 
@@ -1247,16 +1247,18 @@ html[dir="rtl"] .partners-track {
   overflow: hidden;
   display: block;
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.08) !important;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
   transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease, border-color 0.35s ease;
 }
 
 .service-card:hover,
 .service-card:focus-visible {
   background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25) !important;
   border-color: rgba(255, 255, 255, 0.4) !important;
   transform: translateY(-8px) scale(1.02);
@@ -3223,29 +3225,56 @@ html[dir="rtl"] .partners-track {
   opacity: 1;
   transform: none;
   max-height: 3rem;
-  width: fit-content;
+  width: 100%;
+  max-width: 18rem;
   align-self: flex-end;
   min-height: auto;
   overflow: visible;
   margin-top: 0;
   margin-left: 0;
-  padding: 0.45rem 0.8rem;
+  padding: 0.85rem 1.35rem;
   border-width: 1px;
-  font-size: 0.82rem;
-  transition: all 0.35s ease;
+  font-size: 0.95rem;
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
 .member-card:hover .btn,
 .member-card:focus-within .btn {
   opacity: 1;
   transform: none;
-  max-height: 4rem;
+  max-height: 3rem;
   overflow: visible;
   margin-top: 1.25rem;
-  padding-top: 0.85rem;
-  padding-bottom: 0.85rem;
   border-width: 1px;
   font-size: 0.95rem;
+}
+
+.member-card-primary .btn {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+}
+
+.member-card-primary .btn:hover,
+.member-card-primary .btn:focus-visible {
+  background: #b9902f;
+  border-color: #b9902f;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(200, 164, 77, 0.28);
+}
+
+.member-card-secondary .btn {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+.member-card-secondary .btn:hover,
+.member-card-secondary .btn:focus-visible {
+  background: #1f6a43;
+  border-color: #1f6a43;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(24, 79, 52, 0.28);
 }
 
 .member-card:hover p,
