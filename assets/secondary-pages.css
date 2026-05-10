@@ -1,0 +1,228 @@
+/* Secondary pages only. This file is not loaded by index.html. */
+.page-hero-secondary {
+  min-height: 58vh;
+  padding: 10rem 0 5rem;
+  background:
+    linear-gradient(135deg, rgba(14, 61, 38, 0.92), rgba(17, 94, 58, 0.78)),
+    url('Moroccan_family.jpeg') center/cover no-repeat;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero-secondary::after {
+  content: '';
+  position: absolute;
+  inset: auto -10% -45% auto;
+  width: 42rem;
+  height: 42rem;
+  border-radius: 50%;
+  background: rgba(214, 169, 65, 0.18);
+  filter: blur(6px);
+}
+
+.page-hero-secondary .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(12px);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.page-hero-secondary h1 {
+  max-width: 900px;
+  margin: 0 0 1.25rem;
+  font-size: clamp(2.4rem, 6vw, 5.3rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+.page-hero-secondary p {
+  max-width: 760px;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.75;
+  color: rgba(255,255,255,0.88);
+}
+
+.page-section-soft {
+  background: #f6f8f4;
+}
+
+.page-grid-2,
+.page-grid-3 {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.page-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.page-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.page-card {
+  background: #fff;
+  border: 1px solid rgba(28, 82, 55, 0.12);
+  border-radius: 1.75rem;
+  padding: 1.7rem;
+  box-shadow: 0 18px 55px rgba(16, 55, 35, 0.08);
+}
+
+.page-card-icon {
+  width: 3.35rem;
+  height: 3.35rem;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 1.15rem;
+  background: #e9f5ee;
+  color: #17683f;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.page-card h2,
+.page-card h3 {
+  margin: 0 0 0.75rem;
+  color: #143b28;
+  line-height: 1.2;
+}
+
+.page-card p,
+.page-card li {
+  color: #5c6c61;
+  line-height: 1.75;
+}
+
+.page-card ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+html[dir='rtl'] .page-card ul {
+  padding-left: 0;
+  padding-right: 1.15rem;
+}
+
+.page-band {
+  background: linear-gradient(135deg, #123b28, #1e7247);
+  color: #fff;
+  border-radius: 2rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.page-band h2,
+.page-band p {
+  margin: 0;
+}
+
+.page-band p {
+  margin-top: 0.7rem;
+  color: rgba(255,255,255,0.78);
+}
+
+.page-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.page-list-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+  background: #fff;
+  border: 1px solid rgba(28, 82, 55, 0.12);
+  border-radius: 1.25rem;
+  padding: 1.15rem;
+}
+
+.page-list-number {
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #d6a941;
+  color: #fff;
+  font-weight: 800;
+}
+
+.page-map-card iframe {
+  width: 100%;
+  min-height: 420px;
+  border: 0;
+  border-radius: 1.5rem;
+  box-shadow: 0 18px 55px rgba(16, 55, 35, 0.08);
+}
+
+.page-news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.35rem;
+}
+
+.page-news-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.page-news-media {
+  height: 210px;
+  background-size: cover;
+  background-position: center;
+}
+
+.page-news-body {
+  padding: 1.4rem;
+}
+
+.page-date {
+  display: inline-flex;
+  color: #17683f;
+  font-weight: 800;
+  font-size: 0.85rem;
+  margin-bottom: 0.65rem;
+}
+
+body.secondary-page .site-nav a.is-active,
+body.secondary-page .site-nav a[aria-current='page'] {
+  color: #d6a941;
+}
+
+.secondary-lang-select {
+  appearance: none;
+}
+
+@media (max-width: 900px) {
+  .page-grid-2,
+  .page-grid-3,
+  .page-news-grid,
+  .page-band {
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero-secondary {
+    min-height: auto;
+    padding: 8rem 0 4rem;
+  }
+
+  .page-band .btn {
+    width: 100%;
+  }
+}
