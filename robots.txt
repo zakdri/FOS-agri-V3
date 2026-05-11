@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zakdri.github.io/FOS-agri-V3/sitemap.xml
