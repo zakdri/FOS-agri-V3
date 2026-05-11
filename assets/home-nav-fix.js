@@ -52,6 +52,21 @@
     '</div>';
   }
 
+  function ensureSearchAction() {
+    var actions = document.querySelector('.nav-actions');
+    if (!actions || actions.querySelector('[data-header-search]')) return;
+    var link = document.createElement('a');
+    link.className = 'member-link desktop-only';
+    link.href = 'index.html#search';
+    link.setAttribute('aria-label', 'Recherche');
+    link.setAttribute('title', 'Recherche');
+    link.setAttribute('data-header-search', 'true');
+    link.innerHTML = '<i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>';
+    var langWrap = actions.querySelector('.lang-select-wrap');
+    if (langWrap && langWrap.nextSibling) actions.insertBefore(link, langWrap.nextSibling);
+    else actions.appendChild(link);
+  }
+
   function renderHomeMenu() {
     injectCss();
     var menu = document.querySelector('.site-nav');
@@ -65,6 +80,11 @@
         { href: 'fondation.html#histoire-mission-valeurs', key: 'history' },
         { href: 'fondation.html#gouvernance', key: 'governance' }
       ]),
+      submenu('adhesion', 'adhesion.html', [
+        { href: 'adhesion.html#adherents-beneficiaires', key: 'adherents' },
+        { href: 'adhesion.html#procedure-adhesion', key: 'procedure' },
+        { href: 'adhesion.html#cotisations', key: 'cotisations' }
+      ]),
       submenu('services', 'prestations.html', [
         { href: 'services/prevoyance.html', key: 'prevoyance' },
         { href: 'services/culture-loisirs-voyages.html', key: 'culture' },
@@ -73,13 +93,6 @@
         { href: 'services/projets-personnels.html', key: 'projets' },
         { href: 'services/education-culture.html', key: 'education' }
       ]),
-      submenu('adhesion', 'adhesion.html', [
-        { href: 'adhesion.html#adherents-beneficiaires', key: 'adherents' },
-        { href: 'adhesion.html#procedure-adhesion', key: 'procedure' },
-        { href: 'adhesion.html#cotisations', key: 'cotisations' }
-      ]),
-      navLink('news', 'actualites.html', false),
-      navLink('events', 'agenda-solidaire.html', false),
       submenu('mediatheque', 'mediatheque.html', [
         { href: 'mediatheque.html#galerie-2017', key: 'media2017' },
         { href: 'mediatheque.html#galerie-2018', key: 'media2018' },
@@ -94,6 +107,7 @@
       '<a class="member-link mobile-only" href="espace-adherent.html">' + t('member') + '</a>',
       '<div class="lang-toggle mobile-nav-lang" role="group" aria-label="Choix de langue"><button class="lang-btn" type="button" data-lang="fr">FR</button><button class="lang-btn" type="button" data-lang="ar">AR</button><button class="lang-btn" type="button" data-lang="zgh">Amazigh</button></div>'
     ].join('');
+    ensureSearchAction();
     bindHeaderMenu();
   }
 
