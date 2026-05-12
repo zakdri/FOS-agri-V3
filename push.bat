@@ -9,31 +9,30 @@ if /i not "%BRANCH%"=="main" (
   exit /b 1
 )
 
-REM ── Check for anything to commit ──────────────────────────────────────────
+REM ── Commit only if there are uncommitted changes ───────────────────────────
 git status --porcelain > "%TEMP%\gitstatus.tmp" 2>&1
 for %%F in ("%TEMP%\gitstatus.tmp") do set SIZE=%%~zF
-if "%SIZE%"=="0" (
-  echo [INFO] Nothing to commit - working tree is clean.
-  pause
-  exit /b 0
-)
 del "%TEMP%\gitstatus.tmp"
 
-REM ── Stage, commit with timestamp, push ────────────────────────────────────
-echo [INFO] Staging all changes...
-git add .
+if not "%SIZE%"=="0" (
+  echo [INFO] Staging all changes...
+  git add .
 
-REM Build a timestamp for the commit message
-for /f "tokens=1-3 delims=/- " %%a in ('date /t') do set DATESTR=%%a-%%b-%%c
-for /f "tokens=1-2 delims=: " %%a in ('time /t') do set TIMESTR=%%a%%b
+  for /f "tokens=2-4 delims=/ " %%a in ('date /t') do set DATESTR=%%c-%%a-%%b
+  for /f "tokens=1-2 delims=: " %%a in ('time /t') do set TIMESTR=%%a%%b
 
-git commit -m "deploy: update %DATESTR% %TIMESTR%"
-if %ERRORLEVEL% neq 0 (
-  echo [ERROR] Commit failed. Check git output above.
-  pause
-  exit /b 1
+  git commit -m "deploy: update %DATESTR% %TIMESTR%"
+  if %ERRORLEVEL% neq 0 (
+    echo [ERROR] Commit failed. Check git output above.
+    pause
+    exit /b 1
+  )
+) else (
+  echo [INFO] Working tree is clean - skipping commit.
 )
 
+REM ── Always push (covers clean tree with unpushed commits) ─────────────────
+echo [INFO] Pushing to origin/main...
 git push origin main
 if %ERRORLEVEL% neq 0 (
   echo [ERROR] Push failed. Check git output above.
