@@ -214,6 +214,7 @@ textarea {
   align-items: center;
   justify-content: center;
   padding: 0.65rem 1.35rem;
+  height: 2.75rem;
   border-radius: 999px;
   background: var(--gold);
   color: #fff;
@@ -454,6 +455,7 @@ textarea {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  height: 2.75rem;
   border: 1px solid rgba(31, 106, 67, 0.14);
   background: rgba(255, 255, 255, 0.92);
   color: var(--green-deep);
@@ -605,6 +607,44 @@ textarea {
   font-weight: 700;
   white-space: nowrap;
   font-size: 0.88rem;
+}
+
+/* ── Nav icon button (search) — always a perfect circle ── */
+.nav-search-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 1px solid rgba(31, 106, 67, 0.14);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.nav-search-btn:hover,
+.nav-search-btn:focus-visible {
+  background: rgba(31, 106, 67, 0.08);
+  color: var(--green);
+  border-color: rgba(31, 106, 67, 0.3);
+  outline: none;
+}
+.site-header:not(.is-scrolled) .nav-search-btn {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.88);
+}
+.site-header:not(.is-scrolled) .nav-search-btn:hover,
+.site-header:not(.is-scrolled) .nav-search-btn:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+/* Mobile search button inside the nav drawer */
+.mobile-search-btn {
+  display: none;
 }
 
 .mobile-only {
@@ -3766,6 +3806,31 @@ html[dir="rtl"] .service-layout {
     order: 11;
     background: #fff;
     /* Solid background */
+  }
+
+  .mobile-search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    width: calc(100% - 2rem);
+    margin: 0 1rem 0.25rem;
+    padding: 0.85rem 1.5rem;
+    background: rgba(31, 106, 67, 0.05);
+    border: 1px solid rgba(31, 106, 67, 0.12);
+    border-radius: 999px;
+    color: var(--green-deep);
+    font-weight: 700;
+    font-size: 0.9rem;
+    font-family: inherit;
+    cursor: pointer;
+    order: 9;
+    transition: background 0.15s ease;
+  }
+  .mobile-search-btn:hover,
+  .mobile-search-btn:focus-visible {
+    background: rgba(31, 106, 67, 0.1);
+    outline: none;
   }
 
   .site-header .site-nav a,

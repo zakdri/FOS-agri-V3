@@ -56,7 +56,7 @@
     var actions = document.querySelector('.nav-actions');
     if (!actions || actions.querySelector('[data-header-search]')) return;
     var btn = document.createElement('button');
-    btn.className = 'member-link desktop-only';
+    btn.className = 'nav-search-btn';
     btn.type = 'button';
     btn.setAttribute('aria-label', 'Recherche');
     btn.setAttribute('title', 'Recherche');
@@ -143,7 +143,8 @@
         { href: 'contact.html#relais-regionaux', key: 'regional' },
         { href: 'contact.html#reseaux-sociaux', key: 'social' }
       ]),
-      '<a class="member-link mobile-only" href="espace-adherent.html">' + t('member') + '</a>',
+      '<button class="mobile-search-btn" type="button" data-header-search="true"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Rechercher</button>',
+      '<a class="member-link mobile-only btn-cta-nav" href="espace-adherent.html">' + t('member') + '</a>',
       '<div class="lang-toggle mobile-nav-lang" role="group" aria-label="Choix de langue"><button class="lang-btn" type="button" data-lang="fr">FR</button><button class="lang-btn" type="button" data-lang="ar">AR</button><button class="lang-btn" type="button" data-lang="zgh">Amazigh</button></div>'
     ].join('');
     ensureSearchAction();

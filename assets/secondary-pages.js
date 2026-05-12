@@ -92,7 +92,7 @@
           <li class="lang-dropdown-option${lang === 'zgh' ? ' is-selected' : ''}" role="option" data-lang="zgh" tabindex="0">ⵜⵎⵣⵉⵖⵜ</li>
         </ul>
       </div>
-      <button class="member-link desktop-only" type="button" aria-label="Recherche" title="Recherche" data-header-search="true">
+      <button class="nav-search-btn" type="button" aria-label="Recherche" title="Recherche" data-header-search="true">
         <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
       </button>
       <a class="btn-cta-nav desktop-only" href="${href('espace-adherent.html')}">${t('member')}</a>
@@ -217,6 +217,9 @@
         { href: 'contact.html#relais-regionaux', key: 'regional' },
         { href: 'contact.html#reseaux-sociaux', key: 'social' }
       ])}
+      <button class="mobile-search-btn" type="button" data-header-search="true">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Rechercher
+      </button>
       <a class="member-link mobile-only btn-cta-nav" href="${href('espace-adherent.html')}" data-nav-key="member">${t('member')}</a>
       <div class="lang-toggle mobile-nav-lang" role="group" aria-label="Choix de langue">
         <button class="lang-btn ${lang === 'fr' ? 'is-active' : ''}" type="button" data-lang="fr">FR</button>
@@ -325,7 +328,7 @@
       const expanded = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', String(!expanded));
       menu.classList.toggle('is-open', !expanded);
-      body.classList.toggle('nav-open', !expanded);
+      body.classList.toggle('menu-open', !expanded);
     };
   }
 
@@ -413,9 +416,37 @@
     updateHeaderState();
   }
 
+  function initFloatingSocialButton() {
+    if (document.querySelector('.floating-social')) return;
+    const socialLinks = Array.from(document.querySelectorAll('.footer-social-link'))
+      .filter((l) => l.getAttribute('href') && l.getAttribute('href') !== '#')
+      .map((l) => ({ href: l.href, label: l.getAttribute('aria-label') || '', html: l.innerHTML }))
+      .filter((l, i, arr) => arr.findIndex((x) => x.href === l.href) === i);
+    if (!socialLinks.length) return;
+
+    const host = document.createElement('div');
+    host.className = 'floating-social';
+    host.innerHTML = `
+      <div class="floating-social-links" aria-label="Liens sociaux rapides">
+        ${socialLinks.map((l) => `<a class="floating-social-link" href="${l.href}" target="_blank" rel="noopener noreferrer" aria-label="${l.label}">${l.html}</a>`).join('')}
+      </div>
+      <button class="floating-social-main" type="button" aria-label="Ouvrir les liens sociaux">
+        <i class="fa-solid fa-share-nodes"></i>
+      </button>
+    `;
+    document.body.appendChild(host);
+
+    const toggle = host.querySelector('.floating-social-main');
+    const close = () => host.classList.remove('is-open');
+    toggle.addEventListener('click', (e) => { e.stopPropagation(); host.classList.toggle('is-open'); });
+    document.addEventListener('click', (e) => { if (host.classList.contains('is-open') && !host.contains(e.target)) close(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  }
+
   applyStaticLanguage();
   initScrollHeader();
   initSearchModal();
+  initFloatingSocialButton();
   document.addEventListener('click', (e) => {
     if (e.target.closest('[data-header-search]')) {
       e.preventDefault();
