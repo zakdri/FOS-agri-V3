@@ -193,7 +193,7 @@
       ${submenu(page, 'fondation', 'fondation.html', 'foundation', [
         { href: 'fondation.html#mot-ministre', key: 'minister' },
         { href: 'fondation.html#mot-president', key: 'president' },
-        { href: 'fondation.html#histoire-mission-valeurs', key: 'history' },
+        { href: 'histoire-mission-valeurs.html', key: 'history' },
         { href: 'fondation.html#gouvernance', key: 'governance' }
       ])}
       ${submenu(page, 'adhesion', 'adhesion.html', 'adhesion', [

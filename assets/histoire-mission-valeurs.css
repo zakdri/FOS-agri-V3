@@ -1,0 +1,479 @@
+/* ============================================================
+   Histoire, mission et valeurs — scoped styles
+   Reuses brand tokens defined in assets/styles.css :root
+   (--green, --green-deep, --gold, --bg, --surface, --muted,
+   --line, --shadow, --radius).
+   ============================================================ */
+
+.hmv-section { padding: 5rem 0; }
+
+.hmv-section-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3rem;
+}
+
+.hmv-section-head .section-tag { justify-content: center; }
+
+.hmv-section-head h2 {
+  margin: 0.6rem 0 0.85rem;
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  line-height: 1.1;
+  color: var(--green-deep);
+  letter-spacing: -0.02em;
+}
+
+.hmv-section-head .section-copy {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 1.02rem;
+}
+
+/* ============================================================
+   TIMELINE
+   ============================================================ */
+.hmv-timeline-wrap {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.hmv-timeline {
+  --line-color: rgba(31, 106, 67, 0.18);
+  --line-width: 3px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Central vertical line — desktop */
+.hmv-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: var(--line-width);
+  background: linear-gradient(180deg,
+    rgba(200, 164, 77, 0.55) 0%,
+    var(--line-color) 8%,
+    var(--line-color) 92%,
+    rgba(200, 164, 77, 0.55) 100%);
+  transform: translateX(-50%);
+  border-radius: 999px;
+}
+
+.hmv-timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 1.4rem 3rem 1.4rem 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Right-side items (even = index 1, 3, 5…) */
+.hmv-timeline-item.is-right {
+  margin-left: 50%;
+  padding: 1.4rem 0 1.4rem 3rem;
+  justify-content: flex-start;
+}
+
+/* Center marker on the vertical line */
+.hmv-timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 2.1rem;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 4px solid var(--surface);
+  box-shadow: 0 0 0 3px rgba(200, 164, 77, 0.25), 0 6px 14px rgba(31, 53, 38, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  z-index: 2;
+}
+
+.hmv-timeline-item:not(.is-right)::before {
+  right: -0.575rem;
+  transform: translateX(0);
+}
+
+.hmv-timeline-item.is-right::before {
+  left: -0.575rem;
+}
+
+/* Connector segment from line to card */
+.hmv-timeline-item::after {
+  content: '';
+  position: absolute;
+  top: 2.65rem;
+  width: 2rem;
+  height: 2px;
+  background: var(--line-color);
+  z-index: 1;
+}
+
+.hmv-timeline-item:not(.is-right)::after { right: 1rem; }
+.hmv-timeline-item.is-right::after        { left: 1rem;  }
+
+/* ---- Card ---- */
+.hmv-card {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  padding: 1.5rem 1.6rem 1.4rem;
+  box-shadow: 0 18px 55px rgba(16, 55, 35, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.hmv-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 70px rgba(16, 55, 35, 0.14);
+  border-color: rgba(31, 106, 67, 0.22);
+}
+
+.hmv-card:hover + .hmv-spacer,
+.hmv-timeline-item:hover::before {
+  transform: scale(1.18);
+  background: var(--green);
+  box-shadow: 0 0 0 5px rgba(200, 164, 77, 0.28), 0 8px 20px rgba(31, 106, 67, 0.35);
+}
+
+/* Year badge */
+.hmv-card-year {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  background: var(--gold);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  box-shadow: 0 6px 16px rgba(200, 164, 77, 0.32);
+  margin-bottom: 0.9rem;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.hmv-card:hover .hmv-card-year {
+  box-shadow:
+    0 0 0 4px rgba(200, 164, 77, 0.18),
+    0 10px 22px rgba(200, 164, 77, 0.45);
+  transform: translateY(-1px);
+}
+
+.hmv-card-year i { font-size: 0.85em; opacity: 0.9; }
+
+.hmv-card-title {
+  margin: 0 0 0.7rem;
+  font-size: 1.15rem;
+  line-height: 1.3;
+  color: var(--green-deep);
+  font-weight: 700;
+}
+
+.hmv-card-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.hmv-card-items li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--muted);
+  line-height: 1.65;
+  font-size: 0.96rem;
+}
+
+.hmv-card-items li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 3px rgba(31, 106, 67, 0.12);
+}
+
+/* ---- Loading / Empty states ---- */
+.hmv-timeline-status,
+.hmv-values-status {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--muted);
+  font-size: 1rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.hmv-timeline[data-state="empty"] .hmv-timeline-status,
+.hmv-timeline[data-state="loading"] .hmv-timeline-status { display: flex; }
+
+.hmv-spinner {
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 50%;
+  border: 2.5px solid rgba(31, 106, 67, 0.2);
+  border-top-color: var(--green);
+  animation: hmv-spin 0.9s linear infinite;
+}
+
+@keyframes hmv-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   RTL — flip nothing on desktop layout (center line stays
+   center) but mirror connector directions.
+   ============================================================ */
+html[dir='rtl'] .hmv-card-items li { padding-left: 0; padding-right: 1.5rem; }
+html[dir='rtl'] .hmv-card-items li::before { left: auto; right: 0; }
+
+/* ============================================================
+   MOBILE / TABLET — single column, line on the left (RTL: right)
+   ============================================================ */
+@media (max-width: 900px) {
+  .hmv-timeline::before {
+    left: 1.25rem;
+    transform: none;
+  }
+
+  .hmv-timeline-item,
+  .hmv-timeline-item.is-right {
+    width: 100%;
+    margin-left: 0;
+    padding: 1rem 0 1rem 3rem;
+    justify-content: flex-start;
+  }
+
+  .hmv-timeline-item::before,
+  .hmv-timeline-item.is-right::before {
+    left: 0.7rem;
+    right: auto;
+  }
+
+  .hmv-timeline-item::after,
+  .hmv-timeline-item.is-right::after {
+    left: 1.85rem;
+    right: auto;
+    width: 1.15rem;
+  }
+
+  .hmv-card { max-width: 100%; }
+
+  html[dir='rtl'] .hmv-timeline::before { left: auto; right: 1.25rem; }
+  html[dir='rtl'] .hmv-timeline-item,
+  html[dir='rtl'] .hmv-timeline-item.is-right {
+    padding: 1rem 3rem 1rem 0;
+  }
+  html[dir='rtl'] .hmv-timeline-item::before,
+  html[dir='rtl'] .hmv-timeline-item.is-right::before {
+    right: 0.7rem;
+    left: auto;
+  }
+  html[dir='rtl'] .hmv-timeline-item::after,
+  html[dir='rtl'] .hmv-timeline-item.is-right::after {
+    right: 1.85rem;
+    left: auto;
+  }
+}
+
+/* ============================================================
+   MISSION
+   ============================================================ */
+.hmv-mission {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hmv-mission-text .section-tag { margin-bottom: 0.5rem; }
+
+.hmv-mission-text h2 {
+  margin: 0.4rem 0 1.1rem;
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  color: var(--green-deep);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.hmv-mission-text p {
+  color: var(--muted);
+  line-height: 1.85;
+  margin: 0 0 1rem;
+  font-size: 1.03rem;
+}
+
+.hmv-mission-pillars {
+  list-style: none;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.hmv-mission-pillars li {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--green-deep);
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(16, 55, 35, 0.05);
+}
+
+.hmv-mission-pillars i {
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(31, 106, 67, 0.1);
+  color: var(--green);
+}
+
+.hmv-mission-card {
+  background: linear-gradient(160deg, var(--green-deep) 0%, var(--green) 100%);
+  color: #fff;
+  border-radius: 2rem;
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(16, 55, 35, 0.22);
+}
+
+.hmv-mission-card::after {
+  content: '';
+  position: absolute;
+  inset: auto -15% -30% auto;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  background: rgba(200, 164, 77, 0.22);
+  filter: blur(4px);
+}
+
+.hmv-mission-icon {
+  font-size: 2rem;
+  width: 4rem;
+  height: 4rem;
+  display: grid;
+  place-items: center;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hmv-mission-card p {
+  position: relative;
+  z-index: 1;
+  font-size: 1.2rem;
+  line-height: 1.55;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.005em;
+}
+
+@media (max-width: 900px) {
+  .hmv-mission { grid-template-columns: 1fr; gap: 1.75rem; }
+}
+
+/* ============================================================
+   VALEURS
+   ============================================================ */
+.hmv-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.hmv-value-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  padding: 1.6rem 1.5rem;
+  box-shadow: 0 14px 40px rgba(16, 55, 35, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.hmv-value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(16, 55, 35, 0.12);
+  border-color: rgba(31, 106, 67, 0.22);
+}
+
+.hmv-value-icon {
+  width: 3.25rem;
+  height: 3.25rem;
+  display: grid;
+  place-items: center;
+  border-radius: 1.1rem;
+  background: rgba(31, 106, 67, 0.1);
+  color: var(--green);
+  font-size: 1.2rem;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.hmv-value-card:hover .hmv-value-icon {
+  background: var(--gold);
+  color: #fff;
+}
+
+.hmv-value-card h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--green-deep);
+  font-weight: 700;
+}
+
+.hmv-value-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.96rem;
+}
+
+@media (max-width: 980px) {
+  .hmv-values-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 620px) {
+  .hmv-values-grid { grid-template-columns: 1fr; }
+  .hmv-section { padding: 3.5rem 0; }
+}
+
+/* ============================================================
+   Motion-reduce
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .hmv-card,
+  .hmv-value-card,
+  .hmv-timeline-item::before,
+  .hmv-card-year {
+    transition: none;
+  }
+  .hmv-spinner { animation: none; }
+}

@@ -1,6 +1,9 @@
 @echo off
 setlocal
 
+REM ── Always run from the script's own folder ───────────────────────────────
+cd /d "%~dp0"
+
 REM ── Safety guard: must be on main branch ──────────────────────────────────
 for /f "delims=" %%B in ('git rev-parse --abbrev-ref HEAD 2^>nul') do set BRANCH=%%B
 if /i not "%BRANCH%"=="main" (

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FOS-Agri | Histoire, mission et valeurs</title>
+  <meta name="description" content="Histoire, mission et valeurs de la Fondation FOS-Agri : retour sur les étapes clés depuis 2015, mission institutionnelle et valeurs fondatrices." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tifinagh:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/secondary-pages.css" />
+  <link rel="stylesheet" href="assets/histoire-mission-valeurs.css" />
+</head>
+<body class="secondary-page service-page" data-page="histoire-mission-valeurs">
+  <!--
+    Shared header / footer / language switcher are injected by assets/secondary-pages.js.
+    Only the placeholder shells below need to exist.
+  -->
+  <header class="site-header" id="top">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html" aria-label="FOS-Agri accueil">
+        <span class="brand-mark"><img src="logo.png" alt="Logo FOS-Agri" /></span>
+        <span class="brand-copy"><strong>FOS-Agri</strong><small>Ministère de l'agriculture</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Navigation principale"></nav>
+      <div class="nav-actions"></div>
+    </div>
+  </header>
+
+  <main id="content">
+    <!-- ============== HERO ============== -->
+    <section class="page-hero-secondary">
+      <div class="container">
+        <span class="page-kicker">
+          <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
+          <span data-hmv-i18n="hero.kicker">Notre parcours</span>
+        </span>
+        <h1 data-hmv-i18n="page.title">Histoire, mission et valeurs</h1>
+        <p data-hmv-i18n="hero.lead">
+          Depuis sa création, FOS-Agri œuvre au service des femmes et des hommes du secteur agricole.
+          Découvrez les grandes étapes, notre mission et les valeurs qui guident notre action.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============== HISTOIRE / TIMELINE ============== -->
+    <section class="section hmv-section" id="histoire" aria-labelledby="histoire-title">
+      <div class="container">
+        <header class="hmv-section-head">
+          <span class="section-tag" data-hmv-i18n="sections.history.tag">Histoire</span>
+          <h2 id="histoire-title" data-hmv-i18n="sections.history.title">Les grandes étapes de FOS-Agri</h2>
+          <p class="section-copy" data-hmv-i18n="sections.history.intro">
+            Une frise chronologique des moments fondateurs et des initiatives qui ont façonné la Fondation.
+          </p>
+        </header>
+
+        <!--
+          Timeline is rendered from data by assets/histoire-mission-valeurs.js.
+          To connect a CMS/dashboard later, override window.FOSAGRI_TIMELINE_DATA
+          (or fetch JSON before the script runs). Items with isActive=false are
+          skipped; items are sorted by `order`. See data file for full shape.
+        -->
+        <div class="hmv-timeline-wrap" role="region" aria-label="Chronologie FOS-Agri" data-hmv-i18n-aria="sections.history.ariaTimeline">
+          <ol class="hmv-timeline" id="hmv-timeline" data-state="loading">
+            <li class="hmv-timeline-status" data-hmv-state="loading">
+              <span class="hmv-spinner" aria-hidden="true"></span>
+              <span data-hmv-i18n="timeline.loading">Chargement de la chronologie…</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== MISSION ============== -->
+    <section class="section hmv-section page-section-soft" id="mission" aria-labelledby="mission-title">
+      <div class="container hmv-mission">
+        <div class="hmv-mission-text">
+          <span class="section-tag" data-hmv-i18n="sections.mission.tag">Mission</span>
+          <h2 id="mission-title" data-hmv-i18n="sections.mission.title">Notre mission</h2>
+          <p data-hmv-i18n="sections.mission.paragraph1">
+            Accompagner, soutenir et valoriser les femmes et les hommes du secteur agricole à travers
+            des prestations sociales de proximité, accessibles et de qualité.
+          </p>
+          <p data-hmv-i18n="sections.mission.paragraph2">
+            Renforcer la solidarité au sein de la grande famille du Ministère de l'Agriculture en
+            développant des services adaptés aux besoins des adhérents, des retraités et de leurs familles.
+          </p>
+          <ul class="hmv-mission-pillars">
+            <li><i class="fa-solid fa-handshake-angle" aria-hidden="true"></i> <span data-hmv-i18n="sections.mission.pillar1">Solidarité de proximité</span></li>
+            <li><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> <span data-hmv-i18n="sections.mission.pillar2">Couverture médico-sociale</span></li>
+            <li><i class="fa-solid fa-people-roof" aria-hidden="true"></i> <span data-hmv-i18n="sections.mission.pillar3">Soutien aux familles</span></li>
+          </ul>
+        </div>
+        <aside class="hmv-mission-card" aria-hidden="true">
+          <i class="fa-solid fa-bullseye hmv-mission-icon"></i>
+          <p data-hmv-i18n="sections.mission.quote">
+            « Une Fondation au service de la famille du Ministère de l'Agriculture. »
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============== VALEURS ============== -->
+    <section class="section hmv-section" id="valeurs" aria-labelledby="valeurs-title">
+      <div class="container">
+        <header class="hmv-section-head">
+          <span class="section-tag" data-hmv-i18n="sections.values.tag">Valeurs</span>
+          <h2 id="valeurs-title" data-hmv-i18n="sections.values.title">Les valeurs qui nous guident</h2>
+          <p class="section-copy" data-hmv-i18n="sections.values.intro">
+            Six valeurs fondatrices au cœur de chaque action et de chaque prestation FOS-Agri.
+          </p>
+        </header>
+
+        <!--
+          Values are rendered from data by assets/histoire-mission-valeurs.js.
+          To connect a CMS/dashboard later, override window.FOSAGRI_VALUES_DATA.
+        -->
+        <div class="hmv-values-grid" id="hmv-values" data-state="loading">
+          <p class="hmv-values-status" data-hmv-state="loading" data-hmv-i18n="values.loading">Chargement…</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== CTA BAND ============== -->
+    <section class="section">
+      <div class="container">
+        <div class="page-band">
+          <div>
+            <h2 data-hmv-i18n="cta.title">Vous souhaitez en savoir plus sur la Fondation ?</h2>
+            <p data-hmv-i18n="cta.subtitle">Découvrez la gouvernance, les prestations et l'espace adhérent.</p>
+          </div>
+          <a class="btn btn-primary" href="fondation.html" data-hmv-i18n="cta.button">Retour à la Fondation</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"></footer>
+
+  <script src="assets/secondary-pages.js"></script>
+  <script src="assets/histoire-mission-valeurs.js"></script>
+</body>
+</html>
