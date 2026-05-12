@@ -3617,7 +3617,7 @@ html[dir="rtl"] .service-layout {
     padding: 1.5rem 0;
     box-shadow: -10px 0 30px rgba(31, 53, 38, 0.08);
     /* Reduced shadow, no light effect */
-    z-index: 1000;
+    z-index: 1002;
     visibility: hidden;
     opacity: 0;
     transform: translateX(100%);

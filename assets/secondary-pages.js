@@ -324,12 +324,31 @@
     const menu = document.querySelector('.site-nav');
     if (!toggle || !menu) return;
 
+    function closeMenu() {
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('is-open');
+      body.classList.remove('menu-open');
+    }
+
     toggle.onclick = () => {
       const expanded = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', String(!expanded));
       menu.classList.toggle('is-open', !expanded);
       body.classList.toggle('menu-open', !expanded);
     };
+
+    // Close when clicking the backdrop (outside nav panel)
+    document.addEventListener('click', (e) => {
+      if (body.classList.contains('menu-open') && !menu.contains(e.target) && !toggle.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    // Close when clicking a nav link (for same-page anchors)
+    menu.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href]');
+      if (link) closeMenu();
+    });
   }
 
   function initSubmenus() {
