@@ -8,3 +8,6 @@ Thumbs.db
 
 # Editor
 .vscode/
+
+# Claude Code worktrees — never push these to GitHub
+.claude/worktrees/
