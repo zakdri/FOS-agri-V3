@@ -1,43 +1,107 @@
-/* Homepage header menu links only. Does not touch hero, slider, video, agenda, maps, or home layout. */
+/* Homepage header — submenu nav, search, i18n. Does NOT touch hero/slider/video/content. v3 */
 (function () {
+  'use strict';
   if ((document.body.dataset.page || 'home') !== 'home') return;
 
-  var labels = {
+  /* ── Translations (FR / AR / ZGH) ──────────────────────────────────────── */
+  var T = {
     fr: {
-      home: 'Accueil', foundation: 'La Fondation', services: 'Prestations', adhesion: 'Adhesion', news: 'Actualites', events: 'Agenda solidaire', mediatheque: 'Mediatheque', contact: 'Contact', member: 'Espace adherent',
-      minister: 'Mot du Ministre', president: 'Mot du President', history: 'Histoire, mission et valeurs', governance: 'Gouvernance',
-      prevoyance: 'Prevoyance medico-sociale', culture: 'Culture, loisirs et voyages', scolarisation: 'Scolarisation et formation', logement: 'Acces au logement', projets: 'Projets personnels', education: 'Education et culture',
-      adherents: 'Nos adherents et beneficiaires', procedure: 'Procedure adhesion', cotisations: 'Cotisations',
-      media2017: 'Galerie 2017', media2018: 'Galerie 2018', media2019: 'Galerie 2019', media2020: 'Galerie 2020',
-      coordinates: 'Coordonnees', regional: 'Relais regionaux', social: 'Reseaux sociaux'
+      home: 'Accueil', foundation: 'La Fondation', services: 'Prestations',
+      adhesion: 'Adhésion', mediatheque: 'Médiathèque', contact: 'Contact',
+      member: 'Espace adhérent',
+      minister: 'Mot du Ministre', president: 'Mot du Président',
+      history: 'Histoire, mission et valeurs', governance: 'Gouvernance',
+      prevoyance: 'Prévoyance médico-sociale',
+      culture: 'Culture, loisirs et voyages', scolarisation: 'Scolarisation et formation',
+      logement: 'Accès au logement', projets: 'Projets personnels',
+      education: 'Éducation et culture',
+      adherents: 'Nos adhérents & bénéficiaires',
+      procedure: 'Procédure d’adhésion', cotisations: 'Cotisations',
+      media2017: 'Galerie 2017', media2018: 'Galerie 2018',
+      media2019: 'Galerie 2019', media2020: 'Galerie 2020',
+      coordinates: 'Coordonnées', regional: 'Relais régionaux',
+      social: 'Réseaux sociaux', search: 'Rechercher'
+    },
+    ar: {
+      home: 'الرئيسية',
+      foundation: 'المؤسسة',
+      services: 'الخدمات',
+      adhesion: 'الانخراط',
+      mediatheque: 'الخزانة الرقمية',
+      contact: 'اتصل بنا',
+      member: 'فضاء المنخرط',
+      minister: 'كلمة الوزير',
+      president: 'كلمة الرئيس',
+      history: 'التاريخ، المهمة والقيم',
+      governance: 'الحكامة والتنظيم',
+      prevoyance: 'الوقاية الطبية الاجتماعية',
+      culture: 'الثقافة والترفيه والأسفار',
+      scolarisation: 'الدراسة والتكوين',
+      logement: 'الولوج إلى السكن',
+      projets: 'المشاريع الشخصية',
+      education: 'التربية والثقافة',
+      adherents: 'المنخرطون والمستفيدون',
+      procedure: 'مسطرة الانخراط',
+      cotisations: 'الاشتراكات',
+      media2017: 'صور 2017', media2018: 'صور 2018',
+      media2019: 'صور 2019', media2020: 'صور 2020',
+      coordinates: 'المعلومات',
+      regional: 'المنسقون الجهويون',
+      social: 'الشبكات الاجتماعية',
+      search: 'بحث'
+    },
+    zgh: {
+      home: 'ⴰⵙⵏⵓⴱⴳ',
+      foundation: 'ⵜⴰⵎⵙⵙⵓⵔⵜ',
+      services: 'ⵜⵉⵏⴼⴰⵙ',
+      adhesion: 'ⴰⵎⵓⵏ',
+      mediatheque: 'ⵜⴰⵎⵓⵙⵙⵏⴰ',
+      contact: 'ⴰⵏⴰⵔⵎⵙ',
+      member: 'ⴰⵎⵙⴽⴰⵔ ⵏ ⵓⵎⵏⵖⵓⵔ',
+      minister: 'ⴰⵡⴰⵍ ⵏ ⵓⵎⵏⵣⴰⵡ',
+      president: 'ⴰⵡⴰⵍ ⵏ ⵓⵙⵍⵡⴰⵢ',
+      history: 'ⴰⵎⵣⵔⵓⵢ, ⵜⴰⵎⴰⵙⵜ ⴷ ⵉⵎⴰⵙⵙⴰⵏ',
+      governance: 'ⵜⴰⴳⵓⵔⵉ ⴷ ⵜⵎⵙⵙⵓⴷⵙⵜ',
+      prevoyance: 'ⵜⴰⴼⵔⴰⵙⵜ ⵜⴰⴷⴰⵡⵙⴰⵏⵜ',
+      culture: 'ⵜⴰⴷⵍⵙⴰ, ⴰⵙⴰⵢⵔⴰⵔ ⴷ ⵉⵙⵉⴽⵍⵏ',
+      scolarisation: 'ⴰⵙⴳⵎⵉ ⴷ ⵜⵙⴳⵎⵉ',
+      logement: 'ⴰⴽⵛⵓⵎ ⵖⵔ ⵜⴰⴷⴷⴰⵔⵜ',
+      projets: 'ⵉⵙⵏⴼⴰⵔⵏ ⵉⵎⴰⵏⴰⵡⵏ',
+      education: 'ⴰⵙⴳⵎⵉ ⴷ ⵜⴷⵍⵙⴰ',
+      adherents: 'ⵉⵎⵓⵏⵏ ⴷ ⵉⵎⵙⴼⵔⴽⵏ',
+      procedure: 'ⵜⴰⵎⵙⵙⴰⵔⵜ ⵏ ⵓⵎⵓⵏ',
+      cotisations: 'ⵜⵉⵡⵙⵉⵡⵉⵏ',
+      media2017: 'ⵜⴰⵡⵍⴰⴼⵜ 2017',
+      media2018: 'ⵜⴰⵡⵍⴰⴼⵜ 2018',
+      media2019: 'ⵜⴰⵡⵍⴰⴼⵜ 2019',
+      media2020: 'ⵜⴰⵡⵍⴰⴼⵜ 2020',
+      coordinates: 'ⵉⵙⴰⵍⵏ',
+      regional: 'ⵉⵎⵙⵏⴰⵡⵏ ⵉⵎⵏⴰⴹⵏ',
+      social: 'ⵉⵥⴹⵡⴰⵏ ⵉⵏⴰⵎⵓⵏⵏ',
+      search: 'ⴰⵔⵣⵣⵓ'
     }
   };
-  labels.ar = labels.fr;
-  labels.zgh = labels.fr;
 
-  function ready(fn) {
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
-    else fn();
-  }
-
-  function lang() {
+  function getLang() {
     var saved = localStorage.getItem('fosagri-lang') || document.documentElement.lang || 'fr';
-    return labels[saved] ? saved : 'fr';
+    return T[saved] ? saved : 'fr';
   }
 
   function t(key) {
-    return (labels[lang()] && labels[lang()][key]) || labels.fr[key] || '';
+    var l = getLang();
+    return (T[l] && T[l][key]) || T.fr[key] || '';
   }
 
+  /* ── CSS ────────────────────────────────────────────────────────────────── */
   function injectCss() {
     if (document.querySelector('link[data-home-nav-submenu]')) return;
-    var link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'assets/nav-submenu.css';
-    link.setAttribute('data-home-nav-submenu', 'true');
-    document.head.appendChild(link);
+    var lk = document.createElement('link');
+    lk.rel = 'stylesheet'; lk.href = 'assets/nav-submenu.css';
+    lk.setAttribute('data-home-nav-submenu', 'true');
+    document.head.appendChild(lk);
   }
 
+  /* ── Nav HTML ───────────────────────────────────────────────────────────── */
   function navLink(key, href, active) {
     return '<a href="' + href + '"' + (active ? ' class="is-active" aria-current="page"' : '') + '>' + t(key) + '</a>';
   }
@@ -45,21 +109,143 @@
   function submenu(key, href, entries) {
     return '<div class="nav-item has-submenu">' +
       '<a href="' + href + '">' + t(key) + '</a>' +
-      '<button class="submenu-toggle" type="button" aria-label="' + t(key) + ' submenu" aria-expanded="false"><i class="fa-solid fa-chevron-down"></i></button>' +
-      '<div class="nav-submenu">' + entries.map(function (entry) {
-        return '<a href="' + entry.href + '">' + t(entry.key) + '</a>';
-      }).join('') + '</div>' +
+      '<button class="submenu-toggle" type="button" aria-expanded="false">' +
+        '<i class="fa-solid fa-chevron-down"></i>' +
+      '</button>' +
+      '<div class="nav-submenu">' +
+        entries.map(function (e) { return '<a href="' + e.href + '">' + t(e.key) + '</a>'; }).join('') +
+      '</div>' +
     '</div>';
   }
 
-  function ensureSearchAction() {
+  /* ── Render nav ─────────────────────────────────────────────────────────── */
+  function renderNav() {
+    injectCss();
+    var menu = document.querySelector('.site-nav');
+    if (!menu) return;
+
+    var l = getLang();
+    menu.innerHTML = [
+      navLink('home', 'index.html', true),
+      submenu('foundation', 'fondation.html', [
+        { href: 'fondation.html#mot-ministre',        key: 'minister' },
+        { href: 'fondation.html#mot-president',       key: 'president' },
+        { href: 'fondation.html#histoire-mission-valeurs', key: 'history' },
+        { href: 'fondation.html#gouvernance',         key: 'governance' }
+      ]),
+      submenu('adhesion', 'adhesion.html', [
+        { href: 'adhesion.html#adherents-beneficiaires', key: 'adherents' },
+        { href: 'adhesion.html#procedure-adhesion',   key: 'procedure' },
+        { href: 'adhesion.html#cotisations',          key: 'cotisations' }
+      ]),
+      submenu('services', 'prestations.html', [
+        { href: 'services/prevoyance.html',           key: 'prevoyance' },
+        { href: 'services/culture-loisirs-voyages.html', key: 'culture' },
+        { href: 'services/formation-scolarisation.html', key: 'scolarisation' },
+        { href: 'services/acces-logement.html',       key: 'logement' },
+        { href: 'services/projets-personnels.html',   key: 'projets' },
+        { href: 'services/education-culture.html',    key: 'education' }
+      ]),
+      submenu('mediatheque', 'mediatheque.html', [
+        { href: 'mediatheque.html#galerie-2017', key: 'media2017' },
+        { href: 'mediatheque.html#galerie-2018', key: 'media2018' },
+        { href: 'mediatheque.html#galerie-2019', key: 'media2019' },
+        { href: 'mediatheque.html#galerie-2020', key: 'media2020' }
+      ]),
+      submenu('contact', 'contact.html', [
+        { href: 'contact.html#coordonnees',       key: 'coordinates' },
+        { href: 'contact.html#relais-regionaux',  key: 'regional' },
+        { href: 'contact.html#reseaux-sociaux',   key: 'social' }
+      ]),
+      /* Mobile-only items */
+      '<button class="mobile-search-btn" type="button" data-header-search="true">' +
+        '<i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> ' + t('search') +
+      '</button>',
+      '<a class="member-link mobile-only btn-cta-nav" href="#member-space">' + t('member') + '</a>',
+      '<div class="lang-toggle mobile-nav-lang" role="group" aria-label="Choix de langue">' +
+        '<button class="lang-btn' + (l === 'fr' ? ' is-active' : '') + '" type="button" data-lang="fr">FR</button>' +
+        '<button class="lang-btn' + (l === 'ar' ? ' is-active' : '') + '" type="button" data-lang="ar">AR</button>' +
+        '<button class="lang-btn' + (l === 'zgh' ? ' is-active' : '') + '" type="button" data-lang="zgh">Amazigh</button>' +
+      '</div>'
+    ].join('');
+
+    bindNav(menu);
+    ensureSearchBtn();
+  }
+
+  /* ── Bind interactions ──────────────────────────────────────────────────── */
+  function bindNav(menu) {
+    var toggle = document.querySelector('.menu-toggle');
+
+    /* Burger toggle
+     * app.js registers addEventListener('click') BEFORE this file loads (app.js runs first).
+     * We must NOT add another onclick — it would read the already-flipped aria-expanded
+     * and cancel app.js's state change (classic double-toggle = no-op).
+     *
+     * Instead we add a SECOND addEventListener here. Listeners fire in registration order,
+     * so app.js fires first and sets aria-expanded to the correct new value. Our listener
+     * then reads that already-correct value and just ensures the DOM matches — no conflict.
+     * If app.js somehow fails, we fall back to toggling ourselves.
+     */
+    if (toggle && !toggle.__homeBurgerBound) {
+      toggle.__homeBurgerBound = true;
+
+      toggle.addEventListener('click', function () {
+        /* app.js has already updated aria-expanded. Read it and sync DOM. */
+        var open = toggle.getAttribute('aria-expanded') === 'true';
+        /* Safety: if DOM is already in sync (app.js ran), these are no-ops. */
+        menu.classList.toggle('is-open', open);
+        document.body.classList.toggle('menu-open', open);
+      });
+
+      /* Close when a nav link is clicked (app.js bound this to OLD static links). */
+      menu.addEventListener('click', function (e) {
+        if (e.target.closest('a[href]')) {
+          toggle.setAttribute('aria-expanded', 'false');
+          menu.classList.remove('is-open');
+          document.body.classList.remove('menu-open');
+        }
+      });
+    }
+
+    /* Submenus */
+    menu.querySelectorAll('.submenu-toggle').forEach(function (btn) {
+      btn.onclick = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var item = btn.closest('.nav-item');
+        var isOpen = item && item.classList.contains('is-open');
+        menu.querySelectorAll('.nav-item.is-open').forEach(function (x) { x.classList.remove('is-open'); });
+        menu.querySelectorAll('.submenu-toggle[aria-expanded="true"]').forEach(function (x) { x.setAttribute('aria-expanded', 'false'); });
+        if (!isOpen && item) { item.classList.add('is-open'); btn.setAttribute('aria-expanded', 'true'); }
+      };
+    });
+
+    /* Language buttons in mobile drawer */
+    menu.querySelectorAll('.lang-btn').forEach(function (btn) {
+      btn.onclick = function () {
+        var newLang = btn.dataset.lang || 'fr';
+        localStorage.setItem('fosagri-lang', newLang);
+        /* Sync with app.js translation engine (translates [data-i18n] page content) */
+        if (typeof window.setLanguage === 'function') {
+          window.setLanguage(newLang);
+          /* app.js setLanguage() updates root.lang → our MutationObserver calls renderNav() */
+        } else {
+          /* app.js not available — update root.lang ourselves to trigger observer */
+          document.documentElement.lang = newLang;
+        }
+      };
+    });
+  }
+
+  /* ── Search button in .nav-actions ─────────────────────────────────────── */
+  function ensureSearchBtn() {
     var actions = document.querySelector('.nav-actions');
     if (!actions || actions.querySelector('[data-header-search]')) return;
     var btn = document.createElement('button');
     btn.className = 'nav-search-btn';
     btn.type = 'button';
     btn.setAttribute('aria-label', 'Recherche');
-    btn.setAttribute('title', 'Recherche');
     btn.setAttribute('data-header-search', 'true');
     btn.innerHTML = '<i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>';
     var langWrap = actions.querySelector('.lang-select-wrap');
@@ -67,6 +253,7 @@
     else actions.appendChild(btn);
   }
 
+  /* ── Search modal ───────────────────────────────────────────────────────── */
   function initSearchModal() {
     if (document.getElementById('site-search-modal')) return;
     var modal = document.createElement('div');
@@ -85,119 +272,59 @@
         '<form class="search-modal-form" role="search" onsubmit="return false">' +
           '<i class="fa-solid fa-magnifying-glass search-modal-icon" aria-hidden="true"></i>' +
           '<input id="site-search-input" class="search-modal-input" type="search"' +
-            ' placeholder="Rechercher sur FOS-Agri..." autocomplete="off" spellcheck="false" />' +
+          ' placeholder="Rechercher sur FOS-Agri..." autocomplete="off" spellcheck="false" />' +
         '</form>' +
         '<p class="search-modal-hint">Echap pour fermer</p>' +
       '</div>';
     document.body.appendChild(modal);
 
-    function close() { modal.hidden = true; document.body.classList.remove('search-modal-open'); }
+    function closeModal() {
+      modal.hidden = true;
+      document.body.classList.remove('search-modal-open');
+    }
     window.__openSearchModal = function () {
       modal.hidden = false;
       document.body.classList.add('search-modal-open');
-      setTimeout(function () { var inp = document.getElementById('site-search-input'); if (inp) inp.focus(); }, 60);
+      setTimeout(function () {
+        var inp = document.getElementById('site-search-input');
+        if (inp) inp.focus();
+      }, 60);
     };
-
-    modal.querySelector('.search-modal-backdrop').addEventListener('click', close);
-    modal.querySelector('.search-modal-close').addEventListener('click', close);
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) close(); });
+    modal.querySelector('.search-modal-backdrop').addEventListener('click', closeModal);
+    modal.querySelector('.search-modal-close').addEventListener('click', closeModal);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+    /* Delegated click for all [data-header-search] buttons (desktop + mobile drawer) */
     document.addEventListener('click', function (e) {
-      if (e.target.closest('[data-header-search]')) { e.preventDefault(); window.__openSearchModal(); }
+      if (e.target.closest('[data-header-search]')) {
+        e.preventDefault();
+        if (window.__openSearchModal) window.__openSearchModal();
+      }
     });
   }
 
-  function renderHomeMenu() {
-    injectCss();
-    var menu = document.querySelector('.site-nav');
-    if (!menu) return;
-    menu.id = menu.id || 'site-nav';
-    menu.innerHTML = [
-      navLink('home', 'index.html', true),
-      submenu('foundation', 'fondation.html', [
-        { href: 'fondation.html#mot-ministre', key: 'minister' },
-        { href: 'fondation.html#mot-president', key: 'president' },
-        { href: 'fondation.html#histoire-mission-valeurs', key: 'history' },
-        { href: 'fondation.html#gouvernance', key: 'governance' }
-      ]),
-      submenu('adhesion', 'adhesion.html', [
-        { href: 'adhesion.html#adherents-beneficiaires', key: 'adherents' },
-        { href: 'adhesion.html#procedure-adhesion', key: 'procedure' },
-        { href: 'adhesion.html#cotisations', key: 'cotisations' }
-      ]),
-      submenu('services', 'prestations.html', [
-        { href: 'services/prevoyance.html', key: 'prevoyance' },
-        { href: 'services/culture-loisirs-voyages.html', key: 'culture' },
-        { href: 'services/formation-scolarisation.html', key: 'scolarisation' },
-        { href: 'services/acces-logement.html', key: 'logement' },
-        { href: 'services/projets-personnels.html', key: 'projets' },
-        { href: 'services/education-culture.html', key: 'education' }
-      ]),
-      submenu('mediatheque', 'mediatheque.html', [
-        { href: 'mediatheque.html#galerie-2017', key: 'media2017' },
-        { href: 'mediatheque.html#galerie-2018', key: 'media2018' },
-        { href: 'mediatheque.html#galerie-2019', key: 'media2019' },
-        { href: 'mediatheque.html#galerie-2020', key: 'media2020' }
-      ]),
-      submenu('contact', 'contact.html', [
-        { href: 'contact.html#coordonnees', key: 'coordinates' },
-        { href: 'contact.html#relais-regionaux', key: 'regional' },
-        { href: 'contact.html#reseaux-sociaux', key: 'social' }
-      ]),
-      '<button class="mobile-search-btn" type="button" data-header-search="true"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Rechercher</button>',
-      '<a class="member-link mobile-only btn-cta-nav" href="espace-adherent.html">' + t('member') + '</a>',
-      '<div class="lang-toggle mobile-nav-lang" role="group" aria-label="Choix de langue"><button class="lang-btn" type="button" data-lang="fr">FR</button><button class="lang-btn" type="button" data-lang="ar">AR</button><button class="lang-btn" type="button" data-lang="zgh">Amazigh</button></div>'
-    ].join('');
-    ensureSearchAction();
-    bindHeaderMenu();
-  }
-
-  function bindHeaderMenu() {
-    // NOTE: app.js already owns the burger toggle on the home page (addEventListener + menu-open).
-    // Do NOT re-bind toggle.onclick here — it fires after app.js and cancels the open state.
-
-    // Close menu when a nav link is clicked (app.js binds this before nav is populated, so redo here)
-    var toggle = document.querySelector('.menu-toggle');
-    var menu = document.querySelector('.site-nav');
-    if (toggle && menu && !menu.__closeOnLinkBound) {
-      menu.__closeOnLinkBound = true;
-      menu.addEventListener('click', function (e) {
-        var link = e.target.closest('a[href]');
-        if (link) {
-          toggle.setAttribute('aria-expanded', 'false');
-          menu.classList.remove('is-open');
-          document.body.classList.remove('menu-open');
-        }
+  /* ── Language sync with app.js ──────────────────────────────────────────── */
+  /* When app.js's desktop dropdown changes language, it updates root.lang.
+     We watch that attribute and re-render the nav with the new language. */
+  function watchLangAttr() {
+    if (typeof MutationObserver === 'undefined') return;
+    var obs = new MutationObserver(function (mutations) {
+      mutations.forEach(function (m) {
+        if (m.attributeName === 'lang') renderNav();
       });
-    }
-
-    document.querySelectorAll('.submenu-toggle').forEach(function (button) {
-      button.onclick = function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        var item = button.closest('.nav-item');
-        var isOpen = item && item.classList.contains('is-open');
-        document.querySelectorAll('.nav-item.is-open').forEach(function (openItem) { openItem.classList.remove('is-open'); });
-        document.querySelectorAll('.submenu-toggle[aria-expanded="true"]').forEach(function (openButton) { openButton.setAttribute('aria-expanded', 'false'); });
-        if (!isOpen && item) {
-          item.classList.add('is-open');
-          button.setAttribute('aria-expanded', 'true');
-        }
-      };
     });
-
-    document.querySelectorAll('.site-nav .lang-btn').forEach(function (btn) {
-      btn.classList.toggle('is-active', btn.dataset.lang === lang());
-      btn.onclick = function () {
-        localStorage.setItem('fosagri-lang', btn.dataset.lang || 'fr');
-        renderHomeMenu();
-      };
-    });
+    obs.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
   }
 
-  ready(function () {
-    renderHomeMenu();
-    setTimeout(renderHomeMenu, 250);
-    setTimeout(renderHomeMenu, 1000);
+  /* ── Boot ───────────────────────────────────────────────────────────────── */
+  function boot() {
+    renderNav();
     initSearchModal();
-  });
-})();
+    watchLangAttr();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+}());

@@ -139,7 +139,10 @@
       });
     });
 
-    document.addEventListener('click', (e) => { if (!wrap.contains(e.target)) closeDD(); });
+    if (!document.__secLangDropBound) {
+      document.__secLangDropBound = true;
+      document.addEventListener('click', (e) => { if (!document.getElementById('sec-lang-wrap')?.contains(e.target)) closeDD(); });
+    }
   }
 
   function initSearchModal() {
@@ -330,6 +333,7 @@
       body.classList.remove('menu-open');
     }
 
+    /* toggle.onclick is idempotent — safe to set on every applyStaticLanguage() call */
     toggle.onclick = () => {
       const expanded = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', String(!expanded));
@@ -337,18 +341,22 @@
       body.classList.toggle('menu-open', !expanded);
     };
 
-    // Close when clicking the backdrop (outside nav panel)
-    document.addEventListener('click', (e) => {
-      if (body.classList.contains('menu-open') && !menu.contains(e.target) && !toggle.contains(e.target)) {
-        closeMenu();
-      }
-    });
-
-    // Close when clicking a nav link (for same-page anchors)
-    menu.addEventListener('click', (e) => {
-      const link = e.target.closest('a[href]');
-      if (link) closeMenu();
-    });
+    /* Guard: add document + menu listeners only once per page load */
+    if (!document.__secMenuOutsideBound) {
+      document.__secMenuOutsideBound = true;
+      document.addEventListener('click', (e) => {
+        if (body.classList.contains('menu-open') && !menu.contains(e.target) && !toggle.contains(e.target)) {
+          closeMenu();
+        }
+      });
+    }
+    if (!menu.__secMenuLinkBound) {
+      menu.__secMenuLinkBound = true;
+      menu.addEventListener('click', (e) => {
+        const link = e.target.closest('a[href]');
+        if (link) closeMenu();
+      });
+    }
   }
 
   function initSubmenus() {
@@ -367,11 +375,15 @@
       };
     });
 
-    document.addEventListener('click', (event) => {
-      if (event.target.closest('.nav-item')) return;
-      document.querySelectorAll('.nav-item.is-open').forEach((openItem) => openItem.classList.remove('is-open'));
-      document.querySelectorAll('.submenu-toggle[aria-expanded="true"]').forEach((openButton) => openButton.setAttribute('aria-expanded', 'false'));
-    });
+    /* Guard: add document listener only once per page load */
+    if (!document.__secSubmenuOutsideBound) {
+      document.__secSubmenuOutsideBound = true;
+      document.addEventListener('click', (event) => {
+        if (event.target.closest('.nav-item')) return;
+        document.querySelectorAll('.nav-item.is-open').forEach((openItem) => openItem.classList.remove('is-open'));
+        document.querySelectorAll('.submenu-toggle[aria-expanded="true"]').forEach((openButton) => openButton.setAttribute('aria-expanded', 'false'));
+      });
+    }
   }
 
   function initScrollHeader() {
