@@ -152,15 +152,22 @@
   }
 
   function bindHeaderMenu() {
+    // NOTE: app.js already owns the burger toggle on the home page (addEventListener + menu-open).
+    // Do NOT re-bind toggle.onclick here — it fires after app.js and cancels the open state.
+
+    // Close menu when a nav link is clicked (app.js binds this before nav is populated, so redo here)
     var toggle = document.querySelector('.menu-toggle');
     var menu = document.querySelector('.site-nav');
-    if (toggle && menu) {
-      toggle.onclick = function () {
-        var expanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!expanded));
-        menu.classList.toggle('is-open', !expanded);
-        document.body.classList.toggle('nav-open', !expanded);
-      };
+    if (toggle && menu && !menu.__closeOnLinkBound) {
+      menu.__closeOnLinkBound = true;
+      menu.addEventListener('click', function (e) {
+        var link = e.target.closest('a[href]');
+        if (link) {
+          toggle.setAttribute('aria-expanded', 'false');
+          menu.classList.remove('is-open');
+          document.body.classList.remove('menu-open');
+        }
+      });
     }
 
     document.querySelectorAll('.submenu-toggle').forEach(function (button) {
