@@ -55,16 +55,55 @@
   function ensureSearchAction() {
     var actions = document.querySelector('.nav-actions');
     if (!actions || actions.querySelector('[data-header-search]')) return;
-    var link = document.createElement('a');
-    link.className = 'member-link desktop-only';
-    link.href = 'index.html#search';
-    link.setAttribute('aria-label', 'Recherche');
-    link.setAttribute('title', 'Recherche');
-    link.setAttribute('data-header-search', 'true');
-    link.innerHTML = '<i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>';
+    var btn = document.createElement('button');
+    btn.className = 'member-link desktop-only';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'Recherche');
+    btn.setAttribute('title', 'Recherche');
+    btn.setAttribute('data-header-search', 'true');
+    btn.innerHTML = '<i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>';
     var langWrap = actions.querySelector('.lang-select-wrap');
-    if (langWrap && langWrap.nextSibling) actions.insertBefore(link, langWrap.nextSibling);
-    else actions.appendChild(link);
+    if (langWrap && langWrap.nextSibling) actions.insertBefore(btn, langWrap.nextSibling);
+    else actions.appendChild(btn);
+  }
+
+  function initSearchModal() {
+    if (document.getElementById('site-search-modal')) return;
+    var modal = document.createElement('div');
+    modal.id = 'site-search-modal';
+    modal.className = 'search-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Recherche');
+    modal.hidden = true;
+    modal.innerHTML =
+      '<div class="search-modal-backdrop"></div>' +
+      '<div class="search-modal-box">' +
+        '<button class="search-modal-close" type="button" aria-label="Fermer">' +
+          '<i class="fa-solid fa-xmark"></i>' +
+        '</button>' +
+        '<form class="search-modal-form" role="search" onsubmit="return false">' +
+          '<i class="fa-solid fa-magnifying-glass search-modal-icon" aria-hidden="true"></i>' +
+          '<input id="site-search-input" class="search-modal-input" type="search"' +
+            ' placeholder="Rechercher sur FOS-Agri..." autocomplete="off" spellcheck="false" />' +
+        '</form>' +
+        '<p class="search-modal-hint">Echap pour fermer</p>' +
+      '</div>';
+    document.body.appendChild(modal);
+
+    function close() { modal.hidden = true; document.body.classList.remove('search-modal-open'); }
+    window.__openSearchModal = function () {
+      modal.hidden = false;
+      document.body.classList.add('search-modal-open');
+      setTimeout(function () { var inp = document.getElementById('site-search-input'); if (inp) inp.focus(); }, 60);
+    };
+
+    modal.querySelector('.search-modal-backdrop').addEventListener('click', close);
+    modal.querySelector('.search-modal-close').addEventListener('click', close);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) close(); });
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('[data-header-search]')) { e.preventDefault(); window.__openSearchModal(); }
+    });
   }
 
   function renderHomeMenu() {
@@ -151,5 +190,6 @@
     renderHomeMenu();
     setTimeout(renderHomeMenu, 250);
     setTimeout(renderHomeMenu, 1000);
+    initSearchModal();
   });
 })();

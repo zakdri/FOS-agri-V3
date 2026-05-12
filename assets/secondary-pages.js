@@ -76,19 +76,107 @@
       </div>`;
   }
 
-  function ensureSearchAction() {
+  function renderNavActions() {
     const actions = document.querySelector('.nav-actions');
-    if (!actions || actions.querySelector('[data-header-search]')) return;
-    const link = document.createElement('a');
-    link.className = 'member-link desktop-only';
-    link.href = href('index.html#search');
-    link.setAttribute('aria-label', 'Recherche');
-    link.setAttribute('title', 'Recherche');
-    link.dataset.headerSearch = 'true';
-    link.innerHTML = '<i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>';
-    const langWrap = actions.querySelector('.lang-select-wrap');
-    if (langWrap && langWrap.nextSibling) actions.insertBefore(link, langWrap.nextSibling);
-    else actions.appendChild(link);
+    if (!actions) return;
+    const labelText = lang === 'fr' ? 'FR' : lang === 'ar' ? 'AR' : 'ⵜⵎⵣⵉⵖⵜ';
+    actions.innerHTML = `
+      <div class="lang-select-wrap desktop-only" id="sec-lang-wrap">
+        <button class="lang-select" id="sec-lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+          <span id="sec-lang-label">${labelText}</span>
+          <i class="fa-solid fa-chevron-down lang-chevron" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-dropdown-panel" id="sec-lang-panel" role="listbox" aria-label="Langue">
+          <li class="lang-dropdown-option${lang === 'fr' ? ' is-selected' : ''}" role="option" data-lang="fr" tabindex="0">FR — Français</li>
+          <li class="lang-dropdown-option${lang === 'ar' ? ' is-selected' : ''}" role="option" data-lang="ar" tabindex="0">AR — العربية</li>
+          <li class="lang-dropdown-option${lang === 'zgh' ? ' is-selected' : ''}" role="option" data-lang="zgh" tabindex="0">ⵜⵎⵣⵉⵖⵜ</li>
+        </ul>
+      </div>
+      <button class="member-link desktop-only" type="button" aria-label="Recherche" title="Recherche" data-header-search="true">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      </button>
+      <a class="btn-cta-nav desktop-only" href="${href('espace-adherent.html')}">${t('member')}</a>
+    `;
+  }
+
+  function initLangDropdown() {
+    const wrap = document.getElementById('sec-lang-wrap');
+    const btn = document.getElementById('sec-lang-btn');
+    const panel = document.getElementById('sec-lang-panel');
+    if (!wrap || !btn || !panel) return;
+
+    const openDD = () => { wrap.classList.add('is-open'); btn.setAttribute('aria-expanded', 'true'); };
+    const closeDD = () => { wrap.classList.remove('is-open'); btn.setAttribute('aria-expanded', 'false'); };
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      wrap.classList.contains('is-open') ? closeDD() : openDD();
+    });
+
+    panel.querySelectorAll('.lang-dropdown-option').forEach((opt) => {
+      opt.addEventListener('click', () => {
+        lang = supported.includes(opt.dataset.lang) ? opt.dataset.lang : 'fr';
+        localStorage.setItem('fosagri-lang', lang);
+        closeDD();
+        applyStaticLanguage();
+      });
+      opt.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          lang = supported.includes(opt.dataset.lang) ? opt.dataset.lang : 'fr';
+          localStorage.setItem('fosagri-lang', lang);
+          closeDD();
+          applyStaticLanguage();
+        } else if (e.key === 'Escape') {
+          closeDD(); btn.focus();
+        } else if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          if (opt.nextElementSibling) opt.nextElementSibling.focus();
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          if (opt.previousElementSibling) opt.previousElementSibling.focus();
+        }
+      });
+    });
+
+    document.addEventListener('click', (e) => { if (!wrap.contains(e.target)) closeDD(); });
+  }
+
+  function initSearchModal() {
+    if (document.getElementById('site-search-modal')) return;
+    const modal = document.createElement('div');
+    modal.id = 'site-search-modal';
+    modal.className = 'search-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Recherche');
+    modal.hidden = true;
+    modal.innerHTML = `
+      <div class="search-modal-backdrop"></div>
+      <div class="search-modal-box">
+        <button class="search-modal-close" type="button" aria-label="Fermer">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <form class="search-modal-form" role="search" onsubmit="return false">
+          <i class="fa-solid fa-magnifying-glass search-modal-icon" aria-hidden="true"></i>
+          <input id="site-search-input" class="search-modal-input" type="search"
+            placeholder="Rechercher sur FOS-Agri..." autocomplete="off" spellcheck="false" />
+        </form>
+        <p class="search-modal-hint">Echap pour fermer</p>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    const close = () => { modal.hidden = true; document.body.classList.remove('search-modal-open'); };
+    window.__openSearchModal = () => {
+      modal.hidden = false;
+      document.body.classList.add('search-modal-open');
+      setTimeout(() => document.getElementById('site-search-input')?.focus(), 60);
+    };
+
+    modal.querySelector('.search-modal-backdrop').addEventListener('click', close);
+    modal.querySelector('.search-modal-close').addEventListener('click', close);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) close(); });
   }
 
   function renderNavigation() {
@@ -191,16 +279,12 @@
     body.dataset.lang = lang;
     ensureSubmenuCss();
     renderNavigation();
-    ensureSearchAction();
+    renderNavActions();
     renderFooter();
 
     document.querySelectorAll('[data-static-i18n]').forEach((el) => {
       const key = el.dataset.staticI18n;
       el.textContent = t(key);
-    });
-
-    document.querySelectorAll('.secondary-lang-select').forEach((select) => {
-      select.value = lang;
     });
 
     document.querySelectorAll('.lang-btn').forEach((btn) => {
@@ -210,6 +294,7 @@
     initLanguage();
     initMenu();
     initSubmenus();
+    initLangDropdown();
   }
 
   function initLanguage() {
@@ -330,4 +415,11 @@
 
   applyStaticLanguage();
   initScrollHeader();
+  initSearchModal();
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-header-search]')) {
+      e.preventDefault();
+      window.__openSearchModal?.();
+    }
+  });
 })();
