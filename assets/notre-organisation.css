@@ -1,0 +1,787 @@
+/* ============================================================
+   Notre organisation — creative redesign
+   Built on FOS-Agri tokens from assets/styles.css :root
+   (--green, --green-deep, --gold, --bg, --surface, --muted,
+    --line, --shadow, --radius). No new color system.
+   ============================================================ */
+
+/* ----- Local design tokens (derived from brand tokens) ----- */
+:root {
+  --org-gold-from: #e3c46f;
+  --org-gold-to:   #ab8434;
+  --org-green-from:#2a8c5f;
+  --org-green-to:  #143b28;
+  --org-cream:     #fbf8ef;
+  --org-cream-2:   #f3efe1;
+  --org-rule:      rgba(31, 106, 67, 0.22);
+  --org-rule-soft: rgba(31, 106, 67, 0.12);
+}
+
+/* ============================================================
+   BREADCRUMB
+   ============================================================ */
+.org-breadcrumb {
+  margin-bottom: 1.25rem;
+  font-size: 0.92rem;
+}
+
+.org-breadcrumb ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.55rem;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.org-breadcrumb li { display: inline-flex; align-items: center; }
+.org-breadcrumb li + li::before {
+  content: '\f054'; /* chevron-right */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 0.65rem;
+  margin-right: 0.55rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+html[dir='rtl'] .org-breadcrumb li + li::before {
+  content: '\f053';
+  margin-right: 0;
+  margin-left: 0.55rem;
+}
+.org-breadcrumb a {
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.org-breadcrumb a:hover,
+.org-breadcrumb a:focus-visible { color: #fff; border-bottom-color: rgba(255, 255, 255, 0.5); }
+.org-breadcrumb li[aria-current='page'] { color: #fff; font-weight: 600; }
+
+/* ============================================================
+   SECTION SHELL — decorative cream backdrop with subtle
+   topographic-style accents (CSS gradients only, no asset).
+   ============================================================ */
+.org-section {
+  position: relative;
+  padding: 5.5rem 0 6rem;
+  background:
+    radial-gradient(800px 360px at 90% -10%, rgba(200, 164, 77, 0.10), transparent 60%),
+    radial-gradient(900px 420px at -10% 110%, rgba(31, 106, 67, 0.08), transparent 65%),
+    linear-gradient(180deg, #fdfaf2 0%, #fbf8ef 100%);
+  overflow: hidden;
+}
+
+.org-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(135deg,
+      rgba(31, 106, 67, 0.045) 0,
+      rgba(31, 106, 67, 0.045) 1px,
+      transparent 1px,
+      transparent 22px);
+  mask-image: radial-gradient(circle at 50% 40%, #000 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at 50% 40%, #000 30%, transparent 70%);
+  opacity: 0.55;
+}
+
+/* Floating leaf-like accents in the corners */
+.org-section::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  top: 3rem; right: -3rem;
+  width: 14rem; height: 14rem;
+  background: radial-gradient(circle at 30% 30%, rgba(200, 164, 77, 0.28), transparent 60%);
+  border-radius: 50%;
+  filter: blur(4px);
+}
+
+.org-section .container { position: relative; z-index: 1; }
+
+.org-section-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3.5rem;
+}
+
+.org-section-head .section-tag { justify-content: center; }
+
+.org-section-head h2 {
+  margin: 0.55rem 0 0.85rem;
+  font-size: clamp(2rem, 3.6vw, 3.2rem);
+  line-height: 1.05;
+  color: var(--green-deep);
+  letter-spacing: -0.025em;
+}
+
+.org-section-head h2::after {
+  content: '';
+  display: block;
+  width: 3.5rem;
+  height: 3px;
+  margin: 1rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--gold), var(--green));
+}
+
+.org-section-head .section-copy {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* ============================================================
+   CHART CONTAINER
+   ============================================================ */
+.org-chart-wrap {
+  position: relative;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.org-chart {
+  --connector: rgba(31, 106, 67, 0.32);
+  --connector-w: 2px;
+  display: grid;
+  gap: 3rem;
+  min-width: 100%;
+  position: relative;
+}
+
+/* ----- Loading / Empty / Error ----- */
+.org-status {
+  text-align: center;
+  padding: 3.5rem 1rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+}
+.org-spinner {
+  width: 1.2rem; height: 1.2rem;
+  border-radius: 50%;
+  border: 2.5px solid rgba(31, 106, 67, 0.2);
+  border-top-color: var(--green);
+  animation: org-spin 0.9s linear infinite;
+}
+@keyframes org-spin { to { transform: rotate(360deg); } }
+
+/* ============================================================
+   STAGGERED REVEAL ANIMATION
+   each card sets --reveal-index inline; we map it to a delay.
+   ============================================================ */
+@keyframes org-reveal {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.org-node,
+.org-direction,
+.org-direction-head {
+  --reveal-index: 0;
+  animation: org-reveal 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--reveal-index) * 70ms);
+}
+
+/* ============================================================
+   NODE — base card; decorative variants below.
+   ============================================================ */
+.org-node {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 1.35rem;
+  padding: 1.35rem 1.35rem 1.25rem;
+  box-shadow: 0 14px 40px rgba(16, 55, 35, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  text-align: center;
+  will-change: transform;
+}
+
+.org-node:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 60px rgba(16, 55, 35, 0.14);
+  border-color: rgba(31, 106, 67, 0.22);
+}
+
+.org-node-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green-deep);
+  margin: 0 0 0.45rem;
+  line-height: 1.4;
+}
+
+.org-node-name {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--text, #1f3526);
+  margin: 0;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+}
+
+.org-node-position {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0.3rem 0 0;
+  font-style: italic;
+}
+
+.org-node-vacant {
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding: 0.22rem 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: rgba(31, 106, 67, 0.08);
+  border-radius: 999px;
+}
+
+/* Avatar initials removed per request. The data-initials attribute is no
+   longer emitted by the renderer. Nothing to render here. */
+
+/* ============================================================
+   VARIANT — PRESIDENT (gold)
+   Premium card: gold gradient, gold avatar ring with halo,
+   shimmering wrapper, decorative seedling glyph in corner.
+   ============================================================ */
+.org-node.is-gold {
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(255, 255, 255, 0.22), transparent 55%),
+    linear-gradient(160deg, var(--org-gold-from) 0%, var(--gold) 55%, var(--org-gold-to) 100%);
+  border: 0;
+  color: #fff;
+  padding: 1.5rem 1.6rem 1.4rem;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.18) inset,
+    0 26px 60px rgba(171, 132, 52, 0.32);
+}
+
+.org-node.is-gold .org-node-title,
+.org-node.is-gold .org-node-name { color: #fff; }
+.org-node.is-gold .org-node-title { color: rgba(255, 255, 255, 0.88); }
+.org-node.is-gold .org-node-name { font-size: 1.15rem; }
+.org-node.is-gold .org-node-position { color: rgba(255, 255, 255, 0.85); }
+.org-node.is-gold .org-node-vacant { background: rgba(255, 255, 255, 0.22); color: #fff; }
+
+/* (gold avatar styles removed — initials feature dropped) */
+
+/* ============================================================
+   VARIANT — SECRETARY GENERAL (teal/green)
+   ============================================================ */
+.org-node.is-teal {
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(255, 255, 255, 0.18), transparent 55%),
+    linear-gradient(160deg, var(--org-green-from) 0%, var(--green) 55%, var(--org-green-to) 100%);
+  border: 0;
+  color: #fff;
+  padding: 1.4rem 1.5rem 1.3rem;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.14) inset,
+    0 22px 55px rgba(20, 59, 40, 0.28);
+}
+.org-node.is-teal .org-node-title { color: rgba(255, 255, 255, 0.88); }
+.org-node.is-teal .org-node-name  { color: #fff; font-size: 1.08rem; }
+.org-node.is-teal .org-node-position { color: rgba(255, 255, 255, 0.85); }
+
+/* (teal avatar styles removed — initials feature dropped) */
+
+/* ============================================================
+   VARIANT — SUPPORT (cream box with inline green icon)
+   Icon flows inline (flex item, NOT absolute) so it never
+   overlaps the title text.
+   ============================================================ */
+.org-node.is-support {
+  background: linear-gradient(180deg, var(--org-cream) 0%, var(--org-cream-2) 100%);
+  border: 1px dashed rgba(31, 106, 67, 0.32);
+  text-align: left;
+  padding: 0.95rem 1.1rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(16, 55, 35, 0.05);
+  min-height: 4.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+html[dir='rtl'] .org-node.is-support { text-align: right; }
+
+.org-node.is-support .org-node-title {
+  font-size: 0.82rem;
+  color: var(--green-deep);
+  letter-spacing: 0.03em;
+  text-transform: none;
+  margin: 0;
+  line-height: 1.4;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Light circle + green glyph — same recipe everywhere */
+.org-node.is-support .org-node-icon {
+  flex: 0 0 auto;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid rgba(31, 106, 67, 0.18);
+  display: grid;
+  place-items: center;
+  color: var(--green);
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(16, 55, 35, 0.08);
+}
+
+/* ============================================================
+   TIER 1 — President row
+   ============================================================ */
+.org-tier-president {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 340px) 1fr;
+  align-items: center;
+  gap: 1.75rem;
+  position: relative;
+  padding-top: 1.5rem;
+}
+
+.org-tier-president > .org-node.is-gold {
+  grid-column: 2;
+  font-size: 1.05rem;
+}
+
+.org-support-left  { justify-self: end;   max-width: 300px; width: 100%; position: relative; }
+.org-support-right { justify-self: start; max-width: 300px; width: 100%; position: relative; }
+
+/* ----- Connectors (Tier 1 → Tier 2) ----- */
+.org-tier-president::after,
+.org-tier-sg::after {
+  content: '';
+  position: absolute;
+  bottom: -3rem;
+  left: 50%;
+  width: var(--connector-w);
+  height: 3rem;
+  background: linear-gradient(180deg, var(--connector), rgba(200, 164, 77, 0.6));
+  transform: translateX(-50%);
+}
+
+/* Gold node at end of vertical connector */
+.org-tier-president::before,
+.org-tier-sg::before {
+  content: '';
+  position: absolute;
+  bottom: -3.45rem;
+  left: 50%;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  background: var(--gold);
+  transform: translateX(-50%);
+  box-shadow: 0 0 0 4px rgba(200, 164, 77, 0.2);
+  z-index: 2;
+}
+
+/* Horizontal connectors from president to lateral supports */
+.org-support-left::after,
+.org-support-right::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 1.75rem;
+  height: var(--connector-w);
+  background: linear-gradient(90deg, var(--connector), rgba(200, 164, 77, 0.4));
+}
+.org-support-left::after  { right: -1.75rem; }
+.org-support-right::after { left: -1.75rem; background: linear-gradient(90deg, rgba(200, 164, 77, 0.4), var(--connector)); }
+
+/* Small dots at the inner end of lateral connectors */
+.org-support-left::before,
+.org-support-right::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--gold);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.org-support-left::before  { right: -0.25rem; }
+.org-support-right::before { left:  -0.25rem; }
+
+/* ============================================================
+   TIER 2 — Secretary general row
+   ============================================================ */
+.org-tier-sg {
+  display: grid;
+  grid-template-columns: 1fr minmax(260px, 320px) 1fr;
+  align-items: center;
+  gap: 1.75rem;
+  position: relative;
+}
+
+.org-tier-sg > .org-node.is-teal { grid-column: 2; }
+.org-tier-sg .org-support-right  { grid-column: 3; }
+
+/* ============================================================
+   TIER 3 — Directions row (3 numbered columns)
+   ============================================================ */
+.org-tier-directions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  position: relative;
+  padding-top: 2rem;
+}
+
+/* Horizontal connector spanning the 3 directions */
+.org-tier-directions::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 16.66%;
+  right: 16.66%;
+  height: var(--connector-w);
+  background: linear-gradient(90deg,
+    rgba(200, 164, 77, 0.6) 0%,
+    var(--connector) 20%,
+    var(--connector) 80%,
+    rgba(200, 164, 77, 0.6) 100%);
+}
+
+.org-direction {
+  position: relative;
+  display: grid;
+  gap: 0.85rem;
+}
+
+/* Vertical drop from horizontal bar to each direction head */
+.org-direction::before {
+  content: '';
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  width: var(--connector-w);
+  height: 2rem;
+  background: var(--connector);
+  transform: translateX(-50%);
+}
+
+/* Gold dot at the top of each direction's vertical line */
+.org-direction::after {
+  content: '';
+  position: absolute;
+  top: -0.4rem;
+  left: 50%;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background: var(--gold);
+  transform: translateX(-50%);
+  box-shadow: 0 0 0 3px rgba(200, 164, 77, 0.25);
+  z-index: 2;
+}
+
+/* ----- Direction head card ----- */
+.org-direction-head {
+  position: relative;
+  background:
+    radial-gradient(160% 70% at 50% 0%, rgba(200, 164, 77, 0.10), transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, #fbfdf9 100%);
+  border: 1px solid var(--line);
+  border-radius: 1.4rem;
+  padding: 2.35rem 1.25rem 1.3rem;
+  text-align: center;
+  box-shadow: 0 16px 45px rgba(16, 55, 35, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.org-direction-head:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 26px 60px rgba(16, 55, 35, 0.14);
+  border-color: rgba(31, 106, 67, 0.22);
+}
+
+/* Top color rail */
+.org-direction-head::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--green) 60%, var(--green-deep) 100%);
+}
+
+/* Big watermark number (data-num="01" etc.)
+   Sits BEHIND content (z-index: 0) so a long title never collides. */
+.org-direction-head::after {
+  content: attr(data-num);
+  position: absolute;
+  top: -0.4rem;
+  right: 0.6rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 4.5rem;
+  line-height: 1;
+  color: rgba(31, 106, 67, 0.07);
+  letter-spacing: -0.05em;
+  pointer-events: none;
+  z-index: 0;
+}
+html[dir='rtl'] .org-direction-head::after { right: auto; left: 0.6rem; }
+
+/* All text content sits above the watermark */
+.org-direction-head > .org-node-icon,
+.org-direction-head > .org-node-title,
+.org-direction-head > .org-node-name { position: relative; z-index: 1; }
+
+/* Unified icon style: light circle + green glyph (matches support boxes) */
+.org-direction-head .org-node-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 3.1rem;
+  height: 3.1rem;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid rgba(31, 106, 67, 0.18);
+  color: var(--green);
+  font-size: 1.1rem;
+  margin: 0 auto 0.9rem;
+  box-shadow:
+    0 0 0 5px rgba(255, 255, 255, 0.75),
+    0 10px 24px rgba(16, 55, 35, 0.12);
+}
+
+.org-direction-head .org-node-title {
+  color: var(--green);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+}
+
+.org-direction-head .org-node-name {
+  font-size: 1rem;
+  color: var(--green-deep);
+}
+
+/* (Direction-head avatar logic removed — initials feature dropped.) */
+
+/* ----- Services list ----- */
+.org-services {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 0.4rem;
+}
+
+.org-node.is-service {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--green);
+  border-radius: 1rem;
+  padding: 0.95rem 1.05rem 0.95rem 1.4rem;
+  text-align: left;
+  box-shadow: 0 6px 18px rgba(16, 55, 35, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+html[dir='rtl'] .org-node.is-service {
+  text-align: right;
+  border-left: 1px solid var(--line);
+  border-right: 3px solid var(--green);
+  padding: 0.95rem 1.4rem 0.95rem 1.05rem;
+}
+
+.org-node.is-service:hover {
+  transform: translateX(2px);
+  border-color: rgba(31, 106, 67, 0.3);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdf9 100%);
+}
+html[dir='rtl'] .org-node.is-service:hover { transform: translateX(-2px); }
+
+.org-node.is-service .org-node-title {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--green);
+  text-transform: none;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+.org-node.is-service .org-node-name {
+  font-size: 0.92rem;
+  color: var(--text, #1f3526);
+}
+.org-node.is-service .org-node-position {
+  font-size: 0.78rem;
+  margin-top: 0.2rem;
+}
+
+.org-service-empty {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-style: italic;
+  margin: 0.2rem 0 0;
+}
+
+/* ============================================================
+   TABLET (≤ 980px) — collapse laterals, 2-col directions
+   ============================================================ */
+@media (max-width: 980px) {
+  .org-section { padding: 4rem 0 4.5rem; }
+
+  .org-tier-president,
+  .org-tier-sg {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .org-tier-president > .org-node.is-gold,
+  .org-tier-sg > .org-node.is-teal {
+    grid-column: 1;
+    order: 1;
+    margin-inline: auto;
+    max-width: 420px;
+    width: 100%;
+  }
+  .org-support-left,
+  .org-support-right { justify-self: stretch; max-width: 100%; order: 2; }
+  .org-tier-sg .org-support-right { grid-column: 1; }
+
+  .org-support-left::after,
+  .org-support-right::after,
+  .org-support-left::before,
+  .org-support-right::before { display: none; }
+
+  .org-tier-president::after,
+  .org-tier-sg::after { bottom: -1.75rem; height: 1.75rem; }
+  .org-tier-president::before,
+  .org-tier-sg::before { bottom: -2.2rem; }
+
+  .org-tier-directions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .org-tier-directions::before { display: none; }
+  .org-direction::before,
+  .org-direction::after { display: none; }
+}
+
+/* ============================================================
+   MOBILE (≤ 640px) — single column, decorative gold rail
+   ============================================================ */
+@media (max-width: 640px) {
+  .org-section { padding: 3rem 0 3.5rem; }
+  .org-section-head { margin-bottom: 2.5rem; }
+
+  .org-chart {
+    gap: 1.75rem;
+    position: relative;
+    padding-left: 1.85rem;
+  }
+  html[dir='rtl'] .org-chart { padding-left: 0; padding-right: 1.85rem; }
+
+  /* Decorative spine with gold dots */
+  .org-chart::before {
+    content: '';
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.55rem;
+    width: 2px;
+    background:
+      linear-gradient(180deg,
+        var(--gold) 0%,
+        var(--connector) 8%,
+        var(--connector) 92%,
+        var(--gold) 100%);
+    border-radius: 999px;
+  }
+  html[dir='rtl'] .org-chart::before { left: auto; right: 0.55rem; }
+
+  /* Dotted texture overlaid on the spine */
+  .org-chart::after {
+    content: '';
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 0;
+    width: 1.1rem;
+    background-image: radial-gradient(circle at 0.55rem var(--y, 50%), var(--gold) 1.5px, transparent 2px);
+    background-size: 100% 1.5rem;
+    background-repeat: repeat-y;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  html[dir='rtl'] .org-chart::after { left: auto; right: 0; }
+
+  .org-tier-president,
+  .org-tier-sg,
+  .org-tier-directions { grid-template-columns: 1fr; gap: 1rem; }
+  .org-tier-president::after,
+  .org-tier-sg::after,
+  .org-tier-president::before,
+  .org-tier-sg::before,
+  .org-tier-directions::before,
+  .org-direction::before,
+  .org-direction::after,
+  .org-support-left::after,
+  .org-support-right::after,
+  .org-support-left::before,
+  .org-support-right::before { display: none; }
+
+  .org-node { text-align: left; }
+  html[dir='rtl'] .org-node { text-align: right; }
+  .org-node.is-gold,
+  .org-node.is-teal { text-align: center; }
+
+  .org-tier-directions { gap: 1.75rem; }
+  .org-direction-head { padding: 1.6rem 1.1rem 1.15rem; text-align: left; }
+  html[dir='rtl'] .org-direction-head { text-align: right; }
+  .org-direction-head .org-node-icon { margin: 0 0 0.75rem; }
+  .org-direction-head::after {
+    font-size: 2.4rem;
+    top: 0.25rem;
+    right: 0.7rem;
+  }
+}
+
+/* ============================================================
+   ACCESSIBILITY — reduced motion + focus styles
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .org-node,
+  .org-direction,
+  .org-direction-head,
+  .org-spinner { animation: none !important; }
+  .org-node:hover,
+  .org-direction-head:hover { transform: none; }
+}
+
+.org-node:focus-within,
+.org-direction-head:focus-within {
+  outline: 3px solid rgba(200, 164, 77, 0.45);
+  outline-offset: 3px;
+  border-radius: 1.35rem;
+}
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+@media print {
+  .org-section { background: #fff; }
+  .org-section::before,
+  .org-section::after { display: none; }
+  .org-node,
+  .org-direction-head { box-shadow: none !important; break-inside: avoid; animation: none !important; }
+  .org-node.is-gold,
+  .org-node.is-teal { background: #fff !important; color: var(--green-deep) !important; border: 2px solid var(--green) !important; }
+  .org-chart-wrap { overflow: visible; }
+}

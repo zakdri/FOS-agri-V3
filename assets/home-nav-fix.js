@@ -10,7 +10,7 @@
       adhesion: 'Adhésion', mediatheque: 'Médiathèque', contact: 'Contact',
       member: 'Espace adhérent',
       minister: 'Mot du Ministre', president: 'Mot du Président',
-      history: 'Histoire, mission et valeurs', governance: 'Gouvernance',
+      history: 'Histoire, mission et valeurs', organization: 'Notre organisation', governance: 'Gouvernance',
       prevoyance: 'Prévoyance médico-sociale',
       culture: 'Culture, loisirs et voyages', scolarisation: 'Scolarisation et formation',
       logement: 'Accès au logement', projets: 'Projets personnels',
@@ -33,6 +33,7 @@
       minister: 'كلمة الوزير',
       president: 'كلمة الرئيس',
       history: 'التاريخ، المهمة والقيم',
+      organization: 'تنظيمنا',
       governance: 'الحكامة والتنظيم',
       prevoyance: 'الوقاية الطبية الاجتماعية',
       culture: 'الثقافة والترفيه والأسفار',
@@ -61,6 +62,7 @@
       minister: 'ⴰⵡⴰⵍ ⵏ ⵓⵎⵏⵣⴰⵡ',
       president: 'ⴰⵡⴰⵍ ⵏ ⵓⵙⵍⵡⴰⵢ',
       history: 'ⴰⵎⵣⵔⵓⵢ, ⵜⴰⵎⴰⵙⵜ ⴷ ⵉⵎⴰⵙⵙⴰⵏ',
+      organization: 'ⵜⴰⵙⵏⵙⵙⵓⴷⵙⵜ ⵏⵏⵖ',
       governance: 'ⵜⴰⴳⵓⵔⵉ ⴷ ⵜⵎⵙⵙⵓⴷⵙⵜ',
       prevoyance: 'ⵜⴰⴼⵔⴰⵙⵜ ⵜⴰⴷⴰⵡⵙⴰⵏⵜ',
       culture: 'ⵜⴰⴷⵍⵙⴰ, ⴰⵙⴰⵢⵔⴰⵔ ⴷ ⵉⵙⵉⴽⵍⵏ',
@@ -131,7 +133,8 @@
         { href: 'fondation.html#mot-ministre',        key: 'minister' },
         { href: 'fondation.html#mot-president',       key: 'president' },
         { href: 'histoire-mission-valeurs.html',      key: 'history' },
-        { href: 'fondation.html#gouvernance',         key: 'governance' }
+        { href: 'notre-organisation.html',            key: 'organization' },
+        { href: 'la-fondation/gouvernance/index.html', key: 'governance' }
       ]),
       submenu('adhesion', 'adhesion.html', [
         { href: 'adhesion.html#adherents-beneficiaires', key: 'adherents' },

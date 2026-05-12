@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FOS-Agri | Gouvernance</title>
+  <meta name="description" content="Gouvernance de la Fondation FOS-Agri : Comité Directeur, Comité exécutif et Comité Audit, leurs compositions et leurs missions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tifinagh:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="../../assets/styles.css" />
+  <link rel="stylesheet" href="../../assets/secondary-pages.css" />
+  <link rel="stylesheet" href="../../assets/gouvernance.css" />
+</head>
+<body class="secondary-page service-page" data-page="fondation" data-base="../../">
+  <header class="site-header" id="top">
+    <div class="container nav-shell">
+      <a class="brand" href="../../index.html" aria-label="FOS-Agri accueil">
+        <span class="brand-mark"><img src="../../logo.png" alt="Logo FOS-Agri" /></span>
+        <span class="brand-copy"><strong>FOS-Agri</strong><small>Ministere de l'agriculture</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Navigation principale"></nav>
+      <div class="nav-actions"></div>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="page-hero-secondary">
+      <div class="container">
+        <nav class="gov-breadcrumb" aria-label="Fil d'Ariane" data-gov-i18n-aria="governance.breadcrumb.label">
+          <ol>
+            <li><a href="../../index.html" data-gov-i18n="governance.breadcrumb.home">Accueil</a></li>
+            <li><a href="../../fondation.html" data-gov-i18n="governance.breadcrumb.foundation">La Fondation</a></li>
+            <li aria-current="page" data-gov-i18n="governance.breadcrumb.governance">Gouvernance</li>
+          </ol>
+        </nav>
+        <span class="page-kicker">
+          <i class="fa-solid fa-landmark" aria-hidden="true"></i>
+          <span data-gov-i18n="governance.hero.kicker">Instances de gouvernance</span>
+        </span>
+        <h1 data-gov-i18n="governance.pageTitle">Gouvernance</h1>
+        <p data-gov-i18n="governance.intro.paragraph1">La FOS-Agri a mis en place tous les outils necessaires a la bonne gouvernance avec des mecanismes de strategies, de gestion et de controle.</p>
+        <p data-gov-i18n="governance.intro.paragraph2">Elle dispose ainsi de trois instances de gouvernance composees comme suit :</p>
+      </div>
+    </section>
+
+    <section class="section gov-section" aria-labelledby="gov-committees-title">
+      <div class="container">
+        <header class="gov-section-head">
+          <span class="section-tag" data-gov-i18n="governance.hero.kicker">Instances de gouvernance</span>
+          <h2 id="gov-committees-title" data-gov-i18n="governance.section.title">Comites de gouvernance</h2>
+          <p class="section-copy" data-gov-i18n="governance.section.description">Une organisation claire, avec des instances complementaires de pilotage, d'execution et de controle.</p>
+        </header>
+
+        <!--
+          CMS/API hook:
+          Replace window.FOSAGRI_GOVERNANCE_COMMITTEES with API data before this script runs,
+          or replace loadGovernanceData() in assets/gouvernance.js with fetch('/api/governance').
+          Only isActive=true items are rendered; sort is by `order`.
+        -->
+        <div class="gov-grid" id="gov-grid" data-state="loading">
+          <article class="gov-status-card" data-gov-state="loading">
+            <span class="gov-spinner" aria-hidden="true"></span>
+            <p data-gov-i18n="governance.loading">Chargement de la gouvernance...</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"></footer>
+
+  <script src="../../assets/secondary-pages.js"></script>
+  <script src="../../assets/gouvernance.js"></script>
+</body>
+</html>
