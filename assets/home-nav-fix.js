@@ -130,7 +130,7 @@
       submenu('foundation', 'fondation.html', [
         { href: 'fondation.html#mot-ministre',        key: 'minister' },
         { href: 'fondation.html#mot-president',       key: 'president' },
-        { href: 'fondation.html#histoire-mission-valeurs', key: 'history' },
+        { href: 'histoire-mission-valeurs.html',      key: 'history' },
         { href: 'fondation.html#gouvernance',         key: 'governance' }
       ]),
       submenu('adhesion', 'adhesion.html', [
@@ -208,7 +208,7 @@
       });
     }
 
-    /* Submenus */
+    /* Submenus — chevron toggle */
     menu.querySelectorAll('.submenu-toggle').forEach(function (btn) {
       btn.onclick = function (e) {
         e.preventDefault();
@@ -219,6 +219,24 @@
         menu.querySelectorAll('.submenu-toggle[aria-expanded="true"]').forEach(function (x) { x.setAttribute('aria-expanded', 'false'); });
         if (!isOpen && item) { item.classList.add('is-open'); btn.setAttribute('aria-expanded', 'true'); }
       };
+    });
+
+    /* Mobile: first tap on the parent label opens the submenu, second tap navigates.
+       stopPropagation prevents the "close drawer on link click" handler from firing. */
+    var isMobile = function () { return window.matchMedia('(max-width: 980px)').matches; };
+    menu.querySelectorAll('.has-submenu > a').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        if (!isMobile()) return;
+        var item = link.closest('.nav-item');
+        if (!item || item.classList.contains('is-open')) return; /* already open → allow nav */
+        e.preventDefault();
+        e.stopPropagation();
+        menu.querySelectorAll('.nav-item.is-open').forEach(function (x) { x.classList.remove('is-open'); });
+        menu.querySelectorAll('.submenu-toggle[aria-expanded="true"]').forEach(function (x) { x.setAttribute('aria-expanded', 'false'); });
+        item.classList.add('is-open');
+        var togBtn = item.querySelector('.submenu-toggle');
+        if (togBtn) togBtn.setAttribute('aria-expanded', 'true');
+      });
     });
 
     /* Language buttons in mobile drawer */

@@ -375,6 +375,24 @@
       };
     });
 
+    /* Mobile: first tap on parent label opens submenu, second tap navigates.
+       stopPropagation keeps the menu's close-on-link-click handler from firing here. */
+    const isMobile = () => window.matchMedia('(max-width: 980px)').matches;
+    document.querySelectorAll('.site-nav .has-submenu > a').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        if (!isMobile()) return;
+        const item = link.closest('.nav-item');
+        if (!item || item.classList.contains('is-open')) return;
+        event.preventDefault();
+        event.stopPropagation();
+        document.querySelectorAll('.nav-item.is-open').forEach((x) => x.classList.remove('is-open'));
+        document.querySelectorAll('.submenu-toggle[aria-expanded="true"]').forEach((x) => x.setAttribute('aria-expanded', 'false'));
+        item.classList.add('is-open');
+        const togBtn = item.querySelector('.submenu-toggle');
+        if (togBtn) togBtn.setAttribute('aria-expanded', 'true');
+      });
+    });
+
     /* Guard: add document listener only once per page load */
     if (!document.__secSubmenuOutsideBound) {
       document.__secSubmenuOutsideBound = true;
