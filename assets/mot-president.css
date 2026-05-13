@@ -1,0 +1,180 @@
+﻿.president-hero {
+  background:
+    radial-gradient(760px 320px at 10% 8%, rgba(214, 169, 65, 0.2), transparent 62%),
+    radial-gradient(790px 330px at 94% 96%, rgba(31, 106, 67, 0.16), transparent 66%),
+    linear-gradient(135deg, rgba(14, 61, 38, 0.93), rgba(20, 89, 58, 0.83));
+}
+
+.president-breadcrumb {
+  margin-bottom: 1.2rem;
+  font-size: 0.92rem;
+}
+
+.president-breadcrumb ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.55rem;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.president-breadcrumb li {
+  display: inline-flex;
+  align-items: center;
+}
+
+.president-breadcrumb li + li::before {
+  content: '\f054';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 0.65rem;
+  margin-right: 0.55rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+html[dir='rtl'] .president-breadcrumb li + li::before {
+  content: '\f053';
+  margin-right: 0;
+  margin-left: 0.55rem;
+}
+
+.president-breadcrumb a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.president-breadcrumb a:hover,
+.president-breadcrumb a:focus-visible {
+  color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.55);
+}
+
+.president-section {
+  background:
+    radial-gradient(760px 300px at 8% 7%, rgba(214, 169, 65, 0.1), transparent 63%),
+    radial-gradient(840px 330px at 94% 94%, rgba(31, 106, 67, 0.1), transparent 66%),
+    #f8faf7;
+}
+
+.president-card {
+  background: #fff;
+  border-radius: 1.65rem;
+  border: 1px solid rgba(28, 82, 55, 0.13);
+  box-shadow: 0 24px 62px rgba(16, 55, 35, 0.1);
+  overflow: hidden;
+}
+
+.president-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.4fr);
+  gap: 0;
+}
+
+.president-media {
+  background: linear-gradient(165deg, rgba(31, 106, 67, 0.16), rgba(214, 169, 65, 0.22));
+  padding: 1.5rem;
+}
+
+.president-portrait-wrap {
+  background: #fff;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(28, 82, 55, 0.1);
+  box-shadow: 0 14px 35px rgba(16, 55, 35, 0.08);
+  padding: 0.7rem;
+}
+
+.president-portrait {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 0.95rem;
+  display: block;
+}
+
+.president-content {
+  padding: clamp(1.4rem, 4vw, 2.35rem);
+}
+
+.president-name {
+  margin: 0;
+  color: var(--green-deep);
+  font-size: clamp(1.35rem, 2.3vw, 1.9rem);
+  line-height: 1.25;
+}
+
+.president-position {
+  margin: 0.7rem 0 1.1rem;
+  color: #4f665a;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.president-divider {
+  width: 86px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+  margin: 0 0 1rem;
+}
+
+.president-message {
+  display: grid;
+  gap: 0.95rem;
+  color: #2f4036;
+  line-height: 1.85;
+}
+
+.president-message p {
+  margin: 0;
+}
+
+.president-signature {
+  margin-top: 1.3rem;
+  padding-top: 1.05rem;
+  border-top: 1px solid rgba(28, 82, 55, 0.16);
+}
+
+.president-signature-label {
+  margin: 0 0 0.4rem;
+  color: #557062;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.president-signature-name {
+  margin: 0;
+  color: var(--green-deep);
+  font-weight: 800;
+}
+
+.president-signature-position {
+  margin: 0.3rem 0 0;
+  color: #4f665a;
+  line-height: 1.6;
+}
+
+.president-state {
+  padding: 2.1rem 1.2rem;
+  text-align: center;
+  color: #5a6a61;
+}
+
+@media (max-width: 980px) {
+  .president-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .president-media {
+    padding: 1.2rem 1.2rem 0;
+  }
+
+  .president-content {
+    padding-top: 1.2rem;
+  }
+}

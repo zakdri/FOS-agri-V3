@@ -272,8 +272,8 @@
   const SEARCH_INDEX = [
     { key: 'home',          url: 'index.html',                            icon: 'fa-house' },
     { key: 'foundation',    url: 'fondation.html',                        icon: 'fa-landmark' },
-    { key: 'minister',      url: 'fondation.html#mot-ministre',           icon: 'fa-user-tie' },
-    { key: 'president',     url: 'fondation.html#mot-president',          icon: 'fa-user-tie' },
+    { key: 'minister',      url: 'la-fondation/mot-du-ministre/index.html',           icon: 'fa-user-tie' },
+    { key: 'president',     url: 'la-fondation/mot-du-president/index.html',          icon: 'fa-user-tie' },
     { key: 'history',       url: 'histoire-mission-valeurs.html',         icon: 'fa-clock-rotate-left' },
     { key: 'organization',  url: 'notre-organisation.html',               icon: 'fa-sitemap' },
     { key: 'governance',    url: 'la-fondation/gouvernance/index.html',   icon: 'fa-scale-balanced' },
@@ -533,8 +533,8 @@
     menu.innerHTML = `
       ${item(page, 'home', 'index.html', 'home')}
       ${submenu(page, 'fondation', 'fondation.html', 'foundation', [
-        { href: 'fondation.html#mot-ministre', key: 'minister' },
-        { href: 'fondation.html#mot-president', key: 'president' },
+        { href: 'la-fondation/mot-du-ministre/index.html', key: 'minister' },
+        { href: 'la-fondation/mot-du-president/index.html', key: 'president' },
         { href: 'histoire-mission-valeurs.html', key: 'history' },
         { href: 'notre-organisation.html', key: 'organization' },
         { href: 'la-fondation/gouvernance/index.html', key: 'governance' }
@@ -884,3 +884,5 @@
     }
   });
 })();
+
+

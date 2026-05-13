@@ -609,6 +609,62 @@ textarea {
   font-size: 0.88rem;
 }
 
+@media (min-width: 981px) {
+  .nav-actions .nav-search-btn,
+  .nav-actions [data-header-search]:not(.mobile-search-btn) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 999px;
+    border: 1px solid rgba(31, 106, 67, 0.14);
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--green-deep);
+    box-shadow: 0 12px 28px rgba(31, 53, 38, 0.08);
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .nav-actions .nav-search-btn:hover,
+  .nav-actions .nav-search-btn:focus-visible,
+  .nav-actions [data-header-search]:not(.mobile-search-btn):hover,
+  .nav-actions [data-header-search]:not(.mobile-search-btn):focus-visible {
+    border-color: rgba(31, 106, 67, 0.34);
+    box-shadow: 0 16px 32px rgba(31, 53, 38, 0.12);
+    transform: translateY(-1px);
+    outline: none;
+  }
+}
+
+.site-header:not(.is-scrolled) .nav-actions .nav-search-btn,
+.site-header:not(.is-scrolled) .nav-actions [data-header-search]:not(.mobile-search-btn),
+.site-header:not(.is-scrolled) .nav-actions [data-header-search] {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.24) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.site-header:not(.is-scrolled) .nav-actions .nav-search-btn i,
+.site-header:not(.is-scrolled) .nav-actions [data-header-search]:not(.mobile-search-btn) i,
+.site-header:not(.is-scrolled) .nav-actions [data-header-search] i {
+  color: #fff !important;
+}
+
+.site-header:not(.is-scrolled) .nav-actions .nav-search-btn:hover,
+.site-header:not(.is-scrolled) .nav-actions .nav-search-btn:focus-visible,
+.site-header:not(.is-scrolled) .nav-actions [data-header-search]:not(.mobile-search-btn):hover,
+.site-header:not(.is-scrolled) .nav-actions [data-header-search]:not(.mobile-search-btn):focus-visible,
+.site-header:not(.is-scrolled) .nav-actions [data-header-search]:hover,
+.site-header:not(.is-scrolled) .nav-actions [data-header-search]:focus-visible {
+  background: rgba(255, 255, 255, 0.22) !important;
+  border-color: rgba(255, 255, 255, 0.36) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
 /* ── Header search button — DESKTOP ONLY.
    Desktop: visible round icon button sits in .nav-actions.
    Mobile : hidden in .nav-actions (search lives inside the opened
@@ -3734,6 +3790,16 @@ html[dir="rtl"] .service-layout {
   .site-nav .has-submenu > .submenu-toggle:focus-visible {
     background: rgba(31, 106, 67, 0.1) !important;
     outline: none;
+  }
+
+  body.page-espace-adherent .menu-toggle {
+    position: relative !important;
+    z-index: 1301 !important;
+    pointer-events: auto !important;
+  }
+
+  body.page-espace-adherent .nav-shell .brand {
+    z-index: 1200;
   }
 
   /* Extended brand-link click target: every pixel of the header to
