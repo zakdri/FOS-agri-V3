@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
@@ -9,10 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tifinagh:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link rel="stylesheet" href="assets/styles.css?v=3" />
-  <link rel="stylesheet" href="assets/secondary-pages.css?v=3" />
+  <link rel="stylesheet" href="assets/styles.css?v=4" />
+  <link rel="stylesheet" href="assets/secondary-pages.css?v=4" />
 </head>
-<body class="secondary-page service-page" data-page="nos-valeurs">
+<body class="secondary-page service-page values-page" data-page="nos-valeurs">
   <header class="site-header" id="top">
     <div class="container nav-shell">
       <a class="brand" href="index.html" aria-label="FOS-Agri accueil">
@@ -28,50 +28,62 @@
   </header>
 
   <main id="content">
-    <section class="page-hero-secondary">
+    <section class="page-hero-secondary values-hero">
       <div class="container">
         <span class="page-kicker">
           <i class="fa-solid fa-gem" aria-hidden="true"></i>
           <span data-values-i18n="values.hero.kicker">Nos valeurs</span>
         </span>
         <h1 data-values-i18n="values.pageTitle">Nos valeurs</h1>
-        <p data-values-i18n="values.hero.subtitle">Les principes qui guident l’action sociale de la FOS-Agri.</p>
+        <p data-values-i18n="values.hero.subtitle">Les principes qui guident l'action sociale de la FOS-Agri.</p>
       </div>
     </section>
 
-    <section class="section page-section-soft" aria-labelledby="nos-valeurs-title">
+    <section class="section page-section-soft values-section" aria-labelledby="nos-valeurs-title">
       <div class="container">
         <header class="values-head">
           <span class="section-tag" data-values-i18n="values.section.tag">Principes fondateurs</span>
           <h2 id="nos-valeurs-title" data-values-i18n="values.section.title">Une action guidée par quatre engagements</h2>
         </header>
 
-        <div class="values-grid">
-          <article class="value-card" id="proximite">
-            <span class="value-icon"><i class="fa-solid fa-people-arrows" aria-hidden="true"></i></span>
-            <h3 data-values-i18n="values.proximity.title">Proximité</h3>
-            <p data-values-i18n="values.proximity.body">Renvoie vers notre capacité à toujours être plus proche de nos adhérents afin de mieux comprendre et d’anticiper leurs attentes et aspirations.</p>
+        <div class="values-cards">
+          <article class="page-card values-intro-card">
+            <h3 data-values-i18n="values.intro.title">Nos valeurs</h3>
+            <p data-values-i18n="values.intro.body">Les valeurs sont les constituants de base de la culture de la fondation et un aiguillage à nos actions et à nos interactions avec l’ensemble de nos parties-prenantes.</p>
           </article>
 
-          <article class="value-card" id="equite">
-            <span class="value-icon"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></span>
-            <h3 data-values-i18n="values.equity.title">Équité</h3>
-            <p data-values-i18n="values.equity.body">L’équité renvoie vers l’égalité des chances en termes d’accès aux prestations à l’ensemble des adhérents.</p>
-          </article>
+          <div class="values-timeline" aria-label="Timeline des valeurs">
+            <article class="page-card timeline-item" id="equite">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <span class="value-node-icon" aria-hidden="true"><i class="fa-solid fa-scale-balanced"></i></span>
+              <h3 data-values-i18n="values.equity.title">Équité</h3>
+              <p data-values-i18n="values.equity.body">L'équité renvoie vers l'égalité des chances en termes d'accès aux prestations à l'ensemble des adhérents.</p>
+            </article>
 
-          <article class="value-card" id="sens-du-service">
-            <span class="value-icon"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i></span>
-            <h3 data-values-i18n="values.service.title">Sens du service</h3>
-            <p data-values-i18n="values.service.body">Nous nous engageons à offrir un accompagnement attentif, réactif et utile, centré sur les besoins réels des adhérents.</p>
-            <!-- TODO: Validate official wording for "Sens du service" from the original approved visual/source. -->
-          </article>
+            <article class="page-card timeline-item" id="proximite">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <span class="value-node-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></span>
+              <h3 data-values-i18n="values.proximity.title">Proximité</h3>
+              <p data-values-i18n="values.proximity.body">Renvoie vers notre capacité à toujours être plus proche de nos adhérents afin de mieux comprendre et d'anticiper leurs attentes et aspirations.</p>
+            </article>
 
-          <article class="value-card" id="inclusion">
-            <span class="value-icon"><i class="fa-solid fa-users-viewfinder" aria-hidden="true"></i></span>
-            <h3 data-values-i18n="values.inclusion.title">Inclusion</h3>
-            <p data-values-i18n="values.inclusion.body">La Fondation veille à garantir un accès équitable aux services et à renforcer l’accompagnement de tous les adhérents, sans exclusion.</p>
-            <!-- TODO: Validate official wording for "Inclusion" from the original approved visual/source. -->
-          </article>
+            <article class="page-card timeline-item" id="sens-du-service">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <span class="value-node-icon" aria-hidden="true"><i class="fa-solid fa-hand-holding-heart"></i></span>
+              <h3 data-values-i18n="values.service.title">Sens du service</h3>
+              <p data-values-i18n="values.service.body">Nous sommes mobilisés pour garantir une relation de service bienveillante, réactive et utile, en assurant continuité et qualité des prestations.</p>
+              <!-- TODO: Validate official wording for "Sens du service" from the original approved visual/source. -->
+            </article>
+
+            <article class="page-card timeline-item" id="inclusion">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <span class="value-node-icon" aria-hidden="true"><i class="fa-solid fa-handshake"></i></span>
+              <h3 data-values-i18n="values.inclusion.title">Inclusion</h3>
+              <p data-values-i18n="values.inclusion.body">Garantir l'accès aux prestations sociales à l'ensemble des adhérents, indépendamment du grade, du genre, de la région ou de la fonction.</p>
+              <!-- TODO: Validate official wording for "Inclusion" from the original approved visual/source. -->
+            </article>
+          </div>
+          <img class="values-line-art" src="line.svg" alt="" aria-hidden="true" />
         </div>
       </div>
     </section>
@@ -79,7 +91,7 @@
 
   <footer class="site-footer"></footer>
 
-  <script src="assets/secondary-pages.js?v=3"></script>
-  <script src="assets/nos-valeurs.js?v=3"></script>
+  <script src="assets/secondary-pages.js?v=4"></script>
+  <script src="assets/nos-valeurs.js?v=4"></script>
 </body>
 </html>
