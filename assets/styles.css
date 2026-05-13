@@ -3741,6 +3741,9 @@ html[dir="rtl"] .service-layout {
     border-radius: 14px;
     overflow: hidden;
   }
+  .site-nav .nav-item.has-submenu.is-open {
+    overflow: visible;
+  }
   .site-nav .nav-item > a,
   .site-nav > a:not(.btn-cta-nav):not(.mobile-search-btn):not(.member-link) {
     display: flex !important;
