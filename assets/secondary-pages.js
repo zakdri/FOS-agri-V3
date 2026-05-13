@@ -13,13 +13,88 @@
   const nav = {
     fr: {
       home: 'Accueil', foundation: 'La Fondation', services: 'Prestations', adhesion: 'Adhésion', mediatheque: 'Médiathèque', news: 'Actualités',
-      events: 'Agenda solidaire', contact: 'Contact', member: 'Espace adherent', footerAbout: 'Fondation pour la Promotion des Œuvres Sociales du Personnel du Ministère de l\'Agriculture.',
+      events: 'Agenda solidaire', contact: 'Contact', member: 'Espace adhérent', footerAbout: 'Fondation pour la Promotion des Œuvres Sociales du Personnel du Ministère de l\'Agriculture.',
       usefulTitle: 'Liens utiles', quickTitle: 'Accès rapides', contactTitle: 'Contact', copy: '© FOS-Agri. Tous droits réservés.',
       minister: 'Mot du Ministre', president: 'Mot du Président', history: 'Histoire, mission et valeurs', organization: 'Notre organisation', governance: 'Gouvernance',
       prevoyance: 'Prévoyance médico-sociale', culture: 'Culture, loisirs et voyages', scolarisation: 'Scolarisation et formation', logement: 'Accès au logement', projets: 'Projets personnels', education: 'Éducation et culture',
       adherents: 'Nos adhérents & bénéficiaires', procedure: 'Procédure d’adhésion', cotisations: 'Cotisations',
       media2017: 'Galerie 2017', media2018: 'Galerie 2018', media2019: 'Galerie 2019', media2020: 'Galerie 2020',
-      coordinates: 'Coordonnées', regional: 'Relais régionaux', social: 'Réseaux sociaux'
+      coordinates: 'Coordonnées', regional: 'Relais régionaux', social: 'Réseaux sociaux',
+      search: 'Rechercher', searchPlaceholder: 'Rechercher sur FOS-Agri…', searchHint: 'Échap pour fermer',
+      searchEmpty: 'Aucun résultat. Essayez un autre mot-clé.', searchStart: 'Commencez à taper pour voir les résultats…',
+      brandSubtitle: 'Ministère de l\'Agriculture', langLabel: 'Langue',
+      memberClose: 'Fermer',
+      /* Hero sections — secondary pages */
+      adhesionKicker: 'Adhésion', adhesionTitle: 'Adhérents, bénéficiaires et procédures',
+      adhesionBody: 'Conditions d\'adhésion, pièces à fournir et cotisations de la Fondation.',
+      adh_activeTitle: 'Personnel en activité',
+      adh_activeBody: 'Le personnel actif du Département de l\'Agriculture est adhérent d\'office, avec activation par les pièces justificatives.',
+      adh_orgsTitle: 'Organismes sous tutelle',
+      adh_orgsBody: 'Adhésion après signature de la convention liant la FOS-Agri et l\'administration de l\'établissement concerné.',
+      adh_retraitesTitle: 'Retraités',
+      adh_retraitesBody: 'Adhésion possible après validation du prélèvement mensuel auprès de la CMR et dépôt des documents requis.',
+      adh_procedureTitle: 'Procédure d\'adhésion',
+      adh_proc1: 'Fiche d\'adhésion.',
+      adh_proc2: 'Bulletin individuel d\'adhésion.',
+      adh_proc3: 'Chèque barré ou RIB.',
+      adh_proc4: 'Pièces justificatives des conjoints et enfants.',
+      adh_proc5: 'Autorisation de précompte pour les futurs retraités.',
+      adh_dlTitle: 'Téléchargements',
+      adh_dlBody: 'Les liens de téléchargement seront ajoutés après réception ou validation des formulaires officiels.',
+      adh_ctaOrient: 'Demander une orientation',
+      adh_cotTitle: 'Cotisations',
+      adh_cotBody: 'Les catégories et montants seront présentés dans un tableau validé par FOS-Agri.',
+      adh_ctaRelais: 'Relais régionaux',
+
+      mediathequeKicker: 'Médiathèque', mediathequeTitle: 'Galeries et archives FOS-Agri',
+      mediathequeBody: 'Photos et archives organisées par année et par rubrique.',
+      med_seePhotos: 'Voir les photos',
+      med_2017_1: 'Colonie', med_2017_2: 'Journée de la femme', med_2017_3: 'Coaching scolaire',
+      med_2018_1: 'Cérémonie', med_2018_2: 'Colonie', med_2018_3: 'Omra', med_2018_4: 'Salon du cheval', med_2018_5: 'SIAM', med_2018_6: 'Coaching',
+      med_2019_1: 'Coaching scolaire', med_2019_2: 'Colonie', med_2019_3: 'Omra', med_2019_4: 'Salon du cheval', med_2019_5: 'Journée de la femme', med_2019_6: 'SIAM',
+      med_2020_1: 'Coaching scolaire', med_2020_2: 'Omra',
+      med_orgTitle: 'Organisation future',
+      med_orgBody: 'Les albums réels pourront être ajoutés après réception des images validées.',
+
+      actualitesKicker: 'Centre d\'information', actualitesTitle: 'Actualités de la Fondation',
+      actualitesBody: 'Annonces, conventions, campagnes et programmes sociaux.',
+      act_card1Date: 'Programme 2025', act_card1Title: 'Vacances et loisirs',
+      act_card1Body: 'Présentation des programmes de vacances, loisirs et accompagnement familial.',
+      act_card2Date: 'Convention', act_card2Title: 'Partenariats médicaux',
+      act_card2Body: 'Mise en avant des conventions médico-sociales au profit des adhérents.',
+      act_card3Date: 'Opération sociale', act_card3Title: 'Omra 2025',
+      act_card3Body: 'Information et accompagnement des bénéficiaires concernés par les opérations sociales.',
+      act_editTitle: 'Organisation éditoriale',
+      act_editBody: 'Cette page peut recevoir les actualités validées par le client : titre, date, image, résumé et détail.',
+      act_nextTitle: 'Prochaine étape',
+      act_nextBody: 'Après validation, chaque actualité pourra avoir sa propre page statique.',
+
+      agendaKicker: 'Agenda solidaire', agendaTitle: 'Programmes et événements à venir',
+      agendaBody: 'Calendrier des activités sociales, culturelles et de solidarité.',
+      ag_1Title: 'Campagnes d\'information régionales',
+      ag_1Body: 'Rencontres de proximité pour informer les adhérents sur les prestations, l\'adhésion et les nouveautés.',
+      ag_2Title: 'Opérations sociales saisonnières',
+      ag_2Body: 'Vacances, loisirs, scolarisation, Omra et accompagnement des familles selon le calendrier validé.',
+      ag_3Title: 'Conventions et partenariats',
+      ag_3Body: 'Annonce des nouvelles conventions médicales, éducatives, financières ou de loisirs.',
+      ag_upcomingTitle: 'Événements à venir',
+      ag_upcomingBody: 'Cette zone peut recevoir les prochains rendez-vous validés par l\'équipe FOS-Agri.',
+      ag_archivesTitle: 'Archives',
+      ag_archivesBody: 'Les événements passés peuvent être classés par année, catégorie ou région.',
+
+      contactKicker: 'Contact & relais', contactTitle: 'Contacter FOS-Agri',
+      contactBody: 'Coordonnées, adresse et carte de localisation de la Fondation.',
+      ctc_emailTitle: 'Email', ctc_phoneTitle: 'Téléphone', ctc_addressTitle: 'Adresse',
+      ctc_address: '461, Avenue Hassan II, Agdal - Rabat',
+      ctc_relaisTitle: 'Relais régionaux',
+      ctc_relaisBody: 'Cette zone est prévue pour organiser les contacts régionaux, responsables, horaires et informations pratiques après validation du client.',
+      ctc_relais1: 'Coordonnées régionales',
+      ctc_relais2: 'Informations d\'accueil',
+      ctc_relais3: 'Demandes d\'orientation',
+      ctc_demandesTitle: 'Demandes adhérents',
+      ctc_demandesBody: 'Pour la démonstration Phase 1, cette page reste statique. Les formulaires dynamiques seront ajoutés seulement après validation de la Phase 2.',
+      ctc_socialTitle: 'Réseaux sociaux',
+      ctc_socialBody: 'Retrouvez FOS-Agri sur nos canaux officiels pour suivre les actualités, événements et témoignages de la communauté.'
     },
     ar: {
       home: 'الرئيسية', foundation: 'المؤسسة', services: 'الخدمات', adhesion: 'الانخراط', mediatheque: 'الخزانة الرقمية', news: 'المستجدات',
@@ -29,7 +104,81 @@
       prevoyance: 'الوقاية الطبية الاجتماعية', culture: 'الثقافة والترفيه والأسفار', scolarisation: 'الدراسة والتكوين', logement: 'الولوج إلى السكن', projets: 'المشاريع الشخصية', education: 'التربية والثقافة',
       adherents: 'المنخرطون والمستفيدون', procedure: 'مسطرة الانخراط', cotisations: 'الاشتراكات',
       media2017: 'صور 2017', media2018: 'صور 2018', media2019: 'صور 2019', media2020: 'صور 2020',
-      coordinates: 'المعلومات', regional: 'المنسقون الجهويون', social: 'الشبكات الاجتماعية'
+      coordinates: 'المعلومات', regional: 'المنسقون الجهويون', social: 'الشبكات الاجتماعية',
+      search: 'بحث', searchPlaceholder: 'ابحث في موقع FOS-Agri…', searchHint: 'إسكاب للإغلاق',
+      searchEmpty: 'لا توجد نتائج. جرّب كلمة أخرى.', searchStart: 'ابدأ الكتابة لعرض النتائج…',
+      brandSubtitle: 'وزارة الفلاحة', langLabel: 'اللغة',
+      memberClose: 'إغلاق',
+      adhesionKicker: 'الانخراط', adhesionTitle: 'المنخرطون والمستفيدون والمساطر',
+      adhesionBody: 'شروط الانخراط، الوثائق المطلوبة، والاشتراكات الخاصة بالمؤسسة.',
+      adh_activeTitle: 'الموظفون العاملون',
+      adh_activeBody: 'الموظفون العاملون بوزارة الفلاحة منخرطون تلقائيا، ويتم تفعيل الانخراط عبر الوثائق المطلوبة.',
+      adh_orgsTitle: 'المؤسسات تحت الوصاية',
+      adh_orgsBody: 'الانخراط بعد توقيع اتفاقية بين FOS-Agri وإدارة المؤسسة المعنية.',
+      adh_retraitesTitle: 'المتقاعدون',
+      adh_retraitesBody: 'يمكن الانخراط بعد تفعيل الاقتطاع الشهري لدى الصندوق المغربي للتقاعد وتقديم الوثائق المطلوبة.',
+      adh_procedureTitle: 'مسطرة الانخراط',
+      adh_proc1: 'بطاقة الانخراط.',
+      adh_proc2: 'نشرة فردية للانخراط.',
+      adh_proc3: 'شيك مسطر أو رقم الحساب البنكي.',
+      adh_proc4: 'وثائق إثبات الأزواج والأبناء.',
+      adh_proc5: 'إذن بالاقتطاع للمتقاعدين المرتقبين.',
+      adh_dlTitle: 'تحميلات',
+      adh_dlBody: 'ستضاف روابط التحميل بعد توصل أو المصادقة على الاستمارات الرسمية.',
+      adh_ctaOrient: 'طلب التوجيه',
+      adh_cotTitle: 'الاشتراكات',
+      adh_cotBody: 'ستعرض الفئات والمبالغ في جدول مصادق عليه من قبل FOS-Agri.',
+      adh_ctaRelais: 'المنسقون الجهويون',
+
+      mediathequeKicker: 'الخزانة الرقمية', mediathequeTitle: 'معارض وأرشيف FOS-Agri',
+      mediathequeBody: 'الصور والأرشيف مرتبة حسب السنة والقسم.',
+      med_seePhotos: 'مشاهدة الصور',
+      med_2017_1: 'مخيم', med_2017_2: 'اليوم العالمي للمرأة', med_2017_3: 'التأطير المدرسي',
+      med_2018_1: 'حفل', med_2018_2: 'مخيم', med_2018_3: 'العمرة', med_2018_4: 'معرض الفرس', med_2018_5: 'SIAM', med_2018_6: 'التأطير',
+      med_2019_1: 'التأطير المدرسي', med_2019_2: 'مخيم', med_2019_3: 'العمرة', med_2019_4: 'معرض الفرس', med_2019_5: 'اليوم العالمي للمرأة', med_2019_6: 'SIAM',
+      med_2020_1: 'التأطير المدرسي', med_2020_2: 'العمرة',
+      med_orgTitle: 'التنظيم المستقبلي',
+      med_orgBody: 'يمكن إضافة الألبومات الحقيقية بعد توصل الصور المصادق عليها.',
+
+      actualitesKicker: 'مركز المعلومات', actualitesTitle: 'مستجدات المؤسسة',
+      actualitesBody: 'الإعلانات، الاتفاقيات، الحملات والبرامج الاجتماعية.',
+      act_card1Date: 'برنامج 2025', act_card1Title: 'العطل والترفيه',
+      act_card1Body: 'تقديم برامج العطل والترفيه ومرافقة الأسر.',
+      act_card2Date: 'اتفاقية', act_card2Title: 'الشراكات الطبية',
+      act_card2Body: 'إبراز الاتفاقيات الطبية الاجتماعية لصالح المنخرطين.',
+      act_card3Date: 'عملية اجتماعية', act_card3Title: 'عمرة 2025',
+      act_card3Body: 'إعلام ومرافقة المستفيدين المعنيين بالعمليات الاجتماعية.',
+      act_editTitle: 'التنظيم التحريري',
+      act_editBody: 'يمكن لهذه الصفحة أن تستقبل المستجدات المصادق عليها: العنوان، التاريخ، الصورة، الملخص والتفاصيل.',
+      act_nextTitle: 'الخطوة القادمة',
+      act_nextBody: 'بعد المصادقة، يمكن لكل خبر أن يحظى بصفحة ثابتة خاصة به.',
+
+      agendaKicker: 'الأجندة التضامنية', agendaTitle: 'برامج وفعاليات قادمة',
+      agendaBody: 'روزنامة الأنشطة الاجتماعية والثقافية والتضامنية.',
+      ag_1Title: 'حملات إعلامية جهوية',
+      ag_1Body: 'لقاءات قرب لإخبار المنخرطين بالخدمات والانخراط والمستجدات.',
+      ag_2Title: 'العمليات الاجتماعية الموسمية',
+      ag_2Body: 'العطل، الترفيه، التمدرس، العمرة ومرافقة الأسر وفق الروزنامة المصادق عليها.',
+      ag_3Title: 'الاتفاقيات والشراكات',
+      ag_3Body: 'الإعلان عن الاتفاقيات الطبية والتربوية والمالية والترفيهية الجديدة.',
+      ag_upcomingTitle: 'فعاليات قادمة',
+      ag_upcomingBody: 'يمكن لهذه الزاوية أن تستقبل المواعيد القادمة المصادق عليها من طرف فريق FOS-Agri.',
+      ag_archivesTitle: 'الأرشيف',
+      ag_archivesBody: 'يمكن تصنيف الفعاليات الماضية حسب السنة، الفئة أو الجهة.',
+
+      contactKicker: 'اتصل ومنسقون', contactTitle: 'اتصل بـ FOS-Agri',
+      contactBody: 'المعلومات والعنوان وخريطة موقع المؤسسة.',
+      ctc_emailTitle: 'البريد الإلكتروني', ctc_phoneTitle: 'الهاتف', ctc_addressTitle: 'العنوان',
+      ctc_address: '461، شارع الحسن الثاني، أكدال - الرباط',
+      ctc_relaisTitle: 'المنسقون الجهويون',
+      ctc_relaisBody: 'هذه المنطقة مخصصة لتنظيم جهات الاتصال الجهوية والمسؤولين والمواقيت والمعلومات العملية بعد مصادقة العميل.',
+      ctc_relais1: 'المعلومات الجهوية',
+      ctc_relais2: 'معلومات الاستقبال',
+      ctc_relais3: 'طلبات التوجيه',
+      ctc_demandesTitle: 'طلبات المنخرطين',
+      ctc_demandesBody: 'في إطار العرض التجريبي للمرحلة 1، تبقى هذه الصفحة ثابتة. ستضاف الاستمارات التفاعلية بعد المصادقة على المرحلة 2.',
+      ctc_socialTitle: 'الشبكات الاجتماعية',
+      ctc_socialBody: 'تابعوا FOS-Agri عبر قنواتنا الرسمية للاطلاع على المستجدات والفعاليات وشهادات المجتمع.'
     },
     zgh: {
       home: 'ⴰⵙⵏⵓⴱⴳ', foundation: 'ⵜⴰⵎⵙⵙⵓⵔⵜ', services: 'ⵜⵉⵏⴼⴰⵙ', adhesion: 'ⴰⵎⵓⵏ', mediatheque: 'ⵜⴰⵎⵓⵙⵙⵏⴰ', news: 'ⵉⵙⴰⵍⵏ',
@@ -39,9 +188,125 @@
       prevoyance: 'ⵜⴰⴼⵔⴰⵙⵜ ⵜⴰⴷⴰⵡⵙⴰⵏⵜ', culture: 'ⵜⴰⴷⵍⵙⴰ, ⴰⵙⴰⵢⵔⴰⵔ ⴷ ⵉⵙⵉⴽⵍⵏ', scolarisation: 'ⴰⵙⴳⵎⵉ ⴷ ⵜⵙⴳⵎⵉ', logement: 'ⴰⴽⵛⵓⵎ ⵖⵔ ⵜⴰⴷⴷⴰⵔⵜ', projets: 'ⵉⵙⵏⴼⴰⵔⵏ ⵉⵎⴰⵏⴰⵡⵏ', education: 'ⴰⵙⴳⵎⵉ ⴷ ⵜⴷⵍⵙⴰ',
       adherents: 'ⵉⵎⵓⵏⵏ ⴷ ⵉⵎⵙⴼⵔⴽⵏ', procedure: 'ⵜⴰⵎⵙⵙⴰⵔⵜ ⵏ ⵓⵎⵓⵏ', cotisations: 'ⵜⵉⵡⵙⵉⵡⵉⵏ',
       media2017: 'ⵜⴰⵡⵍⴰⴼⵜ 2017', media2018: 'ⵜⴰⵡⵍⴰⴼⵜ 2018', media2019: 'ⵜⴰⵡⵍⴰⴼⵜ 2019', media2020: 'ⵜⴰⵡⵍⴰⴼⵜ 2020',
-      coordinates: 'ⵉⵙⴰⵍⵏ', regional: 'ⵉⵎⵙⵏⴰⵡⵏ ⵉⵎⵏⴰⴹⵏ', social: 'ⵉⵥⴹⵡⴰⵏ ⵉⵏⴰⵎⵓⵏⵏ'
+      coordinates: 'ⵉⵙⴰⵍⵏ', regional: 'ⵉⵎⵙⵏⴰⵡⵏ ⵉⵎⵏⴰⴹⵏ', social: 'ⵉⵥⴹⵡⴰⵏ ⵉⵏⴰⵎⵓⵏⵏ',
+      search: 'ⴰⵔⵣⵣⵓ', searchPlaceholder: 'ⵔⵣⵣⵓ ⴷⴻⴳ FOS-Agri…', searchHint: 'ⵙⵏⵙ ⵙ Échap',
+      searchEmpty: 'ⵓⵍⴰ ⴰⵔⵔⴰⵙⵎ. ⴰⵔⵎ ⴰⵡⴰⵍ ⵏⵏⵉⴹⵏ.', searchStart: 'ⵙⵏⵜⵉ ⴰⴷ ⵜⴻⵜⵉ ⵉ ⵉⴽⴻⴽ ⵉⴰⵔⵎ…',
+      brandSubtitle: 'ⵜⴰⵎⴰⵡⴰⵙⵜ ⵏ ⵜⴼⵍⴰⵃⵜ', langLabel: 'ⵜⵓⵜⵍⴰⵢⵜ',
+      memberClose: 'ⵙⵏⵙ',
+      adhesionKicker: 'ⴰⵎⵓⵏ', adhesionTitle: 'ⵉⵎⵓⵏⵏ, ⵉⵎⵙⴼⵔⴽⵏ ⴷ ⵜⵎⵙⵙⴰⵔⵉⵏ',
+      adhesionBody: 'ⵜⵉⵎⴻⵍⵍⵓⵙⵉⵏ ⵏ ⵓⵎⵓⵏ ⴷ ⵜⵉⵡⵙⵉⵡⵉⵏ ⵏ ⵜⵎⵙⵙⵓⵔⵜ.',
+      adh_activeTitle: 'ⵉⵎⵇⵇⵔⴰⵏⴻⵏ ⵉⵜⵜⵓⵙⴽⴰⵔⵏ',
+      adh_activeBody: 'ⵉⵎⵇⵇⵔⴰⵏⴻⵏ ⵏ ⵜⵎⴰⵡⴰⵙⵜ ⵏ ⵜⴼⵍⴰⵃⵜ ⴷ ⵉⵎⵓⵏⵏ ⵙ ⵉⵎⵉⴽ.',
+      adh_orgsTitle: 'ⵜⵉⵎⵙⵙⵓⵔⵉⵏ ⵙⴷⴷⴰⵡ ⵏ ⵓⴱⴷⴷⵉ',
+      adh_orgsBody: 'ⴰⵎⵓⵏ ⴷⴻⴼⴼⵉⵔ ⵏ ⵓⵙⵉⵔⵎ ⵏ ⵓⵎⵢⴰⴽ.',
+      adh_retraitesTitle: 'ⵉⵎⴰⵙⵙⵉⵏⴻⵏ',
+      adh_retraitesBody: 'ⴰⵎⵓⵏ ⴷ ⵉⵣⵎⵔⵏ ⴷⴻⴼⴼⵉⵔ ⵏ ⵓⵙⴻⴼⵙⵉ ⵏ ⵜⵡⵙⵉⵡⵜ ⵏ ⵓⵢⵢⵓⵔ.',
+      adh_procedureTitle: 'ⵜⴰⵎⵙⵙⴰⵔⵜ ⵏ ⵓⵎⵓⵏ',
+      adh_proc1: 'ⵜⴰⴽⴰⵔⴹⴰ ⵏ ⵓⵎⵓⵏ.',
+      adh_proc2: 'ⵜⴰⵏⴰⵙⵙⵉⵎⵜ ⵜⴰⵎⴰⵏⴰⵡⵜ ⵏ ⵓⵎⵓⵏ.',
+      adh_proc3: 'ⵛⵉⴽ ⵉⵙⵎⴻⵟⵟⴻⵔⵏ ⵏⵉⵖ RIB.',
+      adh_proc4: 'ⵉⵎⴰⵙⵙⵉⵏⴻⵏ ⵏ ⵉⵙⵍⵉⵡⵉⵏ ⴷ ⵉⵙⴻⵍⵎⵉ.',
+      adh_proc5: 'ⴰⴷⵓⴼ ⵏ ⵓⵙⴻⴽⵙⴻⵎ ⵉ ⵉⵎⴰⵙⵙⵉⵏⴻⵏ.',
+      adh_dlTitle: 'ⵉⵙⵉⴹⵏⴻⵏ',
+      adh_dlBody: 'ⴰⴷ ⴷ ⵉⵙⵙⴻⵎⵎⴰⵍ ⴰⵏⴰⵎⵉ ⵏ ⵉⵙⵉⴹⵏⴻⵏ ⴷⴻⴼⴼⵉⵔ ⵏ ⵓⵙⵉⵔⵎ.',
+      adh_ctaOrient: 'ⴰⵙⵙⵓⵎⵔ ⵏ ⵜⵉⵏⴰⵙⵜ',
+      adh_cotTitle: 'ⵜⵉⵡⵙⵉⵡⵉⵏ',
+      adh_cotBody: 'ⴰⴷ ⵙⴽⵉⵏⵜ ⵜⵏⵙⵙⴰⵏⵉⵏ ⴷ ⵉⴹⵕⵉⵚⴻⵏ ⴷⴻⴳ ⵓⵙⴻⴼⵙⵉ.',
+      adh_ctaRelais: 'ⵉⵎⵙⵏⴰⵡⵏ ⵉⵎⵏⴰⴹⵏ',
+
+      mediathequeKicker: 'ⵜⴰⵎⵓⵙⵙⵏⴰ', mediathequeTitle: 'ⵜⵉⵡⵍⴰⴼⵉⵏ ⴷ ⵜⵏⵙⵙⴰⵏⵉⵏ ⵏ FOS-Agri',
+      mediathequeBody: 'ⵜⵉⵡⵍⴰⴼⵉⵏ ⴷ ⵜⵏⵙⵙⴰⵏⵉⵏ ⴱⵟⵟⵓⵏⵜ ⵙ ⵓⵙⴳⴳⵯⴰⵙ ⴷ ⵜⵙⵏⵙⵙⵓⴷⵙⵜ.',
+      med_seePhotos: 'ⵥⵕ ⵜⵉⵡⵍⴰⴼⵉⵏ',
+      med_2017_1: 'ⴽⵓⵍⵓⵏⵉ', med_2017_2: 'ⴰⵙⵙ ⵏ ⵜⵎⴻⵟⵟⵓⵟ', med_2017_3: 'ⴽⵓⵛⵉⵏⴳ ⵏ ⵜⵉⵎⴰⵙⴰⵏ',
+      med_2018_1: 'ⵜⴰⵎⵖⵔⴰ', med_2018_2: 'ⴽⵓⵍⵓⵏⵉ', med_2018_3: 'ⵍⵄⵎⵕⴰ', med_2018_4: 'ⵙⴰⵍⵓⵏ ⵏ ⵉⵢⵉⵙⴰⵏ', med_2018_5: 'SIAM', med_2018_6: 'ⴽⵓⵛⵉⵏⴳ',
+      med_2019_1: 'ⴽⵓⵛⵉⵏⴳ ⵏ ⵜⵉⵎⴰⵙⴰⵏ', med_2019_2: 'ⴽⵓⵍⵓⵏⵉ', med_2019_3: 'ⵍⵄⵎⵕⴰ', med_2019_4: 'ⵙⴰⵍⵓⵏ ⵏ ⵉⵢⵉⵙⴰⵏ', med_2019_5: 'ⴰⵙⵙ ⵏ ⵜⵎⴻⵟⵟⵓⵟ', med_2019_6: 'SIAM',
+      med_2020_1: 'ⴽⵓⵛⵉⵏⴳ ⵏ ⵜⵉⵎⴰⵙⴰⵏ', med_2020_2: 'ⵍⵄⵎⵕⴰ',
+      med_orgTitle: 'ⴰⵙⴻⴳⵎⵉ ⵏ ⵓⵎⴻⴹⴹⵕⵓⵇ',
+      med_orgBody: 'ⵉⵍⴱⵓⵎⴰⵜ ⵉⴷⴰⵎⵏⴻⵏ ⴰⴷ ⵜⵜⵓⵙⵙⴽⴰⵏ ⴷⴻⴼⴼⵉⵔ ⵏ ⵓⵙⴻⴼⵙⵉ.',
+
+      actualitesKicker: 'ⵜⴰⵎⴻⵍⵍⴰⵍⵜ ⵏ ⵉⵙⴰⵍⵏ', actualitesTitle: 'ⵉⵙⴰⵍⵏ ⵏ ⵜⵎⵙⵙⵓⵔⵜ',
+      actualitesBody: 'ⵉⵙⵉⵡⵍⵏ, ⵉⵎⵢⴰⴽⵏ, ⴰⴽⴽⵯ ⴷ ⵉⵖⴰⵡⴰⵙⵏ ⵉⵏⴰⵎⵓⵏⵏ.',
+      act_card1Date: 'ⴰⵖⴰⵡⴰⵙ 2025', act_card1Title: 'ⵜⵉⴽⴽⵉⵏ ⴷ ⵓⵙⴰⵢⵔⴰⵔ',
+      act_card1Body: 'ⴰⵙⵏⵓⵍⴼⵓ ⵏ ⵉⵖⴰⵡⴰⵙⵏ ⵏ ⵜⵉⴽⴽⵉⵏ ⴷ ⵓⵙⴰⵢⵔⴰⵔ.',
+      act_card2Date: 'ⵉⵎⵢⴰⵏ', act_card2Title: 'ⵉⵎⵢⴰⵏ ⵉⵙⵏⵓⵇⴱⵉⵍⵏ',
+      act_card2Body: 'ⴰⵙⵙⴽⴰⵏ ⵏ ⵉⵎⵢⴰⵏ ⵉⵙⵏⵓⵇⴱⵉⵍⵏ ⵉⵎⵓⵙⵏⴰⵎⵉⵏ.',
+      act_card3Date: 'ⵜⵉⵏⵓⴼⵉⵡⵉⵏ', act_card3Title: 'ⵍⵄⵎⵕⴰ 2025',
+      act_card3Body: 'ⵜⴰⵎⵓⵍⵉⵜ ⴷ ⵜⵎⴻⴷⵍⴰ ⵏ ⵉⵎⵉⴼⴽⵏ ⵉⵎⴻⵏⵏⵉⵜⵏ.',
+      act_editTitle: 'ⴰⵙⴻⴳⵎⵉ ⵏ ⵉⵙⴰⵍⵏ',
+      act_editBody: 'ⵜⵙⴻⵏⵟⵉ ⵜⵉⴼⴰⵡⵜ ⴰⴷ ⵜⵙⵙⴻⵟⵟⵕ ⵉⵙⴰⵍⵏ ⵉⵎⵙⵙⴰⵏⴻⵏ: ⴰⵣⵡⴻⵍ, ⴰⵎⵉⴹⵉ, ⵜⴰⵡⵍⴰⴼⵜ.',
+      act_nextTitle: 'ⴰⵙⵓⵔⴻⴼ ⵉⴳⴻⵔ',
+      act_nextBody: 'ⴷⴻⴼⴼⵉⵔ ⵓⵙⴻⴼⵙⵉ, ⴽⵓⵍ ⴰⴽⴰⵍⴻⵏ ⴰⴷ ⵉⵙⴻⵎⵎⴰⵍ ⵙ ⵜⵉⴼⴰⵡⵜ ⵏⵏⵙ.',
+
+      agendaKicker: 'ⴰⴳⵏⴷⴰ ⵏ ⵜⴰⵏⴼⴰ', agendaTitle: 'ⵉⵖⴰⵡⴰⵙⵏ ⴷ ⵜⴻⵎⵍⵍⵉⵍⵉⵏ ⴷ ⵉⵜⴻⴷⴷⵓⵏ',
+      agendaBody: 'ⴰⵙⵙⴻⴷⵎⵎⴻⵔ ⵏ ⵜⵏⵓⴼⵉⵡⵉⵏ ⵜⵉⵏⴰⵎⵓⵏⵉⵏ, ⵜⵉⴷⴻⵍⵙⴰⵏⵉⵏ ⴷ ⵜⵉⵏ ⵜⴰⵏⴼⴰ.',
+      ag_1Title: 'ⵜⵉⴼⴰⵙⵉⵏ ⵏ ⵓⵙⵙⴻⴷⵎⴻⵔ ⵉⵎⵏⴰⴹⵏ',
+      ag_1Body: 'ⵜⵉⵎⵍⵉⵍⵉⵏ ⵜⴰⵅⴰⵜⴰⵔⵉⵏ ⴰⴷ ⵜⵙⵙⵏⴻⵎⵏ ⵉⵎⵓⵏⵏ ⵙ ⵜⵏⵓⴼⵉⵡⵉⵏ.',
+      ag_2Title: 'ⵜⵉⵏⵓⴼⵉⵡⵉⵏ ⵜⵉⵏⴰⵎⵓⵏⵉⵏ ⵏ ⵉⴽⵓⴷⵏ',
+      ag_2Body: 'ⵜⵉⴽⴽⵉⵏ, ⴰⵙⴰⵢⵔⴰⵔ, ⴰⵙⴻⴳⵎⵉ, ⵍⵄⵎⵕⴰ.',
+      ag_3Title: 'ⵉⵎⵢⴰⵏ ⴷ ⵉⵎⴻⵙⴱⴰⴹⴻⵏ',
+      ag_3Body: 'ⴰⵙⴻⵎⵎⴰⵍ ⵏ ⵉⵎⵢⴰⵏ ⵉⵎⴰⵢⵏⵓⵜⴻⵏ.',
+      ag_upcomingTitle: 'ⵜⵉⵎⵍⵍⵉⵍⵉⵏ ⵉⴷⴷⴰⵏ',
+      ag_upcomingBody: 'ⴰⴷ ⵜⵉⵎⵍⵍⵉⵍⵉⵏ ⵉⴷⴷⴰⵏ ⵏ ⵜⴽⴱⴱⴰⵏⵜ ⵏ FOS-Agri.',
+      ag_archivesTitle: 'ⵜⵏⵙⵙⴰⵏⵉⵏ',
+      ag_archivesBody: 'ⵜⵉⵎⵍⵍⵉⵍⵉⵏ ⵉⵣⵔⵉⵏ ⴰⴷ ⵜⵜⴱⵟⵟⵓⵏⵜ ⵙ ⵓⵙⴳⴳⵯⴰⵙ.',
+
+      contactKicker: 'ⴰⵏⴰⵔⵎⵙ ⴷ ⵉⵎⵙⵏⴰⵡⵏ', contactTitle: 'ⴰⵏⴰⵔⵎⵙ ⵉ FOS-Agri',
+      contactBody: 'ⵉⵙⴰⵍⵏ, ⴰⵏⵙⴰ ⴷ ⵜⴻⴽⴰⵕⵟⴰ ⵏ ⵓⵏⵙⴰ ⵏ ⵜⵎⵙⵙⵓⵔⵜ.',
+      ctc_emailTitle: 'ⵉⵎⴰⵢⵍ', ctc_phoneTitle: 'ⴰⵟⵉⵍⵉⴼⵓⵏ', ctc_addressTitle: 'ⴰⵏⵙⴰ',
+      ctc_address: '461, ⴰⵙⴰⵔⴰⴳ ⵏ Hassan II, ⴰⴳⴷⴰⵍ - ⴰⵕⴱⴰⵟ',
+      ctc_relaisTitle: 'ⵉⵎⵙⵏⴰⵡⵏ ⵉⵎⵏⴰⴹⵏ',
+      ctc_relaisBody: 'ⵜⴰⵅⵅⴰⵎⵜ ⴰⴷ ⵉ ⵓⵙⵎⵎⴰⵍ ⵏ ⵉⵏⴰⵔⵎⴰⵙⵏ ⵉⵎⵏⴰⴹⵏ.',
+      ctc_relais1: 'ⵉⵙⴰⵍⵏ ⵉⵎⵏⴰⴹⵏ',
+      ctc_relais2: 'ⵉⵙⴰⵍⵏ ⵏ ⵓⵙⵏⵓⴱⴳ',
+      ctc_relais3: 'ⵉⵙⵓⵎⵔⵏ ⵏ ⵜⵉⵏⴰⵙⵜ',
+      ctc_demandesTitle: 'ⵉⵙⵓⵎⵔⵏ ⵏ ⵉⵎⵓⵏⵏ',
+      ctc_demandesBody: 'ⵜⵉⴼⴰⵡⵜ ⴰ ⵜⴻⵇⵇⵉⵎ ⵜⵉⵙⵟⵟⴰⵇⵉⵟ.',
+      ctc_socialTitle: 'ⵉⵥⴹⵡⴰⵏ ⵉⵏⴰⵎⵓⵏⵏ',
+      ctc_socialBody: 'ⴰⴹⴼⴰⵕ FOS-Agri ⴷⴻⴳ ⵉⵇⴻⵏⴰⵍⴻⵏ ⵏⵏⴻⵖ ⵉⵎⴰⵏⴰⵡⵏ.'
     }
   };
+
+  /* ── Site-wide search index ──────────────────────────
+     Used by the in-menu live search. Each entry has a
+     translated title/description and a target URL. */
+  const SEARCH_INDEX = [
+    { key: 'home',          url: 'index.html',                            icon: 'fa-house' },
+    { key: 'foundation',    url: 'fondation.html',                        icon: 'fa-landmark' },
+    { key: 'minister',      url: 'fondation.html#mot-ministre',           icon: 'fa-user-tie' },
+    { key: 'president',     url: 'fondation.html#mot-president',          icon: 'fa-user-tie' },
+    { key: 'history',       url: 'histoire-mission-valeurs.html',         icon: 'fa-clock-rotate-left' },
+    { key: 'organization',  url: 'notre-organisation.html',               icon: 'fa-sitemap' },
+    { key: 'governance',    url: 'la-fondation/gouvernance/index.html',   icon: 'fa-scale-balanced' },
+    { key: 'adhesion',      url: 'adhesion.html',                         icon: 'fa-id-card' },
+    { key: 'adherents',     url: 'adhesion.html#adherents-beneficiaires', icon: 'fa-users' },
+    { key: 'procedure',     url: 'adhesion.html#procedure-adhesion',      icon: 'fa-file-signature' },
+    { key: 'cotisations',   url: 'adhesion.html#cotisations',             icon: 'fa-coins' },
+    { key: 'services',      url: 'prestations.html',                      icon: 'fa-hand-holding-heart' },
+    { key: 'prevoyance',    url: 'services/prevoyance.html',              icon: 'fa-heart-pulse' },
+    { key: 'culture',       url: 'services/culture-loisirs-voyages.html', icon: 'fa-plane' },
+    { key: 'scolarisation', url: 'services/formation-scolarisation.html', icon: 'fa-graduation-cap' },
+    { key: 'logement',      url: 'services/acces-logement.html',          icon: 'fa-house-chimney' },
+    { key: 'projets',       url: 'services/projets-personnels.html',      icon: 'fa-lightbulb' },
+    { key: 'education',     url: 'services/education-culture.html',       icon: 'fa-book-open' },
+    { key: 'mediatheque',   url: 'mediatheque.html',                      icon: 'fa-photo-film' },
+    { key: 'media2017',     url: 'mediatheque.html#galerie-2017',         icon: 'fa-images' },
+    { key: 'media2018',     url: 'mediatheque.html#galerie-2018',         icon: 'fa-images' },
+    { key: 'media2019',     url: 'mediatheque.html#galerie-2019',         icon: 'fa-images' },
+    { key: 'media2020',     url: 'mediatheque.html#galerie-2020',         icon: 'fa-images' },
+    { key: 'news',          url: 'actualites.html',                       icon: 'fa-newspaper' },
+    { key: 'events',        url: 'agenda-solidaire.html',                 icon: 'fa-calendar-days' },
+    { key: 'contact',       url: 'contact.html',                          icon: 'fa-envelope' },
+    { key: 'coordinates',   url: 'contact.html#coordonnees',              icon: 'fa-map-location-dot' },
+    { key: 'regional',      url: 'contact.html#relais-regionaux',         icon: 'fa-map-pin' },
+    { key: 'social',        url: 'contact.html#reseaux-sociaux',          icon: 'fa-share-nodes' },
+    { key: 'member',        url: 'espace-adherent.html',                  icon: 'fa-user-shield' }
+  ];
+
+  /* Strip accents for accent-insensitive matching */
+  function normalize(s) {
+    return (s || '').toString().toLowerCase()
+      .normalize('NFD').replace(/[̀-ͯ]/g, '');
+  }
 
   function t(key) {
     return nav[lang]?.[key] || nav.fr[key] || '';
@@ -81,23 +346,51 @@
     const actions = document.querySelector('.nav-actions');
     if (!actions) return;
     const labelText = lang === 'fr' ? 'FR' : lang === 'ar' ? 'AR' : 'ⵜⵎⵣⵉⵖⵜ';
+    /* Desktop only: round search-icon button between lang dropdown
+       and the member CTA. Mobile hides it via CSS — search shows up
+       only inside the opened menu. */
     actions.innerHTML = `
-      <div class="lang-select-wrap desktop-only" id="sec-lang-wrap">
+      <div class="lang-select-wrap desktop-only" id="sec-lang-wrap" aria-label="${t('langLabel')}">
         <button class="lang-select" id="sec-lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
           <span id="sec-lang-label">${labelText}</span>
           <i class="fa-solid fa-chevron-down lang-chevron" aria-hidden="true"></i>
         </button>
-        <ul class="lang-dropdown-panel" id="sec-lang-panel" role="listbox" aria-label="Langue">
+        <ul class="lang-dropdown-panel" id="sec-lang-panel" role="listbox" aria-label="${t('langLabel')}">
           <li class="lang-dropdown-option${lang === 'fr' ? ' is-selected' : ''}" role="option" data-lang="fr" tabindex="0">FR — Français</li>
           <li class="lang-dropdown-option${lang === 'ar' ? ' is-selected' : ''}" role="option" data-lang="ar" tabindex="0">AR — العربية</li>
           <li class="lang-dropdown-option${lang === 'zgh' ? ' is-selected' : ''}" role="option" data-lang="zgh" tabindex="0">ⵜⵎⵣⵉⵖⵜ</li>
         </ul>
       </div>
-      <button class="nav-search-btn" type="button" aria-label="Recherche" title="Recherche" data-header-search="true">
+      <button class="nav-search-btn" type="button" aria-label="${t('search')}" data-header-search="true">
         <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
       </button>
       <a class="btn-cta-nav desktop-only" href="${href('espace-adherent.html')}">${t('member')}</a>
     `;
+  }
+
+  /* Deduplicate header-side search button — keep exactly one. */
+  function removeHeaderSearchButton() {
+    const buttons = Array.from(document.querySelectorAll('.nav-actions [data-header-search], .nav-actions .nav-search-btn'));
+    buttons.slice(1).forEach((el) => el.remove());
+  }
+
+  /* Tag the header's brand subtitle for i18n if it's not already.
+     Centralised here so we don't have to touch every HTML file. */
+  function tagBrandSubtitle() {
+    document.querySelectorAll('.brand-copy small').forEach((el) => {
+      if (!el.dataset.staticI18n) el.dataset.staticI18n = 'brandSubtitle';
+    });
+  }
+
+  /* Normalise burger markup so the animated burger→X transform works
+     regardless of what the source HTML uses (icon vs. burger-box). */
+  function normalizeMenuToggle() {
+    const toggle = document.querySelector('.menu-toggle');
+    if (!toggle) return;
+    if (!toggle.querySelector('.burger-box')) {
+      toggle.innerHTML = '<span class="burger-box"><span class="burger-inner"></span></span>';
+    }
+    toggle.setAttribute('aria-label', 'Menu');
   }
 
   function initLangDropdown() {
@@ -153,20 +446,23 @@
     modal.className = 'search-modal';
     modal.setAttribute('role', 'dialog');
     modal.setAttribute('aria-modal', 'true');
-    modal.setAttribute('aria-label', 'Recherche');
+    modal.setAttribute('aria-label', t('search') || 'Recherche');
     modal.hidden = true;
     modal.innerHTML = `
       <div class="search-modal-backdrop"></div>
       <div class="search-modal-box">
-        <button class="search-modal-close" type="button" aria-label="Fermer">
+        <button class="search-modal-close" type="button" aria-label="${t('memberClose')}">
           <i class="fa-solid fa-xmark"></i>
         </button>
         <form class="search-modal-form" role="search" onsubmit="return false">
           <i class="fa-solid fa-magnifying-glass search-modal-icon" aria-hidden="true"></i>
           <input id="site-search-input" class="search-modal-input" type="search"
-            placeholder="Rechercher sur FOS-Agri..." autocomplete="off" spellcheck="false" />
+            placeholder="${t('searchPlaceholder')}" autocomplete="off" spellcheck="false" />
         </form>
-        <p class="search-modal-hint">Echap pour fermer</p>
+        <div class="search-results" id="site-search-results" aria-live="polite">
+          <p class="search-results-empty" data-state="initial">${t('searchStart')}</p>
+        </div>
+        <p class="search-modal-hint">${t('searchHint')}</p>
       </div>
     `;
     document.body.appendChild(modal);
@@ -181,6 +477,51 @@
     modal.querySelector('.search-modal-backdrop').addEventListener('click', close);
     modal.querySelector('.search-modal-close').addEventListener('click', close);
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) close(); });
+
+    const input = modal.querySelector('#site-search-input');
+    input.addEventListener('input', () => renderSearchResults(input.value));
+  }
+
+  /* Refresh the modal's translated chrome when language changes */
+  function refreshSearchModalChrome() {
+    const modal = document.getElementById('site-search-modal');
+    if (!modal) return;
+    modal.setAttribute('aria-label', t('search') || 'Recherche');
+    const input = modal.querySelector('.search-modal-input');
+    if (input) input.placeholder = t('searchPlaceholder');
+    const closeBtn = modal.querySelector('.search-modal-close');
+    if (closeBtn) closeBtn.setAttribute('aria-label', t('memberClose'));
+    const hint = modal.querySelector('.search-modal-hint');
+    if (hint) hint.textContent = t('searchHint');
+    if (input) renderSearchResults(input.value);
+  }
+
+  /* Live in-menu search — filters SEARCH_INDEX by the typed query.
+     Matches against the translated label. */
+  function renderSearchResults(query) {
+    const box = document.getElementById('site-search-results');
+    if (!box) return;
+    const q = normalize(query).trim();
+    if (!q) {
+      box.innerHTML = `<p class="search-results-empty" data-state="initial">${t('searchStart')}</p>`;
+      return;
+    }
+    const hits = SEARCH_INDEX
+      .map((entry) => ({ entry, label: t(entry.key) || entry.key }))
+      .filter(({ label }) => normalize(label).includes(q))
+      .slice(0, 12);
+
+    if (!hits.length) {
+      box.innerHTML = `<p class="search-results-empty" data-state="empty">${t('searchEmpty')}</p>`;
+      return;
+    }
+    box.innerHTML = hits.map(({ entry, label }) => `
+      <a class="search-result-item" href="${href(entry.url)}">
+        <span class="search-result-icon"><i class="fa-solid ${entry.icon}" aria-hidden="true"></i></span>
+        <span class="search-result-text">${label}</span>
+        <i class="fa-solid fa-arrow-right search-result-arrow" aria-hidden="true"></i>
+      </a>
+    `).join('');
   }
 
   function renderNavigation() {
@@ -222,8 +563,8 @@
         { href: 'contact.html#relais-regionaux', key: 'regional' },
         { href: 'contact.html#reseaux-sociaux', key: 'social' }
       ])}
-      <button class="mobile-search-btn" type="button" data-header-search="true">
-        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Rechercher
+      <button class="mobile-search-btn" type="button" data-header-search="true" aria-label="${t('search')}">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> ${t('search')}
       </button>
       <a class="member-link mobile-only btn-cta-nav" href="${href('espace-adherent.html')}" data-nav-key="member">${t('member')}</a>
       <div class="lang-toggle mobile-nav-lang" role="group" aria-label="Choix de langue">
@@ -236,12 +577,13 @@
   function renderFooter() {
     const footer = document.querySelector('.site-footer');
     if (!footer) return;
+    /* Mirrors the home-page footer 1:1, with LinkedIn included. */
     footer.innerHTML = `
       <div class="container footer-grid" id="footer-links">
         <div>
           <a class="brand footer-brand" href="${href('index.html')}">
             <span class="brand-mark footer-brand-mark"><img src="${href('logo.png')}" alt="Logo FOS-Agri" /></span>
-            <span class="brand-copy"><strong>FOS-Agri</strong><small>Ministère de l'agriculture</small></span>
+            <span class="brand-copy"><strong>FOS-Agri</strong><small>${t('brandSubtitle')}</small></span>
           </a>
           <p class="footer-copy">${t('footerAbout')}</p>
         </div>
@@ -265,18 +607,22 @@
         <div>
           <h3>${t('contactTitle')}</h3>
           <ul class="footer-links">
-            <li><a href="mailto:fos-agri@fos-agri.ma">fos-agri@fos-agri.ma</a></li>
-            <li><a href="tel:+212537774748">+212 537 77 47 48</a></li>
-            <li><a href="${href('contact.html#relais-regionaux')}">${t('regional')}</a></li>
+            <li><a href="mailto:fos-agri@fos-agri.ma"><i class="fa-solid fa-envelope"></i> fos-agri@fos-agri.ma</a></li>
+            <li><a href="tel:+212537774748"><i class="fa-solid fa-phone"></i> +212 5 37 77 47 48</a></li>
+            <li><a href="${href('contact.html#relais-regionaux')}"><i class="fa-solid fa-map-pin"></i> ${t('regional')}</a></li>
           </ul>
         </div>
       </div>
       <div class="container footer-bottom">
-        <div class="footer-meta"><p>${t('copy')}</p></div>
+        <div class="footer-meta">
+          <p>${t('copy')}</p>
+          <p class="footer-credit">Powered by <a href="https://neonovia.com/" target="_blank" rel="noopener noreferrer">NEONOVIA</a></p>
+        </div>
         <div class="footer-social">
-          <a href="https://www.facebook.com/FOS.Agri" target="_blank" class="footer-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/fos.agri/" target="_blank" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://www.youtube.com/@FOSAgri" target="_blank" class="footer-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.facebook.com/FOS.Agri" target="_blank" rel="noopener" class="footer-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/fos.agri/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/fosagri/" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.youtube.com/@FOSAgri" target="_blank" rel="noopener" class="footer-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
       </div>`;
   }
@@ -286,9 +632,13 @@
     root.dir = lang === 'ar' ? 'rtl' : 'ltr';
     body.dataset.lang = lang;
     ensureSubmenuCss();
+    normalizeMenuToggle();
+    tagBrandSubtitle();
     renderNavigation();
     renderNavActions();
+    removeHeaderSearchButton();
     renderFooter();
+    refreshSearchModalChrome();
 
     document.querySelectorAll('[data-static-i18n]').forEach((el) => {
       const key = el.dataset.staticI18n;
@@ -303,6 +653,10 @@
     initMenu();
     initSubmenus();
     initLangDropdown();
+    /* Re-init floating social so LinkedIn (added by renderFooter)
+       always lands in the floating widget, even if app.js built one
+       earlier from a stale footer. */
+    initFloatingSocialButton();
 
     /* Cross-script notification: per-page renderers (org chart, history
        timeline, future modules) listen for this and re-render in the new
@@ -363,8 +717,12 @@
     if (!menu.__secMenuLinkBound) {
       menu.__secMenuLinkBound = true;
       menu.addEventListener('click', (e) => {
-        const link = e.target.closest('a[href]');
-        if (link) closeMenu();
+        /* Close the drawer when a nav-link OR the in-menu search
+           button is clicked. The search button is a <button>, so the
+           old `a[href]`-only selector wasn't catching it. */
+        if (e.target.closest('a[href]') || e.target.closest('[data-header-search]')) {
+          closeMenu();
+        }
       });
     }
   }
@@ -475,13 +833,26 @@
     updateHeaderState();
   }
 
+  /* Floating-social — rebuilds if the current widget is missing any
+     link from the current footer (e.g. LinkedIn added by renderFooter
+     after app.js's earlier init). Idempotent if already complete. */
   function initFloatingSocialButton() {
-    if (document.querySelector('.floating-social')) return;
     const socialLinks = Array.from(document.querySelectorAll('.footer-social-link'))
       .filter((l) => l.getAttribute('href') && l.getAttribute('href') !== '#')
       .map((l) => ({ href: l.href, label: l.getAttribute('aria-label') || '', html: l.innerHTML }))
       .filter((l, i, arr) => arr.findIndex((x) => x.href === l.href) === i);
     if (!socialLinks.length) return;
+
+    const existing = document.querySelector('.floating-social');
+    if (existing) {
+      const have = new Set(
+        Array.from(existing.querySelectorAll('.floating-social-link'))
+          .map((a) => a.getAttribute('href'))
+      );
+      const allCovered = socialLinks.every((l) => have.has(l.href));
+      if (allCovered) return;
+      existing.remove();
+    }
 
     const host = document.createElement('div');
     host.className = 'floating-social';

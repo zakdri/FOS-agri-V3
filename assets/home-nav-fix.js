@@ -8,7 +8,7 @@
     fr: {
       home: 'Accueil', foundation: 'La Fondation', services: 'Prestations',
       adhesion: 'Adhésion', mediatheque: 'Médiathèque', contact: 'Contact',
-      member: 'Espace adhérent',
+      member: 'Espace adhérent', news: 'Actualités', events: 'Agenda solidaire',
       minister: 'Mot du Ministre', president: 'Mot du Président',
       history: 'Histoire, mission et valeurs', organization: 'Notre organisation', governance: 'Gouvernance',
       prevoyance: 'Prévoyance médico-sociale',
@@ -20,7 +20,12 @@
       media2017: 'Galerie 2017', media2018: 'Galerie 2018',
       media2019: 'Galerie 2019', media2020: 'Galerie 2020',
       coordinates: 'Coordonnées', regional: 'Relais régionaux',
-      social: 'Réseaux sociaux', search: 'Rechercher'
+      social: 'Réseaux sociaux', search: 'Rechercher',
+      searchPlaceholder: 'Rechercher sur FOS-Agri…',
+      searchHint: 'Échap pour fermer',
+      searchEmpty: 'Aucun résultat. Essayez un autre mot-clé.',
+      searchStart: 'Commencez à taper pour voir les résultats…',
+      memberClose: 'Fermer'
     },
     ar: {
       home: 'الرئيسية',
@@ -49,7 +54,13 @@
       coordinates: 'المعلومات',
       regional: 'المنسقون الجهويون',
       social: 'الشبكات الاجتماعية',
-      search: 'بحث'
+      search: 'بحث',
+      news: 'المستجدات', events: 'الأجندة التضامنية',
+      searchPlaceholder: 'ابحث في موقع FOS-Agri…',
+      searchHint: 'إسكاب للإغلاق',
+      searchEmpty: 'لا توجد نتائج. جرّب كلمة أخرى.',
+      searchStart: 'ابدأ الكتابة لعرض النتائج…',
+      memberClose: 'إغلاق'
     },
     zgh: {
       home: 'ⴰⵙⵏⵓⴱⴳ',
@@ -80,9 +91,55 @@
       coordinates: 'ⵉⵙⴰⵍⵏ',
       regional: 'ⵉⵎⵙⵏⴰⵡⵏ ⵉⵎⵏⴰⴹⵏ',
       social: 'ⵉⵥⴹⵡⴰⵏ ⵉⵏⴰⵎⵓⵏⵏ',
-      search: 'ⴰⵔⵣⵣⵓ'
+      search: 'ⴰⵔⵣⵣⵓ',
+      news: 'ⵉⵙⴰⵍⵏ', events: 'ⴰⴳⵏⴷⴰ ⵏ ⵜⴰⵏⴼⴰ',
+      searchPlaceholder: 'ⵔⵣⵣⵓ ⴷⴻⴳ FOS-Agri…',
+      searchHint: 'ⵙⵏⵙ ⵙ Échap',
+      searchEmpty: 'ⵓⵍⴰ ⴰⵔⵔⴰⵙⵎ. ⴰⵔⵎ ⴰⵡⴰⵍ ⵏⵏⵉⴹⵏ.',
+      searchStart: 'ⵙⵏⵜⵉ ⴰⴷ ⵜⴻⵜⵉ ⵉ ⵉⴽⴻⴽ ⵉⴰⵔⵎ…',
+      memberClose: 'ⵙⵏⵙ'
     }
   };
+
+  /* Site-wide search index — same shape as secondary-pages.js so
+     results inside the menu work consistently on the home page. */
+  var SEARCH_INDEX = [
+    { key: 'home',          url: 'index.html',                            icon: 'fa-house' },
+    { key: 'foundation',    url: 'fondation.html',                        icon: 'fa-landmark' },
+    { key: 'minister',      url: 'fondation.html#mot-ministre',           icon: 'fa-user-tie' },
+    { key: 'president',     url: 'fondation.html#mot-president',          icon: 'fa-user-tie' },
+    { key: 'history',       url: 'histoire-mission-valeurs.html',         icon: 'fa-clock-rotate-left' },
+    { key: 'organization',  url: 'notre-organisation.html',               icon: 'fa-sitemap' },
+    { key: 'governance',    url: 'la-fondation/gouvernance/index.html',   icon: 'fa-scale-balanced' },
+    { key: 'adhesion',      url: 'adhesion.html',                         icon: 'fa-id-card' },
+    { key: 'adherents',     url: 'adhesion.html#adherents-beneficiaires', icon: 'fa-users' },
+    { key: 'procedure',     url: 'adhesion.html#procedure-adhesion',      icon: 'fa-file-signature' },
+    { key: 'cotisations',   url: 'adhesion.html#cotisations',             icon: 'fa-coins' },
+    { key: 'services',      url: 'prestations.html',                      icon: 'fa-hand-holding-heart' },
+    { key: 'prevoyance',    url: 'services/prevoyance.html',              icon: 'fa-heart-pulse' },
+    { key: 'culture',       url: 'services/culture-loisirs-voyages.html', icon: 'fa-plane' },
+    { key: 'scolarisation', url: 'services/formation-scolarisation.html', icon: 'fa-graduation-cap' },
+    { key: 'logement',      url: 'services/acces-logement.html',          icon: 'fa-house-chimney' },
+    { key: 'projets',       url: 'services/projets-personnels.html',      icon: 'fa-lightbulb' },
+    { key: 'education',     url: 'services/education-culture.html',       icon: 'fa-book-open' },
+    { key: 'mediatheque',   url: 'mediatheque.html',                      icon: 'fa-photo-film' },
+    { key: 'media2017',     url: 'mediatheque.html#galerie-2017',         icon: 'fa-images' },
+    { key: 'media2018',     url: 'mediatheque.html#galerie-2018',         icon: 'fa-images' },
+    { key: 'media2019',     url: 'mediatheque.html#galerie-2019',         icon: 'fa-images' },
+    { key: 'media2020',     url: 'mediatheque.html#galerie-2020',         icon: 'fa-images' },
+    { key: 'news',          url: 'actualites.html',                       icon: 'fa-newspaper' },
+    { key: 'events',        url: 'agenda-solidaire.html',                 icon: 'fa-calendar-days' },
+    { key: 'contact',       url: 'contact.html',                          icon: 'fa-envelope' },
+    { key: 'coordinates',   url: 'contact.html#coordonnees',              icon: 'fa-map-location-dot' },
+    { key: 'regional',      url: 'contact.html#relais-regionaux',         icon: 'fa-map-pin' },
+    { key: 'social',        url: 'contact.html#reseaux-sociaux',          icon: 'fa-share-nodes' },
+    { key: 'member',        url: 'espace-adherent.html',                  icon: 'fa-user-shield' }
+  ];
+
+  function normalize(s) {
+    return (s || '').toString().toLowerCase()
+      .normalize('NFD').replace(/[̀-ͯ]/g, '');
+  }
 
   function getLang() {
     var saved = localStorage.getItem('fosagri-lang') || document.documentElement.lang || 'fr';
@@ -173,7 +230,8 @@
     ].join('');
 
     bindNav(menu);
-    ensureSearchBtn();
+    ensureDesktopSearchBtn();
+    refreshSearchModalChrome();
   }
 
   /* ── Bind interactions ──────────────────────────────────────────────────── */
@@ -201,9 +259,11 @@
         document.body.classList.toggle('menu-open', open);
       });
 
-      /* Close when a nav link is clicked (app.js bound this to OLD static links). */
+      /* Close drawer on nav-link click OR on in-menu search-button
+         click. The search button is a <button>, not an <a>, so it
+         needs its own selector. */
       menu.addEventListener('click', function (e) {
-        if (e.target.closest('a[href]')) {
+        if (e.target.closest('a[href]') || e.target.closest('[data-header-search]')) {
           toggle.setAttribute('aria-expanded', 'false');
           menu.classList.remove('is-open');
           document.body.classList.remove('menu-open');
@@ -259,14 +319,18 @@
     });
   }
 
-  /* ── Search button in .nav-actions ─────────────────────────────────────── */
-  function ensureSearchBtn() {
+  /* Desktop: a single round search-icon button sits in .nav-actions
+     next to the language dropdown. Mobile: hidden by CSS — search
+     lives inside the opened menu instead. */
+  function ensureDesktopSearchBtn() {
     var actions = document.querySelector('.nav-actions');
-    if (!actions || actions.querySelector('[data-header-search]')) return;
+    if (!actions) return;
+    /* Remove any older duplicates first so we keep exactly one */
+    actions.querySelectorAll('.nav-search-btn, [data-header-search]').forEach(function (el) { el.remove(); });
     var btn = document.createElement('button');
     btn.className = 'nav-search-btn';
     btn.type = 'button';
-    btn.setAttribute('aria-label', 'Recherche');
+    btn.setAttribute('aria-label', t('search') || 'Recherche');
     btn.setAttribute('data-header-search', 'true');
     btn.innerHTML = '<i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>';
     var langWrap = actions.querySelector('.lang-select-wrap');
@@ -274,7 +338,7 @@
     else actions.appendChild(btn);
   }
 
-  /* ── Search modal ───────────────────────────────────────────────────────── */
+  /* ── Search modal with live results ─────────────────────────────────────── */
   function initSearchModal() {
     if (document.getElementById('site-search-modal')) return;
     var modal = document.createElement('div');
@@ -282,20 +346,23 @@
     modal.className = 'search-modal';
     modal.setAttribute('role', 'dialog');
     modal.setAttribute('aria-modal', 'true');
-    modal.setAttribute('aria-label', 'Recherche');
+    modal.setAttribute('aria-label', t('search') || 'Recherche');
     modal.hidden = true;
     modal.innerHTML =
       '<div class="search-modal-backdrop"></div>' +
       '<div class="search-modal-box">' +
-        '<button class="search-modal-close" type="button" aria-label="Fermer">' +
+        '<button class="search-modal-close" type="button" aria-label="' + t('memberClose') + '">' +
           '<i class="fa-solid fa-xmark"></i>' +
         '</button>' +
         '<form class="search-modal-form" role="search" onsubmit="return false">' +
           '<i class="fa-solid fa-magnifying-glass search-modal-icon" aria-hidden="true"></i>' +
           '<input id="site-search-input" class="search-modal-input" type="search"' +
-          ' placeholder="Rechercher sur FOS-Agri..." autocomplete="off" spellcheck="false" />' +
+          ' placeholder="' + t('searchPlaceholder') + '" autocomplete="off" spellcheck="false" />' +
         '</form>' +
-        '<p class="search-modal-hint">Echap pour fermer</p>' +
+        '<div class="search-results" id="site-search-results" aria-live="polite">' +
+          '<p class="search-results-empty" data-state="initial">' + t('searchStart') + '</p>' +
+        '</div>' +
+        '<p class="search-modal-hint">' + t('searchHint') + '</p>' +
       '</div>';
     document.body.appendChild(modal);
 
@@ -314,13 +381,53 @@
     modal.querySelector('.search-modal-backdrop').addEventListener('click', closeModal);
     modal.querySelector('.search-modal-close').addEventListener('click', closeModal);
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
-    /* Delegated click for all [data-header-search] buttons (desktop + mobile drawer) */
+    var input = modal.querySelector('#site-search-input');
+    input.addEventListener('input', function () { renderSearchResults(input.value); });
+    /* Delegated click for all [data-header-search] buttons (inside menu, mobile drawer) */
     document.addEventListener('click', function (e) {
       if (e.target.closest('[data-header-search]')) {
         e.preventDefault();
         if (window.__openSearchModal) window.__openSearchModal();
       }
     });
+  }
+
+  function refreshSearchModalChrome() {
+    var modal = document.getElementById('site-search-modal');
+    if (!modal) return;
+    modal.setAttribute('aria-label', t('search') || 'Recherche');
+    var input = modal.querySelector('.search-modal-input');
+    if (input) input.placeholder = t('searchPlaceholder');
+    var closeBtn = modal.querySelector('.search-modal-close');
+    if (closeBtn) closeBtn.setAttribute('aria-label', t('memberClose'));
+    var hint = modal.querySelector('.search-modal-hint');
+    if (hint) hint.textContent = t('searchHint');
+    if (input) renderSearchResults(input.value);
+  }
+
+  function renderSearchResults(query) {
+    var box = document.getElementById('site-search-results');
+    if (!box) return;
+    var q = normalize(query).trim();
+    if (!q) {
+      box.innerHTML = '<p class="search-results-empty" data-state="initial">' + t('searchStart') + '</p>';
+      return;
+    }
+    var hits = SEARCH_INDEX
+      .map(function (entry) { return { entry: entry, label: t(entry.key) || entry.key }; })
+      .filter(function (h) { return normalize(h.label).indexOf(q) !== -1; })
+      .slice(0, 12);
+    if (!hits.length) {
+      box.innerHTML = '<p class="search-results-empty" data-state="empty">' + t('searchEmpty') + '</p>';
+      return;
+    }
+    box.innerHTML = hits.map(function (h) {
+      return '<a class="search-result-item" href="' + h.entry.url + '">' +
+        '<span class="search-result-icon"><i class="fa-solid ' + h.entry.icon + '" aria-hidden="true"></i></span>' +
+        '<span class="search-result-text">' + h.label + '</span>' +
+        '<i class="fa-solid fa-arrow-right search-result-arrow" aria-hidden="true"></i>' +
+      '</a>';
+    }).join('');
   }
 
   /* ── Language sync with app.js ──────────────────────────────────────────── */

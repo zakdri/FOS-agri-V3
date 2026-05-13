@@ -609,37 +609,26 @@ textarea {
   font-size: 0.88rem;
 }
 
-/* ── Nav icon button (search) — always a perfect circle ── */
-.nav-search-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 50%;
-  border: 1px solid rgba(31, 106, 67, 0.14);
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  font-size: 0.95rem;
-  flex-shrink: 0;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-.nav-search-btn:hover,
-.nav-search-btn:focus-visible {
-  background: rgba(31, 106, 67, 0.08);
-  color: var(--green);
-  border-color: rgba(31, 106, 67, 0.3);
-  outline: none;
-}
-.site-header:not(.is-scrolled) .nav-search-btn {
-  border-color: rgba(255, 255, 255, 0.3);
-  color: rgba(255, 255, 255, 0.88);
-}
-.site-header:not(.is-scrolled) .nav-search-btn:hover,
-.site-header:not(.is-scrolled) .nav-search-btn:focus-visible {
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
+/* ── Header search button — DESKTOP ONLY.
+   Desktop: visible round icon button sits in .nav-actions.
+   Mobile : hidden in .nav-actions (search lives inside the opened
+            menu via .mobile-search-btn[data-header-search]). */
+@media (max-width: 980px) {
+  .nav-actions .nav-search-btn,
+  .nav-actions [data-header-search]:not(.mobile-search-btn) {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    pointer-events: none !important;
+  }
+  .site-nav .mobile-search-btn[data-header-search] {
+    display: flex !important;
+    visibility: visible !important;
+    width: calc(100% - 2rem) !important;
+    height: auto !important;
+    pointer-events: auto !important;
+  }
 }
 
 /* Mobile search button inside the nav drawer */
@@ -1389,7 +1378,13 @@ html[dir="rtl"] .partners-track {
   overflow: hidden;
   padding: 1.5rem 1.25rem 1.75rem;
   margin: -1.5rem -1.25rem -1.75rem;
+  /* Allow horizontal swipe gestures to be intercepted by JS while
+     still letting vertical scrolling work normally. */
+  touch-action: pan-y;
+  cursor: grab;
+  user-select: none;
 }
+.news-viewport:active { cursor: grabbing; }
 
 .news-card {
   min-width: calc((100% - 3rem) / 3);
@@ -3603,49 +3598,154 @@ html[dir="rtl"] .service-layout {
 }
 
 @media (max-width: 980px) {
+  /* Full-width drop-from-top mobile menu (sits BELOW the header).
+     Touches viewport edges, does NOT cover the logo/burger.
+     Inner content is padded so text + chevrons sit slightly inset. */
+  .site-header .site-nav,
+  body .site-header .site-nav,
+  body.secondary-page .site-header .site-nav,
   .site-nav {
-    position: fixed;
-    top: 5rem;
-    bottom: auto;
-    right: 0;
-    left: auto;
-    width: 60%;
-    max-width: 320px;
-    display: flex;
-    flex-direction: column;
-    background: #fff;
-    padding: 1.5rem 0;
-    box-shadow: -10px 0 30px rgba(31, 53, 38, 0.08);
-    /* Reduced shadow, no light effect */
-    z-index: 1002;
+    position: fixed !important;
+    top: var(--mobile-header-h, 4.5rem) !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background: #fff !important;
+    padding: 0.75rem 1rem 1.75rem !important;
+    box-shadow: 0 22px 50px rgba(20, 60, 38, 0.2) !important;
+    z-index: 1002 !important;
     visibility: hidden;
     opacity: 0;
-    transform: translateX(100%);
-    /* Out from right */
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(-18px) scale(0.985);
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 0.32s ease,
+                visibility 0s linear 0.45s !important;
     pointer-events: none;
-    overflow-y: auto;
-    border-radius: 24px 0 0 24px;
-    height: auto;
-    max-height: calc(100vh - 6rem);
+    overflow-y: auto !important;
+    border-radius: 0 0 26px 26px !important;
+    border-top: 1px solid var(--line);
+    max-height: calc(100vh - var(--mobile-header-h, 4.5rem));
   }
 
-  /* Explicit RTL support for side drawer */
   html[dir="rtl"] .site-nav {
-    right: auto;
-    left: 0;
-    transform: translateX(-100%);
-    /* Out from left */
-    box-shadow: 10px 0 30px rgba(31, 53, 38, 0.08);
-    border-radius: 0 24px 24px 0;
+    left: 0 !important;
+    right: 0 !important;
+    transform: translateY(-18px) scale(0.985) !important;
+    box-shadow: 0 22px 50px rgba(20, 60, 38, 0.2) !important;
+    border-radius: 0 0 26px 26px !important;
   }
 
-  /* Force state when open */
-  .site-nav.is-open {
+  .site-nav.is-open,
+  .site-header .site-nav.is-open,
+  body.menu-open .site-nav {
     visibility: visible !important;
     opacity: 1 !important;
-    transform: translateX(0) !important;
+    transform: translateY(0) scale(1) !important;
     pointer-events: auto !important;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 0.35s ease,
+                visibility 0s linear 0s !important;
+  }
+
+  /* Staggered fade-in for each top-level menu item when the panel
+     opens. The translateY/opacity comes from a CSS animation that
+     restarts whenever .is-open is applied. */
+  .site-nav.is-open > *,
+  body.menu-open .site-nav > * {
+    animation: navItemDrop 0.5s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+  .site-nav.is-open > *:nth-child(1)  { animation-delay: 0.04s; }
+  .site-nav.is-open > *:nth-child(2)  { animation-delay: 0.08s; }
+  .site-nav.is-open > *:nth-child(3)  { animation-delay: 0.12s; }
+  .site-nav.is-open > *:nth-child(4)  { animation-delay: 0.16s; }
+  .site-nav.is-open > *:nth-child(5)  { animation-delay: 0.20s; }
+  .site-nav.is-open > *:nth-child(6)  { animation-delay: 0.24s; }
+  .site-nav.is-open > *:nth-child(7)  { animation-delay: 0.28s; }
+  .site-nav.is-open > *:nth-child(8)  { animation-delay: 0.32s; }
+  .site-nav.is-open > *:nth-child(9)  { animation-delay: 0.36s; }
+  .site-nav.is-open > *:nth-child(10) { animation-delay: 0.40s; }
+
+  @keyframes navItemDrop {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Whole-row click target.
+     Each .nav-item is a full-width row; the <a> stretches across the
+     row and is what registers taps (except when the user taps the
+     chevron, which has its own handler with stopPropagation). */
+  .site-nav .nav-item {
+    position: relative;
+    width: 100%;
+    display: block;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .site-nav .nav-item > a,
+  .site-nav > a:not(.btn-cta-nav):not(.mobile-search-btn):not(.member-link) {
+    display: flex !important;
+    align-items: center;
+    width: 100% !important;
+    padding: 1.05rem 1.15rem !important;
+    min-height: 3.25rem;
+    border-bottom: 1px solid var(--line);
+    color: var(--green-deep) !important;
+    font-weight: 700;
+    margin: 0;
+    border-radius: 0;
+    line-height: 1.25;
+  }
+  /* Submenu parents reserve room on the right for the chevron */
+  .site-nav .has-submenu > a {
+    padding-right: 3.25rem !important;
+  }
+  html[dir="rtl"] .site-nav .nav-item > a,
+  html[dir="rtl"] .site-nav > a:not(.btn-cta-nav):not(.mobile-search-btn):not(.member-link) {
+    text-align: right;
+  }
+  html[dir="rtl"] .site-nav .has-submenu > a {
+    padding-right: 1.15rem !important;
+    padding-left: 3.25rem !important;
+  }
+  /* Chevron sits absolutely in the right gutter so its tap target is
+     clearly defined and the rest of the row navigates. */
+  .site-nav .has-submenu > .submenu-toggle {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+    height: 3.25rem !important;
+    width: 3.25rem !important;
+    margin: 0 !important;
+    float: none !important;
+    border-radius: 14px !important;
+    background: rgba(31, 106, 67, 0.04) !important;
+    z-index: 2;
+  }
+  html[dir="rtl"] .site-nav .has-submenu > .submenu-toggle {
+    right: auto !important;
+    left: 0 !important;
+  }
+  .site-nav .has-submenu > .submenu-toggle:hover,
+  .site-nav .has-submenu > .submenu-toggle:focus-visible {
+    background: rgba(31, 106, 67, 0.1) !important;
+    outline: none;
+  }
+
+  /* Extended brand-link click target: every pixel of the header to
+     the left of the burger button is part of the home link. The brand
+     content stays visually left-aligned; only the hit area grows. */
+  .nav-shell .brand {
+    flex: 1 1 auto !important;
+    min-width: 0;
+    justify-content: flex-start;
+  }
+  html[dir="rtl"] .nav-shell .brand {
+    justify-content: flex-end;
   }
 
   body.menu-open {
@@ -4647,4 +4747,85 @@ body.search-modal-open { overflow: hidden; }
 
 html[dir='rtl'] .search-modal-close { right: auto; left: 1rem; }
 
+/* ── Live search results inside the modal ─────────────────── */
+.search-results {
+  margin-top: 1rem;
+  max-height: min(50vh, 420px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-right: 0.25rem;
+}
+
+.search-results-empty {
+  margin: 1.25rem 0 0.5rem;
+  text-align: center;
+  font-size: 0.92rem;
+  color: #8a988e;
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.9rem;
+  text-decoration: none;
+  color: var(--text, #1a2b1f);
+  background: rgba(31, 106, 67, 0.04);
+  border: 1px solid transparent;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.search-result-item:hover,
+.search-result-item:focus-visible {
+  background: rgba(31, 106, 67, 0.1);
+  border-color: rgba(31, 106, 67, 0.2);
+  outline: none;
+  transform: translateX(2px);
+}
+
+html[dir='rtl'] .search-result-item:hover,
+html[dir='rtl'] .search-result-item:focus-visible {
+  transform: translateX(-2px);
+}
+
+.search-result-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(31, 106, 67, 0.1);
+  color: var(--green-deep, #1f6a43);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.search-result-text {
+  flex: 1;
+  font-weight: 600;
+  font-size: 0.96rem;
+}
+
+.search-result-arrow {
+  color: var(--green, #1f6a43);
+  opacity: 0.4;
+  font-size: 0.8rem;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.search-result-item:hover .search-result-arrow {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+html[dir='rtl'] .search-result-arrow {
+  transform: scaleX(-1);
+}
+
+html[dir='rtl'] .search-result-item:hover .search-result-arrow {
+  transform: scaleX(-1) translateX(2px);
+}
 

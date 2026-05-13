@@ -1245,6 +1245,64 @@ function initMobileNewsSlider() {
   if (viewport) {
     viewport.onmouseenter = stopAuto;
     viewport.onmouseleave = startAuto;
+
+    /* Touch + pointer swipe support — drag the carousel horizontally
+       to advance one card. Threshold of 40px keeps accidental taps
+       from triggering. Auto-rotation pauses during the gesture. */
+    let startX = 0;
+    let startY = 0;
+    let dragging = false;
+    let pointerDown = false;
+    const SWIPE_THRESHOLD = 40;
+    const isRtl = () => document.documentElement.dir === "rtl";
+
+    const beginDrag = (x, y) => {
+      startX = x;
+      startY = y;
+      dragging = false;
+      pointerDown = true;
+      stopAuto();
+    };
+    const moveDrag = (x, y, ev) => {
+      if (!pointerDown) return;
+      const dx = x - startX;
+      const dy = y - startY;
+      if (!dragging && Math.abs(dx) > 10 && Math.abs(dx) > Math.abs(dy)) {
+        dragging = true; /* horizontal intent confirmed */
+      }
+      if (dragging && ev && ev.cancelable) ev.preventDefault();
+    };
+    const endDrag = (x) => {
+      if (!pointerDown) return;
+      pointerDown = false;
+      const dx = x - startX;
+      if (dragging && Math.abs(dx) >= SWIPE_THRESHOLD) {
+        const forward = isRtl() ? dx > 0 : dx < 0;
+        goTo(currentIndex + (forward ? 1 : -1));
+      }
+      dragging = false;
+      startAuto();
+    };
+
+    viewport.addEventListener("touchstart", (e) => {
+      const t = e.touches[0];
+      beginDrag(t.clientX, t.clientY);
+    }, { passive: true });
+    viewport.addEventListener("touchmove", (e) => {
+      const t = e.touches[0];
+      moveDrag(t.clientX, t.clientY, e);
+    }, { passive: false });
+    viewport.addEventListener("touchend", (e) => {
+      const t = e.changedTouches[0];
+      endDrag(t.clientX);
+    });
+    viewport.addEventListener("touchcancel", () => { pointerDown = false; dragging = false; startAuto(); });
+
+    /* Mouse drag (desktop trackpad / mouse) */
+    viewport.addEventListener("mousedown", (e) => { beginDrag(e.clientX, e.clientY); });
+    viewport.addEventListener("mousemove", (e) => { moveDrag(e.clientX, e.clientY, e); });
+    viewport.addEventListener("mouseup",   (e) => { endDrag(e.clientX); });
+    viewport.addEventListener("mouseleave", () => { if (pointerDown) { pointerDown = false; dragging = false; startAuto(); } });
   }
 
   renderDots();
