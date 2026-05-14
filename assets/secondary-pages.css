@@ -287,7 +287,50 @@ body.secondary-page .site-nav a[aria-current='page'] {
 
 /* Nos valeurs page: aligned with histoire/mission/valeurs card style */
 .values-page .values-section {
-  background: #f6f8f4;
+  position: relative;
+  background:
+    radial-gradient(800px 360px at 90% -10%, rgba(200, 164, 77, 0.10), transparent 60%),
+    radial-gradient(900px 420px at -10% 110%, rgba(31, 106, 67, 0.08), transparent 65%),
+    linear-gradient(180deg, #fdfaf2 0%, #fbf8ef 100%);
+  overflow: hidden;
+}
+
+.values-page .values-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      rgba(31, 106, 67, 0.045) 0,
+      rgba(31, 106, 67, 0.045) 1px,
+      transparent 1px,
+      transparent 22px
+    );
+  mask-image: radial-gradient(circle at 50% 40%, #000 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at 50% 40%, #000 30%, transparent 70%);
+  opacity: 0.55;
+  z-index: 0;
+}
+
+.values-page .values-section::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  top: 3rem;
+  right: -3rem;
+  width: 14rem;
+  height: 14rem;
+  background: radial-gradient(circle at 30% 30%, rgba(200, 164, 77, 0.28), transparent 60%);
+  border-radius: 50%;
+  filter: blur(4px);
+  z-index: 0;
+}
+
+.values-page .values-section > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .values-page .values-cards {
@@ -521,7 +564,7 @@ body.secondary-page .site-nav a[aria-current='page'] {
     width: min(911px, 100%);
     transform: translate(-50%, -50%);
     opacity: 0.52;
-    z-index: 0;
+    z-index: 1;
     pointer-events: none;
   }
 
@@ -539,6 +582,6 @@ body.secondary-page .site-nav a[aria-current='page'] {
   .values-page .values-timeline,
   .values-page .values-timeline .timeline-item {
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
 }

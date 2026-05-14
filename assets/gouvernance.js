@@ -14,8 +14,8 @@
       'governance.breadcrumb.home': 'Accueil',
       'governance.breadcrumb.foundation': 'La Fondation',
       'governance.breadcrumb.governance': 'Gouvernance',
-      'governance.intro.paragraph1': 'La FOS-Agri a mis en place tous les outils necessaires a la bonne gouvernance avec des mecanismes de strategies, de gestion et de controle.',
-      'governance.intro.paragraph2': 'Elle dispose ainsi de trois instances de gouvernance composees comme suit :',
+      'governance.intro.paragraph1': 'La FOS-Agri s appuie sur des mecanismes clairs de strategie, de gestion et de controle.',
+      'governance.intro.paragraph2': 'Sa gouvernance repose sur trois instances.',
       'governance.labels.composition': 'Composition',
       'governance.labels.responsibilities': 'Missions',
       'governance.actions.viewComposition': 'Voir la composition',
@@ -364,7 +364,7 @@
         '</header>' +
         '<div class="gov-card-body">' +
           '<div class="gov-block">' +
-            '<button class="gov-toggle" type="button" aria-expanded="false" data-target="composition-' + escapeHtml(committee.id) + '">' +
+            '<button class="gov-toggle" type="button" aria-expanded="false" data-target="composition-' + escapeHtml(committee.id) + '" data-collapse-desktop="false">' +
               '<span>' + escapeHtml(t('governance.actions.viewComposition', lang)) + '</span>' +
               '<i class="fa-solid fa-chevron-down" aria-hidden="true"></i>' +
             '</button>' +
@@ -374,8 +374,8 @@
               '<ul class="gov-list">' + compositionList + '</ul>' +
             '</div>' +
           '</div>' +
-          '<div class="gov-block">' +
-            '<button class="gov-toggle" type="button" aria-expanded="false" data-target="responsibilities-' + escapeHtml(committee.id) + '">' +
+          '<div class="gov-block gov-block-collapsible">' +
+            '<button class="gov-toggle gov-toggle-desktop" type="button" aria-expanded="false" data-target="responsibilities-' + escapeHtml(committee.id) + '" data-collapse-desktop="true">' +
               '<span>' + escapeHtml(t('governance.actions.viewResponsibilities', lang)) + '</span>' +
               '<i class="fa-solid fa-chevron-down" aria-hidden="true"></i>' +
             '</button>' +
@@ -390,21 +390,17 @@
     );
   }
 
-  function initMobileToggles(root) {
+  function initToggles(root) {
     const isMobile = window.matchMedia('(max-width: 760px)').matches;
     const toggles = root.querySelectorAll('.gov-toggle');
     toggles.forEach(function (button) {
       const panel = root.querySelector('#' + button.dataset.target);
       if (!panel) return;
 
-      if (!isMobile) {
-        panel.hidden = false;
-        button.setAttribute('aria-expanded', 'true');
-        return;
-      }
-
-      panel.hidden = true;
-      button.setAttribute('aria-expanded', 'false');
+      const collapsesOnDesktop = button.dataset.collapseDesktop === 'true';
+      const shouldStartExpanded = isMobile ? false : !collapsesOnDesktop;
+      panel.hidden = !shouldStartExpanded;
+      button.setAttribute('aria-expanded', String(shouldStartExpanded));
       button.onclick = function () {
         const expanded = button.getAttribute('aria-expanded') === 'true';
         button.setAttribute('aria-expanded', String(!expanded));
@@ -442,7 +438,7 @@
     root.innerHTML = activeCommittees.map(function (committee) {
       return renderCommitteeCard(committee, lang);
     }).join('');
-    initMobileToggles(root);
+    initToggles(root);
   }
 
   async function init() {
