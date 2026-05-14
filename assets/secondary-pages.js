@@ -14,8 +14,9 @@
   const nav = {
     fr: {
       home: 'Accueil', foundation: 'La Fondation', services: 'Prestations', adhesion: 'Adhésion', mediatheque: 'Médiathèque', news: 'Actualités',
-      events: 'Agenda solidaire', contact: 'Contact', member: 'Espace adhérent', footerAbout: 'Fondation pour la Promotion des Œuvres Sociales du Personnel du Ministère de l\'Agriculture.',
-      usefulTitle: 'Liens utiles', quickTitle: 'Accès rapides', contactTitle: 'Contact', copy: '© FOS-Agri. Tous droits réservés.',
+      events: 'Agenda solidaire', contact: 'Contact', member: 'Espace adhérent', footerAbout: 'Fondation pour la promotion des oeuvres sociales du personnel du ministere de l\'agriculture.',
+      usefulTitle: 'Liens utiles', quickTitle: 'Acces rapide', contactTitle: 'Coordonnees', copy: '© 2026 FOS-Agri - Ministère de l\'Agriculture',
+      useful1: 'Appels d\'offres', useful2: 'FAQ', useful3: 'Newsletter', quick1: 'Portail agent', quick2: 'Programme social', quick3: 'Actualites',
       minister: 'Mot du Ministre', president: 'Mot du Président', history: 'Histoire, mission et valeurs', values: 'Nos valeurs', organization: 'Notre organisation', governance: 'Gouvernance',
       prevoyance: 'Prévoyance médico-sociale', culture: 'Culture, loisirs et voyages', scolarisation: 'Scolarisation et formation', logement: 'Accès au logement', projets: 'Projets personnels', education: 'Éducation et culture',
       adherents: 'Nos adhérents & bénéficiaires', procedure: 'Procédure d’adhésion', cotisations: 'Cotisations',
@@ -101,7 +102,8 @@
     ar: {
       home: 'الرئيسية', foundation: 'المؤسسة', services: 'الخدمات', adhesion: 'الانخراط', mediatheque: 'الخزانة الرقمية', news: 'المستجدات',
       events: 'الأجندة التضامنية', contact: 'اتصل بنا', member: 'فضاء المنخرط', footerAbout: 'مؤسسة النهوض بالأعمال الاجتماعية لموظفي وزارة الفلاحة.',
-      usefulTitle: 'روابط مفيدة', quickTitle: 'ولوج سريع', contactTitle: 'اتصل بنا', copy: '© FOS-Agri. جميع الحقوق محفوظة.',
+      usefulTitle: 'روابط مفيدة', quickTitle: 'ولوج سريع', contactTitle: 'بيانات الاتصال', copy: '© 2026 فوس-أكري - وزارة الفلاحة',
+      useful1: 'طلبات العروض', useful2: 'الأسئلة الشائعة', useful3: 'النشرة الإخبارية', quick1: 'بوابة الموظف', quick2: 'البرنامج الاجتماعي', quick3: 'المستجدات',
       minister: 'كلمة الوزير', president: 'كلمة الرئيس', history: 'التاريخ، المهمة والقيم', values: 'قيمنا', organization: 'تنظيمنا', governance: 'الحكامة والتنظيم',
       prevoyance: 'الوقاية الطبية الاجتماعية', culture: 'الثقافة والترفيه والأسفار', scolarisation: 'الدراسة والتكوين', logement: 'الولوج إلى السكن', projets: 'المشاريع الشخصية', education: 'التربية والثقافة',
       adherents: 'المنخرطون والمستفيدون', procedure: 'مسطرة الانخراط', cotisations: 'الاشتراكات',
@@ -185,8 +187,9 @@
     },
     zgh: {
       home: 'ⴰⵙⵏⵓⴱⴳ', foundation: 'ⵜⴰⵎⵙⵙⵓⵔⵜ', services: 'ⵜⵉⵏⴼⴰⵙ', adhesion: 'ⴰⵎⵓⵏ', mediatheque: 'ⵜⴰⵎⵓⵙⵙⵏⴰ', news: 'ⵉⵙⴰⵍⵏ',
-      events: 'ⴰⴳⵏⴷⴰ ⵏ ⵜⴰⵏⴼⴰ', contact: 'ⴰⵏⴰⵔⵎⵙ', member: 'ⴰⵎⵙⴽⴰⵔ ⵏ ⵓⵎⵏⵖⵓⵔ', footerAbout: 'ⵜⴰⵎⵙⵙⵓⵔⵜ ⵏ ⵜⵎⵓⵜⵜⴳⴰ ⵏ ⵉⵣⵎⴰⵣ ⵉⵎⵓⵏⵏ ⵏ ⵉⵎⴰⵍⴰⵙⵏ ⵏ ⵜⴼⵍⴰⵃⵜ.',
-      usefulTitle: 'ⵉⵙⵖⵡⴰⵏ ⵉⵏⴼⴰⵏ', quickTitle: 'ⴰⴽⵛⵓⵎ ⴰⵙⵔⵉⴷ', contactTitle: 'ⴰⵏⴰⵔⵎⵙ', copy: '© FOS-Agri. ⴰⴽⴽⵯ ⵉⵣⵔⴼⴰⵏ ⵜⵜⵓⵃⵔⴰⵣⵏ.',
+      events: 'ⴰⴳⵏⴷⴰ ⵏ ⵜⴰⵏⴼⴰ', contact: 'ⴰⵏⴰⵔⵎⵙ', member: 'ⴰⵎⵙⴽⴰⵔ ⵏ ⵓⵎⵏⵖⵓⵔ', footerAbout: 'ⵜⴰⴷⵓⵙⵉ ⵏ ⵓⵙⵙⴼⵍⴷ ⵏ ⵉⴳⵓⵍⵏ ⵉⵏⵎⴰⵍⴰⵏ ⵏ ⵓⵎⴷⴰⵏ ⵏ ⵜⴰⵎⴰⵣⵔⵜ ⵏ ⵜⴼⵍⴰⵃⵜ.',
+      usefulTitle: 'ⵉⵙⵖⵡⴰⵏ ⵉⵏⴼⴰⵏ', quickTitle: 'ⴰⴽⵛⵛⵓⵎ ⴰⵣⵔⴰⵡ', contactTitle: 'ⵉⵙⴰⵍⵏ ⵏ ⵓⵎⵢⴰⵡⴰⴹ', copy: '© 2026 FOS-Agri - ⵜⴰⵎⴰⵣⵔⵜ ⵏ ⵜⴼⵍⴰⵃⵜ',
+      useful1: 'ⵜⵉⵙⵓⵜⵔⴰ ⵏ ⵜⵉⵙⵎⵙⴽⴰⵍ', useful2: 'FAQ', useful3: 'ⴰⵙⴳⴳⵯⴰⵙ ⵏ ⵓⵎⵉⵏⵉⴷ', quick1: 'ⵜⴰⴱⵓⵔⵜ ⵏ ⵓⵎⵙⴽⴰⵔ', quick2: 'ⴰⵙⵏⴰⵎⴰⵍ ⴰⵏⵎⴰⵍⴰⵏ', quick3: 'ⵉⵎⵉⵏⵉⴷⵏ',
       minister: 'ⴰⵡⴰⵍ ⵏ ⵓⵎⵏⵣⴰⵡ', president: 'ⴰⵡⴰⵍ ⵏ ⵓⵙⵍⵡⴰⵢ', history: 'ⴰⵎⵣⵔⵓⵢ, ⵜⴰⵎⴰⵙⵜ ⴷ ⵉⵎⴰⵙⵙⴰⵏ', values: 'ⵜⵉⵏⵉⵍⴰ', organization: 'ⵜⴰⵙⵏⵙⵙⵓⴷⵙⵜ ⵏⵏⵖ', governance: 'ⵜⴰⴳⵓⵔⵉ ⴷ ⵜⵎⵙⵙⵓⴷⵙⵜ',
       prevoyance: 'ⵜⴰⴼⵔⴰⵙⵜ ⵜⴰⴷⴰⵡⵙⴰⵏⵜ', culture: 'ⵜⴰⴷⵍⵙⴰ, ⴰⵙⴰⵢⵔⴰⵔ ⴷ ⵉⵙⵉⴽⵍⵏ', scolarisation: 'ⴰⵙⴳⵎⵉ ⴷ ⵜⵙⴳⵎⵉ', logement: 'ⴰⴽⵛⵓⵎ ⵖⵔ ⵜⴰⴷⴷⴰⵔⵜ', projets: 'ⵉⵙⵏⴼⴰⵔⵏ ⵉⵎⴰⵏⴰⵡⵏ', education: 'ⴰⵙⴳⵎⵉ ⴷ ⵜⴷⵍⵙⴰ',
       adherents: 'ⵉⵎⵓⵏⵏ ⴷ ⵉⵎⵙⴼⵔⴽⵏ', procedure: 'ⵜⴰⵎⵙⵙⴰⵔⵜ ⵏ ⵓⵎⵓⵏ', cotisations: 'ⵜⵉⵡⵙⵉⵡⵉⵏ',
@@ -546,11 +549,22 @@
     });
   }
 
-  /* Normalise burger markup so the animated burger→X transform works
-     regardless of what the source HTML uses (icon vs. burger-box). */
+  /* Ensure the burger button exists as a direct child of .nav-shell
+     (between .brand and .site-nav). Some pages had it inside .nav-actions
+     where renderNavActions() would destroy it. */
   function normalizeMenuToggle() {
-    const toggle = document.querySelector('.menu-toggle');
-    if (!toggle) return;
+    const shell = document.querySelector('.nav-shell');
+    if (!shell) return;
+    const nav = shell.querySelector('.site-nav');
+    let toggle = shell.querySelector(':scope > .menu-toggle');
+    if (!toggle) {
+      toggle = document.createElement('button');
+      toggle.className = 'menu-toggle';
+      toggle.type = 'button';
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-controls', nav ? nav.id || 'site-nav' : 'site-nav');
+      if (nav) { shell.insertBefore(toggle, nav); } else { shell.appendChild(toggle); }
+    }
     if (!toggle.querySelector('.burger-box')) {
       toggle.innerHTML = '<span class="burger-box"><span class="burger-inner"></span></span>';
     }
@@ -804,12 +818,54 @@
   function renderFooter() {
     const footer = document.querySelector('.site-footer');
     if (!footer) return;
-    getHomeFooterTemplate().then((template) => {
-      if (!template) return;
-      footer.innerHTML = template;
-      localizeClonedFooter(footer);
-      rewriteClonedFooterPaths(footer);
-    });
+    /* Mirrors the home-page footer 1:1 (index.html). Single source of
+       truth — edit here to update the footer on every secondary page. */
+    footer.innerHTML = `
+      <div class="container footer-grid" id="footer-links">
+        <div>
+          <a class="brand footer-brand" href="${href('index.html')}">
+            <span class="brand-mark footer-brand-mark"><img src="${href('logo.png')}" alt="Logo FOS-Agri" /></span>
+            <span class="brand-copy"><strong>FOS-Agri</strong><small>${t('brandSubtitle')}</small></span>
+          </a>
+          <p class="footer-copy">${t('footerAbout')}</p>
+        </div>
+        <div>
+          <h3>${t('usefulTitle')}</h3>
+          <ul class="footer-links">
+            <li><a href="${href('index.html#news')}">${t('useful1')}</a></li>
+            <li><a href="${href('index.html#contact')}">${t('useful2')}</a></li>
+            <li><a href="mailto:fos-agri@fos-agri.ma">${t('useful3')}</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>${t('quickTitle')}</h3>
+          <ul class="footer-links">
+            <li><a href="${href('index.html#member-space')}">${t('quick1')}</a></li>
+            <li><a href="${href('index.html#services')}">${t('quick2')}</a></li>
+            <li><a href="${href('index.html#news')}">${t('quick3')}</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>${t('contactTitle')}</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:fos-agri@fos-agri.ma"><i class="fa-solid fa-envelope"></i> fos-agri@fos-agri.ma</a></li>
+            <li><a href="tel:+212537774748"><i class="fa-solid fa-phone"></i> <span>+212 5 37 77 47 48</span></a></li>
+            <li><a href="https://maps.app.goo.gl/mUGT2XwCk56UjA5KA" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i> <span>${t('ctc_address')}</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <div class="footer-meta">
+          <p>${t('copy')}</p>
+          <p class="footer-credit">Powered by <a href="https://neonovia.com/" target="_blank" rel="noopener noreferrer">NEONOVIA</a></p>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/FOS.Agri" target="_blank" rel="noopener" class="footer-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/fos.agri/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/fosagri/" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.youtube.com/@FOSAgri" target="_blank" rel="noopener" class="footer-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>`;
   }
 
   function applyStaticLanguage() {
@@ -817,10 +873,10 @@
     root.dir = lang === 'ar' ? 'rtl' : 'ltr';
     body.dataset.lang = lang;
     ensureSubmenuCss();
-    normalizeMenuToggle();
     tagBrandSubtitle();
     renderNavigation();
     renderNavActions();
+    normalizeMenuToggle();
     removeHeaderSearchButton();
     renderFooter();
     refreshSearchModalChrome();
