@@ -235,6 +235,7 @@
 
     bindNav(menu);
     ensureDesktopSearchBtn();
+    bindSearchTriggers();
     refreshSearchModalChrome();
   }
 
@@ -342,6 +343,15 @@
     else actions.appendChild(btn);
   }
 
+  function bindSearchTriggers() {
+    document.querySelectorAll('.nav-search-btn, .mobile-search-btn[data-header-search]').forEach(function (button) {
+      button.onclick = function (e) {
+        e.preventDefault();
+        if (window.__openSearchModal) window.__openSearchModal();
+      };
+    });
+  }
+
   /* ── Search modal with live results ─────────────────────────────────────── */
   function initSearchModal() {
     if (document.getElementById('site-search-modal')) return;
@@ -387,13 +397,6 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
     var input = modal.querySelector('#site-search-input');
     input.addEventListener('input', function () { renderSearchResults(input.value); });
-    /* Delegated click for all [data-header-search] buttons (inside menu, mobile drawer) */
-    document.addEventListener('click', function (e) {
-      if (e.target.closest('[data-header-search]')) {
-        e.preventDefault();
-        if (window.__openSearchModal) window.__openSearchModal();
-      }
-    });
   }
 
   function refreshSearchModalChrome() {

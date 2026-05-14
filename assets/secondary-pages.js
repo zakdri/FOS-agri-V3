@@ -9,6 +9,7 @@
   const explicitBase = body?.dataset?.base;
   const isNested = window.location.pathname.includes('/services/');
   const base = typeof explicitBase === 'string' && explicitBase.length ? explicitBase : (isNested ? '../' : '');
+  let footerTemplatePromise = null;
 
   const nav = {
     fr: {
@@ -22,7 +23,8 @@
       coordinates: 'Coordonnées', regional: 'Relais régionaux', social: 'Réseaux sociaux',
       search: 'Rechercher', searchPlaceholder: 'Rechercher sur FOS-Agri…', searchHint: 'Échap pour fermer',
       searchEmpty: 'Aucun résultat. Essayez un autre mot-clé.', searchStart: 'Commencez à taper pour voir les résultats…',
-      brandSubtitle: 'Ministère de l\'Agriculture', langLabel: 'Langue',
+      brandSubtitle: 'Ministère de l\'Agriculture', langLabel: 'Langue', langMenuLabel: 'Choix de langue',
+      navLabel: 'Navigation principale', submenuLabel: 'Sous-menu',
       memberClose: 'Fermer',
       /* Hero sections — secondary pages */
       adhesionKicker: 'Adhésion', adhesionTitle: 'Adhérents, bénéficiaires et procédures',
@@ -107,7 +109,8 @@
       coordinates: 'المعلومات', regional: 'المنسقون الجهويون', social: 'الشبكات الاجتماعية',
       search: 'بحث', searchPlaceholder: 'ابحث في موقع FOS-Agri…', searchHint: 'إسكاب للإغلاق',
       searchEmpty: 'لا توجد نتائج. جرّب كلمة أخرى.', searchStart: 'ابدأ الكتابة لعرض النتائج…',
-      brandSubtitle: 'وزارة الفلاحة', langLabel: 'اللغة',
+      brandSubtitle: 'وزارة الفلاحة', langLabel: 'اللغة', langMenuLabel: 'اختيار اللغة',
+      navLabel: 'التنقل الرئيسي', submenuLabel: 'قائمة فرعية',
       memberClose: 'إغلاق',
       adhesionKicker: 'الانخراط', adhesionTitle: 'المنخرطون والمستفيدون والمساطر',
       adhesionBody: 'شروط الانخراط، الوثائق المطلوبة، والاشتراكات الخاصة بالمؤسسة.',
@@ -191,7 +194,8 @@
       coordinates: 'ⵉⵙⴰⵍⵏ', regional: 'ⵉⵎⵙⵏⴰⵡⵏ ⵉⵎⵏⴰⴹⵏ', social: 'ⵉⵥⴹⵡⴰⵏ ⵉⵏⴰⵎⵓⵏⵏ',
       search: 'ⴰⵔⵣⵣⵓ', searchPlaceholder: 'ⵔⵣⵣⵓ ⴷⴻⴳ FOS-Agri…', searchHint: 'ⵙⵏⵙ ⵙ Échap',
       searchEmpty: 'ⵓⵍⴰ ⴰⵔⵔⴰⵙⵎ. ⴰⵔⵎ ⴰⵡⴰⵍ ⵏⵏⵉⴹⵏ.', searchStart: 'ⵙⵏⵜⵉ ⴰⴷ ⵜⴻⵜⵉ ⵉ ⵉⴽⴻⴽ ⵉⴰⵔⵎ…',
-      brandSubtitle: 'ⵜⴰⵎⴰⵡⴰⵙⵜ ⵏ ⵜⴼⵍⴰⵃⵜ', langLabel: 'ⵜⵓⵜⵍⴰⵢⵜ',
+      brandSubtitle: 'ⵜⴰⵎⴰⵡⴰⵙⵜ ⵏ ⵜⴼⵍⴰⵃⵜ', langLabel: 'ⵜⵓⵜⵍⴰⵢⵜ', langMenuLabel: 'ⴰⴼⵔⴰⵏ ⵏ ⵜⵓⵜⵍⴰⵢⵜ',
+      navLabel: 'ⴰⵙⵓⴷⴷⵓ ⴰⵎⴰⵟⵟⴰⵍ', submenuLabel: 'ⴰⵙⵓⴷⴷⵓ ⴰⴷⴷⴰⵢ',
       memberClose: 'ⵙⵏⵙ',
       adhesionKicker: 'ⴰⵎⵓⵏ', adhesionTitle: 'ⵉⵎⵓⵏⵏ, ⵉⵎⵙⴼⵔⴽⵏ ⴷ ⵜⵎⵙⵙⴰⵔⵉⵏ',
       adhesionBody: 'ⵜⵉⵎⴻⵍⵍⵓⵙⵉⵏ ⵏ ⵓⵎⵓⵏ ⴷ ⵜⵉⵡⵙⵉⵡⵉⵏ ⵏ ⵜⵎⵙⵙⵓⵔⵜ.',
@@ -269,6 +273,165 @@
   /* ── Site-wide search index ──────────────────────────
      Used by the in-menu live search. Each entry has a
      translated title/description and a target URL. */
+  const extra = {
+    fr: {
+      'brand.subtitle': "Ministere de l'agriculture",
+      'footer.about': "Fondation pour la promotion des oeuvres sociales du personnel du ministere de l'agriculture.",
+      'footer.usefulTitle': 'Liens utiles',
+      'footer.useful1': "Appels d'offres",
+      'footer.useful2': 'FAQ',
+      'footer.useful3': 'Newsletter',
+      'footer.quickTitle': 'Acces rapide',
+      'footer.quick1': 'Portail agent',
+      'footer.quick2': 'Programme social',
+      'footer.quick3': 'Actualites',
+      'footer.contactTitle': 'Coordonnees',
+      'footer.copy': "© 2026 FOS-Agri - Ministere de l'Agriculture",
+      'footer.credit': "Powered by <a href='https://neonovia.com/' target='_blank' rel='noopener noreferrer'>NEONOVIA</a>",
+      'contact.phone1': '+212 5 37 77 47 48',
+      'contact.address': '461 Avenue Hassan II, Agdal - Rabat',
+      foundationHeroKicker: 'Fondation pour la Promotion des Oeuvres Sociales',
+      foundationHeroTitle: "La Fondation au service de la famille du Ministere de l'Agriculture",
+      foundationHeroBody: "Une page institutionnelle dediee a la mission, aux valeurs, a la gouvernance et a l'histoire de FOS-Agri, dans la meme identite visuelle que la page d'accueil.",
+      foundationMissionTitle: 'Mission',
+      foundationMissionBody: 'Accompagner, soutenir et valoriser les femmes et les hommes du secteur agricole a travers des prestations sociales de proximite.',
+      foundationValuesTitle: 'Valeurs',
+      foundationValuesBody: 'Solidarite, proximite, transparence, ecoute et amelioration continue des services destines aux adherents et a leurs familles.',
+      foundationMinisterBody: "Message institutionnel du Ministre sur la vision sociale et l'engagement de la Fondation FOS-Agri.",
+      foundationMinisterLink: 'Decouvrir le mot du Ministre →',
+      foundationPresidentBody: "Message institutionnel du President sur la gouvernance, la proximite et le developpement des services de la Fondation.",
+      foundationPresidentLink: 'Decouvrir le mot du President →',
+      foundationGovernanceBody: "Presentation de l'organisation, des instances et de l'organigramme de la Fondation.",
+      foundationGovernanceLink: 'Decouvrir la gouvernance →',
+      foundationBandTitle: 'Construire les pages depuis la version validee',
+      foundationBandBody: "Cette page est separee de l'accueil : elle garde le meme menu, le meme footer et les memes langues sans modifier la home page.",
+      foundationBandCta: 'Retour accueil',
+      prestationsHeroKicker: 'Catalogue des prestations',
+      prestationsHeroTitle: 'Les services sociaux FOS-Agri',
+      prestationsHeroBody: "Une page separee pour organiser toutes les prestations sans toucher a la page d'accueil validee.",
+      prestationsCard1Title: 'Prevoyance medico-sociale',
+      prestationsCard1Body: 'Centre medico-social, assurance maladie complementaire, assistance medicale, transport sanitaire et partenariats medicaux.',
+      prestationsCard2Title: 'Culture, loisirs et voyages',
+      prestationsCard2Body: 'Voyages, colonies, Omra, pelerinage, ceremonies et conventions de loisirs.',
+      prestationsCard3Title: 'Scolarisation et formation',
+      prestationsCard3Body: "Coaching scolaire, bourses d'excellence, primes de rentree et conventions educatives.",
+      prestationsCard4Title: 'Acces au logement',
+      prestationsCard4Body: 'Aide au logement, offres bancaires preferentielles, promoteurs immobiliers et projets logement.',
+      prestationsCard5Title: 'Projets personnels',
+      prestationsCard5Body: 'Credits sociaux, institutions financieres, partenariats subventionnes et tarifs preferentiels.',
+      prestationsCard6Title: 'Adhesion & accompagnement',
+      prestationsCard6Body: "Informations adherents, beneficiaires, retraites, cotisations et orientation vers l'espace adherent.",
+      prestationsDetailLink: 'Voir details',
+      prestationsBandTitle: 'Besoin d une prestation precise ?',
+      prestationsBandBody: "Le contact et les relais regionaux seront detailles dans les prochaines pages, sans modifier l'accueil.",
+      prestationsBandCta: 'Nous contacter'
+    },
+    ar: {
+      'brand.subtitle': 'وزارة الفلاحة',
+      'footer.about': 'مؤسسة النهوض بالأعمال الاجتماعية لموظفي وزارة الفلاحة.',
+      'footer.usefulTitle': 'روابط مفيدة',
+      'footer.useful1': 'طلبات العروض',
+      'footer.useful2': 'الأسئلة الشائعة',
+      'footer.useful3': 'النشرة الإخبارية',
+      'footer.quickTitle': 'ولوج سريع',
+      'footer.quick1': 'فضاء المنخرط',
+      'footer.quick2': 'البرنامج الاجتماعي',
+      'footer.quick3': 'المستجدات',
+      'footer.contactTitle': 'البيانات',
+      'footer.copy': '© 2026 FOS-Agri - وزارة الفلاحة',
+      'footer.credit': "Powered by <a href='https://neonovia.com/' target='_blank' rel='noopener noreferrer'>NEONOVIA</a>",
+      'contact.phone1': '+212 5 37 77 47 48',
+      'contact.address': '461 شارع الحسن الثاني، أكدال - الرباط',
+      foundationHeroKicker: 'مؤسسة النهوض بالأعمال الاجتماعية',
+      foundationHeroTitle: 'المؤسسة في خدمة أسرة وزارة الفلاحة',
+      foundationHeroBody: 'صفحة مؤسساتية مخصصة للمهمة والقيم والحكامة وتاريخ FOS-Agri، مع الحفاظ على نفس الهوية البصرية للصفحة الرئيسية.',
+      foundationMissionTitle: 'المهمة',
+      foundationMissionBody: 'مواكبة ودعم وتثمين نساء ورجال القطاع الفلاحي من خلال خدمات اجتماعية للقرب.',
+      foundationValuesTitle: 'القيم',
+      foundationValuesBody: 'التضامن والقرب والشفافية والإنصات والتحسين المستمر للخدمات الموجهة للمنخرطين وأسرهم.',
+      foundationMinisterBody: 'رسالة مؤسساتية من الوزير حول الرؤية الاجتماعية والتزام مؤسسة FOS-Agri.',
+      foundationMinisterLink: 'اكتشف كلمة الوزير ←',
+      foundationPresidentBody: 'رسالة مؤسساتية من الرئيس حول الحكامة والقرب وتطوير خدمات المؤسسة.',
+      foundationPresidentLink: 'اكتشف كلمة الرئيس ←',
+      foundationGovernanceBody: 'تقديم تنظيم المؤسسة وهيئاتها ومخططها التنظيمي.',
+      foundationGovernanceLink: 'اكتشف الحكامة ←',
+      foundationBandTitle: 'بناء الصفحات انطلاقا من النسخة المعتمدة',
+      foundationBandBody: 'هذه الصفحة مستقلة عن الرئيسية: تحتفظ بنفس القائمة ونفس التذييل ونفس اللغات دون تعديل الصفحة الرئيسية.',
+      foundationBandCta: 'العودة إلى الرئيسية',
+      prestationsHeroKicker: 'دليل الخدمات',
+      prestationsHeroTitle: 'الخدمات الاجتماعية لـ FOS-Agri',
+      prestationsHeroBody: 'صفحة مستقلة لتنظيم كل الخدمات دون المساس بالصفحة الرئيسية المعتمدة.',
+      prestationsCard1Title: 'الاحتياط الطبي والاجتماعي',
+      prestationsCard1Body: 'مركز طبي اجتماعي، تأمين صحي تكميلي، مساعدة طبية، نقل صحي وشراكات طبية.',
+      prestationsCard2Title: 'الثقافة والترفيه والأسفار',
+      prestationsCard2Body: 'أسفار، مخيمات، عمرة، حج، حفلات واتفاقيات ترفيه.',
+      prestationsCard3Title: 'التمدرس والتكوين',
+      prestationsCard3Body: 'مواكبة مدرسية، منح الاستحقاق، منح الدخول المدرسي واتفاقيات تربوية.',
+      prestationsCard4Title: 'الولوج إلى السكن',
+      prestationsCard4Body: 'دعم السكن، عروض بنكية تفضيلية، منعشون عقاريون ومشاريع سكن.',
+      prestationsCard5Title: 'المشاريع الشخصية',
+      prestationsCard5Body: 'قروض اجتماعية، مؤسسات مالية، شراكات مدعمة وتعريفات تفضيلية.',
+      prestationsCard6Title: 'الانخراط والمواكبة',
+      prestationsCard6Body: 'معلومات المنخرطين والمستفيدين والمتقاعدين والاشتراكات والتوجيه نحو فضاء المنخرط.',
+      prestationsDetailLink: 'عرض التفاصيل',
+      prestationsBandTitle: 'هل تحتاج إلى خدمة محددة؟',
+      prestationsBandBody: 'سيتم تفصيل معلومات الاتصال والمنسقين الجهويين في الصفحات القادمة دون تغيير الصفحة الرئيسية.',
+      prestationsBandCta: 'اتصل بنا'
+    },
+    zgh: {
+      'brand.subtitle': 'ⵜⴰⵎⴰⵣⴰⵔⵜ ⵏ ⵜⴼⵍⴰⵃⵜ',
+      'footer.about': 'ⵜⴰⵎⵙⵙⵓⵔⵜ ⵏ ⵜⵏⵀⵓⵔⵜ ⵙ ⵡⵓⵎⴰⵍ ⵏ ⵉⵎⵙⵙⵓⵔⴰ ⵏ ⵜⴰⵎⴰⵣⴰⵔⵜ ⵏ ⵜⴼⵍⴰⵃⵜ.',
+      'footer.usefulTitle': 'ⵉⵙⵖⵡⴰⵏ ⵉⵏⴼⴰⵏ',
+      'footer.useful1': 'ⵉⵙⵙⵓⵜⵔⵏ ⵏ ⵓⴼⴰⵔⵙ',
+      'footer.useful2': 'ⵜⵉⵙⵇⵙⵉⵏ ⵉⵜⵜⵓⵙⵜⴰⵢⵏ',
+      'footer.useful3': 'ⵜⴰⴱⵔⴰⵜ ⵏ ⵓⵙⴰⵏ',
+      'footer.quickTitle': 'ⴰⴽⵛⵛⵓⵎ ⴰⵣⵔⴰⵡ',
+      'footer.quick1': 'ⴰⵙⵏⵓⴱⴳ ⵏ ⵓⵎⵏⵅⵔⴰⵟ',
+      'footer.quick2': 'ⴰⵀⵉⵍ ⴰⵎⴰⴷⴰⵏ',
+      'footer.quick3': 'ⵉⵙⴰⵍⵏ',
+      'footer.contactTitle': 'ⵉⵙⴰⵍⵏ',
+      'footer.copy': '© 2026 FOS-Agri - ⵜⴰⵎⴰⵣⴰⵔⵜ ⵏ ⵜⴼⵍⴰⵃⵜ',
+      'footer.credit': "Powered by <a href='https://neonovia.com/' target='_blank' rel='noopener noreferrer'>NEONOVIA</a>",
+      'contact.phone1': '+212 5 37 77 47 48',
+      'contact.address': '461 Avenue Hassan II, Agdal - Rabat',
+      foundationHeroKicker: 'ⵜⴰⵎⵙⵙⵓⵔⵜ ⵏ ⵜⵏⵀⵓⵔⵜ ⵙ ⵡⵓⵎⴰⵍ',
+      foundationHeroTitle: 'ⵜⴰⵎⵙⵙⵓⵔⵜ ⴳ ⵓⵎⵍⵉⵍ ⵏ ⵜⵡⵊⴰ ⵏ ⵜⴰⵎⴰⵣⴰⵔⵜ ⵏ ⵜⴼⵍⴰⵃⵜ',
+      foundationHeroBody: 'ⵜⴰⵙⵏⴰ ⵜⴰⵎⴰⵙⵙⵓⵔⵜ ⵉ ⵜⵎⴰⵡⵉⵜ ⴷ ⵜⵉⵏⵉⵍⴰ ⴷ ⵜⴰⴳⵡⵔⴰⵏⵙⴰ ⴷ ⵓⵎⵣⵔⵓⵢ ⵏ FOS-Agri, ⵙ ⵢⴰⵏ ⵓⵙⴷⴰⵡ ⵏ ⵓⵙⵏⴼⴰⵍ ⵏ ⵜⴰⵙⵏⴰ ⵏ ⵜⵣⵡⴰⵔⵓⵜ.',
+      foundationMissionTitle: 'ⵜⴰⵎⴰⵡⵉⵜ',
+      foundationMissionBody: 'ⴰⵎⵓⴷⴷⵓ ⴷ ⵓⵙⵙⵉⵙⵏ ⴷ ⵓⵙⵎⵉⵔⵏ ⵏ ⵢⵉⵎⴷⴷⵓⴽⴰⵍ ⵏ ⵓⵙⴳⵔ ⵏ ⵜⴼⵍⴰⵃⵜ ⵙ ⵜⵎⴰⴷⵉⵡⵉⵏ ⵜⵉⵎⴰⴷⴰⵏⵉⵏ ⵏ ⵓⵣⵉⵟ.',
+      foundationValuesTitle: 'ⵜⵉⵏⵉⵍⴰ',
+      foundationValuesBody: 'ⵜⴰⴷⵓⵙⵉ, ⴰⵣⵉⵟ, ⵜⴰⴼⴰⵡⵉⵏⵜ, ⴰⵙⵍⵍⵉⵙ ⴷ ⵓⵙⴼⵔⴽ ⴰⵎⵔⴽⵉⵙ ⵏ ⵜⵎⴰⴷⵉⵡⵉⵏ.',
+      foundationMinisterBody: 'ⴰⵣⵡⴰⵍ ⴰⵎⴰⵙⵙⵓⵔ ⵏ ⵓⵎⵉⵏⵉⵙⵜⵔ ⵅⴼ ⵜⵉⵣⵉ ⵜⵉⵎⴰⴷⴰⵏⵜ ⴷ ⵓⵣⴷⴰⵢ ⵏ FOS-Agri.',
+      foundationMinisterLink: 'ⵙⵙⵏ ⴰⵡⴰⵍ ⵏ ⵓⵎⵉⵏⵉⵙⵜⵔ ←',
+      foundationPresidentBody: 'ⴰⵣⵡⴰⵍ ⴰⵎⴰⵙⵙⵓⵔ ⵏ ⵓⵙⵍⵍⵉⵙ ⵅⴼ ⵜⴰⴳⵡⵔⴰⵏⵙⴰ ⴷ ⵓⵣⵉⵟ ⴷ ⵓⵙⴼⵔⴽ ⵏ ⵜⵎⴰⴷⵉⵡⵉⵏ.',
+      foundationPresidentLink: 'ⵙⵙⵏ ⴰⵡⴰⵍ ⵏ ⵓⵙⵍⵍⵉⵙ ←',
+      foundationGovernanceBody: 'ⴰⵙⵙⴰⵏⴼ ⵏ ⵜⵙⵓⴷⴷⵓⵔⵜ ⵏ ⵜⵎⵙⵙⵓⵔⵜ ⴷ ⵉⵙⵎⴷⵢⴰⵜⵏ ⵏⵏⵙ.',
+      foundationGovernanceLink: 'ⵙⵙⵏ ⵜⴰⴳⵡⵔⴰⵏⵙⴰ ←',
+      foundationBandTitle: 'ⴰⵙⴱⴷⴷ ⵏ ⵜⵉⵙⵏⴰⵜⵉⵏ ⵙⴳ ⵜⵏⵖⵓⵍⵜ ⵉⵜⵜⵓⵙⵎⵖⵔⵜ',
+      foundationBandBody: 'ⵜⴰⵙⵏⴰ ⴰⴷ ⵜⴱⵓⵕⵉ ⵙⴳ ⵜⵣⵡⴰⵔⵓⵜ: ⵜⵜⴰⵡⵉ ⵢⴰⵜ ⵜⵉⵏⵉⵍⴰ ⵏ ⵓⵎⵓⵏⵓ ⴷ ⵓⴼⵓⵜⵔ ⴷ ⵜⵓⵜⵍⴰⵢⵉⵏ.',
+      foundationBandCta: 'ⵓⵖⴰⵍ ⵖⵔ ⵜⵣⵡⴰⵔⵓⵜ',
+      prestationsHeroKicker: 'ⴼⵀⵔⵙ ⵏ ⵜⵎⴰⴷⵉⵡⵉⵏ',
+      prestationsHeroTitle: 'ⵜⵉⵎⴰⴷⵉⵡⵉⵏ ⵜⵉⵎⴰⴷⴰⵏⵉⵏ ⵏ FOS-Agri',
+      prestationsHeroBody: 'ⵜⴰⵙⵏⴰ ⵢⴰⴹⵏ ⵉ ⵓⵙⴷⵓⵙ ⵏ ⴽⵕⴰⴹ ⵜⵎⴰⴷⵉⵡⵉⵏ ⵡⴰⵔ ⴰⴷ ⵜⵜⵓⵙⵏⴼⵍ ⵜⵣⵡⴰⵔⵓⵜ.',
+      prestationsCard1Title: 'ⴰⵏⴰⵎⵎⴰⵍ ⴰⵎⴰⴷⴰⵏ ⴷ ⴰⵏⴰⵎⵎⴰⵍ ⵏ ⵓⴳⵔⴰⵡ',
+      prestationsCard1Body: 'ⴰⵎⵎⴰⵙ ⴰⵎⴰⴷⴰⵏ, ⴰⵙⵙⵓⵔⵏ ⴰⵎⴰⴷⴰⵏ ⴰⵙⴽⵓⵙⵉ, ⴰⵎⵓⴷⴷⵓ ⴰⵎⴰⴷⴰⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉⵎⴰⴷⴰⵏⵏ.',
+      prestationsCard2Title: 'ⵜⴰⴷⵍⵙⴰ, ⴰⵙⴰⵢⴰⵕ ⴷ ⵉⵙⵉⴽⵍ',
+      prestationsCard2Body: 'ⵉⵙⵉⴽⵍ, ⵉⵅⵉⵎⵏ, ⵄⵓⵎⵔⴰ, ⵍⵃⵊ, ⵜⵉⵎⵀⵍⵉⵏ ⴷ ⵉⵙⴳⴳⵯⴰⵙⵏ ⵏ ⵓⵙⴰⵢⴰⵕ.',
+      prestationsCard3Title: 'ⴰⵙⵍⵎⴷ ⴷ ⵓⵙⴼⵔⴽ',
+      prestationsCard3Body: 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵓⵙⵍⵎⴷ, ⵜⵉⵎⴰⵔⴰⵡⵉⵏ ⵏ ⵓⵎⵔⴰⵔⵉ, ⵜⵉⵎⵓⵔⵙⵉⵏ ⵏ ⵜⴽⵛⵛⵓⵎⵜ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉⵙⵍⵎⴷⴰⵏ.',
+      prestationsCard4Title: 'ⴰⴽⵛⵛⵓⵎ ⵖⵔ ⵓⵙⵖⵉⵎ',
+      prestationsCard4Body: 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵓⵙⵖⵉⵎ, ⵜⵉⵙⵓⵎⴰⵔ ⵜⵉⴱⴰⵏⴽⵉⵢⵉⵏ ⵉⴼⵔⵏⴰⵏ, ⵉⵎⵏⵄⵛⵏ ⵉⵎⵎⵓⵔⵉⵢⵏ ⴷ ⵉⵎⵙⴰⵍⵏ ⵏ ⵓⵙⵖⵉⵎ.',
+      prestationsCard5Title: 'ⵉⵎⵙⴰⵍⵏ ⵉⵎⴰⵏⴰⵏ',
+      prestationsCard5Body: 'ⵉⵙⵔⴹⴰⵏ ⵉⵎⴰⴷⴰⵏⵏ, ⵜⵉⵎⵙⵙⵓⵔⵉⵏ ⵜⵉⵣⵔⴼⴰⵏⵉⵏ, ⵉⵣⴷⴰⵢⵏ ⵉⵜⵜⵓⵙⵙⵉⵡⴹⵏ ⴷ ⵜⴰⵔⵉⴼⵉⵏ ⵉⴼⵔⵏⴰⵏ.',
+      prestationsCard6Title: 'ⴰⵏⵅⵔⴰⵟ ⴷ ⵓⵎⵓⴷⴷⵓ',
+      prestationsCard6Body: 'ⵉⵙⴰⵍⵏ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴷ ⵉⵙⵜⴼⴰⵢⴷⵏ ⴷ ⵉⵎⵔⵟⵓⵃⵏ ⴷ ⵓⵣⵔⴰⵔ ⵖⵔ ⵓⵙⵏⵓⴱⴳ ⵏ ⵓⵎⵏⵅⵔⴰⵟ.',
+      prestationsDetailLink: 'ⵥⵕ ⵜⵉⴼⵔⵓⵔⵉⵏ',
+      prestationsBandTitle: 'ⵉⵙⵙⴰⵔⵓⵏⴽ ⵢⴰⵜ ⵜⵎⴰⴷⵉⵡⵜ ⵉⵎⵥⵍⵉⵏ؟',
+      prestationsBandBody: 'ⴰⴷ ⵜⵜⵓⵙⵙⴰⵏⴼⵏ ⵉⵙⴰⵍⵏ ⵏ ⵓⵎⵢⴰⵡⴰⵍ ⴷ ⵉⵎⵙⵏⴰⵡⵏ ⵉⵏⵏⴰⵡⵏ ⴳ ⵜⵉⵙⵏⴰⵜⵉⵏ ⵉⴹⴼⵕⵏ.',
+      prestationsBandCta: 'ⵎⵢⴰⵡⴰⵍ ⴰⵏⵖ'
+    }
+  };
+
   const SEARCH_INDEX = [
     { key: 'home',          url: 'index.html',                            icon: 'fa-house' },
     { key: 'foundation',    url: 'fondation.html',                        icon: 'fa-landmark' },
@@ -310,7 +473,7 @@
   }
 
   function t(key) {
-    return nav[lang]?.[key] || nav.fr[key] || '';
+    return nav[lang]?.[key] || extra[lang]?.[key] || nav.fr[key] || extra.fr[key] || '';
   }
 
   function href(path) {
@@ -336,7 +499,7 @@
     return `
       <div class="nav-item has-submenu${active}">
         <a href="${href(url)}"${active ? ' aria-current="page"' : ''} data-nav-key="${labelKey}">${t(labelKey)}</a>
-        <button class="submenu-toggle" type="button" aria-label="${t(labelKey)} submenu" aria-expanded="false"><i class="fa-solid fa-chevron-down"></i></button>
+        <button class="submenu-toggle" type="button" aria-label="${t(labelKey)} - ${t('submenuLabel')}" aria-expanded="false"><i class="fa-solid fa-chevron-down"></i></button>
         <div class="nav-submenu">
           ${entries.map((entry) => `<a href="${href(entry.href)}">${t(entry.key)}</a>`).join('')}
         </div>
@@ -530,7 +693,7 @@
     if (!menu) return;
     const page = body.dataset.page || '';
     menu.id = menu.id || 'site-nav';
-    menu.setAttribute('aria-label', 'Navigation principale');
+    menu.setAttribute('aria-label', t('navLabel'));
     menu.innerHTML = `
       ${item(page, 'home', 'index.html', 'home')}
       ${submenu(page, 'fondation', 'fondation.html', 'foundation', [
@@ -569,64 +732,84 @@
         <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> ${t('search')}
       </button>
       <a class="member-link mobile-only btn-cta-nav" href="${href('espace-adherent.html')}" data-nav-key="member">${t('member')}</a>
-      <div class="lang-toggle mobile-nav-lang" role="group" aria-label="Choix de langue">
+      <div class="lang-toggle mobile-nav-lang" role="group" aria-label="${t('langMenuLabel')}">
         <button class="lang-btn ${lang === 'fr' ? 'is-active' : ''}" type="button" data-lang="fr">FR</button>
         <button class="lang-btn ${lang === 'ar' ? 'is-active' : ''}" type="button" data-lang="ar">AR</button>
         <button class="lang-btn ${lang === 'zgh' ? 'is-active' : ''}" type="button" data-lang="zgh">ⵜⵎⵣⵉⵖⵜ</button>
       </div>`;
   }
 
+  function initSearchTriggers() {
+    document.querySelectorAll('[data-header-search]').forEach((button) => {
+      button.onclick = (event) => {
+        event.preventDefault();
+        window.__openSearchModal?.();
+      };
+    });
+  }
+
+  function getHomeFooterTemplate() {
+    if (!footerTemplatePromise) {
+      footerTemplatePromise = fetch(href('index.html'))
+        .then((response) => {
+          if (!response.ok) throw new Error(`Footer fetch failed: ${response.status}`);
+          return response.text();
+        })
+        .then((html) => {
+          const doc = new DOMParser().parseFromString(html, 'text/html');
+          const homeFooter = doc.querySelector('.site-footer');
+          if (!homeFooter) throw new Error('Homepage footer not found');
+          return homeFooter.innerHTML;
+        })
+        .catch(() => null);
+    }
+    return footerTemplatePromise;
+  }
+
+  function localizeClonedFooter(footer) {
+    footer.querySelectorAll('[data-i18n]').forEach((node) => {
+      const key = node.getAttribute('data-i18n');
+      if (!key) return;
+      if (key === 'footer.credit') node.innerHTML = t(key);
+      else node.textContent = t(key);
+    });
+
+    footer.querySelectorAll('[data-i18n-html]').forEach((node) => {
+      const key = node.getAttribute('data-i18n-html');
+      if (!key) return;
+      node.innerHTML = t(key);
+    });
+  }
+
+  function rewriteClonedFooterPaths(footer) {
+    const brand = footer.querySelector('.footer-brand');
+    if (brand) brand.href = href('index.html');
+
+    footer.querySelectorAll('img[src]').forEach((img) => {
+      if (img.getAttribute('src') === 'logo.png') img.setAttribute('src', href('logo.png'));
+    });
+
+    footer.querySelectorAll('a[href]').forEach((link) => {
+      const raw = link.getAttribute('href');
+      if (!raw) return;
+      if (raw.startsWith('#')) {
+        link.setAttribute('href', href(`index.html${raw}`));
+        return;
+      }
+      if (/^(mailto:|tel:|https?:|\/\/)/i.test(raw)) return;
+      link.setAttribute('href', href(raw));
+    });
+  }
+
   function renderFooter() {
     const footer = document.querySelector('.site-footer');
     if (!footer) return;
-    /* Mirrors the home-page footer 1:1, with LinkedIn included. */
-    footer.innerHTML = `
-      <div class="container footer-grid" id="footer-links">
-        <div>
-          <a class="brand footer-brand" href="${href('index.html')}">
-            <span class="brand-mark footer-brand-mark"><img src="${href('logo.png')}" alt="Logo FOS-Agri" /></span>
-            <span class="brand-copy"><strong>FOS-Agri</strong><small>${t('brandSubtitle')}</small></span>
-          </a>
-          <p class="footer-copy">${t('footerAbout')}</p>
-        </div>
-        <div>
-          <h3>${t('usefulTitle')}</h3>
-          <ul class="footer-links">
-            <li><a href="${href('actualites.html')}">${t('news')}</a></li>
-            <li><a href="${href('agenda-solidaire.html')}">${t('events')}</a></li>
-            <li><a href="mailto:fos-agri@fos-agri.ma">fos-agri@fos-agri.ma</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>${t('quickTitle')}</h3>
-          <ul class="footer-links">
-            <li><a href="${href('fondation.html')}">${t('foundation')}</a></li>
-            <li><a href="${href('prestations.html')}">${t('services')}</a></li>
-            <li><a href="${href('adhesion.html')}">${t('adhesion')}</a></li>
-            <li><a href="${href('mediatheque.html')}">${t('mediatheque')}</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>${t('contactTitle')}</h3>
-          <ul class="footer-links">
-            <li><a href="mailto:fos-agri@fos-agri.ma"><i class="fa-solid fa-envelope"></i> fos-agri@fos-agri.ma</a></li>
-            <li><a href="tel:+212537774748"><i class="fa-solid fa-phone"></i> +212 5 37 77 47 48</a></li>
-            <li><a href="${href('contact.html#relais-regionaux')}"><i class="fa-solid fa-map-pin"></i> ${t('regional')}</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="container footer-bottom">
-        <div class="footer-meta">
-          <p>${t('copy')}</p>
-          <p class="footer-credit">Powered by <a href="https://neonovia.com/" target="_blank" rel="noopener noreferrer">NEONOVIA</a></p>
-        </div>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/FOS.Agri" target="_blank" rel="noopener" class="footer-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/fos.agri/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/fosagri/" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="https://www.youtube.com/@FOSAgri" target="_blank" rel="noopener" class="footer-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        </div>
-      </div>`;
+    getHomeFooterTemplate().then((template) => {
+      if (!template) return;
+      footer.innerHTML = template;
+      localizeClonedFooter(footer);
+      rewriteClonedFooterPaths(footer);
+    });
   }
 
   function applyStaticLanguage() {
@@ -655,6 +838,7 @@
     initMenu();
     initSubmenus();
     initLangDropdown();
+    initSearchTriggers();
     /* Re-init floating social so LinkedIn (added by renderFooter)
        always lands in the floating widget, even if app.js built one
        earlier from a stale footer. */
@@ -722,7 +906,7 @@
         /* Close the drawer when a nav-link OR the in-menu search
            button is clicked. The search button is a <button>, so the
            old `a[href]`-only selector wasn't catching it. */
-        if (e.target.closest('a[href]') || e.target.closest('[data-header-search]')) {
+        if (e.target.closest('a[href]') || e.target.closest('.mobile-search-btn, .nav-search-btn')) {
           closeMenu();
         }
       });
@@ -879,12 +1063,6 @@
   initScrollHeader();
   initSearchModal();
   initFloatingSocialButton();
-  document.addEventListener('click', (e) => {
-    if (e.target.closest('[data-header-search]')) {
-      e.preventDefault();
-      window.__openSearchModal?.();
-    }
-  });
 })();
 
 
