@@ -3852,14 +3852,8 @@ html[dir="rtl"] .service-layout {
     z-index: 1200;
   }
 
-  .nav-actions:empty {
-    display: none !important;
-  }
-
   .nav-actions {
-    order: 3;
-    margin-left: auto;
-    flex: 0 0 auto;
+    display: none !important;
   }
 
   .nav-shell .brand {
@@ -3909,24 +3903,10 @@ html[dir="rtl"] .service-layout {
   }
 
   html[dir="rtl"] .menu-toggle {
-    order: 1;
-    margin-right: auto;
     margin-left: 0;
-  }
-
-  html[dir="rtl"] .nav-shell .brand {
-    order: 3;
-    margin-left: auto;
   }
 
   html[dir="rtl"] .nav-actions {
-    order: 1;
-    margin-right: auto;
-    margin-left: 0;
-  }
-
-  html[dir="rtl"] .nav-actions .menu-toggle {
-    margin-right: 0;
     margin-left: 0;
   }
 
