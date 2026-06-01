@@ -242,6 +242,17 @@
 html[dir='rtl'] .hmv-card-items li { padding-left: 0; padding-right: 1.5rem; }
 html[dir='rtl'] .hmv-card-items li::before { left: auto; right: 0; }
 
+@media (min-width: 901px) {
+  html[dir='rtl'] .hmv-timeline {
+    direction: ltr;
+  }
+
+  html[dir='rtl'] .hmv-card {
+    direction: rtl;
+    text-align: right;
+  }
+}
+
 /* ============================================================
    MOBILE / TABLET — single column, line on the left (RTL: right)
    ============================================================ */
@@ -476,4 +487,286 @@ html[dir='rtl'] .hmv-card-items li::before { left: auto; right: 0; }
     transition: none;
   }
   .hmv-spinner { animation: none; }
+}
+
+/* ============================================================
+   VALEURS - same visual language as Nos Valeurs page
+   ============================================================ */
+.hmv-values-section {
+  position: relative;
+  background:
+    radial-gradient(800px 360px at 90% -10%, rgba(200, 164, 77, 0.10), transparent 60%),
+    radial-gradient(900px 420px at -10% 110%, rgba(31, 106, 67, 0.08), transparent 65%),
+    linear-gradient(180deg, #fdfaf2 0%, #fbf8ef 100%);
+  overflow: hidden;
+}
+
+.hmv-values-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      rgba(31, 106, 67, 0.045) 0,
+      rgba(31, 106, 67, 0.045) 1px,
+      transparent 1px,
+      transparent 22px
+    );
+  mask-image: radial-gradient(circle at 50% 40%, #000 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at 50% 40%, #000 30%, transparent 70%);
+  opacity: 0.55;
+  z-index: 0;
+}
+
+.hmv-values-section::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  right: -120px;
+  bottom: -120px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(214, 169, 65, 0.18) 0%, rgba(214, 169, 65, 0) 72%);
+  z-index: 0;
+}
+
+.hmv-values-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hmv-values-section .values-cards {
+  display: grid;
+  gap: 1.3rem;
+  position: relative;
+}
+
+.hmv-values-section .values-cards .page-card {
+  border-radius: 1.35rem;
+  border-color: rgba(23, 104, 63, 0.14);
+}
+
+.hmv-values-section .values-intro-card {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto 0.4rem;
+  background: linear-gradient(135deg, #145736, #1b7147);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.hmv-values-section .values-intro-card h3 {
+  margin: 0.2rem 0 0.9rem;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 0.95;
+  color: #ffc44d;
+}
+
+.hmv-values-section .values-intro-card p {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.hmv-values-section .value-node-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+  background: rgba(20, 88, 58, 0.12);
+  color: #1d6546;
+  font-size: 1.55rem;
+}
+
+.hmv-values-section .values-cards .page-card h3 {
+  margin: 0 0 0.55rem;
+  color: #1b5840;
+  text-transform: uppercase;
+  font-size: clamp(1.3rem, 2vw, 1.75rem);
+}
+
+.hmv-values-section .values-cards .values-intro-card h3 {
+  color: #ffc44d;
+  text-transform: none;
+}
+
+.hmv-values-section .values-cards .page-card p {
+  margin: 0;
+  color: #2d5e4a;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.hmv-values-section .values-cards .values-intro-card p {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.hmv-values-section .values-line-art {
+  display: none;
+}
+
+.hmv-values-section .values-timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+  padding: 2.2rem 0;
+}
+
+.hmv-values-section .values-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg, rgba(214, 169, 65, 0.88), rgba(23, 104, 63, 0.88));
+}
+
+.hmv-values-section .timeline-item {
+  position: relative;
+  z-index: 1;
+  min-height: 250px;
+}
+
+.hmv-values-section .timeline-dot {
+  position: absolute;
+  left: 50%;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #d6a941;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px rgba(23, 104, 63, 0.28);
+  transform: translateX(-50%);
+}
+
+.hmv-values-section .timeline-item::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 2rem;
+  background: rgba(23, 104, 63, 0.36);
+  transform: translateX(-50%);
+}
+
+.hmv-values-section .timeline-item:nth-child(odd) {
+  padding-bottom: 2.8rem;
+}
+
+.hmv-values-section .timeline-item:nth-child(odd) .timeline-dot {
+  bottom: -0.5rem;
+}
+
+.hmv-values-section .timeline-item:nth-child(odd)::after {
+  bottom: -2rem;
+}
+
+.hmv-values-section .timeline-item:nth-child(even) {
+  margin-top: 10.5rem;
+  padding-top: 2.8rem;
+}
+
+.hmv-values-section .timeline-item:nth-child(even) .timeline-dot {
+  top: -0.5rem;
+}
+
+.hmv-values-section .timeline-item:nth-child(even)::after {
+  top: -2rem;
+}
+
+@media (max-width: 900px) {
+  .hmv-values-section .values-timeline {
+    grid-template-columns: 1fr;
+    padding: 0 0 0 2.2rem;
+    gap: 1rem;
+  }
+
+  .hmv-values-section .values-timeline::before {
+    left: 0.95rem;
+    right: auto;
+    top: 0.45rem;
+    bottom: 0.45rem;
+    width: 2px;
+    height: auto;
+    transform: none;
+    background: linear-gradient(180deg, rgba(214, 169, 65, 0.8), rgba(23, 104, 63, 0.8));
+  }
+
+  .hmv-values-section .timeline-item,
+  .hmv-values-section .timeline-item:nth-child(even) {
+    margin-top: 0;
+    min-height: auto;
+    padding: 0;
+  }
+
+  .hmv-values-section .timeline-item::after {
+    display: none;
+  }
+
+  .hmv-values-section .timeline-dot,
+  .hmv-values-section .timeline-item:nth-child(odd) .timeline-dot,
+  .hmv-values-section .timeline-item:nth-child(even) .timeline-dot {
+    left: -1.95rem;
+    top: 1.5rem;
+    bottom: auto;
+    transform: none;
+  }
+
+  .hmv-values-section .values-cards .page-card {
+    padding: 1.25rem;
+  }
+
+  .hmv-values-section .values-intro-card h3 {
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
+  }
+}
+
+@media (min-width: 901px) {
+  .hmv-values-section #inclusion {
+    transform: translateY(48px);
+  }
+
+  .hmv-values-section .values-timeline::before,
+  .hmv-values-section .timeline-dot,
+  .hmv-values-section .timeline-item::after {
+    display: none;
+  }
+
+  .hmv-values-section .values-line-art {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 53%;
+    width: min(911px, 100%);
+    transform: translate(-50%, -50%);
+    opacity: 0.52;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  html[lang='ar'] .hmv-values-section .values-line-art,
+  html[lang='zgh'] .hmv-values-section .values-line-art {
+    top: calc(53% + 25px);
+  }
+
+  html[lang='ar'] .hmv-values-section .values-cards,
+  html[lang='zgh'] .hmv-values-section .values-cards {
+    margin-bottom: 50px;
+  }
+
+  .hmv-values-section .values-intro-card,
+  .hmv-values-section .values-timeline,
+  .hmv-values-section .values-timeline .timeline-item {
+    position: relative;
+    z-index: 2;
+  }
 }
