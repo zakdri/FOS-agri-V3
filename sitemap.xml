@@ -56,6 +56,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://zakdri.github.io/FOS-agri-V3/search.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://zakdri.github.io/FOS-agri-V3/espace-adherent.html</loc>
     <lastmod>2026-05-11</lastmod>
     <priority>0.5</priority>

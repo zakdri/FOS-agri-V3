@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FOS-Agri | Recherche</title>
+  <meta name="description" content="Recherche par mots-clés dans les pages du site FOS-Agri." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tifinagh:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="assets/styles.css?v=3" />
+  <link rel="stylesheet" href="assets/secondary-pages.css?v=3" />
+  <link rel="stylesheet" href="assets/search-page.css?v=1" />
+</head>
+<body class="secondary-page service-page search-page" data-page="search">
+  <header class="site-header" id="top"><div class="container nav-shell"><a class="brand" href="index.html"><span class="brand-mark"><img src="logo.png" alt="Logo FOS-Agri" /></span><span class="brand-copy"><strong>FOS-Agri</strong><small>Ministère de l'agriculture</small></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><i class="fa-solid fa-bars"></i></button><nav class="site-nav" id="site-nav"></nav><div class="nav-actions"><div class="lang-select-wrap desktop-only"><select class="lang-select secondary-lang-select"><option value="fr">FR</option><option value="ar">AR</option><option value="zgh">ⵜⵎⴰⵣⵉⵖⵜ</option></select><i class="fa-solid fa-chevron-down"></i></div><a class="member-link desktop-only" href="espace-adherent.html" data-static-i18n="member"></a></div></div></header>
+
+  <main>
+    <section class="page-hero-secondary search-hero">
+      <div class="container">
+        <span class="page-kicker"><i class="fa-solid fa-magnifying-glass"></i> <span data-search-i18n="search.kicker">Recherche</span></span>
+        <h1 data-search-i18n="search.title">Résultats de recherche</h1>
+        <p data-search-i18n="search.body">Trouvez toutes les pages du site liées au même mot-clé.</p>
+      </div>
+    </section>
+
+    <section class="section search-results-section">
+      <div class="container">
+        <form class="search-page-form" id="search-page-form" role="search">
+          <label class="sr-only" for="search-page-input" data-search-i18n="search.inputLabel">Mot-clé</label>
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input id="search-page-input" type="search" autocomplete="off" spellcheck="false" />
+          <button class="btn btn-primary" type="submit" data-search-i18n="search.button">Rechercher</button>
+        </form>
+
+        <div class="search-page-summary" id="search-page-summary"></div>
+        <div class="search-page-results" id="search-page-results"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"></footer>
+  <script src="assets/secondary-pages.js?v=3"></script>
+  <script src="assets/search-page.js?v=1"></script>
+</body>
+</html>
