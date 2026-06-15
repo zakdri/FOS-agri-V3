@@ -4,11 +4,14 @@
   padding: 10rem 0 5rem;
   background:
     linear-gradient(135deg, rgba(14, 61, 38, 0.92), rgba(17, 94, 58, 0.78)),
-    url('Moroccan_family.jpeg') center/cover no-repeat;
+    url('images/moroccan-family.jpg') center/cover no-repeat;
   color: #fff;
   position: relative;
   overflow: hidden;
 }
+/* Per-page hero images live in each page's own CSS file
+   (gouvernance.css, notre-organisation.css, histoire-mission-valeurs.css)
+   so they only ship to the page that needs them. */
 
 .page-hero-secondary::after {
   content: '';

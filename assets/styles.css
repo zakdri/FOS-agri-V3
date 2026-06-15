@@ -1159,7 +1159,7 @@ textarea {
    SERVICES SECTION
    ============================ */
 .services-section {
-  background-image: url('./Moroccan_family.jpeg');
+  background-image: url('images/moroccan-family.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -3164,7 +3164,7 @@ html[dir="rtl"] .partners-track {
   background:
     linear-gradient(90deg, rgba(150, 115, 40, 0.56) 0%, rgba(180, 138, 50, 0.48) 42%, rgba(200, 164, 77, 0.18) 100%),
     linear-gradient(180deg, rgba(100, 70, 10, 0.1), rgba(100, 70, 10, 0.02)),
-    url('Espace%20adherent.png') center/cover no-repeat;
+    url('images/espace-adherent.jpg') center/cover no-repeat;
   color: #fff;
 }
 
@@ -3183,7 +3183,7 @@ html[dir="rtl"] .partners-track {
   background:
     linear-gradient(90deg, rgba(24, 79, 52, 0.58) 0%, rgba(24, 79, 52, 0.48) 42%, rgba(24, 79, 52, 0.18) 100%),
     linear-gradient(180deg, rgba(18, 43, 30, 0.1), rgba(18, 43, 30, 0.02)),
-    url('Club%20Agri.png') center/cover no-repeat;
+    url('images/club-agri.jpg') center/cover no-repeat;
   color: #fff;
 }
 

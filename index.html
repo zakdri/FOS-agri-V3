@@ -7,7 +7,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tifinagh:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700;800&amp;family=Tajawal:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="assets/styles.css?v=3">
+  <!-- Preload the next hero slide image so it's ready when the carousel rotates off the video -->
+  <link rel="preload" as="image" href="assets/images/hero-1.jpg" fetchpriority="high">
+  <link rel="stylesheet" href="assets/styles.css?v=4">
 <style id="antigravity-scroll-lock-style">
   html:root body.antigravity-scroll-lock {
     overflow: hidden !important;
@@ -18,7 +20,7 @@
     <div class="container nav-shell">
       <a class="brand" href="index.html" aria-label="FOS-Agri accueil">
         <span class="brand-mark">
-          <img src="logo.png" alt="Logo FOS-Agri" />
+          <img src="assets/images/logo.png" alt="Logo FOS-Agri" width="78" height="60" decoding="async" />
         </span>
                         <span class="brand-copy">
           <strong>FOS-Agri</strong>
@@ -70,11 +72,11 @@
       <div class="hero-media" aria-hidden="true">
         <div class="hero-slides" id="hero-slides">
           <!-- Slide 1: Image 1 -->
-          <div class="hero-slide" data-image="hero%20slider/1.jpg" style="background-image: url(&quot;hero%20slider/1.jpg&quot;);"></div>
+          <div class="hero-slide" data-image="assets/images/hero-1.jpg" style="background-image: url(&quot;assets/images/hero-1.jpg&quot;);"></div>
           <!-- Slide 2: Image 2 -->
-          <div class="hero-slide" data-image="hero%20slider/2.jpg" style="background-image: url(&quot;hero%20slider/2.jpg&quot;);"></div>
+          <div class="hero-slide" data-image="assets/images/hero-2.jpg" style="background-image: url(&quot;assets/images/hero-2.jpg&quot;);"></div>
           <!-- Slide 3: Image 3 -->
-          <div class="hero-slide" data-image="hero%20slider/3.webp" style="background-image: url(&quot;hero%20slider/3.webp&quot;);"></div>
+          <div class="hero-slide" data-image="assets/images/hero-3.webp" style="background-image: url(&quot;assets/images/hero-3.webp&quot;);"></div>
           <!-- Slide 4: Image from Unsplash -->
           <div class="hero-slide" data-image="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" style="background-image: url(&quot;https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&amp;fit=crop&amp;w=1600&amp;q=80&quot;);">
           </div>
@@ -126,7 +128,7 @@
           <div class="news-viewport">
             <div class="news-grid" id="news-grid" aria-live="polite" style="transform: translateX(-630.4px);">
           <article class="news-card reveal-on-scroll is-visible" data-news-index="0">
-            <div class="news-media" style="background-image: url('assets/news-images/Programme de vacances et loisirs 2025.webp')" aria-hidden="true"></div>
+            <div class="news-media" style="background-image: url('assets/images/news-vacances-2025.webp')" aria-hidden="true"></div>
             <div class="news-body">
               <span class="news-date">Portée Stratégique • 20/02/2025</span>
               <h3>Programme de vacances et loisirs 2025</h3>
@@ -135,7 +137,7 @@
           </article>
         
           <article class="news-card reveal-on-scroll is-visible" data-news-index="1">
-            <div class="news-media" style="background-image: url('assets/news-images/convention-pathologie-bouregreg.jpg')" aria-hidden="true"></div>
+            <div class="news-media" style="background-image: url('assets/images/news-pathologie-bouregreg.jpg')" aria-hidden="true"></div>
             <div class="news-body">
               <span class="news-date">Gouvernance • 05/03/2025</span>
               <h3>Convention avec le cabinet de pathologie Bouregreg</h3>
@@ -144,7 +146,7 @@
           </article>
         
           <article class="news-card reveal-on-scroll is-visible" data-news-index="2">
-            <div class="news-media" style="background-image: url('assets/news-images/operation-omra-2025.jpg')" aria-hidden="true"></div>
+            <div class="news-media" style="background-image: url('assets/images/news-omra-2025.jpg')" aria-hidden="true"></div>
             <div class="news-body">
               <span class="news-date">Formation &amp; Développement • 28/02/2025</span>
               <h3>Operation Omra 2025 - dispositions logistiques</h3>
@@ -153,7 +155,7 @@
           </article>
         
           <article class="news-card reveal-on-scroll is-visible" data-news-index="3">
-            <div class="news-media" style="background-image: url('assets/news-images/partenariat-activite-sportive.jpg')" aria-hidden="true"></div>
+            <div class="news-media" style="background-image: url('assets/images/news-partenariat-sportif.jpg')" aria-hidden="true"></div>
             <div class="news-body">
               <span class="news-date">Direction Digitale • 14/03/2025</span>
               <h3>Partenariat a tarifs preferentiels pour l'activite sportive</h3>
@@ -171,7 +173,7 @@
           </article>
         
           <article class="news-card reveal-on-scroll is-visible" data-news-index="5">
-            <div class="news-media" style="background-image: url('assets/news-images/Campagne d'information regionale.jpg')" aria-hidden="true"></div>
+            <div class="news-media" style="background-image: url('assets/images/news-campagne-info.jpg')" aria-hidden="true"></div>
             <div class="news-body">
               <span class="news-date">Ressources Humaines • 30/01/2025</span>
               <h3>Campagne d'information regionale</h3>
@@ -561,7 +563,7 @@
         </article>
       
         <article class="partner-card reveal-on-scroll is-visible">
-          <img src="assets/partenaires/salafin.png?v=3" alt="Salafin" loading="lazy">
+          <img src="assets/partenaires/salafin.png?v=4" alt="Salafin" loading="lazy">
         </article>
       
         <article class="partner-card reveal-on-scroll is-visible">
@@ -582,7 +584,7 @@
         </article>
       
         <article class="partner-card reveal-on-scroll is-visible">
-          <img src="assets/partenaires/salafin.png?v=3" alt="Salafin" loading="lazy">
+          <img src="assets/partenaires/salafin.png?v=4" alt="Salafin" loading="lazy">
         </article>
       
         <article class="partner-card reveal-on-scroll is-visible">
@@ -635,7 +637,7 @@
       <div>
         <a class="brand footer-brand" href="#top">
           <span class="brand-mark footer-brand-mark">
-            <img src="logo.png" alt="Logo FOS-Agri">
+            <img src="assets/images/logo.png" alt="Logo FOS-Agri" width="78" height="60" loading="lazy" decoding="async" />
           </span>
                           <span class="brand-copy">
           <strong>FOS-Agri</strong>
@@ -698,9 +700,9 @@
     </div>
   </footer>
 
-  <script src="assets/data.js?v=3"></script>
-  <script src="assets/app.js?v=3"></script>
-  <script src="assets/home-nav-fix.js?v=3"></script>
+  <script src="assets/data.js?v=4"></script>
+  <script src="assets/app.js?v=4"></script>
+  <script src="assets/home-nav-fix.js?v=4"></script>
 </body>
 </html>
 

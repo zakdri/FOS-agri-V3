@@ -4,7 +4,12 @@
       "Bash(node -c \"D:/Fos Agri/FOS Agri 4/.claude/worktrees/angry-ishizaka-933cf6/assets/secondary-pages.js\")",
       "Bash(node -c \"D:/Fos Agri/FOS Agri 4/.claude/worktrees/angry-ishizaka-933cf6/assets/home-nav-fix.js\")",
       "Bash(node -c \"D:/Fos Agri/FOS Agri 4/.claude/worktrees/angry-ishizaka-933cf6/assets/app.js\")",
-      "Bash(node -c \"D:/Fos Agri/FOS Agri 4/.claude/worktrees/angry-ishizaka-933cf6/assets/gouvernance.js\")"
+      "Bash(node -c \"D:/Fos Agri/FOS Agri 4/.claude/worktrees/angry-ishizaka-933cf6/assets/gouvernance.js\")",
+      "Read(//d/Fos Agri/FOS Agri 4/assets/images/**)",
+      "Read(//d/Fos Agri/FOS Agri 4/assets/**)",
+      "Bash(ls assets/news-images)",
+      "Bash(ls assets/SVG)",
+      "Bash(ls assets/Temoignage)"
     ]
   }
 }

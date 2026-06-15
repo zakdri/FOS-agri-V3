@@ -325,12 +325,12 @@ function getNewsImageUrl(index, item) {
 
   // Map index to existing news images or placeholders
   const images = [
-    "assets/news-images/Programme de vacances et loisirs 2025.webp",
-    "assets/news-images/convention-pathologie-bouregreg.jpg",
-    "assets/news-images/operation-omra-2025.jpg",
-    "assets/news-images/partenariat-activite-sportive.jpg",
+    "assets/images/news-vacances-2025.webp",
+    "assets/images/news-pathologie-bouregreg.jpg",
+    "assets/images/news-omra-2025.jpg",
+    "assets/images/news-partenariat-sportif.jpg",
     "https://images.unsplash.com/photo-1576671081837-49000212a370?auto=format&fit=crop&w=900&q=80",
-    "assets/news-images/Campagne d'information regionale.jpg"
+    "assets/images/news-campagne-info.jpg"
   ];
   return images[index % images.length];
 }

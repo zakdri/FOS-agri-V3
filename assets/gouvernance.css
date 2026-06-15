@@ -1,3 +1,12 @@
+/* Hero override — bespoke photo for the Gouvernance page.
+   url() resolves relative to THIS css file (assets/gouvernance.css),
+   so 'images/gouvernance.jpg' → /assets/images/gouvernance.jpg. */
+.page-hero-secondary {
+  background:
+    linear-gradient(135deg, rgba(14, 61, 38, 0.82), rgba(17, 94, 58, 0.62)),
+    url('images/gouvernance.jpg') center/cover no-repeat !important;
+}
+
 .gov-breadcrumb {
   margin-bottom: 1.25rem;
   font-size: 0.92rem;
