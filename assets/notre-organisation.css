@@ -5,6 +5,13 @@
     --line, --shadow, --radius). No new color system.
    ============================================================ */
 
+/* Hero override — bespoke photo for the Notre organisation page. */
+.page-hero-secondary {
+  background:
+    linear-gradient(135deg, rgba(14, 61, 38, 0.82), rgba(17, 94, 58, 0.62)),
+    url('images/notre-organisation.jpg') center/cover no-repeat !important;
+}
+
 /* ----- Local design tokens (derived from brand tokens) ----- */
 :root {
   --org-gold-from: #e3c46f;

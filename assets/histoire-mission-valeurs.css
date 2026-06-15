@@ -5,6 +5,13 @@
    --line, --shadow, --radius).
    ============================================================ */
 
+/* Hero override — bespoke photo for the Histoire, mission et valeurs page. */
+.page-hero-secondary {
+  background:
+    linear-gradient(135deg, rgba(14, 61, 38, 0.82), rgba(17, 94, 58, 0.62)),
+    url('images/histoire-mission-valeurs.jpg') center/cover no-repeat !important;
+}
+
 .hmv-section { padding: 5rem 0; }
 
 .hmv-section-head {
