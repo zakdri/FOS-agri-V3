@@ -10,7 +10,7 @@
       adhesion: 'Adhésion', mediatheque: 'Médiathèque', contact: 'Contact',
       member: 'Espace adhérent', news: 'Actualités', events: 'Agenda solidaire',
       minister: 'Mot du Ministre', president: 'Mot du Président',
-      history: 'Histoire, mission et valeurs', organization: 'Notre organisation', governance: 'Gouvernance',
+      history: 'Histoire, mission et valeurs', values: 'Nos valeurs', organization: 'Notre organisation', governance: 'Gouvernance',
       prevoyance: 'Prévoyance médico-sociale',
       culture: 'Culture, loisirs et voyages', scolarisation: 'Scolarisation et formation',
       logement: 'Accès au logement', projets: 'Projets personnels',
@@ -38,6 +38,7 @@
       minister: 'كلمة الوزير',
       president: 'كلمة الرئيس',
       history: 'التاريخ، المهمة والقيم',
+      values: 'قيمنا',
       organization: 'تنظيمنا',
       governance: 'الحكامة والتنظيم',
       prevoyance: 'الوقاية الطبية الاجتماعية',
@@ -73,6 +74,7 @@
       minister: 'ⴰⵡⴰⵍ ⵏ ⵓⵎⵏⵣⴰⵡ',
       president: 'ⴰⵡⴰⵍ ⵏ ⵓⵙⵍⵡⴰⵢ',
       history: 'ⴰⵎⵣⵔⵓⵢ, ⵜⴰⵎⴰⵙⵜ ⴷ ⵉⵎⴰⵙⵙⴰⵏ',
+      values: 'ⵜⵉⵏⵉⵍⴰ',
       organization: 'ⵜⴰⵙⵏⵙⵙⵓⴷⵙⵜ ⵏⵏⵖ',
       governance: 'ⵜⴰⴳⵓⵔⵉ ⴷ ⵜⵎⵙⵙⵓⴷⵙⵜ',
       prevoyance: 'ⵜⴰⴼⵔⴰⵙⵜ ⵜⴰⴷⴰⵡⵙⴰⵏⵜ',
@@ -106,9 +108,10 @@
   var SEARCH_INDEX = [
     { key: 'home',          url: 'index.html',                            icon: 'fa-house' },
     { key: 'foundation',    url: 'fondation.html',                        icon: 'fa-landmark' },
-    { key: 'minister',      url: 'fondation.html#mot-ministre',           icon: 'fa-user-tie' },
-    { key: 'president',     url: 'fondation.html#mot-president',          icon: 'fa-user-tie' },
+    { key: 'minister',      url: 'la-fondation/mot-du-ministre/index.html',           icon: 'fa-user-tie' },
+    { key: 'president',     url: 'la-fondation/mot-du-president/index.html',          icon: 'fa-user-tie' },
     { key: 'history',       url: 'histoire-mission-valeurs.html',         icon: 'fa-clock-rotate-left' },
+    { key: 'values',        url: 'nos-valeurs.html',                      icon: 'fa-gem' },
     { key: 'organization',  url: 'notre-organisation.html',               icon: 'fa-sitemap' },
     { key: 'governance',    url: 'la-fondation/gouvernance/index.html',   icon: 'fa-scale-balanced' },
     { key: 'adhesion',      url: 'adhesion.html',                         icon: 'fa-id-card' },
@@ -136,6 +139,40 @@
     { key: 'member',        url: 'espace-adherent.html',                  icon: 'fa-user-shield' }
   ];
 
+  var SEARCH_KEYWORDS = {
+    home: 'accueil home fos agri fondation oeuvres sociales ministere agriculture',
+    foundation: 'fondation mission valeurs gouvernance histoire organisation ministre president',
+    minister: 'ministre mot message institutionnel vision sociale fondation',
+    president: 'president mot message gouvernance proximite services fondation',
+    history: 'histoire mission valeurs etapes chronologie solidarite proximite equite inclusion fondation',
+    values: 'valeurs equite proximite service inclusion solidarite fondation engagements principes',
+    organization: 'organisation organigramme structure president secretariat general directions services',
+    governance: 'gouvernance comite directeur executif conseil gestion controle instances organigramme',
+    adhesion: 'adhesion adherents beneficiaires cotisations procedure documents inscription',
+    adherents: 'adherents beneficiaires actifs retraites famille ayants droit',
+    procedure: 'procedure adhesion inscription pieces dossier documents formulaire',
+    cotisations: 'cotisations contribution paiement adhesion adherent',
+    services: 'prestations services sociaux prevoyance logement culture scolarisation projets adhesion',
+    prevoyance: 'prevoyance medico sociale medical assurance assistance sante transport sanitaire centre medical',
+    culture: 'culture loisirs voyages colonies omra pelerinage ceremonies conventions',
+    scolarisation: 'scolarisation formation coaching scolaire bourses excellence rentree education',
+    logement: 'logement habitat aide logement credit banque promoteur immobilier',
+    projets: 'projets personnels credits sociaux financement partenariat tarifs preferentiels',
+    education: 'education culture formation scolarisation enfants ecole',
+    mediatheque: 'mediatheque galerie photos videos images media albums',
+    media2017: 'galerie 2017 photos images mediatheque',
+    media2018: 'galerie 2018 photos images mediatheque',
+    media2019: 'galerie 2019 photos images mediatheque',
+    media2020: 'galerie 2020 photos images mediatheque',
+    news: 'actualites annonces nouvelles communiques conventions campagnes programmes',
+    events: 'agenda solidaire calendrier evenements operations campagnes echeances',
+    contact: 'contact coordonnees adresse telephone email localisation relais regionaux reseaux sociaux',
+    coordinates: 'coordonnees adresse telephone email localisation carte',
+    regional: 'relais regionaux regions coordination proximite contact',
+    social: 'reseaux sociaux facebook linkedin youtube partage contact',
+    member: 'espace adherent portail agent compte services accompagnement suivi'
+  };
+
   function normalize(s) {
     return (s || '').toString().toLowerCase()
       .normalize('NFD').replace(/[̀-ͯ]/g, '');
@@ -149,6 +186,11 @@
   function t(key) {
     var l = getLang();
     return (T[l] && T[l][key]) || T.fr[key] || '';
+  }
+
+  function goToSearchPage(query) {
+    var q = (query || '').trim();
+    window.location.href = 'search.html' + (q ? '?q=' + encodeURIComponent(q) : '');
   }
 
   /* ── CSS ────────────────────────────────────────────────────────────────── */
@@ -187,8 +229,8 @@
     menu.innerHTML = [
       navLink('home', 'index.html', true),
       submenu('foundation', 'fondation.html', [
-        { href: 'fondation.html#mot-ministre',        key: 'minister' },
-        { href: 'fondation.html#mot-president',       key: 'president' },
+        { href: 'la-fondation/mot-du-ministre/index.html',        key: 'minister' },
+        { href: 'la-fondation/mot-du-president/index.html',       key: 'president' },
         { href: 'histoire-mission-valeurs.html',      key: 'history' },
         { href: 'notre-organisation.html',            key: 'organization' },
         { href: 'la-fondation/gouvernance/index.html', key: 'governance' }
@@ -231,6 +273,7 @@
 
     bindNav(menu);
     ensureDesktopSearchBtn();
+    bindSearchTriggers();
     refreshSearchModalChrome();
   }
 
@@ -338,6 +381,15 @@
     else actions.appendChild(btn);
   }
 
+  function bindSearchTriggers() {
+    document.querySelectorAll('.nav-search-btn, .mobile-search-btn[data-header-search]').forEach(function (button) {
+      button.onclick = function (e) {
+        e.preventDefault();
+        if (window.__openSearchModal) window.__openSearchModal();
+      };
+    });
+  }
+
   /* ── Search modal with live results ─────────────────────────────────────── */
   function initSearchModal() {
     if (document.getElementById('site-search-modal')) return;
@@ -354,8 +406,10 @@
         '<button class="search-modal-close" type="button" aria-label="' + t('memberClose') + '">' +
           '<i class="fa-solid fa-xmark"></i>' +
         '</button>' +
-        '<form class="search-modal-form" role="search" onsubmit="return false">' +
-          '<i class="fa-solid fa-magnifying-glass search-modal-icon" aria-hidden="true"></i>' +
+        '<form class="search-modal-form" role="search">' +
+          '<button class="search-modal-submit" type="submit" aria-label="' + t('search') + '">' +
+            '<i class="fa-solid fa-magnifying-glass search-modal-icon" aria-hidden="true"></i>' +
+          '</button>' +
           '<input id="site-search-input" class="search-modal-input" type="search"' +
           ' placeholder="' + t('searchPlaceholder') + '" autocomplete="off" spellcheck="false" />' +
         '</form>' +
@@ -382,14 +436,11 @@
     modal.querySelector('.search-modal-close').addEventListener('click', closeModal);
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
     var input = modal.querySelector('#site-search-input');
-    input.addEventListener('input', function () { renderSearchResults(input.value); });
-    /* Delegated click for all [data-header-search] buttons (inside menu, mobile drawer) */
-    document.addEventListener('click', function (e) {
-      if (e.target.closest('[data-header-search]')) {
-        e.preventDefault();
-        if (window.__openSearchModal) window.__openSearchModal();
-      }
+    modal.querySelector('.search-modal-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      goToSearchPage(input.value);
     });
+    input.addEventListener('input', function () { renderSearchResults(input.value); });
   }
 
   function refreshSearchModalChrome() {
@@ -400,6 +451,8 @@
     if (input) input.placeholder = t('searchPlaceholder');
     var closeBtn = modal.querySelector('.search-modal-close');
     if (closeBtn) closeBtn.setAttribute('aria-label', t('memberClose'));
+    var submitBtn = modal.querySelector('.search-modal-submit');
+    if (submitBtn) submitBtn.setAttribute('aria-label', t('search'));
     var hint = modal.querySelector('.search-modal-hint');
     if (hint) hint.textContent = t('searchHint');
     if (input) renderSearchResults(input.value);
@@ -415,8 +468,10 @@
     }
     var hits = SEARCH_INDEX
       .map(function (entry) { return { entry: entry, label: t(entry.key) || entry.key }; })
-      .filter(function (h) { return normalize(h.label).indexOf(q) !== -1; })
-      .slice(0, 12);
+      .filter(function (h) {
+        var text = normalize([h.label, h.entry.key, h.entry.url, SEARCH_KEYWORDS[h.entry.key] || ''].join(' '));
+        return text.indexOf(q) !== -1;
+      });
     if (!hits.length) {
       box.innerHTML = '<p class="search-results-empty" data-state="empty">' + t('searchEmpty') + '</p>';
       return;
@@ -456,3 +511,5 @@
     boot();
   }
 }());
+
+

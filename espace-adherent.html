@@ -12,24 +12,25 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="assets/styles.css?v=4" />
+  <link rel="stylesheet" href="assets/secondary-pages.css?v=4" />
 </head>
 
-<body class="service-page" data-page="special">
+<body class="secondary-page service-page page-espace-adherent" data-page="special">
   <header class="site-header" id="top">
     <div class="container nav-shell">
       <a class="brand" href="index.html" aria-label="FOS-Agri accueil">
         <span class="brand-mark"><img src="assets/images/logo.png" alt="Logo FOS-Agri" width="78" height="60" decoding="async" /></span>
-        <span class="brand-copy"><strong>FOS-Agri</strong><small data-i18n="brand.subtitle"></small></span>
+        <span class="brand-copy"><strong>FOS-Agri</strong><small data-i18n="brand.subtitle">Ministère de l'Agriculture</small></span>
       </a>
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu"
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
         aria-label="Ouvrir le menu">
         <span class="burger-box">
           <span class="burger-inner"></span>
         </span>
       </button>
 
-      <nav class="site-nav" id="site-menu" aria-label="Navigation principale">
+      <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
         <a href="index.html" data-i18n="nav.home"></a>
         <a href="index.html#about" data-i18n="nav.foundation"></a>
         <a href="index.html#services" data-i18n="nav.services"></a>
@@ -46,7 +47,7 @@
 
       <div class="nav-actions">
         <div class="lang-select-wrap desktop-only">
-          <select class="lang-select" aria-label="Choix de langue">
+          <select class="lang-select secondary-lang-select" aria-label="Choix de langue">
             <option value="fr">FR</option>
             <option value="ar">AR</option>
             <option value="zgh">ⵜⵎⵣⵉⵖⵜ</option>
@@ -61,109 +62,38 @@
     <section class="hero service-hero">
       <div class="hero-media" aria-hidden="true"></div>
       <div class="container hero-content">
-        <div class="service-meta"><i class="fa-solid fa-user-group"></i><span data-i18n="pages.adherent.kicker"></span>
+        <div class="service-meta"><i class="fa-solid fa-user-group"></i><span>Espace adhérent</span>
         </div>
-        <h1 data-i18n="pages.adherent.title"></h1>
-        <p class="hero-description" data-i18n="pages.adherent.intro"></p>
+        <h1>Espace adhérent</h1>
+        <p class="hero-description">Des services et un accompagnement social dédiés aux adhérents de la Fondation.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="index.html#contact" data-i18n="pages.adherent.cta"></a>
-          <a class="btn btn-secondary" href="index.html#services" data-i18n="nav.services"></a>
+          <a class="btn btn-primary" href="index.html#contact">Nous contacter</a>
+          <a class="btn btn-secondary" href="index.html#services">Prestations</a>
         </div>
       </div>
     </section>
     <section class="section">
       <div class="container service-layout">
         <article class="service-box">
-          <h3 data-i18n="pages.adherent.card1Title"></h3>
-          <p data-i18n="pages.adherent.card1Body"></p>
+          <h3>Informations adhérents</h3>
+          <p>Consultez les prestations, conditions et démarches utiles pour accéder aux services FOS-Agri.</p>
         </article>
         <aside class="service-summary">
-          <h3 data-i18n="pages.adherent.card2Title"></h3>
-          <p data-i18n="pages.adherent.card2Body"></p>
+          <h3>Orientation</h3>
+          <p>Un accompagnement est proposé pour orienter chaque adhérent vers le service adapté à sa situation.</p>
         </aside>
       </div>
     </section>
     <section class="section">
       <div class="container">
         <article class="service-box">
-          <h3 data-i18n="pages.adherent.card3Title"></h3>
-          <p data-i18n="pages.adherent.card3Body"></p>
+          <h3>Support et suivi</h3>
+          <p>Les équipes de la Fondation assurent un suivi de proximité pour faciliter l’accès aux dispositifs sociaux.</p>
         </article>
       </div>
     </section>
   </main>
-  <footer class="site-footer">
-    
-    <div class="container footer-grid" id="footer-links">
-      <div>
-        <a class="brand footer-brand" href="#top">
-          <span class="brand-mark footer-brand-mark">
-            <img src="assets/images/logo.png" alt="Logo FOS-Agri" />
-          </span>
-          <span class="brand-copy">
-            <strong>FOS-Agri</strong>
-            <small data-i18n="brand.subtitle"></small>
-          </span>
-        </a>
-        <p class="footer-copy" data-i18n="footer.about"></p>
-      </div>
-      <div>
-        <h3 data-i18n="footer.usefulTitle"></h3>
-        <ul class="footer-links">
-          <li><a href="index.html#news" data-i18n="footer.useful1"></a></li>
-          <li><a href="index.html#contact" data-i18n="footer.useful2"></a></li>
-          <li><a href="mailto:fos-agri@fos-agri.ma" data-i18n="footer.useful3"></a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 data-i18n="footer.quickTitle"></h3>
-        <ul class="footer-links">
-          <li><a href="index.html#member-space" data-i18n="footer.quick1"></a></li>
-          <li><a href="index.html#services" data-i18n="footer.quick2"></a></li>
-          <li><a href="index.html#news" data-i18n="footer.quick3"></a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 data-i18n="footer.contactTitle"></h3>
-        <ul class="footer-links">
-          <li>
-            <a href="mailto:fos-agri@fos-agri.ma">
-              <i class="fa-solid fa-envelope"></i>
-              fos-agri@fos-agri.ma
-            </a>
-          </li>
-          <li>
-            <a href="tel:+212537774748">
-              <i class="fa-solid fa-phone"></i>
-              <span data-i18n="contact.phone1"></span>
-            </a>
-          </li>
-          <li>
-            <a href="https://maps.app.goo.gl/mUGT2XwCk56UjA5KA" target="_blank">
-              <i class="fa-solid fa-location-dot"></i>
-              <span data-i18n="contact.address"></span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <div class="footer-meta">
-        <p data-i18n="footer.copy"></p>
-        <p class="footer-credit" data-i18n-html="footer.credit"></p>
-      </div>
-      <div class="footer-social">
-        <a href="https://www.facebook.com/FOS.Agri" target="_blank" class="footer-social-link" aria-label="Facebook"><i
-            class="fa-brands fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/fos.agri/" target="_blank" class="footer-social-link"
-          aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/fosagri/" target="_blank" class="footer-social-link"
-          aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://www.youtube.com/@FOSAgri" target="_blank" class="footer-social-link" aria-label="YouTube"><i
-            class="fa-brands fa-youtube"></i></a>
-      </div>
-    </div>
-  </footer>
+  <footer class="site-footer"></footer>
   <script src="assets/data.js?v=4"></script>
   <script src="assets/app.js?v=4"></script>
   <script src="assets/secondary-pages.js?v=4"></script>

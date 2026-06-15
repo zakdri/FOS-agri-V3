@@ -895,29 +895,32 @@ function initMenu() {
   const nav = qs(".site-nav");
   if (!toggle || !nav) return;
 
-  const closeMenu = () => {
-    toggle.setAttribute("aria-expanded", "false");
-    nav.classList.remove("is-open");
+  function closeMenu() {
+    var t = qs(".menu-toggle"), n = qs(".site-nav");
+    if (t) t.setAttribute("aria-expanded", "false");
+    if (n) n.classList.remove("is-open");
     document.body.classList.remove("menu-open");
-  };
+  }
 
   toggle.addEventListener("click", () => {
-    const expanded = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", String(!expanded));
-    nav.classList.toggle("is-open", !expanded);
+    var t = qs(".menu-toggle");
+    if (!t) return;
+    const expanded = t.getAttribute("aria-expanded") === "true";
+    t.setAttribute("aria-expanded", String(!expanded));
+    var n = qs(".site-nav");
+    if (n) n.classList.toggle("is-open", !expanded);
     document.body.classList.toggle("menu-open", !expanded);
   });
 
-  // Close menu when any nav link is clicked
   qsa(".site-nav a", nav).forEach((link) => {
     link.addEventListener("click", closeMenu);
   });
 
-  // Close menu when clicking outside (empty space)
   document.addEventListener("click", (e) => {
-    if (nav.classList.contains("is-open") &&
-      !nav.contains(e.target) &&
-      !toggle.contains(e.target)) {
+    var t = qs(".menu-toggle"), n = qs(".site-nav");
+    if (n && n.classList.contains("is-open") &&
+      !n.contains(e.target) &&
+      !(t && t.contains(e.target))) {
       closeMenu();
     }
   });

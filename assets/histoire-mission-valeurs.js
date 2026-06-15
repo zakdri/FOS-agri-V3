@@ -57,9 +57,9 @@
       'sections.mission.pillar3': 'Soutien aux familles',
       'sections.mission.quote': "« Une Fondation au service de la famille du Ministère de l'Agriculture. »",
 
-      'sections.values.tag': 'Valeurs',
-      'sections.values.title': 'Les valeurs qui nous guident',
-      'sections.values.intro': 'Six valeurs fondatrices au cœur de chaque action et de chaque prestation FOS-Agri.',
+      'sections.values.tag': 'Principes fondateurs',
+      'sections.values.title': 'Une action guidée par quatre engagements',
+      'sections.values.intro': "Les principes qui guident l'action sociale de la FOS-Agri.",
 
       'cta.title': 'Vous souhaitez en savoir plus sur la Fondation ?',
       'cta.subtitle': "Découvrez la gouvernance, les prestations et l'espace adhérent.",
@@ -70,6 +70,14 @@
       'timeline.error': "Impossible de charger la chronologie.",
       'values.loading': 'Chargement…',
       'values.empty': "Aucune valeur n'est disponible pour le moment.",
+      'values.intro.title': 'Nos valeurs',
+      'values.intro.body': "Les valeurs sont les constituants de base de la culture de la fondation et un aiguillage à nos actions et à nos interactions avec l’ensemble de nos parties-prenantes. Ces valeurs fondamentales sont portées au quotidien par nos collaborateurs et donnent du sens à notre quotidien et une portée à notre mission.",
+      'values.equity.title': 'Équité',
+      'values.equity.desc': "L'équité renvoie vers l'égalité des chances en termes d'accès aux prestations à l'ensemble des adhérents.",
+      'values.service.title': 'Sens du service',
+      'values.service.desc': 'Être mobilisé pour fournir toujours le meilleur service en faisant preuve de bienveillance, d’assistance et de réactivité et garantir la continuité et l’accès à nos prestations.',
+      'values.inclusion.title': 'Inclusion',
+      'values.inclusion.desc': "Garantir l'accès aux prestations sociales à l'ensemble des agents actifs ou retraités du département indépendamment de leur grade, genre, région ou fonction…",
 
       // Timeline content
       'timeline.2015.title': 'Naissance de la Fondation',
@@ -145,9 +153,9 @@
       'sections.mission.pillar3': 'دعم الأسر',
       'sections.mission.quote': '«مؤسسة في خدمة أسرة وزارة الفلاحة.»',
 
-      'sections.values.tag': 'القيم',
-      'sections.values.title': 'القيم التي توجهنا',
-      'sections.values.intro': 'ست قيم مؤسِّسة في قلب كل عمل وكل خدمة من خدمات FOS-Agri.',
+      'sections.values.tag': 'مبادئ مؤسِّسة',
+      'sections.values.title': 'عملنا يرتكز على أربعة التزامات',
+      'sections.values.intro': 'المبادئ التي توجه العمل الاجتماعي لمؤسسة FOS-Agri.',
 
       'cta.title': 'هل ترغبون في معرفة المزيد عن المؤسسة؟',
       'cta.subtitle': 'تعرفوا على الحكامة والخدمات وفضاء المنخرط.',
@@ -158,6 +166,14 @@
       'timeline.error': 'تعذّر تحميل التسلسل الزمني.',
       'values.loading': 'جارٍ التحميل…',
       'values.empty': 'لا توجد قيم متاحة حالياً.',
+      'values.intro.title': 'قيمنا',
+      'values.intro.body': 'القيم هي المكونات الأساسية لثقافة المؤسسة، وهي التي توجه أعمالنا وتفاعلاتنا مع مختلف الأطراف المعنية.',
+      'values.equity.title': 'الإنصاف',
+      'values.equity.desc': 'يرتبط الإنصاف بتكافؤ الفرص من حيث الولوج إلى الخدمات لفائدة جميع المنخرطين.',
+      'values.service.title': 'روح الخدمة',
+      'values.service.desc': 'نحن معبؤون لضمان خدمة يقظة ونافعة وسريعة التفاعل، مع الاستمرارية وجودة الخدمات.',
+      'values.inclusion.title': 'الإدماج',
+      'values.inclusion.desc': 'ضمان الولوج إلى الخدمات الاجتماعية لجميع المنخرطين، بغض النظر عن الدرجة أو النوع أو الجهة أو الوظيفة.',
 
       'timeline.2015.title': 'تأسيس المؤسسة',
       'timeline.2015.creation': 'إحداث FOS-Agri',
@@ -231,9 +247,9 @@
       'sections.mission.pillar3': 'ⴰⴷⵓⵙ ⵏ ⵜⵡⵓⵊⵉⵡⵉⵏ',
       'sections.mission.quote': '« ⵜⴰⵎⵙⵙⵓⵔⵜ ⵉ ⵜⴰⵡⵊⴰ ⵏ ⵜⵎⴰⵡⴰⵙⵜ ⵏ ⵜⴼⵍⵍⴰⵃⵜ. »',
 
-      'sections.values.tag': 'ⵉⵎⴰⵙⵙⴰⵏ',
-      'sections.values.title': 'ⵉⵎⴰⵙⵙⴰⵏ ⵉⵙⵙⵏⴽⴷⵏ ⴰⵅⴷⴷⴰⵎ ⵏⵏⵖ',
-      'sections.values.intro': 'ⵙⴹⵉⵙ ⵏ ⵉⵎⴰⵙⵙⴰⵏ ⵉⵎⵣⵡⵓⵔⴰ ⴳ ⵓⵍ ⵏ ⵜⵏⴼⴰⵙ ⵏ FOS-Agri.',
+      'sections.values.tag': 'ⵉⵎⴰⵡⵓⵜⵏ ⵉⵙⵙⴰⵙⵏ',
+      'sections.values.title': 'ⵜⵉⴳⴰⵡⵜ-ⵏⵏⴻⵖ ⵜⴻⵜⵜⵓⵙⵙⴻⵏⴷ ⵖⴼ ⴽⵕⴰⴹ ⵉⵎⴰⵏⵙⵏ',
+      'sections.values.intro': 'ⵉⵎⴰⵡⵓⵜⵏ ⵉ ⵙⵙⵏⴰⵏ ⵜⵉⴳⴰⵡⵜ ⵜⴰⵏⵎⴻⵜⵜⵉⵜ ⵏ FOS-Agri.',
 
       'cta.title': 'ⵉⵙ ⵜⵔⴰⵎ ⴰⴷ ⵜⵙⵙⵏⵎ ⵓⴳⴳⴰⵔ ⵅⴼ ⵜⵎⵙⵙⵓⵔⵜ ?',
       'cta.subtitle': 'ⵙⵙⵏⵎ ⵜⴰⴳⵓⵔⵉ, ⵜⵉⵏⴼⴰⵙ ⴷ ⵓⵎⵙⴽⴰⵔ ⵏ ⵓⵎⵏⵖⵓⵔ.',
@@ -244,6 +260,14 @@
       'timeline.error': 'ⵓⵔ ⵉⵣⵎⵉⵔ ⵓⵙⴰⵍⵉ ⵏ ⵓⵙⴰⵔⵙⵉⵙ.',
       'values.loading': 'ⴰⵙⴰⵍⵉ…',
       'values.empty': 'ⵓⵔ ⵍⵍⵉⵏ ⵉⵎⴰⵙⵙⴰⵏ ⴰⵙⵙⴰ.',
+      'values.intro.title': 'ⵜⵉⵏⵉⵍⴰ',
+      'values.intro.body': 'ⵜⵉⵏⵉⵍⴰ ⴷ ⵉⴳⵔⴰⵏ ⵉⵙⵙⴰⵙⵏ ⵏ ⵜⴷⵍⵙⴰ ⵏ ⵜⵎⵙⵙⵓⴷⵙⵜ, ⵜⴻⵏⵏⴰ ⴷ ⵜⵙⵙⵏⵓⵔⴰ ⵉ ⵜⵉⴳⴰⵡⵉⵏ-ⵏⵏⴻⵖ ⴷ ⵉⵎⵢⴰⵡⴰⵙⵏ-ⵏⵏⴻⵖ.',
+      'values.equity.title': 'ⵜⴰⵏⴱⴰⴹⵜ',
+      'values.equity.desc': 'ⵜⴰⵏⴱⴰⴹⵜ ⵜⵉⴳⵉ ⴷ ⵜⴰⵎⴰⴳⴷⴰⵍⵜ ⵏ ⵜⴼⵓⵔⵙⵉⵏ ⴷⴻⴳ ⵓⵍⵓⵣⵣⵓⵎ ⵖⵔ ⵜⵉⵏⴼⴰ ⵉ ⵎⴻⵔⵔⴰ ⵉⵎⵓⵏⵏ.',
+      'values.service.title': 'ⴰⵙⵙⴰⵙ ⵏ ⵜⵏⴼⴰ',
+      'values.service.desc': 'ⵏⴻⵜⵜⵎⵓⵙ ⴰⴷ ⵏⴼⴽ ⵜⴰⵍⵍⴰⵍⵜ ⵜⴰⵎⴻⵙⴱⵕⵉⴷⵜ ⴷ ⵜⴰⵎⴻⵣⴹⴰⵢⵜ, ⵜⴻⴱⴷⴰ ⵙⴳ ⵉⵙⵕⴰ ⵉⵎⵓⵏⵏ.',
+      'values.inclusion.title': 'ⵜⴰⵎⴰⵙⵙⵓⵜ',
+      'values.inclusion.desc': 'ⴰⴷ ⵏⵙⵃⴻⴱⴱⴻⵜ ⴰⴷ ⵜⵉⵍⵍⵉ ⵜⴰⵎⴰⴳⴷⴰⵍⵜ ⴷⴻⴳ ⵓⵍⵓⵣⵣⵓⵎ ⵖⵔ ⵜⵉⵏⴼⴰ ⵉ ⵎⴻⵔⵔⴰ ⵉⵎⵓⵏⵏ.',
 
       'timeline.2015.title': 'ⴰⵙⵏⵓⵍⴼⵓ ⵏ ⵜⵎⵙⵙⵓⵔⵜ',
       'timeline.2015.creation': 'ⴰⵙⵏⵓⵍⴼⵓ ⵏ FOS-Agri',
@@ -409,12 +433,10 @@
   ];
 
   const DEFAULT_VALUES = [
-    { id: 'solidarity',   order: 1, isActive: true, icon: 'fa-solid fa-hand-holding-heart', titleKey: 'values.solidarity.title',   descKey: 'values.solidarity.desc' },
-    { id: 'proximity',    order: 2, isActive: true, icon: 'fa-solid fa-people-arrows',       titleKey: 'values.proximity.title',    descKey: 'values.proximity.desc'  },
-    { id: 'commitment',   order: 3, isActive: true, icon: 'fa-solid fa-handshake',           titleKey: 'values.commitment.title',   descKey: 'values.commitment.desc' },
-    { id: 'innovation',   order: 4, isActive: true, icon: 'fa-solid fa-lightbulb',           titleKey: 'values.innovation.title',   descKey: 'values.innovation.desc' },
-    { id: 'transparency', order: 5, isActive: true, icon: 'fa-solid fa-eye',                 titleKey: 'values.transparency.title', descKey: 'values.transparency.desc'},
-    { id: 'excellence',   order: 6, isActive: true, icon: 'fa-solid fa-award',               titleKey: 'values.excellence.title',   descKey: 'values.excellence.desc' }
+    { id: 'equite',    order: 1, isActive: true, icon: 'fa-solid fa-scale-balanced',    titleKey: 'values.equity.title',    descKey: 'values.equity.desc' },
+    { id: 'proximite', order: 2, isActive: true, icon: 'fa-solid fa-location-dot',       titleKey: 'values.proximity.title', descKey: 'values.proximity.desc' },
+    { id: 'service',   order: 3, isActive: true, icon: 'fa-solid fa-hand-holding-heart', titleKey: 'values.service.title',   descKey: 'values.service.desc' },
+    { id: 'inclusion', order: 4, isActive: true, icon: 'fa-solid fa-handshake',          titleKey: 'values.inclusion.title', descKey: 'values.inclusion.desc' }
   ];
 
   // ----- Data loaders (swap these for real API calls later) -----
@@ -499,13 +521,25 @@
     }
 
     root.dataset.state = 'ready';
-    root.innerHTML = active.map((v) => `
-      <article class="hmv-value-card" data-id="${escapeHtml(v.id)}">
-        <span class="hmv-value-icon"><i class="${escapeHtml(v.icon || 'fa-solid fa-circle')}" aria-hidden="true"></i></span>
-        <h3>${escapeHtml(t(v.titleKey, lang))}</h3>
-        <p>${escapeHtml(t(v.descKey, lang))}</p>
-      </article>
-    `).join('');
+    root.innerHTML = `
+      <div class="values-cards">
+        <article class="page-card values-intro-card">
+          <h3>${escapeHtml(t('values.intro.title', lang))}</h3>
+          <p>${escapeHtml(t('values.intro.body', lang))}</p>
+        </article>
+
+        <div class="values-timeline" aria-label="${escapeHtml(t('sections.values.title', lang))}">
+          ${active.map((v) => `
+            <article class="page-card timeline-item" id="${escapeHtml(v.id)}" data-id="${escapeHtml(v.id)}">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <span class="value-node-icon" aria-hidden="true"><i class="${escapeHtml(v.icon || 'fa-solid fa-circle')}"></i></span>
+              <h3>${escapeHtml(t(v.titleKey, lang))}</h3>
+              <p>${escapeHtml(t(v.descKey, lang))}</p>
+            </article>
+          `).join('')}
+        </div>
+        <img class="values-line-art" src="line.svg" alt="" aria-hidden="true" />
+      </div>`;
   }
 
   // ----- Static text bound by data-hmv-i18n attributes -----

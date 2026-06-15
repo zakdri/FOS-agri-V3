@@ -1,0 +1,230 @@
+.minister-hero {
+  background:
+    radial-gradient(780px 330px at 12% 6%, rgba(214, 169, 65, 0.2), transparent 63%),
+    radial-gradient(760px 320px at 92% 98%, rgba(31, 106, 67, 0.16), transparent 66%),
+    linear-gradient(135deg, rgba(14, 61, 38, 0.92), rgba(20, 89, 58, 0.82));
+}
+
+.minister-breadcrumb {
+  margin-bottom: 1.2rem;
+  font-size: 0.92rem;
+}
+
+.minister-breadcrumb ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.55rem;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.minister-breadcrumb li {
+  display: inline-flex;
+  align-items: center;
+}
+
+.minister-breadcrumb li + li::before {
+  content: '\f054';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 0.65rem;
+  margin-right: 0.55rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+html[dir='rtl'] .minister-breadcrumb li + li::before {
+  content: '\f053';
+  margin-right: 0;
+  margin-left: 0.55rem;
+}
+
+.minister-breadcrumb a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.minister-breadcrumb a:hover,
+.minister-breadcrumb a:focus-visible {
+  color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.55);
+}
+
+.minister-section {
+  position: relative;
+  background:
+    radial-gradient(760px 290px at 10% 8%, rgba(214, 169, 65, 0.1), transparent 63%),
+    radial-gradient(840px 320px at 94% 92%, rgba(31, 106, 67, 0.1), transparent 66%),
+    #f8faf7;
+  overflow: hidden;
+}
+
+.minister-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      rgba(31, 106, 67, 0.045) 0,
+      rgba(31, 106, 67, 0.045) 1px,
+      transparent 1px,
+      transparent 22px
+    );
+  mask-image: radial-gradient(circle at 50% 40%, #000 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at 50% 40%, #000 30%, transparent 70%);
+  opacity: 0.55;
+  z-index: 0;
+}
+
+.minister-section::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  top: 3rem;
+  right: -3rem;
+  width: 14rem;
+  height: 14rem;
+  background: radial-gradient(circle at 30% 30%, rgba(200, 164, 77, 0.28), transparent 60%);
+  border-radius: 50%;
+  filter: blur(4px);
+  z-index: 0;
+}
+
+.minister-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.minister-card {
+  background: #fff;
+  border-radius: 1.65rem;
+  border: 1px solid rgba(28, 82, 55, 0.13);
+  box-shadow: 0 24px 62px rgba(16, 55, 35, 0.1);
+  overflow: hidden;
+}
+
+.minister-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.4fr);
+  gap: 0;
+}
+
+.minister-media {
+  background: linear-gradient(165deg, rgba(31, 106, 67, 0.16), rgba(214, 169, 65, 0.22));
+  padding: 1.5rem;
+}
+
+.minister-portrait-wrap {
+  background: #fff;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(28, 82, 55, 0.1);
+  box-shadow: 0 14px 35px rgba(16, 55, 35, 0.08);
+  padding: 0.7rem;
+}
+
+.minister-portrait {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 0.95rem;
+  display: block;
+}
+
+.minister-content {
+  padding: clamp(1.4rem, 4vw, 2.35rem);
+}
+
+.minister-name {
+  margin: 0;
+  color: var(--green-deep);
+  font-size: clamp(1.35rem, 2.3vw, 1.9rem);
+  line-height: 1.25;
+}
+
+.minister-position {
+  margin: 0.7rem 0 1.1rem;
+  color: #4f665a;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.minister-divider {
+  width: 86px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+  margin: 0 0 1rem;
+}
+
+.minister-message {
+  display: grid;
+  gap: 0.95rem;
+  color: #2f4036;
+  line-height: 1.85;
+}
+
+.minister-message p {
+  margin: 0;
+}
+
+.minister-signature {
+  margin-top: 1.3rem;
+  padding-top: 1.05rem;
+  border-top: 1px solid rgba(28, 82, 55, 0.16);
+}
+
+.minister-signature-label {
+  margin: 0 0 0.4rem;
+  color: #557062;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.minister-signature-name {
+  margin: 0;
+  color: var(--green-deep);
+  font-weight: 800;
+}
+
+.minister-signature-position {
+  margin: 0.3rem 0 0;
+  color: #4f665a;
+  line-height: 1.6;
+}
+
+.minister-state {
+  padding: 2.1rem 1.2rem;
+  text-align: center;
+  color: #5a6a61;
+}
+
+@media (max-width: 980px) {
+  .minister-section {
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
+  }
+
+  .minister-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .minister-media {
+    padding: 1.2rem 1.2rem calc(0.9rem + 6px);
+  }
+
+  .minister-content {
+    padding: 0.45rem 1.2rem 1.35rem;
+  }
+
+  .minister-name {
+    margin-top: 6px;
+  }
+}
