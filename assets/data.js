@@ -608,7 +608,7 @@ window.siteData = {
         title: "ⴰⵙⵏⴰⵎⴰⵍ ⵏ ⵓⵙⵔⴼ ⴷ ⵓⵔⴰⵔ 2025",
         excerpt: "ⴰⵡⵉⵏⴰⵙ ⵏ ⵜⵉⵎⵙⴽⵔⵉⵏ ⴷ ⵓⵔⵣⵣⵓ ⵏ ⵓⵣⵎⵎⴻⵎ ⵉ ⵉⵎⵣⵔⴰⵢⵏ."
       },
-      image: "./news-images/Programme de vacances et loisirs 2025.webp"
+      image: "./images/news-vacances-2025.webp"
     },
     {
       date: "15 Mars 2024",
@@ -624,7 +624,7 @@ window.siteData = {
         title: "ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⴷ ⵍⴽⴰⴱⵉⵏⵉ ⵏ Bouregreg",
         excerpt: "ⵜⵉⵖⴼⵉⴹⵉⵏ ⵉ ⵉⵎⵣⵔⴰⵢⵏ, ⵉⵎⵢⴰⴳⴳⴰⵏ ⴷ ⵜⴰⵔⵡⴰ ⴳ ⵔⵔⴱⴰⵟ."
       },
-      image: "./news-images/convention-pathologie-bouregreg.jpg"
+      image: "./images/news-pathologie-bouregreg.jpg"
     },
     {
       date: "10 Mars 2024",
@@ -640,7 +640,7 @@ window.siteData = {
         title: "ⵄⵓⵎⵔⴰ 2025 - ⵜⵉⵙⵖⵓⵏⵉⵏ ⵏ ⵍⵓⵊⵉⵙⵜⵉⴽ",
         excerpt: "ⴰⵙⵙⵓⴼⵖ ⵏ ⵜⵉⵙⵖⵓⵏⵉⵏ ⵏ ⵍⵓⵊⵉⵙⵜⵉⴽ ⵉⵣⴷⵉⵏ ⴷ ⵓⵙⵉⵔ ⵏ ⵜⵎⵀⵍⴰ."
       },
-      image: "./news-images/operation-omra-2025.jpg"
+      image: "./images/news-omra-2025.jpg"
     },
     {
       date: "08 Mars 2024",
@@ -656,7 +656,7 @@ window.siteData = {
         title: "ⵜⵉⵎⵙⴷⵓⴽⴽⴰⵍ ⵙ ⵜⵉⵖⴼⵉⴹⵉⵏ ⵉ ⵓⵏⴰⵎⵎⴰⵙ ⴰⵎⵔⵣⵉ",
         excerpt: "ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⴷ Joude Gestion Sport ⵉ ⵜⵉⵖⴼⵉⴹⵉⵏ ⵏ ⵉⵎⵣⵔⴰⵢⵏ."
       },
-      image: "./news-images/partenariat-activite-sportive.jpg"
+      image: "./images/news-partenariat-sportif.jpg"
     },
     {
       date: "04 Mars 2024",
@@ -688,7 +688,7 @@ window.siteData = {
         title: "ⵜⴰⴽⵎⵉⵜ ⵏ ⵓⵙⵉⵏⴼⵓ ⴰⵎⵏⴰⴹ",
         excerpt: "ⵉⵎⵍⴰⵏ ⵏ ⵓⵣⴷⵉ ⵅⴼ ⵉⵎⴰⵍⴰⵙⵙⵏ ⴷ ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⵏ FOS-Agri."
       },
-      image: "./news-images/Campagne d'information regionale.jpg"
+      image: "./images/news-campagne-info.jpg"
     }
   ],
   events: [
