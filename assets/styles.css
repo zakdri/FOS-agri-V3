@@ -1564,25 +1564,25 @@ html[dir="rtl"] .partners-track {
 .news-media-1 {
   background-image:
     linear-gradient(180deg, transparent, rgba(24, 79, 52, 0.08)),
-    url("./news-images/Programme de vacances et loisirs 2025.webp");
+    url("./images/news-vacances-2025.webp");
 }
 
 .news-media-2 {
   background-image:
     linear-gradient(180deg, transparent, rgba(24, 79, 52, 0.08)),
-    url("./news-images/convention-pathologie-bouregreg.jpg");
+    url("./images/news-pathologie-bouregreg.jpg");
 }
 
 .news-media-3 {
   background-image:
     linear-gradient(180deg, transparent, rgba(24, 79, 52, 0.08)),
-    url("./news-images/operation-omra-2025.jpg");
+    url("./images/news-omra-2025.jpg");
 }
 
 .news-media-4 {
   background-image:
     linear-gradient(180deg, transparent, rgba(24, 79, 52, 0.08)),
-    url("./news-images/partenariat-activite-sportive.jpg");
+    url("./images/news-partenariat-sportif.jpg");
 }
 
 .news-media-5 {
@@ -1594,7 +1594,7 @@ html[dir="rtl"] .partners-track {
 .news-media-6 {
   background-image:
     linear-gradient(180deg, transparent, rgba(24, 79, 52, 0.08)),
-    url("./news-images/Campagne d'information regionale.jpg");
+    url("./images/news-campagne-info.jpg");
 }
 
 .news-body {
@@ -1688,7 +1688,7 @@ html[dir="rtl"] .partners-track {
   top: 0;
   bottom: 0;
   width: 40%;
-  background: url('../hero%20slider/2.jpg') center/cover no-repeat;
+  background: url('./images/hero-2.jpg') center/cover no-repeat;
   border-radius: 2rem 0 0 2rem;
   opacity: 0.65;
   -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.8) 10%, rgba(0, 0, 0, 0.4) 55%, transparent 95%);
@@ -2976,7 +2976,7 @@ html[dir="rtl"] .partners-track {
   background:
     linear-gradient(90deg, rgba(24, 79, 52, 0.92) 0%, rgba(24, 79, 52, 0.78) 42%, rgba(24, 79, 52, 0.28) 100%),
     linear-gradient(180deg, rgba(18, 43, 30, 0.2), rgba(18, 43, 30, 0.05)),
-    url("./Temoignage/Temoignage.jpg") center/cover no-repeat;
+    url("./images/temoignage.jpg") center/cover no-repeat;
   color: #fff;
 }
 
