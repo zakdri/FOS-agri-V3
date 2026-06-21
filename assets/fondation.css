@@ -117,12 +117,6 @@
   margin-top: auto;
 }
 
-.foundation-feature-card {
-  background:
-    linear-gradient(180deg, rgba(31, 106, 67, 0.08), rgba(255, 255, 255, 0.96)),
-    #fff;
-}
-
 .foundation-band .btn {
   white-space: nowrap;
 }
