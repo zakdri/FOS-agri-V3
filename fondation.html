@@ -4,38 +4,140 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FOS-Agri | La Fondation</title>
+  <meta name="description" content="Découvrez la Fondation FOS-Agri, sa mission sociale, ses valeurs, son histoire, son organisation et sa gouvernance." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tifinagh:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="assets/styles.css?v=4" />
   <link rel="stylesheet" href="assets/secondary-pages.css?v=4" />
+  <link rel="stylesheet" href="assets/fondation.css?v=1" />
 </head>
-<body class="secondary-page service-page" data-page="fondation">
+<body class="secondary-page service-page fondation-page" data-page="fondation">
   <header class="site-header" id="top">
     <div class="container nav-shell">
-      <a class="brand" href="index.html" aria-label="FOS-Agri accueil"><span class="brand-mark"><img src="assets/images/logo.png" alt="Logo FOS-Agri" width="78" height="60" decoding="async" /></span><span class="brand-copy"><strong>FOS-Agri</strong><small>Ministère de l'agriculture</small></span></a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
-      <nav class="site-nav" id="site-nav">
-        <a href="index.html" data-static-i18n="home"></a>
-        <a href="fondation.html" class="is-active" aria-current="page" data-static-i18n="foundation"></a>
-        <a href="prestations.html" data-static-i18n="services"></a>
-        <a href="actualites.html" data-static-i18n="news"></a>
-        <a href="agenda-solidaire.html" data-static-i18n="events"></a>
-        <a href="contact.html" data-static-i18n="contact"></a>
-        <a class="member-link mobile-only" href="espace-adherent.html" data-static-i18n="member"></a>
-        <div class="lang-toggle mobile-nav-lang" role="group" aria-label="Choix de langue"><button class="lang-btn is-active" type="button" data-lang="fr">FR</button><button class="lang-btn" type="button" data-lang="ar">AR</button><button class="lang-btn" type="button" data-lang="zgh">ⵜⵎⵣⵉⵖⵜ</button></div>
-      </nav>
-      <div class="nav-actions"><div class="lang-select-wrap desktop-only"><select class="lang-select secondary-lang-select" aria-label="Choix de langue"><option value="fr">FR</option><option value="ar">AR</option><option value="zgh">ⵜⵎⵣⵉⵖⵜ</option></select><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></div><a class="member-link desktop-only" href="espace-adherent.html" data-static-i18n="member"></a></div>
+      <a class="brand" href="index.html" aria-label="FOS-Agri accueil">
+        <span class="brand-mark"><img src="assets/images/logo.png" alt="Logo FOS-Agri" width="78" height="60" decoding="async" /></span>
+        <span class="brand-copy"><strong>FOS-Agri</strong><small>Ministère de l'agriculture</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Navigation principale"></nav>
+      <div class="nav-actions"></div>
     </div>
   </header>
-  <main>
-    <section class="page-hero-secondary"><div class="container"><span class="page-kicker"><i class="fa-solid fa-seedling"></i> <span data-static-i18n="foundationHeroKicker">Fondation pour la Promotion des Oeuvres Sociales</span></span><h1 data-static-i18n="foundationHeroTitle">La Fondation au service de la famille du Ministere de l'Agriculture</h1><p data-static-i18n="foundationHeroBody">Une page institutionnelle dediee a la mission, aux valeurs, a la gouvernance et a l'histoire de FOS-Agri, dans la meme identite visuelle que la page d'accueil.</p></div></section>
-    <section class="section"><div class="container page-grid-2"><article class="page-card"><span class="page-card-icon"><i class="fa-solid fa-bullseye"></i></span><h2 data-static-i18n="foundationMissionTitle">Mission</h2><p data-static-i18n="foundationMissionBody">Accompagner, soutenir et valoriser les femmes et les hommes du secteur agricole a travers des prestations sociales de proximite.</p></article><article class="page-card"><span class="page-card-icon"><i class="fa-solid fa-hand-holding-heart"></i></span><h2 data-static-i18n="foundationValuesTitle">Valeurs</h2><p data-static-i18n="foundationValuesBody">Solidarite, proximite, transparence, ecoute et amelioration continue des services destines aux adherents et a leurs familles.</p></article></div></section>
-    <section class="section page-section-soft"><div class="container page-grid-3"><article class="page-card" id="mot-ministre"><h3 data-static-i18n="minister">Mot du Ministre</h3><p data-static-i18n="foundationMinisterBody">Message institutionnel du Ministre sur la vision sociale et l'engagement de la Fondation FOS-Agri.</p><p><a class="service-link" href="la-fondation/mot-du-ministre/index.html" data-static-i18n="foundationMinisterLink">Decouvrir le mot du Ministre &rarr;</a></p></article><article class="page-card" id="mot-president"><h3 data-static-i18n="president">Mot du President</h3><p data-static-i18n="foundationPresidentBody">Message institutionnel du President sur la gouvernance, la proximite et le developpement des services de la Fondation.</p><p><a class="service-link" href="la-fondation/mot-du-president/index.html" data-static-i18n="foundationPresidentLink">Decouvrir le mot du President &rarr;</a></p></article><article class="page-card" id="gouvernance"><h3 data-static-i18n="governance">Gouvernance</h3><p data-static-i18n="foundationGovernanceBody">Presentation de l'organisation, des instances et de l'organigramme de la Fondation.</p><p><a class="service-link" href="la-fondation/gouvernance/index.html" data-static-i18n="foundationGovernanceLink">Decouvrir la gouvernance &rarr;</a></p></article></div></section>
-    <section class="section"><div class="container"><div class="page-band"><div><h2 data-static-i18n="foundationBandTitle">Construire les pages depuis la version validee</h2><p data-static-i18n="foundationBandBody">Cette page est separee de l'accueil : elle garde le meme menu, le meme footer et les memes langues sans modifier la home page.</p></div><a class="btn btn-primary" href="index.html" data-static-i18n="foundationBandCta">Retour accueil</a></div></div></section>
+
+  <main id="content">
+    <section class="page-hero-secondary fondation-hero">
+      <div class="container">
+        <span class="page-kicker">
+          <i class="fa-solid fa-landmark" aria-hidden="true"></i>
+          <span data-foundation-i18n="hero.kicker">Fondation pour la Promotion des Œuvres Sociales</span>
+        </span>
+        <h1 data-foundation-i18n="hero.title">Une Fondation proche des agents du secteur agricole</h1>
+        <p data-foundation-i18n="hero.body">
+          FOS-Agri accompagne les adhérents, les retraités et leurs familles à travers une action sociale structurée, solidaire et orientée vers le service.
+        </p>
+        <div class="foundation-hero-actions">
+          <a class="btn btn-primary" href="histoire-mission-valeurs.html" data-foundation-i18n="hero.primary">Découvrir notre mission</a>
+          <a class="btn btn-light" href="notre-organisation.html" data-foundation-i18n="hero.secondary">Voir l'organisation</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section foundation-intro-section" aria-labelledby="foundation-intro-title">
+      <div class="container foundation-intro">
+        <div class="foundation-intro-copy">
+          <span class="section-tag" data-foundation-i18n="intro.tag">Rôle institutionnel</span>
+          <h2 id="foundation-intro-title" data-foundation-i18n="intro.title">Un cadre social au service de la famille agricole</h2>
+          <p data-foundation-i18n="intro.body">
+            La Fondation organise et développe des prestations sociales au profit du personnel du Ministère de l'Agriculture et des organismes concernés. Son action s'appuie sur la proximité, l'écoute, la qualité de service et une gouvernance claire.
+          </p>
+        </div>
+        <div class="foundation-highlights" aria-label="Axes de la Fondation">
+          <article class="foundation-highlight">
+            <span><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i></span>
+            <h3 data-foundation-i18n="highlight.solidarity.title">Solidarité</h3>
+            <p data-foundation-i18n="highlight.solidarity.body">Soutenir les adhérents et leurs familles dans les moments importants de leur parcours.</p>
+          </article>
+          <article class="foundation-highlight">
+            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+            <h3 data-foundation-i18n="highlight.proximity.title">Proximité</h3>
+            <p data-foundation-i18n="highlight.proximity.body">Faciliter l'accès à l'information, aux prestations et aux relais de terrain.</p>
+          </article>
+          <article class="foundation-highlight">
+            <span><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></span>
+            <h3 data-foundation-i18n="highlight.governance.title">Transparence</h3>
+            <p data-foundation-i18n="highlight.governance.body">Structurer les décisions, les responsabilités et le suivi des actions sociales.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section page-section-soft foundation-path-section" aria-labelledby="foundation-path-title">
+      <div class="container">
+        <header class="foundation-section-head">
+          <span class="section-tag" data-foundation-i18n="path.tag">Comprendre la Fondation</span>
+          <h2 id="foundation-path-title" data-foundation-i18n="path.title">Les rubriques institutionnelles</h2>
+          <p data-foundation-i18n="path.body">Accédez aux messages officiels, à l'histoire, à l'organisation et aux instances de gouvernance de FOS-Agri.</p>
+        </header>
+
+        <div class="foundation-pages-grid">
+          <article class="page-card foundation-page-card">
+            <span class="page-card-icon"><i class="fa-solid fa-user-tie" aria-hidden="true"></i></span>
+            <h3 data-foundation-i18n="cards.minister.title">Mot du Ministre</h3>
+            <p data-foundation-i18n="cards.minister.body">La vision institutionnelle portée par le Ministère pour renforcer l'action sociale au profit des agents.</p>
+            <a class="service-link" href="la-fondation/mot-du-ministre/index.html" data-foundation-i18n="cards.minister.link">Lire le mot du Ministre</a>
+          </article>
+
+          <article class="page-card foundation-page-card">
+            <span class="page-card-icon"><i class="fa-solid fa-user-check" aria-hidden="true"></i></span>
+            <h3 data-foundation-i18n="cards.president.title">Mot du Président</h3>
+            <p data-foundation-i18n="cards.president.body">Un message sur la proximité, la modernisation des services et l'engagement envers les adhérents.</p>
+            <a class="service-link" href="la-fondation/mot-du-president/index.html" data-foundation-i18n="cards.president.link">Lire le mot du Président</a>
+          </article>
+
+          <article class="page-card foundation-page-card foundation-feature-card">
+            <span class="page-card-icon"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></span>
+            <h3 data-foundation-i18n="cards.history.title">Histoire, mission et valeurs</h3>
+            <p data-foundation-i18n="cards.history.body">Les étapes clés de FOS-Agri, sa mission sociale et les valeurs qui orientent son action quotidienne.</p>
+            <a class="service-link" href="histoire-mission-valeurs.html" data-foundation-i18n="cards.history.link">Explorer l'histoire et les valeurs</a>
+          </article>
+
+          <article class="page-card foundation-page-card">
+            <span class="page-card-icon"><i class="fa-solid fa-sitemap" aria-hidden="true"></i></span>
+            <h3 data-foundation-i18n="cards.organization.title">Notre organisation</h3>
+            <p data-foundation-i18n="cards.organization.body">La structure opérationnelle de la Fondation, ses directions, ses services et ses responsabilités.</p>
+            <a class="service-link" href="notre-organisation.html" data-foundation-i18n="cards.organization.link">Voir l'organigramme</a>
+          </article>
+
+          <article class="page-card foundation-page-card">
+            <span class="page-card-icon"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></span>
+            <h3 data-foundation-i18n="cards.governance.title">Gouvernance</h3>
+            <p data-foundation-i18n="cards.governance.body">Les instances de pilotage, les comités et les règles qui encadrent le fonctionnement de la Fondation.</p>
+            <a class="service-link" href="la-fondation/gouvernance/index.html" data-foundation-i18n="cards.governance.link">Découvrir la gouvernance</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="page-band foundation-band">
+          <div>
+            <h2 data-foundation-i18n="band.title">Une Fondation lisible, proche et utile</h2>
+            <p data-foundation-i18n="band.body">Cette rubrique rassemble les informations institutionnelles essentielles avant d'accéder aux prestations, à l'adhésion ou aux contacts utiles.</p>
+          </div>
+          <a class="btn btn-primary" href="prestations.html" data-foundation-i18n="band.cta">Voir les prestations</a>
+        </div>
+      </div>
+    </section>
   </main>
+
   <footer class="site-footer"></footer>
+
   <script src="assets/secondary-pages.js?v=4"></script>
+  <script src="assets/fondation.js?v=1"></script>
 </body>
 </html>

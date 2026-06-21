@@ -267,19 +267,56 @@
     leadership: [
       {
         id: 'president', order: 1, isActive: true,
-        titleKey: 'org.president.title', nameKey: 'org.president.name',
+        title: 'Président de la FOS',
+        titleAr: 'رئيس المؤسسة',
+        titleZgh: 'ⴰⵙⵍⵡⴰⵢ ⵏ FOS',
+        name: 'Mr: ADIL EL OUFIR',
+        nameAr: 'السيد عادل العوفير',
+        nameZgh: 'ADIL EL OUFIR',
         colorVariant: 'gold',
         supports: [
-          { id: 'committee', order: 1, isActive: true, titleKey: 'org.committee.title', colorVariant: 'support', icon: 'fa-solid fa-clipboard-list' },
-          { id: 'audit',     order: 2, isActive: true, titleKey: 'org.audit.title',     colorVariant: 'support', icon: 'fa-solid fa-shield-halved' }
+          {
+            id: 'committee', order: 1, isActive: true,
+            title: 'Comité de directeur',
+            titleAr: 'اللجنة المديرية',
+            titleZgh: 'ⵜⴰⵎⵙⵎⵓⵏⵜ ⵜⴰⵎⵏⵀⴰⴹⵜ',
+            colorVariant: 'support',
+            icon: 'fa-solid fa-clipboard-list'
+          },
+          {
+            id: 'audit', order: 2, isActive: true,
+            title: "Service de l'Audit et Contrôle de Gestion",
+            titleAr: 'مصلحة التدقيق ومراقبة التسيير',
+            titleZgh: 'ⴰⵙⵏⵓⴱⴳ ⴷ ⵓⵙⴼⵔⴽ ⵏ ⵜⵎⵀⵍⴰ',
+            name: 'Mme: NADA MOUNIRI',
+            nameAr: 'السيدة ندى منيري',
+            nameZgh: 'NADA MOUNIRI',
+            colorVariant: 'support',
+            icon: 'fa-solid fa-shield-halved'
+          }
         ],
         children: [
           {
             id: 'secretary-general', order: 1, isActive: true,
-            titleKey: 'org.sg.title', nameKey: 'org.sg.name',
+            title: 'Secrétaire général',
+            titleAr: 'الكاتب العام',
+            titleZgh: 'ⴰⵎⴰⵔⴰ ⴰⵎⴰⵜⴰⵢ',
+            name: 'Mme: NAIYA AMARA',
+            nameAr: 'السيدة نجية عمارة',
+            nameZgh: 'NAIYA AMARA',
             colorVariant: 'teal',
             supports: [
-              { id: 'communication', order: 1, isActive: true, titleKey: 'org.communication.title', colorVariant: 'support', icon: 'fa-solid fa-bullhorn' }
+              {
+                id: 'communication', order: 1, isActive: true,
+                title: 'Service de la communication',
+                titleAr: 'مصلحة التواصل',
+                titleZgh: 'ⴰⵙⵏⵓⴱⴳ ⵏ ⵜⵎⵢⴰⵡⴰⴹⵜ',
+                name: 'Mme: FAIZA JABIRI',
+                nameAr: 'السيدة فائزة جابري',
+                nameZgh: 'FAIZA JABIRI',
+                colorVariant: 'support',
+                icon: 'fa-solid fa-bullhorn'
+              }
             ]
           }
         ]
@@ -288,38 +325,119 @@
     directions: [
       {
         id: 'prestations', order: 1, isActive: true,
-        titleKey: 'org.dir.prestations.title',
-        managerNameKey: 'org.dir.prestations.manager',
+        title: 'Directrice des Prestations',
+        titleAr: 'مديرة الخدمات',
+        titleZgh: 'ⵜⴰⵎⵙⴼⵔⴰⴽⵜ ⵏ ⵉⵎⵣⵍⴰ',
+        managerName: 'Mme SANAE LEHMAMI',
+        managerNameAr: 'السيدة سناء الحمامي',
+        managerNameZgh: 'SANAE LEHMAMI',
         colorVariant: 'green',
         icon: 'fa-solid fa-hand-holding-heart',
         services: [
-          { id: 'svc-project-housing', order: 1, isActive: true, titleKey: 'org.svc.projectHousing.title', managerNameKey: 'org.svc.projectHousing.manager', positionKey: 'org.svc.projectHousing.position' },
-          { id: 'svc-prevoyance',      order: 2, isActive: true, titleKey: 'org.svc.prevoyance.title',     managerNameKey: 'org.svc.prevoyance.manager',     positionKey: 'org.svc.prevoyance.position' },
-          { id: 'svc-estivage',        order: 3, isActive: true, titleKey: 'org.svc.estivage.title',       managerNameKey: 'org.svc.estivage.manager' }
+          {
+            id: 'svc-project-housing', order: 1, isActive: true,
+            title: 'Chef de service de projet logement',
+            titleAr: 'رئيس مصلحة تتبع مشاريع السكن',
+            titleZgh: 'ⴰⵎⴰⵙⴰⵢ ⵏ ⵓⵙⵏⴼⴰⵔ ⵏ ⵜⴷⴷⴰⵔⵜ',
+            managerName: 'M: YOUSSEF AKKI',
+            managerNameAr: 'السيد يوسف عكي',
+            managerNameZgh: 'YOUSSEF AKKI'
+          },
+          {
+            id: 'svc-prevoyance', order: 2, isActive: true,
+            title: 'Chef de service de prévoyance, des Aides financières et assistance médicale et sociale',
+            titleAr: 'رئيسة مصلحة الاحتياط الدعم المالي و المساعدة الصحية والاجتماعية',
+            titleZgh: 'ⴰⵎⴰⵙⴰⵢ ⵏ ⵓⴹⵎⴰⵏ ⴷ ⵜⴰⵍⵍⴰⵍⵜ ⵜⴰⵎⵥⵍⴰⵢⵜ ⴷ ⵜⴰⵏⴰⵎⵓⵏⵜ'
+          },
+          {
+            id: 'svc-estivage', order: 3, isActive: true,
+            title: "Chef de service de l'Estivage, Culture, Restauration et Loisirs",
+            titleAr: 'رئيس مصلحة الاصطياف، الانشطة، المطعمة والترفيه',
+            titleZgh: 'ⴰⵎⴰⵙⴰⵢ ⵏ ⵓⵙⵉⵡⴹ ⴷ ⵜⴷⵍⵙⴰ ⴷ ⵓⵙⵓⵔⴼ',
+            managerName: 'Mr: HATIM EL HANCHI',
+            managerNameAr: 'السيد حاتم الحنشي',
+            managerNameZgh: 'HATIM EL HANCHI'
+          }
         ]
       },
       {
         id: 'adherents', order: 2, isActive: true,
-        titleKey: 'org.dir.adherents.title',
-        managerNameKey: 'org.dir.adherents.manager',
+        title: 'Directrice des Affaires des Adhérents',
+        titleAr: 'مديرة شؤون المنخرطين',
+        titleZgh: 'ⵜⴰⵎⵙⴼⵔⴰⴽⵜ ⵏ ⵓⵎⵓⵔ ⵏ ⵉⵎⵥⵍⴰⵢⵏ',
+        managerName: 'Mme: HANANE EL KOULALI',
+        managerNameAr: 'السيدة حنان الكولالي',
+        managerNameZgh: 'HANANE EL KOULALI',
         colorVariant: 'green',
         icon: 'fa-solid fa-users',
         services: [
-          { id: 'svc-adhesions-contentieux', order: 1, isActive: true, titleKey: 'org.svc.adhesionsContentieux.title' },
-          { id: 'svc-cooperation',           order: 2, isActive: true, titleKey: 'org.svc.cooperation.title', managerNameKey: 'org.svc.cooperation.manager', positionKey: 'org.svc.cooperation.position' },
-          { id: 'svc-system-info',           order: 3, isActive: true, titleKey: 'org.svc.systemInfo.title', managerNameKey: 'org.svc.systemInfo.manager',  positionKey: 'org.svc.systemInfo.position' }
+          {
+            id: 'svc-adhesions-contentieux', order: 1, isActive: true,
+            title: 'Chef de service du suivi des adhésions et contentieux',
+            titleAr: 'رئيس مصلحة تتبع الانخراطات والمنازعات',
+            titleZgh: 'ⴰⵎⴰⵙⴰⵢ ⵏ ⵓⵙⴼⴰⵔ ⵏ ⵓⵙⵏⵓⴱⴳ ⴷ ⵉⵎⵙⵓⴳⴰⵔ',
+            managerName: 'Mme: SEKAINA EL-MJID',
+            managerNameAr: 'السيدة سكينة المجيد',
+            managerNameZgh: 'SEKAINA EL-MJID'
+          },
+          {
+            id: 'svc-cooperation', order: 2, isActive: true,
+            title: 'Chef de service de la coopération et du partenariat',
+            titleAr: 'رئيسة مصلحة الشراكة والتعاون',
+            titleZgh: 'ⴰⵎⴰⵙⴰⵢ ⵏ ⵜⵎⵙⵙⴰⵡⵉⵜ ⴷ ⵓⵎⵛⵛⴰⵔⴽ',
+            managerName: 'Mme: SOUAD OUAKRIM',
+            managerNameAr: 'السيدة سعاد واعكريم',
+            managerNameZgh: 'SOUAD OUAKRIM'
+          },
+          {
+            id: 'svc-system-info', order: 3, isActive: true,
+            title: "Chef de service du système d'information",
+            titleAr: 'رئيسية مصلحة نظم المعلومات',
+            titleZgh: 'ⴰⵎⴰⵙⴰⵢ ⵏ ⵓⵏⴰⴳⵔⴰⵡ ⵏ ⵉⵙⴼⴽⴰ',
+            managerName: 'Mme: AYOUB EL OTMANI',
+            managerNameAr: 'السيد أيوب العثماني',
+            managerNameZgh: 'AYOUB EL OTMANI'
+          }
         ]
       },
       {
         id: 'admin-finance', order: 3, isActive: true,
-        titleKey: 'org.dir.adminFinance.title',
-        managerNameKey: 'org.dir.adminFinance.manager',
+        title: 'Directeur Administratif et Financier',
+        titleAr: 'المدير الإداري والمالي',
+        titleZgh: 'ⴰⵎⵙⴼⵔⴰⴽ ⴰⴷⴱⵍⴰⵏ ⴷ ⵓⵎⴰⵍⵉ',
+        managerName: 'M: ALI KHODARI',
+        managerNameAr: 'السيد علي خضاري',
+        managerNameZgh: 'ALI KHODARI',
         colorVariant: 'green',
         icon: 'fa-solid fa-building-columns',
         services: [
-          { id: 'svc-finance',     order: 1, isActive: true, titleKey: 'org.svc.finance.title',    managerNameKey: 'org.svc.finance.manager',    positionKey: 'org.svc.finance.position' },
-          { id: 'svc-purchases',   order: 2, isActive: true, titleKey: 'org.svc.purchases.title',  managerNameKey: 'org.svc.purchases.manager',  positionKey: 'org.svc.purchases.position' },
-          { id: 'svc-admin-legal', order: 3, isActive: true, titleKey: 'org.svc.adminLegal.title' }
+          {
+            id: 'svc-finance', order: 1, isActive: true,
+            title: 'Chef de service de la gestion Financière et de la comptabilité',
+            titleAr: 'رئيسة مصلحة التدبير المالي والمحاسبة',
+            titleZgh: 'ⴰⵎⴰⵙⴰⵢ ⵏ ⵓⵙⴼⵔⴽ ⴰⵎⴰⵍⵉ ⴷ ⵓⵎⵉⴹⴰⵏ',
+            managerName: 'Mme: MANAL EL MATLOBI',
+            managerNameAr: 'السيدة منال المطلبي',
+            managerNameZgh: 'MANAL EL MATLOBI'
+          },
+          {
+            id: 'svc-purchases', order: 2, isActive: true,
+            title: 'Chef de service des achats et moyens généraux',
+            titleAr: 'مصلحة المشتريات والوسائل العامة',
+            titleZgh: 'ⴰⵎⴰⵙⴰⵢ ⵏ ⵉⵙⵖⴰⵏ ⴷ ⵉⵎⴰⵙⵙⵏ ⵉⵎⴰⵜⴰⵢⵏ',
+            managerName: 'M: YOUSSEF MAMRANI',
+            managerNameAr: 'السيد يوسف المراني',
+            managerNameZgh: 'YOUSSEF MAMRANI'
+          },
+          {
+            id: 'svc-admin-legal', order: 3, isActive: true,
+            title: 'Service de la gestion administrative et juridique',
+            titleAr: 'مصلحة التدبير الإداري والقانوني',
+            titleZgh: 'ⴰⵙⵏⵓⴱⴳ ⵏ ⵓⵙⴼⵔⴽ ⴰⴷⴱⵍⴰⵏ ⴷ ⵓⵙⴹⵓⴼ',
+            managerName: 'Mr: AHMED NACIRI',
+            managerNameAr: 'السيد أحمد الناصري',
+            managerNameZgh: 'AHMED NACIRI'
+          }
         ]
       }
     ]
@@ -366,19 +484,46 @@
     return `--reveal-index:${idx}`;
   }
 
+  function localizedField(node, field, keyField, lang) {
+    if (!node) return '';
+    const suffix = lang === 'ar' ? 'Ar' : (lang === 'zgh' ? 'Zgh' : '');
+    if (suffix && node[`${field}${suffix}`]) return node[`${field}${suffix}`];
+    if (node[field]) return node[field];
+    return node[keyField] ? t(node[keyField], lang) : '';
+  }
+
+  function localizedName(node, field, keyField, lang) {
+    if (!node) return '';
+    const suffix = lang === 'ar' ? 'Ar' : (lang === 'zgh' ? 'Zgh' : '');
+    if (suffix && node[`${field}${suffix}`]) return node[`${field}${suffix}`];
+    if (node[field]) return node[field];
+    return node[keyField] ? t(node[keyField], lang) : '';
+  }
+
+  function textLine(value, className) {
+    if (!value) return '';
+    return `<p class="${className}">${escapeHtml(value)}</p>`;
+  }
+
+  function langAttrs(lang) {
+    const dir = lang === 'ar' ? 'rtl' : 'ltr';
+    return ` lang="${escapeHtml(lang)}" dir="${dir}"`;
+  }
+
   /* Generic leadership / support node (centered card).
      `idx` controls stagger order in the reveal animation. */
   function renderNode(node, lang, idx, extraClass) {
     if (!node) return '';
-    const name = node.nameKey ? t(node.nameKey, lang) : '';
+    const title = localizedField(node, 'title', 'titleKey', lang);
+    const name = localizedName(node, 'name', 'nameKey', lang);
 
     const iconHtml = node.icon
       ? `<span class="org-node-icon" aria-hidden="true"><i class="${escapeHtml(node.icon)}"></i></span>`
       : '';
 
-    const titleHtml = node.titleKey ? `<p class="org-node-title">${escapeHtml(t(node.titleKey, lang))}</p>` : '';
+    const titleHtml = textLine(title, 'org-node-title');
     const nameHtml = name
-      ? `<p class="org-node-name">${escapeHtml(name)}</p>`
+      ? textLine(name, 'org-node-name')
       : ((node.colorVariant === 'gold' || node.colorVariant === 'teal')
           ? `<p class="org-node-name"><span class="org-node-vacant">${escapeHtml(t('status.vacant', lang))}</span></p>`
           : '');
@@ -386,16 +531,17 @@
 
     const cls = ['org-node', variantClass(node.colorVariant), extraClass || ''].filter(Boolean).join(' ');
 
-    return `<article class="${cls}" data-id="${escapeHtml(node.id)}" style="${revealStyle(idx)}">${iconHtml}${titleHtml}${nameHtml}${positionHtml}</article>`;
+    return `<article class="${cls}" data-id="${escapeHtml(node.id)}" style="${revealStyle(idx)}"${langAttrs(lang)}>${iconHtml}${titleHtml}${nameHtml}${positionHtml}</article>`;
   }
 
   /* Service row under a direction (compact). */
   function renderService(svc, lang, idx) {
-    const name = svc.managerNameKey ? t(svc.managerNameKey, lang) : '';
-    const titleHtml = svc.titleKey ? `<p class="org-node-title">${escapeHtml(t(svc.titleKey, lang))}</p>` : '';
-    const nameHtml = name ? `<p class="org-node-name">${escapeHtml(name)}</p>` : '';
+    const title = localizedField(svc, 'title', 'titleKey', lang);
+    const name = localizedName(svc, 'managerName', 'managerNameKey', lang);
+    const titleHtml = textLine(title, 'org-node-title');
+    const nameHtml = name ? textLine(name, 'org-node-name') : '';
     const positionHtml = svc.positionKey ? `<p class="org-node-position">${escapeHtml(t(svc.positionKey, lang))}</p>` : '';
-    return `<article class="org-node is-service org-service" data-id="${escapeHtml(svc.id)}" style="${revealStyle(idx)}">${titleHtml}${nameHtml}${positionHtml}</article>`;
+    return `<article class="org-node is-service org-service" data-id="${escapeHtml(svc.id)}" style="${revealStyle(idx)}"${langAttrs(lang)}>${titleHtml}${nameHtml}${positionHtml}</article>`;
   }
 
   /* Tier 1 — president + lateral supports */
@@ -432,14 +578,15 @@
         ${items.map((d, i) => {
           const services = sortedActive(d.services);
           const num = String(i + 1).padStart(2, '0');
-          const managerName = d.managerNameKey ? t(d.managerNameKey, lang) : '';
+          const title = localizedField(d, 'title', 'titleKey', lang);
+          const managerName = localizedName(d, 'managerName', 'managerNameKey', lang);
           const iconHtml = d.icon ? `<span class="org-node-icon" aria-hidden="true"><i class="${escapeHtml(d.icon)}"></i></span>` : '';
           const head = `
-            <article class="org-direction-head" data-id="${escapeHtml(d.id)}" data-num="${num}" style="${revealStyle(5 + i * 3)}">
+            <article class="org-direction-head" data-id="${escapeHtml(d.id)}" data-num="${num}" style="${revealStyle(5 + i * 3)}"${langAttrs(lang)}>
               ${iconHtml}
-              <p class="org-node-title">${escapeHtml(t(d.titleKey, lang))}</p>
+              ${textLine(title, 'org-node-title')}
               ${managerName
-                ? `<p class="org-node-name">${escapeHtml(managerName)}</p>`
+                ? textLine(managerName, 'org-node-name')
                 : `<p class="org-node-name"><span class="org-node-vacant">${escapeHtml(t('status.vacant', lang))}</span></p>`}
             </article>`;
           const svcHtml = services.length === 0
@@ -476,6 +623,8 @@
     }
 
     root.dataset.state = 'ready';
+    root.lang = lang;
+    root.dir = lang === 'ar' ? 'rtl' : 'ltr';
     root.innerHTML = [
       president ? renderPresidentTier(president, lang) : '',
       sg ? renderSGTier(sg, lang) : '',

@@ -94,7 +94,6 @@
     { key: 'scolarisation', url: 'services/formation-scolarisation.html', icon: 'fa-graduation-cap' },
     { key: 'logement', url: 'services/acces-logement.html', icon: 'fa-house-chimney' },
     { key: 'projets', url: 'services/projets-personnels.html', icon: 'fa-lightbulb' },
-    { key: 'education', url: 'services/education-culture.html', icon: 'fa-book-open' },
     { key: 'mediatheque', url: 'mediatheque.html', icon: 'fa-photo-film' },
     { key: 'media2017', url: 'mediatheque.html#galerie-2017', icon: 'fa-images' },
     { key: 'media2018', url: 'mediatheque.html#galerie-2018', icon: 'fa-images' },

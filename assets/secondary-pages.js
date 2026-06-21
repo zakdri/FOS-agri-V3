@@ -18,7 +18,7 @@
       usefulTitle: 'Liens utiles', quickTitle: 'Acces rapide', contactTitle: 'Coordonnees', copy: '© 2026 FOS-Agri - Ministère de l\'Agriculture',
       useful1: 'Appels d\'offres', useful2: 'FAQ', useful3: 'Newsletter', quick1: 'Portail agent', quick2: 'Programme social', quick3: 'Actualites',
       minister: 'Mot du Ministre', president: 'Mot du Président', history: 'Histoire, mission et valeurs', values: 'Nos valeurs', organization: 'Notre organisation', governance: 'Gouvernance',
-      prevoyance: 'Prévoyance médico-sociale', culture: 'Culture, loisirs et voyages', scolarisation: 'Scolarisation et formation', logement: 'Accès au logement', projets: 'Projets personnels', education: 'Éducation et culture',
+      prevoyance: 'Prévoyance médico-sociale', culture: 'Culture, loisirs, et voyages', scolarisation: 'Appui à la Scolarisation et Formation', logement: 'Accès au logement', projets: 'Appui aux projets personnels', education: 'Éducation et culture',
       adherents: 'Nos adhérents & bénéficiaires', procedure: 'Procédure d’adhésion', cotisations: 'Cotisations',
       media2017: 'Galerie 2017', media2018: 'Galerie 2018', media2019: 'Galerie 2019', media2020: 'Galerie 2020',
       coordinates: 'Coordonnées', regional: 'Relais régionaux', social: 'Réseaux sociaux',
@@ -454,7 +454,6 @@
     { key: 'scolarisation', url: 'services/formation-scolarisation.html', icon: 'fa-graduation-cap' },
     { key: 'logement',      url: 'services/acces-logement.html',          icon: 'fa-house-chimney' },
     { key: 'projets',       url: 'services/projets-personnels.html',      icon: 'fa-lightbulb' },
-    { key: 'education',     url: 'services/education-culture.html',       icon: 'fa-book-open' },
     { key: 'mediatheque',   url: 'mediatheque.html',                      icon: 'fa-photo-film' },
     { key: 'media2017',     url: 'mediatheque.html#galerie-2017',         icon: 'fa-images' },
     { key: 'media2018',     url: 'mediatheque.html#galerie-2018',         icon: 'fa-images' },
@@ -782,8 +781,7 @@
         { href: 'services/culture-loisirs-voyages.html', key: 'culture' },
         { href: 'services/formation-scolarisation.html', key: 'scolarisation' },
         { href: 'services/acces-logement.html', key: 'logement' },
-        { href: 'services/projets-personnels.html', key: 'projets' },
-        { href: 'services/education-culture.html', key: 'education' }
+        { href: 'services/projets-personnels.html', key: 'projets' }
       ])}
       ${submenu(page, 'mediatheque', 'mediatheque.html', 'mediatheque', [
         { href: 'mediatheque.html#galerie-2017', key: 'media2017' },

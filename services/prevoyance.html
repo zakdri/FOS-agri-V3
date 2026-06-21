@@ -1,90 +1,31 @@
 <!doctype html>
 <html lang="fr">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FOS-Agri | Prevoyance medico-sociale</title>
+  <meta name="description" content="Prévoyance médico-sociale FOS-Agri : AMC, AMTS, centre médico-social, aide handicap et conventions médicales." />
+  <title>FOS-Agri | Prévoyance médico-sociale</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tifinagh:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tifinagh:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="../assets/styles.css?v=4" />
+  <link rel="stylesheet" href="../assets/secondary-pages.css?v=4" />
+  <link rel="stylesheet" href="../assets/prestations.css?v=13" />
 </head>
-
-<body class="service-page" data-page="service" data-service="prevoyance">
-  <header class="site-header">
+<body class="secondary-page prestation-detail-page" data-page="prestations" data-service="prevoyance" data-base="../">
+  <header class="site-header" id="top">
     <div class="container nav-shell">
-      <a class="brand" href="../index.html" aria-label="FOS-Agri accueil">
-        <span class="brand-mark"><img src="../assets/images/logo.png" alt="Logo FOS-Agri" width="78" height="60" decoding="async" /></span>
-        <span class="brand-copy"><strong>FOS-Agri</strong><small data-i18n="brand.subtitle"></small></span>
-      </a>
-
-      <nav class="site-nav" id="site-nav">
-        <a href="../index.html" data-i18n="nav.home"></a>
-        <a href="../index.html#about" data-i18n="nav.about"></a>
-        <a href="../index.html#services" data-i18n="nav.services"></a>
-        <a href="../index.html#news" data-i18n="nav.news"></a>
-        <a href="../index.html#events" data-i18n="nav.events"></a>
-        <a href="../index.html#contact" data-i18n="nav.contact"></a>
-
-        <a class="member-link mobile-only" href="../index.html#member-space" data-i18n="nav.memberSpace"></a>
-        <div class="lang-toggle mobile-nav-lang" role="group" aria-label="Choix de langue">
-          <button class="lang-btn is-active" type="button" data-lang="fr">FR</button>
-          <button class="lang-btn" type="button" data-lang="ar">AR</button>
-          <button class="lang-btn" type="button" data-lang="zgh">ⵜⵎⵣⵉⵖⵜ</button>
-        </div>
-      </nav>
-
-      <div class="nav-actions">
-        <div class="lang-select-wrap desktop-only">
-          <select class="lang-select" aria-label="Choix de langue">
-            <option value="fr">FR</option>
-            <option value="ar">AR</option>
-            <option value="zgh">ⵜⵎⵣⵉⵖⵜ</option>
-          </select>
-          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-        </div>
-        <a class="member-link desktop-only" href="../index.html#member-space" data-i18n="nav.memberSpace"></a>
-        <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </div>
+      <a class="brand" href="../index.html" aria-label="FOS-Agri accueil"><span class="brand-mark"><img src="../assets/images/logo.png" alt="Logo FOS-Agri" width="78" height="60" decoding="async" /></span><span class="brand-copy"><strong>FOS-Agri</strong><small>Ministère de l'agriculture</small></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+      <nav class="site-nav" id="site-nav"></nav>
+      <div class="nav-actions"><div class="lang-select-wrap desktop-only"><select class="lang-select secondary-lang-select" aria-label="Choix de langue"><option value="fr">FR</option><option value="ar">AR</option><option value="zgh">ⵜⵎⵣⵉⵖⵜ</option></select><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></div><a class="member-link desktop-only" href="../espace-adherent.html" data-static-i18n="member"></a></div>
     </div>
   </header>
-  <main>
-    <section class="hero service-hero">
-      <div class="hero-media" aria-hidden="true"></div>
-      <div class="container hero-content">
-        <div class="service-meta"><i id="service-icon" class="fa-solid fa-heart-pulse"></i><span
-            data-i18n="services.tag"></span></div>
-        <h1 id="service-title"></h1>
-        <p class="hero-description" id="service-description"></p>
-      </div>
-    </section>
-    <section class="section">
-      <div class="container service-layout">
-        <article class="service-box">
-          <h3 data-i18n="about.scopeTitle"></h3>
-          <p id="service-detail"></p>
-        </article>
-        <aside class="service-summary">
-          <h3 data-i18n="member.memberTitle"></h3>
-          <ul class="service-list">
-            <li><a href="../index.html#contact" data-i18n="hero.ctaContact"></a></li>
-            <li><a href="../index.html#member-space" data-i18n="member.memberCta"></a></li>
-            <li><a href="../index.html#news" data-i18n="news.title"></a></li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-  </main>
+  <main id="prestation-detail-root"></main>
   <footer class="site-footer"></footer>
-  <script src="../assets/data.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
-  <script src="../assets/secondary-pages.js?v=4"></script>
+  <script src="../assets/secondary-pages.js?v=5"></script>
+  <script src="../assets/prestations.js?v=15"></script>
 </body>
-
 </html>
+

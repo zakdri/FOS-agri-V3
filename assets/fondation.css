@@ -1,0 +1,186 @@
+/* Fondation landing page. Scoped so the approved homepage remains untouched. */
+.fondation-hero {
+  background:
+    linear-gradient(135deg, rgba(14, 61, 38, 0.9), rgba(17, 94, 58, 0.72)),
+    url('images/moroccan-family.jpg') center/cover no-repeat;
+}
+
+.foundation-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.8rem;
+}
+
+.foundation-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.25fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.foundation-intro-copy h2,
+.foundation-section-head h2 {
+  margin: 0.65rem 0 1rem;
+  color: var(--green-deep);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.08;
+}
+
+.foundation-intro-copy p,
+.foundation-section-head p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.85;
+  font-size: 1.03rem;
+}
+
+.foundation-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.foundation-highlight {
+  min-height: 100%;
+  padding: 1.35rem;
+  border: 1px solid rgba(28, 82, 55, 0.12);
+  border-radius: 1.4rem;
+  background: #fff;
+  box-shadow: 0 16px 44px rgba(16, 55, 35, 0.07);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.foundation-highlight:hover {
+  transform: translateY(-4px);
+  border-color: rgba(31, 106, 67, 0.24);
+  box-shadow: 0 24px 60px rgba(16, 55, 35, 0.12);
+}
+
+.foundation-highlight span {
+  width: 3rem;
+  height: 3rem;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 1rem;
+  background: rgba(31, 106, 67, 0.1);
+  color: var(--green);
+  margin-bottom: 0.9rem;
+}
+
+.foundation-highlight h3 {
+  margin: 0 0 0.55rem;
+  color: var(--green-deep);
+}
+
+.foundation-highlight p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+  font-size: 0.94rem;
+}
+
+.foundation-section-head {
+  max-width: 780px;
+  margin: 0 auto 2.4rem;
+  text-align: center;
+}
+
+.foundation-section-head .section-tag {
+  justify-content: center;
+}
+
+.foundation-pages-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.foundation-page-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.foundation-page-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 28px 70px rgba(16, 55, 35, 0.13);
+  border-color: rgba(31, 106, 67, 0.24);
+}
+
+.foundation-page-card p {
+  margin-bottom: 1.2rem;
+}
+
+.foundation-page-card .service-link {
+  margin-top: auto;
+}
+
+.foundation-feature-card {
+  background:
+    linear-gradient(180deg, rgba(31, 106, 67, 0.08), rgba(255, 255, 255, 0.96)),
+    #fff;
+}
+
+.foundation-band .btn {
+  white-space: nowrap;
+}
+
+html[dir='rtl'] .foundation-intro-copy,
+html[dir='rtl'] .foundation-highlight,
+html[dir='rtl'] .foundation-page-card {
+  text-align: right;
+}
+
+@media (max-width: 1180px) {
+  .foundation-pages-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .foundation-intro,
+  .foundation-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .foundation-section-head {
+    text-align: start;
+    margin-inline: 0;
+  }
+
+  .foundation-section-head .section-tag {
+    justify-content: flex-start;
+  }
+
+  .foundation-pages-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .foundation-hero-actions .btn,
+  .foundation-band .btn {
+    width: 100%;
+  }
+
+  html[dir='rtl'] .foundation-section-head {
+    text-align: right;
+  }
+
+  html[dir='rtl'] .foundation-section-head .section-tag {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 620px) {
+  .foundation-pages-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .foundation-highlight,
+  .foundation-page-card {
+    transition: none;
+  }
+}
