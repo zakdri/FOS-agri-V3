@@ -876,7 +876,7 @@
       <div class="container footer-grid" id="footer-links">
         <div>
           <a class="brand footer-brand" href="${href('index.html')}">
-            <span class="brand-mark footer-brand-mark"><img src="${href('logo.png')}" alt="Logo FOS-Agri" /></span>
+            <span class="brand-mark footer-brand-mark"><img src="${href('assets/images/logo.png')}" alt="Logo FOS-Agri" width="78" height="60" loading="lazy" decoding="async" /></span>
             <span class="brand-copy"><strong>FOS-Agri</strong><small>${t('brandSubtitle')}</small></span>
           </a>
           <p class="footer-copy">${t('footerAbout')}</p>
