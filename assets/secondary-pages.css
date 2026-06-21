@@ -250,7 +250,7 @@ html[dir='rtl'] .page-list-item:focus-within {
   margin-bottom: 0.65rem;
 }
 
-/* Shared performance + motion layer for secondary pages.
+/* Shared performance + interaction layer for secondary pages.
    The homepage does not load this file. */
 body.secondary-page main > .section,
 body.secondary-page main > section:not(.page-hero-secondary) {
@@ -258,44 +258,21 @@ body.secondary-page main > section:not(.page-hero-secondary) {
   contain-intrinsic-size: auto 640px;
 }
 
-body.secondary-page .page-hero-secondary .page-kicker,
-body.secondary-page .page-hero-secondary h1,
-body.secondary-page .page-hero-secondary p,
-body.secondary-page .page-hero-secondary .btn,
-body.secondary-page [data-reveal] {
+body.secondary-page [data-scroll-reveal] {
   opacity: 1;
   transform: none;
 }
 
-html.reveal-ready body.secondary-page .page-hero-secondary .page-kicker,
-html.reveal-ready body.secondary-page .page-hero-secondary h1,
-html.reveal-ready body.secondary-page .page-hero-secondary p,
-html.reveal-ready body.secondary-page .page-hero-secondary .btn {
-  animation: sec-hero-rise 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-html.reveal-ready body.secondary-page .page-hero-secondary h1 {
-  animation-delay: 0.08s;
-}
-
-html.reveal-ready body.secondary-page .page-hero-secondary p {
-  animation-delay: 0.15s;
-}
-
-html.reveal-ready body.secondary-page .page-hero-secondary .btn {
-  animation-delay: 0.22s;
-}
-
-html.reveal-ready body.secondary-page [data-reveal] {
+html.scroll-motion-ready body.secondary-page [data-scroll-reveal] {
   opacity: 0;
-  transform: translate3d(0, 22px, 0);
+  transform: translate3d(0, 14px, 0);
   transition:
-    opacity 0.56s ease,
-    transform 0.62s cubic-bezier(0.22, 1, 0.36, 1);
-  transition-delay: var(--reveal-delay, 0ms);
+    opacity 0.42s ease,
+    transform 0.48s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--scroll-reveal-delay, 0ms);
 }
 
-html.reveal-ready body.secondary-page [data-reveal].is-revealed {
+html.scroll-motion-ready body.secondary-page [data-scroll-reveal].is-scroll-visible {
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }
@@ -323,17 +300,6 @@ html[dir='rtl'] body.secondary-page .service-link:focus-visible {
 body.secondary-page .btn:hover,
 body.secondary-page .btn:focus-visible {
   transform: translateY(-2px);
-}
-
-@keyframes sec-hero-rise {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 18px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
 }
 
 body.secondary-page .site-nav a.is-active,
@@ -723,14 +689,10 @@ body.secondary-page .site-nav a[aria-current='page'] {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html.reveal-ready body.secondary-page [data-reveal],
-  html.reveal-ready body.secondary-page .page-hero-secondary .page-kicker,
-  html.reveal-ready body.secondary-page .page-hero-secondary h1,
-  html.reveal-ready body.secondary-page .page-hero-secondary p,
-  html.reveal-ready body.secondary-page .page-hero-secondary .btn {
-    animation-duration: 0.22s !important;
+  html.scroll-motion-ready body.secondary-page [data-scroll-reveal] {
     transition-duration: 0.18s !important;
     transition-delay: 0ms !important;
+    transform: translate3d(0, 6px, 0);
   }
 
   body.secondary-page .page-card,

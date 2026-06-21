@@ -1167,74 +1167,70 @@
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
   }
 
-  function initSecondaryMotion() {
-    if (body.__secondaryMotionInitialized) return;
-    body.__secondaryMotionInitialized = true;
+  function initScrollReveal() {
+    if (body.__scrollRevealInitialized) return;
+    body.__scrollRevealInitialized = true;
 
-    const revealSelectors = [
+    const selectors = [
       '.section > .container > *',
       '.page-card',
       '.page-list-item',
       '.page-news-card',
-      '.value-card',
-      '.prestation-card',
-      '.prestation-feature-card',
-      '.prestation-partner-card',
-      '.prestation-timeline-item',
-      '.prestation-panel',
       '.foundation-highlight',
       '.foundation-page-card',
       '.org-node',
       '.org-direction',
       '.gov-card',
       '.minister-card',
-      '.president-card'
+      '.president-card',
+      '.value-card',
+      '.prestation-card',
+      '.prestation-feature-card',
+      '.prestation-partner-card',
+      '.prestation-timeline-item',
+      '.prestation-panel'
     ].join(',');
 
+    if (!('IntersectionObserver' in window)) return;
+
+    root.classList.add('scroll-motion-ready');
     const seen = new WeakSet();
-    let revealObserver = null;
     let order = 0;
 
-    function revealNow(el) {
-      el.classList.add('is-revealed');
-    }
-
-    if ('IntersectionObserver' in window) {
-      root.classList.add('reveal-ready');
-      revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          revealNow(entry.target);
-          revealObserver.unobserve(entry.target);
-        });
-      }, {
-        rootMargin: '0px 0px -8% 0px',
-        threshold: 0.08
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-scroll-visible');
+        observer.unobserve(entry.target);
       });
-    }
+    }, {
+      rootMargin: '0px 0px -6% 0px',
+      threshold: 0.1
+    });
 
-    function register(scope) {
-      const host = scope && scope.querySelectorAll ? scope : document;
-      host.querySelectorAll(revealSelectors).forEach((el) => {
+    function register(scope = document) {
+      const host = scope.querySelectorAll ? scope : document;
+      host.querySelectorAll(selectors).forEach((el) => {
         if (seen.has(el)) return;
-        if (el.closest('.site-header, .site-footer, .search-modal, .floating-social')) return;
+        if (el.closest('.site-header, .site-footer, .search-modal, .floating-social, .page-hero-secondary')) return;
         seen.add(el);
-        el.setAttribute('data-reveal', '');
-        el.style.setProperty('--reveal-delay', `${Math.min(order % 9, 8) * 55}ms`);
+        el.setAttribute('data-scroll-reveal', '');
+        el.style.setProperty('--scroll-reveal-delay', `${Math.min(order % 6, 5) * 45}ms`);
         order += 1;
-        if (!revealObserver || el.getBoundingClientRect().top < window.innerHeight * 0.96) {
-          requestAnimationFrame(() => revealNow(el));
-        } else {
-          revealObserver.observe(el);
+        if (el.getBoundingClientRect().top < window.innerHeight * 0.94) {
+          requestAnimationFrame(() => el.classList.add('is-scroll-visible'));
+          return;
         }
+        observer.observe(el);
       });
     }
 
-    register(document);
+    register();
 
     const mutationObserver = new MutationObserver((mutations) => {
-      const hasNewNodes = mutations.some((mutation) => mutation.addedNodes && mutation.addedNodes.length);
-      if (hasNewNodes) requestAnimationFrame(() => register(document));
+      if (mutations.some((mutation) => mutation.addedNodes.length)) {
+        requestAnimationFrame(() => register());
+      }
     });
     mutationObserver.observe(document.body, { childList: true, subtree: true });
   }
@@ -1243,7 +1239,7 @@
   initScrollHeader();
   initSearchModal();
   initFloatingSocialButton();
-  initSecondaryMotion();
+  initScrollReveal();
 })();
 
 
