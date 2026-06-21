@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="preload" as="image" href="../../assets/images/gouvernance.jpg" fetchpriority="high" />
   <link rel="stylesheet" href="../../assets/styles.css?v=4" />
-  <link rel="stylesheet" href="../../assets/secondary-pages.css?v=4" />
+  <link rel="stylesheet" href="../../assets/secondary-pages.css?v=6" />
   <link rel="stylesheet" href="../../assets/gouvernance.css?v=4" />
 </head>
 <body class="secondary-page service-page" data-page="fondation" data-base="../../">
@@ -63,19 +63,14 @@
           or replace loadGovernanceData() in assets/gouvernance.js with fetch('/api/governance').
           Only isActive=true items are rendered; sort is by `order`.
         -->
-        <div class="gov-grid" id="gov-grid" data-state="loading">
-          <article class="gov-status-card" data-gov-state="loading">
-            <span class="gov-spinner" aria-hidden="true"></span>
-            <p data-gov-i18n="governance.loading">Chargement de la gouvernance...</p>
-          </article>
-        </div>
+        <div class="gov-grid" id="gov-grid"></div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer"></footer>
 
-  <script src="../../assets/secondary-pages.js?v=4"></script>
+  <script src="../../assets/secondary-pages.js?v=6"></script>
   <script src="../../assets/gouvernance.js?v=4"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="preload" as="image" href="assets/images/histoire-mission-valeurs.jpeg" fetchpriority="high" />
   <link rel="stylesheet" href="assets/styles.css?v=4" />
-  <link rel="stylesheet" href="assets/secondary-pages.css?v=4" />
+  <link rel="stylesheet" href="assets/secondary-pages.css?v=6" />
   <link rel="stylesheet" href="assets/histoire-mission-valeurs.css?v=5" />
 </head>
 <body class="secondary-page service-page" data-page="histoire-mission-valeurs">
@@ -67,12 +67,7 @@
           skipped; items are sorted by `order`. See data file for full shape.
         -->
         <div class="hmv-timeline-wrap" role="region" aria-label="Chronologie FOS-Agri" data-hmv-i18n-aria="sections.history.ariaTimeline">
-          <ol class="hmv-timeline" id="hmv-timeline" data-state="loading">
-            <li class="hmv-timeline-status" data-hmv-state="loading">
-              <span class="hmv-spinner" aria-hidden="true"></span>
-              <span data-hmv-i18n="timeline.loading">Chargement de la chronologie…</span>
-            </li>
-          </ol>
+          <ol class="hmv-timeline" id="hmv-timeline"></ol>
         </div>
       </div>
     </section>
@@ -121,9 +116,7 @@
           Values are rendered from data by assets/histoire-mission-valeurs.js.
           To connect a CMS/dashboard later, override window.FOSAGRI_VALUES_DATA.
         -->
-        <div class="hmv-values-render" id="hmv-values" data-state="loading">
-          <p class="hmv-values-status" data-hmv-state="loading" data-hmv-i18n="values.loading">Chargement…</p>
-        </div>
+        <div class="hmv-values-render" id="hmv-values"></div>
       </div>
     </section>
 
@@ -143,7 +136,7 @@
 
   <footer class="site-footer"></footer>
 
-  <script src="assets/secondary-pages.js?v=4"></script>
+  <script src="assets/secondary-pages.js?v=6"></script>
   <script src="assets/histoire-mission-valeurs.js?v=4"></script>
 </body>
 </html>
