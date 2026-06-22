@@ -131,6 +131,47 @@
           ['Aide aux enfants en situation de handicap', 'Contribution à la prise en charge des besoins particuliers des enfants des adhérents.'],
           ['Conventions et partenariats médicaux', 'Réseau de prestataires répartis dans plusieurs régions du Royaume avec la contribution des relais régionaux.']
         ],
+        centerMedical: {
+          badge: 'Centre médico-social',
+          title: 'Accompagnement médico-social',
+          intro: 'La FOS-Agri a érigé le volet santé en une place de choix à travers la mise en place d’un dispositif de santé composé de l’assurance maladie complémentaire, de l’accompagnement médico-social, de l’assistance médicale et transport sanitaire et d’une série de conventions avec des praticiens de renom dans le domaine médical au niveau de plusieurs régions du Royaume avec la précieuse collaboration des relais régionaux.',
+          items: [
+            {
+              icon: 'fa-shield-heart',
+              title: 'AMC',
+              body: [
+                'La FOS-Agri soutient ses adhérents face aux aléas de la santé à travers l’Assurance Maladie Complémentaire permettant le bénéfice d’une large couverture familiale des soins de santé.',
+                'La convention conclue avec la compagnie SAHAM Assurance garantit aux adhérents :'
+              ],
+              bullets: [
+                'Le remboursement ou la prise en charge de santé de 100% du ticket modérateur, et ce, en complément des régimes de base (AMO/Mutuelle).',
+                'Le remboursement à hauteur d’un plafond général d’un million de dirhams par personne et par an, sauf pour les cas de greffes d’organes qui demeurent plafonnés à 250 000 dirhams.'
+              ]
+            },
+            {
+              icon: 'fa-truck-medical',
+              title: 'AMTS',
+              body: [
+                'La FOS-Agri soutient ses adhérents pendant les moments difficiles à travers le service d’Assistance Médicale et Transport Sanitaire contracté avec la compagnie Wafa IMA Assistance.',
+                'Cette assistance porte sur une large gamme de garanties, en cas d’événements imprévisibles et urgents (accident, maladie, décès…) et également dans le cas de voyages à l’étranger à travers notamment l’évacuation sanitaire pour les pathologies non traitables au Maroc ainsi que la conciergerie médicale.'
+              ]
+            },
+            {
+              icon: 'fa-hands-holding-child',
+              title: 'AIDES AUX PBS',
+              body: [
+                'La FOS-Agri a mis en place un programme d’aide aux enfants des adhérents en situations d’handicap présentant des besoins spécifiques, et ce en contribuant à la prise en charge de leurs besoins particuliers à travers une aide d’un montant de 5000 dhs.'
+              ]
+            },
+            {
+              icon: 'fa-file-contract',
+              title: 'CONVENTIONS ET PARTENARIATS MEDICALES',
+              body: [
+                'TABLEAU CONVENTIONS (LABO, MEDECINS, CABINETS)'
+              ]
+            }
+          ]
+        },
         partners: ['Laboratoires d’analyses', 'Cliniques et radiologie', 'Médecins à tarifs préférentiels', 'Opticiens', 'Pharmacies', 'Centres dentaires'],
         steps: [['Orientation', 'Identifier la prestation ou le partenaire médical adapté.'], ['Dossier', 'Préparer les pièces justificatives et les références d’adhésion.'], ['Prise en charge', 'Suivre les modalités AMC, AMTS ou convention médicale.'], ['Relais régional', 'S’appuyer sur les relais pour les conventions de proximité.']]
       },
@@ -143,6 +184,47 @@
         overview: 'تضع FOS-Agri الصحة ضمن أولوياتها عبر التأمين الصحي التكميلي والمواكبة الطبية الاجتماعية والمساعدة الطبية والنقل الصحي وشبكة اتفاقيات طبية جهوية.',
         highlights: ['تعويض أو تحمل تكميلي بتنسيق مع AMO/CNOPS.', 'مساعدة طبية ونقل صحي عبر Wafa IMA Assistance.', 'دعم قدره 5 000 درهم للأطفال في وضعية إعاقة.', 'اتفاقيات مع مختبرات ومصحات وأطباء ونظارات وصيدليات ومراكز علاج.'],
         features: [['المركز الطبي الاجتماعي', 'استقبال وتوجيه ومواكبة حول حاجيات الصحة والرفاه.'], ['التأمين الصحي التكميلي', 'تعويض أو تحمل الباقي وفق الضمانات والأسقف التعاقدية.'], ['المساعدة الطبية والنقل الصحي', 'تغطية الحالات المستعجلة والنقل الصحي والمساعدة المنزلية والإجلاء الصحي وفق الشروط.'], ['دعم الأطفال في وضعية إعاقة', 'مساهمة في التكفل بالحاجيات الخاصة لأبناء المنخرطين.'], ['اتفاقيات طبية', 'شبكة مقدمي خدمات بعدة جهات بتنسيق مع المنسقين الجهويين.']],
+        centerMedical: {
+          badge: 'المركز الطبي الاجتماعي',
+          title: 'المواكبة الطبية الاجتماعية',
+          intro: 'جعلت FOS-Agri محور الصحة في صلب أولوياتها من خلال إرساء منظومة صحية تضم التأمين الصحي التكميلي، والمواكبة الطبية الاجتماعية، والمساعدة الطبية والنقل الصحي، وسلسلة من الاتفاقيات مع ممارسين مرموقين في المجال الطبي على مستوى عدة جهات من المملكة، بتعاون ثمين مع المنسقين الجهويين.',
+          items: [
+            {
+              icon: 'fa-shield-heart',
+              title: 'AMC',
+              body: [
+                'تدعم FOS-Agri منخرطيها في مواجهة تقلبات الوضع الصحي عبر التأمين الصحي التكميلي، بما يتيح الاستفادة من تغطية عائلية واسعة للعلاجات الصحية.',
+                'تضمن الاتفاقية المبرمة مع شركة SAHAM Assurance للمنخرطين:'
+              ],
+              bullets: [
+                'تعويض أو تحمل صحي بنسبة 100% من التذكرة التعديلية، وذلك تكميلا لأنظمة التغطية الأساسية (AMO/Mutuelle).',
+                'تعويض في حدود سقف عام قدره مليون درهم لكل شخص في السنة، باستثناء حالات زرع الأعضاء التي تظل محددة في سقف 250 000 درهم.'
+              ]
+            },
+            {
+              icon: 'fa-truck-medical',
+              title: 'AMTS',
+              body: [
+                'تدعم FOS-Agri منخرطيها في اللحظات الصعبة من خلال خدمة المساعدة الطبية والنقل الصحي المتعاقد بشأنها مع شركة Wafa IMA Assistance.',
+                'تشمل هذه المساعدة مجموعة واسعة من الضمانات في حالة الأحداث غير المتوقعة والمستعجلة (حادث، مرض، وفاة...)، وكذلك أثناء السفر إلى الخارج، ولا سيما الإجلاء الصحي بالنسبة للحالات المرضية غير القابلة للعلاج بالمغرب وخدمة المواكبة الطبية.'
+              ]
+            },
+            {
+              icon: 'fa-hands-holding-child',
+              title: 'المساعدة للأطفال ذوي الاحتياجات الخاصة',
+              body: [
+                'أطلقت FOS-Agri برنامج دعم لفائدة أطفال المنخرطين في وضعية إعاقة ممن لديهم احتياجات خاصة، وذلك بالمساهمة في التكفل باحتياجاتهم الخاصة عبر منحة قدرها 5000 درهم.'
+              ]
+            },
+            {
+              icon: 'fa-file-contract',
+              title: 'الاتفاقيات والشراكات الطبية',
+              body: [
+                'جدول الاتفاقيات (مختبرات، أطباء، عيادات)'
+              ]
+            }
+          ]
+        },
         partners: ['مختبرات التحاليل', 'مصحات وأشعة', 'أطباء بتعريفات تفضيلية', 'نظارات', 'صيدليات', 'مراكز الأسنان'],
         steps: [['التوجيه', 'تحديد الخدمة أو الشريك الطبي المناسب.'], ['الملف', 'تحضير الوثائق ومعطيات الانخراط.'], ['التكفل', 'اتباع مساطر AMC أو AMTS أو الاتفاقية.'], ['المنسق الجهوي', 'الاستفادة من القرب الجهوي.']]
       },
@@ -155,6 +237,47 @@
         overview: 'FOS-Agri ⵜⵙⵙⵎⵓⵔⵙ ⵜⴰⴷⵓⵙⵉ ⵙ AMC, AMTS, ⴰⵎⵓⴷⴷⵓ médico-social ⴷ ⵉⵣⴷⴰⵢⵏ médicaux ⴳ ⵜⵎⵓⵔⴰ.',
         highlights: ['ⴰⵔⴰⵔⵓ ⵏ reste à charge ⵙ AMO/CNOPS.', 'AMTS ⵙ Wafa IMA Assistance.', '5 000 DH ⵉ ⵉⴼⵔⵅⴰⵏ ⴳ handicap.', 'ⵉⵣⴷⴰⵢⵏ ⴷ laboratoires, cliniques, médecins, opticiens.'],
         features: [['Centre médico-social', 'ⴰⵎⵓⴷⴷⵓ, ⴰⵙⴷⵓ ⴷ ⵜⵎⵙⵍⵉⵡⵜ.'], ['AMC', 'ⴰⵔⴰⵔⵓ ⵙ ⵎⴽ ⵉⵍⵍⴰ ⴳ ⵓⵎⵙⴰⵡⴰⴹ.'], ['AMTS', 'ⴰⵎⵓⴷⴷⵓ ⴰⵎⴰⴷⴰⵏ ⴷ transport sanitaire.'], ['ⴰⵎⵓⴷⴷⵓ handicap', 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⴼⵔⵅⴰⵏ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ.'], ['ⵉⵣⴷⴰⵢⵏ médicaux', 'ⵉⵣⴷⴰⵢⵏ ⴳ ⵜⵎⵓⵔⴰ ⵎⴰⵔⵔⴰ.']],
+        centerMedical: {
+          badge: 'ⴰⵎⵎⴰⵙ ⴰⴷⴰⵡⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ',
+          title: 'ⴰⵎⵓⴷⴷⵓ ⴰⴷⴰⵡⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ',
+          intro: 'FOS-Agri ⵜⵙⵙⵓⴼⵖ ⵜⴰⴷⵓⵙⵉ ⴷ ⴰⵙⵓⵔⵉⴼ ⴰⵎⵇⵔⴰⵏ ⵙ ⵓⵙⵎⵓⵜⵜⴳ ⵏ ⵜⵎⵓⵔⵜ ⵜⴰⴷⵓⵙⴰⵏⵜ ⵉⵙⵎⵓⵏⵏ AMC, ⴰⵎⵓⴷⴷⵓ médico-social, AMTS ⴷ ⵉⵎⵙⴰⵡⴰⴹⵏ ⵉⴷⵓⵙⴰⵏⵏ ⴳ ⵜⵎⵓⵔⴰ ⵎⴰⵔⵔⴰ ⵙ ⵜⵉⵡⵉⵙⵉ ⵏ ⵉⵎⵙⵏⴰⵡⵏ ⵉⵏⵏⴰⵡⵏ.',
+          items: [
+            {
+              icon: 'fa-shield-heart',
+              title: 'AMC',
+              body: [
+                'FOS-Agri ⵜⴻⵜⵜⴰⵍⵍⴰⵍ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴳ ⵉⵎⵓⵔⴰⵏ ⵏ ⵜⴰⴷⵓⵙⵉ ⵙ AMC ⵉ ⵓⵙⵖⵉⵎ ⵏ ⵜⴳⵯⵎⵉ ⵜⴰⴷⵓⵙⴰⵏⵜ ⵏ ⵜⵡⴰⵛⵓⵍⵜ.',
+                'ⴰⵎⵙⴰⵡⴰⴹ ⴷ SAHAM Assurance ⵉⵜⵜⴰⵡⵙ ⵉ ⵉⵎⵏⵅⵔⴰⵟⵏ:'
+              ],
+              bullets: [
+                'ⴰⵔⴰⵔⵓ ⵏ 100% ⵏ ticket modérateur ⵙ ⵓⵙⵎⵔⵙ ⵏ AMO/Mutuelle.',
+                'ⴰⵔⴰⵔⵓ ⴰⴳⵔⴰⵡ ⵏ 1 MDH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ, ⵎⴰⵛⴰ greffes d’organes ⴰⵔ 250 000 DH.'
+              ]
+            },
+            {
+              icon: 'fa-truck-medical',
+              title: 'AMTS',
+              body: [
+                'FOS-Agri ⵜⴻⵜⵜⴰⵍⵍⴰⵍ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴳ ⵉⵎⵓⵔⴰⵏ ⵉⵙⵙⴷⴰⵔⵏ ⵙ AMTS ⴷ Wafa IMA Assistance.',
+                'ⵜⴰⵍⵍⴰⵍⵜ ⴰⴷ ⵜⵙⵎⵓⵏ ⵉⴳⵔⴰⵏ ⵏ accident, maladie, décès, ⴷ ⵓⵙⵉⵡⴹ ⴰⴷⵓⵙⴰⵏ ⵖⵔ ⴱⵕⵕⴰ ⵉ ⵉⵎⵓⵔⴰⵏ ⵓⵔ ⵉⵜⵜⵓⵙⵙⵓⵊⵊⴰⵏ ⴳ ⵍⵎⵖⵔⵉⴱ.'
+              ]
+            },
+            {
+              icon: 'fa-hands-holding-child',
+              title: 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⴼⵔⵅⴰⵏ ⴳ handicap',
+              body: [
+                'FOS-Agri ⵜⵙⵎⵓⵜⵜⴳ ⵢⴰⵜ ⵜⴰⵏⴼⵓⵙⵜ ⵉ ⵉⴼⵔⵅⴰⵏ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴳ ⵓⵙⵔⵓⵜ, ⵙ ⵓⵎⵓⴷⴷⵓ ⵏ 5000 DH.'
+              ]
+            },
+            {
+              icon: 'fa-file-contract',
+              title: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏⵏ',
+              body: [
+                'ⵜⴰⴱⵍⵓⵜ ⵏ ⵉⵎⵙⴰⵡⴰⴹⵏ (laboratoires, médecins, cabinets)'
+              ]
+            }
+          ]
+        },
         partners: ['Laboratoires', 'Cliniques', 'Médecins', 'Opticiens', 'Pharmacies', 'Centres dentaires'],
         steps: [['ⴰⵙⴷⵓ', 'ⵙⵙⵏ ⵜⴰⵏⴼⵓⵙⵜ.'], ['ⴰⴼⴰⵢⵍⵓ', 'ⵙⵎⵓⵏ ⵜⵉⴽⴰⵔⴹⵉⵡⵉⵏ.'], ['ⴰⵎⵓⴷⴷⵓ', 'ⴹⴼⵕ AMC/AMTS.'], ['ⴰⵎⵙⵏⴰⵡ', 'ⵎⵢⴰⵡⴰⵍ ⴷ ⵓⵎⵙⵏⴰⵡ.']]
       }
@@ -434,6 +557,71 @@
     return `subrubrique-${index + 1}`;
   }
 
+  function renderCenterMedicalSection(item) {
+    if (!item.centerMedical) return '';
+    const center = item.centerMedical;
+    return `
+      <section class="section page-section-soft prestation-center-section" id="${subrubriqueId(0)}">
+        <div class="container">
+          <div class="prestation-section-head">
+            <span class="section-tag"><i class="fa-solid fa-house-medical" aria-hidden="true"></i> ${esc(center.badge)}</span>
+            <h2>${esc(center.title)}</h2>
+            <p>${esc(center.intro)}</p>
+          </div>
+          <div class="prestation-accordion" data-prestation-accordion>
+            ${center.items.map((entry, index) => `
+              <article class="prestation-accordion-item ${index === 0 ? 'is-open' : ''}" id="${subrubriqueId(index + 1)}">
+                <button class="prestation-accordion-trigger" type="button" aria-expanded="${index === 0 ? 'true' : 'false'}">
+                  <span class="prestation-accordion-title">
+                    <i class="fa-solid ${esc(entry.icon)}" aria-hidden="true"></i>
+                    <span>${esc(entry.title)}</span>
+                  </span>
+                  <i class="fa-solid ${index === 0 ? 'fa-minus' : 'fa-plus'} prestation-accordion-toggle" aria-hidden="true"></i>
+                </button>
+                <div class="prestation-accordion-content" ${index === 0 ? '' : 'hidden'}>
+                  ${[].concat(entry.body || []).map((paragraph) => `<p>${esc(paragraph)}</p>`).join('')}
+                  ${entry.bullets?.length ? `<ul>${entry.bullets.map((bullet) => `<li>${esc(bullet)}</li>`).join('')}</ul>` : ''}
+                </div>
+              </article>`).join('')}
+          </div>
+        </div>
+      </section>`;
+  }
+
+  function bindPrestationAccordions(scope) {
+    scope.querySelectorAll('[data-prestation-accordion]').forEach((accordion) => {
+      accordion.querySelectorAll('.prestation-accordion-trigger').forEach((trigger) => {
+        trigger.addEventListener('click', () => {
+          const item = trigger.closest('.prestation-accordion-item');
+          const content = item?.querySelector('.prestation-accordion-content');
+          const toggleIcon = trigger.querySelector('.prestation-accordion-toggle');
+          if (!item || !content) return;
+          const shouldOpen = !item.classList.contains('is-open');
+          accordion.querySelectorAll('.prestation-accordion-item').forEach((sibling) => {
+            const siblingTrigger = sibling.querySelector('.prestation-accordion-trigger');
+            const siblingContent = sibling.querySelector('.prestation-accordion-content');
+            const siblingIcon = sibling.querySelector('.prestation-accordion-toggle');
+            sibling.classList.remove('is-open');
+            if (siblingTrigger) siblingTrigger.setAttribute('aria-expanded', 'false');
+            if (siblingContent) siblingContent.hidden = true;
+            if (siblingIcon) {
+              siblingIcon.classList.add('fa-plus');
+              siblingIcon.classList.remove('fa-minus');
+            }
+          });
+          const isOpen = shouldOpen;
+          item.classList.toggle('is-open', isOpen);
+          trigger.setAttribute('aria-expanded', String(isOpen));
+          content.hidden = !isOpen;
+          if (toggleIcon) {
+            toggleIcon.classList.toggle('fa-plus', !isOpen);
+            toggleIcon.classList.toggle('fa-minus', isOpen);
+          }
+        });
+      });
+    });
+  }
+
   function renderCatalog() {
     const grid = document.getElementById('prestations-catalog');
     if (!grid) return;
@@ -542,6 +730,7 @@
     const key = body.dataset.service;
     if (!mount || !services[key]) return;
     const item = serviceText(key);
+    const journeyIcons = ['fa-compass', 'fa-folder-open', 'fa-hand-holding-medical', 'fa-map-location-dot'];
     document.title = `FOS-Agri | ${item.title}`;
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute('content', item.summary);
@@ -552,7 +741,7 @@
           <h1>${esc(item.title)}</h1>
           <p>${esc(item.summary)}</p>
           <div class="prestation-hero-actions">
-            <a class="btn btn-primary" href="#overview">${esc(t('details'))}</a>
+            <a class="btn btn-primary" href="#${item.centerMedical ? subrubriqueId(0) : 'overview'}">${esc(t('details'))}</a>
             <a class="btn btn-secondary" href="../prestations.html">${esc(t('back'))}</a>
           </div>
         </div>
@@ -569,21 +758,25 @@
             </a>`).join('')}
         </div>
       </section>
+      ${item.centerMedical ? '' : `
       <section class="section" id="overview">
-        <div class="container prestation-content-grid">
+        <div class="container prestation-content-grid ${item.centerMedical ? 'is-single' : ''}">
           <article class="prestation-panel">
             <span class="section-tag"><i class="fa-solid ${icons[key]}" aria-hidden="true"></i> ${esc(item.meta)}</span>
             <h2>${esc(t('details'))}</h2>
             <p>${esc(item.overview)}</p>
           </article>
+          ${item.centerMedical ? '' : `
           <aside class="prestation-panel">
             <h3>${esc(t('highlights'))}</h3>
             <ul class="prestation-highlight-list">
               ${item.highlights.map((entry) => `<li><i class="fa-solid fa-check" aria-hidden="true"></i><span>${esc(entry)}</span></li>`).join('')}
             </ul>
-          </aside>
+          </aside>`}
         </div>
-      </section>
+      </section>`}
+      ${renderCenterMedicalSection(item)}
+      ${item.centerMedical ? '' : `
       <section class="section page-section-soft" id="subrubriques">
         <div class="container">
           <div class="prestation-section-head centered">
@@ -591,15 +784,19 @@
             <p>${esc(item.summary)}</p>
           </div>
           <div class="prestation-feature-grid">
-            ${item.features.map(([title, body], index) => `
-              <article class="prestation-feature-card" id="${subrubriqueId(index)}">
-                <span class="page-card-icon"><i class="fa-solid ${subIcons[key]?.[index] || 'fa-circle-check'}" aria-hidden="true"></i></span>
+            ${item.features.slice(item.centerMedical ? 1 : 0).map(([title, body], index) => {
+              const realIndex = item.centerMedical ? index + 1 : index;
+              return `
+              <article class="prestation-feature-card" id="${subrubriqueId(realIndex)}">
+                <span class="page-card-icon"><i class="fa-solid ${subIcons[key]?.[realIndex] || 'fa-circle-check'}" aria-hidden="true"></i></span>
                 <h3>${esc(title)}</h3>
                 <p>${esc(body)}</p>
-              </article>`).join('')}
+              </article>`;
+            }).join('')}
           </div>
         </div>
-      </section>
+      </section>`}
+      ${item.centerMedical ? '' : `
       <section class="section" id="partners">
         <div class="container">
           <div class="prestation-section-head">
@@ -610,16 +807,38 @@
             ${item.partners.map((partner) => `<article class="prestation-partner-card"><h3>${esc(partner)}</h3></article>`).join('')}
           </div>
         </div>
-      </section>
-      <section class="section page-section-soft" id="steps">
+      </section>`}
+      <section class="section page-section-soft prestation-journey-section" id="steps">
         <div class="container">
-          <div class="prestation-section-head">
+          <div class="prestation-section-head prestation-journey-head">
+            <span class="section-tag"><i class="fa-solid fa-route" aria-hidden="true"></i> ${esc(item.meta)}</span>
             <h2>${esc(t('steps'))}</h2>
             <p>${esc(t('flowBody'))}</p>
           </div>
-          <div class="prestation-timeline">
-            ${item.steps.map(([title, body]) => `<article class="prestation-timeline-item"><h3>${esc(title)}</h3><p>${esc(body)}</p></article>`).join('')}
+          <div class="prestation-timeline prestation-journey-grid">
+            ${item.steps.map(([title, body], index) => `
+              <article class="prestation-timeline-item prestation-journey-card">
+                <div class="prestation-journey-card-top">
+                  <span class="prestation-journey-icon"><i class="fa-solid ${journeyIcons[index] || 'fa-circle-check'}" aria-hidden="true"></i></span>
+                  <span class="prestation-journey-number">${String(index + 1).padStart(2, '0')}</span>
+                </div>
+                <h3>${esc(title)}</h3>
+                <p>${esc(body)}</p>
+              </article>`).join('')}
           </div>
+          ${item.centerMedical ? `
+          <aside class="prestation-center-keypoints prestation-keypoints-panel">
+            <div class="prestation-keypoints-head">
+              <span><i class="fa-solid fa-list-check" aria-hidden="true"></i></span>
+              <div>
+                <small>${esc(item.centerMedical.badge)}</small>
+                <h3>${esc(t('highlights'))}</h3>
+              </div>
+            </div>
+            <ul class="prestation-highlight-list">
+              ${item.highlights.map((entry) => `<li><i class="fa-solid fa-check" aria-hidden="true"></i><span>${esc(entry)}</span></li>`).join('')}
+            </ul>
+          </aside>` : ''}
         </div>
       </section>
       <section class="section">
@@ -637,11 +856,20 @@
     const navLinks = mount.querySelectorAll('.prestation-nav-chip');
     navLinks.forEach((link, index) => {
       link.classList.toggle('is-active', index === 0);
-      link.addEventListener('click', () => {
+      link.addEventListener('click', (event) => {
         navLinks.forEach((item) => item.classList.remove('is-active'));
         link.classList.add('is-active');
+        const targetId = link.getAttribute('href')?.slice(1);
+        const target = targetId ? document.getElementById(targetId) : null;
+        const trigger = target?.querySelector?.('.prestation-accordion-trigger');
+        if (trigger) {
+          event.preventDefault();
+          if (trigger.getAttribute('aria-expanded') !== 'true') trigger.click();
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
       });
     });
+    bindPrestationAccordions(mount);
   }
 
   document.addEventListener('click', (event) => {

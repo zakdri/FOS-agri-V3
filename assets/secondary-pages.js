@@ -1184,11 +1184,18 @@
       '.minister-card',
       '.president-card',
       '.value-card',
+      '.prestation-section-head',
+      '.prestation-nav-chip',
       '.prestation-card',
       '.prestation-feature-card',
       '.prestation-partner-card',
       '.prestation-timeline-item',
-      '.prestation-panel'
+      '.prestation-accordion-item',
+      '.prestation-center-keypoints',
+      '.prestation-cta-panel',
+      '.prestation-panel',
+      '.prestations-category-button',
+      '.prestations-category-detail'
     ].join(',');
 
     if (!('IntersectionObserver' in window)) return;
@@ -1215,6 +1222,11 @@
         if (el.closest('.site-header, .site-footer, .search-modal, .floating-social, .page-hero-secondary')) return;
         seen.add(el);
         el.setAttribute('data-scroll-reveal', '');
+        if (el.matches('.prestation-card, .prestation-feature-card, .prestation-partner-card, .prestation-timeline-item, .prestation-accordion-item, .page-card')) {
+          el.setAttribute('data-reveal-style', 'scale');
+        } else if (el.matches('.prestation-section-head, .section > .container > h1, .section > .container > h2, .section > .container > p')) {
+          el.setAttribute('data-reveal-style', 'fade');
+        }
         el.style.setProperty('--scroll-reveal-delay', `${Math.min(order % 6, 5) * 45}ms`);
         order += 1;
         if (el.getBoundingClientRect().top < window.innerHeight * 0.94) {

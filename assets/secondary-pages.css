@@ -265,16 +265,26 @@ body.secondary-page [data-scroll-reveal] {
 
 html.scroll-motion-ready body.secondary-page [data-scroll-reveal] {
   opacity: 0;
-  transform: translate3d(0, 14px, 0);
+  transform: translate3d(0, 18px, 0);
   transition:
-    opacity 0.42s ease,
-    transform 0.48s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 0.5s ease,
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   transition-delay: var(--scroll-reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+html.scroll-motion-ready body.secondary-page [data-scroll-reveal][data-reveal-style='fade'] {
+  transform: none;
+}
+
+html.scroll-motion-ready body.secondary-page [data-scroll-reveal][data-reveal-style='scale'] {
+  transform: translate3d(0, 12px, 0) scale(0.975);
 }
 
 html.scroll-motion-ready body.secondary-page [data-scroll-reveal].is-scroll-visible {
   opacity: 1;
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0) scale(1);
+  will-change: auto;
 }
 
 body.secondary-page .service-link,
@@ -690,9 +700,10 @@ body.secondary-page .site-nav a[aria-current='page'] {
 
 @media (prefers-reduced-motion: reduce) {
   html.scroll-motion-ready body.secondary-page [data-scroll-reveal] {
-    transition-duration: 0.18s !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
     transition-delay: 0ms !important;
-    transform: translate3d(0, 6px, 0);
   }
 
   body.secondary-page .page-card,
@@ -700,7 +711,13 @@ body.secondary-page .site-nav a[aria-current='page'] {
   body.secondary-page .page-list-item,
   body.secondary-page .service-link,
   body.secondary-page .btn,
-  body.secondary-page .page-news-card .page-news-media {
-    transition-duration: 0.16s !important;
+  body.secondary-page .page-news-card .page-news-media,
+  body.secondary-page .prestation-card,
+  body.secondary-page .prestation-nav-chip,
+  body.secondary-page .prestation-accordion-item,
+  body.secondary-page .prestation-timeline-item,
+  body.secondary-page .prestation-feature-card,
+  body.secondary-page .prestation-partner-card {
+    transition: none !important;
   }
 }
