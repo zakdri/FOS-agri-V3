@@ -20,8 +20,74 @@
     projets: 'fa-hand-holding-dollar'
   };
 
+  const prevoyanceMenuItems = [
+    {
+      id: 'a-propos',
+      icon: 'fa-circle-info',
+      labels: {
+        fr: 'A PROPOS',
+        ar: 'حول الخدمة',
+        zgh: 'ⵅⴼ ⵜⴰⵏⴼⵓⵜ'
+      }
+    },
+    {
+      id: 'amc',
+      icon: 'fa-shield-heart',
+      labels: {
+        fr: 'ASSURANCE MALADIE COMPLÉMENTAIRE',
+        ar: 'التأمين الصحي التكميلي',
+        zgh: 'ⴰⵙⵙⵓⵔⴰⵏⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵎⵔⵏⴰⵡ'
+      }
+    },
+    {
+      id: 'amts',
+      icon: 'fa-truck-medical',
+      labels: {
+        fr: 'ASSISTANCE MÉDICALE ET TRANSPORT SANITAIRE',
+        ar: 'المساعدة والنقل الصحي',
+        zgh: 'ⵜⴰⵍⵍⴰⵍⵜ ⵜⴰⴷⵓⵙⴰⵏⵜ ⴷ ⵓⵙⵉⵡⴹ ⴰⴷⵓⵙⴰⵏ'
+      }
+    },
+    {
+      id: 'forfait-funeraire',
+      icon: 'fa-ribbon',
+      labels: {
+        fr: 'FORFAIT FUNERAIRE',
+        ar: 'منحة الوفاة',
+        zgh: 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵜⵎⵜⵜⴰⵏⵜ'
+      }
+    },
+    {
+      id: 'centre-medico-social',
+      icon: 'fa-house-medical',
+      labels: {
+        fr: 'CENTRE MEDICO-SOCIAL',
+        ar: 'المركز الطبي الاجتماعي',
+        zgh: 'ⴰⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ'
+      }
+    },
+    {
+      id: 'aides-besoins-specifiques',
+      icon: 'fa-hands-holding-child',
+      labels: {
+        fr: 'AIDES AUX PERSONNES AUX BESOINS SPECIFIQUES',
+        ar: 'دعم الأشخاص ذوي الاحتياجات الخاصة',
+        zgh: 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵙ ⵉⵙⵡⵉⵔⵏ ⵉⵎⵥⵍⵉⵢⵏ'
+      }
+    },
+    {
+      id: 'conventions-medicales',
+      icon: 'fa-file-contract',
+      labels: {
+        fr: 'CONVENTIONS ET PARTENARIATS MEDICALES',
+        ar: 'الاتفاقيات والشراكات الطبية',
+        zgh: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏⵏ'
+      }
+    }
+  ];
+
   const subIcons = {
-    prevoyance: ['fa-circle-info', 'fa-shield-heart', 'fa-truck-medical', 'fa-ribbon', 'fa-house-medical', 'fa-hands-holding-child', 'fa-file-contract'],
+    prevoyance: prevoyanceMenuItems.map((item) => item.icon),
     culture: ['fa-suitcase-rolling', 'fa-children', 'fa-kaaba', 'fa-person-praying', 'fa-award', 'fa-handshake'],
     formation: ['fa-chalkboard-user', 'fa-medal', 'fa-school', 'fa-book-open-reader'],
     logement: ['fa-house-user', 'fa-building-columns', 'fa-building', 'fa-helmet-safety'],
@@ -429,7 +495,7 @@
         cases: [
           ['fa-tooth', 'ⵜⵉⵙⴷⵉⴷⵉⵏ ⵏ ⵓⵅⵙⴰⵏ', 'ⴰⵙⵇⴼ 1 000 DH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
           ['fa-baby-carriage', 'ⵜⴰⵔⵡⴰ ⵜⴰⵎⴰⴳⴰⵏⵜ', 'ⴰⵙⵇⴼ 2 000 DH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
-          ['fa-hospital-user', 'Césarienne', 'ⴰⵔ 100% ⵏ ticket modérateur ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-hospital-user', 'ⵜⴰⵡⵍⴰⴼⵜ ⵙ ⵓⵙⵏⴰⵙ', 'ⴰⵔ 100% ⵏ ⵓⴼⵔⴰⴳ ⵉⵜⵜⴳⴰⵏ ⵅⴼ ⵓⵎⵏⵅⵔⴰⵟ ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
           ['fa-eye', 'OCT', 'ⴰⵙⵇⴼ 1 000 DH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
           ['fa-radiation', 'VMAT', 'ⴰⵙⵇⴼ 10 000 DH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
           ['fa-x-ray', 'Coroscaner', 'ⴰⵙⵇⴼ 2 000 DH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
@@ -442,6 +508,163 @@
     note: 'ⵜⴰⵎⴰⵡⵜ: ⵉⵙⴼⴽ ⴰⴷ ⵉⵡⴹ ⵓⵙⵎⵓⵜⵜⴳ ⵏ ⵓⵟⵟⴰⵏ ⵏⵖ ⴰⵎⵓⴽⵔⵉⵙ ⵖⵔ Sanlam Maroc ⴳ 90 ⵏ ⵡⴰⵙⵙⵏ ⵙⴳ ⵡⴰⵙⵙ ⵏ ⵓⵎⵓⴽⵔⵉⵙ.'
   };
 
+  const amtsDetailFr = {
+    title: 'Assistance Médicale et Transport Sanitaire',
+    badge: 'AMTS',
+    subtitle: [
+      'La FOS-Agri soutient ses adhérents pendant les moments difficiles à travers le service d’Assistance Médicale et Transport Sanitaire contracté avec la compagnie Wafa IMA Assistance.',
+      'Cette assistance porte sur une large gamme de garanties en cas d’événements imprévisibles et urgents : accident, maladie, décès, voyages à l’étranger, évacuation sanitaire pour les pathologies non traitables au Maroc et conciergerie médicale.'
+    ],
+    beneficiariesTitle: 'Bénéficiaires',
+    prestationsTitle: 'Prestations garanties',
+    funeralTitle: 'Processus de demande d’octroi',
+    contactTitle: 'Comment contacter Wafa IMA ?',
+    contactIntro: 'Pour toute demande d’assistance, le plateau est opérationnel 24h/24, 7j/7, et met en place les solutions prévues contractuellement.',
+    contactInstruction: 'L’adhérent se fait identifier par son nom, prénom, numéro d’adhésion à la Fondation ou numéro de CIN.',
+    phone: '+212 52 90 751 00',
+    beneficiaries: [
+      ['01', 'L’adhérent et son ou ses conjoints.'],
+      ['02', 'Ses enfants déclarés, à charge de l’assuré, âgés de moins de 21 ans ou au plus 26 ans s’ils poursuivent leurs études.'],
+      ['03', 'Les enfants handicapés sans limite d’âge, ainsi que les ayants droit : orphelins des adhérents décédés, veuve ou veuf.'],
+      ['04', 'Le couple d’ascendants pour lequel la surprime de 65 DH a été payée à Wafa IMA Assistance par l’adhérent concerné.']
+    ],
+    groups: [
+      {
+        title: 'Assistance médicale au Maroc',
+        icon: 'fa-house-medical',
+        services: [
+          ['Transport sanitaire urbain au Maroc (aller / retour)', 'Prise en charge du transport sanitaire vers une unité hospitalière de la même ville choisie par l’adhérent.'],
+          ['Transport sanitaire interurbain au Maroc (aller / retour)', 'Prise en charge du transport sanitaire vers l’unité hospitalière la plus proche et la mieux équipée pour la pathologie ou maladie à traiter en urgence, en commun accord entre le médecin traitant et celui de Wafa IMA.'],
+          ['Déplacement de l’adhérent vers une unité hospitalière', 'Lorsque l’aller vers une unité hospitalière est assuré par l’adhérent, le retour à domicile peut être pris en charge par Wafa IMA, à condition de l’informer dans un délai de 5 jours à compter du jour de l’incident.'],
+          ['Transport répétitif pour chimiothérapie, radiothérapie et curiethérapie', 'Wafa IMA Assistance couvre les évacuations répétitives pour effectuer les séances de chimiothérapie, radiothérapie, curiethérapie ou autres actes liés au cancer, à condition que le transport soit dûment justifié médicalement, dans la limite de douze fois par année.'],
+          ['Hospitalisation et admission', ['Avance pour admission dans une unité hospitalière au Maroc à hauteur de 10 000 DH, à restituer par l’adhérent.', 'Prise de rendez-vous dans une structure hospitalière en France.']],
+          ['Assistance médicale à domicile', ['Visite médicale à domicile 24h/24 et 7j/7 dans 68 villes du Royaume à 120 DH.', 'Envoi de médicaments suite à la visite médicale, avec frais des médicaments à la charge de l’adhérent.', 'Visite d’infirmier, avec coût des médicaments et du matériel à la charge de l’adhérent.', 'Orientation vers la pharmacie la plus proche du lieu de résidence.']],
+          ['Évacuation et transport sanitaire', ['Évacuation sanitaire du Maroc vers l’étranger pour les pathologies non traitables au Maroc.', 'Garantie des frais médicaux en cas d’évacuation sanitaire avec un plafond de 80 000 DH, à restituer par l’adhérent.', 'Prise en charge du proche parent accompagnateur ou présence auprès de la personne assurée hospitalisée non accompagnée au Maroc et à l’étranger, à demander au préalable.', 'Titre de transport aller-retour.', 'Au Maroc : 500 DH par nuit pendant 8 nuits.', 'À l’étranger : 900 DH par nuit pendant 7 nuits.']],
+          ['Poste-hospitalisation', ['Prise en charge de l’évacuation pour contrôle et suivi médical post-hospitalisation au Maroc, au maximum à 2 reprises dans un délai de 24 mois.', 'Frais de prolongation du séjour après hospitalisation : au Maroc 500 DH par nuit pendant 8 nuits au maximum, à l’étranger 900 DH par nuit pendant 7 nuits au maximum.', 'Retour au domicile après hospitalisation de la personne assurée à l’étranger.']],
+          ['Prime de naissance', ['En cas de naissance d’un nouveau-né, le bénéficiaire doit déposer les documents dans un délai de 90 jours à compter de la date de naissance afin de bénéficier d’une prime de 350 DH.', 'Avis ou certificat de naissance.', 'Extrait d’acte de naissance original.', 'Relevé d’Identité Bancaire de l’adhérent.', 'Copie de la Carte Nationale d’Identité de l’adhérent.', 'Copie de la carte d’adhésion à la FOS-Agri.']]
+        ]
+      },
+      {
+        title: 'Transport et assistance funéraire',
+        icon: 'fa-ribbon',
+        services: [
+          ['Transport funéraire', ['Transport de la personne assurée décédée jusqu’au lieu d’inhumation.', 'Prise en charge des formalités permettant le transport.', 'Accompagnement de la dépouille isolée.']],
+          ['Forfait funéraire', 'Le forfait funéraire accompagne les ayants droit selon la situation du décès et les pièces justificatives prévues.']
+        ]
+      }
+    ],
+    funeralCards: [
+      ['Décès de l’adhérent', ['Acte de décès.', 'Copie d’acte de mariage.', 'RIB du conjoint survivant.', 'Copie CIN et copie carte d’adhérent.', 'En cas d’absence de conjoint : attestation de lien de parenté avec le défunt, acte d’hérédité et RIB du bénéficiaire.']],
+      ['Décès du conjoint', ['Acte de décès.', 'Copie d’acte de mariage.', 'CIN du conjoint survivant.', 'RIB du conjoint survivant.']],
+      ['Décès de l’enfant', ['Acte de décès du défunt.', 'Acte de naissance du défunt.', 'RIB du bénéficiaire.', 'Copie CIN et copie carte d’adhérent.']],
+      ['Contribution financière', ['7 000 DH en cas de décès de l’adhérent âgé au plus de 75 ans.', '2 500 DH en cas de décès du conjoint.', '1 000 DH en cas de décès d’un enfant.']]
+    ]
+  };
+
+  const amtsDetailAr = {
+    ...amtsDetailFr,
+    title: 'المساعدة الطبية والنقل الصحي',
+    subtitle: [
+      'تدعم FOS-Agri منخرطيها خلال الفترات الصعبة عبر خدمة المساعدة الطبية والنقل الصحي المتعاقد بشأنها مع شركة Wafa IMA Assistance.',
+      'تشمل هذه المساعدة ضمانات متعددة في الحالات غير المتوقعة والمستعجلة، مثل الحوادث والمرض والوفاة، إضافة إلى السفر إلى الخارج والإجلاء الصحي للحالات غير القابلة للعلاج بالمغرب وخدمات المواكبة الطبية.'
+    ],
+    beneficiariesTitle: 'المستفيدون',
+    prestationsTitle: 'الخدمات المضمونة',
+    funeralTitle: 'مسطرة طلب الاستفادة',
+    contactTitle: 'كيف يمكن الاتصال بـ Wafa IMA ؟',
+    contactIntro: 'لكل طلب مساعدة، يعمل مركز النداء 24 ساعة على 24 و7 أيام على 7 لتفعيل الحلول المنصوص عليها تعاقديا.',
+    contactInstruction: 'يتعين على المنخرط التعريف بنفسه عبر الاسم والنسب ورقم الانخراط بالمؤسسة أو رقم البطاقة الوطنية.',
+    beneficiaries: [
+      ['01', 'المنخرط وزوجه أو أزواجه.'],
+      ['02', 'الأطفال المصرح بهم والذين هم في كفالة المؤمن، أقل من 21 سنة أو إلى غاية 26 سنة إذا كانوا يتابعون دراستهم.'],
+      ['03', 'الأطفال في وضعية إعاقة دون حد للسن، وذوو الحقوق من أيتام المنخرطين المتوفين والأرملة أو الأرمل.'],
+      ['04', 'الأصول الذين تم أداء الزيادة الخاصة بهم 65 درهما لفائدة Wafa IMA Assistance من طرف المنخرط المعني.']
+    ],
+    groups: [
+      {
+        title: 'المساعدة الطبية بالمغرب',
+        icon: 'fa-house-medical',
+        services: [
+          ['النقل الصحي الحضري بالمغرب (ذهابا وإيابا)', 'التكفل بالنقل الصحي نحو مؤسسة استشفائية داخل نفس المدينة التي يختارها المنخرط.'],
+          ['النقل الصحي بين المدن بالمغرب (ذهابا وإيابا)', 'التكفل بالنقل الصحي نحو أقرب مؤسسة استشفائية وأكثرها تجهيزا لعلاج الحالة المرضية أو المرض المستعجل، بتنسيق مشترك بين الطبيب المعالج وطبيب Wafa IMA.'],
+          ['تنقل المنخرط نحو مؤسسة استشفائية', 'إذا تكفل المنخرط بالتنقل نحو المؤسسة الاستشفائية، يمكن لـ Wafa IMA التكفل بالعودة إلى المنزل شريطة إخبارها داخل أجل 5 أيام ابتداء من يوم وقوع الحادث.'],
+          ['النقل المتكرر لحصص العلاج الكيميائي والإشعاعي والكوريترابي', 'تغطي Wafa IMA Assistance عمليات الإجلاء المتكررة لإجراء حصص العلاج الكيميائي أو الإشعاعي أو الكوريترابي أو غيرها من الأعمال المرتبطة بالسرطان، شريطة أن يكون النقل مبررا طبيا، في حدود اثنتي عشرة مرة في السنة.'],
+          ['الاستشفاء والقبول', ['تسبيق للقبول في مؤسسة استشفائية بالمغرب في حدود 10 000 درهم، يسترجعه المنخرط لاحقا.', 'أخذ موعد داخل مؤسسة استشفائية بفرنسا.']],
+          ['المساعدة الطبية بالمنزل', ['زيارة طبية منزلية 24 ساعة على 24 و7 أيام على 7 في 68 مدينة بالمملكة مقابل 120 درهما.', 'إرسال الأدوية بعد الزيارة الطبية، مع بقاء مصاريف الأدوية على عاتق المنخرط.', 'زيارة ممرض، مع بقاء تكلفة الأدوية والمعدات على عاتق المنخرط.', 'توجيه المنخرط نحو أقرب صيدلية من محل السكن.']],
+          ['الإجلاء والنقل الصحي', ['الإجلاء الصحي من المغرب إلى الخارج بالنسبة للحالات غير القابلة للعلاج بالمغرب.', 'ضمان مصاريف العلاج في حالة الإجلاء الصحي بسقف 80 000 درهم، يسترجعه المنخرط لاحقا.', 'التكفل بالقريب المرافق أو الحضور بجانب الشخص المؤمن المستشفى دون مرافق بالمغرب أو بالخارج، شريطة طلب ذلك مسبقا.', 'تذكرة سفر ذهابا وإيابا.', 'بالمغرب: 500 درهم لليلة لمدة 8 ليال.', 'بالخارج: 900 درهم لليلة لمدة 7 ليال.']],
+          ['ما بعد الاستشفاء', ['التكفل بالإجلاء للمراقبة والتتبع الطبي بعد الاستشفاء بالمغرب، في حدود مرتين كحد أقصى داخل أجل 24 شهرا.', 'مصاريف تمديد الإقامة بعد الاستشفاء: بالمغرب 500 درهم لليلة لمدة 8 ليال كحد أقصى، وبالخارج 900 درهم لليلة لمدة 7 ليال كحد أقصى.', 'العودة إلى المنزل بعد استشفاء الشخص المؤمن بالخارج.']],
+          ['منحة الولادة', ['في حالة ولادة مولود جديد، يجب على المستفيد إيداع الوثائق داخل أجل 90 يوما ابتداء من تاريخ الولادة للاستفادة من منحة قدرها 350 درهما.', 'إشعار أو شهادة الولادة.', 'نسخة أصلية من عقد الازدياد.', 'كشف التعريف البنكي للمنخرط.', 'نسخة من البطاقة الوطنية للتعريف للمنخرط.', 'نسخة من بطاقة الانخراط في FOS-Agri.']]
+        ]
+      },
+      {
+        title: 'النقل والمساعدة الجنائزية',
+        icon: 'fa-ribbon',
+        services: [
+          ['النقل الجنائزي', ['نقل الشخص المؤمن المتوفى إلى مكان الدفن.', 'التكفل بالإجراءات التي تسمح بالنقل.', 'مرافقة الجثمان المعزول.']],
+          ['المنحة الجنائزية', 'تواكب المنحة الجنائزية ذوي الحقوق حسب حالة الوفاة والوثائق المثبتة المطلوبة.']
+        ]
+      }
+    ],
+    funeralCards: [
+      ['وفاة المنخرط', ['عقد الوفاة.', 'نسخة من عقد الزواج.', 'كشف التعريف البنكي للزوج أو الزوجة الباقية على قيد الحياة.', 'نسخة من البطاقة الوطنية ونسخة من بطاقة الانخراط.', 'في حالة غياب الزوج أو الزوجة: شهادة صلة القرابة بالمتوفى، رسم الإراثة وكشف التعريف البنكي للمستفيد.']],
+      ['وفاة الزوج أو الزوجة', ['عقد الوفاة.', 'نسخة من عقد الزواج.', 'البطاقة الوطنية للزوج أو الزوجة الباقية على قيد الحياة.', 'كشف التعريف البنكي للزوج أو الزوجة الباقية على قيد الحياة.']],
+      ['وفاة الطفل', ['عقد وفاة المتوفى.', 'عقد ازدياد المتوفى.', 'كشف التعريف البنكي للمستفيد.', 'نسخة من البطاقة الوطنية ونسخة من بطاقة الانخراط.']],
+      ['المساهمة المالية', ['7 000 درهم في حالة وفاة المنخرط البالغ 75 سنة على الأكثر.', '2 500 درهم في حالة وفاة الزوج أو الزوجة.', '1 000 درهم في حالة وفاة طفل.']]
+    ]
+  };
+
+  const amtsDetailZgh = {
+    ...amtsDetailFr,
+    title: 'ⵜⴰⵍⵍⴰⵍⵜ ⵜⴰⴷⵓⵙⴰⵏⵜ ⴷ ⵓⵙⵉⵡⴹ ⴰⴷⵓⵙⴰⵏ',
+    subtitle: [
+      'FOS-Agri ⵜⵜⴰⵍⵍⴰ ⵉ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴳ ⵜⵉⵣⵉ ⵉⵎⵇⵇⵓⵔⵏ ⵙ ⵜⴰⵍⵍⴰⵍⵜ ⵜⴰⴷⵓⵙⴰⵏⵜ ⴷ ⵓⵙⵉⵡⴹ ⴰⴷⵓⵙⴰⵏ ⵙ Wafa IMA Assistance.',
+      'ⵜⴰⵏⴼⵓⵙⵜ ⴰⴷ ⵜⴳⴰ ⵉⴳⵔⴰⵡⵏ ⵏ ⵜⴰⵍⵍⴰⵍⵜ ⴳ ⵉⵎⵓⵔⵙⵏ ⵉⵎⵥⵍⵉⵢⵏ: ⴰⵙⵙⵉⴹⵏ, ⴰⵎⵓⵔⵙ, ⵜⴰⵎⵜⵜⴰⵏⵜ, ⴰⵙⴰⴼⴰⵔ ⴷ ⵓⵙⵉⵡⴹ ⴰⴷⵓⵙⴰⵏ.'
+    ],
+    beneficiariesTitle: 'ⵉⵎⵏⴼⴰⵄⵏ',
+    prestationsTitle: 'ⵜⵉⵏⴼⵓⵙⵉⵏ ⵉⵜⵜⵓⴹⵎⴰⵏⵏ',
+    funeralTitle: 'ⴰⵙⴽⴰⵔ ⵏ ⵓⵙⵓⵜⵔ',
+    contactTitle: 'ⵎⴰⵎⵏⴽ ⴰⴷ ⵜⵏⵢⵉⵍⵉ ⴷ Wafa IMA ?',
+    contactIntro: 'ⴰⵙⴰⵜⵉ ⵏ ⵜⴰⵍⵍⴰⵍⵜ ⵉⵍⵍⴰ 24h/24 ⴷ 7j/7 ⵉ ⵓⵙⴽⵔ ⵏ ⵉⴼⵔⴰⵏ ⵉⵍⵍⴰⵏ ⴳ ⵓⵎⵙⴰⵡⴰⴹ.',
+    contactInstruction: 'ⴰⵎⵏⵅⵔⴰⵟ ⴰⴷ ⵉⵙⵎⵓⵏ ⵉⵙⵎ, ⵉⵙⵎ ⵏ ⵜⵡⴰⵛⵓⵍⵜ, ⵓⵟⵟⵓⵏ ⵏ ⵓⵏⵅⵔⴰⵟ ⵏⵖ CIN.',
+    beneficiaries: [
+      ['01', 'ⴰⵎⵏⵅⵔⴰⵟ ⴷ ⵓⵙⵍⵉ ⵏⵏⵙ.'],
+      ['02', 'ⵉⴼⵔⵅⴰⵏ ⵉⵜⵜⵓⵙⵙⵏⵖⵎⵙⵏ ⵉⵍⵍⴰⵏ ⴳ ⵓⵙⵔⵓⵜ ⵏ ⵓⵎⵏⵅⵔⴰⵟ, ⵓⵔ ⵙⵙⴰⵡⴹⵏ 21 ⵏⵖ ⴰⵔ 26 ⵎⴰ ⴰⴷ ⵙⵙⵎⴷⵏ ⵜⵉⵖⵔⵉ.'],
+      ['03', 'ⵉⴼⵔⵅⴰⵏ ⴳ ⵓⵙⵔⵓⵜ ⵉⵎⵥⵍⵉ ⴱⵍⴰ ⵜⵉⵍⴰⵍ ⵏ ⵓⵙⴳⴳⵯⴰⵙ, ⴷ ⵉⵎⵏⴼⴰⵄⵏ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵉⵎⵎⵓⵜⵏ, ⵜⴰⵊⵊⴰⵍⵜ ⵏⵖ ⴰⵊⵊⴰⵍ.'],
+      ['04', 'ⵉⵎⵖⴰⵔⵏ ⵉ ⴼⴽⴰ ⵓⵎⵏⵅⵔⴰⵟ 65 DH ⵉ Wafa IMA Assistance.']
+    ],
+    groups: [
+      {
+        title: 'ⵜⴰⵍⵍⴰⵍⵜ ⵜⴰⴷⵓⵙⴰⵏⵜ ⴳ ⵍⵎⵖⵔⵉⴱ',
+        icon: 'fa-house-medical',
+        services: [
+          ['ⴰⵙⵉⵡⴹ ⴰⴷⵓⵙⴰⵏ ⴳ ⵜⵎⴷⵉⵏⵜ', 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵓⵙⵉⵡⴹ ⴰⴷⵓⵙⴰⵏ ⵖⵔ ⵓⵎⵎⴰⵙ ⴰⵙⵉⴱⵉⵜⴰⵍ ⴳ ⵢⴰⵜ ⵜⵎⴷⵉⵏⵜ ⵉⵅⵜⴰⵔ ⵓⵎⵏⵅⵔⴰⵟ.'],
+          ['ⴰⵙⵉⵡⴹ ⴰⴷⵓⵙⴰⵏ ⴳⵔ ⵜⵎⴷⵉⵏⵉⵏ', 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵓⵙⵉⵡⴹ ⵖⵔ ⵓⵎⵎⴰⵙ ⴰⵙⵉⴱⵉⵜⴰⵍ ⴰⵇⵔⴰⴱ ⴷ ⴰⵎⵙⴰⵔⵓ ⵉ ⵓⵎⵓⵔⵙ ⴰⵎⵥⵍⵉ, ⵙ ⵓⵎⵙⴰⵡⴰⴹ ⴳⵔ ⵓⵎⵙⵙⵉⵊⵊⵉ ⴷ ⵓⵎⵙⵙⵉⵊⵊⵉ ⵏ Wafa IMA.'],
+          ['ⴰⵙⵉⵡⴹ ⵏ ⵓⵎⵏⵅⵔⴰⵟ ⵖⵔ ⵓⵎⵎⴰⵙ ⴰⵙⵉⴱⵉⵜⴰⵍ', 'ⵎⴰ ⵉⵙⵉⵡⴹ ⵓⵎⵏⵅⵔⴰⵟ ⵉⵎⴰⵏ ⵏⵏⵙ ⵖⵔ ⵓⵎⵎⴰⵙ, Wafa IMA ⵜⵣⵎⵔ ⴰⴷ ⵜⴰⵎⵓⴷⴷⵓ ⴰⵔⵔⴰ ⵖⵔ ⵜⴰⴷⴷⴰⵔⵜ ⵎⴰ ⵉⵜⵜⵓⵙⵙⵏⵖⵎⵙ ⴳ 5 ⵡⴰⵙⵙⵏ.'],
+          ['ⴰⵙⵉⵡⴹ ⵉⵜⵜⵓⵄⴰⵡⴷⵏ ⵉ ⵙⵉⴰⵏⵚ ⵏ ⵜⵙⵙⵉⵊⵊⵉ', 'Wafa IMA Assistance ⵜⴰⵎⵓⴷⴷⵓ ⵉⵙⵉⵡⴹⵏ ⵉⵜⵜⵓⵄⴰⵡⴷⵏ ⵉ ⵜⵉⵙⵉⴰⵏⵚ ⵏ ⵜⵙⵙⵉⵊⵊⵉ ⵏ ⵓⵙⵎⵎⵓⵎ, ⵏ ⵜⵔⴰⴷⵢⵓⵜ, ⴷ ⵜⵓⵔⴰⴷⵢⵓⵜ ⵏⵖ ⵉⵎⵓⴷⴷⵓⵏ ⵉⵣⴷⵉⵏ ⴷ ⵓⵎⵓⵔⵙ ⵏ ⵓⴽⴰⵏⵙⵉⵔ, ⵎⴰ ⵉⵍⵍⴰ ⵓⵙⵖⵏⵎⵙ ⴰⴷⵓⵙⴰⵏ, ⴰⵔ 12 ⵜⵉⴽⴽⴰⵍ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['ⴰⵙⵉⴱⵉⵜⴰⵍ ⴷ ⵓⵇⴱⴰⵍ', ['ⴰⵙⵍⴼ ⵉ ⵓⵇⴱⴰⵍ ⴳ ⵓⵎⵎⴰⵙ ⴰⵙⵉⴱⵉⵜⴰⵍ ⴳ ⵍⵎⵖⵔⵉⴱ ⴰⵔ 10 000 DH, ⴰⴷ ⵉⵜⵜⵓⵔⴰⵔⴰ ⵙⵖⵓⵔ ⵓⵎⵏⵅⵔⴰⵟ.', 'ⴰⵙⴽⵔ ⵏ ⵜⵉⵣⵉ ⵏ ⵜⵉⵔⵣⴰ ⴳ ⵓⵎⵎⴰⵙ ⴰⵙⵉⴱⵉⵜⴰⵍ ⴳ ⴼⵔⴰⵏⵙⴰ.']],
+          ['ⵜⴰⵍⵍⴰⵍⵜ ⵜⴰⴷⵓⵙⴰⵏⵜ ⴳ ⵜⴰⴷⴷⴰⵔⵜ', ['ⵜⵉⵔⵣⴰ ⵏ ⵓⵎⵙⵙⵉⵊⵊⵉ ⵖⵔ ⵜⴰⴷⴷⴰⵔⵜ 24h/24 ⴷ 7j/7 ⴳ 68 ⵜⵎⴷⵉⵏⵜ ⵙ 120 DH.', 'ⴰⵙⵉⵡⴹ ⵏ ⵉⴷⵡⴰⵢⵏ ⴹⴼⵕ ⵜⵉⵔⵣⴰ ⵜⴰⴷⵓⵙⴰⵏⵜ, ⵎⴰⵛⴰ ⵉⵙⵎⵏ ⵏ ⵉⴷⵡⴰⵢⵏ ⵅⴼ ⵓⵎⵏⵅⵔⴰⵟ.', 'ⵜⵉⵔⵣⴰ ⵏ ⵓⵎⵙⴰⴳⵏ, ⵉⵙⵎⵏ ⵏ ⵉⴷⵡⴰⵢⵏ ⴷ ⵓⵎⵙⴰⵔⵓ ⵅⴼ ⵓⵎⵏⵅⵔⴰⵟ.', 'ⴰⵙⴷⵓ ⵖⵔ ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ ⵜⴰⵇⵔⴰⴱⵜ ⵉ ⵜⴰⴷⴷⴰⵔⵜ.']],
+          ['ⴰⵙⵉⵡⴹ ⴰⴷⵓⵙⴰⵏ ⴷ ⵓⵙⴰⴼⴰⵔ', ['ⴰⵙⵉⵡⴹ ⴰⴷⵓⵙⴰⵏ ⵙⴳ ⵍⵎⵖⵔⵉⴱ ⵖⵔ ⴱⵕⵕⴰ ⵉ ⵉⵎⵓⵔⵙⵏ ⵓⵔ ⵉⵜⵜⵓⵙⵙⵉⵊⵊⴰⵏ ⴳ ⵍⵎⵖⵔⵉⴱ.', 'ⴰⴹⵎⴰⵏ ⵏ ⵉⵙⵎⵏ ⵏ ⵜⵙⵙⵉⵊⵊⵉ ⴳ ⵓⵙⵉⵡⴹ ⴰⴷⵓⵙⴰⵏ ⴰⵔ 80 000 DH, ⴰⴷ ⵉⵜⵜⵓⵔⴰⵔⴰ ⵙⵖⵓⵔ ⵓⵎⵏⵅⵔⴰⵟ.', 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵓⵇⵔⵉⴱ ⴰⵎⵓⵏ ⵏⵖ ⵜⵉⵍⵉ ⵖⵔ ⵓⵎⵏⵅⵔⴰⵟ ⵉⵍⵍⴰⵏ ⴳ ⵓⵙⵉⴱⵉⵜⴰⵍ, ⵙ ⵓⵙⵓⵜⵔ ⴰⵎⵣⵡⴰⵔⵓ.', 'ⵜⵉⴽⵉⵜ ⵏ ⵓⵙⴰⴼⴰⵔ ⵔⴰⵢ ⴷ ⴰⵔⵔⴰ.', 'ⴳ ⵍⵎⵖⵔⵉⴱ: 500 DH ⵉ ⵢⵉⴹ ⴳ 8 ⵡⵓⵙⵙⴰⵏ.', 'ⴳ ⴱⵕⵕⴰ: 900 DH ⵉ ⵢⵉⴹ ⴳ 7 ⵡⵓⵙⵙⴰⵏ.']],
+          ['ⴹⴼⵕ ⴰⵙⵉⴱⵉⵜⴰⵍ', ['ⴰⵎⵓⴷⴷⵓ ⵏ ⵓⵙⵉⵡⴹ ⵉ ⵓⵙⵙⵓⴷⵙ ⴷ ⵓⵜⵜⴰⴱⴰⵄ ⴰⴷⵓⵙⴰⵏ ⴹⴼⵕ ⴰⵙⵉⴱⵉⵜⴰⵍ ⴳ ⵍⵎⵖⵔⵉⴱ, ⴰⵔ 2 ⵜⵉⴽⴽⴰⵍ ⴳ 24 ⴰⵢⵢⵓⵔ.', 'ⵉⵙⵎⵏ ⵏ ⵓⵙⵖⵔⵙ ⵏ ⵓⵙⵖⵉⵎ ⴹⴼⵕ ⴰⵙⵉⴱⵉⵜⴰⵍ: ⴳ ⵍⵎⵖⵔⵉⴱ 500 DH ⵉ ⵢⵉⴹ ⴰⵔ 8 ⵡⵓⵙⵙⴰⵏ, ⴳ ⴱⵕⵕⴰ 900 DH ⵉ ⵢⵉⴹ ⴰⵔ 7 ⵡⵓⵙⵙⴰⵏ.', 'ⴰⵔⵔⴰ ⵖⵔ ⵜⴰⴷⴷⴰⵔⵜ ⴹⴼⵕ ⴰⵙⵉⴱⵉⵜⴰⵍ ⴳ ⴱⵕⵕⴰ.']],
+          ['ⵜⴰⵎⵓⵏⵜ ⵏ ⵓⵍⴰⵍ', ['ⵎⴰ ⵉⵍⵍⴰ ⵓⵍⴰⵍ ⵏ ⵓⴼⵔⵓⵅ ⴰⵎⴰⵢⵏⵓ, ⴰⵎⵏⴼⴰⵄ ⴰⴷ ⵉⴼⴽ ⵉⵙⵍⴽⴰⵎⵏ ⴳ 90 ⵡⴰⵙⵙⵏ ⵙⴳ ⵜⵉⵣⵉ ⵏ ⵓⵍⴰⵍ ⵉ 350 DH.', 'ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵓⵍⴰⵍ.', 'ⵏⵙⵅⴰ ⵜⴰⵙⵍⴽⵉⵏⵜ ⵜⴰⵙⵍⵉⵜ ⵏ ⵓⵍⴰⵍ.', 'RIB ⵏ ⵓⵎⵏⵅⵔⴰⵟ.', 'ⵏⵙⵅⴰ ⵏ CIN ⵏ ⵓⵎⵏⵅⵔⴰⵟ.', 'ⵏⵙⵅⴰ ⵏ ⵜⴽⴰⵕⴹⴰ ⵏ ⵓⵏⵅⵔⴰⵟ ⵏ FOS-Agri.']]
+        ]
+      },
+      {
+        title: 'ⴰⵙⵉⵡⴹ ⴷ ⵜⴰⵍⵍⴰⵍⵜ ⵏ ⵜⵎⵜⵜⴰⵏⵜ',
+        icon: 'fa-ribbon',
+        services: [
+          ['ⴰⵙⵉⵡⴹ ⵏ ⵜⵎⵜⵜⴰⵏⵜ', ['ⴰⵙⵉⵡⴹ ⵏ ⵓⵎⵏⵅⵔⴰⵟ ⵉⵎⵎⵓⵜ ⵖⵔ ⵓⵎⴹⴰⵍ ⵏ ⵓⵎⴹⴰⵍ.', 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵉⵙⴽⴰⵔⵏ ⵉ ⵓⵙⵉⵡⴹ.', 'ⴰⵎⵓⵏ ⵏ ⵓⴳⴹⵉⴹ ⵉⵎⵍⵉ.']],
+          ['ⵜⴰⵎⵓⵏⵜ ⵏ ⵜⵎⵜⵜⴰⵏⵜ', 'ⵜⴰⵎⵓⵏⵜ ⵏ ⵜⵎⵜⵜⴰⵏⵜ ⵜⵜⴰⵍⵍⴰ ⵉ ⵉⵎⵏⴼⴰⵄⵏ ⵙ ⵓⴳⴰⵎⴰ ⵏ ⵜⵎⵜⵜⴰⵏⵜ ⴷ ⵉⵙⵍⴽⴰⵎⵏ ⵉⵜⵜⵓⵙⵓⵜⵔⵏ.']
+        ]
+      }
+    ],
+    funeralCards: [
+      ['ⵜⴰⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵎⵏⵅⵔⴰⵟ', ['ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵎⵜⵜⴰⵏⵜ.', 'ⵏⵙⵅⴰ ⵏ ⵓⵎⵙⵍⴰⵢ ⵏ ⵓⵣⵡⴰⵊ.', 'RIB ⵏ ⵓⵙⵍⵉ ⵉⴷⴷⵔⵏ.', 'ⵏⵙⵅⴰ ⵏ CIN ⴷ ⵏⵙⵅⴰ ⵏ ⵜⴽⴰⵕⴹⴰ ⵏ ⵓⵏⵅⵔⴰⵟ.', 'ⵎⴰ ⵓⵔ ⵉⵍⵍⵉ ⵓⵙⵍⵉ: ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵓⵣⴷⴰⵢ ⵏ ⵜⵡⴰⵛⵓⵍⵜ, ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵔⵉⴽⴰ ⴷ RIB ⵏ ⵓⵎⵏⴼⴰⵄ.']],
+      ['ⵜⴰⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵙⵍⵉ', ['ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵎⵜⵜⴰⵏⵜ.', 'ⵏⵙⵅⴰ ⵏ ⵓⵎⵙⵍⴰⵢ ⵏ ⵓⵣⵡⴰⵊ.', 'CIN ⵏ ⵓⵙⵍⵉ ⵉⴷⴷⵔⵏ.', 'RIB ⵏ ⵓⵙⵍⵉ ⵉⴷⴷⵔⵏ.']],
+      ['ⵜⴰⵎⵜⵜⴰⵏⵜ ⵏ ⵓⴼⵔⵓⵅ', ['ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵎⵎⵓⵜ.', 'ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵓⵍⴰⵍ ⵏ ⵓⵎⵎⵓⵜ.', 'RIB ⵏ ⵓⵎⵏⴼⴰⵄ.', 'ⵏⵙⵅⴰ ⵏ CIN ⴷ ⵏⵙⵅⴰ ⵏ ⵜⴽⴰⵕⴹⴰ ⵏ ⵓⵏⵅⵔⴰⵟ.']],
+      ['ⵜⴰⵎⵓⵏⵜ ⵜⴰⴷⵔⵉⵎⵜ', ['7 000 DH ⴳ ⵜⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵎⵏⵅⵔⴰⵟ ⴰⵔ 75 ⵓⵙⴳⴳⵯⴰⵙ.', '2 500 DH ⴳ ⵜⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵙⵍⵉ.', '1 000 DH ⴳ ⵜⵎⵜⵜⴰⵏⵜ ⵏ ⵓⴼⵔⵓⵅ.']]
+    ]
+  };
+
   const services = {
     prevoyance: {
       href: 'services/prevoyance.html',
@@ -450,10 +673,10 @@
         meta: 'Santé, protection sociale et bien-être',
         summary: 'Un dispositif de santé et de protection sociale pour accompagner les adhérents et leurs familles face aux aléas médicaux, aux urgences et aux besoins spécifiques.',
         stats: [['100%', 'du ticket modérateur AMC selon contrat'], ['1 MDH', 'de plafond général annuel par personne'], ['5 000 DH', 'd’aide aux enfants en situation de handicap']],
-        chips: ['A PROPOS', 'ASSURANCE MALADIE COMPLÉMENTAIRE', 'ASSISTANCE MÉDICALE ET TRANSPORT SANITAIRE', 'FORFAIT FUNERAIRE', 'CENTRE MEDICO-SOCIAL', 'AIDES AUX PERSONNES AUX BESOINS SPECIFIQUES', 'CONVENTIONS ET PARTENARIATS MEDICALES'],
         overview: 'La FOS-Agri a érigé le volet santé en priorité avec l’assurance maladie complémentaire, l’accompagnement médico-social, l’assistance médicale et le transport sanitaire, ainsi qu’un réseau de conventions médicales au niveau régional.',
         highlights: ['Remboursement ou prise en charge complémentaire en lien avec l’AMO/CNOPS.', 'Assistance médicale et transport sanitaire via Wafa IMA Assistance.', 'Aide de 5 000 DH pour les enfants des adhérents en situation de handicap.', 'Conventions avec laboratoires, cliniques, médecins, opticiens, pharmacies et centres de soins.'],
         amcDetail: amcDetailFr,
+        amtsDetail: amtsDetailFr,
         features: [
           ['A PROPOS', 'Accompagnement, orientation et écoute autour des besoins de santé et de bien-être des adhérents.'],
           ['Assurance Maladie Complémentaire', 'Sanlam Maroc rembourse ou prend en charge tout ou partie du reste à charge selon les taux, bases et plafonds contractuels.'],
@@ -529,10 +752,10 @@
         meta: 'الصحة والحماية الاجتماعية والرفاه',
         summary: 'منظومة لمواكبة المنخرطين وأسرهم في الصحة والحماية الاجتماعية والحالات المستعجلة والاحتياجات الخاصة.',
         stats: [['100%', 'من الباقي على عاتق المنخرط حسب العقد'], ['1 مليون درهم', 'كسقف عام سنوي لكل شخص'], ['5 000 درهم', 'دعم للأطفال في وضعية إعاقة']],
-        chips: ['حول الخدمة', 'التأمين الصحي التكميلي', 'المساعدة والنقل الصحي', 'منحة الوفاة', 'المركز الطبي الاجتماعي', 'دعم الأشخاص ذوي الاحتياجات الخاصة', 'الاتفاقيات والشراكات الطبية'],
         overview: 'تضع FOS-Agri الصحة ضمن أولوياتها عبر التأمين الصحي التكميلي والمواكبة الطبية الاجتماعية والمساعدة الطبية والنقل الصحي وشبكة اتفاقيات طبية جهوية.',
         highlights: ['تعويض أو تحمل تكميلي بتنسيق مع AMO/CNOPS.', 'مساعدة طبية ونقل صحي عبر Wafa IMA Assistance.', 'دعم قدره 5 000 درهم للأطفال في وضعية إعاقة.', 'اتفاقيات مع مختبرات ومصحات وأطباء ونظارات وصيدليات ومراكز علاج.'],
         amcDetail: amcDetailAr,
+        amtsDetail: amtsDetailAr,
         features: [['حول الخدمة', 'استقبال وتوجيه ومواكبة حول حاجيات الصحة والرفاه.'], ['التأمين الصحي التكميلي', 'تعويض أو تحمل الباقي وفق الضمانات والأسقف التعاقدية.'], ['المساعدة الطبية والنقل الصحي', 'تغطية الحالات المستعجلة والنقل الصحي والمساعدة المنزلية والإجلاء الصحي وفق الشروط.'], ['دعم الأشخاص ذوي الاحتياجات الخاصة', 'مساهمة في التكفل بالحاجيات الخاصة لأبناء المنخرطين.'], ['الاتفاقيات والشراكات الطبية', 'شبكة مقدمي خدمات بعدة جهات بتنسيق مع المنسقين الجهويين.']],
         centerMedical: {
           badge: 'حول الخدمة',
@@ -602,15 +825,15 @@
         meta: 'ⵜⴰⴷⵓⵙⵉ, ⴰⵎⵎⵓⵜⵜⵉ ⴷ ⵜⵓⴷⵔⵜ',
         summary: 'ⵜⴰⵏⴼⵓⵙⵜ ⵉ ⵓⵎⵓⴷⴷⵓ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴷ ⵜⵡⴰⵛⵓⵍⵜ ⴳ ⵜⴰⴷⵓⵙⵉ ⴷ ⵜⵉⵎⵓⵔⴰ.',
         stats: [['100%', 'AMC ⵙ ⵎⴽ ⵉⵍⵍⴰ ⴳ ⵓⵎⵙⴰⵡⴰⴹ'], ['1 MDH', 'ⴰⵙⵡⵉⵔ ⴰⴳⵔⴰⵡ ⵉ ⴽⵓ ⵢⴰⵏ'], ['5 000 DH', 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⴼⵔⵅⴰⵏ ⵏ ⵓⵙⵔⵓⵜ']],
-        chips: ['ⵅⴼ ⵜⴰⵏⴼⵓⵜ', 'ⴰⵙⵙⵓⵔⴰⵏⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵎⵔⵏⴰⵡ', 'ⵜⴰⵍⵍⴰⵍⵜ ⵜⴰⴷⵓⵙⴰⵏⵜ ⴷ ⵓⵙⵉⵡⴹ ⴰⴷⵓⵙⴰⵏ', 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵜⵎⵜⵜⴰⵏⵜ', 'ⴰⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ', 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵙ ⵉⵙⵡⵉⵔⵏ ⵉⵎⵥⵍⵉⵢⵏ', 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏⵏ'],
-        overview: 'FOS-Agri ⵜⵙⵙⵎⵓⵔⵙ ⵜⴰⴷⵓⵙⵉ ⵙ AMC, AMTS, ⴰⵎⵓⴷⴷⵓ médico-social ⴷ ⵉⵣⴷⴰⵢⵏ médicaux ⴳ ⵜⵎⵓⵔⴰ.',
-        highlights: ['ⴰⵔⴰⵔⵓ ⵏ reste à charge ⵙ AMO/CNOPS.', 'AMTS ⵙ Wafa IMA Assistance.', '5 000 DH ⵉ ⵉⴼⵔⵅⴰⵏ ⴳ handicap.', 'ⵉⵣⴷⴰⵢⵏ ⴷ laboratoires, cliniques, médecins, opticiens.'],
+        overview: 'FOS-Agri ⵜⵙⵙⵎⵓⵔⵙ ⵜⴰⴷⵓⵙⵉ ⵙ AMC, AMTS, ⴰⵎⵓⴷⴷⵓ ⴰⴷⴰⵡⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏⵏ ⴳ ⵜⵎⵓⵔⴰ.',
+        highlights: ['ⴰⵔⴰⵔⵓ ⵏ ⵓⴼⵔⴰⴳ ⵉⴱⵇⵇⴰⵏ ⵅⴼ ⵓⵎⵏⵅⵔⴰⵟ ⵙ AMO/CNOPS.', 'AMTS ⵙ Wafa IMA Assistance.', '5 000 DH ⵉ ⵉⴼⵔⵅⴰⵏ ⴳ ⵓⵙⵔⵓⵜ ⵉⵎⵥⵍⵉ.', 'ⵉⵣⴷⴰⵢⵏ ⴷ ⵉⵎⵣⵣⴰⵔⵏ, ⵉⵙⵉⴱⵉⵜⴰⵍⵏ, ⵉⵎⵙⵙⵉⵊⵊⵉⵏ ⴷ ⵉⵎⵙⵡⴰⵍⵏ ⵏ ⵜⵉⵟⵟ.'],
         amcDetail: amcDetailZgh,
-        features: [['ⵅⴼ ⵜⴰⵏⴼⵓⵜ', 'ⴰⵎⵓⴷⴷⵓ, ⴰⵙⴷⵓ ⴷ ⵜⵎⵙⵍⵉⵡⵜ.'], ['AMC', 'ⴰⵔⴰⵔⵓ ⵙ ⵎⴽ ⵉⵍⵍⴰ ⴳ ⵓⵎⵙⴰⵡⴰⴹ.'], ['AMTS', 'ⴰⵎⵓⴷⴷⵓ ⴰⵎⴰⴷⴰⵏ ⴷ transport sanitaire.'], ['ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⵙⵡⵉⵔⵏ ⵉⵎⵥⵍⵉⵢⵏ', 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⴼⵔⵅⴰⵏ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ.'], ['ⵉⵎⵙⴰⵡⴰⴹⵏ médicaux', 'ⵉⵣⴷⴰⵢⵏ ⴳ ⵜⵎⵓⵔⴰ ⵎⴰⵔⵔⴰ.']],
+        amtsDetail: amtsDetailZgh,
+        features: [['ⵅⴼ ⵜⴰⵏⴼⵓⵜ', 'ⴰⵎⵓⴷⴷⵓ, ⴰⵙⴷⵓ ⴷ ⵜⵎⵙⵍⵉⵡⵜ.'], ['AMC', 'ⴰⵔⴰⵔⵓ ⵙ ⵎⴽ ⵉⵍⵍⴰ ⴳ ⵓⵎⵙⴰⵡⴰⴹ.'], ['AMTS', 'ⵜⴰⵍⵍⴰⵍⵜ ⵜⴰⴷⵓⵙⴰⵏⵜ ⴷ ⵓⵙⵉⵡⴹ ⴰⴷⵓⵙⴰⵏ.'], ['ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⵙⵡⵉⵔⵏ ⵉⵎⵥⵍⵉⵢⵏ', 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⴼⵔⵅⴰⵏ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ.'], ['ⵉⵎⵙⴰⵡⴰⴹⵏ ⵉⴷⵓⵙⴰⵏⵏ', 'ⵉⵣⴷⴰⵢⵏ ⴳ ⵜⵎⵓⵔⴰ ⵎⴰⵔⵔⴰ.']],
         centerMedical: {
           badge: 'ⵅⴼ ⵜⴰⵏⴼⵓⵜ',
           title: 'ⴰⵎⵓⴷⴷⵓ ⴰⴷⴰⵡⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ',
-          intro: 'FOS-Agri ⵜⵙⵙⵓⴼⵖ ⵜⴰⴷⵓⵙⵉ ⴷ ⴰⵙⵓⵔⵉⴼ ⴰⵎⵇⵔⴰⵏ ⵙ ⵓⵙⵎⵓⵜⵜⴳ ⵏ ⵜⵎⵓⵔⵜ ⵜⴰⴷⵓⵙⴰⵏⵜ ⵉⵙⵎⵓⵏⵏ AMC, ⴰⵎⵓⴷⴷⵓ médico-social, AMTS ⴷ ⵉⵎⵙⴰⵡⴰⴹⵏ ⵉⴷⵓⵙⴰⵏⵏ ⴳ ⵜⵎⵓⵔⴰ ⵎⴰⵔⵔⴰ ⵙ ⵜⵉⵡⵉⵙⵉ ⵏ ⵉⵎⵙⵏⴰⵡⵏ ⵉⵏⵏⴰⵡⵏ.',
+          intro: 'FOS-Agri ⵜⵙⵙⵓⴼⵖ ⵜⴰⴷⵓⵙⵉ ⴷ ⴰⵙⵓⵔⵉⴼ ⴰⵎⵇⵔⴰⵏ ⵙ ⵓⵙⵎⵓⵜⵜⴳ ⵏ ⵜⵎⵓⵔⵜ ⵜⴰⴷⵓⵙⴰⵏⵜ ⵉⵙⵎⵓⵏⵏ AMC, ⴰⵎⵓⴷⴷⵓ ⴰⴷⴰⵡⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ, AMTS ⴷ ⵉⵎⵙⴰⵡⴰⴹⵏ ⵉⴷⵓⵙⴰⵏⵏ ⴳ ⵜⵎⵓⵔⴰ ⵎⴰⵔⵔⴰ ⵙ ⵜⵉⵡⵉⵙⵉ ⵏ ⵉⵎⵙⵏⴰⵡⵏ ⵉⵏⵏⴰⵡⵏ.',
           items: [
             {
               icon: 'fa-shield-heart',
@@ -620,8 +843,8 @@
                 'ⴰⵎⵙⴰⵡⴰⴹ ⴷ SAHAM Assurance ⵉⵜⵜⴰⵡⵙ ⵉ ⵉⵎⵏⵅⵔⴰⵟⵏ:'
               ],
               bullets: [
-                'ⴰⵔⴰⵔⵓ ⵏ 100% ⵏ ticket modérateur ⵙ ⵓⵙⵎⵔⵙ ⵏ AMO/Mutuelle.',
-                'ⴰⵔⴰⵔⵓ ⴰⴳⵔⴰⵡ ⵏ 1 MDH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ, ⵎⴰⵛⴰ greffes d’organes ⴰⵔ 250 000 DH.'
+                'ⴰⵔⴰⵔⵓ ⵏ 100% ⵏ ⵓⴼⵔⴰⴳ ⵉⵜⵜⴳⴰⵏ ⵅⴼ ⵓⵎⵏⵅⵔⴰⵟ ⵙ ⵓⵙⵎⵔⵙ ⵏ AMO/Mutuelle.',
+                'ⴰⵔⴰⵔⵓ ⴰⴳⵔⴰⵡ ⵏ 1 MDH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ, ⵎⴰⵛⴰ ⵜⵉⵣⵣⵓⵍⴰ ⵏ ⵉⴳⴰⵏⵏ ⴰⵔ 250 000 DH.'
               ]
             },
             {
@@ -630,7 +853,7 @@
               title: 'AMTS',
               body: [
                 'FOS-Agri ⵜⴻⵜⵜⴰⵍⵍⴰⵍ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴳ ⵉⵎⵓⵔⴰⵏ ⵉⵙⵙⴷⴰⵔⵏ ⵙ AMTS ⴷ Wafa IMA Assistance.',
-                'ⵜⴰⵍⵍⴰⵍⵜ ⴰⴷ ⵜⵙⵎⵓⵏ ⵉⴳⵔⴰⵏ ⵏ accident, maladie, décès, ⴷ ⵓⵙⵉⵡⴹ ⴰⴷⵓⵙⴰⵏ ⵖⵔ ⴱⵕⵕⴰ ⵉ ⵉⵎⵓⵔⴰⵏ ⵓⵔ ⵉⵜⵜⵓⵙⵙⵓⵊⵊⴰⵏ ⴳ ⵍⵎⵖⵔⵉⴱ.'
+                'ⵜⴰⵍⵍⴰⵍⵜ ⴰⴷ ⵜⵙⵎⵓⵏ ⵉⴳⵔⴰⵏ ⵏ ⵓⵙⵙⵉⴹⵏ, ⵓⵎⵓⵔⵙ, ⵜⵎⵜⵜⴰⵏⵜ, ⴷ ⵓⵙⵉⵡⴹ ⴰⴷⵓⵙⴰⵏ ⵖⵔ ⴱⵕⵕⴰ ⵉ ⵉⵎⵓⵔⴰⵏ ⵓⵔ ⵉⵜⵜⵓⵙⵙⵓⵊⵊⴰⵏ ⴳ ⵍⵎⵖⵔⵉⴱ.'
               ]
             },
             {
@@ -646,7 +869,7 @@
               navIndex: 6,
               title: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏⵏ',
               body: [
-                'ⵜⴰⴱⵍⵓⵜ ⵏ ⵉⵎⵙⴰⵡⴰⴹⵏ (laboratoires, médecins, cabinets)'
+                'ⵜⴰⴱⵍⵓⵜ ⵏ ⵉⵎⵙⴰⵡⴰⴹⵏ (ⵉⵎⵣⵣⴰⵔⵏ, ⵉⵎⵙⵙⵉⵊⵊⵉⵏ, ⵜⵉⵔⵣⴰ)'
               ]
             }
           ]
@@ -656,18 +879,18 @@
             navIndex: 3,
             badge: 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵜⵎⵜⵜⴰⵏⵜ',
             title: 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵜⵎⵜⵜⴰⵏⵜ',
-            intro: 'ⵜⴰⵙⵏⴰ ⴰⴷ ⵜⵇⵇⵏ ⵙ ⵜⵎⴰⵎⴽⵜ ⵏ forfait funéraire ⵉ ⵉⵎⵏⵅⵔⴰⵟⵏ.',
+            intro: 'ⵜⴰⵙⵏⴰ ⴰⴷ ⵜⵇⵇⵏ ⵙ ⵜⵎⴰⵎⴽⵜ ⵏ ⵓⵎⵓⴷⴷⵓ ⵏ ⵜⵎⵜⵜⴰⵏⵜ ⵉ ⵉⵎⵏⵅⵔⴰⵟⵏ.',
             points: ['ⵜⵉⵡⵜⵉⵍⵉⵏ ⵏ ⵓⵙⵎⵔⵙ ⴰⴷ ⵜⵜⵓⵙⵎⴷⵏⵜ ⵙ FOS-Agri.', 'ⵜⵉⵡⵔⵉⵇⵉⵏ ⴷ ⵜⵎⴰⵎⴽⵜ ⵏ ⵓⵙⵎⵓⵜⵜⴳ ⴰⴷ ⵜⵜⵓⵔⵏⴰⵏⵜ ⵎⴰⵢⴰⴷ ⵜⵜⵓⵙⵙⵏⵜ.', 'ⴰⵙⴷⵓ ⵖⵔ ⵓⵎⵙⵏⴰⵡ ⵏ ⵜⵎⵏⴰⴹⵜ ⵏⵖ ⴰⵙⵔⵓⵙ ⵉⵎⵥⵍⵉ.']
           },
           {
             navIndex: 4,
             badge: 'ⴰⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ',
             title: 'ⴰⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ',
-            intro: 'ⵜⴰⵙⵏⴰ ⴰⴷ ⵜⵙⵎⵓⵏ ⵜⵉⵏⵖⵎⵉⵙⵉⵏ ⵏ centre médico-social ⴷ ⵓⵎⵓⴷⴷⵓ ⴰⵎⵇⵔⴰⵏ.',
-            points: ['ⴰⵙⴷⵓ ⴷ ⵜⵎⵙⵍⵉⵡⵜ ⴳ ⵉⵙⵡⵉⵔⵏ ⵏ ⵜⴰⴷⵓⵙⵉ.', 'ⵜⵉⵏⵖⵎⵉⵙⵉⵏ ⵅⴼ ⵜⵏⴼⵓⵜⵉⵏ médico-sociales.', 'ⴰⵎⵢⴰⵡⴰⴹ ⴷ FOS-Agri ⴷ ⵉⵎⵙⵏⴰⵡⵏ ⵏ ⵜⵎⵏⴰⴹⵜ.']
+            intro: 'ⵜⴰⵙⵏⴰ ⴰⴷ ⵜⵙⵎⵓⵏ ⵜⵉⵏⵖⵎⵉⵙⵉⵏ ⵏ ⵓⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ ⴷ ⵓⵎⵓⴷⴷⵓ ⴰⵎⵇⵔⴰⵏ.',
+            points: ['ⴰⵙⴷⵓ ⴷ ⵜⵎⵙⵍⵉⵡⵜ ⴳ ⵉⵙⵡⵉⵔⵏ ⵏ ⵜⴰⴷⵓⵙⵉ.', 'ⵜⵉⵏⵖⵎⵉⵙⵉⵏ ⵅⴼ ⵜⵏⴼⵓⵜⵉⵏ ⵜⵉⴷⵓⵙⴰⵏⵉⵏ ⵜⵉⵏⴰⵎⵓⵏⵉⵏ.', 'ⴰⵎⵢⴰⵡⴰⴹ ⴷ FOS-Agri ⴷ ⵉⵎⵙⵏⴰⵡⵏ ⵏ ⵜⵎⵏⴰⴹⵜ.']
           }
         ],
-        partners: ['Laboratoires', 'Cliniques', 'Médecins', 'Opticiens', 'Pharmacies', 'Centres dentaires'],
+        partners: ['ⵉⵎⵣⵣⴰⵔⵏ', 'ⵉⵙⵉⴱⵉⵜⴰⵍⵏ', 'ⵉⵎⵙⵙⵉⵊⵊⵉⵏ', 'ⵉⵎⵙⵡⴰⵍⵏ ⵏ ⵜⵉⵟⵟ', 'ⵜⵉⴼⴰⵔⵎⴰⵙⵉⵜⵉⵏ', 'ⵉⵎⵎⴰⵙⵏ ⵏ ⵓⵅⵙⴰⵏ'],
         steps: [['ⴰⵙⴷⵓ', 'ⵙⵙⵏ ⵜⴰⵏⴼⵓⵙⵜ.'], ['ⴰⴼⴰⵢⵍⵓ', 'ⵙⵎⵓⵏ ⵜⵉⴽⴰⵔⴹⵉⵡⵉⵏ.'], ['ⴰⵎⵓⴷⴷⵓ', 'ⴹⴼⵕ AMC/AMTS.'], ['ⴰⵎⵙⵏⴰⵡ', 'ⵎⵢⴰⵡⴰⵍ ⴷ ⵓⵎⵙⵏⴰⵡ.']]
       }
     },
@@ -685,8 +908,30 @@
         partners: ['Voyages organisés', 'Vacances hiver', 'Excursions', 'Estivage', 'SIAM', 'Salon du cheval'],
         steps: [['Programme', 'Consulter les opérations ouvertes.'], ['Éligibilité', 'Vérifier les conditions et délais.'], ['Inscription', 'Préparer le dossier demandé.'], ['Participation', 'Suivre les informations pratiques communiquées.']]
       },
-      ar: null,
-      zgh: null
+      ar: {
+        title: 'الثقافة والترفيه والأسفار',
+        meta: 'راحة، مشاركة واكتشاف',
+        summary: 'برامج لخلق لحظات للراحة والاكتشاف الثقافي والسفر لفائدة المنخرطين وأسرهم.',
+        stats: [['6', 'خدمات فرعية'], ['الأسر', 'أنشطة بين الأجيال'], ['الشركاء', 'عروض واتفاقيات للترفيه']],
+        chips: ['الترفيه والأسفار', 'مخيمات الاصطياف', 'العمرة', 'الحج', 'الحفلات', 'الاتفاقيات والشراكات'],
+        overview: 'تجمع هذه الخانة الأنشطة الثقافية والترفيهية والأسفار والعمليات ذات البعد الإنساني في أجواء ودية ومفيدة.',
+        highlights: ['أسفار منظمة، عطلة الشتاء، رحلات واصطياف.', 'مخيمات وأنشطة لفائدة أبناء المنخرطين.', 'عمليات العمرة والحج ومواكبة المستفيدين.', 'اتفاقيات مع شركاء لتسهيل الولوج إلى الترفيه.'],
+        features: [['الترفيه والأسفار', 'خرجات، اكتشافات، إقامات وأنشطة للراحة.'], ['مخيمات الاصطياف', 'برامج جماعية لفائدة أبناء المنخرطين.'], ['العمرة', 'عمليات اجتماعية مؤطرة حسب البرنامج المصادق عليه.'], ['الحج', 'إخبار وتوجيه المستفيدين المعنيين.'], ['الحفلات', 'لحظات للاعتراف والمشاركة والتضامن.'], ['الاتفاقيات والشراكات', 'تعريفات وعروض وولوج تفضيلي حسب الاتفاقيات.']],
+        partners: ['أسفار منظمة', 'عطلة الشتاء', 'رحلات', 'اصطياف', 'المعرض الدولي للفلاحة', 'معرض الفرس'],
+        steps: [['البرنامج', 'الاطلاع على العمليات المفتوحة.'], ['الأهلية', 'التحقق من الشروط والآجال.'], ['التسجيل', 'تحضير الملف المطلوب.'], ['المشاركة', 'تتبع المعلومات العملية المعلن عنها.']]
+      },
+      zgh: {
+        title: 'ⵜⴰⴷⵍⵙⴰ, ⵜⵉⵔⴰⵔⵉⵏ ⴷ ⵉⵙⴰⴼⴰⵔⵏ',
+        meta: 'ⴰⵙⴳⵓⵏⴼⵓ, ⵜⵉⵡⵉⵙⵉ ⴷ ⵓⵙⵙⵏ',
+        summary: 'ⵜⵉⵏⴼⵓⵙⵉⵏ ⵉ ⵓⵙⴽⵔ ⵏ ⵜⵉⵣⵉ ⵏ ⵓⵙⴳⵓⵏⴼⵓ, ⵓⵙⵙⵏ ⴰⴷⵍⵙⴰⵏ ⴷ ⵓⵙⴰⴼⴰⵔ ⵉ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴷ ⵜⵡⴰⵛⵓⵍⵜ.',
+        stats: [['6', 'ⵜⵉⵙⴳⴰⵔ'], ['ⵜⵉⵡⴰⵛⵓⵍⵉⵏ', 'ⵜⵉⵔⵎⴰⴷ ⴳⵔ ⵉⵎⵓⴽⵔⵉⵙⵏ'], ['ⵉⵣⴷⴰⵢⵏ', 'ⵜⵉⵡⵉⵙⵉⵏ ⴷ ⵉⵎⵙⴰⵡⴰⴹⵏ']],
+        chips: ['ⵜⵉⵔⴰⵔⵉⵏ ⴷ ⵉⵙⴰⴼⴰⵔⵏ', 'ⵜⵉⵎⵥⵍⵉⵢⵉⵏ ⵏ ⵓⵙⴳⵓⵏⴼⵓ', 'ⵓⵎⵔⴰ', 'ⴰⵃⴰⵊⵊ', 'ⵜⵉⵎⵍⵉⵍⵉⵏ', 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ'],
+        overview: 'ⵜⴰⵙⴳⴰ ⴰⴷ ⵜⵙⵎⵓⵏ ⵜⵉⵔⵎⴰⴷ ⵜⵉⴷⵍⵙⴰⵏⵉⵏ, ⵜⵉⵔⴰⵔⵉⵏ, ⵉⵙⴰⴼⴰⵔⵏ ⴷ ⵜⵎⴰⵎⴽⵉⵏ ⵉⵙⵎⵓⵏⵏ ⵉⵎⴰⵏⵏ.',
+        highlights: ['ⵉⵙⴰⴼⴰⵔⵏ ⵉⵜⵜⵓⵙⵓⴷⵙⵏ, ⴰⵙⴳⵓⵏⴼⵓ ⵏ ⵜⴳⵔⵙⵜ, ⵜⵉⵔⵣⴰ ⴷ ⵓⵙⴳⵓⵏⴼⵓ.', 'ⵜⵉⵎⵥⵍⵉⵢⵉⵏ ⵏ ⵓⵙⴳⵓⵏⴼⵓ ⵉ ⵉⴼⵔⵅⴰⵏ.', 'ⵜⵉⵎⴰⵎⴽⵉⵏ ⵏ ⵓⵎⵔⴰ ⴷ ⴰⵃⴰⵊⵊ.', 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉ ⵓⵙⵙⵓⴼⵖ ⵏ ⵜⵉⵔⴰⵔⵉⵏ.'],
+        features: [['ⵜⵉⵔⴰⵔⵉⵏ ⴷ ⵉⵙⴰⴼⴰⵔⵏ', 'ⵜⵉⵔⵣⴰ, ⵓⵙⵙⵏ, ⵜⵉⵖⵔⵎⵉⵏ ⴷ ⵜⵉⵔⵎⴰⴷ ⵏ ⵓⵙⴳⵓⵏⴼⵓ.'], ['ⵜⵉⵎⵥⵍⵉⵢⵉⵏ ⵏ ⵓⵙⴳⵓⵏⴼⵓ', 'ⵜⵉⵏⴼⵓⵙⵉⵏ ⵉ ⵉⴼⵔⵅⴰⵏ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ.'], ['ⵓⵎⵔⴰ', 'ⵜⵉⵎⴰⵎⴽⵉⵏ ⵜⵉⵏⴰⵎⵓⵏⵉⵏ ⵙ ⵓⵙⴷⵓ.'], ['ⴰⵃⴰⵊⵊ', 'ⵜⵉⵏⵖⵎⵉⵙⵉⵏ ⴷ ⵓⵙⴷⵓ ⵉ ⵉⵎⵏⴼⴰⵄⵏ.'], ['ⵜⵉⵎⵍⵉⵍⵉⵏ', 'ⵜⵉⵣⵉ ⵏ ⵓⵙⵎⵓⵏ ⴷ ⵜⵉⵡⵉⵙⵉ.'], ['ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ', 'ⵜⵉⵙⵏⵙⵉⵡⵉⵏ ⴷ ⵓⵍⵓⴳ ⵉⵎⵥⵍⵉ.']],
+        partners: ['ⵉⵙⴰⴼⴰⵔⵏ ⵉⵜⵜⵓⵙⵓⴷⵙⵏ', 'ⴰⵙⴳⵓⵏⴼⵓ ⵏ ⵜⴳⵔⵙⵜ', 'ⵜⵉⵔⵣⴰ', 'ⴰⵙⴳⵓⵏⴼⵓ', 'SIAM', 'ⴰⵙⴰⵔⴰⴳ ⵏ ⴰⵢⵢⵉⵙ'],
+        steps: [['ⴰⵙⵎⴰⵔ', 'ⵥⵕ ⵜⵉⵎⴰⵎⴽⵉⵏ ⵉⵍⵍⴰⵏ.'], ['ⵜⵉⵡⵜⵉⵍⵉⵏ', 'ⵙⵙⵏ ⵜⵉⵡⵜⵉⵍⵉⵏ ⴷ ⵜⵉⵣⵉ.'], ['ⴰⵙⵙⴼⵜⵔ', 'ⵙⵎⵓⵏ ⴰⴼⴰⵢⵍⵓ.'], ['ⵜⵉⵡⵉⵙⵉ', 'ⴹⴼⵕ ⵜⵉⵏⵖⵎⵉⵙⵉⵏ ⵉⵜⵜⵓⵙⴼⴽⵏ.']]
+      }
     },
     formation: {
       href: 'services/formation-scolarisation.html',
@@ -702,8 +947,30 @@
         partners: ['Rentrée scolaire', 'Préparation aux grandes écoles', 'Coaching parental', 'Coaching', 'Bourse'],
         steps: [['Annonce', 'Suivre le calendrier de chaque opération.'], ['Conditions', 'Vérifier l’éligibilité et les justificatifs.'], ['Dépôt', 'Transmettre le dossier complet.'], ['Suivi', 'Consulter les résultats ou orientations.']]
       },
-      ar: null,
-      zgh: null
+      ar: {
+        title: 'دعم التمدرس والتكوين',
+        meta: 'نجاح دراسي ومواكبة أسرية',
+        summary: 'آليات لدعم أبناء المنخرطين في مسارهم الدراسي وتشجيع التميز.',
+        stats: [['المواكبة', 'الدراسية والأسرية'], ['المنح', 'التميز والمنح الاجتماعية'], ['الدخول المدرسي', 'منح واتفاقيات تربوية']],
+        chips: ['المواكبة الدراسية والأسرية', 'منح التميز والمنح الاجتماعية', 'منح الدخول المدرسي', 'الاتفاقيات التربوية'],
+        overview: 'تواكب هذه الخانة الأسر في المراحل الأساسية للتمدرس والتوجيه والتكوين.',
+        highlights: ['المواكبة الدراسية والأسرية.', 'منح التميز والمنح الاجتماعية.', 'منح الدخول المدرسي.', 'اتفاقيات مع مؤسسات وشركاء تربويين.'],
+        features: [['المواكبة الدراسية والأسرية', 'ورشات ومواكبة لتوجيه الأبناء ودعم الآباء.'], ['منح التميز والمنح الاجتماعية', 'تثمين المسارات الدراسية المتميزة ودعم الأسر المؤهلة.'], ['منح الدخول المدرسي', 'دعم الأسر خلال فترة الدخول المدرسي.'], ['الاتفاقيات التربوية', 'ولوج إلى شركاء تربويين حسب الاتفاقيات المصادق عليها.']],
+        partners: ['الدخول المدرسي', 'التحضير للمدارس العليا', 'المواكبة الأسرية', 'المواكبة', 'المنح'],
+        steps: [['الإعلان', 'تتبع برنامج كل عملية.'], ['الشروط', 'التحقق من الأهلية والوثائق.'], ['الإيداع', 'إرسال الملف كاملا.'], ['التتبع', 'الاطلاع على النتائج أو التوجيهات.']]
+      },
+      zgh: {
+        title: 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵓⵙⵍⵎⴷ ⴷ ⵓⵙⵙⵉⵍⵖ',
+        meta: 'ⴰⵙⵎⵔⵙ ⴰⵙⵍⵎⴰⴷ ⴷ ⵓⵎⵓⴷⴷⵓ ⵏ ⵜⵡⴰⵛⵓⵍⵜ',
+        summary: 'ⵜⵉⵏⴼⵓⵙⵉⵏ ⵉ ⵓⵎⵓⴷⴷⵓ ⵏ ⵉⴼⵔⵅⴰⵏ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴳ ⵓⴱⵔⵉⴷ ⵏ ⵓⵙⵍⵎⴷ.',
+        stats: [['ⴰⵎⵓⴷⴷⵓ', 'ⴰⵙⵍⵎⴰⴷ ⴷ ⵏ ⵜⵡⴰⵛⵓⵍⵜ'], ['ⵜⵉⵎⵓⴷⴰ', 'ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⵎⵥⵉ ⴷ ⵜⵉⵏⴰⵎⵓⵏⵉⵏ'], ['ⵜⴰⵣⵡⴰⵔⵜ', 'ⵜⵉⵎⵓⴷⴰ ⴷ ⵉⵎⵙⴰⵡⴰⴹⵏ']],
+        chips: ['ⴰⵎⵓⴷⴷⵓ ⴰⵙⵍⵎⴰⴷ ⴷ ⵏ ⵜⵡⴰⵛⵓⵍⵜ', 'ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⵎⵥⵉ ⴷ ⵜⵉⵏⴰⵎⵓⵏⵉⵏ', 'ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⴰⵣⵡⴰⵔⵜ ⵏ ⵓⵙⵍⵎⴷ', 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⵏ ⵓⵙⵍⵎⴷ'],
+        overview: 'ⵜⴰⵙⴳⴰ ⴰⴷ ⵜⴻⵜⵜⴰⵡⵙ ⵜⵉⵡⴰⵛⵓⵍⵉⵏ ⴳ ⵜⵉⵣⵉ ⵏ ⵓⵙⵍⵎⴷ, ⵓⵙⴷⵓ ⴷ ⵓⵙⵙⵉⵍⵖ.',
+        highlights: ['ⴰⵎⵓⴷⴷⵓ ⴰⵙⵍⵎⴰⴷ ⴷ ⵏ ⵜⵡⴰⵛⵓⵍⵜ.', 'ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⵎⵥⵉ ⴷ ⵜⵉⵏⴰⵎⵓⵏⵉⵏ.', 'ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⴰⵣⵡⴰⵔⵜ ⵏ ⵓⵙⵍⵎⴷ.', 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵏ ⵓⵙⵍⵎⴷ.'],
+        features: [['ⴰⵎⵓⴷⴷⵓ ⴰⵙⵍⵎⴰⴷ ⴷ ⵏ ⵜⵡⴰⵛⵓⵍⵜ', 'ⵜⵉⵔⵎⴰⴷ ⴷ ⵓⵎⵓⴷⴷⵓ ⵉ ⵓⵙⴷⵓ ⵏ ⵉⴼⵔⵅⴰⵏ.'], ['ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⵎⵥⵉ ⴷ ⵜⵉⵏⴰⵎⵓⵏⵉⵏ', 'ⴰⵙⵎⵔⵙ ⵏ ⵉⴱⵔⵉⴷⵏ ⵉⵎⵥⵉⵢⵏ ⴷ ⵓⵎⵓⴷⴷⵓ ⴰⵏⴰⵎⵓⵏ.'], ['ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⴰⵣⵡⴰⵔⵜ', 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵜⵡⴰⵛⵓⵍⵉⵏ ⴳ ⵜⵉⵣⵉ ⵏ ⵜⴰⵣⵡⴰⵔⵜ.'], ['ⵉⵎⵙⴰⵡⴰⴹⵏ ⵏ ⵓⵙⵍⵎⴷ', 'ⵓⵍⵓⴳ ⵖⵔ ⵉⵣⴷⴰⵢⵏ ⵏ ⵓⵙⵍⵎⴷ.']],
+        partners: ['ⵜⴰⵣⵡⴰⵔⵜ ⵏ ⵓⵙⵍⵎⴷ', 'ⴰⵙⵎⵓⵜⵜⴳ ⵉ ⵜⵎⴰⵣⵉⵔⵉⵏ ⵏ ⵓⵙⵍⵎⴷ', 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵜⵡⴰⵛⵓⵍⵜ', 'ⴰⵎⵓⴷⴷⵓ', 'ⵜⵉⵎⵓⴷⴰ'],
+        steps: [['ⴰⵙⵎⴰⵔ', 'ⴹⴼⵕ ⵜⵉⵣⵉ ⵏ ⴽⵓ ⵜⴰⵎⴰⵎⴽⵜ.'], ['ⵜⵉⵡⵜⵉⵍⵉⵏ', 'ⵙⵙⵏ ⵜⵉⵡⵜⵉⵍⵉⵏ ⴷ ⵉⵙⵍⴽⴰⵎⵏ.'], ['ⴰⵙⵙⴼⴽ', 'ⴼⴽ ⴰⴼⴰⵢⵍⵓ ⴰⴽⵎⴰⵎ.'], ['ⵓⵜⵜⴰⴱⴰⵄ', 'ⵥⵕ ⵜⵉⵏⵎⵍ ⵏ ⵓⵙⴷⵓ.']]
+      }
     },
     logement: {
       href: 'services/acces-logement.html',
@@ -719,8 +986,30 @@
         partners: ['Banque Populaire', 'Al Barid Bank', 'Wafa Immobilier', 'BMCI', 'Crédit du Maroc', 'CFG Bank', 'Crédit Agricole du Maroc', 'Attijari Wafa Bank', 'Bank Assafa'],
         steps: [['Besoin', 'Définir le type de logement ou financement.'], ['Offre', 'Comparer les partenaires et âges limites de crédit.'], ['Dossier', 'Préparer les justificatifs bancaires et administratifs.'], ['Suivi', 'Confirmer l’offre active auprès de la Fondation.']]
       },
-      ar: null,
-      zgh: null
+      ar: {
+        title: 'الولوج إلى السكن',
+        meta: 'السكن، الأبناك والمشاريع العقارية',
+        summary: 'مواكبة لتسهيل الولوج إلى السكن عبر الدعم السكني والعروض البنكية التفضيلية والشراكات العقارية.',
+        stats: [['9', 'عروض عقارية محصاة'], ['76 سنة', 'السن المشار إليه لبريد بنك'], ['الأبناك', 'قروض سكنية تفضيلية']],
+        chips: ['المساعدة على السكن', 'عروض بنكية بنسب قروض تفضيلية', 'المنعشون العقاريون', 'إحداث مشاريع سكنية من طرف FOS-Agri'],
+        overview: 'تضم الملفات المتوصل بها عروض القروض العقارية والاتفاقيات البنكية المرتبطة بالسكن، مع مؤسسات مؤكدة ومعطيات يجب تحيينها باستمرار.',
+        highlights: ['دعم السكن ومواكبة المنخرطين.', 'عروض بنكية بنسب قروض تفضيلية.', 'منعشون عقاريون ومشاريع سكنية عبر FOS-Agri.', 'تتبع عروض الشركاء البنكيين والعقاريين.'],
+        features: [['المساعدة على السكن', 'توجيه المنخرطين نحو الآليات والشركاء المتاحين.'], ['العروض البنكية التفضيلية', 'قروض عقارية متفاوض بشأنها مع أبناك شريكة.'], ['المنعشون العقاريون', 'ربط المنخرطين بالعروض العقارية المصادق عليها.'], ['مشاريع السكن FOS-Agri', 'تتبع المشاريع السكنية التي تضعها المؤسسة.']],
+        partners: ['Banque Populaire', 'Al Barid Bank', 'Wafa Immobilier', 'BMCI', 'Crédit du Maroc', 'CFG Bank', 'Crédit Agricole du Maroc', 'Attijari Wafa Bank', 'Bank Assafa'],
+        steps: [['الحاجة', 'تحديد نوع السكن أو التمويل.'], ['العرض', 'مقارنة الشركاء وحدود السن للقرض.'], ['الملف', 'تحضير الوثائق البنكية والإدارية.'], ['التتبع', 'تأكيد العرض النشط لدى المؤسسة.']]
+      },
+      zgh: {
+        title: 'ⵓⵍⵓⴳ ⵖⵔ ⵓⵙⵖⵉⵎ',
+        meta: 'ⴰⵙⵖⵉⵎ, ⵉⴱⴰⵏⴽⵏ ⴷ ⵉⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ',
+        summary: 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵓⵙⵙⵓⴼⵖ ⵏ ⵓⵍⵓⴳ ⵖⵔ ⵓⵙⵖⵉⵎ ⵙ ⵜⵉⵡⵉⵙⵉⵏ, ⵉⴼⵔⴰⵏ ⵏ ⵉⴱⴰⵏⴽⵏ ⴷ ⵉⵣⴷⴰⵢⵏ.',
+        stats: [['9', 'ⵜⵉⵡⵉⵙⵉⵏ ⵏ ⵓⵙⵖⵉⵎ'], ['76 ⵓⵙⴳⴳⵯⴰⵙ', 'ⵜⵉⵍⴰⵍ ⵏ Al Barid Bank'], ['ⵉⴱⴰⵏⴽⵏ', 'ⵉⴼⵔⴰⵏ ⵏ ⵓⴽⵔⵉⴹⵉ ⵏ ⵓⵙⵖⵉⵎ']],
+        chips: ['ⴰⵎⵓⴷⴷⵓ ⵏ ⵓⵙⵖⵉⵎ', 'ⵉⴼⵔⴰⵏ ⵏ ⵉⴱⴰⵏⴽⵏ', 'ⵉⵎⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ', 'ⵉⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ ⵙ FOS-Agri'],
+        overview: 'ⵜⵉⴼⴰⵢⵍⵉⵡⵉⵏ ⵉⵜⵜⵓⵙⴼⴽⵏⵉⵏ ⵙⵎⵓⵏⵏⵜ ⵉⴼⵔⴰⵏ ⵏ ⵓⴽⵔⵉⴹⵉ ⵏ ⵓⵙⵖⵉⵎ ⴷ ⵉⵎⵙⴰⵡⴰⴹⵏ ⵏ ⵉⴱⴰⵏⴽⵏ.',
+        highlights: ['ⴰⵎⵓⴷⴷⵓ ⵏ ⵓⵙⵖⵉⵎ ⴷ ⵓⵙⴷⵓ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ.', 'ⵉⴼⵔⴰⵏ ⵏ ⵉⴱⴰⵏⴽⵏ ⵙ ⵜⵎⴰⵏⴰⵡⵜ ⵉⵎⵥⵍⵉⵢⵏ.', 'ⵉⵎⵙⵏⴼⴰⵔⵏ ⴷ ⵉⵙⵏⴼⴰⵔⵏ ⵏ FOS-Agri.', 'ⵓⵜⵜⴰⴱⴰⵄ ⵏ ⵉⴼⵔⴰⵏ ⵏ ⵉⵣⴷⴰⵢⵏ.'],
+        features: [['ⴰⵎⵓⴷⴷⵓ ⵏ ⵓⵙⵖⵉⵎ', 'ⴰⵙⴷⵓ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵖⵔ ⵉⴼⵔⴰⵏ ⴷ ⵉⵣⴷⴰⵢⵏ.'], ['ⵉⴼⵔⴰⵏ ⵏ ⵉⴱⴰⵏⴽⵏ', 'ⴰⴽⵔⵉⴹⵉ ⵏ ⵓⵙⵖⵉⵎ ⵙ ⵉⴱⴰⵏⴽⵏ ⵉⵣⴷⵉⵏ.'], ['ⵉⵎⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ', 'ⴰⵣⴷⴰⵢ ⴷ ⵉⴼⵔⴰⵏ ⵏ ⵓⵙⵖⵉⵎ ⵉⵜⵜⵓⵙⵎⴷⵏ.'], ['ⵉⵙⵏⴼⴰⵔⵏ FOS-Agri', 'ⵓⵜⵜⴰⴱⴰⵄ ⵏ ⵉⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ.']],
+        partners: ['Banque Populaire', 'Al Barid Bank', 'Wafa Immobilier', 'BMCI', 'Crédit du Maroc', 'CFG Bank', 'Crédit Agricole du Maroc', 'Attijari Wafa Bank', 'Bank Assafa'],
+        steps: [['ⴰⵙⵔⵓⵜ', 'ⵙⵙⵏ ⴰⵏⴰⵡ ⵏ ⵓⵙⵖⵉⵎ ⵏⵖ ⵓⵎⵓⴷⴷⵓ.'], ['ⴰⴼⵔⴰⵏ', 'ⵙⵙⵎⵓⵜⵜⴳ ⵉⵣⴷⴰⵢⵏ ⴷ ⵜⵉⵍⴰⵍ ⵏ ⵓⴽⵔⵉⴹⵉ.'], ['ⴰⴼⴰⵢⵍⵓ', 'ⵙⵎⵓⵏ ⵜⵉⵡⵔⵉⵇⵉⵏ ⵏ ⵉⴱⴰⵏⴽⵏ ⴷ ⵜⴷⴱⵉⵔⵜ.'], ['ⵓⵜⵜⴰⴱⴰⵄ', 'ⵙⵙⵏⵜⵎ ⴰⴼⵔⴰⵏ ⴷ FOS-Agri.']]
+      }
     },
     projets: {
       href: 'services/projets-personnels.html',
@@ -736,8 +1025,30 @@
         partners: ['Attijari Wafa Bank', 'Banque Populaire', 'CFG Bank', 'Crédit du Maroc', 'Eqdom', 'Salafin', 'Wafa Salaf'],
         steps: [['Projet', 'Identifier la nature du besoin personnel.'], ['Partenaire', 'Choisir l’institution ou la convention adaptée.'], ['Conditions', 'Vérifier les taux, délais et pièces demandées.'], ['Dépôt', 'Finaliser la demande auprès du partenaire.']]
       },
-      ar: null,
-      zgh: null
+      ar: {
+        title: 'دعم المشاريع الشخصية',
+        meta: 'قروض اجتماعية وشراكات تفضيلية',
+        summary: 'اتفاقيات مالية وشراكات لدعم المشاريع الشخصية للمنخرطين بشروط تفضيلية.',
+        stats: [['القروض', 'اجتماعية واستهلاكية'], ['المؤسسات', 'مالية شريكة'], ['التعريفات', 'تفضيلية ومدعمة']],
+        chips: ['القروض الاجتماعية', 'اتفاقيات مع المؤسسات المالية', 'شراكات مدعمة', 'شراكات بتعريفات تفضيلية'],
+        overview: 'تجمع هذه الخانة حلول الدعم المالي والاتفاقيات مع المؤسسات والعروض الشريكة الموجهة لتسهيل المشاريع الشخصية.',
+        highlights: ['قروض اجتماعية وعروض استهلاكية.', 'اتفاقيات مع المؤسسات المالية.', 'شراكات مدعمة.', 'شراكات بتعريفات تفضيلية.'],
+        features: [['القروض الاجتماعية', 'حلول تمويل موجهة للحاجيات الشخصية للمنخرطين.'], ['اتفاقيات مع المؤسسات المالية', 'اتفاقيات مع أبناك وهيئات شريكة.'], ['شراكات مدعمة', 'عروض مدعمة لتقليص كلفة الولوج.'], ['شراكات بتعريفات تفضيلية', 'شروط متفاوض بشأنها لفائدة المنخرطين.']],
+        partners: ['Attijari Wafa Bank', 'Banque Populaire', 'CFG Bank', 'Crédit du Maroc', 'Eqdom', 'Salafin', 'Wafa Salaf'],
+        steps: [['المشروع', 'تحديد طبيعة الحاجة الشخصية.'], ['الشريك', 'اختيار المؤسسة أو الاتفاقية المناسبة.'], ['الشروط', 'التحقق من النسب والآجال والوثائق المطلوبة.'], ['الإيداع', 'استكمال الطلب لدى الشريك.']]
+      },
+      zgh: {
+        title: 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⵙⵏⴼⴰⵔⵏ ⵉⵎⵥⵍⵉⵢⵏ',
+        meta: 'ⵉⴽⵔⵉⴹⵉⵜⵏ ⵉⵏⴰⵎⵓⵏⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉⵎⵥⵍⵉⵢⵏ',
+        summary: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⵉⵎⴰⵍⵉⵢⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉ ⵓⵎⵓⴷⴷⵓ ⵏ ⵉⵙⵏⴼⴰⵔⵏ ⵉⵎⵥⵍⵉⵢⵏ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ.',
+        stats: [['ⵉⴽⵔⵉⴹⵉⵜⵏ', 'ⵉⵏⴰⵎⵓⵏⵏ ⴷ ⵏ ⵓⵙⴽⴰⵔ'], ['ⵜⵉⵎⵙⵙⵉⵡⵉⵏ', 'ⵜⵉⵎⴰⵍⵉⵢⵉⵏ ⵉⵣⴷⵉⵏ'], ['ⵜⵉⵙⵏⵙⵉⵡⵉⵏ', 'ⵉⵎⵥⵍⵉⵢⵏ ⴷ ⵉⵜⵜⵓⴷⵄⵎⵏ']],
+        chips: ['ⵉⴽⵔⵉⴹⵉⵜⵏ ⵉⵏⴰⵎⵓⵏⵏ', 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵜⵎⵙⵙⵉⵡⵉⵏ ⵜⵉⵎⴰⵍⵉⵢⵉⵏ', 'ⵉⵣⴷⴰⵢⵏ ⵉⵜⵜⵓⴷⵄⵎⵏ', 'ⵉⵣⴷⴰⵢⵏ ⵙ ⵜⵉⵙⵏⵙⵉⵡⵉⵏ ⵉⵎⵥⵍⵉⵢⵏ'],
+        overview: 'ⵜⴰⵙⴳⴰ ⴰⴷ ⵜⵙⵎⵓⵏ ⵉⴼⵔⴰⵏ ⵏ ⵓⵎⵓⴷⴷⵓ ⴰⵎⴰⵍⵉ, ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵜⵎⵙⵙⵉⵡⵉⵏ ⴷ ⵉⴼⵔⴰⵏ ⵏ ⵉⵣⴷⴰⵢⵏ.',
+        highlights: ['ⵉⴽⵔⵉⴹⵉⵜⵏ ⵉⵏⴰⵎⵓⵏⵏ ⴷ ⵉⴼⵔⴰⵏ ⵏ ⵓⵙⴽⴰⵔ.', 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵜⵎⵙⵙⵉⵡⵉⵏ ⵜⵉⵎⴰⵍⵉⵢⵉⵏ.', 'ⵉⵣⴷⴰⵢⵏ ⵉⵜⵜⵓⴷⵄⵎⵏ.', 'ⵉⵣⴷⴰⵢⵏ ⵙ ⵜⵉⵙⵏⵙⵉⵡⵉⵏ ⵉⵎⵥⵍⵉⵢⵏ.'],
+        features: [['ⵉⴽⵔⵉⴹⵉⵜⵏ ⵉⵏⴰⵎⵓⵏⵏ', 'ⵉⴼⵔⴰⵏ ⵏ ⵓⵎⵓⴷⴷⵓ ⵉ ⵉⵙⵡⵉⵔⵏ ⵉⵎⵥⵍⵉⵢⵏ.'], ['ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵜⵎⵙⵙⵉⵡⵉⵏ', 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⴱⴰⵏⴽⵏ ⴷ ⵉⵣⴷⴰⵢⵏ.'], ['ⵉⵣⴷⴰⵢⵏ ⵉⵜⵜⵓⴷⵄⵎⵏ', 'ⵉⴼⵔⴰⵏ ⵉⵜⵜⵓⴷⵄⵎⵏ ⵉ ⵓⵙⵙⵓⴼⵖ ⵏ ⵓⵣⵡⴰⵔ.'], ['ⵉⵣⴷⴰⵢⵏ ⵙ ⵜⵉⵙⵏⵙⵉⵡⵉⵏ', 'ⵜⵉⵡⵜⵉⵍⵉⵏ ⵉⵜⵜⵓⵙⴰⵡⴰⴹⵏ ⵉ ⵓⵎⵏⵅⵔⴰⵟ.']],
+        partners: ['Attijari Wafa Bank', 'Banque Populaire', 'CFG Bank', 'Crédit du Maroc', 'Eqdom', 'Salafin', 'Wafa Salaf'],
+        steps: [['ⴰⵙⵏⴼⴰⵔ', 'ⵙⵙⵏ ⴰⵏⴰⵡ ⵏ ⵓⵙⵔⵓⵜ ⴰⵎⵥⵍⵉ.'], ['ⴰⵣⴷⴰⵢ', 'ⴼⵔⵏ ⵜⴰⵎⵙⵙⵉⵡⵜ ⵏⵖ ⴰⵎⵙⴰⵡⴰⴹ ⵉⵍⴰⵇⵏ.'], ['ⵜⵉⵡⵜⵉⵍⵉⵏ', 'ⵙⵙⵏ ⵜⵉⵙⵏⵙⵉⵡⵉⵏ, ⵜⵉⵣⵉ ⴷ ⵉⵙⵍⴽⴰⵎⵏ.'], ['ⴰⵙⵙⴼⴽ', 'ⵙⵎⴷ ⴰⵙⵓⵜⵔ ⴷ ⵓⵣⴷⴰⵢ.']]
+      }
     }
   };
 
@@ -748,7 +1059,6 @@
         meta: 'ⵜⴰⴷⵓⵙⵉ, ⴰⵎⵎⵓⵜⵜⵉ ⴷ ⵜⵓⴷⵔⵜ',
         summary: 'ⵜⴰⵏⴼⵓⵙⵜ ⵉ ⵓⵎⵓⴷⴷⵓ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴷ ⵜⵡⴰⵛⵓⵍⵜ ⴳ ⵜⴰⴷⵓⵙⵉ ⴷ ⵓⴹⵎⴰⵏ ⴰⵏⴰⵎⵓⵏ.',
         stats: [['100%', 'ⵏ ⵓⵙⵏⴰⵎ ⵉⵎⵎⵔⵏ ⵙ ⵓⵎⵙⴰⵡⴰⴹ'], ['1 MDH', 'ⴰⵙⵡⵉⵔ ⴰⴳⵔⴰⵡ ⵉ ⴽⵓ ⵢⴰⵏ'], ['5 000 DH', 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⴼⵔⵅⴰⵏ ⴳ ⵓⵙⵔⵓⵜ']],
-        chips: ['ⴰⵎⵎⴰⵙ ⴰⵎⴰⴷⴰⵏ ⴰⵏⴰⵎⵓⵏ', 'ⴰⵙⵉⴽⵍ ⴰⴷⵓⵙⴰⵏ ⴰⵎⵙⵎⴰⴷ', 'ⵜⴰⵍⵍⴰⵍⵜ ⴷ ⵓⵙⵉⵡⴹ ⴰⴷⵓⵙⴰⵏ', 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⴼⵔⵅⴰⵏ ⴳ ⵓⵙⵔⵓⵜ', 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏ'],
         overview: 'FOS-Agri ⵜⵙⵙⵎⵓⵔⵙ ⵜⴰⴷⵓⵙⵉ ⵙ ⵓⵙⵉⴽⵍ ⴰⴷⵓⵙⴰⵏ ⴰⵎⵙⵎⴰⴷ, ⵜⴰⵍⵍⴰⵍⵜ ⴷ ⵓⵙⵉⵡⴹ ⴰⴷⵓⵙⴰⵏ, ⴷ ⵉⵣⴷⴰⵢⵏ ⴳ ⵜⵎⵓⵔⴰ.',
         highlights: ['ⴰⵔⴰⵔⵓ ⵏ ⵓⵙⵏⴰⵎ ⵉⵎⵎⵔⵏ ⵙ ⵓⵎⵙⴰⵡⴰⴹ.', 'ⵜⴰⵍⵍⴰⵍⵜ ⴷ ⵓⵙⵉⵡⴹ ⴰⴷⵓⵙⴰⵏ ⵙ ⵓⵣⴷⴰⵢ.', '5 000 DH ⵉ ⵉⴼⵔⵅⴰⵏ ⴳ ⵓⵙⵔⵓⵜ.', 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵎⵙⵙⵓⵔⴰ ⵉⴷⵓⵙⴰⵏ.'],
         features: [['ⴰⵎⵎⴰⵙ ⴰⵎⴰⴷⴰⵏ ⴰⵏⴰⵎⵓⵏ', 'ⴰⵙⴷⵓ, ⴰⵙⵏⵎⵍ ⴷ ⵜⵎⵙⵍⵉⵡⵜ ⴳ ⵜⴰⴷⵓⵙⵉ.'], ['ⴰⵙⵉⴽⵍ ⴰⴷⵓⵙⴰⵏ ⴰⵎⵙⵎⴰⴷ', 'ⴰⵔⴰⵔⵓ ⵙ ⵎⴽ ⵉⵍⵍⴰ ⴳ ⵓⵎⵙⴰⵡⴰⴹ.'], ['ⵜⴰⵍⵍⴰⵍⵜ ⴷ ⵓⵙⵉⵡⴹ ⴰⴷⵓⵙⴰⵏ', 'ⵜⴰⵍⵍⴰⵍⵜ ⵉ ⵜⵉⵎⵓⵔⴰ ⵜⵉⵎⵥⵍⴰⵢⵉⵏ ⴷ ⵓⵙⵉⵡⴹ.'], ['ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⴼⵔⵅⴰⵏ', 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵓⵙⵔⵓⵜ ⵏ ⵉⴼⵔⵅⴰⵏ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ.'], ['ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏ', 'ⵉⵣⴷⴰⵢⵏ ⴳ ⵜⵎⵓⵔⴰ ⵎⴰⵔⵔⴰ.']],
@@ -925,8 +1235,23 @@
     return labels[lang]?.[key] || labels.fr[key] || key;
   }
 
+  function localizedPrevoyanceMenu(targetLang = lang) {
+    return prevoyanceMenuItems.map((item) => ({
+      id: item.id,
+      icon: item.icon,
+      label: item.labels[targetLang] || item.labels.fr
+    }));
+  }
+
   function serviceText(key) {
-    return services[key]?.[lang] || services[key]?.fr;
+    const text = services[key]?.[lang] || services[key]?.fr;
+    if (key !== 'prevoyance' || !text) return text;
+    const menuItems = localizedPrevoyanceMenu(lang);
+    return {
+      ...text,
+      menuItems,
+      chips: menuItems.map((item) => item.label)
+    };
   }
 
   function asset(path) {
@@ -1118,6 +1443,93 @@
       </section>`;
   }
 
+  function renderAmtsService(entry, index) {
+    const [title, content] = entry;
+    const isOpen = index === 0;
+    return `
+      <article class="prestation-accordion-item prestation-amts-service ${isOpen ? 'is-open' : ''}">
+        <button class="prestation-accordion-trigger" type="button" aria-expanded="${isOpen ? 'true' : 'false'}">
+          <span class="prestation-accordion-title">
+            <i class="fa-solid fa-circle-plus" aria-hidden="true"></i>
+            <span>${esc(title)}</span>
+          </span>
+          <i class="fa-solid ${isOpen ? 'fa-minus' : 'fa-plus'} prestation-accordion-toggle" aria-hidden="true"></i>
+        </button>
+        <div class="prestation-accordion-content" ${isOpen ? '' : 'hidden'}>
+          ${Array.isArray(content) ? renderBulletList(content) : renderParagraphs(content)}
+        </div>
+      </article>`;
+  }
+
+  function renderAmtsDetailSection(item) {
+    const detail = item.amtsDetail;
+    if (!detail) return '';
+    return `
+      <section class="section page-section-soft prestation-amts-section" id="assistance-medicale-transport-sanitaire" data-prestation-amts-panel hidden>
+        <div class="container">
+          <div class="prestation-amc-hero prestation-amts-hero">
+            <span class="section-tag"><i class="fa-solid fa-truck-medical" aria-hidden="true"></i> ${esc(detail.badge)}</span>
+            <h2>${esc(detail.title)}</h2>
+            ${renderParagraphs(detail.subtitle)}
+          </div>
+
+          <div class="prestation-amts-beneficiaries">
+            <div class="prestation-amc-block-head">
+              <span class="section-tag"><i class="fa-solid fa-people-roof" aria-hidden="true"></i> ${esc(detail.beneficiariesTitle)}</span>
+            </div>
+            <div class="prestation-amts-beneficiary-grid">
+              ${detail.beneficiaries.map(([number, text]) => `
+                <article class="prestation-amts-beneficiary-card">
+                  <strong>${esc(number)}</strong>
+                  <p>${esc(text)}</p>
+                </article>`).join('')}
+            </div>
+          </div>
+
+          <div class="prestation-amc-block">
+            <div class="prestation-amc-block-head">
+              <span class="section-tag"><i class="fa-solid fa-list-check" aria-hidden="true"></i> ${esc(detail.prestationsTitle)}</span>
+            </div>
+            <div class="prestation-amts-group-list">
+              ${detail.groups.map((group) => `
+                <article class="prestation-amts-group">
+                  <div class="prestation-amts-group-head">
+                    <span><i class="fa-solid ${esc(group.icon)}" aria-hidden="true"></i></span>
+                    <h3>${esc(group.title)}</h3>
+                  </div>
+                  <div class="prestation-accordion prestation-amts-accordion" data-prestation-accordion>
+                    ${group.services.map(renderAmtsService).join('')}
+                  </div>
+                </article>`).join('')}
+            </div>
+          </div>
+
+          <div class="prestation-amc-block">
+            <div class="prestation-amc-block-head">
+              <span class="section-tag"><i class="fa-solid fa-file-signature" aria-hidden="true"></i> ${esc(detail.funeralTitle)}</span>
+            </div>
+            <div class="prestation-amts-funeral-grid">
+              ${detail.funeralCards.map(([title, bullets]) => `
+                <article class="prestation-amts-funeral-card">
+                  <h3>${esc(title)}</h3>
+                  ${renderBulletList(bullets)}
+                </article>`).join('')}
+            </div>
+          </div>
+
+          <aside class="prestation-amts-contact">
+            <span><i class="fa-solid fa-headset" aria-hidden="true"></i></span>
+            <div>
+              <h3>${esc(detail.contactTitle)}</h3>
+              <p>${esc(detail.contactIntro)}</p>
+              <p>${esc(detail.contactInstruction)}</p>
+              <a href="tel:+212529075100">${esc(detail.phone)}</a>
+            </div>
+          </aside>
+        </div>
+      </section>`;
+  }
+
   function renderExtraPrestationSections(item) {
     if (!item.extraSections?.length || !item.chips?.length) return '';
     return item.extraSections.map((section, index) => {
@@ -1144,6 +1556,39 @@
     if (!panel) return;
     panel.hidden = !visible;
     panel.classList.toggle('is-tab-active', visible);
+  }
+
+  function prefersReducedMotion() {
+    return window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  function visibleStickyHeight(element) {
+    if (!element) return 0;
+    const styles = window.getComputedStyle(element);
+    if (!['fixed', 'sticky'].includes(styles.position)) return 0;
+    const rect = element.getBoundingClientRect();
+    if (rect.height <= 0 || rect.bottom <= 0) return 0;
+    return rect.height;
+  }
+
+  function revealScrollTarget(target) {
+    if (!target || prefersReducedMotion()) return;
+    target.classList.remove('is-service-scroll-reveal');
+    void target.offsetWidth;
+    target.classList.add('is-service-scroll-reveal');
+  }
+
+  function scrollToServiceTarget(target, scope) {
+    if (!target) return;
+    const header = document.querySelector('.site-header');
+    const serviceNav = scope?.querySelector?.('.prestation-nav');
+    const offset = visibleStickyHeight(header) + visibleStickyHeight(serviceNav) + 28;
+    const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - offset);
+    window.scrollTo({
+      top,
+      behavior: prefersReducedMotion() ? 'auto' : 'smooth'
+    });
+    revealScrollTarget(target);
   }
 
   function bindPrestationAccordions(scope) {
@@ -1403,6 +1848,11 @@
     if (!mount || !services[key]) return;
     const item = serviceText(key);
     const journeyIcons = ['fa-compass', 'fa-folder-open', 'fa-hand-holding-medical', 'fa-map-location-dot'];
+    const detailMenuItems = item.menuItems || item.chips.map((chip, index) => ({
+      id: `subrubrique-${index + 1}`,
+      icon: subIcons[key]?.[index] || 'fa-circle-check',
+      label: chip
+    }));
     document.title = `FOS-Agri | ${item.title}`;
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute('content', item.summary);
@@ -1418,15 +1868,22 @@
           </div>
         </div>
         <div class="prestation-floating-icons" aria-hidden="true">
-          ${item.chips.slice(0, 3).map((_, index) => `<span><i class="fa-solid ${['fa-hand-holding-heart', 'fa-shield-heart', 'fa-people-group'][index]}" aria-hidden="true"></i></span>`).join('')}
+          ${detailMenuItems.slice(0, 3).map((_, index) => `<span><i class="fa-solid ${['fa-hand-holding-heart', 'fa-shield-heart', 'fa-people-group'][index]}" aria-hidden="true"></i></span>`).join('')}
         </div>
       </section>
       <section class="prestation-nav">
-        <div class="container prestation-nav-inner ${item.chips.length > 5 ? 'is-split-nav' : ''}">
-          ${item.chips.map((chip, index) => `
-            <a class="prestation-nav-chip" href="#${subrubriqueId(index)}">
-              <i class="fa-solid ${subIcons[key]?.[index] || 'fa-circle-check'}" aria-hidden="true"></i>
-              <span>${esc(chip)}</span>
+        <div class="container prestation-nav-inner ${detailMenuItems.length > 5 ? 'is-split-nav' : ''}">
+          ${/*
+            Prévoyance menu checklist:
+            - 7 items must be rendered for every language.
+            - All labels come from translation/data file.
+            - No hardcoded menu labels.
+            - No sub-menu for these 7 items.
+          */''}
+          ${detailMenuItems.map((navItem, index) => `
+            <a class="prestation-nav-chip" href="#${subrubriqueId(index)}" data-nav-id="${esc(navItem.id)}">
+              <i class="fa-solid ${esc(navItem.icon)}" aria-hidden="true"></i>
+              <span>${esc(navItem.label)}</span>
             </a>`).join('')}
         </div>
       </section>
@@ -1449,6 +1906,7 @@
       </section>`}
       ${renderCenterMedicalSection(item)}
       ${renderAmcDetailSection(item)}
+      ${renderAmtsDetailSection(item)}
       ${renderExtraPrestationSections(item)}
       ${item.centerMedical ? '' : `
       <section class="section page-section-soft" id="subrubriques">
@@ -1530,18 +1988,21 @@
     const navLinks = mount.querySelectorAll('.prestation-nav-chip');
     const centerPanel = mount.querySelector('.prestation-center-section');
     const amcPanel = mount.querySelector('[data-prestation-amc-panel]');
+    const amtsPanel = mount.querySelector('[data-prestation-amts-panel]');
     const extraPanels = Array.from(mount.querySelectorAll('[data-prestation-extra-panel]'));
     const showTabContent = (index, link, shouldScroll = true) => {
       const isAmc = index === 1 && !!amcPanel;
+      const isAmts = index === 2 && !!amtsPanel;
       const extraPanel = extraPanels.find((panel) => Number(panel.dataset.prestationExtraIndex) === index);
       const isExtra = !!extraPanel;
       navLinks.forEach((item) => item.classList.remove('is-active'));
       if (link) link.classList.add('is-active');
-      setPanelVisibility(centerPanel, !isAmc && !isExtra);
+      setPanelVisibility(centerPanel, !isAmc && !isAmts && !isExtra);
       setPanelVisibility(amcPanel, isAmc);
+      setPanelVisibility(amtsPanel, isAmts);
       extraPanels.forEach((panel) => setPanelVisibility(panel, panel === extraPanel));
-      const scrollTarget = isAmc ? amcPanel : (isExtra ? extraPanel : (index === 0 ? centerPanel : document.getElementById(subrubriqueId(index))));
-      if (!isAmc && !isExtra && index > 1) {
+      const scrollTarget = isAmc ? amcPanel : (isAmts ? amtsPanel : (isExtra ? extraPanel : (index === 0 ? centerPanel : document.getElementById(subrubriqueId(index)))));
+      if (!isAmc && !isAmts && !isExtra && index > 1) {
         const trigger = scrollTarget?.querySelector?.('.prestation-accordion-trigger');
         if (trigger && trigger.getAttribute('aria-expanded') !== 'true') trigger.click();
       }
@@ -1550,7 +2011,9 @@
         window.history.pushState(null, '', `#${hash}`);
       }
       if (shouldScroll && scrollTarget) {
-        scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        scrollToServiceTarget(scrollTarget, mount);
+      } else {
+        revealScrollTarget(scrollTarget);
       }
     };
     navLinks.forEach((link, index) => {
