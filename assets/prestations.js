@@ -113,6 +113,120 @@
     }
   };
 
+  const amcDetailFr = {
+    title: 'Assurance Maladie Complémentaire',
+    subtitle: 'Une couverture complémentaire à l’AMO-CNOPS permettant le remboursement ou la prise en charge d’une partie ou de la totalité des frais restant à la charge de l’adhérent, au Maroc et à l’étranger.',
+    dispositionsTitle: 'Dispositions contractuelles',
+    prestationsTitle: 'Prestations garanties',
+    casesTitle: 'Cas particuliers',
+    noteTitle: 'Note importante',
+    dispositions: [
+      {
+        icon: 'fa-file-shield',
+        title: 'Objet de la garantie',
+        body: ['En cas de maladie ou d’accident, Sanlam Maroc s’engage à rembourser ou à prendre en charge, dans le cadre de l’Assurance Maladie Complémentaire en complément à l’AMO-CNOPS, une partie ou la totalité des frais restant à la charge de l’adhérent, suite à des dépenses de santé engagées au Maroc et à l’étranger, couvertes ou non par l’AMO-CNOPS, conformément aux taux, bases et plafonds de remboursement définis par le contrat.']
+      },
+      {
+        icon: 'fa-percent',
+        title: 'Taux de remboursement',
+        body: ['Les remboursements sont effectués à hauteur de 100% de la différence entre les frais engagés par l’Adhérent-Assuré et le règlement effectué ou à effectuer par le régime de l’Assurance Maladie Obligatoire AMO, géré par la Caisse Nationale des Organismes de Prévoyance Sociale CNOPS.']
+      },
+      {
+        icon: 'fa-people-roof',
+        title: 'Bénéficiaires',
+        body: ['Option 1 : L’Adhérent-Assuré actif et retraité, sans limite d’âge.', 'Option 2 : L’Adhérent-Assuré actif.', 'Pour les options 1 et 2 :'],
+        bullets: ['Le ou les conjoints sans limite d’âge.', 'Les veuves et orphelins jusqu’à l’âge de 26 ans révolus, du personnel décédé.', 'Les enfants à charge jusqu’à l’âge de 26 ans révolus.']
+      },
+      {
+        icon: 'fa-clock',
+        title: 'Délais de règlement des prestations',
+        body: ['Le règlement est effectué par Sanlam Maroc à l’Adhérent-Assuré, soit par virement bancaire, soit par mandat postal, dans un délai maximum de quinze 15 jours. Ce délai commence à courir à compter du jour qui suit la date de réception par l’assureur de la copie du dossier et des pièces justificatives.']
+      }
+    ],
+    options: [
+      {
+        title: 'Option 1',
+        kicker: 'Affections ALD-ALC, soins courants et hospitalisations',
+        guarantees: [
+          {
+            title: 'Soins ambulatoires relatifs aux affections ALD-ALC',
+            assured: 'Sont couverts les frais de santé engagés, liés à une Affection Longue Durée ALD ou une Affection Lourde et Coûteuse ALC, tels que définis par le régime AMO-CNOPS et faisant l’objet d’une intervention de la couverture AMO-CNOPS, suite à une maladie ou un accident.',
+            benefits: [
+              'Consultations et visites médicales : remboursement des frais de consultations et visites de médecins effectuées le jour, la nuit, y compris les jours fériés.',
+              'Actes médicaux et actes fournis par les auxiliaires médicaux : les actes médicaux courants et ceux fournis par les auxiliaires médicaux donnent droit au remboursement.',
+              'Analyses et imageries médicales : les analyses prescrites par ordonnance médicale et les examens d’imagerie donnent droit au remboursement complémentaire.',
+              'Pharmacie : remboursement complémentaire des médicaments prescrits par ordonnance médicale et pris en charge par l’AMO-CNOPS, sur la base du prix des génériques ou des princeps.'
+            ]
+          },
+          {
+            title: 'Soins ambulatoires hors ALD/ALC',
+            assured: 'Soins ambulatoires ne concernant pas des affections ALD/ALC.',
+            benefits: [
+              'Consultations et visites médicales : remboursées dans la limite d’un plafond de 2 500 Dhs par personne et par an.',
+              'Actes médicaux et actes fournis par les auxiliaires médicaux : remboursés à hauteur d’un plafond de 1 500 Dhs par personne et par an.',
+              'Pharmacie : médicaments prescrits par ordonnance médicale et pris en charge par l’AMO-CNOPS, avec un plafond de remboursement fixé à 2 500 Dhs par personne et par an.'
+            ]
+          },
+          {
+            title: 'Hospitalisations chirurgicales et/ou médicales',
+            assured: 'Hospitalisations chirurgicales et/ou médicales.',
+            benefits: [
+              'Hospitalisation médicale ou chirurgicale au Maroc : sur présentation de la facture et des pièces justificatives, remboursement au taux contractuel de la différence entre les frais engagés à concurrence du barème de la convention FMSAR / Association Nationale des Cliniques Privées, et le règlement effectué ou à effectuer par l’AMO-CNOPS.',
+              'Hospitalisation médicale ou chirurgicale à l’étranger : sur présentation de la facture et des pièces justificatives, remboursement au taux contractuel de la différence entre les frais engagés et le règlement effectué ou à effectuer par l’AMO-CNOPS.'
+            ]
+          }
+        ],
+        cases: [
+          ['fa-eye', 'Optique', 'Plafond de 600 Dhs pour verres progressifs + monture ou lentilles. Plafond de 400 Dhs pour verres non progressifs + monture ou lentilles. Par personne et par période de 24 mois pour les adultes et 12 mois pour les enfants de moins de 18 ans.'],
+          ['fa-x-ray', 'Scanner', 'Plafond de 750 Dhs par personne, par maladie et par an.'],
+          ['fa-magnet', 'IRM', 'Plafond de 1 500 Dhs par personne, par maladie et par an.'],
+          ['fa-tooth', 'Soins dentaires', 'Plafond de 1 500 Dhs par personne et par an.'],
+          ['fa-teeth', 'Orthodontie ODF', 'Plafond de 2 000 Dhs par semestre, par enfant de moins de 16 ans révolus, dans la limite de 6 semestres.'],
+          ['fa-person-walking', 'Rééducation', 'Plafond de 2 000 Dhs par maladie, par personne et par an.'],
+          ['fa-ear-listen', 'Prothèse auditive', 'Plafond de 5 000 Dhs par personne, par unité et par an.'],
+          ['fa-head-side-virus', 'Implants cochléaires', 'Plafond de 70 000 Dhs par personne et par an.'],
+          ['fa-stethoscope', 'Colonoscopie', 'Plafond de 500 Dhs par personne et par an.'],
+          ['fa-vial', 'Frottis', 'Plafond de 400 Dhs par personne et par an.'],
+          ['fa-ribbon', 'Mammographie', 'Plafond de 500 Dhs par personne et par an.'],
+          ['fa-wave-square', 'Echographie mammaire', 'Plafond de 500 Dhs par personne et par an.'],
+          ['fa-baby', 'Frais de mise en couveuse', 'Plafond de 700 Dhs par jour.'],
+          ['fa-flask-vial', 'Analyses médicales', 'Les analyses prescrites par ordonnance médicale donnent droit au remboursement complémentaire sans plafond.'],
+          ['fa-radiation', 'Petscan', 'Plafond de 6 000 Dhs par personne et par an.'],
+          ['fa-notes-medical', 'Fibroscan', 'Plafond de 400 Dhs par personne, par maladie et par an.'],
+          ['fa-crutch', 'Appareils orthopédiques et de prothèses hors prothèse dentaire', 'Plafond de 3 000 Dhs par personne et par an.']
+        ]
+      },
+      {
+        title: 'Option 2',
+        kicker: 'Soins ambulatoires hors ALD/ALC',
+        guarantees: [
+          {
+            title: 'Soins ambulatoires hors ALD/ALC',
+            assured: 'Soins ambulatoires ne concernant pas des affections ALD/ALC. Le remboursement de ces soins s’effectue dans la limite de 150% du Tarif National de Référence, sans aucun plafond par prestation.',
+            benefits: [
+              'Consultations et visites médicales : remboursement des frais de consultations et visites de médecins effectuées le jour, la nuit, y compris les jours fériés.',
+              'Actes médicaux et actes fournis par les auxiliaires médicaux : les actes médicaux courants et ceux fournis par les auxiliaires médicaux donnent droit au remboursement.',
+              'Pharmacie : médicaments prescrits par ordonnance médicale et pris en charge par l’AMO-CNOPS, sur la base du prix des génériques ou princeps.',
+              'Actes de radiologie et d’imagerie : remboursement complémentaire des actes de radiologie et d’imagerie réalisés par les auxiliaires médicaux.'
+            ]
+          }
+        ],
+        cases: [
+          ['fa-tooth', 'Prothèses dentaires', 'Plafond de 1 000 Dhs par personne et par an.'],
+          ['fa-baby-carriage', 'Accouchement normal', 'Plafond de 2 000 Dhs par personne et par an.'],
+          ['fa-hospital-user', 'Césarienne', 'À hauteur de 100% du ticket modérateur par personne et par an.'],
+          ['fa-eye', 'OCT', 'Plafond de 1 000 Dhs par personne et par an.'],
+          ['fa-radiation', 'VMAT', 'Plafond de 10 000 Dhs par personne et par an.'],
+          ['fa-x-ray', 'Coroscaner', 'Plafond de 2 000 Dhs par personne et par an.'],
+          ['fa-teeth-open', 'Dentascan', 'Plafond de 1 000 Dhs par personne et par an.'],
+          ['fa-bolt', 'Rapidarc', 'Plafond de 4 000 Dhs par personne et par an.'],
+          ['fa-file-medical', 'Radios hors nomenclature', 'Sur prescription médicale. Plafond de 2 500 Dhs par personne et par an.']
+        ]
+      }
+    ],
+    note: 'N.B : Les déclarations de maladie ou d’accident doivent parvenir chez Sanlam Maroc à travers ses agents gestionnaires AMC dans un délai maximal de 90 jours suivant la date de survenance du sinistre.'
+  };
+
   const services = {
     prevoyance: {
       href: 'services/prevoyance.html',
@@ -124,6 +238,7 @@
         chips: ['Centre médico-social', 'Assurance Maladie Complémentaire', 'Assistance Médicale et Transport Sanitaire', 'Aide aux enfants des adhérents en situations d’handicap', 'Conventions et partenariats médicaux'],
         overview: 'La FOS-Agri a érigé le volet santé en priorité avec l’assurance maladie complémentaire, l’accompagnement médico-social, l’assistance médicale et le transport sanitaire, ainsi qu’un réseau de conventions médicales au niveau régional.',
         highlights: ['Remboursement ou prise en charge complémentaire en lien avec l’AMO/CNOPS.', 'Assistance médicale et transport sanitaire via Wafa IMA Assistance.', 'Aide de 5 000 DH pour les enfants des adhérents en situation de handicap.', 'Conventions avec laboratoires, cliniques, médecins, opticiens, pharmacies et centres de soins.'],
+        amcDetail: amcDetailFr,
         features: [
           ['Centre médico-social', 'Accompagnement, orientation et écoute autour des besoins de santé et de bien-être des adhérents.'],
           ['Assurance Maladie Complémentaire', 'Sanlam Maroc rembourse ou prend en charge tout ou partie du reste à charge selon les taux, bases et plafonds contractuels.'],
@@ -557,6 +672,19 @@
     return `subrubrique-${index + 1}`;
   }
 
+  function textArray(value) {
+    return [].concat(value || []).filter(Boolean);
+  }
+
+  function renderParagraphs(value) {
+    return textArray(value).map((paragraph) => `<p>${esc(paragraph)}</p>`).join('');
+  }
+
+  function renderBulletList(items) {
+    if (!items?.length) return '';
+    return `<ul>${items.map((bullet) => `<li>${esc(bullet)}</li>`).join('')}</ul>`;
+  }
+
   function renderCenterMedicalSection(item) {
     if (!item.centerMedical) return '';
     const center = item.centerMedical;
@@ -570,22 +698,146 @@
           </div>
           <div class="prestation-accordion" data-prestation-accordion>
             ${center.items.map((entry, index) => `
-              <article class="prestation-accordion-item ${index === 0 ? 'is-open' : ''}" id="${subrubriqueId(index + 1)}">
-                <button class="prestation-accordion-trigger" type="button" aria-expanded="${index === 0 ? 'true' : 'false'}">
+              <article class="prestation-accordion-item" id="${subrubriqueId(index + 1)}">
+                <button class="prestation-accordion-trigger" type="button" aria-expanded="false">
                   <span class="prestation-accordion-title">
                     <i class="fa-solid ${esc(entry.icon)}" aria-hidden="true"></i>
                     <span>${esc(entry.title)}</span>
                   </span>
-                  <i class="fa-solid ${index === 0 ? 'fa-minus' : 'fa-plus'} prestation-accordion-toggle" aria-hidden="true"></i>
+                  <i class="fa-solid fa-plus prestation-accordion-toggle" aria-hidden="true"></i>
                 </button>
-                <div class="prestation-accordion-content" ${index === 0 ? '' : 'hidden'}>
-                  ${[].concat(entry.body || []).map((paragraph) => `<p>${esc(paragraph)}</p>`).join('')}
-                  ${entry.bullets?.length ? `<ul>${entry.bullets.map((bullet) => `<li>${esc(bullet)}</li>`).join('')}</ul>` : ''}
+                <div class="prestation-accordion-content" hidden>
+                  ${renderParagraphs(entry.body)}
+                  ${renderBulletList(entry.bullets)}
                 </div>
               </article>`).join('')}
           </div>
         </div>
       </section>`;
+  }
+
+  function renderAmcDispositionCard(card) {
+    return `
+      <article class="prestation-amc-card">
+        <span class="prestation-amc-card-icon"><i class="fa-solid ${esc(card.icon || 'fa-shield-heart')}" aria-hidden="true"></i></span>
+        <div>
+          <h3>${esc(card.title)}</h3>
+          ${renderParagraphs(card.body)}
+          ${renderBulletList(card.bullets)}
+        </div>
+      </article>`;
+  }
+
+  function renderAmcGuarantee(guarantee, index) {
+    return `
+      <article class="prestation-amc-guarantee ${index === 0 ? 'is-open' : ''}">
+        <button class="prestation-amc-guarantee-trigger" type="button" aria-expanded="${index === 0 ? 'true' : 'false'}">
+          <span>
+            <small>${String(index + 1).padStart(2, '0')}</small>
+            <strong>${esc(guarantee.title)}</strong>
+          </span>
+          <i class="fa-solid ${index === 0 ? 'fa-minus' : 'fa-plus'}" aria-hidden="true"></i>
+        </button>
+        <div class="prestation-amc-guarantee-content" ${index === 0 ? '' : 'hidden'}>
+          <div class="prestation-amc-guarantee-grid">
+            <div>
+              <span class="prestation-amc-label">Affections et actes médicaux assurés</span>
+              <p>${esc(guarantee.assured)}</p>
+            </div>
+            <div>
+              <span class="prestation-amc-label">Prestations garanties</span>
+              ${renderBulletList(guarantee.benefits)}
+            </div>
+          </div>
+        </div>
+      </article>`;
+  }
+
+  function renderAmcCaseCard(entry) {
+    const [icon, title, body] = entry;
+    return `
+      <article class="prestation-amc-case-card">
+        <span><i class="fa-solid ${esc(icon)}" aria-hidden="true"></i></span>
+        <h4>${esc(title)}</h4>
+        <p>${esc(body)}</p>
+      </article>`;
+  }
+
+  function renderAmcOption(option, index, detail) {
+    return `
+      <section class="prestation-amc-option-panel" data-amc-option-panel="${index}" ${index === 0 ? '' : 'hidden'}>
+        <div class="prestation-amc-option-head">
+          <span>${esc(option.title)}</span>
+          <p>${esc(option.kicker)}</p>
+        </div>
+        <div class="prestation-amc-guarantee-list" data-amc-guarantees>
+          ${option.guarantees.map((guarantee, guaranteeIndex) => renderAmcGuarantee(guarantee, guaranteeIndex)).join('')}
+        </div>
+        <div class="prestation-amc-cases">
+          <div class="prestation-amc-subhead">
+            <span class="section-tag"><i class="fa-solid fa-notes-medical" aria-hidden="true"></i> ${esc(detail.casesTitle)} — ${esc(option.title)}</span>
+          </div>
+          <div class="prestation-amc-case-grid">
+            ${option.cases.map(renderAmcCaseCard).join('')}
+          </div>
+        </div>
+      </section>`;
+  }
+
+  function renderAmcDetailSection(item) {
+    const detail = item.amcDetail;
+    if (!detail) return '';
+    return `
+      <section class="section page-section-soft prestation-amc-section" id="assurance-maladie-complementaire" data-prestation-amc-panel hidden>
+        <div class="container">
+          <div class="prestation-amc-hero">
+            <span class="section-tag"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i> AMC</span>
+            <h2>${esc(detail.title)}</h2>
+            <p>${esc(detail.subtitle)}</p>
+          </div>
+
+          <div class="prestation-amc-block">
+            <div class="prestation-amc-block-head">
+              <span class="section-tag"><i class="fa-solid fa-file-contract" aria-hidden="true"></i> ${esc(detail.dispositionsTitle)}</span>
+            </div>
+            <div class="prestation-amc-card-grid">
+              ${detail.dispositions.map(renderAmcDispositionCard).join('')}
+            </div>
+          </div>
+
+          <div class="prestation-amc-block">
+            <div class="prestation-amc-block-head is-split">
+              <div>
+                <span class="section-tag"><i class="fa-solid fa-list-check" aria-hidden="true"></i> ${esc(detail.prestationsTitle)}</span>
+                <h3>${esc(detail.title)}</h3>
+              </div>
+              <div class="prestation-amc-option-tabs" role="tablist" aria-label="${esc(detail.prestationsTitle)}">
+                ${detail.options.map((option, index) => `
+                  <button class="${index === 0 ? 'is-active' : ''}" type="button" role="tab" aria-selected="${index === 0 ? 'true' : 'false'}" data-amc-option="${index}">
+                    ${esc(option.title)}
+                  </button>`).join('')}
+              </div>
+            </div>
+            <div class="prestation-amc-options">
+              ${detail.options.map((option, index) => renderAmcOption(option, index, detail)).join('')}
+            </div>
+          </div>
+
+          <aside class="prestation-amc-note">
+            <span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></span>
+            <div>
+              <h3>${esc(detail.noteTitle)}</h3>
+              <p>${esc(detail.note)}</p>
+            </div>
+          </aside>
+        </div>
+      </section>`;
+  }
+
+  function setPanelVisibility(panel, visible) {
+    if (!panel) return;
+    panel.hidden = !visible;
+    panel.classList.toggle('is-tab-active', visible);
   }
 
   function bindPrestationAccordions(scope) {
@@ -616,6 +868,48 @@
           if (toggleIcon) {
             toggleIcon.classList.toggle('fa-plus', !isOpen);
             toggleIcon.classList.toggle('fa-minus', isOpen);
+          }
+        });
+      });
+    });
+  }
+
+  function bindAmcDetail(scope) {
+    scope.querySelectorAll('.prestation-amc-option-tabs').forEach((tabs) => {
+      const section = tabs.closest('.prestation-amc-section');
+      const buttons = tabs.querySelectorAll('[data-amc-option]');
+      const panels = section?.querySelectorAll('[data-amc-option-panel]') || [];
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const option = button.getAttribute('data-amc-option');
+          buttons.forEach((item) => {
+            const active = item === button;
+            item.classList.toggle('is-active', active);
+            item.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+          panels.forEach((panel) => {
+            const active = panel.getAttribute('data-amc-option-panel') === option;
+            panel.hidden = !active;
+            panel.classList.toggle('is-active', active);
+          });
+        });
+      });
+    });
+
+    scope.querySelectorAll('[data-amc-guarantees]').forEach((accordion) => {
+      accordion.querySelectorAll('.prestation-amc-guarantee-trigger').forEach((trigger) => {
+        trigger.addEventListener('click', () => {
+          const item = trigger.closest('.prestation-amc-guarantee');
+          const content = item?.querySelector('.prestation-amc-guarantee-content');
+          const icon = trigger.querySelector('.fa-solid');
+          if (!item || !content) return;
+          const shouldOpen = !item.classList.contains('is-open');
+          item.classList.toggle('is-open', shouldOpen);
+          trigger.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+          content.hidden = !shouldOpen;
+          if (icon) {
+            icon.classList.toggle('fa-plus', !shouldOpen);
+            icon.classList.toggle('fa-minus', shouldOpen);
           }
         });
       });
@@ -776,6 +1070,7 @@
         </div>
       </section>`}
       ${renderCenterMedicalSection(item)}
+      ${renderAmcDetailSection(item)}
       ${item.centerMedical ? '' : `
       <section class="section page-section-soft" id="subrubriques">
         <div class="container">
@@ -854,22 +1149,39 @@
       </section>`;
 
     const navLinks = mount.querySelectorAll('.prestation-nav-chip');
+    const centerPanel = mount.querySelector('.prestation-center-section');
+    const amcPanel = mount.querySelector('[data-prestation-amc-panel]');
+    const showTabContent = (index, link, shouldScroll = true) => {
+      const isAmc = index === 1 && !!amcPanel;
+      navLinks.forEach((item) => item.classList.remove('is-active'));
+      if (link) link.classList.add('is-active');
+      setPanelVisibility(centerPanel, !isAmc);
+      setPanelVisibility(amcPanel, isAmc);
+      const scrollTarget = isAmc ? amcPanel : (index === 0 ? centerPanel : document.getElementById(subrubriqueId(index)));
+      if (!isAmc && index > 1) {
+        const trigger = scrollTarget?.querySelector?.('.prestation-accordion-trigger');
+        if (trigger && trigger.getAttribute('aria-expanded') !== 'true') trigger.click();
+      }
+      if (window.history?.pushState) {
+        const hash = isAmc ? subrubriqueId(index) : (scrollTarget?.id || subrubriqueId(index));
+        window.history.pushState(null, '', `#${hash}`);
+      }
+      if (shouldScroll && scrollTarget) {
+        scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
     navLinks.forEach((link, index) => {
       link.classList.toggle('is-active', index === 0);
       link.addEventListener('click', (event) => {
-        navLinks.forEach((item) => item.classList.remove('is-active'));
-        link.classList.add('is-active');
-        const targetId = link.getAttribute('href')?.slice(1);
-        const target = targetId ? document.getElementById(targetId) : null;
-        const trigger = target?.querySelector?.('.prestation-accordion-trigger');
-        if (trigger) {
-          event.preventDefault();
-          if (trigger.getAttribute('aria-expanded') !== 'true') trigger.click();
-          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
+        event.preventDefault();
+        showTabContent(index, link, true);
       });
     });
     bindPrestationAccordions(mount);
+    bindAmcDetail(mount);
+    if (window.location.hash === `#${subrubriqueId(1)}` && amcPanel) {
+      showTabContent(1, navLinks[1], false);
+    }
   }
 
   document.addEventListener('click', (event) => {

@@ -17,7 +17,7 @@ if /I "%~1"=="--no-pause" set "NO_PAUSE=1"
 
 set "VPS_HOST=vps1451411"
 set "VPS_APP=/var/www/apps/fos-agri-temp"
-set "LIVE_URL=http://srv1451411.hstgr.cloud"
+set "LIVE_URL=https://srv1451411.hstgr.cloud"
 
 where git >nul 2>nul
 if errorlevel 1 goto :missing_git
