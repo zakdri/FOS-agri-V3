@@ -733,6 +733,113 @@ html[dir='rtl'] .prestation-panel ul {
   line-height: 1.75;
 }
 
+.prestation-extra-card p + p {
+  margin-top: 0.8rem;
+}
+
+.prestation-extra-block {
+  max-width: 1080px;
+  margin: clamp(1.3rem, 3vw, 2rem) auto 0;
+  padding: clamp(1.05rem, 2.4vw, 1.45rem);
+  border: 1px solid rgba(28, 82, 55, 0.11);
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 18px 48px rgba(16, 55, 35, 0.075);
+}
+
+.prestation-extra-block .prestation-amc-block-head {
+  margin-bottom: 1rem;
+}
+
+.prestation-extra-block .prestation-amc-block-head p {
+  max-width: 820px;
+  margin: 0.65rem 0 0;
+  color: #5b6f63;
+  line-height: 1.7;
+}
+
+.prestation-extra-mini-grid,
+.prestation-extra-contribution-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.85rem;
+}
+
+.prestation-extra-mini-card,
+.prestation-extra-contribution-card {
+  position: relative;
+  min-height: 100%;
+  padding: 1rem 1.05rem;
+  border: 1px solid rgba(28, 82, 55, 0.1);
+  border-radius: 0.95rem;
+  background: linear-gradient(180deg, #fff, rgba(247, 250, 244, 0.94));
+  color: #173d29;
+}
+
+.prestation-extra-mini-card span {
+  display: inline-grid;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.65rem;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(214, 169, 65, 0.16);
+  color: #17683f;
+  font-weight: 800;
+}
+
+.prestation-extra-mini-card p,
+.prestation-extra-contribution-card span {
+  margin: 0;
+  color: #4d6256;
+  line-height: 1.62;
+}
+
+.prestation-extra-contribution-card strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #143b28;
+  font-size: 1.35rem;
+  line-height: 1.1;
+}
+
+.prestation-extra-accordion {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.prestation-extra-accordion-item .prestation-accordion-content {
+  padding-top: 0;
+}
+
+.prestation-extra-keyrows {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+}
+
+.prestation-extra-keyrows div {
+  display: grid;
+  grid-template-columns: minmax(130px, 0.38fr) 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  padding: 0.72rem 0.85rem;
+  border: 1px solid rgba(28, 82, 55, 0.09);
+  border-radius: 0.72rem;
+  background: rgba(246, 249, 241, 0.78);
+}
+
+.prestation-extra-keyrows dt {
+  color: #17683f;
+  font-weight: 750;
+}
+
+.prestation-extra-keyrows dd {
+  margin: 0;
+  color: #33483b;
+  line-height: 1.5;
+}
+
 .prestation-extra-list {
   display: grid;
   gap: 0.8rem;

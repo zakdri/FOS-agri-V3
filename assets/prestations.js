@@ -665,6 +665,252 @@
     ]
   };
 
+  const prevoyanceExtraFr = [
+    {
+      navIndex: 3,
+      badge: 'FORFAIT FUNERAIRE',
+      title: 'FORFAIT FUNERAIRE',
+      intro: 'La prise en charge des forfaits funéraires par la FOS-Agri au profit des retraités âgés de plus de 75 ans constituerait une avancée sociale significative en faveur de cette catégorie de bénéficiaires. Cette intervention vient compléter le dispositif existant et renforcer la vocation solidaire, tout en garantissant un accompagnement adapté à l’ensemble de ses bénéficiaires, quel que soit leur âge.',
+      beneficiariesTitle: 'Bénéficiaires',
+      beneficiaries: [{ number: '01', text: 'Adhérents âgés de plus de 75 ans.' }, { number: '02', text: 'Ayants droit : conjoints et enfants.' }],
+      blocks: [
+        {
+          title: 'Forfait funéraire de plus de 75 ans',
+          icon: 'fa-file-signature',
+          intro: 'Tout dossier transmis à la Fondation pour bénéficier de cette aide financière doit contenir, selon le cas, les documents justificatifs suivants. La copie de la CIN et de la carte FOS-Agri de l’adhérent principal est obligatoire dans tous les cas.',
+          items: [
+            { title: 'Décès de l’adhérent principal avec conjoint', icon: 'fa-user-shield', bullets: ['Acte de décès.', 'Copie d’acte de mariage.', 'RIB du conjoint survivant.', 'Acte d’hérédité.'] },
+            { title: 'Décès de l’adhérent sans conjoint', icon: 'fa-user', bullets: ['Acte de décès.', 'Attestation de lien de parenté avec le défunt.', 'Acte d’hérédité.', 'RIB du bénéficiaire.'] },
+            { title: 'Décès du conjoint', icon: 'fa-people-arrows', bullets: ['Acte de décès.', 'Attestation de lien de parenté avec le défunt.', 'RIB du bénéficiaire.'] },
+            { title: 'Décès d’un adhérent célibataire', icon: 'fa-person', body: 'Bénéficiaires : parents.', bullets: ['Acte de décès.', 'Attestation de lien de parenté avec le défunt.', 'RIB du bénéficiaire.'] },
+            { title: 'Décès de l’enfant', icon: 'fa-child', body: 'Concerne l’enfant de moins de 21 ans, ou de moins de 26 ans s’il poursuit ses études au Maroc, ou s’il est scolarisé à l’étranger lors d’un séjour au Maroc.', bullets: ['Acte de décès du défunt.', 'Acte de naissance du défunt.', 'RIB du bénéficiaire.'] }
+          ]
+        },
+        {
+          title: 'Contribution financière',
+          icon: 'fa-hand-holding-dollar',
+          mode: 'cards',
+          items: [
+            { amount: '7 000 DH', label: 'Adhérent principal.' },
+            { amount: '2 500 DH', label: 'Conjoint.' },
+            { amount: '1 000 DH', label: 'Enfant.' }
+          ]
+        }
+      ]
+    },
+    {
+      navIndex: 4,
+      badge: 'CENTRE MEDICO-SOCIAL',
+      title: 'CENTRE MEDICO-SOCIAL',
+      intro: ['La FOS-Agri assure via son centre médico-social les consultations données par une équipe médicale spécialisée et performante.', 'Le centre assure également l’accompagnement et le suivi des adhérents en situation de pré ou post hospitalisation, ainsi que le conseil et l’orientation des adhérents.'],
+      beneficiariesTitle: 'Bénéficiaires',
+      beneficiaries: [{ number: '01', text: 'L’adhérent.' }, { number: '02', text: 'Le ou les conjoints de l’adhérent.' }, { number: '03', text: 'Leurs enfants.' }],
+      blocks: [
+        {
+          title: 'Spécialités au niveau central',
+          icon: 'fa-stethoscope',
+          items: [
+            { title: 'Médecine interne', icon: 'fa-user-doctor', rows: [['Lieu', 'Bureau médico-social'], ['Jour', 'Lundi'], ['Heure', '8h30'], ['Téléphone', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'Cardiologie', icon: 'fa-heart-pulse', rows: [['Lieu', 'Bureau médico-social'], ['Jour', 'Jeudi'], ['Heure', '10h'], ['Téléphone', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'ORL', icon: 'fa-ear-listen', rows: [['Lieu', 'Cabinet du médecin'], ['Créneaux', 'Lundi 12h, Mardi, Jeudi, Vendredi'], ['Téléphone', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'Urologie', icon: 'fa-notes-medical', rows: [['Lieu', 'Cabinet du médecin'], ['Créneaux', 'Lundi 11h, Mardi, Mercredi, Jeudi, Vendredi'], ['Téléphone', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'Gynécologie', icon: 'fa-venus', rows: [['Lieu', 'Bureau médico-social'], ['Jour', 'Mercredi'], ['Heure', '09h30'], ['Téléphone', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'Dermatologie', icon: 'fa-hand-sparkles', rows: [['Lieu', 'Bureau médico-social'], ['Jour', 'Jeudi'], ['Heure', '08h30'], ['Téléphone', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'Endocrinologie', icon: 'fa-vial-circle-check', rows: [['Lieu', 'Cabinet du médecin'], ['Jour', 'Jeudi'], ['Heure', '10h'], ['Téléphone', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'Gastro-entérologie', icon: 'fa-stomach', rows: [['Lieu', 'Bureau médico-social'], ['Jour', 'Mardi'], ['Heure', '09h'], ['Téléphone', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'Allergo-phtisiologie', icon: 'fa-lungs', rows: [['Lieu', 'Bureau médico-social'], ['Jour', 'Mercredi'], ['Heure', '08h30'], ['Téléphone', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'Traumatologie', icon: 'fa-bone', rows: [['Lieu', 'Cabinet du médecin'], ['Jour', 'Vendredi'], ['Heure', '09h'], ['Téléphone', '05 37 10 35 14 / 06 57 83 15 17']] }
+          ]
+        },
+        {
+          title: 'Spécialités au niveau régional',
+          icon: 'fa-map-location-dot',
+          items: [
+            { title: 'Région de Laâyoune - Sakia El Hamra', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur LAJOUAD BAIHI'], ['Adresse', 'Av Hassan II, Phosboukraâ, LAAYOUNE'], ['Prise de RDV', '0661 26 99 97'], ['Relais régional', 'MOUSSAOUI MOHAMED ALI'], ['Téléphone du relais', '0657 83 20 46']] },
+            { title: 'Région de Dakhla - Oued Eddahab', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur SADIK YOUNESS'], ['Adresse', 'App N°4, N° 17/1105, rue mosquée, Hay Massira, Dakhla'], ['Prise de RDV', '0667 98 08 77'], ['Relais régional', 'MINA SAAD ALLAH'], ['Téléphone du relais', '0657 83 17 87']] },
+            { title: 'Région de Guelmim - Oued Noun', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur HAIDAR KHAIR'], ['Adresse', 'Imm Assafae, 3ème étage, App N°9, Bir Inzarane, Guelmim'], ['Prise de RDV', '0528 87 34 61'], ['Relais régional', 'LATIF AIDA'], ['Téléphone du relais', '0657 83 15 04']] },
+            { title: 'Région de Drâa - Tafilalet', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur GHANEME ABDELAZIZ'], ['Adresse', '14, Rue de la mosquée, Errachidia'], ['Prise de RDV', '0535 57 27 76'], ['Relais régional', 'BRITEL ABDESSAMAD'], ['Téléphone du relais', '06 68 90 90 84']] },
+            { title: 'Région de Béni Mellal - Khénifra', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur MALKY ABDELHAMID'], ['Adresse', 'Avenue 2 Mars, Sidi Abdelhalim, Béni Mellal'], ['Prise de RDV', '—'], ['Relais régional', 'MALIHY AMAL'], ['Téléphone du relais', '06 57 83 18 94']] },
+            { title: 'Région de Casablanca - Settat', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur MOUFTADI ABDELFATTAH'], ['Adresse', 'Avenue Bir Anzarane N° 16, El Jadida'], ['Prise de RDV', '0523 39 42 03'], ['Relais régional', 'GUADDA MOHAMED'], ['Téléphone du relais', '36 16 83 57 06']] },
+            { title: 'Région de Fès - Meknès', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur DBAB Mohamed'], ['Adresse', '4, Rue Omar Ben Chamsi, Hamria, Meknès'], ['Prise de RDV', '0661 15 93 56'], ['Relais régional', 'SAID AIT BERRI'], ['Téléphone du relais', '0657 83 20 37']] },
+            { title: 'Région de Marrakech - Safi', icon: 'fa-location-dot', rows: [['Médecin', 'BELAHNECH ABDOULMOUTTALIB'], ['Adresse', '49, Bd Rabat, Safi'], ['Prise de RDV', '05 24 46 37 97'], ['Relais régional', 'SERFATI CHOUAIB'], ['Téléphone du relais', '06 57 83 17 37']] },
+            { title: 'Région de Rabat - Salé - Kénitra', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur IBNABDALLAH MOHAMED'], ['Adresse', '15, Rue Jabel El Ayachi, Centre Khmisset'], ['Prise de RDV', '0537 55 05 00'], ['Relais régional', 'EL BERIRI SAMIRA'], ['Téléphone du relais', '06 57 83 16 63']] }
+          ]
+        }
+      ]
+    },
+    {
+      navIndex: 5,
+      badge: 'AIDES AUX PERSONNES AUX BESOINS SPECIFIQUES',
+      title: 'AIDES AUX PERSONNES AUX BESOINS SPECIFIQUES',
+      intro: 'La FOS-Agri a mis en place un programme d’aide aux enfants des adhérents en situations d’handicap présentant des besoins spécifiques, en contribuant à la prise en charge de leurs besoins particuliers à travers une aide d’un montant de 5 000 DH.',
+      beneficiariesTitle: 'Bénéficiaires',
+      beneficiaries: [{ number: '01', text: 'Tous les enfants des adhérents de la FOS-Agri en situation d’handicap moteur ou mental, justifiée par une attestation délivrée par les autorités publiques compétentes, et n’exerçant aucune activité génératrice de revenu.' }],
+      blocks: [
+        { title: 'Inscription et modalités', icon: 'fa-clipboard-check', items: [{ title: 'Modalités', icon: 'fa-list-check', bullets: ['Inscription en ligne.', 'Toutes les demandes respectant les conditions sont acceptées.'] }] },
+        { title: 'Pièces à fournir', icon: 'fa-folder-open', items: [{ title: 'Dossier justificatif', icon: 'fa-file-medical', bullets: ['Copie du dossier médical de l’intéressé.', 'Copie du formulaire relatif au type d’handicap portant l’avis de la commission médicale provinciale.', 'Pour continuer à bénéficier de l’aide, les adhérents concernés doivent fournir chaque année un certificat de vie.', 'Pour les enfants dont l’handicap n’est pas définitif, un nouveau dossier médical doit être fourni chaque année.'] }] }
+      ]
+    }
+  ];
+
+  const prevoyanceExtraAr = [
+    {
+      navIndex: 3,
+      badge: 'منحة الوفاة',
+      title: 'منحة الوفاة',
+      intro: 'يشكل التكفل بمنحة الوفاة من طرف FOS-Agri لفائدة المتقاعدين الذين تتجاوز أعمارهم 75 سنة خطوة اجتماعية مهمة لفائدة هذه الفئة من المستفيدين. وتأتي هذه المبادرة لتكمل المنظومة القائمة وتعزز البعد التضامني، مع ضمان مواكبة ملائمة لجميع المستفيدين مهما كان سنهم.',
+      beneficiariesTitle: 'المستفيدون',
+      beneficiaries: [{ number: '01', text: 'المنخرطون الذين تتجاوز أعمارهم 75 سنة.' }, { number: '02', text: 'ذوو الحقوق: الأزواج والأبناء.' }],
+      blocks: [
+        {
+          title: 'منحة الوفاة لأكثر من 75 سنة',
+          icon: 'fa-file-signature',
+          intro: 'كل ملف يوجه إلى المؤسسة للاستفادة من هذه المساعدة المالية يجب أن يتضمن، حسب الحالة، الوثائق المثبتة التالية. نسخة البطاقة الوطنية ونسخة بطاقة FOS-Agri للمنخرط الرئيسي إلزاميتان في جميع الحالات.',
+          items: [
+            { title: 'وفاة المنخرط الرئيسي مع وجود الزوج أو الزوجة', icon: 'fa-user-shield', bullets: ['عقد الوفاة.', 'نسخة من عقد الزواج.', 'كشف التعريف البنكي للزوج أو الزوجة الباقية على قيد الحياة.', 'رسم الإراثة.'] },
+            { title: 'وفاة المنخرط في غياب الزوج أو الزوجة', icon: 'fa-user', bullets: ['عقد الوفاة.', 'شهادة صلة القرابة بالمتوفى.', 'رسم الإراثة.', 'كشف التعريف البنكي للمستفيد.'] },
+            { title: 'وفاة الزوج أو الزوجة', icon: 'fa-people-arrows', bullets: ['عقد الوفاة.', 'شهادة صلة القرابة بالمتوفى.', 'كشف التعريف البنكي للمستفيد.'] },
+            { title: 'وفاة منخرط أعزب', icon: 'fa-person', body: 'المستفيدون: الوالدان.', bullets: ['عقد الوفاة.', 'شهادة صلة القرابة بالمتوفى.', 'كشف التعريف البنكي للمستفيد.'] },
+            { title: 'وفاة الطفل', icon: 'fa-child', body: 'تهم الطفل الأقل من 21 سنة، أو الأقل من 26 سنة إذا كان يتابع دراسته بالمغرب، أو كان متمدرسا بالخارج أثناء مقامه بالمغرب.', bullets: ['عقد وفاة المتوفى.', 'عقد ازدياد المتوفى.', 'كشف التعريف البنكي للمستفيد.'] }
+          ]
+        },
+        { title: 'المساهمة المالية', icon: 'fa-hand-holding-dollar', mode: 'cards', items: [{ amount: '7 000 DH', label: 'المنخرط الرئيسي.' }, { amount: '2 500 DH', label: 'الزوج أو الزوجة.' }, { amount: '1 000 DH', label: 'الطفل.' }] }
+      ]
+    },
+    {
+      navIndex: 4,
+      badge: 'المركز الطبي الاجتماعي',
+      title: 'المركز الطبي الاجتماعي',
+      intro: ['تضمن FOS-Agri عبر مركزها الطبي الاجتماعي استشارات تقدمها فرق طبية متخصصة وذات كفاءة.', 'كما يؤمن المركز المواكبة وتتبع المنخرطين قبل أو بعد الاستشفاء، إضافة إلى النصح والتوجيه.'],
+      beneficiariesTitle: 'المستفيدون',
+      beneficiaries: [{ number: '01', text: 'المنخرط.' }, { number: '02', text: 'زوج أو أزواج المنخرط.' }, { number: '03', text: 'أبناؤهم.' }],
+      blocks: [
+        {
+          title: 'التخصصات على المستوى المركزي',
+          icon: 'fa-stethoscope',
+          items: [
+            { title: 'الطب الباطني', icon: 'fa-user-doctor', rows: [['المكان', 'المكتب الطبي الاجتماعي'], ['اليوم', 'الاثنين'], ['الساعة', '8h30'], ['الهاتف', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'أمراض القلب', icon: 'fa-heart-pulse', rows: [['المكان', 'المكتب الطبي الاجتماعي'], ['اليوم', 'الخميس'], ['الساعة', '10h'], ['الهاتف', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'الأنف والأذن والحنجرة', icon: 'fa-ear-listen', rows: [['المكان', 'عيادة الطبيب'], ['المواعيد', 'الاثنين 12h، الثلاثاء، الخميس، الجمعة'], ['الهاتف', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'المسالك البولية', icon: 'fa-notes-medical', rows: [['المكان', 'عيادة الطبيب'], ['المواعيد', 'الاثنين 11h، الثلاثاء، الأربعاء، الخميس، الجمعة'], ['الهاتف', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'أمراض النساء', icon: 'fa-venus', rows: [['المكان', 'المكتب الطبي الاجتماعي'], ['اليوم', 'الأربعاء'], ['الساعة', '09h30'], ['الهاتف', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'الأمراض الجلدية', icon: 'fa-hand-sparkles', rows: [['المكان', 'المكتب الطبي الاجتماعي'], ['اليوم', 'الخميس'], ['الساعة', '08h30'], ['الهاتف', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'أمراض الغدد', icon: 'fa-vial-circle-check', rows: [['المكان', 'عيادة الطبيب'], ['اليوم', 'الخميس'], ['الساعة', '10h'], ['الهاتف', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'أمراض الجهاز الهضمي', icon: 'fa-stomach', rows: [['المكان', 'المكتب الطبي الاجتماعي'], ['اليوم', 'الثلاثاء'], ['الساعة', '09h'], ['الهاتف', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'الحساسية والأمراض الصدرية', icon: 'fa-lungs', rows: [['المكان', 'المكتب الطبي الاجتماعي'], ['اليوم', 'الأربعاء'], ['الساعة', '08h30'], ['الهاتف', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'جراحة العظام والرضوض', icon: 'fa-bone', rows: [['المكان', 'عيادة الطبيب'], ['اليوم', 'الجمعة'], ['الساعة', '09h'], ['الهاتف', '05 37 10 35 14 / 06 57 83 15 17']] }
+          ]
+        },
+        {
+          title: 'التخصصات على المستوى الجهوي',
+          icon: 'fa-map-location-dot',
+          items: [
+            { title: 'جهة العيون - الساقية الحمراء', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur LAJOUAD BAIHI'], ['العنوان', 'Av Hassan II, Phosboukraâ, LAAYOUNE'], ['أخذ الموعد', '0661 26 99 97'], ['المنسق الجهوي', 'MOUSSAOUI MOHAMED ALI'], ['هاتف المنسق', '0657 83 20 46']] },
+            { title: 'جهة الداخلة - وادي الذهب', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur SADIK YOUNESS'], ['العنوان', 'App N°4, N° 17/1105, rue mosquée, Hay Massira, Dakhla'], ['أخذ الموعد', '0667 98 08 77'], ['المنسق الجهوي', 'MINA SAAD ALLAH'], ['هاتف المنسق', '0657 83 17 87']] },
+            { title: 'جهة كلميم - واد نون', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur HAIDAR KHAIR'], ['العنوان', 'Imm Assafae, 3ème étage, App N°9, Bir Inzarane, Guelmim'], ['أخذ الموعد', '0528 87 34 61'], ['المنسق الجهوي', 'LATIF AIDA'], ['هاتف المنسق', '0657 83 15 04']] },
+            { title: 'جهة درعة - تافيلالت', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur GHANEME ABDELAZIZ'], ['العنوان', '14, Rue de la mosquée, Errachidia'], ['أخذ الموعد', '0535 57 27 76'], ['المنسق الجهوي', 'BRITEL ABDESSAMAD'], ['هاتف المنسق', '06 68 90 90 84']] },
+            { title: 'جهة بني ملال - خنيفرة', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur MALKY ABDELHAMID'], ['العنوان', 'Avenue 2 Mars, Sidi Abdelhalim, Béni Mellal'], ['أخذ الموعد', '—'], ['المنسق الجهوي', 'MALIHY AMAL'], ['هاتف المنسق', '06 57 83 18 94']] },
+            { title: 'جهة الدار البيضاء - سطات', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur MOUFTADI ABDELFATTAH'], ['العنوان', 'Avenue Bir Anzarane N° 16, El Jadida'], ['أخذ الموعد', '0523 39 42 03'], ['المنسق الجهوي', 'GUADDA MOHAMED'], ['هاتف المنسق', '36 16 83 57 06']] },
+            { title: 'جهة فاس - مكناس', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur DBAB Mohamed'], ['العنوان', '4, Rue Omar Ben Chamsi, Hamria, Meknès'], ['أخذ الموعد', '0661 15 93 56'], ['المنسق الجهوي', 'SAID AIT BERRI'], ['هاتف المنسق', '0657 83 20 37']] },
+            { title: 'جهة مراكش - آسفي', icon: 'fa-location-dot', rows: [['الطبيب', 'BELAHNECH ABDOULMOUTTALIB'], ['العنوان', '49, Bd Rabat, Safi'], ['أخذ الموعد', '05 24 46 37 97'], ['المنسق الجهوي', 'SERFATI CHOUAIB'], ['هاتف المنسق', '06 57 83 17 37']] },
+            { title: 'جهة الرباط - سلا - القنيطرة', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur IBNABDALLAH MOHAMED'], ['العنوان', '15, Rue Jabel El Ayachi, Centre Khmisset'], ['أخذ الموعد', '0537 55 05 00'], ['المنسق الجهوي', 'EL BERIRI SAMIRA'], ['هاتف المنسق', '06 57 83 16 63']] }
+          ]
+        }
+      ]
+    },
+    {
+      navIndex: 5,
+      badge: 'دعم الأشخاص ذوي الاحتياجات الخاصة',
+      title: 'دعم الأشخاص ذوي الاحتياجات الخاصة',
+      intro: 'وضعت FOS-Agri برنامجا لمساعدة أبناء المنخرطين في وضعية إعاقة ولديهم احتياجات خاصة، عبر المساهمة في التكفل باحتياجاتهم الخاصة بمنحة قدرها 5 000 درهم.',
+      beneficiariesTitle: 'المستفيدون',
+      beneficiaries: [{ number: '01', text: 'جميع أبناء منخرطي FOS-Agri الموجودين في وضعية إعاقة حركية أو ذهنية، مثبتة بشهادة إعاقة صادرة عن السلطات العمومية المختصة، والذين لا يمارسون أي نشاط مدر للدخل.' }],
+      blocks: [
+        { title: 'التسجيل والكيفيات', icon: 'fa-clipboard-check', items: [{ title: 'الكيفيات', icon: 'fa-list-check', bullets: ['التسجيل عبر الإنترنت.', 'تقبل جميع الطلبات التي تستوفي الشروط.'] }] },
+        { title: 'الوثائق المطلوبة', icon: 'fa-folder-open', items: [{ title: 'الملف المثبت', icon: 'fa-file-medical', bullets: ['نسخة من الملف الطبي للمعني بالأمر.', 'نسخة من الاستمارة المتعلقة بنوع الإعاقة، تحمل رأي اللجنة الطبية الإقليمية.', 'لمواصلة الاستفادة، يجب على المنخرطين المعنيين الإدلاء كل سنة بشهادة الحياة.', 'بالنسبة للأطفال الذين ليست إعاقتهم نهائية، يجب الإدلاء كل سنة بملف طبي جديد.'] }] }
+      ]
+    }
+  ];
+
+  const prevoyanceExtraZgh = [
+    {
+      navIndex: 3,
+      badge: 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵜⵎⵜⵜⴰⵏⵜ',
+      title: 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵜⵎⵜⵜⴰⵏⵜ',
+      intro: 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵜⵎⵜⵜⴰⵏⵜ ⵙ FOS-Agri ⵉ ⵉⵎⴰⵖⴰⵔⵏ ⵉⵣⵔⵉⵏ 75 ⵏ ⵓⵙⴳⴳⵯⴰⵙ ⵉⴳⴰ ⴰⵙⵓⵔⵉⴼ ⴰⵏⴰⵎⵓⵏ ⴰⵎⵇⵔⴰⵏ. ⵜⴰⵏⴼⵓⵙⵜ ⴰⴷ ⵜⵙⵎⴷ ⴰⵙⵎⵓⵜⵜⴳ ⵉⵍⵍⴰⵏ ⴷ ⵜⵙⵙⴷⵓⵙ ⵜⵉⵡⵉⵙⵉ ⴷ ⵓⵎⵓⴷⴷⵓ ⵉⵍⴰⵇⵏ ⵉ ⵎⴰⵕⵕⴰ ⵉⵎⵏⴼⴰⵄⵏ.',
+      beneficiariesTitle: 'ⵉⵎⵏⴼⴰⵄⵏ',
+      beneficiaries: [{ number: '01', text: 'ⵉⵎⵏⵅⵔⴰⵟⵏ ⵉⵣⵔⵉⵏ 75 ⵏ ⵓⵙⴳⴳⵯⴰⵙ.' }, { number: '02', text: 'ⵉⵎⵏⴼⴰⵄⵏ: ⵉⵙⵍⵉⵜⵏ ⴷ ⵉⴼⵔⵅⴰⵏ.' }],
+      blocks: [
+        {
+          title: 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵜⵎⵜⵜⴰⵏⵜ ⵉ ⵉⵣⵔⵉⵏ 75',
+          icon: 'fa-file-signature',
+          intro: 'ⴽⵓ ⴰⴼⴰⵢⵍⵓ ⵉⵜⵜⵓⵙⵙⴼⴽⵏ ⵉ FOS-Agri ⵉ ⵓⵙⵎⵔⵙ ⵏ ⵜⵉⵡⵉⵙⵉ ⵉⵎⴰⵍⵉⵢⵏ ⴰⴷ ⵉⵙⵎⵓⵏ ⵉⵙⵍⴽⴰⵎⵏ ⵉⵍⴰⵇⵏ. ⵏⵙⵅⴰ ⵏ CIN ⴷ ⵜⴽⴰⵕⴹⴰ ⵏ FOS-Agri ⵏ ⵓⵎⵏⵅⵔⴰⵟ ⴰⵎⵣⵡⴰⵔⵓ ⵉⵍⴰⵇⵏ ⴳ ⵎⴰⵕⵕⴰ ⵜⵉⵎⵙⴰⵍ.',
+          items: [
+            { title: 'ⵜⴰⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵎⵏⵅⵔⴰⵟ ⴰⵎⵣⵡⴰⵔⵓ ⵎⴰ ⵉⵍⵍⴰ ⵓⵙⵍⵉ', icon: 'fa-user-shield', bullets: ['ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵎⵜⵜⴰⵏⵜ.', 'ⵏⵙⵅⴰ ⵏ ⵓⵎⵙⵍⴰⵢ ⵏ ⵓⵣⵡⴰⵊ.', 'RIB ⵏ ⵓⵙⵍⵉ ⵉⴷⴷⵔⵏ.', 'ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵔⵉⴽⴰ.'] },
+            { title: 'ⵜⴰⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵎⵏⵅⵔⴰⵟ ⵎⴰ ⵓⵔ ⵉⵍⵍⵉ ⵓⵙⵍⵉ', icon: 'fa-user', bullets: ['ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵎⵜⵜⴰⵏⵜ.', 'ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵓⵣⴷⴰⵢ ⵏ ⵜⵡⴰⵛⵓⵍⵜ ⴷ ⵓⵎⵎⵓⵜ.', 'ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵔⵉⴽⴰ.', 'RIB ⵏ ⵓⵎⵏⴼⴰⵄ.'] },
+            { title: 'ⵜⴰⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵙⵍⵉ', icon: 'fa-people-arrows', bullets: ['ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵎⵜⵜⴰⵏⵜ.', 'ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵓⵣⴷⴰⵢ ⵏ ⵜⵡⴰⵛⵓⵍⵜ ⴷ ⵓⵎⵎⵓⵜ.', 'RIB ⵏ ⵓⵎⵏⴼⴰⵄ.'] },
+            { title: 'ⵜⴰⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵎⵏⵅⵔⴰⵟ ⵓⵔ ⵉⵣⵡⵉⵊⵏ', icon: 'fa-person', body: 'ⵉⵎⵏⴼⴰⵄⵏ: ⵉⵎⵖⴰⵔⵏ.', bullets: ['ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵎⵜⵜⴰⵏⵜ.', 'ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵓⵣⴷⴰⵢ ⵏ ⵜⵡⴰⵛⵓⵍⵜ ⴷ ⵓⵎⵎⵓⵜ.', 'RIB ⵏ ⵓⵎⵏⴼⴰⵄ.'] },
+            { title: 'ⵜⴰⵎⵜⵜⴰⵏⵜ ⵏ ⵓⴼⵔⵓⵅ', icon: 'fa-child', body: 'ⵜⵙⵎⵓⵏ ⴰⴼⵔⵓⵅ ⴷⴷⴰⵡ 21 ⵏⵖ ⴷⴷⴰⵡ 26 ⵎⴰ ⵉⵙⵙⵎⴷ ⵜⵉⵖⵔⵉ ⴳ ⵍⵎⵖⵔⵉⴱ, ⵏⵖ ⵉⵍⵍⴰ ⴳ ⵓⵙⵍⵎⴷ ⴱⵕⵕⴰ ⴰⵙⵙ ⵏ ⵜⵉⵔⵣⴰ ⴳ ⵍⵎⵖⵔⵉⴱ.', bullets: ['ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵎⵎⵓⵜ.', 'ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵓⵍⴰⵍ ⵏ ⵓⵎⵎⵓⵜ.', 'RIB ⵏ ⵓⵎⵏⴼⴰⵄ.'] }
+          ]
+        },
+        { title: 'ⵜⵉⵡⵉⵙⵉ ⵉⵎⴰⵍⵉⵢⵏ', icon: 'fa-hand-holding-dollar', mode: 'cards', items: [{ amount: '7 000 DH', label: 'ⴰⵎⵏⵅⵔⴰⵟ ⴰⵎⵣⵡⴰⵔⵓ.' }, { amount: '2 500 DH', label: 'ⴰⵙⵍⵉ.' }, { amount: '1 000 DH', label: 'ⴰⴼⵔⵓⵅ.' }] }
+      ]
+    },
+    {
+      navIndex: 4,
+      badge: 'ⴰⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ',
+      title: 'ⴰⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ',
+      intro: ['FOS-Agri ⵜⴰⵎⵓⴷⴷⵓ ⵙ ⵓⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ ⵜⵉⵔⵣⴰ ⵏ ⵢⴰⵜ ⵜⴰⵔⴱⴰⵄⵜ ⵜⴰⴷⵓⵙⴰⵏⵜ ⵜⵉⵎⵥⵍⵉⵢⵜ.', 'ⴰⵎⵎⴰⵙ ⵉⵜⵜⴰⵡⵙ ⴳ ⵓⵎⵓⴷⴷⵓ ⴷ ⵓⵜⵜⴰⴱⴰⵄ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴷⴰⵜ ⵏⵖ ⴹⴼⵕ ⴰⵙⵉⴱⵉⵜⴰⵍ, ⴷ ⵓⵙⴷⵓ ⴷ ⵜⵎⵙⵍⵉⵡⵜ.'],
+      beneficiariesTitle: 'ⵉⵎⵏⴼⴰⵄⵏ',
+      beneficiaries: [{ number: '01', text: 'ⴰⵎⵏⵅⵔⴰⵟ.' }, { number: '02', text: 'ⴰⵙⵍⵉ ⵏ ⵓⵎⵏⵅⵔⴰⵟ.' }, { number: '03', text: 'ⵉⴼⵔⵅⴰⵏ ⵏⵏⵙⵏ.' }],
+      blocks: [
+        {
+          title: 'ⵜⵉⵎⵥⵍⵉⵢⵉⵏ ⴳ ⵓⵎⵎⴰⵙ',
+          icon: 'fa-stethoscope',
+          items: [
+            { title: 'ⵜⴰⴷⵓⵙⵉ ⵜⴰⴳⵏⵙⴰⵏⵜ', icon: 'fa-user-doctor', rows: [['ⴰⴷⵖⴰⵔ', 'ⴰⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ'], ['ⴰⵙⵙ', 'ⴰⵢⵏⴰⵙ'], ['ⵜⴰⵙⵔⴰⴳⵜ', '8h30'], ['ⵜⵉⵍⵉⴼⵓⵏ', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'ⵜⴰⴷⵓⵙⵉ ⵏ ⵓⵍ', icon: 'fa-heart-pulse', rows: [['ⴰⴷⵖⴰⵔ', 'ⴰⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ'], ['ⴰⵙⵙ', 'ⴰⴽⵡⴰⵙ'], ['ⵜⴰⵙⵔⴰⴳⵜ', '10h'], ['ⵜⵉⵍⵉⴼⵓⵏ', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'ORL', icon: 'fa-ear-listen', rows: [['ⴰⴷⵖⴰⵔ', 'ⵜⵉⵔⵣⴰ ⵏ ⵓⵎⵙⵙⵉⵊⵊⵉ'], ['ⵜⵉⵣⵉ', 'ⴰⵢⵏⴰⵙ 12h, ⴰⵙⵉⵏⴰⵙ, ⴰⴽⵡⴰⵙ, ⴰⵙⵉⵎⵡⴰⵙ'], ['ⵜⵉⵍⵉⴼⵓⵏ', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'ⵜⴰⴷⵓⵙⵉ ⵏ ⵓⵙⵔⴰⴼ', icon: 'fa-notes-medical', rows: [['ⴰⴷⵖⴰⵔ', 'ⵜⵉⵔⵣⴰ ⵏ ⵓⵎⵙⵙⵉⵊⵊⵉ'], ['ⵜⵉⵣⵉ', 'ⴰⵢⵏⴰⵙ 11h, ⴰⵙⵉⵏⴰⵙ, ⴰⴽⵕⴰⵙ, ⴰⴽⵡⴰⵙ, ⴰⵙⵉⵎⵡⴰⵙ'], ['ⵜⵉⵍⵉⴼⵓⵏ', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'ⵜⴰⴷⵓⵙⵉ ⵏ ⵜⵎⵖⴰⵔⵜ', icon: 'fa-venus', rows: [['ⴰⴷⵖⴰⵔ', 'ⴰⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ'], ['ⴰⵙⵙ', 'ⴰⴽⵕⴰⵙ'], ['ⵜⴰⵙⵔⴰⴳⵜ', '09h30'], ['ⵜⵉⵍⵉⴼⵓⵏ', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'ⵜⴰⴷⵓⵙⵉ ⵏ ⵉⴳⵍⵎⴰⵎⵏ', icon: 'fa-hand-sparkles', rows: [['ⴰⴷⵖⴰⵔ', 'ⴰⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ'], ['ⴰⵙⵙ', 'ⴰⴽⵡⴰⵙ'], ['ⵜⴰⵙⵔⴰⴳⵜ', '08h30'], ['ⵜⵉⵍⵉⴼⵓⵏ', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'ⵜⴰⴷⵓⵙⵉ ⵏ ⵉⵙⵓⴷⴰⵔ', icon: 'fa-vial-circle-check', rows: [['ⴰⴷⵖⴰⵔ', 'ⵜⵉⵔⵣⴰ ⵏ ⵓⵎⵙⵙⵉⵊⵊⵉ'], ['ⴰⵙⵙ', 'ⴰⴽⵡⴰⵙ'], ['ⵜⴰⵙⵔⴰⴳⵜ', '10h'], ['ⵜⵉⵍⵉⴼⵓⵏ', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'ⵜⴰⴷⵓⵙⵉ ⵏ ⵓⵙⴳⵍ', icon: 'fa-stomach', rows: [['ⴰⴷⵖⴰⵔ', 'ⴰⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ'], ['ⴰⵙⵙ', 'ⴰⵙⵉⵏⴰⵙ'], ['ⵜⴰⵙⵔⴰⴳⵜ', '09h'], ['ⵜⵉⵍⵉⴼⵓⵏ', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'ⵜⴰⴷⵓⵙⵉ ⵏ ⵓⵙⵎⵎⵓⴹ ⴷ ⵓⴼⴼⵓⵙ', icon: 'fa-lungs', rows: [['ⴰⴷⵖⴰⵔ', 'ⴰⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ'], ['ⴰⵙⵙ', 'ⴰⴽⵕⴰⵙ'], ['ⵜⴰⵙⵔⴰⴳⵜ', '08h30'], ['ⵜⵉⵍⵉⴼⵓⵏ', '05 37 10 35 14 / 06 57 83 15 17']] },
+            { title: 'ⵜⴰⴷⵓⵙⵉ ⵏ ⵉⵖⵙⴰⵏ', icon: 'fa-bone', rows: [['ⴰⴷⵖⴰⵔ', 'ⵜⵉⵔⵣⴰ ⵏ ⵓⵎⵙⵙⵉⵊⵊⵉ'], ['ⴰⵙⵙ', 'ⴰⵙⵉⵎⵡⴰⵙ'], ['ⵜⴰⵙⵔⴰⴳⵜ', '09h'], ['ⵜⵉⵍⵉⴼⵓⵏ', '05 37 10 35 14 / 06 57 83 15 17']] }
+          ]
+        },
+        {
+          title: 'ⵜⵉⵎⵥⵍⵉⵢⵉⵏ ⴳ ⵜⵎⵏⴰⴹⵉⵏ',
+          icon: 'fa-map-location-dot',
+          items: prevoyanceExtraFr[1].blocks[1].items.map((entry) => ({
+            title: entry.title.replace('Région de ', 'ⵜⴰⵎⵏⴰⴹⵜ ⵏ '),
+            icon: 'fa-location-dot',
+            rows: entry.rows.map(([label, value]) => [{
+              'Médecin': 'ⴰⵎⵙⵙⵉⵊⵊⵉ',
+              'Adresse': 'ⵜⴰⵏⵙⴰ',
+              'Prise de RDV': 'ⵜⵉⵣⵉ ⵏ ⵜⵉⵔⵣⴰ',
+              'Relais régional': 'ⴰⵎⵙⵏⴰⵡ ⵏ ⵜⵎⵏⴰⴹⵜ',
+              'Téléphone du relais': 'ⵜⵉⵍⵉⴼⵓⵏ ⵏ ⵓⵎⵙⵏⴰⵡ'
+            }[label] || label, value])
+          }))
+        }
+      ]
+    },
+    {
+      navIndex: 5,
+      badge: 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⵎⵓⵔⴰⵏ ⵉⵎⵥⵍⵉⵢⵏ',
+      title: 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⵎⵓⵔⴰⵏ ⵉⵎⵥⵍⵉⵢⵏ',
+      intro: 'FOS-Agri ⵜⵙⵎⵓⵜⵜⴳ ⵢⴰⵜ ⵜⴰⵏⴼⵓⵙⵜ ⵉ ⵉⴼⵔⵅⴰⵏ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴳ ⵓⵙⵔⵓⵜ ⵉⵎⵥⵍⵉ, ⵙ ⵓⵎⵓⴷⴷⵓ ⵏ 5 000 DH ⵉ ⵓⵙⵎⵔⵙ ⵏ ⵉⵙⵡⵉⵔⵏ ⵏⵏⵙⵏ.',
+      beneficiariesTitle: 'ⵉⵎⵏⴼⴰⵄⵏ',
+      beneficiaries: [{ number: '01', text: 'ⵎⴰⵕⵕⴰ ⵉⴼⵔⵅⴰⵏ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵏ FOS-Agri ⵉⵍⵍⴰⵏ ⴳ ⵓⵙⵔⵓⵜ ⵉⵎⵥⵍⵉ, ⵙ ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵓⵙⵔⵓⵜ ⵙⵖⵓⵔ ⵜⵎⵙⵙⵓⵜⵉⵏ ⵉⵎⵣⴰⵔⴰⵢⵏ, ⴷ ⵓⵔ ⵉⵙⴽⴰⵔⵏ ⴽⵔⴰ ⵏ ⵜⵡⵓⵔⵉ ⵜⴰⵙⵙⵏⴼⴰⵍⵜ.' }],
+      blocks: [
+        { title: 'ⴰⵙⵙⴼⵜⵔ ⴷ ⵜⵎⴰⵎⴽⵜ', icon: 'fa-clipboard-check', items: [{ title: 'ⵜⵎⴰⵎⴽⵜ', icon: 'fa-list-check', bullets: ['ⴰⵙⵙⴼⵜⵔ ⵙ ⵉⵏⵜⵉⵔⵏⵉⵜ.', 'ⵎⴰⵕⵕⴰ ⵉⵙⵓⵜⴰⵔ ⵉⵙⵎⴷⵏ ⵜⵉⵡⵜⵉⵍⵉⵏ ⵜⵜⵓⵙⵇⴱⴰⵍⵏ.'] }] },
+        { title: 'ⵉⵙⵍⴽⴰⵎⵏ ⵉⵍⴰⵇⵏ', icon: 'fa-folder-open', items: [{ title: 'ⴰⴼⴰⵢⵍⵓ', icon: 'fa-file-medical', bullets: ['ⵏⵙⵅⴰ ⵏ ⵓⴼⴰⵢⵍⵓ ⴰⴷⵓⵙⴰⵏ ⵏ ⵓⵎⵙⵍⴰⵢ.', 'ⵏⵙⵅⴰ ⵏ ⵓⴼⵓⵔⵎⵓⵍⵉⵔ ⵏ ⵓⵏⴰⵡ ⵏ ⵓⵙⵔⵓⵜ ⵙ ⵓⵔⴰⵢ ⵏ ⵜⴽⵎⵉⵙⵢⵓⵏ ⵜⴰⴷⵓⵙⴰⵏⵜ ⵜⴰⵎⵏⴰⴹⵜ.', 'ⵉ ⵓⵙⵙⵎⴷ ⵏ ⵓⵙⵎⵔⵙ, ⵉⵎⵏⵅⵔⴰⵟⵏ ⴰⴷ ⴼⴽⵏ ⴽⵓ ⴰⵙⴳⴳⵯⴰⵙ ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵓⴷⵔⵜ.', 'ⵉ ⵉⴼⵔⵅⴰⵏ ⵓⵔ ⵉⵙⵙⴷⵓⵙⵏ ⵓⵙⵔⵓⵜ ⵏⵏⵙⵏ, ⵉⵍⴰⵇ ⴽⵓ ⴰⵙⴳⴳⵯⴰⵙ ⴰⴼⴰⵢⵍⵓ ⴰⴷⵓⵙⴰⵏ ⴰⵎⴰⵢⵏⵓ.'] }] }
+      ]
+    }
+  ];
+
   const services = {
     prevoyance: {
       href: 'services/prevoyance.html',
@@ -728,22 +974,7 @@
             }
           ]
         },
-        extraSections: [
-          {
-            navIndex: 3,
-            badge: 'FORFAIT FUNERAIRE',
-            title: 'FORFAIT FUNERAIRE',
-            intro: 'Cette page est réservée à la présentation du forfait funéraire destiné aux adhérents concernés.',
-            points: ['Conditions d’éligibilité à confirmer avec la Fondation.', 'Pièces justificatives et modalités de dépôt à intégrer après validation du contenu.', 'Orientation vers le relais régional ou le service compétent pour le suivi du dossier.']
-          },
-          {
-            navIndex: 4,
-            badge: 'CENTRE MEDICO-SOCIAL',
-            title: 'CENTRE MEDICO-SOCIAL',
-            intro: 'Cette page regroupe les informations liées au centre médico-social et à l’accompagnement de proximité des adhérents.',
-            points: ['Orientation et écoute autour des besoins de santé et de bien-être.', 'Information sur les prestations médico-sociales disponibles.', 'Coordination avec les équipes FOS-Agri et les relais régionaux.']
-          }
-        ],
+        extraSections: prevoyanceExtraFr,
         partners: ['Laboratoires d’analyses', 'Cliniques et radiologie', 'Médecins à tarifs préférentiels', 'Opticiens', 'Pharmacies', 'Centres dentaires'],
         steps: [['Orientation', 'Identifier la prestation ou le partenaire médical adapté.'], ['Dossier', 'Préparer les pièces justificatives et les références d’adhésion.'], ['Prise en charge', 'Suivre les modalités AMC, AMTS ou convention médicale.'], ['Relais régional', 'S’appuyer sur les relais pour les conventions de proximité.']]
       },
@@ -801,22 +1032,7 @@
             }
           ]
         },
-        extraSections: [
-          {
-            navIndex: 3,
-            badge: 'منحة الوفاة',
-            title: 'منحة الوفاة',
-            intro: 'هذه الصفحة مخصصة لتقديم معطيات منحة الوفاة لفائدة المنخرطين المعنيين.',
-            points: ['شروط الاستفادة يتم تأكيدها مع المؤسسة.', 'الوثائق المطلوبة وكيفيات الإيداع ستضاف بعد المصادقة على المحتوى.', 'توجيه نحو المنسق الجهوي أو المصلحة المختصة لتتبع الملف.']
-          },
-          {
-            navIndex: 4,
-            badge: 'المركز الطبي الاجتماعي',
-            title: 'المركز الطبي الاجتماعي',
-            intro: 'تجمع هذه الصفحة المعلومات المرتبطة بالمركز الطبي الاجتماعي والمواكبة القريبة للمنخرطين.',
-            points: ['توجيه وإنصات حول حاجيات الصحة والرفاه.', 'معلومات حول الخدمات الطبية الاجتماعية المتاحة.', 'تنسيق مع فرق FOS-Agri والمنسقين الجهويين.']
-          }
-        ],
+        extraSections: prevoyanceExtraAr,
         partners: ['مختبرات التحاليل', 'مصحات وأشعة', 'أطباء بتعريفات تفضيلية', 'نظارات', 'صيدليات', 'مراكز الأسنان'],
         steps: [['التوجيه', 'تحديد الخدمة أو الشريك الطبي المناسب.'], ['الملف', 'تحضير الوثائق ومعطيات الانخراط.'], ['التكفل', 'اتباع مساطر AMC أو AMTS أو الاتفاقية.'], ['المنسق الجهوي', 'الاستفادة من القرب الجهوي.']]
       },
@@ -874,22 +1090,7 @@
             }
           ]
         },
-        extraSections: [
-          {
-            navIndex: 3,
-            badge: 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵜⵎⵜⵜⴰⵏⵜ',
-            title: 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵜⵎⵜⵜⴰⵏⵜ',
-            intro: 'ⵜⴰⵙⵏⴰ ⴰⴷ ⵜⵇⵇⵏ ⵙ ⵜⵎⴰⵎⴽⵜ ⵏ ⵓⵎⵓⴷⴷⵓ ⵏ ⵜⵎⵜⵜⴰⵏⵜ ⵉ ⵉⵎⵏⵅⵔⴰⵟⵏ.',
-            points: ['ⵜⵉⵡⵜⵉⵍⵉⵏ ⵏ ⵓⵙⵎⵔⵙ ⴰⴷ ⵜⵜⵓⵙⵎⴷⵏⵜ ⵙ FOS-Agri.', 'ⵜⵉⵡⵔⵉⵇⵉⵏ ⴷ ⵜⵎⴰⵎⴽⵜ ⵏ ⵓⵙⵎⵓⵜⵜⴳ ⴰⴷ ⵜⵜⵓⵔⵏⴰⵏⵜ ⵎⴰⵢⴰⴷ ⵜⵜⵓⵙⵙⵏⵜ.', 'ⴰⵙⴷⵓ ⵖⵔ ⵓⵎⵙⵏⴰⵡ ⵏ ⵜⵎⵏⴰⴹⵜ ⵏⵖ ⴰⵙⵔⵓⵙ ⵉⵎⵥⵍⵉ.']
-          },
-          {
-            navIndex: 4,
-            badge: 'ⴰⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ',
-            title: 'ⴰⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ',
-            intro: 'ⵜⴰⵙⵏⴰ ⴰⴷ ⵜⵙⵎⵓⵏ ⵜⵉⵏⵖⵎⵉⵙⵉⵏ ⵏ ⵓⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ ⴷ ⵓⵎⵓⴷⴷⵓ ⴰⵎⵇⵔⴰⵏ.',
-            points: ['ⴰⵙⴷⵓ ⴷ ⵜⵎⵙⵍⵉⵡⵜ ⴳ ⵉⵙⵡⵉⵔⵏ ⵏ ⵜⴰⴷⵓⵙⵉ.', 'ⵜⵉⵏⵖⵎⵉⵙⵉⵏ ⵅⴼ ⵜⵏⴼⵓⵜⵉⵏ ⵜⵉⴷⵓⵙⴰⵏⵉⵏ ⵜⵉⵏⴰⵎⵓⵏⵉⵏ.', 'ⴰⵎⵢⴰⵡⴰⴹ ⴷ FOS-Agri ⴷ ⵉⵎⵙⵏⴰⵡⵏ ⵏ ⵜⵎⵏⴰⴹⵜ.']
-          }
-        ],
+        extraSections: prevoyanceExtraZgh,
         partners: ['ⵉⵎⵣⵣⴰⵔⵏ', 'ⵉⵙⵉⴱⵉⵜⴰⵍⵏ', 'ⵉⵎⵙⵙⵉⵊⵊⵉⵏ', 'ⵉⵎⵙⵡⴰⵍⵏ ⵏ ⵜⵉⵟⵟ', 'ⵜⵉⴼⴰⵔⵎⴰⵙⵉⵜⵉⵏ', 'ⵉⵎⵎⴰⵙⵏ ⵏ ⵓⵅⵙⴰⵏ'],
         steps: [['ⴰⵙⴷⵓ', 'ⵙⵙⵏ ⵜⴰⵏⴼⵓⵙⵜ.'], ['ⴰⴼⴰⵢⵍⵓ', 'ⵙⵎⵓⵏ ⵜⵉⴽⴰⵔⴹⵉⵡⵉⵏ.'], ['ⴰⵎⵓⴷⴷⵓ', 'ⴹⴼⵕ AMC/AMTS.'], ['ⴰⵎⵙⵏⴰⵡ', 'ⵎⵢⴰⵡⴰⵍ ⴷ ⵓⵎⵙⵏⴰⵡ.']]
       }
@@ -1530,6 +1731,72 @@
       </section>`;
   }
 
+  function renderExtraKeyRows(rows) {
+    if (!rows?.length) return '';
+    return `
+      <dl class="prestation-extra-keyrows">
+        ${rows.map(([label, value]) => `
+          <div>
+            <dt>${esc(label)}</dt>
+            <dd>${esc(value || '—')}</dd>
+          </div>`).join('')}
+      </dl>`;
+  }
+
+  function renderExtraMiniCards(items) {
+    if (!items?.length) return '';
+    return `
+      <div class="prestation-extra-mini-grid">
+        ${items.map((item) => `
+          <article class="prestation-extra-mini-card">
+            <span>${esc(item.number || '')}</span>
+            <p>${esc(item.text || item)}</p>
+          </article>`).join('')}
+      </div>`;
+  }
+
+  function renderExtraAccordionItem(entry, index) {
+    const isOpen = index === 0;
+    return `
+      <article class="prestation-accordion-item prestation-extra-accordion-item ${isOpen ? 'is-open' : ''}">
+        <button class="prestation-accordion-trigger" type="button" aria-expanded="${isOpen ? 'true' : 'false'}">
+          <span class="prestation-accordion-title">
+            <i class="fa-solid ${esc(entry.icon || 'fa-circle-info')}" aria-hidden="true"></i>
+            <span>${esc(entry.title)}</span>
+          </span>
+          <i class="fa-solid ${isOpen ? 'fa-minus' : 'fa-plus'} prestation-accordion-toggle" aria-hidden="true"></i>
+        </button>
+        <div class="prestation-accordion-content" ${isOpen ? '' : 'hidden'}>
+          ${renderParagraphs(entry.body)}
+          ${renderBulletList(entry.bullets)}
+          ${renderExtraKeyRows(entry.rows)}
+        </div>
+      </article>`;
+  }
+
+  function renderExtraSectionBlock(block) {
+    if (!block) return '';
+    const entries = block.items || [];
+    return `
+      <div class="prestation-extra-block">
+        <div class="prestation-amc-block-head">
+          <span class="section-tag"><i class="fa-solid ${esc(block.icon || 'fa-list-check')}" aria-hidden="true"></i> ${esc(block.title)}</span>
+          ${block.intro ? `<p>${esc(block.intro)}</p>` : ''}
+        </div>
+        ${block.mode === 'cards' ? `
+          <div class="prestation-extra-contribution-grid">
+            ${entries.map((entry) => `
+              <article class="prestation-extra-contribution-card">
+                <strong>${esc(entry.amount || entry.title)}</strong>
+                <span>${esc(entry.label || entry.text || '')}</span>
+              </article>`).join('')}
+          </div>` : `
+          <div class="prestation-accordion prestation-extra-accordion" data-prestation-accordion>
+            ${entries.map(renderExtraAccordionItem).join('')}
+          </div>`}
+      </div>`;
+  }
+
   function renderExtraPrestationSections(item) {
     if (!item.extraSections?.length || !item.chips?.length) return '';
     return item.extraSections.map((section, index) => {
@@ -1539,14 +1806,18 @@
       <section class="section page-section-soft prestation-extra-section" id="${subrubriqueId(navIndex)}" data-prestation-extra-panel data-prestation-extra-index="${navIndex}" hidden>
         <div class="container">
           <article class="prestation-extra-card">
-            <span class="section-tag"><i class="fa-solid ${subIcons.prevoyance?.[navIndex] || 'fa-circle-check'}" aria-hidden="true"></i> ${esc(section.badge)}</span>
+            <span class="section-tag"><i class="fa-solid ${subIcons.prevoyance?.[navIndex] || section.icon || 'fa-circle-check'}" aria-hidden="true"></i> ${esc(section.badge)}</span>
             <h2>${esc(section.title)}</h2>
-            <p>${esc(section.intro)}</p>
-            ${section.points?.length ? `
-            <ul class="prestation-extra-list">
-              ${section.points.map((point) => `<li><i class="fa-solid fa-check" aria-hidden="true"></i><span>${esc(point)}</span></li>`).join('')}
-            </ul>` : ''}
+            ${renderParagraphs(section.intro)}
           </article>
+          ${section.beneficiaries?.length ? `
+            <div class="prestation-extra-block">
+              <div class="prestation-amc-block-head">
+                <span class="section-tag"><i class="fa-solid fa-people-roof" aria-hidden="true"></i> ${esc(section.beneficiariesTitle)}</span>
+              </div>
+              ${renderExtraMiniCards(section.beneficiaries)}
+            </div>` : ''}
+          ${section.blocks?.map(renderExtraSectionBlock).join('') || ''}
         </div>
       </section>`;
     }).join('');
