@@ -21,7 +21,7 @@
   };
 
   const subIcons = {
-    prevoyance: ['fa-house-medical', 'fa-shield-heart', 'fa-truck-medical', 'fa-hands-holding-child', 'fa-file-contract'],
+    prevoyance: ['fa-circle-info', 'fa-shield-heart', 'fa-truck-medical', 'fa-ribbon', 'fa-house-medical', 'fa-hands-holding-child', 'fa-file-contract'],
     culture: ['fa-suitcase-rolling', 'fa-children', 'fa-kaaba', 'fa-person-praying', 'fa-award', 'fa-handshake'],
     formation: ['fa-chalkboard-user', 'fa-medal', 'fa-school', 'fa-book-open-reader'],
     logement: ['fa-house-user', 'fa-building-columns', 'fa-building', 'fa-helmet-safety'],
@@ -120,6 +120,11 @@
     prestationsTitle: 'Prestations garanties',
     casesTitle: 'Cas particuliers',
     noteTitle: 'Note importante',
+    assuredLabel: 'Affections et actes médicaux assurés',
+    benefitsLabel: 'Prestations garanties',
+    expandLabel: 'Afficher le détail',
+    collapseLabel: 'Réduire le détail',
+    paginationLabel: 'Cartes des dispositions contractuelles AMC',
     dispositions: [
       {
         icon: 'fa-file-shield',
@@ -227,6 +232,216 @@
     note: 'N.B : Les déclarations de maladie ou d’accident doivent parvenir chez Sanlam Maroc à travers ses agents gestionnaires AMC dans un délai maximal de 90 jours suivant la date de survenance du sinistre.'
   };
 
+  const amcDetailAr = {
+    ...amcDetailFr,
+    title: 'التأمين الصحي التكميلي',
+    subtitle: 'تغطية تكميلية لنظام AMO-CNOPS تتيح تعويض أو تحمل جزء من المصاريف الصحية المتبقية على عاتق المنخرط، داخل المغرب وخارجه.',
+    dispositionsTitle: 'المقتضيات التعاقدية',
+    prestationsTitle: 'الخدمات المضمونة',
+    casesTitle: 'حالات خاصة',
+    noteTitle: 'ملاحظة مهمة',
+    assuredLabel: 'الأمراض والأعمال الطبية المؤمن عليها',
+    benefitsLabel: 'الخدمات المضمونة',
+    expandLabel: 'عرض التفاصيل',
+    collapseLabel: 'إخفاء التفاصيل',
+    paginationLabel: 'بطاقات المقتضيات التعاقدية للتأمين الصحي التكميلي',
+    dispositions: [
+      {
+        icon: 'fa-file-shield',
+        title: 'موضوع الضمان',
+        body: ['في حالة المرض أو الحادث، تلتزم Sanlam Maroc، في إطار التأمين الصحي التكميلي وبصفة مكملة لنظام AMO-CNOPS، بتعويض أو تحمل جزء أو مجموع المصاريف الصحية المتبقية على عاتق المنخرط، سواء تعلق الأمر بمصاريف داخل المغرب أو خارجه، مغطاة أو غير مغطاة من طرف AMO-CNOPS، وذلك وفق النسب والأسس والأسقف المحددة في العقد.']
+      },
+      {
+        icon: 'fa-percent',
+        title: 'نسبة التعويض',
+        body: ['تتم التعويضات في حدود 100% من الفرق بين المصاريف التي تحملها المنخرط المؤمن والتسوية المنجزة أو التي يتعين إنجازها من طرف نظام التأمين الإجباري عن المرض AMO، المسير من طرف الصندوق الوطني لمنظمات الاحتياط الاجتماعي CNOPS.']
+      },
+      {
+        icon: 'fa-people-roof',
+        title: 'المستفيدون',
+        body: ['الخيار 1: المنخرط المؤمن النشيط أو المتقاعد دون حد للسن.', 'الخيار 2: المنخرط المؤمن النشيط.', 'بالنسبة للخيارين 1 و2:'],
+        bullets: ['الزوج أو الأزواج دون حد للسن.', 'الأرامل والأيتام إلى غاية 26 سنة كاملة بالنسبة لموظف متوفى.', 'الأطفال المتكفل بهم إلى غاية 26 سنة كاملة.']
+      },
+      {
+        icon: 'fa-clock',
+        title: 'آجال تسوية الخدمات',
+        body: ['تتم التسوية من طرف Sanlam Maroc لفائدة المنخرط المؤمن، إما بواسطة تحويل بنكي أو حوالة بريدية، داخل أجل أقصاه خمسة عشر 15 يوما. ويبتدئ هذا الأجل من اليوم الموالي لتاريخ توصل المؤمن بنسخة الملف والوثائق التبريرية.']
+      }
+    ],
+    options: [
+      {
+        title: 'الخيار 1',
+        kicker: 'الأمراض طويلة الأمد والمكلفة، العلاجات الجارية والاستشفاء',
+        guarantees: [
+          {
+            title: 'العلاجات المتنقلة المتعلقة بأمراض ALD-ALC',
+            assured: 'تتم تغطية المصاريف الصحية المرتبطة بمرض طويل الأمد ALD أو مرض ثقيل ومكلف ALC، كما يعرفها نظام AMO-CNOPS، عندما تكون موضوع تدخل من تغطية AMO-CNOPS إثر مرض أو حادث.',
+            benefits: [
+              'الاستشارات والزيارات الطبية: تعويض مصاريف الاستشارات وزيارات الأطباء خلال النهار والليل، بما في ذلك أيام العطل.',
+              'الأعمال الطبية وأعمال المساعدين الطبيين: تخول الأعمال الطبية الجارية وأعمال المساعدين الطبيين الحق في التعويض.',
+              'التحاليل والتصوير الطبي: تخول التحاليل الموصوفة بوصفة طبية وفحوصات التصوير الحق في التعويض التكميلي.',
+              'الأدوية: تعويض تكميلي للأدوية الموصوفة بوصفة طبية والمقبولة من طرف AMO-CNOPS، على أساس ثمن الأدوية الجنيسة أو الأصلية.'
+            ]
+          },
+          {
+            title: 'العلاجات المتنقلة خارج ALD/ALC',
+            assured: 'العلاجات المتنقلة التي لا تتعلق بأمراض ALD/ALC.',
+            benefits: [
+              'الاستشارات والزيارات الطبية: تعوض في حدود سقف 2 500 درهم للشخص في السنة.',
+              'الأعمال الطبية وأعمال المساعدين الطبيين: تعوض في حدود سقف 1 500 درهم للشخص في السنة.',
+              'الأدوية: الأدوية الموصوفة بوصفة طبية والمقبولة من طرف AMO-CNOPS، بسقف تعويض قدره 2 500 درهم للشخص في السنة.'
+            ]
+          },
+          {
+            title: 'الاستشفاء الجراحي و/أو الطبي',
+            assured: 'الاستشفاء الجراحي و/أو الطبي.',
+            benefits: [
+              'الاستشفاء الطبي أو الجراحي بالمغرب: بعد الإدلاء بالفاتورة والوثائق التبريرية، يتم التعويض وفق النسبة التعاقدية للفرق بين المصاريف المتحملة في حدود تعريفة اتفاقية FMSAR / الجمعية الوطنية للمصحات الخاصة، والتسوية المنجزة أو التي يتعين إنجازها من طرف AMO-CNOPS.',
+              'الاستشفاء الطبي أو الجراحي بالخارج: بعد الإدلاء بالفاتورة والوثائق التبريرية، يتم التعويض وفق النسبة التعاقدية للفرق بين المصاريف المتحملة والتسوية المنجزة أو التي يتعين إنجازها من طرف AMO-CNOPS.'
+            ]
+          }
+        ],
+        cases: [
+          ['fa-eye', 'البصريات', 'سقف 600 درهم للزجاج التدريجي مع الإطار أو العدسات. سقف 400 درهم للزجاج غير التدريجي مع الإطار أو العدسات. لكل شخص خلال 24 شهرا للراشدين و12 شهرا للأطفال أقل من 18 سنة.'],
+          ['fa-x-ray', 'Scanner', 'سقف 750 درهما لكل شخص، لكل مرض وفي السنة.'],
+          ['fa-magnet', 'IRM', 'سقف 1 500 درهم لكل شخص، لكل مرض وفي السنة.'],
+          ['fa-tooth', 'علاجات الأسنان', 'سقف 1 500 درهم لكل شخص وفي السنة.'],
+          ['fa-teeth', 'تقويم الأسنان ODF', 'سقف 2 000 درهم لكل فصل دراسي، لكل طفل أقل من 16 سنة كاملة، في حدود 6 فصول.'],
+          ['fa-person-walking', 'إعادة التأهيل', 'سقف 2 000 درهم لكل مرض، لكل شخص وفي السنة.'],
+          ['fa-ear-listen', 'الأجهزة السمعية', 'سقف 5 000 درهم لكل شخص، لكل وحدة وفي السنة.'],
+          ['fa-head-side-virus', 'الغرسات القوقعية', 'سقف 70 000 درهم لكل شخص وفي السنة.'],
+          ['fa-stethoscope', 'تنظير القولون', 'سقف 500 درهم لكل شخص وفي السنة.'],
+          ['fa-vial', 'الفحص المخبري', 'سقف 400 درهم لكل شخص وفي السنة.'],
+          ['fa-ribbon', 'Mammographie', 'سقف 500 درهم لكل شخص وفي السنة.'],
+          ['fa-wave-square', 'فحص الصدى للثدي', 'سقف 500 درهم لكل شخص وفي السنة.'],
+          ['fa-baby', 'مصاريف الحاضنة', 'سقف 700 درهم في اليوم.'],
+          ['fa-flask-vial', 'التحاليل الطبية', 'التحاليل الموصوفة بوصفة طبية تخول الحق في التعويض التكميلي دون سقف.'],
+          ['fa-radiation', 'Petscan', 'سقف 6 000 درهم لكل شخص وفي السنة.'],
+          ['fa-notes-medical', 'Fibroscan', 'سقف 400 درهم لكل شخص، لكل مرض وفي السنة.'],
+          ['fa-crutch', 'الأجهزة التقويمية والتعويضية خارج تعويضات الأسنان', 'سقف 3 000 درهم لكل شخص وفي السنة.']
+        ]
+      },
+      {
+        title: 'الخيار 2',
+        kicker: 'العلاجات المتنقلة خارج ALD/ALC',
+        guarantees: [
+          {
+            title: 'العلاجات المتنقلة خارج ALD/ALC',
+            assured: 'العلاجات المتنقلة التي لا تتعلق بأمراض ALD/ALC. يتم تعويض هذه العلاجات في حدود 150% من التعريفة الوطنية المرجعية، دون أي سقف حسب الخدمة.',
+            benefits: [
+              'الاستشارات والزيارات الطبية: تعويض مصاريف الاستشارات وزيارات الأطباء خلال النهار والليل، بما في ذلك أيام العطل.',
+              'الأعمال الطبية وأعمال المساعدين الطبيين: تخول الأعمال الطبية الجارية وأعمال المساعدين الطبيين الحق في التعويض.',
+              'الأدوية: الأدوية الموصوفة بوصفة طبية والمقبولة من طرف AMO-CNOPS، على أساس ثمن الأدوية الجنيسة أو الأصلية.',
+              'أعمال الأشعة والتصوير: يكتسب الحق في التعويض التكميلي لأعمال الأشعة والتصوير المنجزة من طرف المساعدين الطبيين.'
+            ]
+          }
+        ],
+        cases: [
+          ['fa-tooth', 'تعويضات الأسنان', 'سقف 1 000 درهم لكل شخص وفي السنة.'],
+          ['fa-baby-carriage', 'الولادة الطبيعية', 'سقف 2 000 درهم لكل شخص وفي السنة.'],
+          ['fa-hospital-user', 'الولادة القيصرية', 'في حدود 100% من التذكرة المعدلة لكل شخص وفي السنة.'],
+          ['fa-eye', 'OCT', 'سقف 1 000 درهم لكل شخص وفي السنة.'],
+          ['fa-radiation', 'VMAT', 'سقف 10 000 درهم لكل شخص وفي السنة.'],
+          ['fa-x-ray', 'Coroscaner', 'سقف 2 000 درهم لكل شخص وفي السنة.'],
+          ['fa-teeth-open', 'Dentascan', 'سقف 1 000 درهم لكل شخص وفي السنة.'],
+          ['fa-bolt', 'Rapidarc', 'سقف 4 000 درهم لكل شخص وفي السنة.'],
+          ['fa-file-medical', 'أشعة خارج التسمية', 'بناء على وصفة طبية. سقف 2 500 درهم لكل شخص وفي السنة.']
+        ]
+      }
+    ],
+    note: 'ملاحظة: يجب أن تصل تصريحات المرض أو الحادث إلى Sanlam Maroc عبر وكلائها المكلفين بتدبير AMC داخل أجل أقصاه 90 يوما ابتداء من تاريخ وقوع الحادث أو المرض.'
+  };
+
+  const amcDetailZgh = {
+    ...amcDetailFr,
+    title: 'ⴰⵙⵉⴽⵍ ⴰⴷⵓⵙⴰⵏ ⴰⵎⵙⵎⴰⴷ',
+    subtitle: 'ⵜⴰⴳⴳⵓⵔⵜ ⵜⴰⵎⵙⵎⴰⴷⵜ ⵉ AMO-CNOPS ⵉ ⵓⵔⴰⵔⵓ ⵏ ⵎⴽ ⵉⴳⴰ ⵏ ⵜⵡⵓⵔⵉⵡⵉⵏ ⵏ ⵜⴰⴷⵓⵙⵉ ⵉⵇⵇⵉⵎⵏ ⵅⴼ ⵓⵎⵏⵅⵔⴰⵟ, ⴳ ⵍⵎⵖⵔⵉⴱ ⴷ ⴱⵕⵕⴰ.',
+    dispositionsTitle: 'ⵜⵉⵎⵙⴰⵔⵉⵏ ⵏ ⵓⵎⵙⴰⵡⴰⴹ',
+    prestationsTitle: 'ⵜⵉⵏⴼⴰⵙ ⵉⵜⵜⵓⵙⴳⴳⴷⵏ',
+    casesTitle: 'ⵜⵉⵎⵓⵔⴰ ⵜⵉⵎⵥⵍⴰⵢⵉⵏ',
+    noteTitle: 'ⵜⴰⵎⴰⵡⵜ ⵜⴰⵎⵇⵔⴰⵏⵜ',
+    assuredLabel: 'ⵜⵉⵎⵓⵔⴰ ⴷ ⵜⵉⴳⴰⵡⵉⵏ ⵜⵉⴷⵓⵙⴰⵏⵉⵏ',
+    benefitsLabel: 'ⵜⵉⵏⴼⴰⵙ ⵉⵜⵜⵓⵙⴳⴳⴷⵏ',
+    expandLabel: 'ⵙⵙⴽⵏ ⵓⴳⴳⴰⵔ',
+    collapseLabel: 'ⵙⵎⴷ ⴰⵙⵏⴼⵍ',
+    paginationLabel: 'ⵜⵉⴽⴰⵕⴹⵉⵡⵉⵏ ⵏ AMC',
+    dispositions: [
+      {
+        icon: 'fa-file-shield',
+        title: 'ⴰⵙⵏⵜⵍ ⵏ ⵜⵣⵎⵎⴰⵔⵜ',
+        body: ['ⵎⴰ ⵉⵍⵍⴰ ⵓⵟⵟⴰⵏ ⵏⵖ ⴰⵎⵓⴽⵔⵉⵙ, Sanlam Maroc ⵜⵜⴰⵔⴰ ⵏⵖ ⵜⵜⴰⵡⵙ ⴳ ⵓⵙⵉⴽⵍ ⴰⴷⵓⵙⴰⵏ ⴰⵎⵙⵎⴰⴷ, ⴰⵎⵙⵎⴰⴷ ⵉ AMO-CNOPS, ⵙ ⵓⵔⴰⵔⵓ ⵏ ⵓⵣⴳⵏ ⵏⵖ ⴰⴽⴽⵯ ⵏ ⵎⴰⵕⵕⴰ ⵉⵇⵇⵉⵎⵏ ⵅⴼ ⵓⵎⵏⵅⵔⴰⵟ.']
+      },
+      {
+        icon: 'fa-percent',
+        title: 'ⴰⵙⴰⴽⵓⴷ ⵏ ⵓⵔⴰⵔⵓ',
+        body: ['ⵉⵜⵜⴳⴰ ⵓⵔⴰⵔⵓ ⵙ 100% ⵏ ⵓⴼⵔⴰⵇ ⴳⵔ ⵎⴰⵕⵕⴰ ⵉⵙⵙⵓⴼⵖ ⵓⵎⵏⵅⵔⴰⵟ ⴷ ⵓⵔⴰⵔⵓ ⵏ AMO ⵉⵜⵜⵓⵙⵙⴼⵔⴽⵏ ⵙ CNOPS.']
+      },
+      {
+        icon: 'fa-people-roof',
+        title: 'ⵉⵎⵙⵜⴼⴰⴷⴰⵏ',
+        body: ['ⵜⴰⴼⵔⵏⵜ 1: ⴰⵎⵏⵅⵔⴰⵟ ⴰⵎⴰⵍⵍⴰⵍ ⵏⵖ ⴰⵎⵇⵇⵔⴰⵏ, ⴱⵍⴰ ⵜⵉⵍⴰⵍ ⵏ ⵓⵙⴳⴳⵯⴰⵙ.', 'ⵜⴰⴼⵔⵏⵜ 2: ⴰⵎⵏⵅⵔⴰⵟ ⴰⵎⴰⵍⵍⴰⵍ.', 'ⵉ ⵜⴼⵔⵏⵉⵡⵉⵏ 1 ⴷ 2:'],
+        bullets: ['ⴰⵙⵍⵉ ⵏⵖ ⵉⵙⵍⴰⵏ ⴱⵍⴰ ⵜⵉⵍⴰⵍ ⵏ ⵓⵙⴳⴳⵯⴰⵙ.', 'ⵜⵉⴳⵯⵊⴷⴰⵏ ⴷ ⵉⴳⵓⵊⵉⵍⵏ ⴰⵔ 26 ⵏ ⵓⵙⴳⴳⵯⴰⵙ.', 'ⵉⴼⵔⵅⴰⵏ ⵉⵜⵜⵓⵙⵜⴰⵍⵏ ⴰⵔ 26 ⵏ ⵓⵙⴳⴳⵯⴰⵙ.']
+      },
+      {
+        icon: 'fa-clock',
+        title: 'ⵜⵉⵣⵉ ⵏ ⵓⵔⴰⵔⵓ',
+        body: ['ⵉⵜⵜⴳⴰ ⵓⵔⴰⵔⵓ ⵙ Sanlam Maroc ⵉ ⵓⵎⵏⵅⵔⴰⵟ, ⵙ ⵓⵙⴼⴰⴹ ⴰⴱⴰⵏⴽⵉ ⵏⵖ ⵙ ⵓⵎⴰⵏⴷⴰ ⴰⴱⵓⵙⵟⵉ, ⴳ 15 ⵏ ⵡⴰⵙⵙⵏ ⵙ ⵓⴳⴳⴰⵔ.']
+      }
+    ],
+    options: [
+      {
+        title: 'ⵜⴰⴼⵔⵏⵜ 1',
+        kicker: 'ALD-ALC, ⵜⴰⵡⵙⵉⵡⵉⵏ ⴷ ⵓⵙⵏⴰⴼⴰ',
+        guarantees: amcDetailFr.options[0].guarantees.map((guarantee) => ({
+          ...guarantee,
+          title: guarantee.title.replace('Soins ambulatoires', 'ⵜⴰⵡⵙⵉⵡⵉⵏ').replace('Hospitalisations chirurgicales et/ou médicales', 'ⴰⵙⵏⴰⴼⴰ ⴰⵊⵉⵔⵓⵔⵊⵉ ⴷ/ⵏⵖ ⴰⴷⵓⵙⴰⵏ'),
+          assured: 'ⴰⵎⵓⴷⴷⵓ ⴰⵎⵙⵎⴰⴷ ⵉ ⵜⵡⵓⵔⵉⵡⵉⵏ ⵏ ⵜⴰⴷⵓⵙⵉ ⵉⵜⵜⵓⵙⴳⴳⴷⵏ ⵙ AMO-CNOPS, ⵙ ⵎⴽ ⵉⵍⵍⴰ ⴳ ⵓⵎⵙⴰⵡⴰⴹ.',
+          benefits: ['ⴰⵔⴰⵔⵓ ⵏ ⵜⵎⵙⵉⵔⵉⵏ ⴷ ⵓⵙⵏⵓⴱⴳ ⴰⴷⵓⵙⴰⵏ.', 'ⵜⵉⴳⴰⵡⵉⵏ ⵜⵉⴷⵓⵙⴰⵏⵉⵏ ⴷ ⵏ ⵉⵎⴰⵡⴰⵙⵏ ⵉⴷⵓⵙⴰⵏⵏ.', 'ⵜⵉⵎⵣⵣⴰⵔ ⴷ ⵜⵎⵓⵔⵉ ⵏ ⵓⵙⵎⵓⵏ ⵜⵜⴰⵔⴰⵏ ⵙ ⵓⵎⵙⵎⴰⴷ.', 'ⴰⵙⴼⴰⵔ: ⴰⵔⴰⵔⵓ ⵏ ⵉⵙⴼⴰⵔⵏ ⵉⵜⵜⵓⵙⵎⴰⵔⵏ ⵙ ⵜⴰⵙⴼⵜⴰⵔⵜ.']
+        })),
+        cases: [
+          ['fa-eye', 'ⵜⵉⵟⵟⴰⵡⵉⵏ', 'ⴰⵙⵇⴼ 600 DH ⵉ ⵡⴰⵍⵍⴰⵏ ⵉⵎⵎⵔⵏ ⴷ ⵜⵎⵓⵔⵜ, ⴷ 400 DH ⵉ ⵡⴰⵍⵍⴰⵏ ⵓⵔ ⵉⵎⵎⵔⵏ.'],
+          ['fa-x-ray', 'Scanner', 'ⴰⵙⵇⴼ 750 DH ⵉ ⴽⵓ ⵢⴰⵏ, ⵉ ⴽⵓ ⵓⵟⵟⴰⵏ, ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-magnet', 'IRM', 'ⴰⵙⵇⴼ 1 500 DH ⵉ ⴽⵓ ⵢⴰⵏ, ⵉ ⴽⵓ ⵓⵟⵟⴰⵏ, ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-tooth', 'ⵜⴰⵡⵙⴰ ⵏ ⵓⵅⵙⴰⵏ', 'ⴰⵙⵇⴼ 1 500 DH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-teeth', 'Orthodontie ODF', 'ⴰⵙⵇⴼ 2 000 DH ⵉ ⴽⵓ ⵙⵎⵙⵜⵔ, ⵉ ⵓⴼⵔⵓⵅ ⴷⴷⴰⵡ 16 ⵏ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-person-walking', 'ⴰⵙⵏⵓⴱⴳ ⴰⵎⴰⵢⵏⵓ', 'ⴰⵙⵇⴼ 2 000 DH ⵉ ⴽⵓ ⵓⵟⵟⴰⵏ, ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-ear-listen', 'ⵜⴰⵙⴼⵍⴷⵜ', 'ⴰⵙⵇⴼ 5 000 DH ⵉ ⴽⵓ ⵢⴰⵏ, ⵉ ⴽⵓ ⵜⴰⵡⵓⵔⵉ, ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-head-side-virus', 'ⵜⵉⴳⵔⴰ ⵜⵉⵙⴼⵍⴷⵉⵏ', 'ⴰⵙⵇⴼ 70 000 DH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-stethoscope', 'Colonoscopie', 'ⴰⵙⵇⴼ 500 DH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-vial', 'Frottis', 'ⴰⵙⵇⴼ 400 DH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-ribbon', 'Mammographie', 'ⴰⵙⵇⴼ 500 DH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-wave-square', 'Echographie mammaire', 'ⴰⵙⵇⴼ 500 DH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-baby', 'ⵜⴰⵙⵇⵇⴰ ⵏ ⵓⴼⵔⵓⵅ', 'ⴰⵙⵇⴼ 700 DH ⵉ ⵡⴰⵙⵙ.'],
+          ['fa-flask-vial', 'ⵜⵉⵎⵣⵣⴰⵔ ⵜⵉⴷⵓⵙⴰⵏⵉⵏ', 'ⵜⵉⵎⵣⵣⴰⵔ ⵙ ⵜⴰⵙⴼⵜⴰⵔⵜ ⵜⵜⴰⵔⴰⵏ ⵙ ⵓⵎⵙⵎⴰⴷ ⴱⵍⴰ ⴰⵙⵇⴼ.'],
+          ['fa-radiation', 'Petscan', 'ⴰⵙⵇⴼ 6 000 DH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-notes-medical', 'Fibroscan', 'ⴰⵙⵇⴼ 400 DH ⵉ ⴽⵓ ⵢⴰⵏ, ⵉ ⴽⵓ ⵓⵟⵟⴰⵏ, ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-crutch', 'ⵉⵎⴰⵙⵙⵏ ⵏ orthopédie', 'ⴰⵙⵇⴼ 3 000 DH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.']
+        ]
+      },
+      {
+        title: 'ⵜⴰⴼⵔⵏⵜ 2',
+        kicker: 'ⵜⴰⵡⵙⵉⵡⵉⵏ ⴱⵕⵕⴰ ⵏ ALD/ALC',
+        guarantees: [{
+          title: 'ⵜⴰⵡⵙⵉⵡⵉⵏ ⴱⵕⵕⴰ ⵏ ALD/ALC',
+          assured: 'ⵜⴰⵡⵙⵉⵡⵉⵏ ⵓⵔ ⵉⵍⵍⵉⵏ ⴳ ALD/ALC. ⵉⵜⵜⴳⴰ ⵓⵔⴰⵔⵓ ⵙ 150% ⵏ ⵜⵎⵓⵜⵜⴳⴰ ⵜⴰⵏⴰⵎⵓⵔⵜ, ⴱⵍⴰ ⴰⵙⵇⴼ ⵅⴼ ⴽⵓ ⵜⴰⵏⴼⵓⵜ.',
+          benefits: ['ⴰⵔⴰⵔⵓ ⵏ ⵜⵎⵙⵉⵔⵉⵏ ⴷ ⵓⵙⵏⵓⴱⴳ ⴰⴷⵓⵙⴰⵏ.', 'ⵜⵉⴳⴰⵡⵉⵏ ⵜⵉⴷⵓⵙⴰⵏⵉⵏ ⴷ ⵏ ⵉⵎⴰⵡⴰⵙⵏ ⵉⴷⵓⵙⴰⵏⵏ.', 'ⴰⵙⴼⴰⵔ ⵉⵜⵜⵓⵙⵎⴰⵔⵏ ⵙ ⵜⴰⵙⴼⵜⴰⵔⵜ.', 'ⵜⵉⴳⴰⵡⵉⵏ ⵏ radiologie ⴷ imagerie ⵜⵜⴰⵔⴰⵏ ⵙ ⵓⵎⵙⵎⴰⴷ.']
+        }],
+        cases: [
+          ['fa-tooth', 'ⵜⵉⵙⴷⵉⴷⵉⵏ ⵏ ⵓⵅⵙⴰⵏ', 'ⴰⵙⵇⴼ 1 000 DH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-baby-carriage', 'ⵜⴰⵔⵡⴰ ⵜⴰⵎⴰⴳⴰⵏⵜ', 'ⴰⵙⵇⴼ 2 000 DH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-hospital-user', 'Césarienne', 'ⴰⵔ 100% ⵏ ticket modérateur ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-eye', 'OCT', 'ⴰⵙⵇⴼ 1 000 DH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-radiation', 'VMAT', 'ⴰⵙⵇⴼ 10 000 DH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-x-ray', 'Coroscaner', 'ⴰⵙⵇⴼ 2 000 DH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-teeth-open', 'Dentascan', 'ⴰⵙⵇⴼ 1 000 DH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-bolt', 'Rapidarc', 'ⴰⵙⵇⴼ 4 000 DH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.'],
+          ['fa-file-medical', 'Radios hors nomenclature', 'ⵙ ⵜⴰⵙⴼⵜⴰⵔⵜ ⵜⴰⴷⵓⵙⴰⵏⵜ. ⴰⵙⵇⴼ 2 500 DH ⵉ ⴽⵓ ⵢⴰⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ.']
+        ]
+      }
+    ],
+    note: 'ⵜⴰⵎⴰⵡⵜ: ⵉⵙⴼⴽ ⴰⴷ ⵉⵡⴹ ⵓⵙⵎⵓⵜⵜⴳ ⵏ ⵓⵟⵟⴰⵏ ⵏⵖ ⴰⵎⵓⴽⵔⵉⵙ ⵖⵔ Sanlam Maroc ⴳ 90 ⵏ ⵡⴰⵙⵙⵏ ⵙⴳ ⵡⴰⵙⵙ ⵏ ⵓⵎⵓⴽⵔⵉⵙ.'
+  };
+
   const services = {
     prevoyance: {
       href: 'services/prevoyance.html',
@@ -235,19 +450,19 @@
         meta: 'Santé, protection sociale et bien-être',
         summary: 'Un dispositif de santé et de protection sociale pour accompagner les adhérents et leurs familles face aux aléas médicaux, aux urgences et aux besoins spécifiques.',
         stats: [['100%', 'du ticket modérateur AMC selon contrat'], ['1 MDH', 'de plafond général annuel par personne'], ['5 000 DH', 'd’aide aux enfants en situation de handicap']],
-        chips: ['Centre médico-social', 'Assurance Maladie Complémentaire', 'Assistance Médicale et Transport Sanitaire', 'Aide aux enfants des adhérents en situations d’handicap', 'Conventions et partenariats médicaux'],
+        chips: ['A PROPOS', 'ASSURANCE MALADIE COMPLÉMENTAIRE', 'ASSISTANCE MÉDICALE ET TRANSPORT SANITAIRE', 'FORFAIT FUNERAIRE', 'CENTRE MEDICO-SOCIAL', 'AIDES AUX PERSONNES AUX BESOINS SPECIFIQUES', 'CONVENTIONS ET PARTENARIATS MEDICALES'],
         overview: 'La FOS-Agri a érigé le volet santé en priorité avec l’assurance maladie complémentaire, l’accompagnement médico-social, l’assistance médicale et le transport sanitaire, ainsi qu’un réseau de conventions médicales au niveau régional.',
         highlights: ['Remboursement ou prise en charge complémentaire en lien avec l’AMO/CNOPS.', 'Assistance médicale et transport sanitaire via Wafa IMA Assistance.', 'Aide de 5 000 DH pour les enfants des adhérents en situation de handicap.', 'Conventions avec laboratoires, cliniques, médecins, opticiens, pharmacies et centres de soins.'],
         amcDetail: amcDetailFr,
         features: [
-          ['Centre médico-social', 'Accompagnement, orientation et écoute autour des besoins de santé et de bien-être des adhérents.'],
+          ['A PROPOS', 'Accompagnement, orientation et écoute autour des besoins de santé et de bien-être des adhérents.'],
           ['Assurance Maladie Complémentaire', 'Sanlam Maroc rembourse ou prend en charge tout ou partie du reste à charge selon les taux, bases et plafonds contractuels.'],
           ['Assistance Médicale et Transport Sanitaire', 'Wafa IMA Assistance couvre les situations urgentes, les transports sanitaires, l’assistance à domicile et l’évacuation sanitaire selon conditions.'],
-          ['Aide aux enfants en situation de handicap', 'Contribution à la prise en charge des besoins particuliers des enfants des adhérents.'],
-          ['Conventions et partenariats médicaux', 'Réseau de prestataires répartis dans plusieurs régions du Royaume avec la contribution des relais régionaux.']
+          ['AIDES AUX PERSONNES AUX BESOINS SPECIFIQUES', 'Contribution à la prise en charge des besoins particuliers des enfants des adhérents.'],
+          ['CONVENTIONS ET PARTENARIATS MEDICALES', 'Réseau de prestataires répartis dans plusieurs régions du Royaume avec la contribution des relais régionaux.']
         ],
         centerMedical: {
-          badge: 'Centre médico-social',
+          badge: 'A PROPOS',
           title: 'Accompagnement médico-social',
           intro: 'La FOS-Agri a érigé le volet santé en une place de choix à travers la mise en place d’un dispositif de santé composé de l’assurance maladie complémentaire, de l’accompagnement médico-social, de l’assistance médicale et transport sanitaire et d’une série de conventions avec des praticiens de renom dans le domaine médical au niveau de plusieurs régions du Royaume avec la précieuse collaboration des relais régionaux.',
           items: [
@@ -265,6 +480,7 @@
             },
             {
               icon: 'fa-truck-medical',
+              navIndex: 2,
               title: 'AMTS',
               body: [
                 'La FOS-Agri soutient ses adhérents pendant les moments difficiles à travers le service d’Assistance Médicale et Transport Sanitaire contracté avec la compagnie Wafa IMA Assistance.',
@@ -273,13 +489,15 @@
             },
             {
               icon: 'fa-hands-holding-child',
-              title: 'AIDES AUX PBS',
+              navIndex: 5,
+              title: 'AIDES AUX PERSONNES AUX BESOINS SPECIFIQUES',
               body: [
                 'La FOS-Agri a mis en place un programme d’aide aux enfants des adhérents en situations d’handicap présentant des besoins spécifiques, et ce en contribuant à la prise en charge de leurs besoins particuliers à travers une aide d’un montant de 5000 dhs.'
               ]
             },
             {
               icon: 'fa-file-contract',
+              navIndex: 6,
               title: 'CONVENTIONS ET PARTENARIATS MEDICALES',
               body: [
                 'TABLEAU CONVENTIONS (LABO, MEDECINS, CABINETS)'
@@ -287,6 +505,22 @@
             }
           ]
         },
+        extraSections: [
+          {
+            navIndex: 3,
+            badge: 'FORFAIT FUNERAIRE',
+            title: 'FORFAIT FUNERAIRE',
+            intro: 'Cette page est réservée à la présentation du forfait funéraire destiné aux adhérents concernés.',
+            points: ['Conditions d’éligibilité à confirmer avec la Fondation.', 'Pièces justificatives et modalités de dépôt à intégrer après validation du contenu.', 'Orientation vers le relais régional ou le service compétent pour le suivi du dossier.']
+          },
+          {
+            navIndex: 4,
+            badge: 'CENTRE MEDICO-SOCIAL',
+            title: 'CENTRE MEDICO-SOCIAL',
+            intro: 'Cette page regroupe les informations liées au centre médico-social et à l’accompagnement de proximité des adhérents.',
+            points: ['Orientation et écoute autour des besoins de santé et de bien-être.', 'Information sur les prestations médico-sociales disponibles.', 'Coordination avec les équipes FOS-Agri et les relais régionaux.']
+          }
+        ],
         partners: ['Laboratoires d’analyses', 'Cliniques et radiologie', 'Médecins à tarifs préférentiels', 'Opticiens', 'Pharmacies', 'Centres dentaires'],
         steps: [['Orientation', 'Identifier la prestation ou le partenaire médical adapté.'], ['Dossier', 'Préparer les pièces justificatives et les références d’adhésion.'], ['Prise en charge', 'Suivre les modalités AMC, AMTS ou convention médicale.'], ['Relais régional', 'S’appuyer sur les relais pour les conventions de proximité.']]
       },
@@ -295,12 +529,13 @@
         meta: 'الصحة والحماية الاجتماعية والرفاه',
         summary: 'منظومة لمواكبة المنخرطين وأسرهم في الصحة والحماية الاجتماعية والحالات المستعجلة والاحتياجات الخاصة.',
         stats: [['100%', 'من الباقي على عاتق المنخرط حسب العقد'], ['1 مليون درهم', 'كسقف عام سنوي لكل شخص'], ['5 000 درهم', 'دعم للأطفال في وضعية إعاقة']],
-        chips: ['المركز الطبي الاجتماعي', 'التأمين الصحي التكميلي', 'المساعدة والنقل الصحي', 'دعم الإعاقة', 'الشراكات الطبية'],
+        chips: ['حول الخدمة', 'التأمين الصحي التكميلي', 'المساعدة والنقل الصحي', 'منحة الوفاة', 'المركز الطبي الاجتماعي', 'دعم الأشخاص ذوي الاحتياجات الخاصة', 'الاتفاقيات والشراكات الطبية'],
         overview: 'تضع FOS-Agri الصحة ضمن أولوياتها عبر التأمين الصحي التكميلي والمواكبة الطبية الاجتماعية والمساعدة الطبية والنقل الصحي وشبكة اتفاقيات طبية جهوية.',
         highlights: ['تعويض أو تحمل تكميلي بتنسيق مع AMO/CNOPS.', 'مساعدة طبية ونقل صحي عبر Wafa IMA Assistance.', 'دعم قدره 5 000 درهم للأطفال في وضعية إعاقة.', 'اتفاقيات مع مختبرات ومصحات وأطباء ونظارات وصيدليات ومراكز علاج.'],
-        features: [['المركز الطبي الاجتماعي', 'استقبال وتوجيه ومواكبة حول حاجيات الصحة والرفاه.'], ['التأمين الصحي التكميلي', 'تعويض أو تحمل الباقي وفق الضمانات والأسقف التعاقدية.'], ['المساعدة الطبية والنقل الصحي', 'تغطية الحالات المستعجلة والنقل الصحي والمساعدة المنزلية والإجلاء الصحي وفق الشروط.'], ['دعم الأطفال في وضعية إعاقة', 'مساهمة في التكفل بالحاجيات الخاصة لأبناء المنخرطين.'], ['اتفاقيات طبية', 'شبكة مقدمي خدمات بعدة جهات بتنسيق مع المنسقين الجهويين.']],
+        amcDetail: amcDetailAr,
+        features: [['حول الخدمة', 'استقبال وتوجيه ومواكبة حول حاجيات الصحة والرفاه.'], ['التأمين الصحي التكميلي', 'تعويض أو تحمل الباقي وفق الضمانات والأسقف التعاقدية.'], ['المساعدة الطبية والنقل الصحي', 'تغطية الحالات المستعجلة والنقل الصحي والمساعدة المنزلية والإجلاء الصحي وفق الشروط.'], ['دعم الأشخاص ذوي الاحتياجات الخاصة', 'مساهمة في التكفل بالحاجيات الخاصة لأبناء المنخرطين.'], ['الاتفاقيات والشراكات الطبية', 'شبكة مقدمي خدمات بعدة جهات بتنسيق مع المنسقين الجهويين.']],
         centerMedical: {
-          badge: 'المركز الطبي الاجتماعي',
+          badge: 'حول الخدمة',
           title: 'المواكبة الطبية الاجتماعية',
           intro: 'جعلت FOS-Agri محور الصحة في صلب أولوياتها من خلال إرساء منظومة صحية تضم التأمين الصحي التكميلي، والمواكبة الطبية الاجتماعية، والمساعدة الطبية والنقل الصحي، وسلسلة من الاتفاقيات مع ممارسين مرموقين في المجال الطبي على مستوى عدة جهات من المملكة، بتعاون ثمين مع المنسقين الجهويين.',
           items: [
@@ -318,6 +553,7 @@
             },
             {
               icon: 'fa-truck-medical',
+              navIndex: 2,
               title: 'AMTS',
               body: [
                 'تدعم FOS-Agri منخرطيها في اللحظات الصعبة من خلال خدمة المساعدة الطبية والنقل الصحي المتعاقد بشأنها مع شركة Wafa IMA Assistance.',
@@ -326,13 +562,15 @@
             },
             {
               icon: 'fa-hands-holding-child',
-              title: 'المساعدة للأطفال ذوي الاحتياجات الخاصة',
+              navIndex: 5,
+              title: 'دعم الأشخاص ذوي الاحتياجات الخاصة',
               body: [
                 'أطلقت FOS-Agri برنامج دعم لفائدة أطفال المنخرطين في وضعية إعاقة ممن لديهم احتياجات خاصة، وذلك بالمساهمة في التكفل باحتياجاتهم الخاصة عبر منحة قدرها 5000 درهم.'
               ]
             },
             {
               icon: 'fa-file-contract',
+              navIndex: 6,
               title: 'الاتفاقيات والشراكات الطبية',
               body: [
                 'جدول الاتفاقيات (مختبرات، أطباء، عيادات)'
@@ -340,6 +578,22 @@
             }
           ]
         },
+        extraSections: [
+          {
+            navIndex: 3,
+            badge: 'منحة الوفاة',
+            title: 'منحة الوفاة',
+            intro: 'هذه الصفحة مخصصة لتقديم معطيات منحة الوفاة لفائدة المنخرطين المعنيين.',
+            points: ['شروط الاستفادة يتم تأكيدها مع المؤسسة.', 'الوثائق المطلوبة وكيفيات الإيداع ستضاف بعد المصادقة على المحتوى.', 'توجيه نحو المنسق الجهوي أو المصلحة المختصة لتتبع الملف.']
+          },
+          {
+            navIndex: 4,
+            badge: 'المركز الطبي الاجتماعي',
+            title: 'المركز الطبي الاجتماعي',
+            intro: 'تجمع هذه الصفحة المعلومات المرتبطة بالمركز الطبي الاجتماعي والمواكبة القريبة للمنخرطين.',
+            points: ['توجيه وإنصات حول حاجيات الصحة والرفاه.', 'معلومات حول الخدمات الطبية الاجتماعية المتاحة.', 'تنسيق مع فرق FOS-Agri والمنسقين الجهويين.']
+          }
+        ],
         partners: ['مختبرات التحاليل', 'مصحات وأشعة', 'أطباء بتعريفات تفضيلية', 'نظارات', 'صيدليات', 'مراكز الأسنان'],
         steps: [['التوجيه', 'تحديد الخدمة أو الشريك الطبي المناسب.'], ['الملف', 'تحضير الوثائق ومعطيات الانخراط.'], ['التكفل', 'اتباع مساطر AMC أو AMTS أو الاتفاقية.'], ['المنسق الجهوي', 'الاستفادة من القرب الجهوي.']]
       },
@@ -348,12 +602,13 @@
         meta: 'ⵜⴰⴷⵓⵙⵉ, ⴰⵎⵎⵓⵜⵜⵉ ⴷ ⵜⵓⴷⵔⵜ',
         summary: 'ⵜⴰⵏⴼⵓⵙⵜ ⵉ ⵓⵎⵓⴷⴷⵓ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴷ ⵜⵡⴰⵛⵓⵍⵜ ⴳ ⵜⴰⴷⵓⵙⵉ ⴷ ⵜⵉⵎⵓⵔⴰ.',
         stats: [['100%', 'AMC ⵙ ⵎⴽ ⵉⵍⵍⴰ ⴳ ⵓⵎⵙⴰⵡⴰⴹ'], ['1 MDH', 'ⴰⵙⵡⵉⵔ ⴰⴳⵔⴰⵡ ⵉ ⴽⵓ ⵢⴰⵏ'], ['5 000 DH', 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⴼⵔⵅⴰⵏ ⵏ ⵓⵙⵔⵓⵜ']],
-        chips: ['Centre médico-social', 'AMC', 'AMTS', 'ⴰⵎⵓⴷⴷⵓ handicap', 'ⵉⵣⴷⴰⵢⵏ médicaux'],
+        chips: ['ⵅⴼ ⵜⴰⵏⴼⵓⵜ', 'ⴰⵙⵙⵓⵔⴰⵏⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵎⵔⵏⴰⵡ', 'ⵜⴰⵍⵍⴰⵍⵜ ⵜⴰⴷⵓⵙⴰⵏⵜ ⴷ ⵓⵙⵉⵡⴹ ⴰⴷⵓⵙⴰⵏ', 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵜⵎⵜⵜⴰⵏⵜ', 'ⴰⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ', 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵙ ⵉⵙⵡⵉⵔⵏ ⵉⵎⵥⵍⵉⵢⵏ', 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏⵏ'],
         overview: 'FOS-Agri ⵜⵙⵙⵎⵓⵔⵙ ⵜⴰⴷⵓⵙⵉ ⵙ AMC, AMTS, ⴰⵎⵓⴷⴷⵓ médico-social ⴷ ⵉⵣⴷⴰⵢⵏ médicaux ⴳ ⵜⵎⵓⵔⴰ.',
         highlights: ['ⴰⵔⴰⵔⵓ ⵏ reste à charge ⵙ AMO/CNOPS.', 'AMTS ⵙ Wafa IMA Assistance.', '5 000 DH ⵉ ⵉⴼⵔⵅⴰⵏ ⴳ handicap.', 'ⵉⵣⴷⴰⵢⵏ ⴷ laboratoires, cliniques, médecins, opticiens.'],
-        features: [['Centre médico-social', 'ⴰⵎⵓⴷⴷⵓ, ⴰⵙⴷⵓ ⴷ ⵜⵎⵙⵍⵉⵡⵜ.'], ['AMC', 'ⴰⵔⴰⵔⵓ ⵙ ⵎⴽ ⵉⵍⵍⴰ ⴳ ⵓⵎⵙⴰⵡⴰⴹ.'], ['AMTS', 'ⴰⵎⵓⴷⴷⵓ ⴰⵎⴰⴷⴰⵏ ⴷ transport sanitaire.'], ['ⴰⵎⵓⴷⴷⵓ handicap', 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⴼⵔⵅⴰⵏ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ.'], ['ⵉⵣⴷⴰⵢⵏ médicaux', 'ⵉⵣⴷⴰⵢⵏ ⴳ ⵜⵎⵓⵔⴰ ⵎⴰⵔⵔⴰ.']],
+        amcDetail: amcDetailZgh,
+        features: [['ⵅⴼ ⵜⴰⵏⴼⵓⵜ', 'ⴰⵎⵓⴷⴷⵓ, ⴰⵙⴷⵓ ⴷ ⵜⵎⵙⵍⵉⵡⵜ.'], ['AMC', 'ⴰⵔⴰⵔⵓ ⵙ ⵎⴽ ⵉⵍⵍⴰ ⴳ ⵓⵎⵙⴰⵡⴰⴹ.'], ['AMTS', 'ⴰⵎⵓⴷⴷⵓ ⴰⵎⴰⴷⴰⵏ ⴷ transport sanitaire.'], ['ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⵙⵡⵉⵔⵏ ⵉⵎⵥⵍⵉⵢⵏ', 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⴼⵔⵅⴰⵏ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ.'], ['ⵉⵎⵙⴰⵡⴰⴹⵏ médicaux', 'ⵉⵣⴷⴰⵢⵏ ⴳ ⵜⵎⵓⵔⴰ ⵎⴰⵔⵔⴰ.']],
         centerMedical: {
-          badge: 'ⴰⵎⵎⴰⵙ ⴰⴷⴰⵡⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ',
+          badge: 'ⵅⴼ ⵜⴰⵏⴼⵓⵜ',
           title: 'ⴰⵎⵓⴷⴷⵓ ⴰⴷⴰⵡⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ',
           intro: 'FOS-Agri ⵜⵙⵙⵓⴼⵖ ⵜⴰⴷⵓⵙⵉ ⴷ ⴰⵙⵓⵔⵉⴼ ⴰⵎⵇⵔⴰⵏ ⵙ ⵓⵙⵎⵓⵜⵜⴳ ⵏ ⵜⵎⵓⵔⵜ ⵜⴰⴷⵓⵙⴰⵏⵜ ⵉⵙⵎⵓⵏⵏ AMC, ⴰⵎⵓⴷⴷⵓ médico-social, AMTS ⴷ ⵉⵎⵙⴰⵡⴰⴹⵏ ⵉⴷⵓⵙⴰⵏⵏ ⴳ ⵜⵎⵓⵔⴰ ⵎⴰⵔⵔⴰ ⵙ ⵜⵉⵡⵉⵙⵉ ⵏ ⵉⵎⵙⵏⴰⵡⵏ ⵉⵏⵏⴰⵡⵏ.',
           items: [
@@ -371,6 +626,7 @@
             },
             {
               icon: 'fa-truck-medical',
+              navIndex: 2,
               title: 'AMTS',
               body: [
                 'FOS-Agri ⵜⴻⵜⵜⴰⵍⵍⴰⵍ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴳ ⵉⵎⵓⵔⴰⵏ ⵉⵙⵙⴷⴰⵔⵏ ⵙ AMTS ⴷ Wafa IMA Assistance.',
@@ -379,13 +635,15 @@
             },
             {
               icon: 'fa-hands-holding-child',
-              title: 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⴼⵔⵅⴰⵏ ⴳ handicap',
+              navIndex: 5,
+              title: 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⵙⵡⵉⵔⵏ ⵉⵎⵥⵍⵉⵢⵏ',
               body: [
                 'FOS-Agri ⵜⵙⵎⵓⵜⵜⴳ ⵢⴰⵜ ⵜⴰⵏⴼⵓⵙⵜ ⵉ ⵉⴼⵔⵅⴰⵏ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴳ ⵓⵙⵔⵓⵜ, ⵙ ⵓⵎⵓⴷⴷⵓ ⵏ 5000 DH.'
               ]
             },
             {
               icon: 'fa-file-contract',
+              navIndex: 6,
               title: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏⵏ',
               body: [
                 'ⵜⴰⴱⵍⵓⵜ ⵏ ⵉⵎⵙⴰⵡⴰⴹⵏ (laboratoires, médecins, cabinets)'
@@ -393,6 +651,22 @@
             }
           ]
         },
+        extraSections: [
+          {
+            navIndex: 3,
+            badge: 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵜⵎⵜⵜⴰⵏⵜ',
+            title: 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵜⵎⵜⵜⴰⵏⵜ',
+            intro: 'ⵜⴰⵙⵏⴰ ⴰⴷ ⵜⵇⵇⵏ ⵙ ⵜⵎⴰⵎⴽⵜ ⵏ forfait funéraire ⵉ ⵉⵎⵏⵅⵔⴰⵟⵏ.',
+            points: ['ⵜⵉⵡⵜⵉⵍⵉⵏ ⵏ ⵓⵙⵎⵔⵙ ⴰⴷ ⵜⵜⵓⵙⵎⴷⵏⵜ ⵙ FOS-Agri.', 'ⵜⵉⵡⵔⵉⵇⵉⵏ ⴷ ⵜⵎⴰⵎⴽⵜ ⵏ ⵓⵙⵎⵓⵜⵜⴳ ⴰⴷ ⵜⵜⵓⵔⵏⴰⵏⵜ ⵎⴰⵢⴰⴷ ⵜⵜⵓⵙⵙⵏⵜ.', 'ⴰⵙⴷⵓ ⵖⵔ ⵓⵎⵙⵏⴰⵡ ⵏ ⵜⵎⵏⴰⴹⵜ ⵏⵖ ⴰⵙⵔⵓⵙ ⵉⵎⵥⵍⵉ.']
+          },
+          {
+            navIndex: 4,
+            badge: 'ⴰⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ',
+            title: 'ⴰⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ',
+            intro: 'ⵜⴰⵙⵏⴰ ⴰⴷ ⵜⵙⵎⵓⵏ ⵜⵉⵏⵖⵎⵉⵙⵉⵏ ⵏ centre médico-social ⴷ ⵓⵎⵓⴷⴷⵓ ⴰⵎⵇⵔⴰⵏ.',
+            points: ['ⴰⵙⴷⵓ ⴷ ⵜⵎⵙⵍⵉⵡⵜ ⴳ ⵉⵙⵡⵉⵔⵏ ⵏ ⵜⴰⴷⵓⵙⵉ.', 'ⵜⵉⵏⵖⵎⵉⵙⵉⵏ ⵅⴼ ⵜⵏⴼⵓⵜⵉⵏ médico-sociales.', 'ⴰⵎⵢⴰⵡⴰⴹ ⴷ FOS-Agri ⴷ ⵉⵎⵙⵏⴰⵡⵏ ⵏ ⵜⵎⵏⴰⴹⵜ.']
+          }
+        ],
         partners: ['Laboratoires', 'Cliniques', 'Médecins', 'Opticiens', 'Pharmacies', 'Centres dentaires'],
         steps: [['ⴰⵙⴷⵓ', 'ⵙⵙⵏ ⵜⴰⵏⴼⵓⵙⵜ.'], ['ⴰⴼⴰⵢⵍⵓ', 'ⵙⵎⵓⵏ ⵜⵉⴽⴰⵔⴹⵉⵡⵉⵏ.'], ['ⴰⵎⵓⴷⴷⵓ', 'ⴹⴼⵕ AMC/AMTS.'], ['ⴰⵎⵙⵏⴰⵡ', 'ⵎⵢⴰⵡⴰⵍ ⴷ ⵓⵎⵙⵏⴰⵡ.']]
       }
@@ -698,7 +972,7 @@
           </div>
           <div class="prestation-accordion" data-prestation-accordion>
             ${center.items.map((entry, index) => `
-              <article class="prestation-accordion-item" id="${subrubriqueId(index + 1)}">
+              <article class="prestation-accordion-item" id="${subrubriqueId(Number.isInteger(entry.navIndex) ? entry.navIndex : index + 1)}">
                 <button class="prestation-accordion-trigger" type="button" aria-expanded="false">
                   <span class="prestation-accordion-title">
                     <i class="fa-solid ${esc(entry.icon)}" aria-hidden="true"></i>
@@ -716,19 +990,25 @@
       </section>`;
   }
 
-  function renderAmcDispositionCard(card) {
+  function renderAmcDispositionCard(card, index, detail) {
+    const copyId = `amc-disposition-copy-${index}`;
     return `
-      <article class="prestation-amc-card">
-        <span class="prestation-amc-card-icon"><i class="fa-solid ${esc(card.icon || 'fa-shield-heart')}" aria-hidden="true"></i></span>
-        <div>
+      <article class="prestation-amc-card" data-amc-info-card data-amc-card-index="${index}">
+        <div class="prestation-amc-card-head">
+          <span class="prestation-amc-card-icon"><i class="fa-solid ${esc(card.icon || 'fa-shield-heart')}" aria-hidden="true"></i></span>
           <h3>${esc(card.title)}</h3>
+        </div>
+        <div class="prestation-amc-card-copy" id="${copyId}">
           ${renderParagraphs(card.body)}
           ${renderBulletList(card.bullets)}
         </div>
+        <button class="prestation-amc-card-toggle" type="button" data-amc-card-toggle aria-expanded="false" aria-controls="${copyId}" aria-label="${esc(detail.expandLabel)} : ${esc(card.title)}">
+          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </button>
       </article>`;
   }
 
-  function renderAmcGuarantee(guarantee, index) {
+  function renderAmcGuarantee(guarantee, index, detail) {
     return `
       <article class="prestation-amc-guarantee ${index === 0 ? 'is-open' : ''}">
         <button class="prestation-amc-guarantee-trigger" type="button" aria-expanded="${index === 0 ? 'true' : 'false'}">
@@ -741,11 +1021,11 @@
         <div class="prestation-amc-guarantee-content" ${index === 0 ? '' : 'hidden'}>
           <div class="prestation-amc-guarantee-grid">
             <div>
-              <span class="prestation-amc-label">Affections et actes médicaux assurés</span>
+              <span class="prestation-amc-label">${esc(detail.assuredLabel)}</span>
               <p>${esc(guarantee.assured)}</p>
             </div>
             <div>
-              <span class="prestation-amc-label">Prestations garanties</span>
+              <span class="prestation-amc-label">${esc(detail.benefitsLabel)}</span>
               ${renderBulletList(guarantee.benefits)}
             </div>
           </div>
@@ -771,7 +1051,7 @@
           <p>${esc(option.kicker)}</p>
         </div>
         <div class="prestation-amc-guarantee-list" data-amc-guarantees>
-          ${option.guarantees.map((guarantee, guaranteeIndex) => renderAmcGuarantee(guarantee, guaranteeIndex)).join('')}
+          ${option.guarantees.map((guarantee, guaranteeIndex) => renderAmcGuarantee(guarantee, guaranteeIndex, detail)).join('')}
         </div>
         <div class="prestation-amc-cases">
           <div class="prestation-amc-subhead">
@@ -800,8 +1080,12 @@
             <div class="prestation-amc-block-head">
               <span class="section-tag"><i class="fa-solid fa-file-contract" aria-hidden="true"></i> ${esc(detail.dispositionsTitle)}</span>
             </div>
-            <div class="prestation-amc-card-grid">
-              ${detail.dispositions.map(renderAmcDispositionCard).join('')}
+            <div class="prestation-amc-card-grid" data-amc-card-carousel>
+              ${detail.dispositions.map((card, index) => renderAmcDispositionCard(card, index, detail)).join('')}
+            </div>
+            <div class="prestation-amc-card-dots" aria-label="${esc(detail.paginationLabel)}">
+              ${detail.dispositions.map((card, index) => `
+                <button class="${index === 0 ? 'is-active' : ''}" type="button" data-amc-card-dot="${index}" aria-label="${esc(card.title)}" aria-current="${index === 0 ? 'true' : 'false'}"></button>`).join('')}
             </div>
           </div>
 
@@ -832,6 +1116,28 @@
           </aside>
         </div>
       </section>`;
+  }
+
+  function renderExtraPrestationSections(item) {
+    if (!item.extraSections?.length || !item.chips?.length) return '';
+    return item.extraSections.map((section, index) => {
+      const firstIndex = item.chips.length - item.extraSections.length;
+      const navIndex = Number.isInteger(section.navIndex) ? section.navIndex : firstIndex + index;
+      return `
+      <section class="section page-section-soft prestation-extra-section" id="${subrubriqueId(navIndex)}" data-prestation-extra-panel data-prestation-extra-index="${navIndex}" hidden>
+        <div class="container">
+          <article class="prestation-extra-card">
+            <span class="section-tag"><i class="fa-solid ${subIcons.prevoyance?.[navIndex] || 'fa-circle-check'}" aria-hidden="true"></i> ${esc(section.badge)}</span>
+            <h2>${esc(section.title)}</h2>
+            <p>${esc(section.intro)}</p>
+            ${section.points?.length ? `
+            <ul class="prestation-extra-list">
+              ${section.points.map((point) => `<li><i class="fa-solid fa-check" aria-hidden="true"></i><span>${esc(point)}</span></li>`).join('')}
+            </ul>` : ''}
+          </article>
+        </div>
+      </section>`;
+    }).join('');
   }
 
   function setPanelVisibility(panel, visible) {
@@ -875,6 +1181,78 @@
   }
 
   function bindAmcDetail(scope) {
+    scope.querySelectorAll('[data-amc-info-card]').forEach((card) => {
+      const toggle = card.querySelector('[data-amc-card-toggle]');
+      const icon = toggle?.querySelector('.fa-solid');
+      const title = card.querySelector('h3')?.textContent?.trim() || '';
+      const detail = serviceText('prevoyance')?.amcDetail || amcDetailFr;
+      toggle?.addEventListener('click', () => {
+        const expanded = !card.classList.contains('is-expanded');
+        card.classList.toggle('is-expanded', expanded);
+        toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        toggle.setAttribute('aria-label', `${expanded ? detail.collapseLabel : detail.expandLabel} : ${title}`);
+        if (icon) {
+          icon.classList.toggle('fa-chevron-down', !expanded);
+          icon.classList.toggle('fa-chevron-up', expanded);
+        }
+      });
+    });
+
+    scope.querySelectorAll('[data-amc-card-carousel]').forEach((carousel) => {
+      const cards = Array.from(carousel.querySelectorAll('[data-amc-info-card]'));
+      const dots = Array.from(carousel.parentElement?.querySelectorAll('[data-amc-card-dot]') || []);
+      let dragging = false;
+      let startX = 0;
+      let startScroll = 0;
+
+      const updateDots = () => {
+        if (!cards.length || !dots.length) return;
+        const activeIndex = cards.reduce((bestIndex, card, index) => {
+          const distance = Math.abs(card.offsetLeft - carousel.scrollLeft);
+          const bestDistance = Math.abs(cards[bestIndex].offsetLeft - carousel.scrollLeft);
+          return distance < bestDistance ? index : bestIndex;
+        }, 0);
+        dots.forEach((dot, index) => {
+          const active = index === activeIndex;
+          dot.classList.toggle('is-active', active);
+          dot.setAttribute('aria-current', active ? 'true' : 'false');
+        });
+      };
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          cards[index]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        });
+      });
+
+      carousel.addEventListener('scroll', () => {
+        window.requestAnimationFrame(updateDots);
+      }, { passive: true });
+
+      carousel.addEventListener('pointerdown', (event) => {
+        if (!window.matchMedia('(max-width: 680px)').matches) return;
+        dragging = true;
+        startX = event.clientX;
+        startScroll = carousel.scrollLeft;
+        carousel.classList.add('is-dragging');
+      });
+
+      carousel.addEventListener('pointermove', (event) => {
+        if (!dragging) return;
+        carousel.scrollLeft = startScroll - (event.clientX - startX);
+      });
+
+      ['pointerup', 'pointercancel', 'pointerleave'].forEach((eventName) => {
+        carousel.addEventListener(eventName, () => {
+          dragging = false;
+          carousel.classList.remove('is-dragging');
+          updateDots();
+        });
+      });
+
+      updateDots();
+    });
+
     scope.querySelectorAll('.prestation-amc-option-tabs').forEach((tabs) => {
       const section = tabs.closest('.prestation-amc-section');
       const buttons = tabs.querySelectorAll('[data-amc-option]');
@@ -1044,7 +1422,7 @@
         </div>
       </section>
       <section class="prestation-nav">
-        <div class="container prestation-nav-inner">
+        <div class="container prestation-nav-inner ${item.chips.length > 5 ? 'is-split-nav' : ''}">
           ${item.chips.map((chip, index) => `
             <a class="prestation-nav-chip" href="#${subrubriqueId(index)}">
               <i class="fa-solid ${subIcons[key]?.[index] || 'fa-circle-check'}" aria-hidden="true"></i>
@@ -1071,6 +1449,7 @@
       </section>`}
       ${renderCenterMedicalSection(item)}
       ${renderAmcDetailSection(item)}
+      ${renderExtraPrestationSections(item)}
       ${item.centerMedical ? '' : `
       <section class="section page-section-soft" id="subrubriques">
         <div class="container">
@@ -1151,14 +1530,18 @@
     const navLinks = mount.querySelectorAll('.prestation-nav-chip');
     const centerPanel = mount.querySelector('.prestation-center-section');
     const amcPanel = mount.querySelector('[data-prestation-amc-panel]');
+    const extraPanels = Array.from(mount.querySelectorAll('[data-prestation-extra-panel]'));
     const showTabContent = (index, link, shouldScroll = true) => {
       const isAmc = index === 1 && !!amcPanel;
+      const extraPanel = extraPanels.find((panel) => Number(panel.dataset.prestationExtraIndex) === index);
+      const isExtra = !!extraPanel;
       navLinks.forEach((item) => item.classList.remove('is-active'));
       if (link) link.classList.add('is-active');
-      setPanelVisibility(centerPanel, !isAmc);
+      setPanelVisibility(centerPanel, !isAmc && !isExtra);
       setPanelVisibility(amcPanel, isAmc);
-      const scrollTarget = isAmc ? amcPanel : (index === 0 ? centerPanel : document.getElementById(subrubriqueId(index)));
-      if (!isAmc && index > 1) {
+      extraPanels.forEach((panel) => setPanelVisibility(panel, panel === extraPanel));
+      const scrollTarget = isAmc ? amcPanel : (isExtra ? extraPanel : (index === 0 ? centerPanel : document.getElementById(subrubriqueId(index))));
+      if (!isAmc && !isExtra && index > 1) {
         const trigger = scrollTarget?.querySelector?.('.prestation-accordion-trigger');
         if (trigger && trigger.getAttribute('aria-expanded') !== 'true') trigger.click();
       }
@@ -1179,8 +1562,19 @@
     });
     bindPrestationAccordions(mount);
     bindAmcDetail(mount);
-    if (window.location.hash === `#${subrubriqueId(1)}` && amcPanel) {
-      showTabContent(1, navLinks[1], false);
+    if (window.__fosPrestationHashHandler) {
+      window.removeEventListener('hashchange', window.__fosPrestationHashHandler);
+    }
+    window.__fosPrestationHashHandler = () => {
+      const hashIndex = Array.from(navLinks).findIndex((link) => link.hash === window.location.hash);
+      if (hashIndex > -1) {
+        showTabContent(hashIndex, navLinks[hashIndex], false);
+      }
+    };
+    window.addEventListener('hashchange', window.__fosPrestationHashHandler);
+    const hashIndex = Array.from(navLinks).findIndex((link) => link.hash === window.location.hash);
+    if (hashIndex > 0) {
+      showTabContent(hashIndex, navLinks[hashIndex], false);
     }
   }
 
