@@ -704,29 +704,27 @@ html[dir='rtl'] .prestation-panel ul {
    so there is no white band between the hero, the menu and the panels.
    Only the white menu card overlaps the hero — there is never a
    full-width warm overlay on the hero image, CTA or floating icons. */
-/* The whole area below the hero is one warm institutional off-white. This is
-   the single parent surface that sits behind the service menu, the spacing
-   under it, and every selected content section. */
-body[data-service='prevoyance'] {
+/* One single continuous background — no extra layer. The warm institutional
+   off-white lives on the existing parent wrapper (<main>) and the body, so the
+   service menu, the spacing under it, and every content section all sit on the
+   exact same surface. It starts at the bottom of the hero (the hero paints its
+   own opaque background on top) and runs down through the menu and content. */
+body[data-service='prevoyance'],
+body[data-service='prevoyance'] #prestation-detail-root {
   background: #f7f4ec;
 }
 
-/* Every section below the hero is transparent so the warm parent shows
-   through uniformly — behind the menu, in the gap, and behind the content.
-   No section paints its own white/cool base, so nothing reads as "white". */
+/* Every section below the hero is transparent so that one parent surface shows
+   through identically behind the menu, in the gap, and behind the content.
+   No section (menu area or content) paints its own base, so the whole area is
+   a single uniform background instead of two different ones. */
 body[data-service='prevoyance'] .section,
-body[data-service='prevoyance'] .page-section-soft {
-  background: transparent;
-}
-
-/* The selected content sections keep only a soft gold accent layer on top of
-   the shared warm parent (transparent base — no opaque fill), so all seven
-   panels share one identical surface while keeping the premium glow. */
+body[data-service='prevoyance'] .page-section-soft,
 body[data-service='prevoyance'] .prestation-center-section,
 body[data-service='prevoyance'] .prestation-amc-section,
 body[data-service='prevoyance'] .prestation-amts-section,
 body[data-service='prevoyance'] .prestation-extra-section {
-  background: radial-gradient(circle at 12% 8%, rgba(214, 169, 65, 0.10), transparent 30%);
+  background: transparent;
 }
 
 /* Desktop: lift the menu card so it overlaps the bottom of the hero
