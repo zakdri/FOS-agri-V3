@@ -734,41 +734,39 @@ body[data-service='prevoyance'] .prestation-extra-section {
   }
 }
 
+/* Intro block for FORFAIT / CENTRE / AIDES / CONVENTIONS — matches the
+   clean, boxless paragraph block used by the A PROPOS, AMC and AMTS
+   reference items (no white card, no border, no shadow, no accent stripe). */
 .prestation-extra-card {
   position: relative;
-  max-width: 920px;
-  margin: 0 auto;
-  padding: clamp(1.35rem, 3vw, 2.35rem);
-  overflow: hidden;
-  background: #fff;
-  border: 1px solid rgba(28, 82, 55, 0.12);
-  border-radius: 1.15rem;
-  box-shadow: 0 24px 60px rgba(16, 55, 35, 0.1);
+  max-width: 960px;
+  margin: 0 0 clamp(1.4rem, 3vw, 2.4rem);
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .prestation-extra-card::before {
-  content: '';
-  position: absolute;
-  inset-inline-start: 0;
-  top: 0;
-  bottom: 0;
-  width: 5px;
-  background: linear-gradient(180deg, var(--gold), var(--green));
+  content: none;
 }
 
 .prestation-extra-card h2 {
-  margin: 0.75rem 0 0.7rem;
+  max-width: 760px;
+  margin: 0.75rem 0 0.85rem;
   color: #143b28;
-  font-size: clamp(1.65rem, 4vw, 2.45rem);
-  line-height: 1.08;
+  font-size: clamp(2.1rem, 5vw, 4.15rem);
+  line-height: 0.98;
+  letter-spacing: 0;
 }
 
 .prestation-extra-card p {
-  max-width: 760px;
+  max-width: 850px;
   margin: 0;
-  color: #536a5d;
-  font-size: 1.03rem;
-  line-height: 1.75;
+  color: #4f6659;
+  font-size: clamp(1rem, 1.7vw, 1.18rem);
+  line-height: 1.8;
 }
 
 .prestation-extra-card p + p {
