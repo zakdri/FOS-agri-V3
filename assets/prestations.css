@@ -704,25 +704,29 @@ html[dir='rtl'] .prestation-panel ul {
    so there is no white band between the hero, the menu and the panels.
    Only the white menu card overlaps the hero — there is never a
    full-width warm overlay on the hero image, CTA or floating icons. */
+/* The whole area below the hero is one warm institutional off-white. This is
+   the single parent surface that sits behind the service menu, the spacing
+   under it, and every selected content section. */
 body[data-service='prevoyance'] {
-  background: #f6f8f4;
+  background: #f7f4ec;
 }
 
-/* Plain (non-soft) sections turn transparent so the warm surface shows
-   through them. The warm `page-section-soft` panels are already #f6f8f4,
-   so hero-bottom → menu → content all read as one connected surface. */
-body[data-service='prevoyance'] .section:not(.page-section-soft) {
+/* Every section below the hero is transparent so the warm parent shows
+   through uniformly — behind the menu, in the gap, and behind the content.
+   No section paints its own white/cool base, so nothing reads as "white". */
+body[data-service='prevoyance'] .section,
+body[data-service='prevoyance'] .page-section-soft {
   background: transparent;
 }
 
-/* Give every selected content section the exact AMC / AMTS reference
-   background (warm gradient + soft gold accent) so all seven panels share
-   one identical surface instead of subtly different per-item tints. */
+/* The selected content sections keep only a soft gold accent layer on top of
+   the shared warm parent (transparent base — no opaque fill), so all seven
+   panels share one identical surface while keeping the premium glow. */
 body[data-service='prevoyance'] .prestation-center-section,
+body[data-service='prevoyance'] .prestation-amc-section,
+body[data-service='prevoyance'] .prestation-amts-section,
 body[data-service='prevoyance'] .prestation-extra-section {
-  background:
-    radial-gradient(circle at 12% 8%, rgba(214, 169, 65, 0.14), transparent 28%),
-    linear-gradient(180deg, #f7f8f3 0%, #f2f5ee 100%);
+  background: radial-gradient(circle at 12% 8%, rgba(214, 169, 65, 0.10), transparent 30%);
 }
 
 /* Desktop: lift the menu card so it overlaps the bottom of the hero
