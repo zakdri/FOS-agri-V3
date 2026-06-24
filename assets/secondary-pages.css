@@ -698,6 +698,71 @@ body.secondary-page .site-nav a[aria-current='page'] {
   }
 }
 
+/* ── Page-entrance animations (secondary pages only) ──────────────
+   A soft background reveal on the hero plus a staggered entrance for the
+   header menu and the hero content. Hero/content run as pure CSS keyframes
+   declared in <head>, so their hidden start-state applies before first
+   paint (no flash). The menu is JS-built, so it is gated behind
+   `html.sec-entering` to play once on load and stay instant on language
+   switches. Reduced motion is honoured below and by the missing flag. */
+@media (prefers-reduced-motion: no-preference) {
+  /* Background reveal: a veil over the hero that fades to expose the
+     gradient/photo background underneath. */
+  body.secondary-page .page-hero-secondary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(135deg, #0e3d26, #0b4f31);
+    animation: secHeroVeil 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes secHeroVeil {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
+
+  /* Hero content rises in with a short stagger. */
+  body.secondary-page .page-hero-secondary .container > * {
+    animation: secContentIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  body.secondary-page .page-hero-secondary .container > *:nth-child(1) { animation-delay: 0.18s; }
+  body.secondary-page .page-hero-secondary .container > *:nth-child(2) { animation-delay: 0.28s; }
+  body.secondary-page .page-hero-secondary .container > *:nth-child(3) { animation-delay: 0.38s; }
+  body.secondary-page .page-hero-secondary .container > *:nth-child(4) { animation-delay: 0.48s; }
+  body.secondary-page .page-hero-secondary .container > *:nth-child(n+5) { animation-delay: 0.55s; }
+
+  @keyframes secContentIn {
+    from { opacity: 0; transform: translate3d(0, 18px, 0); }
+    to   { opacity: 1; transform: none; }
+  }
+}
+
+/* Header menu staggers down on first load only — desktop layout only, so it
+   never overrides the mobile drawer's own open animation (max-width: 980px). */
+@media (prefers-reduced-motion: no-preference) and (min-width: 981px) {
+  html.sec-entering body.secondary-page .site-nav > a,
+  html.sec-entering body.secondary-page .site-nav > .nav-item,
+  html.sec-entering body.secondary-page .nav-actions {
+    animation: secNavIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  html.sec-entering body.secondary-page .site-nav > *:nth-child(1) { animation-delay: 0.10s; }
+  html.sec-entering body.secondary-page .site-nav > *:nth-child(2) { animation-delay: 0.16s; }
+  html.sec-entering body.secondary-page .site-nav > *:nth-child(3) { animation-delay: 0.22s; }
+  html.sec-entering body.secondary-page .site-nav > *:nth-child(4) { animation-delay: 0.28s; }
+  html.sec-entering body.secondary-page .site-nav > *:nth-child(5) { animation-delay: 0.34s; }
+  html.sec-entering body.secondary-page .site-nav > *:nth-child(6) { animation-delay: 0.40s; }
+  html.sec-entering body.secondary-page .nav-actions { animation-delay: 0.46s; }
+
+  @keyframes secNavIn {
+    from { opacity: 0; transform: translate3d(0, -10px, 0); }
+    to   { opacity: 1; transform: none; }
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html.scroll-motion-ready body.secondary-page [data-scroll-reveal] {
     opacity: 1 !important;

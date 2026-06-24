@@ -1247,6 +1247,22 @@
     mutationObserver.observe(document.body, { childList: true, subtree: true });
   }
 
+  /* One-time page-entrance: reveals the hero background and staggers the
+     header menu + hero content in. The `sec-entering` flag gates the menu
+     animation so it plays on first load only (not on language switches,
+     which rebuild the nav). Reduced-motion users never get the flag, so all
+     gated entrance animations stay off. */
+  function initPageEnter() {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    root.classList.add('sec-entering');
+    const clear = () => root.classList.remove('sec-entering');
+    const done = () => window.setTimeout(clear, 1500);
+    if (document.readyState === 'complete') done();
+    else window.addEventListener('load', done, { once: true });
+    window.setTimeout(clear, 4000); /* safety fallback */
+  }
+
+  initPageEnter();
   applyStaticLanguage();
   initScrollHeader();
   initSearchModal();
