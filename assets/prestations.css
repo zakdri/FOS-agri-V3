@@ -696,6 +696,44 @@ html[dir='rtl'] .prestation-panel ul {
     linear-gradient(180deg, rgba(247, 244, 236, 0.92), rgba(251, 252, 248, 0.96));
 }
 
+/* ───────────────────────────────────────────────────────────────
+   Prévoyance médico-sociale — one continuous premium surface.
+   Scoped to [data-service="prevoyance"] so the other service detail
+   pages keep their current look. The hero stays separate at the top;
+   below it a single warm surface runs behind the menu and the content,
+   so there is no white band between the hero, the menu and the panels.
+   Only the white menu card overlaps the hero — there is never a
+   full-width warm overlay on the hero image, CTA or floating icons. */
+body[data-service='prevoyance'] {
+  background: #f6f8f4;
+}
+
+/* Plain (non-soft) sections turn transparent so the warm surface shows
+   through them. The warm `page-section-soft` panels are already #f6f8f4,
+   so hero-bottom → menu → content all read as one connected surface. */
+body[data-service='prevoyance'] .section:not(.page-section-soft) {
+  background: transparent;
+}
+
+/* Give every selected content section the exact AMC / AMTS reference
+   background (warm gradient + soft gold accent) so all seven panels share
+   one identical surface instead of subtly different per-item tints. */
+body[data-service='prevoyance'] .prestation-center-section,
+body[data-service='prevoyance'] .prestation-extra-section {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(214, 169, 65, 0.14), transparent 28%),
+    linear-gradient(180deg, #f7f8f3 0%, #f2f5ee 100%);
+}
+
+/* Desktop: lift the menu card so it overlaps the bottom of the hero
+   image by ~40px and sits on the warm surface. 40px keeps the right-side
+   floating icons (which end ~48px above the hero edge) fully visible. */
+@media (min-width: 981px) {
+  body[data-service='prevoyance'] .prestation-nav {
+    margin-top: -2.5rem;
+  }
+}
+
 .prestation-extra-card {
   position: relative;
   max-width: 920px;
