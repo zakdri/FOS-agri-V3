@@ -12,8 +12,8 @@
       minister: 'Mot du Ministre', president: 'Mot du Président',
       history: 'Histoire, mission et valeurs', values: 'Nos valeurs', organization: 'Notre organisation', governance: 'Gouvernance',
       prevoyance: 'Prévoyance médico-sociale',
-      culture: 'Culture, loisirs et voyages', scolarisation: 'Scolarisation et formation',
-      logement: 'Accès au logement', projets: 'Projets personnels',
+      culture: 'Culture, loisirs, et voyages', scolarisation: 'Appui à la Scolarisation et Formation',
+      logement: 'Accès au logement', projets: 'Appui aux projets personnels',
       education: 'Éducation et culture',
       adherents: 'Nos adhérents & bénéficiaires',
       procedure: 'Procédure d’adhésion', cotisations: 'Cotisations',
@@ -245,8 +245,7 @@
         { href: 'services/culture-loisirs-voyages.html', key: 'culture' },
         { href: 'services/formation-scolarisation.html', key: 'scolarisation' },
         { href: 'services/acces-logement.html',       key: 'logement' },
-        { href: 'services/projets-personnels.html',   key: 'projets' },
-        { href: 'services/education-culture.html',    key: 'education' }
+        { href: 'services/projets-personnels.html',   key: 'projets' }
       ]),
       submenu('mediatheque', 'mediatheque.html', [
         { href: 'mediatheque.html#galerie-2017', key: 'media2017' },
@@ -511,5 +510,4 @@
     boot();
   }
 }());
-
 
