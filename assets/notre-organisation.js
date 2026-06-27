@@ -270,14 +270,14 @@
         title: 'Président de la FOS',
         titleAr: 'رئيس المؤسسة',
         titleZgh: 'ⴰⵙⵍⵡⴰⵢ ⵏ FOS',
-        name: 'Mr: ADIL EL OUFIR',
+        name: 'M. ADIL EL OUFIR',
         nameAr: 'السيد عادل العوفير',
         nameZgh: 'ADIL EL OUFIR',
         colorVariant: 'gold',
         supports: [
           {
             id: 'committee', order: 1, isActive: true,
-            title: 'Comité de directeur',
+            title: 'Comité directeur',
             titleAr: 'اللجنة المديرية',
             titleZgh: 'ⵜⴰⵎⵙⵎⵓⵏⵜ ⵜⴰⵎⵏⵀⴰⴹⵜ',
             colorVariant: 'support',
@@ -285,10 +285,10 @@
           },
           {
             id: 'audit', order: 2, isActive: true,
-            title: "Service de l'Audit et Contrôle de Gestion",
+            title: "Service de l'audit et du contrôle de gestion",
             titleAr: 'مصلحة التدقيق ومراقبة التسيير',
             titleZgh: 'ⴰⵙⵏⵓⴱⴳ ⴷ ⵓⵙⴼⵔⴽ ⵏ ⵜⵎⵀⵍⴰ',
-            name: 'Mme: NADA MOUNIRI',
+            name: 'Mme NADA MOUNIRI',
             nameAr: 'السيدة ندى منيري',
             nameZgh: 'NADA MOUNIRI',
             colorVariant: 'support',
@@ -298,12 +298,12 @@
         children: [
           {
             id: 'secretary-general', order: 1, isActive: true,
-            title: 'Secrétaire général',
-            titleAr: 'الكاتب العام',
-            titleZgh: 'ⴰⵎⴰⵔⴰ ⴰⵎⴰⵜⴰⵢ',
-            name: 'Mme: NAIYA AMARA',
+            title: 'Secrétaire générale',
+            titleAr: 'الكاتبة العامة',
+            titleZgh: 'ⵜⴰⵎⴰⵔⴰⵜ ⵜⴰⵎⴰⵜⴰⵢⵜ',
+            name: 'Mme NAJYA AMARA',
             nameAr: 'السيدة نجية عمارة',
-            nameZgh: 'NAIYA AMARA',
+            nameZgh: 'NAJYA AMARA',
             colorVariant: 'teal',
             supports: [
               {
@@ -311,7 +311,7 @@
                 title: 'Service de la communication',
                 titleAr: 'مصلحة التواصل',
                 titleZgh: 'ⴰⵙⵏⵓⴱⴳ ⵏ ⵜⵎⵢⴰⵡⴰⴹⵜ',
-                name: 'Mme: FAIZA JABIRI',
+                name: 'Mme FAIZA JABIRI',
                 nameAr: 'السيدة فائزة جابري',
                 nameZgh: 'FAIZA JABIRI',
                 colorVariant: 'support',
@@ -325,7 +325,7 @@
     directions: [
       {
         id: 'prestations', order: 1, isActive: true,
-        title: 'Directrice des Prestations',
+        title: 'Directrice des prestations',
         titleAr: 'مديرة الخدمات',
         titleZgh: 'ⵜⴰⵎⵙⴼⵔⴰⴽⵜ ⵏ ⵉⵎⵣⵍⴰ',
         managerName: 'Mme SANAE LEHMAMI',
@@ -336,25 +336,25 @@
         services: [
           {
             id: 'svc-project-housing', order: 1, isActive: true,
-            title: 'Chef de service de projet logement',
+            title: 'Chef de service du projet logement',
             titleAr: 'رئيس مصلحة تتبع مشاريع السكن',
             titleZgh: 'ⴰⵎⴰⵙⴰⵢ ⵏ ⵓⵙⵏⴼⴰⵔ ⵏ ⵜⴷⴷⴰⵔⵜ',
-            managerName: 'M: YOUSSEF AKKI',
+            managerName: 'M. YOUSSEF AKKI',
             managerNameAr: 'السيد يوسف عكي',
             managerNameZgh: 'YOUSSEF AKKI'
           },
           {
             id: 'svc-prevoyance', order: 2, isActive: true,
-            title: 'Chef de service de prévoyance, des Aides financières et assistance médicale et sociale',
-            titleAr: 'رئيسة مصلحة الاحتياط الدعم المالي و المساعدة الصحية والاجتماعية',
+            title: 'Chef de service de la prévoyance, des aides financières et de l’assistance médicale et sociale',
+            titleAr: 'رئيس مصلحة الاحتياط والدعم المالي والمساعدة الصحية والاجتماعية',
             titleZgh: 'ⴰⵎⴰⵙⴰⵢ ⵏ ⵓⴹⵎⴰⵏ ⴷ ⵜⴰⵍⵍⴰⵍⵜ ⵜⴰⵎⵥⵍⴰⵢⵜ ⴷ ⵜⴰⵏⴰⵎⵓⵏⵜ'
           },
           {
             id: 'svc-estivage', order: 3, isActive: true,
-            title: "Chef de service de l'Estivage, Culture, Restauration et Loisirs",
-            titleAr: 'رئيس مصلحة الاصطياف، الانشطة، المطعمة والترفيه',
+            title: "Chef de service de l’estivage, de la culture, de la restauration et des loisirs",
+            titleAr: 'رئيس مصلحة الاصطياف والأنشطة والإطعام والترفيه',
             titleZgh: 'ⴰⵎⴰⵙⴰⵢ ⵏ ⵓⵙⵉⵡⴹ ⴷ ⵜⴷⵍⵙⴰ ⴷ ⵓⵙⵓⵔⴼ',
-            managerName: 'Mr: HATIM EL HANCHI',
+            managerName: 'M. HATIM EL HANCHI',
             managerNameAr: 'السيد حاتم الحنشي',
             managerNameZgh: 'HATIM EL HANCHI'
           }
@@ -362,10 +362,10 @@
       },
       {
         id: 'adherents', order: 2, isActive: true,
-        title: 'Directrice des Affaires des Adhérents',
+        title: 'Directrice des affaires des adhérents',
         titleAr: 'مديرة شؤون المنخرطين',
         titleZgh: 'ⵜⴰⵎⵙⴼⵔⴰⴽⵜ ⵏ ⵓⵎⵓⵔ ⵏ ⵉⵎⵥⵍⴰⵢⵏ',
-        managerName: 'Mme: HANANE EL KOULALI',
+        managerName: 'Mme HANANE EL KOULALI',
         managerNameAr: 'السيدة حنان الكولالي',
         managerNameZgh: 'HANANE EL KOULALI',
         colorVariant: 'green',
@@ -373,28 +373,28 @@
         services: [
           {
             id: 'svc-adhesions-contentieux', order: 1, isActive: true,
-            title: 'Chef de service du suivi des adhésions et contentieux',
-            titleAr: 'رئيس مصلحة تتبع الانخراطات والمنازعات',
-            titleZgh: 'ⴰⵎⴰⵙⴰⵢ ⵏ ⵓⵙⴼⴰⵔ ⵏ ⵓⵙⵏⵓⴱⴳ ⴷ ⵉⵎⵙⵓⴳⴰⵔ',
-            managerName: 'Mme: SEKAINA EL-MJID',
+            title: 'Cheffe de service du suivi des adhésions et du contentieux',
+            titleAr: 'رئيسة مصلحة تتبع الانخراطات والمنازعات',
+            titleZgh: 'ⵜⴰⵎⴰⵙⴰⵢⵜ ⵏ ⵓⵙⴼⴰⵔ ⵏ ⵓⵙⵏⵓⴱⴳ ⴷ ⵉⵎⵙⵓⴳⴰⵔ',
+            managerName: 'Mme SEKAINA EL-MJID',
             managerNameAr: 'السيدة سكينة المجيد',
             managerNameZgh: 'SEKAINA EL-MJID'
           },
           {
             id: 'svc-cooperation', order: 2, isActive: true,
-            title: 'Chef de service de la coopération et du partenariat',
+            title: 'Cheffe de service de la coopération et du partenariat',
             titleAr: 'رئيسة مصلحة الشراكة والتعاون',
-            titleZgh: 'ⴰⵎⴰⵙⴰⵢ ⵏ ⵜⵎⵙⵙⴰⵡⵉⵜ ⴷ ⵓⵎⵛⵛⴰⵔⴽ',
-            managerName: 'Mme: SOUAD OUAKRIM',
+            titleZgh: 'ⵜⴰⵎⴰⵙⴰⵢⵜ ⵏ ⵜⵎⵙⵙⴰⵡⵉⵜ ⴷ ⵓⵎⵛⵛⴰⵔⴽ',
+            managerName: 'Mme SOUAD OUAKRIM',
             managerNameAr: 'السيدة سعاد واعكريم',
             managerNameZgh: 'SOUAD OUAKRIM'
           },
           {
             id: 'svc-system-info', order: 3, isActive: true,
-            title: "Chef de service du système d'information",
-            titleAr: 'رئيسية مصلحة نظم المعلومات',
+            title: "Chef de service du système d’information",
+            titleAr: 'رئيس مصلحة نظم المعلومات',
             titleZgh: 'ⴰⵎⴰⵙⴰⵢ ⵏ ⵓⵏⴰⴳⵔⴰⵡ ⵏ ⵉⵙⴼⴽⴰ',
-            managerName: 'Mme: AYOUB EL OTMANI',
+            managerName: 'M. AYOUB EL OTMANI',
             managerNameAr: 'السيد أيوب العثماني',
             managerNameZgh: 'AYOUB EL OTMANI'
           }
@@ -402,10 +402,10 @@
       },
       {
         id: 'admin-finance', order: 3, isActive: true,
-        title: 'Directeur Administratif et Financier',
+        title: 'Directeur administratif et financier',
         titleAr: 'المدير الإداري والمالي',
         titleZgh: 'ⴰⵎⵙⴼⵔⴰⴽ ⴰⴷⴱⵍⴰⵏ ⴷ ⵓⵎⴰⵍⵉ',
-        managerName: 'M: ALI KHODARI',
+        managerName: 'M. ALI KHODARI',
         managerNameAr: 'السيد علي خضاري',
         managerNameZgh: 'ALI KHODARI',
         colorVariant: 'green',
@@ -413,28 +413,28 @@
         services: [
           {
             id: 'svc-finance', order: 1, isActive: true,
-            title: 'Chef de service de la gestion Financière et de la comptabilité',
+            title: 'Cheffe de service de la gestion financière et de la comptabilité',
             titleAr: 'رئيسة مصلحة التدبير المالي والمحاسبة',
-            titleZgh: 'ⴰⵎⴰⵙⴰⵢ ⵏ ⵓⵙⴼⵔⴽ ⴰⵎⴰⵍⵉ ⴷ ⵓⵎⵉⴹⴰⵏ',
-            managerName: 'Mme: MANAL EL MATLOBI',
+            titleZgh: 'ⵜⴰⵎⴰⵙⴰⵢⵜ ⵏ ⵓⵙⴼⵔⴽ ⴰⵎⴰⵍⵉ ⴷ ⵓⵎⵉⴹⴰⵏ',
+            managerName: 'Mme MANAL EL MATLOBI',
             managerNameAr: 'السيدة منال المطلبي',
             managerNameZgh: 'MANAL EL MATLOBI'
           },
           {
             id: 'svc-purchases', order: 2, isActive: true,
-            title: 'Chef de service des achats et moyens généraux',
-            titleAr: 'مصلحة المشتريات والوسائل العامة',
+            title: 'Chef de service des achats et des moyens généraux',
+            titleAr: 'رئيس مصلحة المشتريات والوسائل العامة',
             titleZgh: 'ⴰⵎⴰⵙⴰⵢ ⵏ ⵉⵙⵖⴰⵏ ⴷ ⵉⵎⴰⵙⵙⵏ ⵉⵎⴰⵜⴰⵢⵏ',
-            managerName: 'M: YOUSSEF MAMRANI',
+            managerName: 'M. YOUSSEF MAMRANI',
             managerNameAr: 'السيد يوسف المراني',
             managerNameZgh: 'YOUSSEF MAMRANI'
           },
           {
             id: 'svc-admin-legal', order: 3, isActive: true,
-            title: 'Service de la gestion administrative et juridique',
-            titleAr: 'مصلحة التدبير الإداري والقانوني',
-            titleZgh: 'ⴰⵙⵏⵓⴱⴳ ⵏ ⵓⵙⴼⵔⴽ ⴰⴷⴱⵍⴰⵏ ⴷ ⵓⵙⴹⵓⴼ',
-            managerName: 'Mr: AHMED NACIRI',
+            title: 'Chef de service de la gestion administrative et juridique',
+            titleAr: 'رئيس مصلحة التدبير الإداري والقانوني',
+            titleZgh: 'ⴰⵎⴰⵙⴰⵢ ⵏ ⵓⵙⴼⵔⴽ ⴰⴷⴱⵍⴰⵏ ⴷ ⵓⵙⴹⵓⴼ',
+            managerName: 'M. AHMED NACIRI',
             managerNameAr: 'السيد أحمد الناصري',
             managerNameZgh: 'AHMED NACIRI'
           }
@@ -634,7 +634,12 @@
 
   /* ----- Static-text binding (data-org-i18n / data-org-i18n-aria) ----- */
   function applyStaticText(lang) {
-    document.title = `FOS-Agri | ${t('page.title', lang)}`;
+    /* Only own the document title on the dedicated organisation page.
+       On the gouvernance page (which also embeds this chart) we must not
+       overwrite that page's own title. */
+    if (document.body.dataset.page === 'notre-organisation') {
+      document.title = `FOS-Agri | ${t('page.title', lang)}`;
+    }
     document.querySelectorAll('[data-org-i18n]').forEach((el) => {
       el.textContent = t(el.dataset.orgI18n, lang);
     });

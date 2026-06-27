@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../../assets/styles.css?v=4" />
   <link rel="stylesheet" href="../../assets/secondary-pages.css?v=12" />
   <link rel="stylesheet" href="../../assets/gouvernance.css?v=4" />
+  <link rel="stylesheet" href="../../assets/notre-organisation.css?v=7" />
 </head>
 <body class="secondary-page service-page" data-page="fondation" data-base="../../">
   <header class="site-header" id="top">
@@ -66,11 +67,27 @@
         <div class="gov-grid" id="gov-grid"></div>
       </div>
     </section>
+
+    <!-- Organigramme — rendu par assets/notre-organisation.js dans #org-chart.
+         Placé sous la section "Comités de gouvernance". -->
+    <section class="section org-section" id="organigramme" aria-labelledby="gov-org-title">
+      <div class="container">
+        <header class="org-section-head">
+          <span class="section-tag" data-gov-i18n="governance.hero.kicker">Instances de gouvernance</span>
+          <h2 id="gov-org-title" data-gov-i18n="governance.org.title">Organigramme de la Fondation</h2>
+          <p class="section-copy" data-gov-i18n="governance.org.intro">La structure organisationnelle : présidence, secrétariat général, directions et services.</p>
+        </header>
+        <div class="org-chart-wrap" role="region" aria-label="Organigramme FOS-Agri">
+          <div class="org-chart" id="org-chart"></div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer"></footer>
 
   <script src="../../assets/secondary-pages.js?v=12"></script>
-  <script src="../../assets/gouvernance.js?v=4"></script>
+  <script src="../../assets/gouvernance.js?v=5"></script>
+  <script src="../../assets/notre-organisation.js?v=8"></script>
 </body>
 </html>
