@@ -1216,6 +1216,38 @@ body[data-service='prevoyance'] .prestation-extra-section {
   color: #7d6725;
 }
 
+/* Active download link (a real local PDF is mapped) */
+a.medical-notice-button {
+  text-decoration: none;
+  cursor: pointer;
+  gap: 0.4rem;
+  background: var(--green, #1f6a43);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(16, 55, 35, 0.16);
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.medical-notice-button::before {
+  content: '\f019'; /* fa download */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 0.82em;
+}
+
+a.medical-notice-button:hover,
+a.medical-notice-button:focus-visible {
+  background: var(--green-deep, #123b28);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(16, 55, 35, 0.22);
+  outline: none;
+}
+
+/* Disabled button (no PDF mapped) stays visibly inert */
+button.medical-notice-button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 .medical-notice-empty {
   color: #7a8a80;
   background: rgba(88, 111, 96, 0.09);

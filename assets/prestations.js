@@ -131,7 +131,7 @@
       medicalPartners: {
         badge: 'Conventions médicales',
         title: 'Conventions et partenariats médicaux',
-        intro: 'Sélectionnez une région sur la carte pour afficher les partenaires médicaux disponibles. Les conventions au niveau central sont listées séparément avec les mêmes filtres.',
+        intro: 'La FOS-Agri met à la disposition de ses adhérents un réseau de conventions médicales pensé pour faciliter l’accès à des prestations de santé de proximité. Les partenaires sont consultables par région grâce à la carte interactive, tandis que les conventions relevant du niveau central sont regroupées dans un espace dédié afin d’identifier rapidement les laboratoires, cliniques, cabinets, opticiens, pharmacies et praticiens conventionnés.',
         regionalTitle: 'Partenaires par région',
         regionalIntro: 'Carte interactive des partenaires médicaux régionaux.',
         centralTitle: 'Au Niveau Central',
@@ -189,7 +189,7 @@
       medicalPartners: {
         badge: 'اتفاقيات طبية',
         title: 'الاتفاقيات والشراكات الطبية',
-        intro: 'اختر جهة على الخريطة لعرض الشركاء الطبيين المتوفرين. تعرض اتفاقيات المستوى المركزي في قسم مستقل مع نفس المرشحات.',
+        intro: 'تضع FOS-Agri رهن إشارة منخرطيها شبكة من الاتفاقيات الطبية لتسهيل الولوج إلى خدمات صحية قريبة وملائمة. يمكن الاطلاع على الشركاء حسب الجهة عبر الخريطة التفاعلية، بينما تجمع اتفاقيات المستوى المركزي في فضاء مستقل يساعد على التعرف بسرعة على المختبرات والمصحات والعيادات والنظارات والصيدليات والممارسين المتعاقدين.',
         regionalTitle: 'الشركاء حسب الجهة',
         regionalIntro: 'خريطة تفاعلية للشركاء الطبيين الجهويين.',
         centralTitle: 'على المستوى المركزي',
@@ -247,7 +247,7 @@
       medicalPartners: {
         badge: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⵉⴷⵓⵙⴰⵏⵏ',
         title: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏⵏ',
-        intro: 'ⴼⵔⵏ ⵜⴰⵎⵏⴰⴹⵜ ⴳ ⵜⴽⴰⵕⴹⴰ ⴰⴷ ⵜⵥⵕⴷ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏⵏ. ⴰⵙⵡⵉⵔ ⴰⵎⵎⴰⵙ ⵉⵍⵍⴰ ⴳ ⵜⵙⴳⴰ ⵉⵎⵥⵍⵉⵢⵏ.',
+        intro: 'FOS-Agri ⵜⵙⵙⵓⴼⵖ ⵉ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵉⵙ ⴰⵣⵟⵟⴰ ⵏ ⵉⵎⵙⴰⵡⴰⴹⵏ ⵉⴷⵓⵙⴰⵏⵏ ⴰⴷ ⵉⵙⵙⴼⵙⵓⵙ ⴰⴽⵛⵛⵓⵎ ⵖⵔ ⵜⵏⴼⴰⵙ ⵏ ⵜⴰⴷⵓⵙⵉ ⵉⵇⵇⵔⴱⵏ. ⵉⵣⴷⴰⵢⵏ ⴰⴷ ⵜⵜⵓⵥⵕⴰⵏ ⵙ ⵜⵎⵏⴰⴹⵜ ⵙ ⵜⴽⴰⵕⴹⴰ ⵜⴰⵎⵢⴰⵡⴰⴹⵜ, ⴰⵎⵎⴰ ⵉⵎⵙⴰⵡⴰⴹⵏ ⵏ ⵓⵙⵡⵉⵔ ⴰⵎⵎⴰⵙ ⵜⵜⵓⵙⵎⵓⵏⵏ ⴳ ⵜⵙⴳⴰ ⵉⵎⵥⵍⵉⵢⵏ ⴰⴷ ⵙⵙⵉⵡⵍⵏ ⵙ ⵜⵉⵣⵉ ⵖⵔ ⵉⵎⵣⵣⴰⵔⵏ, ⵉⵙⵉⴱⵉⵜⴰⵍⵏ, ⵜⵉⵔⵣⴰ, ⵉⵎⵙⵡⴰⵍⵏ ⵏ ⵜⵉⵟⵟ, ⵜⵉⴼⴰⵔⵎⴰⵙⵉⵜⵉⵏ ⴷ ⵉⵎⵙⵙⵉⵊⵊⵉⵏ.',
         regionalTitle: 'ⵉⵣⴷⴰⵢⵏ ⵙ ⵜⵎⵏⴰⴹⵜ',
         regionalIntro: 'ⵜⴰⴽⴰⵕⴹⴰ ⵜⴰⵎⵢⴰⵡⴰⴹⵜ ⵏ ⵉⵣⴷⴰⵢⵏ ⵉⵏⵏⴰⵡⵏ.',
         centralTitle: 'ⴳ ⵓⵙⵡⵉⵔ ⴰⵎⵎⴰⵙ',
@@ -857,8 +857,8 @@
       navIndex: 6,
       type: 'medicalPartners',
       badge: 'CONVENTIONS ET PARTENARIATS MEDICALES',
-      title: 'Conventions et partenariats médicaux',
-      intro: 'Carte régionale interactive et section séparée pour les conventions au niveau central.'
+      title: labels.fr.medicalPartners.title,
+      intro: labels.fr.medicalPartners.intro
     }
   ];
 
@@ -943,8 +943,8 @@
       navIndex: 6,
       type: 'medicalPartners',
       badge: 'الاتفاقيات والشراكات الطبية',
-      title: 'الاتفاقيات والشراكات الطبية',
-      intro: 'خريطة جهوية تفاعلية وقسم مستقل لاتفاقيات المستوى المركزي.'
+      title: labels.ar.medicalPartners.title,
+      intro: labels.ar.medicalPartners.intro
     }
   ];
 
@@ -1029,8 +1029,8 @@
       navIndex: 6,
       type: 'medicalPartners',
       badge: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏⵏ',
-      title: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏⵏ',
-      intro: 'ⵜⴰⴽⴰⵕⴹⴰ ⵏ ⵜⵎⵏⴰⴹⵉⵏ ⴷ ⵜⵙⴳⴰ ⵏ ⵓⵙⵡⵉⵔ ⴰⵎⵎⴰⵙ.'
+      title: labels.zgh.medicalPartners.title,
+      intro: labels.zgh.medicalPartners.intro
     }
   ];
 
@@ -2010,8 +2010,11 @@
     const hasContact = /contact\s*:/i.test(avis);
     const hasAvis = /\bavis\b/.test(normalized) || /telecharger ici/.test(normalized.replace(/contact\s*telecharger ici/g, ''));
     const actions = [];
-    if (hasAvis) actions.push(copy.downloadNotice);
-    if (hasContact) actions.push(copy.downloadContact);
+    // href is the LOCAL PDF (assets/conventions_organisees/...), resolved via
+    // asset() for the services/ pages. When no PDF is mapped for that card,
+    // href stays null and the button renders disabled (no invented link).
+    if (hasAvis) actions.push({ label: copy.downloadNotice, href: entry.pdf || null });
+    if (hasContact) actions.push({ label: copy.downloadContact, href: entry.pdfContact || null });
     return actions;
   }
 
@@ -2052,28 +2055,11 @@
         <div class="container" data-medical-partners data-default-region="${esc(firstRegion.id)}">
           <article class="prestation-extra-card medical-partners-intro">
             <span class="section-tag"><i class="fa-solid fa-file-contract" aria-hidden="true"></i> ${esc(section.badge || copy.badge)}</span>
-            <p>${esc(section.intro || copy.intro)}</p>
+            <h2>${esc(section.title || copy.title)}</h2>
+            ${renderParagraphs(section.intro || copy.intro)}
           </article>
 
           <div class="medical-partner-layout">
-            <section class="medical-partner-panel medical-partner-central is-open" aria-label="${esc(copy.centralTitle)}" data-medical-panel="central">
-              <button class="medical-partner-panel-head" type="button" data-medical-panel-toggle="central" aria-expanded="true">
-                <div>
-                  <span class="section-tag"><i class="fa-solid fa-hospital" aria-hidden="true"></i> ${esc(copy.centralTitle)}</span>
-                  <p>${esc(copy.centralIntro)}</p>
-                </div>
-                <span class="medical-panel-meta">
-                  <strong data-medical-count="central">${central.length} ${esc(copy.results)}</strong>
-                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-                </span>
-              </button>
-              <div class="medical-partner-panel-body" data-medical-panel-body="central">
-                ${renderMedicalFilter('central')}
-                <div class="medical-partner-results" data-medical-results="central"></div>
-                <div class="medical-pagination" data-medical-pagination="central"></div>
-              </div>
-            </section>
-
             <section class="medical-partner-panel medical-partner-regional is-open" aria-label="${esc(copy.regionalTitle)}" data-medical-panel="regional">
               <button class="medical-partner-panel-head" type="button" data-medical-panel-toggle="regional" aria-expanded="true">
                 <div>
@@ -2096,6 +2082,24 @@
                 </div>
                 <div class="medical-partner-results" data-medical-results="regional"></div>
                 <div class="medical-pagination" data-medical-pagination="regional"></div>
+              </div>
+            </section>
+
+            <section class="medical-partner-panel medical-partner-central is-open" aria-label="${esc(copy.centralTitle)}" data-medical-panel="central">
+              <button class="medical-partner-panel-head" type="button" data-medical-panel-toggle="central" aria-expanded="true">
+                <div>
+                  <span class="section-tag"><i class="fa-solid fa-hospital" aria-hidden="true"></i> ${esc(copy.centralTitle)}</span>
+                  <p>${esc(copy.centralIntro)}</p>
+                </div>
+                <span class="medical-panel-meta">
+                  <strong data-medical-count="central">${central.length} ${esc(copy.results)}</strong>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </span>
+              </button>
+              <div class="medical-partner-panel-body" data-medical-panel-body="central">
+                ${renderMedicalFilter('central')}
+                <div class="medical-partner-results" data-medical-results="central"></div>
+                <div class="medical-pagination" data-medical-pagination="central"></div>
               </div>
             </section>
           </div>
@@ -2436,7 +2440,9 @@
           ${entry.adresse ? `<div><dt>${esc(copy.address)}</dt><dd>${esc(entry.adresse)}</dd></div>` : ''}
           ${entry.telephone ? `<div><dt>${esc(copy.phone)}</dt><dd>${esc(entry.telephone)}</dd></div>` : ''}
         </dl>
-        ${noticeActions.length ? `<div class="medical-notice-actions">${noticeActions.map((label) => `<button class="medical-notice-button" type="button" disabled>${esc(label)}</button>`).join('')}</div>` : ''}
+        ${noticeActions.length ? `<div class="medical-notice-actions">${noticeActions.map((action) => action.href
+          ? `<a class="medical-notice-button" href="${esc(asset(action.href))}" download>${esc(action.label)}</a>`
+          : `<button class="medical-notice-button" type="button" disabled>${esc(action.label)}</button>`).join('')}</div>` : ''}
       </article>`;
   }
 
@@ -2856,6 +2862,13 @@
     const amcPanel = mount.querySelector('[data-prestation-amc-panel]');
     const amtsPanel = mount.querySelector('[data-prestation-amts-panel]');
     const extraPanels = Array.from(mount.querySelectorAll('[data-prestation-extra-panel]'));
+    const getHashIndex = () => {
+      const hash = window.location.hash;
+      const directIndex = Array.from(navLinks).findIndex((link) => link.hash === hash);
+      if (directIndex > -1) return directIndex;
+      const alias = decodeURIComponent((hash || '').replace(/^#/, ''));
+      return detailMenuItems.findIndex((navItem) => navItem.id === alias);
+    };
     const showTabContent = (index, link, shouldScroll = true) => {
       const isAmc = index === 1 && !!amcPanel;
       const isAmts = index === 2 && !!amtsPanel;
@@ -2896,13 +2909,13 @@
       window.removeEventListener('hashchange', window.__fosPrestationHashHandler);
     }
     window.__fosPrestationHashHandler = () => {
-      const hashIndex = Array.from(navLinks).findIndex((link) => link.hash === window.location.hash);
+      const hashIndex = getHashIndex();
       if (hashIndex > -1) {
         showTabContent(hashIndex, navLinks[hashIndex], false);
       }
     };
     window.addEventListener('hashchange', window.__fosPrestationHashHandler);
-    const hashIndex = Array.from(navLinks).findIndex((link) => link.hash === window.location.hash);
+    const hashIndex = getHashIndex();
     if (hashIndex > 0) {
       showTabContent(hashIndex, navLinks[hashIndex], false);
     }
