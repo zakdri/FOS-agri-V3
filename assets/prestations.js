@@ -127,7 +127,41 @@
       icons2d: 'Icônes 2D',
       details: 'Détails de la prestation',
       partners: 'Conventions et partenaires',
-      steps: 'Parcours adhérent'
+      steps: 'Parcours adhérent',
+      medicalPartners: {
+        badge: 'Conventions médicales',
+        title: 'Conventions et partenariats médicaux',
+        intro: 'Sélectionnez une région sur la carte pour afficher les partenaires médicaux disponibles. Les conventions au niveau central sont listées séparément avec les mêmes filtres.',
+        regionalTitle: 'Partenaires par région',
+        regionalIntro: 'Carte interactive des partenaires médicaux régionaux.',
+        centralTitle: 'Au Niveau Central',
+        centralIntro: 'Conventions et partenaires rattachés au niveau central.',
+        search: 'Rechercher',
+        searchPlaceholder: 'Médecin, organisme, spécialité, adresse ou ville',
+        city: 'Ville',
+        allCities: 'Toutes les villes',
+        category: 'Catégorie',
+        allCategories: 'Toutes les catégories',
+        region: 'Région',
+        allRegions: 'Toutes les régions',
+        results: 'résultat(s)',
+        noResults: 'Aucun partenaire ne correspond aux filtres.',
+        noRegional: 'Aucun partenaire régional renseigné pour cette région.',
+        downloadNotice: 'Télécharger avis',
+        downloadContact: 'Télécharger contact',
+        downloadUnavailable: 'Avis indisponible',
+        status: 'Statut',
+        address: 'Adresse',
+        phone: 'Téléphone',
+        doctor: 'Médecin',
+        organization: 'Organisme',
+        selectedRegion: 'Région sélectionnée',
+        mapLabel: 'Carte interactive des régions du Maroc',
+        regionsListLabel: 'Sélection rapide des régions',
+        pageLabel: 'Page',
+        previousPage: 'Précédent',
+        nextPage: 'Suivant'
+      }
     },
     ar: {
       kicker: 'الخدمات الاجتماعية',
@@ -151,7 +185,41 @@
       icons2d: 'أيقونات 2D',
       details: 'تفاصيل الخدمة',
       partners: 'الاتفاقيات والشركاء',
-      steps: 'مسار المنخرط'
+      steps: 'مسار المنخرط',
+      medicalPartners: {
+        badge: 'اتفاقيات طبية',
+        title: 'الاتفاقيات والشراكات الطبية',
+        intro: 'اختر جهة على الخريطة لعرض الشركاء الطبيين المتوفرين. تعرض اتفاقيات المستوى المركزي في قسم مستقل مع نفس المرشحات.',
+        regionalTitle: 'الشركاء حسب الجهة',
+        regionalIntro: 'خريطة تفاعلية للشركاء الطبيين الجهويين.',
+        centralTitle: 'على المستوى المركزي',
+        centralIntro: 'اتفاقيات وشركاء مرتبطون بالمستوى المركزي.',
+        search: 'بحث',
+        searchPlaceholder: 'طبيب، مؤسسة، تخصص، عنوان أو مدينة',
+        city: 'المدينة',
+        allCities: 'كل المدن',
+        category: 'الفئة',
+        allCategories: 'كل الفئات',
+        region: 'الجهة',
+        allRegions: 'كل الجهات',
+        results: 'نتيجة',
+        noResults: 'لا يوجد شريك مطابق للمرشحات.',
+        noRegional: 'لا يوجد شريك جهوي مسجل لهذه الجهة.',
+        downloadNotice: 'تحميل الإشعار',
+        downloadContact: 'تحميل جهة الاتصال',
+        downloadUnavailable: 'الإشعار غير متوفر',
+        status: 'الوضعية',
+        address: 'العنوان',
+        phone: 'الهاتف',
+        doctor: 'الطبيب',
+        organization: 'المؤسسة',
+        selectedRegion: 'الجهة المختارة',
+        mapLabel: 'خريطة تفاعلية لجهات المغرب',
+        regionsListLabel: 'اختيار سريع للجهات',
+        pageLabel: 'صفحة',
+        previousPage: 'السابق',
+        nextPage: 'التالي'
+      }
     },
     zgh: {
       kicker: 'ⵜⵉⵏⴼⴰⵙ ⵜⵉⵎⴰⴷⴰⵏⵉⵏ',
@@ -175,7 +243,41 @@
       icons2d: 'ⵉⴽⵓⵏⵏ 2D',
       details: 'ⵜⵉⴼⵔⵓⵔⵉⵏ',
       partners: 'ⵉⵣⴷⴰⵢⵏ',
-      steps: 'ⴰⴱⵔⵉⴷ ⵏ ⵓⵎⵏⵅⵔⴰⵟ'
+      steps: 'ⴰⴱⵔⵉⴷ ⵏ ⵓⵎⵏⵅⵔⴰⵟ',
+      medicalPartners: {
+        badge: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⵉⴷⵓⵙⴰⵏⵏ',
+        title: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏⵏ',
+        intro: 'ⴼⵔⵏ ⵜⴰⵎⵏⴰⴹⵜ ⴳ ⵜⴽⴰⵕⴹⴰ ⴰⴷ ⵜⵥⵕⴷ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏⵏ. ⴰⵙⵡⵉⵔ ⴰⵎⵎⴰⵙ ⵉⵍⵍⴰ ⴳ ⵜⵙⴳⴰ ⵉⵎⵥⵍⵉⵢⵏ.',
+        regionalTitle: 'ⵉⵣⴷⴰⵢⵏ ⵙ ⵜⵎⵏⴰⴹⵜ',
+        regionalIntro: 'ⵜⴰⴽⴰⵕⴹⴰ ⵜⴰⵎⵢⴰⵡⴰⴹⵜ ⵏ ⵉⵣⴷⴰⵢⵏ ⵉⵏⵏⴰⵡⵏ.',
+        centralTitle: 'ⴳ ⵓⵙⵡⵉⵔ ⴰⵎⵎⴰⵙ',
+        centralIntro: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵏ ⵓⵙⵡⵉⵔ ⴰⵎⵎⴰⵙ.',
+        search: 'ⵔⵣⵓ',
+        searchPlaceholder: 'ⴰⵎⵙⵙⵉⵊⵊⵉ, ⴰⵎⴰⵙⵙⴰⵙ, ⵜⴰⵎⵥⵍⴰ, ⵜⴰⵏⵙⴰ ⵏⵖ ⵜⴰⵎⴷⵉⵏⵜ',
+        city: 'ⵜⴰⵎⴷⵉⵏⵜ',
+        allCities: 'ⴽⵓ ⵜⵉⵎⴷⵉⵏⵉⵏ',
+        category: 'ⵜⴰⴳⴳⴰⵢⵜ',
+        allCategories: 'ⴽⵓ ⵜⵉⴳⴳⴰⵢⵉⵏ',
+        region: 'ⵜⴰⵎⵏⴰⴹⵜ',
+        allRegions: 'ⴽⵓ ⵜⵉⵎⵏⴰⴹⵉⵏ',
+        results: 'ⵜⵉⴼⵔⵉⵏ',
+        noResults: 'ⵓⵔ ⵉⵍⵍⵉ ⵓⵣⴷⴰⵢ ⵉⵎⵙⴰⵙⴰⵏ ⴷ ⵉⵙⵜⴰⵢⵏ.',
+        noRegional: 'ⵓⵔ ⵉⵍⵍⵉ ⵓⵣⴷⴰⵢ ⴰⵏⵏⴰⵡ ⵉ ⵜⵎⵏⴰⴹⵜ ⴰⴷ.',
+        downloadNotice: 'ⵙⵉⴷⵔ ⴰⵙⴰⵍⵉ',
+        downloadContact: 'ⵙⵉⴷⵔ ⴰⵎⵢⴰⵡⴰⴹ',
+        downloadUnavailable: 'ⴰⵙⴰⵍⵉ ⵓⵔ ⵉⵍⵍⵉ',
+        status: 'ⴰⴷⴷⴰⴷ',
+        address: 'ⵜⴰⵏⵙⴰ',
+        phone: 'ⵜⵉⵍⵉⴼⵓⵏ',
+        doctor: 'ⴰⵎⵙⵙⵉⵊⵊⵉ',
+        organization: 'ⴰⵎⴰⵙⵙⴰⵙ',
+        selectedRegion: 'ⵜⴰⵎⵏⴰⴹⵜ ⵉⵜⵜⵓⴼⵔⵏ',
+        mapLabel: 'ⵜⴰⴽⴰⵕⴹⴰ ⵜⴰⵎⵢⴰⵡⴰⴹⵜ ⵏ ⵜⵎⵏⴰⴹⵉⵏ ⵏ ⵍⵎⵖⵔⵉⴱ',
+        regionsListLabel: 'ⴰⵙⵜⴰⵢ ⴰⵙⵔⵉⴷ ⵏ ⵜⵎⵏⴰⴹⵉⵏ',
+        pageLabel: 'ⵜⴰⵙⵏⴰ',
+        previousPage: 'ⵓⵣⵡⵉⵔ',
+        nextPage: 'ⵓⴹⴼⵉⵔ'
+      }
     }
   };
 
@@ -750,6 +852,13 @@
         { title: 'Inscription et modalités', icon: 'fa-clipboard-check', items: [{ title: 'Modalités', icon: 'fa-list-check', bullets: ['Inscription en ligne.', 'Toutes les demandes respectant les conditions sont acceptées.'] }] },
         { title: 'Pièces à fournir', icon: 'fa-folder-open', items: [{ title: 'Dossier justificatif', icon: 'fa-file-medical', bullets: ['Copie du dossier médical de l’intéressé.', 'Copie du formulaire relatif au type d’handicap portant l’avis de la commission médicale provinciale.', 'Pour continuer à bénéficier de l’aide, les adhérents concernés doivent fournir chaque année un certificat de vie.', 'Pour les enfants dont l’handicap n’est pas définitif, un nouveau dossier médical doit être fourni chaque année.'] }] }
       ]
+    },
+    {
+      navIndex: 6,
+      type: 'medicalPartners',
+      badge: 'CONVENTIONS ET PARTENARIATS MEDICALES',
+      title: 'Conventions et partenariats médicaux',
+      intro: 'Carte régionale interactive et section séparée pour les conventions au niveau central.'
     }
   ];
 
@@ -829,6 +938,13 @@
         { title: 'التسجيل والكيفيات', icon: 'fa-clipboard-check', items: [{ title: 'الكيفيات', icon: 'fa-list-check', bullets: ['التسجيل عبر الإنترنت.', 'تقبل جميع الطلبات التي تستوفي الشروط.'] }] },
         { title: 'الوثائق المطلوبة', icon: 'fa-folder-open', items: [{ title: 'الملف المثبت', icon: 'fa-file-medical', bullets: ['نسخة من الملف الطبي للمعني بالأمر.', 'نسخة من الاستمارة المتعلقة بنوع الإعاقة، تحمل رأي اللجنة الطبية الإقليمية.', 'لمواصلة الاستفادة، يجب على المنخرطين المعنيين الإدلاء كل سنة بشهادة الحياة.', 'بالنسبة للأطفال الذين ليست إعاقتهم نهائية، يجب الإدلاء كل سنة بملف طبي جديد.'] }] }
       ]
+    },
+    {
+      navIndex: 6,
+      type: 'medicalPartners',
+      badge: 'الاتفاقيات والشراكات الطبية',
+      title: 'الاتفاقيات والشراكات الطبية',
+      intro: 'خريطة جهوية تفاعلية وقسم مستقل لاتفاقيات المستوى المركزي.'
     }
   ];
 
@@ -908,6 +1024,13 @@
         { title: 'ⴰⵙⵙⴼⵜⵔ ⴷ ⵜⵎⴰⵎⴽⵜ', icon: 'fa-clipboard-check', items: [{ title: 'ⵜⵎⴰⵎⴽⵜ', icon: 'fa-list-check', bullets: ['ⴰⵙⵙⴼⵜⵔ ⵙ ⵉⵏⵜⵉⵔⵏⵉⵜ.', 'ⵎⴰⵕⵕⴰ ⵉⵙⵓⵜⴰⵔ ⵉⵙⵎⴷⵏ ⵜⵉⵡⵜⵉⵍⵉⵏ ⵜⵜⵓⵙⵇⴱⴰⵍⵏ.'] }] },
         { title: 'ⵉⵙⵍⴽⴰⵎⵏ ⵉⵍⴰⵇⵏ', icon: 'fa-folder-open', items: [{ title: 'ⴰⴼⴰⵢⵍⵓ', icon: 'fa-file-medical', bullets: ['ⵏⵙⵅⴰ ⵏ ⵓⴼⴰⵢⵍⵓ ⴰⴷⵓⵙⴰⵏ ⵏ ⵓⵎⵙⵍⴰⵢ.', 'ⵏⵙⵅⴰ ⵏ ⵓⴼⵓⵔⵎⵓⵍⵉⵔ ⵏ ⵓⵏⴰⵡ ⵏ ⵓⵙⵔⵓⵜ ⵙ ⵓⵔⴰⵢ ⵏ ⵜⴽⵎⵉⵙⵢⵓⵏ ⵜⴰⴷⵓⵙⴰⵏⵜ ⵜⴰⵎⵏⴰⴹⵜ.', 'ⵉ ⵓⵙⵙⵎⴷ ⵏ ⵓⵙⵎⵔⵙ, ⵉⵎⵏⵅⵔⴰⵟⵏ ⴰⴷ ⴼⴽⵏ ⴽⵓ ⴰⵙⴳⴳⵯⴰⵙ ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵓⴷⵔⵜ.', 'ⵉ ⵉⴼⵔⵅⴰⵏ ⵓⵔ ⵉⵙⵙⴷⵓⵙⵏ ⵓⵙⵔⵓⵜ ⵏⵏⵙⵏ, ⵉⵍⴰⵇ ⴽⵓ ⴰⵙⴳⴳⵯⴰⵙ ⴰⴼⴰⵢⵍⵓ ⴰⴷⵓⵙⴰⵏ ⴰⵎⴰⵢⵏⵓ.'] }] }
       ]
+    },
+    {
+      navIndex: 6,
+      type: 'medicalPartners',
+      badge: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏⵏ',
+      title: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏⵏ',
+      intro: 'ⵜⴰⴽⴰⵕⴹⴰ ⵏ ⵜⵎⵏⴰⴹⵉⵏ ⴷ ⵜⵙⴳⴰ ⵏ ⵓⵙⵡⵉⵔ ⴰⵎⵎⴰⵙ.'
     }
   ];
 
@@ -1797,11 +1920,195 @@
       </div>`;
   }
 
+  const medicalRegionMeta = [
+    { id: 'tanger-tetouan-al-hoceima', source: 'RÉGION DE TANGER -TÉTOUAN -AL HOCEIMA', x: 56, y: 14, target: { x: 455, y: 70 }, labels: { fr: 'Tanger - Tétouan - Al Hoceima', ar: 'طنجة - تطوان - الحسيمة', zgh: 'ⵟⵏⵊⴰ - ⵜⵉⵟⵟⴰⵡⵉⵏ - ⵍⵃⵓⵙⵉⵎⴰ' } },
+    { id: 'oriental', source: "RÉGION DE L'ORIENTAL", x: 72, y: 22, target: { x: 585, y: 175 }, labels: { fr: "L'Oriental", ar: 'الشرق', zgh: 'ⵓⵛⵛⵔⵇ' } },
+    { id: 'rabat-sale-kenitra', source: 'RÉGION DE RABAT SALÉ KÉNITRA', x: 54, y: 27, target: { x: 388, y: 118 }, labels: { fr: 'Rabat - Salé - Kénitra', ar: 'الرباط - سلا - القنيطرة', zgh: 'ⵕⴱⴰⵟ - ⵙⵍⴰ - ⵇⵏⵉⵟⵔⴰ' } },
+    { id: 'fes-meknes', source: 'RÉGION DE FÈS -MEKNÈS', x: 62, y: 34, target: { x: 505, y: 165 }, labels: { fr: 'Fès - Meknès', ar: 'فاس - مكناس', zgh: 'ⴼⴰⵙ - ⵎⴽⵏⴰⵙ' } },
+    { id: 'casablanca-settat', source: 'RÉGION DE CASABLANCA -SETTAT', x: 49, y: 39, target: { x: 350, y: 180 }, labels: { fr: 'Casablanca - Settat', ar: 'الدار البيضاء - سطات', zgh: 'ⴰⵏⴼⴰ - ⵙⵟⴰⵜ' } },
+    { id: 'beni-mellal-khenifra', source: 'RÉGION DE BÉNI MELLAL -KHÉNIFRA', x: 57, y: 43, target: { x: 450, y: 250 }, labels: { fr: 'Béni Mellal - Khénifra', ar: 'بني ملال - خنيفرة', zgh: 'ⴱⵏⵉ ⵎⵍⵍⴰⵍ - ⵅⵏⵉⴼⵔⴰ' } },
+    { id: 'marrakech-safi', source: 'RÉGION DE MARRAKECH -SAFI', x: 45, y: 50, target: { x: 390, y: 295 }, labels: { fr: 'Marrakech - Safi', ar: 'مراكش - آسفي', zgh: 'ⵎⵕⵕⴰⴽⵛ - ⴰⵙⴼⵉ' } },
+    { id: 'draa-tafilalet', source: 'RÉGION DE DRÂA-TAFILALET', x: 57, y: 58, target: { x: 515, y: 305 }, labels: { fr: 'Drâa - Tafilalet', ar: 'درعة - تافيلالت', zgh: 'ⴷⵔⴰⵄⴰ - ⵜⴰⴼⵉⵍⴰⵍⵜ' } },
+    { id: 'souss-massa', source: 'RÉGION DE SOUSS -MASSA -AGADIR', x: 38, y: 61, target: { x: 340, y: 360 }, labels: { fr: 'Souss - Massa', ar: 'سوس - ماسة', zgh: 'ⵙⵓⵙ - ⵎⴰⵙⴰ' } },
+    { id: 'guelmim-oued-noun', source: 'RÉGION DE GUELMIM -OUED NOUN', x: 34, y: 70, target: { x: 275, y: 430 }, labels: { fr: 'Guelmim - Oued Noun', ar: 'كلميم - واد نون', zgh: 'ⴳⵯⵍⵎⵉⵎ - ⴰⵙⵉⴼ ⵏⵓⵏ' } },
+    { id: 'laayoune-sakia-el-hamra', source: 'RÉGION DE LAÂYOUNE -SAKIA EL HAMRA', x: 28, y: 80, target: { x: 220, y: 505 }, labels: { fr: 'Laâyoune - Sakia El Hamra', ar: 'العيون - الساقية الحمراء', zgh: 'ⵍⵄⵢⵓⵏ - ⵙⴰⵇⵢⴰ ⵍⵃⴰⵎⵔⴰ' } },
+    { id: 'dakhla-oued-ed-dahab', source: 'RÉGION DE DAKHLA -OUED ED DAHAB', x: 21, y: 90, target: { x: 123.7455, y: 609.5922 }, labels: { fr: 'Dakhla - Oued Eddahab', ar: 'الداخلة - وادي الذهب', zgh: 'ⴷⴰⵅⵍⴰ - ⴰⵙⵉⴼ ⴷⴰⵀⴰⴱ' } }
+  ];
+
+  const medicalMapRegionAliases = {
+    'laayoune-sakia-el-hamra': 'tanger-tetouan-al-hoceima',
+    'oriental': 'oriental',
+    'beni-mellal-khenifra': 'draa-tafilalet',
+    'marrakech-safi': 'souss-massa',
+    'souss-massa': 'guelmim-oued-noun',
+    'rabat-sale-kenitra': 'casablanca-settat',
+    'casablanca-settat': 'marrakech-safi',
+    'guelmim-oued-noun': 'laayoune-sakia-el-hamra',
+    'dakhla-oued-ed-dahab': 'dakhla-oued-ed-dahab',
+    'tanger-tetouan-al-hoceima': 'rabat-sale-kenitra',
+    'draa-tafilalet': 'fes-meknes',
+    'fes-meknes': 'beni-mellal-khenifra'
+  };
+
+  const medicalCategoryLabels = {
+    "LABORATOIRES D’ANALYSES": { ar: 'مختبرات التحاليل', zgh: 'ⵉⵎⵣⵣⴰⵔⵏ ⵏ ⵜⵙⵍⵉⴹⵜ' },
+    'CENTRES DE RADIOLOGIE': { ar: 'مراكز الأشعة', zgh: 'ⵉⵎⵎⴰⵙⵏ ⵏ ⵕⴰⴷⵢⵓ' },
+    'CENTRES DE SOINS DENTAIRE': { ar: 'مراكز علاج الأسنان', zgh: 'ⵉⵎⵎⴰⵙⵏ ⵏ ⵓⵅⵙⴰⵏ' },
+    'PHARMACIES': { ar: 'صيدليات', zgh: 'ⵜⵉⴼⴰⵔⵎⴰⵙⵉⵜⵉⵏ' },
+    'CLINIQUES': { ar: 'مصحات', zgh: 'ⵉⵙⵉⴱⵉⵜⴰⵍⵏ' },
+    'CLINIQUE': { ar: 'مصحة', zgh: 'ⴰⵙⵉⴱⵉⵜⴰⵍ' },
+    'OPTICIENS': { ar: 'نظاراتيون', zgh: 'ⵉⵎⵙⵡⴰⵍⵏ ⵏ ⵜⵉⵟⵟ' },
+    'MÉDECINS À TARIF PRÉFÉRENTIELS': { ar: 'أطباء بتعرفة تفضيلية', zgh: 'ⵉⵎⵙⵙⵉⵊⵊⵉⵏ ⵙ ⵓⵙⵙⵓⵎ ⵉⵎⵥⵍⵉ' },
+    'CABINETS DE KINÉSITHÉRAPIE': { ar: 'عيادات الترويض الطبي', zgh: 'ⵜⵉⵔⵣⴰ ⵏ ⴽⵉⵏⵉⵣⵉⵜⵉⵔⴰⴱⵉ' },
+    'MATÉRIEL MÉDICO-CHIRURGICAL ET PARAMÉDICAL': { ar: 'معدات طبية وجراحية وشبه طبية', zgh: 'ⴰⵙⵍⵓⴳⵏ ⴰⴷⵓⵙⴰⵏ ⴷ ⴰⵊⵉⵔⵓⵔⵊⵉ' }
+  };
+
+  const medicalStatusLabels = {
+    'Confirmé': { ar: 'مؤكد', zgh: 'ⵉⵜⵜⵓⵙⴷⵓⵙ' },
+    'Confirmé – avis manquant': { ar: 'مؤكد - الإشعار غير متوفر', zgh: 'ⵉⵜⵜⵓⵙⴷⵓⵙ - ⴰⵙⴰⵍⵉ ⵓⵔ ⵉⵍⵍⵉ' },
+    'Résilier': { ar: 'ملغى', zgh: 'ⵉⵜⵜⵓⵙⴼⵙⵔ' },
+    'À voir avec Mme Lehmami': { ar: 'قيد التحقق مع السيدة لهمامي', zgh: 'ⵉⵇⵇⴰⵏ ⴰⵙⵏⵉⵔⵎ ⴷ Mme Lehmami' }
+  };
+
+  function medicalCopy() {
+    return labels[lang]?.medicalPartners || labels.fr.medicalPartners;
+  }
+
+  function normalizeMedicalValue(value) {
+    return String(value || '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/œ/g, 'oe')
+      .replace(/Œ/g, 'OE')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, ' ')
+      .trim();
+  }
+
+  function medicalRegionFromName(regionName) {
+    const normalized = normalizeMedicalValue(regionName);
+    return medicalRegionMeta.find((region) => normalizeMedicalValue(region.source) === normalized) || null;
+  }
+
+  function medicalRegionLabel(region) {
+    return region?.labels?.[lang] || region?.labels?.fr || region?.source || '';
+  }
+
+  function translateMedicalCategory(category) {
+    return lang === 'fr' ? category : (medicalCategoryLabels[category]?.[lang] || category);
+  }
+
+  function translateMedicalStatus(status) {
+    if (!status) return '';
+    return lang === 'fr' ? status : (medicalStatusLabels[status]?.[lang] || status);
+  }
+
+  function medicalNoticeActions(entry) {
+    const copy = medicalCopy();
+    const avis = String(entry.avis || '');
+    const normalized = normalizeMedicalValue(avis);
+    const hasContact = /contact\s*:/i.test(avis);
+    const hasAvis = /\bavis\b/.test(normalized) || /telecharger ici/.test(normalized.replace(/contact\s*telecharger ici/g, ''));
+    const actions = [];
+    if (hasAvis) actions.push(copy.downloadNotice);
+    if (hasContact) actions.push(copy.downloadContact);
+    return actions;
+  }
+
+  function renderMedicalFilter(scope, includeRegion = false) {
+    const copy = medicalCopy();
+    return `
+      <div class="medical-partner-filters" data-medical-filter="${scope}">
+        <label>
+          <span>${esc(copy.search)}</span>
+          <input type="search" data-medical-search placeholder="${esc(copy.searchPlaceholder)}" autocomplete="off">
+        </label>
+        ${includeRegion ? `
+          <label>
+            <span>${esc(copy.region)}</span>
+            <select data-medical-region-select>
+              ${medicalRegionMeta.map((region) => `<option value="${esc(region.id)}">${esc(medicalRegionLabel(region))}</option>`).join('')}
+            </select>
+          </label>` : ''}
+        <label>
+          <span>${esc(copy.city)}</span>
+          <select data-medical-city-select><option value="">${esc(copy.allCities)}</option></select>
+        </label>
+        <label>
+          <span>${esc(copy.category)}</span>
+          <select data-medical-category-select><option value="">${esc(copy.allCategories)}</option></select>
+        </label>
+      </div>`;
+  }
+
+  function renderMedicalPartnersSection(section, navIndex) {
+    const copy = medicalCopy();
+    const data = Array.isArray(window.medicalPartnersData) ? window.medicalPartnersData : [];
+    const regional = data.filter((entry) => entry.section === 'regional');
+    const central = data.filter((entry) => entry.section === 'central');
+    const firstRegion = medicalRegionMeta.find((region) => regional.some((entry) => medicalRegionFromName(entry.region)?.id === region.id)) || medicalRegionMeta[0];
+    return `
+      <section class="section page-section-soft prestation-extra-section medical-partners-section" id="${subrubriqueId(navIndex)}" data-prestation-extra-panel data-prestation-extra-index="${navIndex}" hidden>
+        <div class="container" data-medical-partners data-default-region="${esc(firstRegion.id)}">
+          <article class="prestation-extra-card medical-partners-intro">
+            <span class="section-tag"><i class="fa-solid fa-file-contract" aria-hidden="true"></i> ${esc(section.badge || copy.badge)}</span>
+            <p>${esc(section.intro || copy.intro)}</p>
+          </article>
+
+          <div class="medical-partner-layout">
+            <section class="medical-partner-panel medical-partner-central is-open" aria-label="${esc(copy.centralTitle)}" data-medical-panel="central">
+              <button class="medical-partner-panel-head" type="button" data-medical-panel-toggle="central" aria-expanded="true">
+                <div>
+                  <span class="section-tag"><i class="fa-solid fa-hospital" aria-hidden="true"></i> ${esc(copy.centralTitle)}</span>
+                  <p>${esc(copy.centralIntro)}</p>
+                </div>
+                <span class="medical-panel-meta">
+                  <strong data-medical-count="central">${central.length} ${esc(copy.results)}</strong>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </span>
+              </button>
+              <div class="medical-partner-panel-body" data-medical-panel-body="central">
+                ${renderMedicalFilter('central')}
+                <div class="medical-partner-results" data-medical-results="central"></div>
+                <div class="medical-pagination" data-medical-pagination="central"></div>
+              </div>
+            </section>
+
+            <section class="medical-partner-panel medical-partner-regional is-open" aria-label="${esc(copy.regionalTitle)}" data-medical-panel="regional">
+              <button class="medical-partner-panel-head" type="button" data-medical-panel-toggle="regional" aria-expanded="true">
+                <div>
+                  <span class="section-tag"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> ${esc(copy.regionalTitle)}</span>
+                  <p>${esc(copy.regionalIntro)}</p>
+                </div>
+                <span class="medical-panel-meta">
+                  <strong data-medical-count="regional">0 ${esc(copy.results)}</strong>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </span>
+              </button>
+              <div class="medical-partner-panel-body" data-medical-panel-body="regional">
+                ${renderMedicalFilter('regional', false)}
+                <div class="medical-map-layout">
+                  <div class="medical-map-card medical-region-map" aria-label="${esc(copy.mapLabel)}" data-medical-map-svg></div>
+                </div>
+                <div class="medical-selected-region">
+                  <span>${esc(copy.selectedRegion)}</span>
+                  <strong data-medical-selected-region>${esc(medicalRegionLabel(firstRegion))}</strong>
+                </div>
+                <div class="medical-partner-results" data-medical-results="regional"></div>
+                <div class="medical-pagination" data-medical-pagination="regional"></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>`;
+  }
+
   function renderExtraPrestationSections(item) {
     if (!item.extraSections?.length || !item.chips?.length) return '';
     return item.extraSections.map((section, index) => {
       const firstIndex = item.chips.length - item.extraSections.length;
       const navIndex = Number.isInteger(section.navIndex) ? section.navIndex : firstIndex + index;
+      if (section.type === 'medicalPartners') return renderMedicalPartnersSection(section, navIndex);
       return `
       <section class="section page-section-soft prestation-extra-section" id="${subrubriqueId(navIndex)}" data-prestation-extra-panel data-prestation-extra-index="${navIndex}" hidden>
         <div class="container">
@@ -2113,6 +2420,294 @@
     });
   }
 
+  function renderMedicalPartnerCard(entry) {
+    const copy = medicalCopy();
+    const title = entry.organisme || entry.medecin || translateMedicalCategory(entry.categorie) || copy.organization;
+    const noticeActions = medicalNoticeActions(entry);
+    return `
+      <article class="medical-partner-card">
+        <div class="medical-partner-card-top">
+          <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>${esc(entry.ville || '—')}</span>
+          <span>${esc(translateMedicalCategory(entry.categorie || ''))}</span>
+        </div>
+        <h3>${esc(title)}</h3>
+        ${entry.medecin ? `<p class="medical-partner-doctor"><strong>${esc(copy.doctor)} :</strong> ${esc(entry.medecin)}</p>` : ''}
+        <dl>
+          ${entry.adresse ? `<div><dt>${esc(copy.address)}</dt><dd>${esc(entry.adresse)}</dd></div>` : ''}
+          ${entry.telephone ? `<div><dt>${esc(copy.phone)}</dt><dd>${esc(entry.telephone)}</dd></div>` : ''}
+        </dl>
+        ${noticeActions.length ? `<div class="medical-notice-actions">${noticeActions.map((label) => `<button class="medical-notice-button" type="button" disabled>${esc(label)}</button>`).join('')}</div>` : ''}
+      </article>`;
+  }
+
+  function uniqueMedicalValues(entries, key) {
+    return [...new Set(entries.map((entry) => entry[key]).filter(Boolean))]
+      .sort((a, b) => String(a).localeCompare(String(b), 'fr'));
+  }
+
+  function setMedicalSelectOptions(select, values, allLabel, formatter = (value) => value) {
+    if (!select) return;
+    const current = select.value;
+    select.innerHTML = `<option value="">${esc(allLabel)}</option>${values.map((value) => `<option value="${esc(value)}">${esc(formatter(value))}</option>`).join('')}`;
+    if (values.includes(current)) select.value = current;
+  }
+
+  function getMedicalMapPathCenter(path) {
+    if (!path?.getBBox) return null;
+    const box = path.getBBox();
+    return {
+      x: box.x + box.width / 2,
+      y: box.y + box.height / 2
+    };
+  }
+
+  function findMedicalMapPath(mapMount, regionId) {
+    return [...(mapMount?.querySelectorAll('[data-region]') || [])].find((path) => path.getAttribute('data-region') === regionId) || null;
+  }
+
+  function paintMedicalMapLabel(mapMount, regionId, regionPath = null) {
+    const svgRoot = mapMount?.querySelector('svg');
+    if (!svgRoot) return;
+    let overlayLayer = svgRoot.querySelector('#medical-map-overlays');
+    if (!overlayLayer) {
+      overlayLayer = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      overlayLayer.id = 'medical-map-overlays';
+      overlayLayer.style.pointerEvents = 'none';
+      svgRoot.appendChild(overlayLayer);
+    }
+    overlayLayer.innerHTML = '';
+
+    const region = medicalRegionMeta.find((entry) => entry.id === regionId);
+    if (!region?.target) return;
+    const pathCenter = getMedicalMapPathCenter(regionPath || findMedicalMapPath(mapMount, regionId));
+    const target = pathCenter || region.target;
+    const label = medicalRegionLabel(region);
+    const textY = Math.max(24, target.y - 12);
+    const textX = Math.min(560, Math.max(120, target.x));
+    const fontSize = label.length > 24 ? 16 : 18;
+
+    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    circle.setAttribute('cx', target.x);
+    circle.setAttribute('cy', target.y);
+    circle.setAttribute('r', '5.5');
+    circle.setAttribute('fill', '#1f6a43');
+    circle.setAttribute('stroke', '#fff');
+    circle.setAttribute('stroke-width', '2');
+    overlayLayer.appendChild(circle);
+
+    ['halo', 'label'].forEach((type) => {
+      const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      text.setAttribute('x', textX);
+      text.setAttribute('y', textY);
+      text.setAttribute('text-anchor', 'middle');
+      text.setAttribute('font-size', String(fontSize));
+      text.setAttribute('font-weight', '800');
+      text.setAttribute('font-family', 'Inter, Outfit, sans-serif');
+      if (type === 'halo') {
+        text.setAttribute('fill', 'none');
+        text.setAttribute('stroke', '#ffffff');
+        text.setAttribute('stroke-width', '3.5');
+        text.setAttribute('stroke-linejoin', 'round');
+      } else {
+        text.setAttribute('fill', '#1f6a43');
+      }
+      text.textContent = label;
+      overlayLayer.appendChild(text);
+    });
+  }
+
+  function bindMedicalPartners(rootNode) {
+    const widget = rootNode.querySelector('[data-medical-partners]');
+    if (!widget || widget.dataset.medicalBound === 'true') return;
+    widget.dataset.medicalBound = 'true';
+    const copy = medicalCopy();
+    const data = Array.isArray(window.medicalPartnersData) ? window.medicalPartnersData : [];
+    const bySection = {
+      regional: data.filter((entry) => entry.section === 'regional'),
+      central: data.filter((entry) => entry.section === 'central')
+    };
+    let selectedRegion = widget.dataset.defaultRegion || medicalRegionMeta[0]?.id;
+    const mapMount = widget.querySelector('[data-medical-map-svg]');
+    if (mapMount && window.medicalRegionsMapSvg) {
+      mapMount.innerHTML = window.medicalRegionsMapSvg;
+      mapMount.querySelectorAll('[data-region]').forEach((path) => {
+        const medicalRegionId = medicalMapRegionAliases[path.getAttribute('data-region')] || path.getAttribute('data-region');
+        const region = medicalRegionMeta.find((entry) => entry.id === medicalRegionId);
+        path.dataset.region = medicalRegionId;
+        path.setAttribute('tabindex', '0');
+        path.setAttribute('role', 'button');
+        path.setAttribute('aria-label', medicalRegionLabel(region));
+      });
+    }
+
+    const getControls = (scope) => {
+      const filter = widget.querySelector(`[data-medical-filter="${scope}"]`);
+      return {
+        filter,
+        search: filter?.querySelector('[data-medical-search]'),
+        region: filter?.querySelector('[data-medical-region-select]'),
+        city: filter?.querySelector('[data-medical-city-select]'),
+        category: filter?.querySelector('[data-medical-category-select]'),
+        results: widget.querySelector(`[data-medical-results="${scope}"]`),
+        count: widget.querySelector(`[data-medical-count="${scope}"]`),
+        pagination: widget.querySelector(`[data-medical-pagination="${scope}"]`)
+      };
+    };
+
+    let activeMapPath = null;
+    const pageSize = 4;
+    const pages = { regional: 1, central: 1 };
+    const getRegionId = (entry) => medicalRegionFromName(entry.region)?.id || '';
+    const getRegionalEntries = () => (
+      selectedRegion === 'rabat-sale-kenitra'
+        ? bySection.central
+        : bySection.regional.filter((entry) => getRegionId(entry) === selectedRegion)
+    );
+    const applyFilters = (scope) => {
+      const controls = getControls(scope);
+      const query = normalizeMedicalValue(controls.search?.value || '');
+      const city = controls.city?.value || '';
+      const category = controls.category?.value || '';
+      const source = scope === 'regional' ? getRegionalEntries() : bySection[scope];
+      return source.filter((entry) => {
+        if (city && entry.ville !== city) return false;
+        if (category && entry.categorie !== category) return false;
+        if (!query) return true;
+        return normalizeMedicalValue([entry.medecin, entry.organisme, entry.categorie, entry.adresse, entry.ville].join(' ')).includes(query);
+      });
+    };
+
+    const renderPagination = (controls, scope, totalPages) => {
+      if (!controls.pagination) return;
+      if (totalPages <= 1) {
+        controls.pagination.innerHTML = '';
+        return;
+      }
+      const currentPage = pages[scope];
+      const pageButtons = Array.from({ length: totalPages }, (_, index) => {
+        const page = index + 1;
+        return `<button type="button" class="${page === currentPage ? 'is-active' : ''}" data-medical-page="${scope}:${page}" aria-label="${esc(copy.pageLabel)} ${page}" aria-current="${page === currentPage ? 'page' : 'false'}">${page}</button>`;
+      }).join('');
+      controls.pagination.innerHTML = `
+        <button type="button" data-medical-page="${scope}:${Math.max(1, currentPage - 1)}" ${currentPage === 1 ? 'disabled' : ''}>
+          ${esc(copy.previousPage)}
+        </button>
+        ${pageButtons}
+        <button type="button" data-medical-page="${scope}:${Math.min(totalPages, currentPage + 1)}" ${currentPage === totalPages ? 'disabled' : ''}>
+          ${esc(copy.nextPage)}
+        </button>`;
+    };
+
+    const syncRegionUi = () => {
+      const region = medicalRegionMeta.find((entry) => entry.id === selectedRegion) || medicalRegionMeta[0];
+      widget.querySelectorAll('.medical-region-map [data-region]').forEach((path) => {
+        const active = activeMapPath ? path === activeMapPath : path.getAttribute('data-region') === selectedRegion;
+        path.classList.toggle('is-active', active);
+        path.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      paintMedicalMapLabel(mapMount, selectedRegion, activeMapPath);
+      const regionSelect = getControls('regional').region;
+      if (regionSelect) regionSelect.value = selectedRegion;
+      const selected = widget.querySelector('[data-medical-selected-region]');
+      if (selected) selected.textContent = medicalRegionLabel(region);
+    };
+
+    const renderScope = (scope) => {
+      const controls = getControls(scope);
+      const base = scope === 'regional' ? getRegionalEntries() : bySection[scope];
+      setMedicalSelectOptions(controls.city, uniqueMedicalValues(base, 'ville'), copy.allCities);
+      setMedicalSelectOptions(controls.category, uniqueMedicalValues(base, 'categorie'), copy.allCategories, translateMedicalCategory);
+      const entries = applyFilters(scope);
+      const totalPages = Math.max(1, Math.ceil(entries.length / pageSize));
+      pages[scope] = Math.min(Math.max(1, pages[scope]), totalPages);
+      const visibleEntries = entries.slice((pages[scope] - 1) * pageSize, pages[scope] * pageSize);
+      if (controls.count) controls.count.textContent = `${entries.length} ${copy.results}`;
+      if (!controls.results) return;
+      if (!entries.length) {
+        controls.results.innerHTML = `<p class="medical-partner-empty">${esc(scope === 'regional' ? copy.noRegional : copy.noResults)}</p>`;
+        renderPagination(controls, scope, 1);
+        return;
+      }
+      controls.results.innerHTML = visibleEntries.map(renderMedicalPartnerCard).join('');
+      renderPagination(controls, scope, totalPages);
+    };
+
+    const renderAll = () => {
+      syncRegionUi();
+      renderScope('regional');
+      renderScope('central');
+    };
+
+    const toggleMedicalPanel = (scope) => {
+      const panel = widget.querySelector(`[data-medical-panel="${scope}"]`);
+      if (!panel) return;
+      const body = panel.querySelector('[data-medical-panel-body]');
+      const toggle = panel.querySelector('[data-medical-panel-toggle]');
+      const open = panel.classList.contains('is-collapsed');
+      panel.classList.toggle('is-collapsed', !open);
+      panel.classList.toggle('is-open', open);
+      if (body) body.hidden = !open;
+      if (toggle) toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+
+    widget.querySelectorAll('[data-medical-panel-toggle]').forEach((toggle) => {
+      toggle.addEventListener('click', () => {
+        toggleMedicalPanel(toggle.getAttribute('data-medical-panel-toggle'));
+      });
+    });
+
+    widget.querySelectorAll('.medical-region-map [data-region]').forEach((path) => {
+      const selectPathRegion = () => {
+        selectedRegion = path.getAttribute('data-region') || selectedRegion;
+        activeMapPath = path;
+        pages.regional = 1;
+        renderAll();
+      };
+      path.addEventListener('mouseenter', () => paintMedicalMapLabel(mapMount, path.getAttribute('data-region') || selectedRegion, path));
+      path.addEventListener('mouseleave', () => paintMedicalMapLabel(mapMount, selectedRegion, activeMapPath));
+      path.addEventListener('click', selectPathRegion);
+      path.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        selectedRegion = path.getAttribute('data-region') || selectedRegion;
+        activeMapPath = path;
+        pages.regional = 1;
+        renderAll();
+      });
+    });
+
+    ['regional', 'central'].forEach((scope) => {
+      const controls = getControls(scope);
+      [controls.search, controls.city, controls.category].forEach((control) => {
+        control?.addEventListener('input', () => {
+          pages[scope] = 1;
+          renderScope(scope);
+        });
+        control?.addEventListener('change', () => {
+          pages[scope] = 1;
+          renderScope(scope);
+        });
+      });
+      controls.region?.addEventListener('change', () => {
+        selectedRegion = controls.region.value || selectedRegion;
+        activeMapPath = null;
+        pages.regional = 1;
+        renderAll();
+      });
+    });
+
+    widget.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-medical-page]');
+      if (!button || button.disabled || !widget.contains(button)) return;
+      const [scope, page] = button.getAttribute('data-medical-page').split(':');
+      if (!pages[scope]) return;
+      pages[scope] = Number(page) || 1;
+      renderScope(scope);
+    });
+
+    renderAll();
+  }
+
   function renderDetail() {
     const mount = document.getElementById('prestation-detail-root');
     const key = body.dataset.service;
@@ -2296,6 +2891,7 @@
     });
     bindPrestationAccordions(mount);
     bindAmcDetail(mount);
+    bindMedicalPartners(mount);
     if (window.__fosPrestationHashHandler) {
       window.removeEventListener('hashchange', window.__fosPrestationHashHandler);
     }
