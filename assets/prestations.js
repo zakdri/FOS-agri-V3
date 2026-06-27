@@ -128,6 +128,12 @@
       details: 'Détails de la prestation',
       partners: 'Conventions et partenaires',
       steps: 'Parcours adhérent',
+      bankOffers: {
+        title: 'Offres bancaires à des taux de crédits préférentiels',
+        intro: 'La FOS-Agri négocie avec des banques partenaires des offres de crédit immobilier à des conditions préférentielles. Téléchargez la fiche de chaque banque pour consulter l’offre et l’âge limite de crédit.',
+        ageLabel: 'Âge limite de crédit',
+        download: 'Télécharger l’offre'
+      },
       medicalPartners: {
         badge: 'Conventions médicales',
         title: 'Conventions et partenariats médicaux',
@@ -186,6 +192,12 @@
       details: 'تفاصيل الخدمة',
       partners: 'الاتفاقيات والشركاء',
       steps: 'مسار المنخرط',
+      bankOffers: {
+        title: 'عروض بنكية بنسب قروض تفضيلية',
+        intro: 'تتفاوض FOS-Agri مع أبناك شريكة حول عروض القروض العقارية بشروط تفضيلية. حمّل بطاقة كل بنك للاطلاع على العرض والسن الأقصى للقرض.',
+        ageLabel: 'السن الأقصى للقرض',
+        download: 'تحميل العرض'
+      },
       medicalPartners: {
         badge: 'اتفاقيات طبية',
         title: 'الاتفاقيات والشراكات الطبية',
@@ -244,6 +256,12 @@
       details: 'ⵜⵉⴼⵔⵓⵔⵉⵏ',
       partners: 'ⵉⵣⴷⴰⵢⵏ',
       steps: 'ⴰⴱⵔⵉⴷ ⵏ ⵓⵎⵏⵅⵔⴰⵟ',
+      bankOffers: {
+        title: 'ⵉⴼⵔⴰⵏ ⵏ ⵉⴱⴰⵏⴽⵏ ⵙ ⵜⵎⴰⵏⴰⵡⵜ ⵉⵎⵥⵍⵉⵢⵏ',
+        intro: 'ⵜⵙⵎⵓⵏ FOS-Agri ⴷ ⵉⴱⴰⵏⴽⵏ ⵉⵣⴷⵉⵏ ⵉⴼⵔⴰⵏ ⵏ ⵓⴽⵔⵉⴹⵉ ⵏ ⵓⵙⵖⵉⵎ. ⵙⵉⴷⵔ ⵜⴰⴽⴰⵔⴹⴰ ⵏ ⴽⵓ ⴱⴰⵏⴽ.',
+        ageLabel: 'ⵜⵉⵍⴰⵍ ⵏ ⵓⴽⵔⵉⴹⵉ',
+        download: 'ⵙⵉⴷⵔ ⴰⴼⵔⴰⵏ'
+      },
       medicalPartners: {
         badge: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⵉⴷⵓⵙⴰⵏⵏ',
         title: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏⵏ',
@@ -1974,6 +1992,48 @@
     return labels[lang]?.medicalPartners || labels.fr.medicalPartners;
   }
 
+  function bankCopy() {
+    return labels[lang]?.bankOffers || labels.fr.bankOffers;
+  }
+
+  /* Offres bancaires (crédits immobiliers) — grille de banques partenaires.
+     Section toujours visible, rendue uniquement sur la page Accès au logement.
+     logo : assets/images/banks/<slug>.png ; repli libellé si absent. */
+  function renderBankOffersSection(key) {
+    if (key !== 'logement') return '';
+    const banks = Array.isArray(window.banquesLogementImmobilier) ? window.banquesLogementImmobilier : [];
+    if (!banks.length) return '';
+    const copy = bankCopy();
+    const cards = banks.map((bank) => {
+      const logo = asset(`assets/images/banks/${bank.slug}.png`);
+      const pdf = asset(bank.pdf);
+      return `
+        <article class="bank-card">
+          <div class="bank-card-logo">
+            <img class="bank-logo" src="${esc(logo)}" alt="${esc(bank.name)}" loading="lazy" decoding="async"
+                 onerror="this.closest('.bank-card-logo').classList.add('is-fallback');this.remove();" />
+            <span class="bank-logo-fallback">${esc(bank.name)}</span>
+          </div>
+          <h3 class="bank-card-name">${esc(bank.name)}</h3>
+          ${bank.ageLimit ? `<p class="bank-card-age"><span>${esc(copy.ageLabel)}</span><strong>${esc(bank.ageLimit)}</strong></p>` : ''}
+          <a class="bank-card-download" href="${esc(pdf)}" download>
+            <i class="fa-solid fa-download" aria-hidden="true"></i> ${esc(copy.download)}
+          </a>
+        </article>`;
+    }).join('');
+    return `
+      <section class="section page-section-soft bank-offers-section" id="offres-bancaires-logement" aria-labelledby="bank-offers-title">
+        <div class="container">
+          <div class="prestation-section-head centered">
+            <span class="section-tag"><i class="fa-solid fa-building-columns" aria-hidden="true"></i> FOS-Agri</span>
+            <h2 id="bank-offers-title">${esc(copy.title)}</h2>
+            <p class="section-copy">${esc(copy.intro)}</p>
+          </div>
+          <div class="bank-offers-grid">${cards}</div>
+        </div>
+      </section>`;
+  }
+
   function normalizeMedicalValue(value) {
     return String(value || '')
       .normalize('NFD')
@@ -2800,6 +2860,7 @@
           </div>
         </div>
       </section>`}
+      ${renderBankOffersSection(key)}
       ${item.centerMedical ? '' : `
       <section class="section" id="partners">
         <div class="container">
