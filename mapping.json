@@ -240,36 +240,6 @@
     "folder": "01_NIVEAU_CENTRAL/REGION_DE_RABAT_SALE_KENITRA"
   },
   {
-    "row": 30,
-    "niveau": "CENTRAL",
-    "region": "RÉGION DE RABAT SALÉ KÉNITRA",
-    "ville": "SALÉ",
-    "categorie": "CLINIQUES",
-    "organisme": "GROUPE AKDITAL",
-    "medecin": "",
-    "statut": "Confirmé",
-    "adresse": "",
-    "tel": "",
-    "link": "https://fos-agri.ma/assets/documents/convention_tarifs_preferent/medecins/NotepartenariatAKDITAL.pdf",
-    "new_filename": "SALE_GROUPE_AKDITAL.pdf",
-    "folder": "01_NIVEAU_CENTRAL/REGION_DE_RABAT_SALE_KENITRA"
-  },
-  {
-    "row": 31,
-    "niveau": "CENTRAL",
-    "region": "RÉGION DE RABAT SALÉ KÉNITRA",
-    "ville": "SALÉ",
-    "categorie": "CLINIQUES",
-    "organisme": "GROUPE AKDITAL",
-    "medecin": "",
-    "statut": "Confirmé",
-    "adresse": "",
-    "tel": "",
-    "link": "https://fos-agri.ma/assets/documents/convention_tarifs_preferent/medecins/listedesetablissmentsakdital2023.pdf",
-    "new_filename": "SALE_GROUPE_AKDITAL_2.pdf",
-    "folder": "01_NIVEAU_CENTRAL/REGION_DE_RABAT_SALE_KENITRA"
-  },
-  {
     "row": 32,
     "niveau": "CENTRAL",
     "region": "RÉGION DE RABAT SALÉ KÉNITRA",
@@ -705,36 +675,6 @@
     "folder": "02_NIVEAU_REGIONAL/REGION_DE_SOUSS_MASSA_AGADIR"
   },
   {
-    "row": 63,
-    "niveau": "REGIONAL",
-    "region": "RÉGION DE SOUSS -MASSA -AGADIR",
-    "ville": "AGADIR",
-    "categorie": "CLINIQUE",
-    "organisme": "GROUPE AKDITAL",
-    "medecin": "",
-    "statut": "Confirmé",
-    "adresse": "",
-    "tel": "",
-    "link": "https://fos-agri.ma/assets/documents/convention_tarifs_preferent/medecins/NotepartenariatAKDITAL.pdf",
-    "new_filename": "AGADIR_GROUPE_AKDITAL.pdf",
-    "folder": "02_NIVEAU_REGIONAL/REGION_DE_SOUSS_MASSA_AGADIR"
-  },
-  {
-    "row": 64,
-    "niveau": "REGIONAL",
-    "region": "RÉGION DE SOUSS -MASSA -AGADIR",
-    "ville": "AGADIR",
-    "categorie": "CLINIQUE",
-    "organisme": "GROUPE AKDITAL",
-    "medecin": "",
-    "statut": "Confirmé",
-    "adresse": "",
-    "tel": "",
-    "link": "https://fos-agri.ma/assets/documents/convention_tarifs_preferent/medecins/listedesetablissmentsakdital2023.pdf",
-    "new_filename": "AGADIR_GROUPE_AKDITAL_2.pdf",
-    "folder": "02_NIVEAU_REGIONAL/REGION_DE_SOUSS_MASSA_AGADIR"
-  },
-  {
     "row": 65,
     "niveau": "REGIONAL",
     "region": "RÉGION DE SOUSS -MASSA -AGADIR",
@@ -791,8 +731,8 @@
     "adresse": "À CÔTÉ DE LA MOSQUÉE AÏCHA ET DU CHU, BD OUED ASSIL, MARRAKECH",
     "tel": "",
     "link": "https://fos-agri.ma/assets/news/docs/AKDITAL_ibnnafis.pdf",
-    "new_filename": "MARRAKECH_AKDITAL_HOPITAL_INTERNATIONAL_IBN_NAFIS.pdf",
-    "folder": "02_NIVEAU_REGIONAL/REGION_DE_MARRAKECH_SAFI"
+    "new_filename": "AKDITAL_IBN_NAFIS_MARRAKECH_AVIS.pdf",
+    "folder": "AKDITAL"
   },
   {
     "row": 70,
@@ -807,36 +747,6 @@
     "tel": "",
     "link": "https://fos-agri.ma/assets/news/docs/conventionnarjis.pdf",
     "new_filename": "MARRAKECH_POLYCLINIQUE_LES_NARCISSES_MARRAKECH.pdf",
-    "folder": "02_NIVEAU_REGIONAL/REGION_DE_MARRAKECH_SAFI"
-  },
-  {
-    "row": 71,
-    "niveau": "REGIONAL",
-    "region": "RÉGION DE MARRAKECH -SAFI",
-    "ville": "SAFI",
-    "categorie": "CLINIQUE",
-    "organisme": "GROUPE AKDITAL",
-    "medecin": "",
-    "statut": "Confirmé",
-    "adresse": "",
-    "tel": "",
-    "link": "https://fos-agri.ma/assets/documents/convention_tarifs_preferent/medecins/NotepartenariatAKDITAL.pdf",
-    "new_filename": "SAFI_GROUPE_AKDITAL.pdf",
-    "folder": "02_NIVEAU_REGIONAL/REGION_DE_MARRAKECH_SAFI"
-  },
-  {
-    "row": 72,
-    "niveau": "REGIONAL",
-    "region": "RÉGION DE MARRAKECH -SAFI",
-    "ville": "SAFI",
-    "categorie": "CLINIQUE",
-    "organisme": "GROUPE AKDITAL",
-    "medecin": "",
-    "statut": "Confirmé",
-    "adresse": "",
-    "tel": "",
-    "link": "https://fos-agri.ma/assets/documents/convention_tarifs_preferent/medecins/listedesetablissmentsakdital2023.pdf",
-    "new_filename": "SAFI_GROUPE_AKDITAL_2.pdf",
     "folder": "02_NIVEAU_REGIONAL/REGION_DE_MARRAKECH_SAFI"
   },
   {
@@ -885,36 +795,6 @@
     "folder": "02_NIVEAU_REGIONAL/REGION_DE_TANGER_TETOUAN_AL_HOCEIMA"
   },
   {
-    "row": 78,
-    "niveau": "REGIONAL",
-    "region": "RÉGION DE TANGER -TÉTOUAN -AL HOCEIMA",
-    "ville": "TANGER",
-    "categorie": "CLINIQUE",
-    "organisme": "GROUPE AKDITAL",
-    "medecin": "",
-    "statut": "Confirmé",
-    "adresse": "",
-    "tel": "",
-    "link": "https://fos-agri.ma/assets/documents/convention_tarifs_preferent/medecins/NotepartenariatAKDITAL.pdf",
-    "new_filename": "TANGER_GROUPE_AKDITAL.pdf",
-    "folder": "02_NIVEAU_REGIONAL/REGION_DE_TANGER_TETOUAN_AL_HOCEIMA"
-  },
-  {
-    "row": 79,
-    "niveau": "REGIONAL",
-    "region": "RÉGION DE TANGER -TÉTOUAN -AL HOCEIMA",
-    "ville": "TANGER",
-    "categorie": "CLINIQUE",
-    "organisme": "GROUPE AKDITAL",
-    "medecin": "",
-    "statut": "Confirmé",
-    "adresse": "",
-    "tel": "",
-    "link": "https://fos-agri.ma/assets/documents/convention_tarifs_preferent/medecins/listedesetablissmentsakdital2023.pdf",
-    "new_filename": "TANGER_GROUPE_AKDITAL_2.pdf",
-    "folder": "02_NIVEAU_REGIONAL/REGION_DE_TANGER_TETOUAN_AL_HOCEIMA"
-  },
-  {
     "row": 81,
     "niveau": "REGIONAL",
     "region": "RÉGION DE BÉNI MELLAL -KHÉNIFRA",
@@ -926,8 +806,8 @@
     "adresse": "ROUTE NATIONALE 12, KHOURIBGA",
     "tel": "",
     "link": "https://fos-agri.ma/assets/news/docs/AKDITAL_khouribga.pdf",
-    "new_filename": "KHOURIBGA_AKDITAL_CLINIQUE_INTERNATIONALE_DE_KHOURIBGA.pdf",
-    "folder": "02_NIVEAU_REGIONAL/REGION_DE_BENI_MELLAL_KHENIFRA"
+    "new_filename": "AKDITAL_KHOURIBGA_AVIS.pdf",
+    "folder": "AKDITAL"
   },
   {
     "row": 82,
@@ -941,8 +821,8 @@
     "adresse": "258 ROUTE DE L’OASIS, CASABLANCA.",
     "tel": "",
     "link": "https://fos-agri.ma/assets/documents/convention_tarifs_preferent/medecins/NotepartenariatAKDITAL.pdf",
-    "new_filename": "CASABLANCA_GROUPE_AKDITAL.pdf",
-    "folder": "02_NIVEAU_REGIONAL/REGION_DE_CASABLANCA_SETTAT"
+    "new_filename": "AKDITAL_AVIS.pdf",
+    "folder": "AKDITAL"
   },
   {
     "row": 86,
@@ -956,8 +836,8 @@
     "adresse": "",
     "tel": "",
     "link": "https://fos-agri.ma/assets/documents/convention_tarifs_preferent/medecins/listedesetablissmentsakdital2023.pdf",
-    "new_filename": "BOUSKOURA_GROUPE_AKDITAL.pdf",
-    "folder": "02_NIVEAU_REGIONAL/REGION_DE_CASABLANCA_SETTAT"
+    "new_filename": "AKDITAL_CONTACT.pdf",
+    "folder": "AKDITAL"
   },
   {
     "row": 87,
