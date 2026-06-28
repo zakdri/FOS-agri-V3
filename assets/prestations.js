@@ -2484,9 +2484,21 @@
     });
   }
 
+  /* Sépare le nom de l'organisme de l'offre : "… . OFFRE : REMISE DE 30%"
+     -> { name: "…", offer: "REMISE DE 30%" }. L'offre est affichée en badge. */
+  function splitMedicalOffer(rawTitle) {
+    const raw = String(rawTitle || '');
+    const m = raw.match(/\s*[.\-–]?\s*OFFRES?\s*:\s*/i);
+    if (!m) return { name: raw.trim(), offer: '' };
+    const name = raw.slice(0, m.index).replace(/[.\-–\s]+$/, '').trim();
+    const offer = raw.slice(m.index + m[0].length).trim();
+    return { name: name || raw.trim(), offer };
+  }
+
   function renderMedicalPartnerCard(entry) {
     const copy = medicalCopy();
-    const title = entry.organisme || entry.medecin || translateMedicalCategory(entry.categorie) || copy.organization;
+    const rawTitle = entry.organisme || entry.medecin || translateMedicalCategory(entry.categorie) || copy.organization;
+    const { name: title, offer } = splitMedicalOffer(rawTitle);
     const noticeActions = medicalNoticeActions(entry);
     return `
       <article class="medical-partner-card">
@@ -2495,6 +2507,7 @@
           <span>${esc(translateMedicalCategory(entry.categorie || ''))}</span>
         </div>
         <h3>${esc(title)}</h3>
+        ${offer ? `<p class="medical-offer-badge"><i class="fa-solid fa-tag" aria-hidden="true"></i> ${esc(offer)}</p>` : ''}
         ${entry.medecin ? `<p class="medical-partner-doctor"><strong>${esc(copy.doctor)} :</strong> ${esc(entry.medecin)}</p>` : ''}
         <dl>
           ${entry.adresse ? `<div><dt>${esc(copy.address)}</dt><dd>${esc(entry.adresse)}</dd></div>` : ''}
