@@ -2078,7 +2078,10 @@
     return actions;
   }
 
-  function renderMedicalFilter(scope, includeRegion = false) {
+  /* includeRegion : ajoute le menu Région (synchronisé avec la carte).
+     includeCity   : ajoute le menu Ville. Le scope "regional" filtre par
+     région (carte), donc on remplace Ville par Région. */
+  function renderMedicalFilter(scope, includeRegion = false, includeCity = true) {
     const copy = medicalCopy();
     return `
       <div class="medical-partner-filters" data-medical-filter="${scope}">
@@ -2093,10 +2096,11 @@
               ${medicalRegionMeta.map((region) => `<option value="${esc(region.id)}">${esc(medicalRegionLabel(region))}</option>`).join('')}
             </select>
           </label>` : ''}
+        ${includeCity ? `
         <label>
           <span>${esc(copy.city)}</span>
           <select data-medical-city-select><option value="">${esc(copy.allCities)}</option></select>
-        </label>
+        </label>` : ''}
         <label>
           <span>${esc(copy.category)}</span>
           <select data-medical-category-select><option value="">${esc(copy.allCategories)}</option></select>
@@ -2132,7 +2136,7 @@
                 </span>
               </button>
               <div class="medical-partner-panel-body" data-medical-panel-body="regional">
-                ${renderMedicalFilter('regional', false)}
+                ${renderMedicalFilter('regional', true, false)}
                 <div class="medical-map-layout">
                   <div class="medical-map-card medical-region-map" aria-label="${esc(copy.mapLabel)}" data-medical-map-svg></div>
                 </div>
