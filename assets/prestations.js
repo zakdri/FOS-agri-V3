@@ -1745,7 +1745,8 @@
 
           <div class="prestation-amc-block">
             <div class="prestation-amc-block-head">
-              <span class="section-tag"><i class="fa-solid fa-file-contract" aria-hidden="true"></i> ${esc(detail.dispositionsTitle)}</span>
+              <span class="section-tag"><i class="fa-solid fa-file-contract" aria-hidden="true"></i> AMC</span>
+              <h2 class="prestation-amc-block-title">${esc(detail.dispositionsTitle)}</h2>
             </div>
             <div class="prestation-amc-card-grid" data-amc-card-carousel>
               ${detail.dispositions.map((card, index) => renderAmcDispositionCard(card, index, detail)).join('')}
@@ -2373,6 +2374,17 @@
           const icon = trigger.querySelector('.fa-solid');
           if (!item || !content) return;
           const shouldOpen = !item.classList.contains('is-open');
+          /* Accordéon : un seul ouvert à la fois — fermer tous les autres. */
+          accordion.querySelectorAll('.prestation-amc-guarantee').forEach((sib) => {
+            sib.classList.remove('is-open');
+            const sTrigger = sib.querySelector('.prestation-amc-guarantee-trigger');
+            if (sTrigger) sTrigger.setAttribute('aria-expanded', 'false');
+            const sContent = sib.querySelector('.prestation-amc-guarantee-content');
+            if (sContent) sContent.hidden = true;
+            const sIcon = sib.querySelector('.prestation-amc-guarantee-trigger .fa-solid');
+            if (sIcon) { sIcon.classList.add('fa-plus'); sIcon.classList.remove('fa-minus'); }
+          });
+          /* Ouvrir l'élément cliqué (ou le laisser fermé s'il l'était). */
           item.classList.toggle('is-open', shouldOpen);
           trigger.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
           content.hidden = !shouldOpen;

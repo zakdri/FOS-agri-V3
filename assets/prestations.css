@@ -1573,6 +1573,19 @@ html[dir='rtl'] .prestation-accordion-trigger {
   line-height: 1.05;
 }
 
+/* "Dispositions contractuelles" — vrai titre de section */
+.prestation-amc-block-title {
+  margin: 0.55rem 0 0;
+  color: #143b28;
+  font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.prestation-amc-block-title i { color: #c8a44d; font-size: 0.78em; }
+
 .prestation-amc-card-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1792,8 +1805,16 @@ html[dir='rtl'] .prestation-amc-card-toggle {
 }
 
 .prestation-amc-option-tabs button.is-active {
-  background: #143b28;
+  background: linear-gradient(135deg, #123b28, #1e7247);
   color: #fff;
+  transform: scale(1.06);
+  box-shadow: 0 10px 24px rgba(16, 55, 35, 0.28);
+  border: 1px solid rgba(214, 169, 65, 0.45);
+}
+.prestation-amc-option-tabs button.is-active:hover,
+.prestation-amc-option-tabs button.is-active:focus-visible {
+  color: #fff;
+  transform: scale(1.06) translateY(-1px);
 }
 
 .prestation-amc-option-panel {
