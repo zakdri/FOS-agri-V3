@@ -1556,14 +1556,20 @@ html[dir='rtl'] .prestation-accordion-trigger {
 }
 
 .prestation-amc-block-head {
-  margin-bottom: 1rem;
+  margin-bottom: clamp(1.35rem, 2.4vw, 2.15rem);
 }
 
 .prestation-amc-block-head.is-split {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: end;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: clamp(1.25rem, 2.8vw, 2rem);
+  align-items: flex-start;
+  margin-bottom: 0;
+}
+
+html[dir='rtl'] .prestation-amc-block-head.is-split {
+  align-items: flex-end;
 }
 
 .prestation-amc-block-head h3 {
@@ -1778,43 +1784,75 @@ html[dir='rtl'] .prestation-amc-card-toggle {
 
 .prestation-amc-option-tabs {
   display: inline-flex;
-  gap: 0.35rem;
-  padding: 0.35rem;
-  border: 1px solid rgba(20, 59, 40, 0.12);
-  border-radius: 999px;
-  background: #fff;
-  box-shadow: 0 12px 34px rgba(16, 55, 35, 0.08);
+  align-self: flex-start;
+  gap: 0;
+  padding: 0;
+  border: 1px solid rgba(20, 59, 40, 0.16);
+  border-bottom: 0;
+  border-radius: 1rem 1rem 0 0;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 14px 34px rgba(16, 55, 35, 0.08);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+html[dir='rtl'] .prestation-amc-option-tabs {
+  align-self: flex-end;
 }
 
 .prestation-amc-option-tabs button {
+  min-width: 9.6rem;
   border: 0;
-  border-radius: 999px;
-  padding: 0.75rem 1.15rem;
-  background: transparent;
+  border-inline-end: 1px solid rgba(20, 59, 40, 0.12);
+  border-radius: 0;
+  padding: 1.05rem 1.5rem 1rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 249, 243, 0.92));
   color: #143b28;
   font: inherit;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.22s ease,
+    color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.prestation-amc-option-tabs button:last-child {
+  border-inline-end: 0;
 }
 
 .prestation-amc-option-tabs button:hover,
 .prestation-amc-option-tabs button:focus-visible {
-  transform: translateY(-1px);
   color: #17683f;
+  background: #fff;
 }
 
 .prestation-amc-option-tabs button.is-active {
-  background: linear-gradient(135deg, #123b28, #1e7247);
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(135deg, #123b28, #17683f);
   color: #fff;
-  transform: scale(1.06);
-  box-shadow: 0 10px 24px rgba(16, 55, 35, 0.28);
-  border: 1px solid rgba(214, 169, 65, 0.45);
+  box-shadow: inset 0 -3px 0 #d6a941, 0 12px 28px rgba(16, 55, 35, 0.18);
 }
 .prestation-amc-option-tabs button.is-active:hover,
 .prestation-amc-option-tabs button.is-active:focus-visible {
   color: #fff;
-  transform: scale(1.06) translateY(-1px);
+  background: linear-gradient(135deg, #123b28, #17683f);
+}
+
+.prestation-amc-options {
+  margin-top: -1px;
+  padding: clamp(1.25rem, 2.6vw, 1.85rem);
+  border: 1px solid rgba(20, 59, 40, 0.16);
+  border-radius: 0 1rem 1rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(249, 251, 246, 0.94)),
+    radial-gradient(circle at 92% 4%, rgba(214, 169, 65, 0.15), transparent 34%);
+  box-shadow: 0 24px 60px rgba(16, 55, 35, 0.09);
+}
+
+html[dir='rtl'] .prestation-amc-options {
+  border-radius: 1rem 0 1rem 1rem;
 }
 
 .prestation-amc-option-panel {
@@ -1822,29 +1860,31 @@ html[dir='rtl'] .prestation-amc-card-toggle {
 }
 
 .prestation-amc-option-head {
-  margin-bottom: 0.9rem;
-  padding: 1rem 1.15rem;
-  border-left: 4px solid #d6a941;
-  border-radius: 0.9rem;
-  background: #fff;
-  box-shadow: 0 14px 34px rgba(16, 55, 35, 0.07);
+  margin-bottom: clamp(1.1rem, 2vw, 1.45rem);
+  padding: clamp(1.25rem, 2.5vw, 1.65rem) clamp(1.25rem, 2.7vw, 1.9rem);
+  border: 1px solid rgba(214, 169, 65, 0.24);
+  border-radius: 0.85rem;
+  background:
+    linear-gradient(135deg, #123b28 0%, #145834 52%, #17683f 100%);
+  box-shadow: 0 18px 42px rgba(16, 55, 35, 0.16);
 }
 
 html[dir='rtl'] .prestation-amc-option-head {
-  border-left: 0;
-  border-right: 4px solid #d6a941;
+  border-right: 1px solid rgba(214, 169, 65, 0.24);
 }
 
 .prestation-amc-option-head span {
   display: block;
-  color: #143b28;
-  font-size: 1.2rem;
+  color: #fff;
+  font-size: clamp(1.32rem, 2.2vw, 1.7rem);
   font-weight: 800;
+  line-height: 1.15;
 }
 
 .prestation-amc-option-head p {
   margin: 0.35rem 0 0;
-  color: #536a5d;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(1rem, 1.6vw, 1.12rem);
 }
 
 .prestation-amc-guarantee-list {
@@ -2680,6 +2720,7 @@ html[dir='rtl'] .prestation-keypoints-panel::before {
 
   .prestation-amc-option-tabs button {
     flex: 1 1 0;
+    min-width: 0;
     padding-inline: 0.8rem;
   }
 
