@@ -1585,15 +1585,85 @@
     }));
   }
 
+  /* ===== Accès au logement : même logique que prévoyance (chips + panneaux) ===== */
+  const logementMenuItems = [
+    { id: 'aide-logement',       icon: 'fa-hand-holding-heart', labels: { fr: 'Aide au logement', ar: 'المساعدة على السكن', zgh: 'ⵜⵉⵡⵉⵙⵉ ⵏ ⵓⵙⵖⵉⵎ' } },
+    { id: 'offres-immobilier',   icon: 'fa-building-columns',   labels: { fr: 'Offres bancaires — crédits immobiliers', ar: 'عروض بنكية — القروض العقارية', zgh: 'ⵉⴼⵔⴰⵏ ⵏ ⵉⴱⴰⵏⴽⵏ — ⴰⴽⵔⵉⴹⵉ ⵏ ⵓⵙⵖⵉⵎ' } },
+    { id: 'offres-consommation', icon: 'fa-credit-card',        labels: { fr: 'Offres bancaires — crédits à la consommation', ar: 'عروض بنكية — قروض الاستهلاك', zgh: 'ⵉⴼⵔⴰⵏ ⵏ ⵉⴱⴰⵏⴽⵏ — ⴰⴽⵔⵉⴹⵉ ⵏ ⵓⵙⵙⵉⵜⵎ' } },
+    { id: 'promoteurs',          icon: 'fa-building',           labels: { fr: 'Promoteurs immobiliers', ar: 'المنعشون العقاريون', zgh: 'ⵉⵎⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ' } },
+    { id: 'projets-fosagri',     icon: 'fa-helmet-safety',      labels: { fr: 'Projets logement FOS-Agri', ar: 'مشاريع السكن FOS-Agri', zgh: 'ⵉⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ FOS-Agri' } }
+  ];
+
+  function localizedLogementMenu(targetLang = lang) {
+    return logementMenuItems.map((item) => ({ id: item.id, icon: item.icon, label: item.labels[targetLang] || item.labels.fr }));
+  }
+
+  const logementCenter = {
+    fr: {
+      badge: 'Aide au logement', title: 'Aide au logement',
+      intro: 'La FOS-Agri accompagne ses adhérents dans l’accès au logement en facilitant l’orientation vers les dispositifs et partenaires disponibles, et en négociant des offres bancaires à des conditions préférentielles.',
+      items: [
+        { navIndex: 91, icon: 'fa-hand-holding-heart', title: 'Accompagnement des adhérents', body: 'Orientation des adhérents vers les dispositifs d’aide et les partenaires bancaires et immobiliers.' },
+        { navIndex: 92, icon: 'fa-building-columns', title: 'Offres bancaires préférentielles', body: 'Crédits immobiliers et crédits à la consommation négociés avec des banques partenaires (voir les deux rubriques dédiées).' }
+      ]
+    },
+    ar: {
+      badge: 'المساعدة على السكن', title: 'المساعدة على السكن',
+      intro: 'تواكب FOS-Agri منخرطيها في الولوج إلى السكن عبر التوجيه نحو الآليات والشركاء المتاحين، والتفاوض حول عروض بنكية بشروط تفضيلية.',
+      items: [
+        { navIndex: 91, icon: 'fa-hand-holding-heart', title: 'مواكبة المنخرطين', body: 'توجيه المنخرطين نحو آليات الدعم والشركاء البنكيين والعقاريين.' },
+        { navIndex: 92, icon: 'fa-building-columns', title: 'عروض بنكية تفضيلية', body: 'قروض عقارية وقروض استهلاكية متفاوض بشأنها مع أبناك شريكة (انظر الرُّبريكتين المخصصتين).' }
+      ]
+    },
+    zgh: {
+      badge: 'ⵜⵉⵡⵉⵙⵉ ⵏ ⵓⵙⵖⵉⵎ', title: 'ⵜⵉⵡⵉⵙⵉ ⵏ ⵓⵙⵖⵉⵎ',
+      intro: 'ⵜⴰⵎⴰⵡⴰⵙⵜ FOS-Agri ⵜⴻⵎⵎⵓⴷⴷⵓ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵖⵔ ⵓⵍⵓⴳ ⵏ ⵓⵙⵖⵉⵎ ⵙ ⵉⴼⵔⴰⵏ ⵏ ⵉⴱⴰⵏⴽⵏ ⵉⵎⵥⵍⵉⵢⵏ.',
+      items: [
+        { navIndex: 91, icon: 'fa-hand-holding-heart', title: 'ⴰⵙⴷⵓ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ', body: 'ⴰⵙⴷⵓ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵖⵔ ⵉⵣⴷⴰⵢⵏ ⵏ ⵉⴱⴰⵏⴽⵏ ⴷ ⵓⵙⵖⵉⵎ.' },
+        { navIndex: 92, icon: 'fa-building-columns', title: 'ⵉⴼⵔⴰⵏ ⵏ ⵉⴱⴰⵏⴽⵏ', body: 'ⴰⴽⵔⵉⴹⵉ ⵏ ⵓⵙⵖⵉⵎ ⴷ ⵓⵙⵙⵉⵜⵎ ⴷ ⵉⴱⴰⵏⴽⵏ ⵉⵣⴷⵉⵏ.' }
+      ]
+    }
+  };
+
+  const logementExtra = {
+    fr: [
+      { navIndex: 1, type: 'bankOffers', category: 'immobilier', icon: 'fa-building-columns', badge: 'Crédits immobiliers', title: 'Offres bancaires — crédits immobiliers', intro: 'Crédits immobiliers négociés avec des banques partenaires. Téléchargez la fiche de chaque banque pour consulter l’offre et l’âge limite de crédit.' },
+      { navIndex: 2, type: 'bankOffers', category: 'consommation', icon: 'fa-credit-card', badge: 'Crédits à la consommation', title: 'Offres bancaires — crédits à la consommation', intro: 'Crédits à la consommation à conditions préférentielles auprès des banques et sociétés de financement partenaires.' },
+      { navIndex: 3, icon: 'fa-building', badge: 'Promoteurs immobiliers', title: 'Promoteurs immobiliers', intro: ['Mise en relation des adhérents avec les promoteurs immobiliers partenaires et les offres de logement validées.'] },
+      { navIndex: 4, icon: 'fa-helmet-safety', badge: 'Projets logement FOS-Agri', title: 'Mise en place des projets logement par la FOS-Agri', intro: ['Suivi des projets de logement mis en place par la Fondation au bénéfice des adhérents.'] }
+    ],
+    ar: [
+      { navIndex: 1, type: 'bankOffers', category: 'immobilier', icon: 'fa-building-columns', badge: 'القروض العقارية', title: 'عروض بنكية — القروض العقارية', intro: 'قروض عقارية متفاوض بشأنها مع أبناك شريكة. حمّل بطاقة كل بنك للاطلاع على العرض والسن الأقصى للقرض.' },
+      { navIndex: 2, type: 'bankOffers', category: 'consommation', icon: 'fa-credit-card', badge: 'قروض الاستهلاك', title: 'عروض بنكية — قروض الاستهلاك', intro: 'قروض استهلاكية بشروط تفضيلية لدى الأبناك وشركات التمويل الشريكة.' },
+      { navIndex: 3, icon: 'fa-building', badge: 'المنعشون العقاريون', title: 'المنعشون العقاريون', intro: ['ربط المنخرطين بالمنعشين العقاريين الشركاء والعروض السكنية المصادق عليها.'] },
+      { navIndex: 4, icon: 'fa-helmet-safety', badge: 'مشاريع السكن FOS-Agri', title: 'إحداث مشاريع السكن من طرف FOS-Agri', intro: ['تتبع المشاريع السكنية التي تضعها المؤسسة لفائدة المنخرطين.'] }
+    ],
+    zgh: [
+      { navIndex: 1, type: 'bankOffers', category: 'immobilier', icon: 'fa-building-columns', badge: 'ⴰⴽⵔⵉⴹⵉ ⵏ ⵓⵙⵖⵉⵎ', title: 'ⵉⴼⵔⴰⵏ ⵏ ⵉⴱⴰⵏⴽⵏ — ⴰⴽⵔⵉⴹⵉ ⵏ ⵓⵙⵖⵉⵎ', intro: 'ⴰⴽⵔⵉⴹⵉ ⵏ ⵓⵙⵖⵉⵎ ⴷ ⵉⴱⴰⵏⴽⵏ ⵉⵣⴷⵉⵏ. ⵙⵉⴷⵔ ⵜⴰⴽⴰⵔⴹⴰ ⵏ ⴽⵓ ⴱⴰⵏⴽ.' },
+      { navIndex: 2, type: 'bankOffers', category: 'consommation', icon: 'fa-credit-card', badge: 'ⴰⴽⵔⵉⴹⵉ ⵏ ⵓⵙⵙⵉⵜⵎ', title: 'ⵉⴼⵔⴰⵏ ⵏ ⵉⴱⴰⵏⴽⵏ — ⴰⴽⵔⵉⴹⵉ ⵏ ⵓⵙⵙⵉⵜⵎ', intro: 'ⴰⴽⵔⵉⴹⵉ ⵏ ⵓⵙⵙⵉⵜⵎ ⵙ ⵜⵎⴰⵏⴰⵡⵜ ⵉⵎⵥⵍⵉⵢⵏ.' },
+      { navIndex: 3, icon: 'fa-building', badge: 'ⵉⵎⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ', title: 'ⵉⵎⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ', intro: ['ⴰⵣⴷⴰⵢ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴷ ⵉⵎⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ.'] },
+      { navIndex: 4, icon: 'fa-helmet-safety', badge: 'ⵉⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ FOS-Agri', title: 'ⴰⵙⴱⵓⵖⵍⵓ ⵏ ⵉⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ ⵙ FOS-Agri', intro: ['ⵓⵜⵜⴰⴱⴰⵄ ⵏ ⵉⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ ⵏ ⵜⵎⴰⵡⴰⵙⵜ.'] }
+    ]
+  };
+
   function serviceText(key) {
     const text = services[key]?.[lang] || services[key]?.fr;
-    if (key !== 'prevoyance' || !text) return text;
-    const menuItems = localizedPrevoyanceMenu(lang);
-    return {
-      ...text,
-      menuItems,
-      chips: menuItems.map((item) => item.label)
-    };
+    if (!text) return text;
+    if (key === 'prevoyance') {
+      const menuItems = localizedPrevoyanceMenu(lang);
+      return { ...text, menuItems, chips: menuItems.map((item) => item.label) };
+    }
+    if (key === 'logement') {
+      const menuItems = localizedLogementMenu(lang);
+      return {
+        ...text,
+        menuItems,
+        chips: menuItems.map((item) => item.label),
+        centerMedical: logementCenter[lang] || logementCenter.fr,
+        extraSections: logementExtra[lang] || logementExtra.fr
+      };
+    }
+    return text;
   }
 
   function asset(path) {
@@ -1997,16 +2067,16 @@
     return labels[lang]?.bankOffers || labels.fr.bankOffers;
   }
 
-  /* Offres bancaires (crédits immobiliers) — grille de banques partenaires.
-     Section toujours visible, rendue uniquement sur la page Accès au logement.
-     logo : assets/images/banks/<slug>.png ; repli libellé si absent. */
-  function renderBankOffersSection(key) {
-    if (key !== 'logement') return '';
-    const banks = Array.isArray(window.banquesLogementImmobilier) ? window.banquesLogementImmobilier : [];
-    if (!banks.length) return '';
+  /* Offres bancaires — panneau dédié (même logique que les autres rubriques
+     de prévoyance). section.category = 'immobilier' | 'consommation'.
+     logo : assets/images/banks/<logo> ; repli libellé si absent. */
+  function renderBankOffersSection(section, navIndex) {
     const copy = bankCopy();
+    const banks = section.category === 'consommation'
+      ? (Array.isArray(window.banquesLogementConsommation) ? window.banquesLogementConsommation : [])
+      : (Array.isArray(window.banquesLogementImmobilier) ? window.banquesLogementImmobilier : []);
     const cards = banks.map((bank) => {
-      const logo = asset(`assets/images/banks/${bank.slug}.png`);
+      const logo = asset(`assets/images/banks/${bank.logo || (bank.slug + '.png')}`);
       const pdf = asset(bank.pdf);
       return `
         <article class="bank-card">
@@ -2023,13 +2093,13 @@
         </article>`;
     }).join('');
     return `
-      <section class="section page-section-soft bank-offers-section" id="offres-bancaires-logement" aria-labelledby="bank-offers-title">
+      <section class="section page-section-soft prestation-extra-section bank-offers-section" id="${subrubriqueId(navIndex)}" data-prestation-extra-panel data-prestation-extra-index="${navIndex}" hidden>
         <div class="container">
-          <div class="prestation-section-head centered">
-            <span class="section-tag"><i class="fa-solid fa-building-columns" aria-hidden="true"></i> FOS-Agri</span>
-            <h2 id="bank-offers-title">${esc(copy.title)}</h2>
-            <p class="section-copy">${esc(copy.intro)}</p>
-          </div>
+          <article class="prestation-extra-card">
+            <span class="section-tag"><i class="fa-solid ${esc(section.icon || 'fa-building-columns')}" aria-hidden="true"></i> ${esc(section.badge || copy.title)}</span>
+            <h2>${esc(section.title || copy.title)}</h2>
+            ${renderParagraphs(section.intro || copy.intro)}
+          </article>
           <div class="bank-offers-grid">${cards}</div>
         </div>
       </section>`;
@@ -2178,11 +2248,12 @@
       const firstIndex = item.chips.length - item.extraSections.length;
       const navIndex = Number.isInteger(section.navIndex) ? section.navIndex : firstIndex + index;
       if (section.type === 'medicalPartners') return renderMedicalPartnersSection(section, navIndex);
+      if (section.type === 'bankOffers') return renderBankOffersSection(section, navIndex);
       return `
       <section class="section page-section-soft prestation-extra-section" id="${subrubriqueId(navIndex)}" data-prestation-extra-panel data-prestation-extra-index="${navIndex}" hidden>
         <div class="container">
           <article class="prestation-extra-card">
-            <span class="section-tag"><i class="fa-solid ${subIcons.prevoyance?.[navIndex] || section.icon || 'fa-circle-check'}" aria-hidden="true"></i> ${esc(section.badge)}</span>
+            <span class="section-tag"><i class="fa-solid ${section.icon || subIcons.prevoyance?.[navIndex] || 'fa-circle-check'}" aria-hidden="true"></i> ${esc(section.badge)}</span>
             <h2>${esc(section.title)}</h2>
             ${renderParagraphs(section.intro)}
           </article>
@@ -2889,7 +2960,6 @@
           </div>
         </div>
       </section>`}
-      ${renderBankOffersSection(key)}
       ${item.centerMedical ? '' : `
       <section class="section" id="partners">
         <div class="container">
