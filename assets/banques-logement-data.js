@@ -18,10 +18,10 @@ window.banquesLogementImmobilier = [
 
 window.banquesLogementConsommation = [
   { slug: 'banque-populaire',  name: 'Banque Populaire',  ageLimit: '70 ans', pdf: 'assets/banques/consommation/banque-populaire.pdf',  logo: 'banque-populaire.png' },
-  { slug: 'attijari-wafa-bank',name: 'Attijariwafa bank', ageLimit: '70 ans', pdf: 'assets/banques/consommation/attijari-wafa-bank.pdf', logo: 'attijari-wafa-bank.png' },
-  { slug: 'wafa-salaf',        name: 'Wafa Salaf',        ageLimit: '73 ans', pdf: 'assets/banques/consommation/wafa-salaf.pdf',        logo: 'wafa-salaf.png' },
+  { slug: 'attijari-wafa-bank',name: 'Attijariwafa bank', ageLimit: '70 ans', pdf: 'assets/banques/consommation/attijari-wafa-bank.pdf', logo: 'Attijariwafa bank.webp' },
+  { slug: 'wafa-salaf',        name: 'Wafa Salaf',        ageLimit: '73 ans', pdf: 'assets/banques/consommation/wafa-salaf.pdf',        logo: 'Wafa Salaf.png' },
   { slug: 'credit-du-maroc',   name: 'Crédit du Maroc',   ageLimit: '62 ans', pdf: 'assets/banques/consommation/credit-du-maroc.pdf',   logo: 'credit-du-maroc.png' },
   { slug: 'cfg-bank',          name: 'CFG Bank',          ageLimit: '65 ans', pdf: 'assets/banques/consommation/cfg-bank.pdf',          logo: 'cfg-bank.svg' },
   { slug: 'salafin',           name: 'SALAFIN',           ageLimit: '70 ans', pdf: 'assets/banques/consommation/salafin.pdf',           logo: 'salafin.png' },
-  { slug: 'eqdom',             name: 'EQDOM',             ageLimit: '70 ans', pdf: 'assets/banques/consommation/eqdom.pdf',             logo: 'eqdom.png' }
+  { slug: 'eqdom',             name: 'EQDOM',             ageLimit: '70 ans', pdf: 'assets/banques/consommation/eqdom.pdf',             logo: 'EQDOM.svg' }
 ];

@@ -2079,7 +2079,7 @@
       const logo = asset(`assets/images/banks/${bank.logo || (bank.slug + '.png')}`);
       const pdf = asset(bank.pdf);
       return `
-        <article class="bank-card">
+        <article class="bank-card bank-offer-card">
           <div class="bank-card-logo">
             <img class="bank-logo" src="${esc(logo)}" alt="${esc(bank.name)}" loading="lazy" decoding="async"
                  onerror="this.closest('.bank-card-logo').classList.add('is-fallback');this.remove();" />
