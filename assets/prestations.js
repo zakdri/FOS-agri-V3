@@ -88,7 +88,7 @@
 
   const subIcons = {
     prevoyance: prevoyanceMenuItems.map((item) => item.icon),
-    culture: ['fa-suitcase-rolling', 'fa-children', 'fa-kaaba', 'fa-person-praying', 'fa-award', 'fa-handshake'],
+    culture: ['fa-circle-info', 'fa-umbrella-beach', 'fa-child-reaching', 'fa-language', 'fa-campground', 'fa-bus', 'fa-kaaba', 'fa-place-of-worship', 'fa-award', 'fa-handshake'],
     formation: ['fa-chalkboard-user', 'fa-medal', 'fa-school', 'fa-book-open-reader'],
     logement: ['fa-house-user', 'fa-building-columns', 'fa-building', 'fa-helmet-safety'],
     projets: ['fa-hand-holding-dollar', 'fa-building-columns', 'fa-handshake-angle', 'fa-tags']
@@ -1646,21 +1646,21 @@
     ]
   };
 
-  /* ===== Culture, loisirs et voyages : 10 rubriques (texte exact, non traduit) ===== */
+  /* ===== Culture, loisirs et voyages : 9 rubriques de contenu + partenariats ===== */
   const cultureMenuItems = [
-    { id: 'a-propos',          icon: 'fa-circle-info',      label: 'A PROPOS' },
-    { id: 'appui-vacances',    icon: 'fa-umbrella-beach',   label: 'Appui aux vacances des adhérents' },
-    { id: 'colonies',          icon: 'fa-child-reaching',   label: "Colonies de vacances d'été" },
-    { id: 'sejours-culturels', icon: 'fa-language',         label: 'Séjours culturels' },
-    { id: 'camps-ados',        icon: 'fa-campground',       label: 'Camps de vacances pour adolescents' },
-    { id: 'excursions',        icon: 'fa-bus',              label: 'Excursions récréatives et éducatives' },
-    { id: 'omra',              icon: 'fa-kaaba',            label: 'Organisation des séjours de Omra' },
-    { id: 'pelerinage',        icon: 'fa-place-of-worship', label: 'Contribution aux frais de pèlerinage' },
-    { id: 'celebrations',      icon: 'fa-award',            label: 'Célébrations et cérémonies' },
-    { id: 'partenariats',      icon: 'fa-handshake',        label: 'Partenariats' }
+    { id: 'a-propos',          icon: 'fa-circle-info',      labels: { fr: 'A PROPOS', ar: 'حول الخدمة', zgh: 'ⵅⴼ ⵜⵏⴼⵍⵉⵜ' } },
+    { id: 'appui-vacances',    icon: 'fa-umbrella-beach',   labels: { fr: 'Appui aux vacances des adhérents', ar: 'دعم عطل المنخرطين', zgh: 'ⴰⴼⵓⵙ ⵉ ⵓⵙⴳⵓⵏⴼⵓ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ' } },
+    { id: 'colonies',          icon: 'fa-child-reaching',   labels: { fr: "Colonies de vacances d'été", ar: 'مخيمات العطلة الصيفية', zgh: 'ⵜⵉⵎⵥⵥⵉⵢⵏ ⵏ ⵓⵙⴳⵓⵏⴼⵓ ⵏ ⵓⵏⴱⴷⵓ' } },
+    { id: 'sejours-culturels', icon: 'fa-language',         labels: { fr: 'Séjours culturels', ar: 'إقامات ثقافية', zgh: 'ⵜⵉⵖⵔⵎⵉⵏ ⵜⵉⴷⵍⵙⴰⵏⵉⵏ' } },
+    { id: 'camps-ados',        icon: 'fa-campground',       labels: { fr: 'Camps de vacances pour adolescents', ar: 'مخيمات العطل للمراهقين', zgh: 'ⵜⵉⵎⵥⵥⵉⵢⵏ ⵏ ⵓⵙⴳⵓⵏⴼⵓ ⵉ ⵉⵎⵥⵢⴰⵏⵏ' } },
+    { id: 'excursions',        icon: 'fa-bus',              labels: { fr: 'Excursions récréatives et éducatives', ar: 'رحلات ترفيهية وتربوية', zgh: 'ⵜⵉⵔⵣⴰ ⵏ ⵓⵔⴰⵔ ⴷ ⵓⵙⴳⵎⵉ' } },
+    { id: 'omra',              icon: 'fa-kaaba',            labels: { fr: 'Organisation des séjours de Omra', ar: 'تنظيم إقامات العمرة', zgh: 'ⴰⵙⵓⴷⴷⵙ ⵏ ⵜⵉⵖⵔⵎⵉⵏ ⵏ ⵓⵎⵔⴰ' } },
+    { id: 'pelerinage',        icon: 'fa-place-of-worship', labels: { fr: 'Contribution aux frais de pèlerinage', ar: 'المساهمة في مصاريف الحج', zgh: 'ⴰⵜⵜⴽⵉ ⴳ ⵎⴰⵙⴰⵔⵉⴼ ⵏ ⵓⵃⵊⵊ' } },
+    { id: 'celebrations',      icon: 'fa-award',            labels: { fr: 'Célébrations et cérémonies', ar: 'احتفالات ومراسيم', zgh: 'ⵜⵉⵎⵍⵉⵍⵉⵏ ⴷ ⵜⵎⵖⵔⵉⵡⵉⵏ' } },
+    { id: 'partenariats',      icon: 'fa-handshake',        labels: { fr: 'Partenariats', ar: 'الشراكات', zgh: 'ⵉⵣⴷⵡⵉⵢⵏ' } }
   ];
-  function localizedCultureMenu() {
-    return cultureMenuItems.map((i) => ({ id: i.id, icon: i.icon, label: i.label }));
+  function localizedCultureMenu(currentLang = lang) {
+    return cultureMenuItems.map((i) => ({ id: i.id, icon: i.icon, label: i.labels[currentLang] || i.labels.fr }));
   }
 
   const cultureCenter = {
@@ -1751,18 +1751,393 @@
       ] }
   ];
 
+  const cultureBlockLabels = {
+    fr: {
+      apercu: 'Aperçu',
+      beneficiaires: 'Bénéficiaires',
+      inscription: 'Inscription et modalités',
+      pieces: 'Pièces à fournir',
+      destinations: 'Destinations',
+      download: 'Télécharger'
+    },
+    ar: {
+      apercu: 'نظرة عامة',
+      beneficiaires: 'المستفيدون',
+      inscription: 'التسجيل والكيفيات',
+      pieces: 'الوثائق المطلوبة',
+      destinations: 'الوجهات',
+      download: 'تحميل'
+    },
+    zgh: {
+      apercu: 'ⵜⴰⵎⵓⵖⵍⵉ',
+      beneficiaires: 'ⵉⵎⵙⵜⴼⴰⴷⵏ',
+      inscription: 'ⴰⵙⵙⴼⵜⵔ ⴷ ⵜⴳⴳⵓⵔⵉⵏ',
+      pieces: 'ⵜⵉⵡⴰⵔⴰⵇⵉⵏ ⵉⵍⴰⵇⵏ',
+      destinations: 'ⵜⵉⵎⵓⵔⴰ',
+      download: 'ⵙⵉⴷⵔ'
+    }
+  };
+
+  const cultureTranslations = {
+    fr: {
+      center: {
+        icon: 'fa-circle-info',
+        badge: 'À propos',
+        title: 'A propos',
+        intro: "La FOS-Agri offre une panoplie de services culturelles, de loisirs et de divertissements répondant aux aspirations de ses adhérents et favorisant leurs épanouissement et bien-être.",
+        items: [
+          { navIndex: 91, icon: 'fa-users', title: 'Bénéficiaires', body: 'Tous les adhérents de la FOS-Agri' },
+          { navIndex: 92, icon: 'fa-clipboard-check', title: 'Inscription et modalités', bullets: [
+            "L'inscription à cette prestation s'effectue à travers l'Espace Adhérent de la FOS-Agri, avec signature en ligne d'un engagement sur l'honneur attestant le respect des conditions d'octroi de la prestation.",
+            "La sélection des bénéficiaires est réalisée selon un système de scoring reposant sur des critères objectifs et transparents définis par la Fondation, garantissant l'équité dans l'attribution de la prestation.",
+            "Les adhérents retenus sont informés des résultats de la sélection via leur Espace Adhérent ainsi que par les canaux de communication de la Fondation."
+          ] }
+        ]
+      },
+      sections: {
+        'appui-vacances': {
+          badge: 'Appui aux vacances des adhérents',
+          title: 'Appui aux vacances des adhérents',
+          intro: [
+            "Dans le cadre de sa mission sociale et de son engagement en faveur du bien-être de ses adhérent(e)s, la Fondation met en œuvre, annuellement, une prestation d'appui aux vacances de ses adhérents visant à faciliter l'accès aux périodes de repos et de détente, tout en contribuant à l'allègement des charges financières liées aux séjours estivaux.",
+            "À ce titre, une aide financière est accordée à raison de 700 dirhams par nuitée d'hébergement, dans la limite de sept (7) nuitées par adhérent(e) bénéficiaire, soit un montant maximal de 4 900 dirhams. Cette aide est versée directement au bénéficiaire, conformément aux conditions d'éligibilité et aux modalités fixées par la Fondation."
+          ],
+          beneficiaires: 'Tous les adhérents de la FOS-Agri',
+          inscription: [
+            "L'inscription à cette prestation s'effectue à travers l'Espace Adhérent de la FOS-Agri.",
+            "La sélection des bénéficiaires est réalisée selon un système de scoring reposant sur des critères objectifs et transparents définis par la Fondation, garantissant l'équité dans l'attribution de la prestation.",
+            "Les adhérents retenus sont informés des résultats de la sélection via leur Espace Adhérent ainsi que par les canaux de communication de la Fondation."
+          ]
+        },
+        colonies: {
+          badge: "Colonies de vacances d'été",
+          title: "Colonies de vacances d'été",
+          apercu: ["La FOS-Agri organise chaque année une colonie de vacances au profit des enfants des adhérents. Les programmes de ces séjours sont minutieusement concoctés et les animateurs rigoureusement sélectionnés afin de garantir la sécurité des enfants et l'épanouissement des enfants."],
+          beneficiaires: 'Tous les enfants éligibles des adhérents de la FOS-Agri.',
+          inscription: ['Inscription en ligne.'],
+          pieces: ["Demande en ligne", "Acte d'engagement signé", "Certificat médical de l'enfant", "Copie de la CIN de l'adhérent", "Copie de l'acte de naissance de l'enfant", "Photo d'identité de l'enfant"]
+        },
+        'sejours-culturels': {
+          badge: 'Séjours culturels',
+          title: 'Séjours culturels',
+          apercu: ["Le séjour linguistique, culturel et éducatif est une prestation destinée aux enfants des adhérent(e)s, leur offrant l'opportunité de vivre une expérience nationale et internationale enrichissante alliant l'apprentissage d'une langue étrangère, la découverte d'un nouveau patrimoine culturel et la participation à des activités éducatives et de développement personnel. À travers ce programme, la Fondation contribue à l'ouverture sur le monde, au renforcement des compétences linguistiques et à l'épanouissement personnel des jeunes bénéficiaires."],
+          beneficiaires: 'Les enfants des adhérent(e)s',
+          inscription: ['Inscription en ligne.'],
+          pieces: []
+        },
+        'camps-ados': {
+          badge: 'Camps de vacances pour adolescents',
+          title: 'Camps de vacances pour adolescents',
+          apercu: [],
+          beneficiaires: 'Les enfants des adhérent(e)s',
+          inscription: ['Inscription en ligne.'],
+          pieces: []
+        },
+        excursions: {
+          badge: 'Excursions récréatives et éducatives',
+          title: 'Excursions récréatives et éducatives',
+          apercu: ["La FOS-Agri programme des visites éducatives, culturelles et de loisirs au profit des enfants des adhérents notamment, à l'occasion du salon international de l'agriculture de Meknès, du salon du cheval d'El Jadida, afin de leur permettre de prendre connaissance des nouveautés du secteur agricole, de découvrir la filière équine sous toutes ses facettes ainsi que la culture locale des différentes villes marocaines."],
+          beneficiaires: 'Tous les enfants éligibles des adhérents de la FOS-Agri.',
+          inscription: ['Inscription en ligne.'],
+          pieces: ["Demande en ligne", "Copie de l'acte de naissance de l'enfant", "Photo d'identité de l'enfant"],
+          destinations: ["Le Salon International de l'Agriculture de Meknès", "Le Salon du Cheval d'El Jadida", 'Autres.']
+        },
+        omra: {
+          badge: 'Organisation des séjours de Omra',
+          title: 'Organisation des séjours de Omra',
+          apercu: [
+            "La FOS-Agri organise annuellement au profit de ses adhérents l'opération d'aide au voyage aux lieux saints de l'islam pour l'accomplissement de la Omra.",
+            "Une subvention et un prêt gratuit remboursable sont accordés au titre de cette opération en plus de tarifs préférentiels négociés avec des agences de voyages de renom et spécialisées dans le domaine."
+          ],
+          beneficiaires: 'Tous les adhérents de la FOS-Agri.',
+          inscription: ['Inscription en ligne.', 'La sélection des bénéficiaires de la subvention ou du prêt se fait par le système de scoring.', "Octroi d'une subvention de 5000 DH au profit de 15 bénéficiaires et un prêt gratuit de 5000 DH remboursable sur 10 mois pour 30 adhérents.", 'Les tarifs préférentiels bénéficient à tous les adhérents.'],
+          pieces: ['Inscription en ligne', 'Photocopie de passeport']
+        },
+        pelerinage: {
+          badge: 'Contribution aux frais de pèlerinage',
+          title: 'Contribution aux frais de pèlerinage',
+          apercu: ["La FOS-Agri organise annuellement au profit de ses adhérents l'opération « aide au pèlerinage » en contribuant aux frais de pèlerinage moyennant des aides financières au profit des adhérents ayant effectué ce rite religieux durant l'année en cours."],
+          beneficiaires: 'Tous les adhérents de la FOS-Agri.',
+          inscription: ['Inscription en ligne.', 'Toutes les demandes éligibles sont acceptées.', 'Le montant de la contribution est déterminé selon le nombre des pèlerins.'],
+          pieces: ['Demande en ligne', "Copie de l'attestation de sélection pour l'Haj délivrée par les autorités, en cas de besoin", 'Copie du reçu de paiement des frais des pèlerinages', 'Copie de la CIN', "Copie de passeport justifiant l'accomplissement du pèlerinage après retour des lieux saints"]
+        },
+        celebrations: {
+          badge: 'Célébrations et cérémonies',
+          title: 'Célébrations et cérémonies',
+          apercu: [
+            "Célébration de la Journée internationale des droits des femmes. À l'occasion du 8 mars, la FOS-Agri célèbre la Journée internationale des droits des femmes qui demeure pour nous une consécration des efforts déployés par la femme pour la promotion du secteur agricole, et une reconnaissance de son professionnalisme et son dévouement. Conformément aux orientations du Comité de Direction et à la volonté de la FOS-Agri, cet évènement est célébré annuellement d'une manière alternée dans diverses régions du royaume avec la remise de prix symboliques aux femmes ayant prouvé leurs engagements et professionnalismes au sein du Département.",
+            "En hommage aux retraités du département, la FOS-Agri organise des cérémonies en guise de remerciement et de reconnaissance de leurs apports et de leur dévouement à la réussite de l'action du Département. Cette célébration marquée généralement par la présence des familles, amis et collègues des retraités est une consécration pour leurs efforts inlassables, les sacrifices consentis et leur loyauté durant leur carrière administrative.",
+            "Étant convaincue que les moments importants de la vie s'accompagnent d'occasions de célébration, la Fondation célèbre le retour des pèlerins avec la remise des chèques aux adhérents bénéficiaires après avoir effectué leur pèlerinage.",
+            "Cette cérémonie, considérée par la Fondation comme une opportunité pour récompenser les enfants d'adhérents qui se sont distingués à l'Examen National du Baccalauréat, renforce leur motivation pour la poursuite de leurs études supérieures à travers la remise de bourses d'excellence et de prix d'encouragement."
+          ],
+          celebrations: [
+            { title: 'Journée de la femme', body: ['Célébration de la Journée internationale des droits des femmes', "À l'occasion du 8 mars, la FOS-Agri célèbre la Journée internationale des droits des femmes qui demeure une consécration des efforts déployés par la femme pour la promotion du secteur agricole, et une reconnaissance de son professionnalisme et son dévouement. Conformément aux orientations du Comité de Direction et à la volonté de la FOS-Agri, cet évènement est célébré annuellement d'une manière alternée dans diverses régions du royaume tout en choisissant une thématique bien spécifique. Cette journée est marquée par la remise des prix aux femmes, ayant prouvé leurs engagements et professionnalismes au fil du temps au sein du Département."] },
+            { title: 'Cérémonie des retraités', body: ["Cérémonie des retraités", "Pour exprimer sa reconnaissance aux retraités du département, la FOS-Agri organise une cérémonie en leur honneur, afin de leur témoigner ses remerciements pour leurs efforts inlassables, les sacrifices consentis et leur dévouement durant leur carrière administrative."] },
+            { title: 'Pèlerins', body: ['Cérémonie des pèlerins', 'Cette cérémonie est dédiée à la remise des chèques aux pèlerins ayant effectué leur pèlerinage.'] },
+            { title: 'Bacheliers', body: ["Cérémonie au profit des adhérents et leurs enfants bénéficiaires du programme de Bourses d'excellence", "Cette cérémonie est une opportunité pour récompenser les enfants d'adhérents qui se sont distingués à l'Examen National du Baccalauréat et renforcer leur motivation pour la poursuite de leurs études supérieures, à travers la remise de bourses d'excellence et de prix d'encouragement."] }
+          ]
+        },
+        partenariats: {
+          badge: 'Partenariats',
+          title: 'Partenariats',
+          intro: ['Pour les prestations : Veuillez consulter le fichier joint.'],
+          groupTitles: ['Hôtels et complexes touristiques', 'Établissements de loisirs conventionnés'],
+          status: 'Confirmé'
+        }
+      }
+    },
+    ar: {
+      center: {
+        icon: 'fa-circle-info',
+        badge: 'حول الخدمة',
+        title: 'حول الخدمة',
+        intro: 'تقدم FOS-Agri باقة من الخدمات الثقافية والترفيهية والسفر تستجيب لتطلعات منخرطيها وتساهم في ازدهارهم ورفاههم.',
+        items: [
+          { navIndex: 91, icon: 'fa-users', title: 'المستفيدون', body: 'جميع منخرطي FOS-Agri' },
+          { navIndex: 92, icon: 'fa-clipboard-check', title: 'التسجيل والكيفيات', bullets: [
+            'يتم التسجيل في هذه الخدمة عبر فضاء المنخرط لدى FOS-Agri، مع توقيع التزام إلكتروني بالشرف يؤكد احترام شروط الاستفادة.',
+            'تتم عملية انتقاء المستفيدين وفق نظام تنقيط مبني على معايير موضوعية وشفافة تحددها المؤسسة، بما يضمن الإنصاف في منح الخدمة.',
+            'يتم إخبار المنخرطين المقبولين بنتائج الانتقاء عبر فضاء المنخرط ومن خلال قنوات التواصل التابعة للمؤسسة.'
+          ] }
+        ]
+      },
+      sections: {
+        'appui-vacances': {
+          badge: 'دعم عطل المنخرطين',
+          title: 'دعم عطل المنخرطين',
+          intro: [
+            'في إطار مهمتها الاجتماعية والتزامها برفاه منخرطيها، تضع المؤسسة سنويا خدمة لدعم عطل المنخرطين بهدف تسهيل الولوج إلى فترات الراحة والاستجمام والمساهمة في تخفيف الأعباء المالية المرتبطة بالإقامات الصيفية.',
+            'تمنح مساعدة مالية قدرها 700 درهم عن كل ليلة إقامة، في حدود سبع (7) ليال لكل منخرط مستفيد، أي بمبلغ أقصى قدره 4 900 درهم. وتدفع هذه المساعدة مباشرة للمستفيد وفق شروط الأهلية والكيفيات التي تحددها المؤسسة.'
+          ],
+          beneficiaires: 'جميع منخرطي FOS-Agri',
+          inscription: [
+            'يتم التسجيل في هذه الخدمة عبر فضاء المنخرط لدى FOS-Agri.',
+            'تتم عملية انتقاء المستفيدين وفق نظام تنقيط مبني على معايير موضوعية وشفافة تحددها المؤسسة، بما يضمن الإنصاف في منح الخدمة.',
+            'يتم إخبار المنخرطين المقبولين بنتائج الانتقاء عبر فضاء المنخرط ومن خلال قنوات التواصل التابعة للمؤسسة.'
+          ]
+        },
+        colonies: {
+          badge: 'مخيمات العطلة الصيفية',
+          title: 'مخيمات العطلة الصيفية',
+          apercu: ['تنظم FOS-Agri كل سنة مخيما صيفيا لفائدة أبناء المنخرطين. ويتم إعداد برامج هذه الإقامات بعناية وانتقاء المؤطرين بدقة لضمان سلامة الأطفال ومساعدتهم على النمو والانفتاح.'],
+          beneficiaires: 'جميع أبناء منخرطي FOS-Agri المؤهلين.',
+          inscription: ['التسجيل عبر الإنترنت.'],
+          pieces: ['طلب عبر الإنترنت', 'التزام موقع', 'شهادة طبية للطفل', 'نسخة من البطاقة الوطنية للمنخرط', 'نسخة من عقد ازدياد الطفل', 'صورة تعريفية للطفل']
+        },
+        'sejours-culturels': {
+          badge: 'إقامات ثقافية',
+          title: 'إقامات ثقافية',
+          apercu: ['الإقامة اللغوية والثقافية والتربوية خدمة موجهة لأبناء المنخرطين، تمنحهم فرصة عيش تجربة وطنية ودولية غنية تجمع بين تعلم لغة أجنبية، واكتشاف تراث ثقافي جديد، والمشاركة في أنشطة تربوية وتنمية شخصية. ومن خلال هذا البرنامج تساهم المؤسسة في الانفتاح على العالم وتعزيز الكفاءات اللغوية وازدهار الشباب المستفيدين.'],
+          beneficiaires: 'أبناء المنخرطين',
+          inscription: ['التسجيل عبر الإنترنت.'],
+          pieces: []
+        },
+        'camps-ados': {
+          badge: 'مخيمات العطل للمراهقين',
+          title: 'مخيمات العطل للمراهقين',
+          apercu: [],
+          beneficiaires: 'أبناء المنخرطين',
+          inscription: ['التسجيل عبر الإنترنت.'],
+          pieces: []
+        },
+        excursions: {
+          badge: 'رحلات ترفيهية وتربوية',
+          title: 'رحلات ترفيهية وتربوية',
+          apercu: ['تبرمج FOS-Agri زيارات تربوية وثقافية وترفيهية لفائدة أبناء المنخرطين، ولا سيما بمناسبة المعرض الدولي للفلاحة بمكناس ومعرض الفرس بالجديدة، حتى يتعرفوا على مستجدات القطاع الفلاحي ويكتشفوا سلسلة الخيول بمختلف جوانبها والثقافة المحلية للمدن المغربية.'],
+          beneficiaires: 'جميع أبناء منخرطي FOS-Agri المؤهلين.',
+          inscription: ['التسجيل عبر الإنترنت.'],
+          pieces: ['طلب عبر الإنترنت', 'نسخة من عقد ازدياد الطفل', 'صورة تعريفية للطفل'],
+          destinations: ['المعرض الدولي للفلاحة بمكناس', 'معرض الفرس بالجديدة', 'وجهات أخرى.']
+        },
+        omra: {
+          badge: 'تنظيم إقامات العمرة',
+          title: 'تنظيم إقامات العمرة',
+          apercu: ['تنظم FOS-Agri سنويا لفائدة منخرطيها عملية المساعدة على السفر إلى الديار المقدسة لأداء العمرة.', 'تمنح في إطار هذه العملية منحة وقرض مجاني قابل للسداد، إضافة إلى أسعار تفضيلية يتم التفاوض بشأنها مع وكالات سفر معروفة ومتخصصة في هذا المجال.'],
+          beneficiaires: 'جميع منخرطي FOS-Agri.',
+          inscription: ['التسجيل عبر الإنترنت.', 'يتم انتقاء المستفيدين من المنحة أو القرض بواسطة نظام التنقيط.', 'منح دعم قدره 5000 درهم لفائدة 15 مستفيدا وقرض مجاني قدره 5000 درهم قابل للسداد على 10 أشهر لفائدة 30 منخرطا.', 'تستفيد جميع المنخرطات والمنخرطين من الأسعار التفضيلية.'],
+          pieces: ['التسجيل عبر الإنترنت', 'نسخة من جواز السفر']
+        },
+        pelerinage: {
+          badge: 'المساهمة في مصاريف الحج',
+          title: 'المساهمة في مصاريف الحج',
+          apercu: ['تنظم FOS-Agri سنويا لفائدة منخرطيها عملية «دعم الحج» عبر المساهمة في مصاريف الحج بمنح مساعدات مالية لفائدة المنخرطين الذين أدوا هذه الشعيرة خلال السنة الجارية.'],
+          beneficiaires: 'جميع منخرطي FOS-Agri.',
+          inscription: ['التسجيل عبر الإنترنت.', 'تقبل جميع الطلبات المستوفية للشروط.', 'يحدد مبلغ المساهمة حسب عدد الحجاج.'],
+          pieces: ['طلب عبر الإنترنت', 'نسخة من شهادة الانتقاء للحج المسلمة من طرف السلطات، عند الاقتضاء', 'نسخة من وصل أداء مصاريف الحج', 'نسخة من البطاقة الوطنية', 'نسخة من جواز السفر تثبت أداء مناسك الحج بعد العودة من الديار المقدسة']
+        },
+        celebrations: {
+          badge: 'احتفالات ومراسيم',
+          title: 'احتفالات ومراسيم',
+          apercu: [
+            'تحتفي FOS-Agri، بمناسبة 8 مارس، باليوم العالمي لحقوق المرأة تقديرا لجهود المرأة في النهوض بالقطاع الفلاحي واعترافا بمهنيتها وتفانيها. ووفق توجيهات لجنة الإدارة وإرادة المؤسسة، ينظم هذا الحدث سنويا بالتناوب في مختلف جهات المملكة مع تسليم جوائز رمزية للنساء اللواتي برهن على التزامهن ومهنيتهن داخل القطاع.',
+            'تكريما لمتقاعدي القطاع، تنظم FOS-Agri حفلات شكر واعتراف بعطائهم وتفانيهم في إنجاح عمل القطاع. ويشكل هذا الاحتفاء، الذي يعرف عادة حضور أسرهم وأصدقائهم وزملائهم، تقديرا لجهودهم المتواصلة وتضحياتهم ووفائهم خلال مسارهم الإداري.',
+            'وانطلاقا من قناعة المؤسسة بأن اللحظات المهمة في الحياة ترافقها مناسبات للاحتفال، تحتفي المؤسسة بعودة الحجاج عبر تسليم الشيكات للمنخرطين المستفيدين بعد أدائهم مناسك الحج.',
+            'وتعتبر المؤسسة حفل تكريم أبناء المنخرطين المستفيدين من برنامج منح التميز فرصة لمكافأة الذين تميزوا في امتحان البكالوريا الوطني وتعزيز دافعيتهم لمتابعة دراساتهم العليا من خلال تسليم منح التميز وجوائز التشجيع.'
+          ],
+          celebrations: [
+            { title: 'يوم المرأة', body: ['الاحتفال باليوم العالمي لحقوق المرأة', 'بمناسبة 8 مارس، تحتفي FOS-Agri باليوم العالمي لحقوق المرأة تقديرا للجهود المبذولة من طرف المرأة للنهوض بالقطاع الفلاحي واعترافا بمهنيتها وتفانيها. ووفق توجيهات لجنة الإدارة وإرادة المؤسسة، ينظم هذا الحدث سنويا بالتناوب في مختلف جهات المملكة مع اختيار موضوع محدد، وتتميز هذه المناسبة بتسليم جوائز للنساء اللواتي أثبتن التزامهن ومهنيتهن عبر الزمن داخل القطاع.'] },
+            { title: 'حفل المتقاعدين', body: ['حفل المتقاعدين', 'تعبيرا عن اعترافها بمتقاعدي القطاع، تنظم FOS-Agri حفلا على شرفهم لتقديم الشكر لهم على جهودهم المتواصلة وتضحياتهم وتفانيهم خلال مسارهم الإداري.'] },
+            { title: 'الحجاج', body: ['حفل الحجاج', 'يخصص هذا الحفل لتسليم الشيكات للحجاج الذين أدوا مناسك الحج.'] },
+            { title: 'الحاصلون على البكالوريا', body: ['حفل لفائدة المنخرطين وأبنائهم المستفيدين من برنامج منح التميز', 'يشكل هذا الحفل فرصة لمكافأة أبناء المنخرطين الذين تميزوا في امتحان البكالوريا الوطني وتعزيز دافعيتهم لمتابعة دراساتهم العليا، من خلال تسليم منح التميز وجوائز التشجيع.'] }
+          ]
+        },
+        partenariats: {
+          badge: 'الشراكات',
+          title: 'الشراكات',
+          intro: ['للاطلاع على الخدمات: يرجى الرجوع إلى الملف المرفق.'],
+          groupTitles: ['فنادق ومركبات سياحية', 'مؤسسات ترفيهية متعاقدة'],
+          status: 'مؤكد'
+        }
+      }
+    },
+    zgh: {
+      center: {
+        icon: 'fa-circle-info',
+        badge: 'ⵅⴼ ⵜⵏⴼⵍⵉⵜ',
+        title: 'ⵅⴼ ⵜⵏⴼⵍⵉⵜ',
+        intro: 'FOS-Agri ⵜⵙⵙⵓⴼⵖ ⵢⴰⵜ ⵜⴳⵔⵓⵎⵎⴰ ⵏ ⵜⵏⴼⴰⵙ ⵜⵉⴷⵍⵙⴰⵏⵉⵏ, ⵜⵉⵔⴰⵔⵉⵏ ⴷ ⵓⵙⴰⴼⴰⵔ ⵉⵣⵎⵔⵏ ⴰⴷ ⵙⵙⵎⴷⵏ ⵜⵉⵔⴰⵜⵉⵏ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴷ ⴰⴷ ⵙⵙⵎⵖⵓⵔⵏ ⴰⵙⴼⵓⵍⴽⵉ ⴷ ⵜⵎⵓⵏⵜ ⵏⵙⵏ.',
+        items: [
+          { navIndex: 91, icon: 'fa-users', title: 'ⵉⵎⵙⵜⴼⴰⴷⵏ', body: 'ⴽⵓⵍⵍⵓ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵏ FOS-Agri' },
+          { navIndex: 92, icon: 'fa-clipboard-check', title: 'ⴰⵙⵙⴼⵜⵔ ⴷ ⵜⴳⴳⵓⵔⵉⵏ', bullets: [
+            'ⴰⵙⵙⴼⵜⵔ ⵉ ⵜⵏⴼⵍⵉⵜ ⴰⴷ ⵉⵜⵜⴳ ⵙ ⵓⵙⵉⵜ ⵏ ⵓⵎⵏⵅⵔⴰⵟ ⵏ FOS-Agri, ⵙ ⵓⵙⵖⵏ ⴰⵍⵉⴽⵜⵔⵓⵏⵉ ⵏ ⵓⵏⴳⴳⵉⴷ ⵅⴼ ⵓⵛⵔⴼ.',
+            'ⵜⴰⵙⵜⴰⵢⵜ ⵏ ⵉⵎⵙⵜⴼⴰⴷⵏ ⵜⵜⴳ ⵙ ⵓⵙⵎⵉⵍ ⵏ ⵓⵙⴽⵓⵔ ⵉⵙⵙⴰⵙⵏ ⴷ ⵉⴼⵔⴰⵔⵏ ⵉⵜⵜⵓⵙⴷⴷⵉⵏ ⵙⴳ ⵜⵙⴷⴰⵡⵉⵜ, ⴰⴼⴰⴷ ⴰⴷ ⵉⵍⵉ ⵓⵏⴱⴰⴹ ⵉⵎⵥⵍⵉ.',
+            'ⵉⵎⵏⵅⵔⴰⵟⵏ ⵉⵜⵜⵓⵙⵜⴰⵢⵏ ⵜⵜⵓⵙⵙⵏⵏ ⵙ ⵉⵎⴽⴽⵉⵏ ⵏ ⵜⵙⵜⴰⵢⵜ ⵙ ⵓⵙⵉⵜ ⵏ ⵓⵎⵏⵅⵔⴰⵟ ⴷ ⵉⵎⵙⴰⵡⴰⴹⵏ ⵏ ⵜⵙⴷⴰⵡⵉⵜ.'
+          ] }
+        ]
+      },
+      sections: {
+        'appui-vacances': {
+          badge: 'ⴰⴼⵓⵙ ⵉ ⵓⵙⴳⵓⵏⴼⵓ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ',
+          title: 'ⴰⴼⵓⵙ ⵉ ⵓⵙⴳⵓⵏⴼⵓ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ',
+          intro: [
+            'ⴳ ⵓⴼⵓⵙ ⵏ ⵜⵎⵙⵉⴳⵍⵜ ⵜⴰⵎⵜⵜⵉⵡⵜ ⴷ ⵓⵎⵢⴰⵡⴰⵙ ⵉ ⵓⵙⴼⵓⵍⴽⵉ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ, ⵜⵙⵙⵓⴷⵓⵙ ⵜⵙⴷⴰⵡⵉⵜ ⴽⵓ ⴰⵙⴳⴳⵯⴰⵙ ⵜⵏⴼⵍⵉⵜ ⵏ ⵓⴼⵓⵙ ⵉ ⵓⵙⴳⵓⵏⴼⵓ ⴰⴼⴰⴷ ⴰⴷ ⵜⵙⵙⵔⵙ ⴰⵡⴷⵓⴼ ⵙ ⵉⵎⵓⴷⴰⵏ ⵏ ⵓⵙⵉⵙⵓ ⴷ ⵓⵙⴳⵓⵏⴼⵓ.',
+            'ⵜⴰⵙⴷⵔⵉⵎⵜ ⵏ 700 DH ⵜⵜⵓⵎⵓⵛⵛ ⵉ ⴽⵓ ⵉⴹ ⵏ ⵜⵖⵔⵎⵜ, ⴳ ⵓⵣⵔⴼ ⵏ 7 ⵡⵓⵙⵙⴰⵏ ⵉ ⴽⵓ ⴰⵎⵏⵅⵔⴰⵟ ⴰⵎⵙⵜⴼⴰⴷ, ⵙ ⵓⵎⴰⵙ ⴰⴷ ⵉⵙⴽⵔ 4 900 DH. ⵜⵜⵓⵣⵔⴰ ⵜⴰⵙⴷⵔⵉⵎⵜ ⵉ ⵓⵎⵙⵜⴼⴰⴷ ⵙ ⵓⵙⵔⵉⴷ ⵙ ⵉⵍⵓⴳⵏ ⵏ ⵓⵙⵜⴼⴰⴷ.'
+          ],
+          beneficiaires: 'ⴽⵓⵍⵍⵓ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵏ FOS-Agri',
+          inscription: ['ⴰⵙⵙⴼⵜⵔ ⵉ ⵜⵏⴼⵍⵉⵜ ⴰⴷ ⵉⵜⵜⴳ ⵙ ⵓⵙⵉⵜ ⵏ ⵓⵎⵏⵅⵔⴰⵟ ⵏ FOS-Agri.', 'ⵜⴰⵙⵜⴰⵢⵜ ⵏ ⵉⵎⵙⵜⴼⴰⴷⵏ ⵜⵜⴳ ⵙ ⵓⵙⵎⵉⵍ ⵏ ⵓⵙⴽⵓⵔ ⵉⵙⵙⴰⵙⵏ ⴷ ⵉⴼⵔⴰⵔⵏ.', 'ⵉⵎⵏⵅⵔⴰⵟⵏ ⵉⵜⵜⵓⵙⵜⴰⵢⵏ ⵜⵜⵓⵙⵙⵏⵏ ⵙ ⵉⵎⴽⴽⵉⵏ ⵏ ⵜⵙⵜⴰⵢⵜ.']
+        },
+        colonies: {
+          badge: 'ⵜⵉⵎⵥⵥⵉⵢⵏ ⵏ ⵓⵙⴳⵓⵏⴼⵓ ⵏ ⵓⵏⴱⴷⵓ',
+          title: 'ⵜⵉⵎⵥⵥⵉⵢⵏ ⵏ ⵓⵙⴳⵓⵏⴼⵓ ⵏ ⵓⵏⴱⴷⵓ',
+          apercu: ['FOS-Agri ⵜⵙⵙⵓⴷⵓⵙ ⴽⵓ ⴰⵙⴳⴳⵯⴰⵙ ⵢⴰⵜ ⵜⵎⵥⵥⵉⵜ ⵏ ⵓⵙⴳⵓⵏⴼⵓ ⵉ ⵡⴰⵔⵔⴰⵡ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ. ⵜⵜⵓⵙⴽⴰⵔⵏ ⵉⵙⵏⴼⴰⵔⵏ ⵙ ⵜⵡⴰⵍⴰ, ⴷ ⵉⵎⵙⵙⵓⴷⴰⵙ ⵜⵜⵓⵙⵜⴰⵢⵏ ⵙ ⵜⴷⵇⵇⵉ ⴰⴼⴰⴷ ⴰⴷ ⵉⵍⵉ ⵓⵎⴰⵏ ⴷ ⵓⵙⴼⵓⵍⴽⵉ ⵏ ⵡⴰⵔⵔⴰⵡ.'],
+          beneficiaires: 'ⴽⵓⵍⵍⵓ ⵡⴰⵔⵔⴰⵡ ⵉⵙⵜⴼⴰⴷⵏ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵏ FOS-Agri.',
+          inscription: ['ⴰⵙⵙⴼⵜⵔ ⵙ ⵓⵏⵜⵉⵔⵏⵉⵜ.'],
+          pieces: ['ⴰⵙⵓⵜⵔ ⵙ ⵓⵏⵜⵉⵔⵏⵉⵜ', 'ⴰⵏⴳⴳⵉⴷ ⵉⵜⵜⵓⵙⵖⵏⵏ', 'ⵜⴰⵛⵔⴰⴹⵜ ⵜⴰⴷⵓⵙⵜ ⵏ ⵓⴼⵔⵓⵅ', 'ⵜⴰⵏⵖⵍⵜ ⵏ CIN ⵏ ⵓⵎⵏⵅⵔⴰⵟ', 'ⵜⴰⵏⵖⵍⵜ ⵏ ⵜⴰⵍⴰⵍⵉⵜ ⵏ ⵓⴼⵔⵓⵅ', 'ⵜⴰⵡⵍⴰⴼⵜ ⵏ ⵓⴼⵔⵓⵅ']
+        },
+        'sejours-culturels': {
+          badge: 'ⵜⵉⵖⵔⵎⵉⵏ ⵜⵉⴷⵍⵙⴰⵏⵉⵏ',
+          title: 'ⵜⵉⵖⵔⵎⵉⵏ ⵜⵉⴷⵍⵙⴰⵏⵉⵏ',
+          apercu: ['ⵜⵉⵖⵔⵎⵜ ⵜⴰⵍⵙⴰⵏⵜ, ⵜⴰⴷⵍⵙⴰⵏⵜ ⴷ ⵜⴰⵙⴳⵎⴰⵏⵜ ⵜⴳⴰ ⵜⵏⴼⵍⵉⵜ ⵉ ⵡⴰⵔⵔⴰⵡ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ, ⵜⵙⵙⵓⴼⵖ ⴰⵎⴽⴰⵏ ⴰⴷ ⵙⵙⴽⵔⵏ ⵜⴰⵔⵎⵉⵜ ⵜⴰⵎⵓⵔⴰⵏⵜ ⴷ ⵜⴰⴳⵔⴰⵡⴰⵏⵜ ⵜⵉⵖⵏⴰⵏⵜ, ⵙ ⵓⵙⵙⵏⵜⵉ ⵏ ⵢⴰⵜ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⴱⵕⵕⴰⵏⵉⵜ ⴷ ⵓⵙⵙⵏ ⵏ ⵓⴷⵍⵙ ⴰⵎⴰⵢⵏⵓ.'],
+          beneficiaires: 'ⴰⵔⵔⴰⵡ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ',
+          inscription: ['ⴰⵙⵙⴼⵜⵔ ⵙ ⵓⵏⵜⵉⵔⵏⵉⵜ.'],
+          pieces: []
+        },
+        'camps-ados': {
+          badge: 'ⵜⵉⵎⵥⵥⵉⵢⵏ ⵏ ⵓⵙⴳⵓⵏⴼⵓ ⵉ ⵉⵎⵥⵢⴰⵏⵏ',
+          title: 'ⵜⵉⵎⵥⵥⵉⵢⵏ ⵏ ⵓⵙⴳⵓⵏⴼⵓ ⵉ ⵉⵎⵥⵢⴰⵏⵏ',
+          apercu: [],
+          beneficiaires: 'ⴰⵔⵔⴰⵡ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ',
+          inscription: ['ⴰⵙⵙⴼⵜⵔ ⵙ ⵓⵏⵜⵉⵔⵏⵉⵜ.'],
+          pieces: []
+        },
+        excursions: {
+          badge: 'ⵜⵉⵔⵣⴰ ⵏ ⵓⵔⴰⵔ ⴷ ⵓⵙⴳⵎⵉ',
+          title: 'ⵜⵉⵔⵣⴰ ⵏ ⵓⵔⴰⵔ ⴷ ⵓⵙⴳⵎⵉ',
+          apercu: ['FOS-Agri ⵜⵙⵙⵓⴷⵓⵙ ⵜⵉⵔⵣⴰ ⵜⵉⵙⴳⵎⴰⵏⵉⵏ, ⵜⵉⴷⵍⵙⴰⵏⵉⵏ ⴷ ⵏ ⵓⵔⴰⵔ ⵉ ⵡⴰⵔⵔⴰⵡ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ, ⵣⵓⵏ ⴳ ⵓⵙⴰⵔⴰⴳ ⴰⴳⵔⴰⵡⴰⵏ ⵏ ⵜⴼⵍⴰⵃⵜ ⴳ ⵎⴽⵏⴰⵙ ⴷ ⵓⵙⴰⵔⴰⴳ ⵏ ⴰⵢⵢⵉⵙ ⴳ ⵍⵊⴷⵉⴷⴰ.'],
+          beneficiaires: 'ⴽⵓⵍⵍⵓ ⵡⴰⵔⵔⴰⵡ ⵉⵙⵜⴼⴰⴷⵏ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵏ FOS-Agri.',
+          inscription: ['ⴰⵙⵙⴼⵜⵔ ⵙ ⵓⵏⵜⵉⵔⵏⵉⵜ.'],
+          pieces: ['ⴰⵙⵓⵜⵔ ⵙ ⵓⵏⵜⵉⵔⵏⵉⵜ', 'ⵜⴰⵏⵖⵍⵜ ⵏ ⵜⴰⵍⴰⵍⵉⵜ ⵏ ⵓⴼⵔⵓⵅ', 'ⵜⴰⵡⵍⴰⴼⵜ ⵏ ⵓⴼⵔⵓⵅ'],
+          destinations: ['ⴰⵙⴰⵔⴰⴳ ⴰⴳⵔⴰⵡⴰⵏ ⵏ ⵜⴼⵍⴰⵃⵜ ⴳ ⵎⴽⵏⴰⵙ', 'ⴰⵙⴰⵔⴰⴳ ⵏ ⴰⵢⵢⵉⵙ ⴳ ⵍⵊⴷⵉⴷⴰ', 'ⵜⵉⵎⵓⵔⴰ ⵢⴰⴹⵏ.']
+        },
+        omra: {
+          badge: 'ⴰⵙⵓⴷⴷⵙ ⵏ ⵜⵉⵖⵔⵎⵉⵏ ⵏ ⵓⵎⵔⴰ',
+          title: 'ⴰⵙⵓⴷⴷⵙ ⵏ ⵜⵉⵖⵔⵎⵉⵏ ⵏ ⵓⵎⵔⴰ',
+          apercu: ['FOS-Agri ⵜⵙⵙⵓⴷⵓⵙ ⴽⵓ ⴰⵙⴳⴳⵯⴰⵙ ⵉ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵜⴰⵎⴰⴷⵔⴰⵡⵜ ⵏ ⵓⴼⵓⵙ ⵉ ⵓⵙⴰⴼⴰⵔ ⵖⵔ ⵉⵎⴽⴰⵏⵏ ⵉⵇⴷⵙⵏ ⵉ ⵓⵙⴽⴰⵔ ⵏ ⵓⵎⵔⴰ.', 'ⵜⵜⵓⵎⵓⵛⵛ ⵜⴰⵙⴷⵔⵉⵎⵜ ⴷ ⵓⵙⴽⵉⵍ ⴰⴱⵍⴰ ⵓⵙⴽⴽⵓ ⵉⵜⵜⵓⵔⴰⵔⵏ, ⵖⵉⴽ ⴷ ⵜⵎⵣⵍⴰⵢⵜ ⵏ ⵉⵎⵏⴰⵢⵏ ⵉⵜⵜⵓⵙⴰⵡⴰⵍⵏ ⴷ ⵉⵙⵙⵓⴼⵓⵖⵏ ⵏ ⵓⵙⴰⴼⴰⵔ.'],
+          beneficiaires: 'ⴽⵓⵍⵍⵓ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵏ FOS-Agri.',
+          inscription: ['ⴰⵙⵙⴼⵜⵔ ⵙ ⵓⵏⵜⵉⵔⵏⵉⵜ.', 'ⵜⴰⵙⵜⴰⵢⵜ ⵏ ⵉⵎⵙⵜⴼⴰⴷⵏ ⵏ ⵜⴰⵙⴷⵔⵉⵎⵜ ⵏⵖ ⵓⵙⴽⵉⵍ ⵜⵜⴳ ⵙ ⵓⵙⵎⵉⵍ ⵏ scoring.', 'ⵜⵜⵓⵎⵓⵛⵛ 5000 DH ⵉ 15 ⵉⵎⵙⵜⴼⴰⴷⵏ ⴷ ⵓⵙⴽⵉⵍ 5000 DH ⵉ 30 ⵉⵎⵏⵅⵔⴰⵟⵏ ⵉⵜⵜⵓⵔⴰⵔⵏ ⴳ 10 ⵡⴰⵢⵢⵓⵔⵏ.', 'ⵉⵎⵏⴰⵢⵏ ⵉⵎⵥⵍⵉⵢⵏ ⵜⵜⵙⵜⴼⴰⴷⵏ ⵙⴳⵙⵏ ⴽⵓⵍⵍⵓ ⵉⵎⵏⵅⵔⴰⵟⵏ.'],
+          pieces: ['ⴰⵙⵙⴼⵜⵔ ⵙ ⵓⵏⵜⵉⵔⵏⵉⵜ', 'ⵜⴰⵏⵖⵍⵜ ⵏ ⵓⵙⴰⴼⴰⵔ']
+        },
+        pelerinage: {
+          badge: 'ⴰⵜⵜⴽⵉ ⴳ ⵎⴰⵙⴰⵔⵉⴼ ⵏ ⵓⵃⵊⵊ',
+          title: 'ⴰⵜⵜⴽⵉ ⴳ ⵎⴰⵙⴰⵔⵉⴼ ⵏ ⵓⵃⵊⵊ',
+          apercu: ['FOS-Agri ⵜⵙⵙⵓⴷⵓⵙ ⴽⵓ ⴰⵙⴳⴳⵯⴰⵙ ⵉ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵜⴰⵎⴰⴷⵔⴰⵡⵜ « ⴰⴼⵓⵙ ⵉ ⵓⵃⵊⵊ » ⵙ ⵓⵜⵜⴽⵉ ⴳ ⵎⴰⵙⴰⵔⵉⴼ ⵏ ⵓⵃⵊⵊ ⵙ ⵜⴰⵙⴷⵔⵉⵎⵜ ⵉ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵉⵙⴽⵔⵏ ⴰⵛⵄⴰⵔ ⴰⴷ ⴳ ⵓⵙⴳⴳⵯⴰⵙ ⵉⵍⵍⴰⵏ.'],
+          beneficiaires: 'ⴽⵓⵍⵍⵓ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵏ FOS-Agri.',
+          inscription: ['ⴰⵙⵙⴼⵜⵔ ⵙ ⵓⵏⵜⵉⵔⵏⵉⵜ.', 'ⴽⵓⵍⵍⵓ ⵉⵙⵓⵜⴰⵔ ⵉⵙⵜⴼⴰⴷⵏ ⵜⵜⵓⵇⴱⴰⵍⵏ.', 'ⴰⵎⵓⵔ ⵏ ⵓⵜⵜⴽⵉ ⵉⵜⵜⵓⵙⴷⴷⴰ ⵙ ⵓⵎⵢⴰ ⵏ ⵉⵃⵊⵊⴰⵊⵏ.'],
+          pieces: ['ⴰⵙⵓⵜⵔ ⵙ ⵓⵏⵜⵉⵔⵏⵉⵜ', 'ⵜⴰⵏⵖⵍⵜ ⵏ ⵜⵛⵔⴰⴹⵜ ⵏ ⵜⵙⵜⴰⵢⵜ ⵏ Haj', 'ⵜⴰⵏⵖⵍⵜ ⵏ ⵓⵡⵚⵍ ⵏ ⵓⴼⵔⵓ ⵏ ⵎⴰⵙⴰⵔⵉⴼ ⵏ ⵓⵃⵊⵊ', 'ⵜⴰⵏⵖⵍⵜ ⵏ CIN', 'ⵜⴰⵏⵖⵍⵜ ⵏ ⵓⵙⴰⴼⴰⵔ ⵉⵙⵙⴽⵏⵏ ⴰⵙⴽⴰⵔ ⵏ ⵓⵃⵊⵊ ⴷⴼⴼⵉⵔ ⵜⵓⵖⴰⵍⵉⵏ']
+        },
+        celebrations: {
+          badge: 'ⵜⵉⵎⵍⵉⵍⵉⵏ ⴷ ⵜⵎⵖⵔⵉⵡⵉⵏ',
+          title: 'ⵜⵉⵎⵍⵉⵍⵉⵏ ⴷ ⵜⵎⵖⵔⵉⵡⵉⵏ',
+          apercu: [
+            'ⴳ 8 ⵎⴰⵕⵚ, FOS-Agri ⵜⵙⵙⴼⵍⴷ ⴰⵙⵙ ⴰⴳⵔⴰⵡⴰⵏ ⵏ ⵉⵣⵔⴼⴰⵏ ⵏ ⵜⵎⵖⴰⵔⵜ, ⵙ ⵓⵙⵎⵖⵔ ⵏ ⵉⵎⴰⵙⵙⵏ ⵏ ⵜⵎⵖⴰⵔⵜ ⴳ ⵓⵙⵙⵎⵖⵔ ⵏ ⵜⴼⵍⴰⵃⵜ ⴷ ⵓⵙⵎⵓⵖⵔ ⵏ ⵜⵎⵙⵙⵏⵜ ⴷ ⵓⵎⵢⴰⵡⴰⵙ ⵏⵙ.',
+            'ⵉ ⵓⵙⵎⵖⵔ ⵏ ⵉⵎⵖⵔⴰⵏ ⵏ ⵓⵙⴰⵜⵉ, FOS-Agri ⵜⵙⵙⵓⴷⵓⵙ ⵜⵉⵎⵖⵔⵉⵡⵉⵏ ⵏ ⵓⵙⵏⵎⵎⵔ ⴷ ⵓⵙⵎⵓⵖⵔ ⵅⴼ ⵉⵎⵓⵔⵙⵏ ⴷ ⵓⵎⵢⴰⵡⴰⵙ ⵏⵙⵏ.',
+            'ⵜⵙⴷⴰⵡⵉⵜ ⵜⵙⵙⴼⵍⴷ ⵜⵓⵖⴰⵍⵉⵏ ⵏ ⵉⵃⵊⵊⴰⵊⵏ ⵙ ⵓⵎⵓⵛⵛ ⵏ ⵜⵛⵉⴽⵉⵏ ⵉ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵉⵎⵙⵜⴼⴰⴷⵏ.',
+            'ⵜⴰⵎⵖⵔⵉⵡⵜ ⵏ ⵡⴰⵔⵔⴰⵡ ⵉⴼⴰⵡⵏ ⴳ ⵓⴱⴰⴽⴰⵍⵓⵔⵢⴰ ⵜⴳⴰ ⵜⴰⵙⵓⵔⵉⴼⵜ ⵉ ⵓⵙⵎⵖⵔ ⴷ ⵓⵙⴼⵔⴽ ⵏ ⵓⵙⵙⵎⴷ ⵏ ⵜⵉⵖⵔⵉ ⵜⴰⵏⴰⵎⵓⵔⵜ.'
+          ],
+          celebrations: [
+            { title: 'ⴰⵙⵙ ⵏ ⵜⵎⵖⴰⵔⵜ', body: ['ⴰⵙⵙⴼⵍⴷ ⵏ ⵓⵙⵙ ⴰⴳⵔⴰⵡⴰⵏ ⵏ ⵉⵣⵔⴼⴰⵏ ⵏ ⵜⵎⵖⴰⵔⵜ', 'ⴳ 8 ⵎⴰⵕⵚ, FOS-Agri ⵜⵙⵙⴼⵍⴷ ⴰⵙⵙ ⴰⴳⵔⴰⵡⴰⵏ ⵏ ⵉⵣⵔⴼⴰⵏ ⵏ ⵜⵎⵖⴰⵔⵜ, ⵙ ⵓⵙⵎⵖⵔ ⵏ ⵜⵎⵙⵙⵏⵜ ⴷ ⵓⵎⵢⴰⵡⴰⵙ ⵏ ⵜⵎⵖⴰⵔⵜ ⴳ ⵜⴼⵍⴰⵃⵜ.'] },
+            { title: 'ⵜⴰⵎⵖⵔⵉⵡⵜ ⵏ ⵉⵎⵖⵔⴰⵏ', body: ['ⵜⴰⵎⵖⵔⵉⵡⵜ ⵏ ⵉⵎⵖⵔⴰⵏ', 'FOS-Agri ⵜⵙⵙⵓⴷⵓⵙ ⵜⴰⵎⵖⵔⵉⵡⵜ ⵙ ⵓⵙⵏⵎⵎⵔ ⵏ ⵉⵎⵖⵔⴰⵏ ⵅⴼ ⵉⵎⴰⵙⵙⵏ, ⵜⴰⴼⴳⵓⵔⵉⵏ ⴷ ⵓⵎⵢⴰⵡⴰⵙ ⴳ ⵓⵙⵓⵔⵉⴼ ⵏⵙⵏ.'] },
+            { title: 'ⵉⵃⵊⵊⴰⵊⵏ', body: ['ⵜⴰⵎⵖⵔⵉⵡⵜ ⵏ ⵉⵃⵊⵊⴰⵊⵏ', 'ⵜⴰⵎⵖⵔⵉⵡⵜ ⴰⴷ ⵜⵜⵓⵙⴽⴰⵔ ⵉ ⵓⵎⵓⵛⵛ ⵏ ⵜⵛⵉⴽⵉⵏ ⵉ ⵉⵃⵊⵊⴰⵊⵏ ⵉⵙⴽⵔⵏ ⵓⵃⵊⵊ.'] },
+            { title: 'ⵉⴱⴰⴽⴰⵍⵓⵔⵢⴰⵏ', body: ['ⵜⴰⵎⵖⵔⵉⵡⵜ ⵉ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴷ ⵡⴰⵔⵔⴰⵡ ⵏⵙⵏ ⵉⵎⵙⵜⴼⴰⴷⵏ ⵙⴳ ⵉⵎⵓⵔⴰⵙ ⵏ ⵜⴰⵎⵥⵍⴰⵢⵜ', 'ⵜⴰⵎⵖⵔⵉⵡⵜ ⴰⴷ ⵜⴳⴰ ⵜⴰⵙⵓⵔⵉⴼⵜ ⵉ ⵓⵙⵎⵖⵔ ⵏ ⵡⴰⵔⵔⴰⵡ ⵉⴼⴰⵡⵏ ⴳ ⵓⴱⴰⴽⴰⵍⵓⵔⵢⴰ ⴷ ⵓⵙⴼⵔⴽ ⵏ ⵜⵉⵖⵔⵉ ⵜⴰⵏⴰⵎⵓⵔⵜ.'] }
+          ]
+        },
+        partenariats: {
+          badge: 'ⵉⵣⴷⵡⵉⵢⵏ',
+          title: 'ⵉⵣⴷⵡⵉⵢⵏ',
+          intro: ['ⵉ ⵜⵏⴼⴰⵙ: ⵔⵥⵎ ⴰⴼⴰⵢⵍⵓ ⵉⵍⵍⴰⵏ ⴳ ⵓⵙⴰⴷⵓ.'],
+          groupTitles: ['ⵉⵙⵏⵙⴰ ⴷ ⵉⵎⵙⵔⴰⵢⵏ ⵏ ⵜⵣⵓⵔⵉⵙⵜ', 'ⵜⵉⵎⵙⵙⵓⵔⵜⵉⵏ ⵏ ⵓⵔⴰⵔ ⵉⵣⴷⵉⵏ'],
+          status: 'ⵉⵜⵜⵓⵙⵙⵏⵜⵎ'
+        }
+      }
+    }
+  };
+
+  function cultureLabels(currentLang = lang) {
+    return cultureBlockLabels[currentLang] || cultureBlockLabels.fr;
+  }
+
+  function cultureMenuId(index) {
+    return cultureMenuItems[index]?.id;
+  }
+
+  function localizedCultureCenter(currentLang = lang) {
+    return (cultureTranslations[currentLang] || cultureTranslations.fr).center;
+  }
+
+  function localizedCultureExtra(currentLang = lang) {
+    const copy = cultureTranslations[currentLang] || cultureTranslations.fr;
+    const labels = cultureLabels(currentLang);
+    return cultureExtra.map((section) => {
+      const id = cultureMenuId(section.navIndex);
+      const localized = copy.sections[id] || cultureTranslations.fr.sections[id] || {};
+      if (section.type === 'culturePartners') {
+        const groups = (section.groups || []).map((group, index) => ({
+          ...group,
+          title: localized.groupTitles?.[index] || group.title,
+          items: group.items.map((item) => ({
+            ...item,
+            statut: localized.status || item.statut
+          }))
+        }));
+        return { ...section, ...localized, labels, groups };
+      }
+      return { ...section, ...localized, labels };
+    });
+  }
+
   function renderCultureBlock(label, innerHtml) {
     if (!innerHtml) return '';
     return `<div class="culture-block"><h3>${esc(label)}</h3>${innerHtml}</div>`;
   }
 
   function renderCultureSection(section, navIndex) {
+    const labels = section.labels || cultureLabels();
     const blocks = [
-      section.apercu && section.apercu.length ? renderCultureBlock('Aperçu', renderParagraphs(section.apercu)) : '',
-      section.beneficiaires ? renderCultureBlock('Bénéficiaires', `<p>${esc(section.beneficiaires)}</p>`) : '',
-      section.inscription && section.inscription.length ? renderCultureBlock('Inscription et modalités', renderBulletList(section.inscription)) : '',
-      section.pieces && section.pieces.length ? renderCultureBlock('Pièces à fournir', renderBulletList(section.pieces)) : '',
-      section.destinations && section.destinations.length ? renderCultureBlock('Destinations', renderBulletList(section.destinations)) : ''
+      section.apercu && section.apercu.length ? renderCultureBlock(labels.apercu, renderParagraphs(section.apercu)) : '',
+      section.beneficiaires ? renderCultureBlock(labels.beneficiaires, `<p>${esc(section.beneficiaires)}</p>`) : '',
+      section.inscription && section.inscription.length ? renderCultureBlock(labels.inscription, renderBulletList(section.inscription)) : '',
+      section.pieces && section.pieces.length ? renderCultureBlock(labels.pieces, renderBulletList(section.pieces)) : '',
+      section.destinations && section.destinations.length ? renderCultureBlock(labels.destinations, renderBulletList(section.destinations)) : ''
     ].filter(Boolean).join('');
     let celeb = '';
     if (section.celebrations && section.celebrations.length) {
@@ -1790,6 +2165,7 @@
   }
 
   function renderCulturePartnersSection(section, navIndex) {
+    const labels = section.labels || cultureLabels();
     const groups = (section.groups || []).map((g) => `
       <div class="culture-partner-group">
         <h3 class="culture-partner-group-title"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> ${esc(g.title)}</h3>
@@ -1798,7 +2174,7 @@
             <article class="culture-partner-card">
               <h4>${esc(it.name)}</h4>
               ${it.statut ? `<span class="culture-partner-status"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> ${esc(it.statut)}</span>` : ''}
-              <a class="bank-card-download" href="${esc(asset(it.pdf))}" download><i class="fa-solid fa-download" aria-hidden="true"></i> Télécharger</a>
+              <a class="bank-card-download" href="${esc(asset(it.pdf))}" download><i class="fa-solid fa-download" aria-hidden="true"></i> ${esc(labels.download)}</a>
             </article>`).join('')}
         </div>
       </div>`).join('');
@@ -1820,7 +2196,13 @@
     if (!text) return text;
     if (key === 'culture') {
       const menuItems = localizedCultureMenu();
-      return { ...text, menuItems, chips: menuItems.map((item) => item.label), centerMedical: cultureCenter, extraSections: cultureExtra };
+      return {
+        ...text,
+        menuItems,
+        chips: menuItems.map((item) => item.label),
+        centerMedical: localizedCultureCenter(lang),
+        extraSections: localizedCultureExtra(lang)
+      };
     }
     if (key === 'prevoyance') {
       const menuItems = localizedPrevoyanceMenu(lang);
@@ -1876,7 +2258,7 @@
       <section class="section page-section-soft prestation-center-section" id="${subrubriqueId(0)}">
         <div class="container">
           <div class="prestation-section-head">
-            <span class="section-tag"><i class="fa-solid fa-house-medical" aria-hidden="true"></i> ${esc(center.badge)}</span>
+            <span class="section-tag"><i class="fa-solid ${esc(center.icon || 'fa-house-medical')}" aria-hidden="true"></i> ${esc(center.badge)}</span>
             <h2>${esc(center.title)}</h2>
             <p>${esc(center.intro)}</p>
           </div>
