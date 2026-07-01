@@ -1739,14 +1739,14 @@
       intro: ['Pour les prestations : Veuillez consulter le fichier joint.'],
       groups: [
         { title: 'Hôtels et complexes touristiques', items: [
-          { name: 'Agence Location et Vacances', pdf: 'assets/culture/partenariats/agence-location-vacances.pdf' }
+          { name: 'Agence Location et Vacances', statut: 'Confirmé', pdf: 'assets/culture/partenariats/agence-location-vacances.pdf' }
         ] },
         { title: 'Établissements de loisirs conventionnés', items: [
-          { name: 'mWellness',              pdf: 'assets/culture/partenariats/mwellness.pdf' },
-          { name: 'Club STCO Oujda',        pdf: 'assets/culture/partenariats/club-stco-oujda.pdf' },
-          { name: 'Club Lixus Move Larache',pdf: 'assets/culture/partenariats/club-lixus.pdf' },
-          { name: 'Sonarges',               pdf: 'assets/culture/partenariats/sonarges.pdf' },
-          { name: 'Zoo de Rabat',           pdf: 'assets/culture/partenariats/zoo-de-rabat.pdf' }
+          { name: 'mWellness',              statut: 'Confirmé', pdf: 'assets/culture/partenariats/mwellness.pdf' },
+          { name: 'Club STCO Oujda',        statut: 'Confirmé', pdf: 'assets/culture/partenariats/club-stco-oujda.pdf' },
+          { name: 'Club Lixus Move Larache',statut: 'Confirmé', pdf: 'assets/culture/partenariats/club-lixus.pdf' },
+          { name: 'Sonarges',               statut: 'Confirmé', pdf: 'assets/culture/partenariats/sonarges.pdf' },
+          { name: 'Zoo de Rabat',           statut: 'Confirmé', pdf: 'assets/culture/partenariats/zoo-de-rabat.pdf' }
         ] }
       ] }
   ];
@@ -1797,6 +1797,7 @@
           ${g.items.map((it) => `
             <article class="culture-partner-card">
               <h4>${esc(it.name)}</h4>
+              ${it.statut ? `<span class="culture-partner-status"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> ${esc(it.statut)}</span>` : ''}
               <a class="bank-card-download" href="${esc(asset(it.pdf))}" download><i class="fa-solid fa-download" aria-hidden="true"></i> Télécharger</a>
             </article>`).join('')}
         </div>
