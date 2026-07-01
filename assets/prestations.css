@@ -1054,6 +1054,68 @@ body[data-service='prevoyance'] .prestation-extra-section {
   box-shadow: 0 0 0 4px rgba(214, 169, 65, 0.14);
 }
 
+.medical-category-buttons {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+  margin-top: 0.1rem;
+}
+
+.medical-category-button {
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.58rem 0.82rem;
+  border: 1px solid rgba(28, 82, 55, 0.13);
+  border-radius: 999px;
+  background: #fff;
+  color: #173d29;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.medical-category-button i {
+  width: 1.8rem;
+  height: 1.8rem;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #eef6ef;
+  color: #17683f;
+}
+
+.medical-category-button:hover,
+.medical-category-button:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(214, 169, 65, 0.45);
+  box-shadow: 0 10px 26px rgba(16, 55, 35, 0.1);
+  outline: none;
+}
+
+.medical-category-button.is-active {
+  border-color: rgba(214, 169, 65, 0.75);
+  background: linear-gradient(135deg, #143b28, #17683f);
+  color: #fff;
+  box-shadow: 0 14px 34px rgba(16, 55, 35, 0.14);
+}
+
+.medical-category-button.is-active i {
+  background: rgba(255, 255, 255, 0.16);
+  color: #d6a941;
+}
+
 .medical-map-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -2637,6 +2699,10 @@ html[dir='rtl'] .prestation-keypoints-panel::before {
   .medical-map-layout,
   .medical-partner-results {
     grid-template-columns: 1fr;
+  }
+
+  .medical-category-buttons {
+    display: none;
   }
 
   .medical-map-card {

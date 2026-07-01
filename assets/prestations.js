@@ -2614,6 +2614,23 @@
     'À voir avec Mme Lehmami': { ar: 'قيد التحقق مع السيدة لهمامي', zgh: 'ⵉⵇⵇⴰⵏ ⴰⵙⵏⵉⵔⵎ ⴷ Mme Lehmami' }
   };
 
+  const medicalCategoryIcons = {
+    "LABORATOIRES D’ANALYSES": 'fa-vial-circle-check',
+    'CENTRES DE RADIOLOGIE': 'fa-x-ray',
+    'CENTRES DE SOINS DENTAIRE': 'fa-tooth',
+    'PHARMACIES': 'fa-prescription-bottle-medical',
+    'CLINIQUES': 'fa-hospital',
+    'CLINIQUE': 'fa-hospital',
+    'OPTICIENS': 'fa-glasses',
+    'MÉDECINS À TARIF PRÉFÉRENTIELS': 'fa-user-doctor',
+    'CABINETS DE KINÉSITHÉRAPIE': 'fa-person-walking',
+    'MATÉRIEL MÉDICO-CHIRURGICAL ET PARAMÉDICAL': 'fa-briefcase-medical'
+  };
+
+  function medicalCategoryIcon(category) {
+    return medicalCategoryIcons[category] || 'fa-stethoscope';
+  }
+
   function medicalCopy() {
     return labels[lang]?.medicalPartners || labels.fr.medicalPartners;
   }
@@ -2719,6 +2736,7 @@
           <label>
             <span>${esc(copy.region)}</span>
             <select data-medical-region-select>
+              <option value="">${esc(copy.allRegions)}</option>
               ${medicalRegionMeta.map((region) => `<option value="${esc(region.id)}">${esc(medicalRegionLabel(region))}</option>`).join('')}
             </select>
           </label>` : ''}
@@ -2731,18 +2749,17 @@
           <span>${esc(copy.category)}</span>
           <select data-medical-category-select><option value="">${esc(copy.allCategories)}</option></select>
         </label>
+        <div class="medical-category-buttons" data-medical-category-buttons aria-label="${esc(copy.category)}"></div>
       </div>`;
   }
 
   function renderMedicalPartnersSection(section, navIndex) {
     const copy = medicalCopy();
     const data = Array.isArray(window.medicalPartnersData) ? window.medicalPartnersData : [];
-    const regional = data.filter((entry) => entry.section === 'regional');
     const central = data.filter((entry) => entry.section === 'central');
-    const firstRegion = medicalRegionMeta.find((region) => regional.some((entry) => medicalRegionFromName(entry.region)?.id === region.id)) || medicalRegionMeta[0];
     return `
       <section class="section page-section-soft prestation-extra-section medical-partners-section" id="${subrubriqueId(navIndex)}" data-prestation-extra-panel data-prestation-extra-index="${navIndex}" hidden>
-        <div class="container" data-medical-partners data-default-region="${esc(firstRegion.id)}">
+        <div class="container" data-medical-partners data-default-region="">
           <article class="prestation-extra-card medical-partners-intro">
             <span class="section-tag"><i class="fa-solid fa-file-contract" aria-hidden="true"></i> ${esc(section.badge || copy.badge)}</span>
             <h2>${esc(section.title || copy.title)}</h2>
@@ -2768,7 +2785,7 @@
                 </div>
                 <div class="medical-selected-region">
                   <span>${esc(copy.selectedRegion)}</span>
-                  <strong data-medical-selected-region>${esc(medicalRegionLabel(firstRegion))}</strong>
+                  <strong data-medical-selected-region>${esc(copy.allRegions)}</strong>
                 </div>
                 <div class="medical-partner-results" data-medical-results="regional"></div>
                 <div class="medical-pagination" data-medical-pagination="regional"></div>
@@ -3175,6 +3192,19 @@
     if (values.includes(current)) select.value = current;
   }
 
+  function setMedicalCategoryButtons(controls, values, allLabel) {
+    if (!controls?.categoryButtons) return;
+    const active = controls.category?.value || '';
+    const options = [{ value: '', label: allLabel, icon: 'fa-layer-group' }]
+      .concat(values.map((value) => ({ value, label: translateMedicalCategory(value), icon: medicalCategoryIcon(value) })));
+    controls.categoryButtons.innerHTML = options.map((option) => `
+      <button class="medical-category-button ${option.value === active ? 'is-active' : ''}" type="button"
+        data-medical-category-value="${esc(option.value)}" aria-pressed="${option.value === active ? 'true' : 'false'}">
+        <i class="fa-solid ${esc(option.icon)}" aria-hidden="true"></i>
+        <span>${esc(option.label)}</span>
+      </button>`).join('');
+  }
+
   function getMedicalMapPathCenter(path) {
     if (!path?.getBBox) return null;
     const box = path.getBBox();
@@ -3249,7 +3279,7 @@
       regional: data.filter((entry) => entry.section === 'regional'),
       central: data.filter((entry) => entry.section === 'central')
     };
-    let selectedRegion = widget.dataset.defaultRegion || medicalRegionMeta[0]?.id;
+    let selectedRegion = widget.dataset.defaultRegion || '';
     const mapMount = widget.querySelector('[data-medical-map-svg]');
     if (mapMount && window.medicalRegionsMapSvg) {
       mapMount.innerHTML = window.medicalRegionsMapSvg;
@@ -3271,6 +3301,7 @@
         region: filter?.querySelector('[data-medical-region-select]'),
         city: filter?.querySelector('[data-medical-city-select]'),
         category: filter?.querySelector('[data-medical-category-select]'),
+        categoryButtons: filter?.querySelector('[data-medical-category-buttons]'),
         results: widget.querySelector(`[data-medical-results="${scope}"]`),
         count: widget.querySelector(`[data-medical-count="${scope}"]`),
         pagination: widget.querySelector(`[data-medical-pagination="${scope}"]`)
@@ -3282,7 +3313,9 @@
     const pages = { regional: 1, central: 1 };
     const getRegionId = (entry) => medicalRegionFromName(entry.region)?.id || '';
     const getRegionalEntries = () => (
-      selectedRegion === 'rabat-sale-kenitra'
+      !selectedRegion
+        ? bySection.regional
+        : selectedRegion === 'rabat-sale-kenitra'
         ? bySection.central
         : bySection.regional.filter((entry) => getRegionId(entry) === selectedRegion)
     );
@@ -3322,9 +3355,9 @@
     };
 
     const syncRegionUi = () => {
-      const region = medicalRegionMeta.find((entry) => entry.id === selectedRegion) || medicalRegionMeta[0];
+      const region = medicalRegionMeta.find((entry) => entry.id === selectedRegion) || null;
       widget.querySelectorAll('.medical-region-map [data-region]').forEach((path) => {
-        const active = activeMapPath ? path === activeMapPath : path.getAttribute('data-region') === selectedRegion;
+        const active = !!selectedRegion && (activeMapPath ? path === activeMapPath : path.getAttribute('data-region') === selectedRegion);
         path.classList.toggle('is-active', active);
         path.setAttribute('aria-pressed', active ? 'true' : 'false');
       });
@@ -3332,14 +3365,16 @@
       const regionSelect = getControls('regional').region;
       if (regionSelect) regionSelect.value = selectedRegion;
       const selected = widget.querySelector('[data-medical-selected-region]');
-      if (selected) selected.textContent = medicalRegionLabel(region);
+      if (selected) selected.textContent = region ? medicalRegionLabel(region) : copy.allRegions;
     };
 
     const renderScope = (scope) => {
       const controls = getControls(scope);
       const base = scope === 'regional' ? getRegionalEntries() : bySection[scope];
       setMedicalSelectOptions(controls.city, uniqueMedicalValues(base, 'ville'), copy.allCities);
-      setMedicalSelectOptions(controls.category, uniqueMedicalValues(base, 'categorie'), copy.allCategories, translateMedicalCategory);
+      const categories = uniqueMedicalValues(base, 'categorie');
+      setMedicalSelectOptions(controls.category, categories, copy.allCategories, translateMedicalCategory);
+      setMedicalCategoryButtons(controls, categories, copy.allCategories);
       const entries = applyFilters(scope);
       const totalPages = Math.max(1, Math.ceil(entries.length / pageSize));
       pages[scope] = Math.min(Math.max(1, pages[scope]), totalPages);
@@ -3412,7 +3447,7 @@
         });
       });
       controls.region?.addEventListener('change', () => {
-        selectedRegion = controls.region.value || selectedRegion;
+        selectedRegion = controls.region.value || '';
         activeMapPath = null;
         pages.regional = 1;
         renderAll();
@@ -3420,6 +3455,17 @@
     });
 
     widget.addEventListener('click', (event) => {
+      const categoryButton = event.target.closest('[data-medical-category-value]');
+      if (categoryButton && widget.contains(categoryButton)) {
+        const filter = categoryButton.closest('[data-medical-filter]');
+        const scope = filter?.getAttribute('data-medical-filter');
+        const controls = scope ? getControls(scope) : null;
+        if (!scope || !controls?.category || !pages[scope]) return;
+        controls.category.value = categoryButton.getAttribute('data-medical-category-value') || '';
+        pages[scope] = 1;
+        renderScope(scope);
+        return;
+      }
       const button = event.target.closest('[data-medical-page]');
       if (!button || button.disabled || !widget.contains(button)) return;
       const [scope, page] = button.getAttribute('data-medical-page').split(':');
