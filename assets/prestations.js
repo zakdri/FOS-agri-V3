@@ -1646,9 +1646,181 @@
     ]
   };
 
+  /* ===== Culture, loisirs et voyages : 10 rubriques (texte exact, non traduit) ===== */
+  const cultureMenuItems = [
+    { id: 'a-propos',          icon: 'fa-circle-info',      label: 'A PROPOS' },
+    { id: 'appui-vacances',    icon: 'fa-umbrella-beach',   label: 'Appui aux vacances des adhérents' },
+    { id: 'colonies',          icon: 'fa-child-reaching',   label: "Colonies de vacances d'été" },
+    { id: 'sejours-culturels', icon: 'fa-language',         label: 'Séjours culturels' },
+    { id: 'camps-ados',        icon: 'fa-campground',       label: 'Camps de vacances pour adolescents' },
+    { id: 'excursions',        icon: 'fa-bus',              label: 'Excursions récréatives et éducatives' },
+    { id: 'omra',              icon: 'fa-kaaba',            label: 'Organisation des séjours de Omra' },
+    { id: 'pelerinage',        icon: 'fa-place-of-worship', label: 'Contribution aux frais de pèlerinage' },
+    { id: 'celebrations',      icon: 'fa-award',            label: 'Célébrations et cérémonies' },
+    { id: 'partenariats',      icon: 'fa-handshake',        label: 'Partenariats' }
+  ];
+  function localizedCultureMenu() {
+    return cultureMenuItems.map((i) => ({ id: i.id, icon: i.icon, label: i.label }));
+  }
+
+  const cultureCenter = {
+    badge: 'À propos', title: 'A propos',
+    intro: "La FOS-Agri offre une panoplie de services culturelles, de loisirs et de divertissements répondant aux aspirations de ses adhérents et favorisant leurs épanouissement et bien-être.",
+    items: [
+      { navIndex: 91, icon: 'fa-users', title: 'Bénéficiaires', body: 'Tous les adhérents de la FOS-Agri' },
+      { navIndex: 92, icon: 'fa-clipboard-check', title: 'Inscription et modalités', bullets: [
+        "L'inscription à cette prestation s'effectue à travers l'Espace Adhérent de la FOS-Agri, avec signature en ligne d'un engagement sur l'honneur attestant le respect des conditions d'octroi de la prestation.",
+        "La sélection des bénéficiaires est réalisée selon un système de scoring reposant sur des critères objectifs et transparents définis par la Fondation, garantissant l'équité dans l'attribution de la prestation.",
+        "Les adhérents retenus sont informés des résultats de la sélection via leur Espace Adhérent ainsi que par les canaux de communication de la Fondation"
+      ] }
+    ]
+  };
+
+  const cultureExtra = [
+    { navIndex: 1, type: 'cultureRubrique', icon: 'fa-umbrella-beach', badge: 'Appui aux vacances des adhérents', title: 'Appui aux vacances des adhérents',
+      intro: ["Dans le cadre de sa mission sociale et de son engagement en faveur du bien-être de ses adhérent(e)s, la Fondation met en œuvre, annuellement, une prestation d'appui aux vacances de ses adhérents visant à faciliter l'accès aux périodes de repos et de détente, tout en contribuant à l'allègement des charges financières liées aux séjours estivaux. À ce titre, une aide financière est accordée à raison de 700 dirhams par nuitée d'hébergement, dans la limite de sept (7) nuitées par adhérent(e) bénéficiaire, soit un montant maximal de 4 900 dirhams. Cette aide est versée directement au bénéficiaire, conformément aux conditions d'éligibilité et aux modalités fixées par la Fondation."],
+      beneficiaires: 'Tous les adhérents de la FOS-Agri',
+      inscription: [
+        "L'inscription à cette prestation s'effectue à travers l'Espace Adhérent de la FOS-Agri,",
+        "La sélection des bénéficiaires est réalisée selon un système de scoring reposant sur des critères objectifs et transparents définis par la Fondation, garantissant l'équité dans l'attribution de la prestation.",
+        "Les adhérents retenus sont informés des résultats de la sélection via leur Espace Adhérent ainsi que par les canaux de communication de la Fondation"
+      ] },
+    { navIndex: 2, type: 'cultureRubrique', icon: 'fa-child-reaching', badge: "Colonies de vacances d'été", title: "Colonies de vacances d'été",
+      apercu: ["La FOS-Agri organise chaque année une colonie de vacances au profit des enfants des adhérents. Les programmes de ces séjours sont minutieusement concoctés et les animateurs rigoureusement sélectionnés afin de garantir la sécurité des enfants et l'épanouissement des enfants"],
+      beneficiaires: 'Tous les enfants éligibles des adhérents de la FOS-Agri.',
+      inscription: ['Inscription en ligne.'],
+      pieces: ["Demande en ligne", "Acte d'engagement signé", "Certificat médicale de l'enfant", "Copie de la CIN de l'adhérent", "Copie de l'acte de naissance de l'enfant", "Photo d'identité de l'enfant"] },
+    { navIndex: 3, type: 'cultureRubrique', icon: 'fa-language', badge: 'Séjours culturels', title: 'Séjours culturels',
+      apercu: ["Le séjour linguistique, culturel et éducatif est une prestation destinée aux enfants des adhérent(e)s, leur offrant l'opportunité de vivre une expérience nationale et internationale enrichissante alliant l'apprentissage d'une langue étrangère, la découverte d'un nouveau patrimoine culturel et la participation à des activités éducatives et de développement personnel. À travers ce programme, la Fondation contribue à l'ouverture sur le monde, au renforcement des compétences linguistiques et à l'épanouissement personnel des jeunes bénéficiaires."],
+      beneficiaires: 'Les enfants des adhérent(e)s',
+      inscription: ['Inscription en ligne.'],
+      pieces: [] },
+    { navIndex: 4, type: 'cultureRubrique', icon: 'fa-campground', badge: 'Camps de vacances pour adolescents', title: 'Camps de vacances pour adolescents',
+      apercu: [],
+      beneficiaires: 'Les enfants des adhérent(e)s',
+      inscription: ['Inscription en ligne.'],
+      pieces: [] },
+    { navIndex: 5, type: 'cultureRubrique', icon: 'fa-bus', badge: 'Excursions récréatives et éducatives', title: 'Excursions récréatives et éducatives',
+      apercu: ["La FOS-Agri programme des visites éducatives, culturelles et de loisirs au profit des enfants des adhérents notamment, à l'occasion du salon international de l'agriculture de Meknès, du salon du cheval d'El Jadida.... afin de leur permettre de prendre connaissance des nouveautés du secteur agricole, de découvrir la filière équine sous toutes ses facettes ainsi que la culture locale des différentes villes marocaines."],
+      beneficiaires: 'Tous les enfants éligibles des adhérents de la FOS-Agri.',
+      inscription: ['Inscription en ligne.'],
+      pieces: ["Demande en ligne", "Copie de l'acte de naissance de l'enfant", "Photo d'identité de l'enfant"],
+      destinations: ["Le Salon International de l'Agriculture de Meknès", "Le Salon du Cheval d'El Jadida", 'Autres.'] },
+    { navIndex: 6, type: 'cultureRubrique', icon: 'fa-kaaba', badge: 'Organisation des séjours de Omra', title: 'Organisation des séjours de Omra',
+      apercu: ["La FOS-Agri organise annuellement au profit de ses adhérents l'opération d'aide au voyage aux lieux saints de l'islam pour l'accomplissement de la Omra. Une subvention et un prêt gratuit remboursable sont accordés au titre de cette opération en plus de tarifs préférentiels négociés avec des agences de voyages de renom et spécialisées dans le domaine."],
+      beneficiaires: 'Tous les adhérents de la FOS-Agri.',
+      inscription: ['Inscription en ligne.', 'La sélection des bénéficiaires de la subvention ou du Prêt se fait par le système de Scoring.', "Octroi d'une subvention de 5000 DH au profit de 15 bénéficiaires et un prêt gratuit de 5000 DH remboursable sur 10 mois pour 30 adhérents.", 'Les tarifs préférentiels bénéficient à tous les adhérents.'],
+      pieces: ['Inscription en ligne', 'Photocopie de passeport'] },
+    { navIndex: 7, type: 'cultureRubrique', icon: 'fa-place-of-worship', badge: 'Contribution aux frais de pèlerinage', title: 'Contribution aux frais de pèlerinage',
+      apercu: ["La FOS-Agri organise annuellement au profit de ses adhérents l'opération « aide au pèlerinage » en contribuant aux frais de pèlerinage moyennant des aides financières au profit des adhérents ayant effectué ce rite religieux durant l'année en cours."],
+      beneficiaires: 'Tous les adhérents de la FOS-Agri.',
+      inscription: ['Inscription en ligne.', 'Toutes les demandes éligibles sont acceptées.', 'Le montant de la contribution est déterminé selon Le nombre des pèlerins.'],
+      pieces: ['Demande en ligne', "Copie de l'attestation de sélection pour l'Haj délivrée par les autorités, (en cas de besoin)", 'Copie du reçu de paiement des frais des pèlerinages', 'Copie de la CIN', "Copie de passeport justifiant l'accomplissement de pèlerinage après retour des lieux saints"] },
+    { navIndex: 8, type: 'cultureRubrique', icon: 'fa-award', badge: 'Célébrations et cérémonies', title: 'Célébrations et cérémonies',
+      celebrations: [
+        { title: 'Journée de la femme', body: [
+          'Célébration de la Journée internationale des droits des femmes',
+          "A l'occasion du 8 mars, la FOS-Agri célèbre la Journée internationale des droits des femmes qui demeure une consécration des efforts déployés par la femme pour la promotion du secteur agricole, et une reconnaissance de son professionnalisme et son dévouement.",
+          "Conformément aux orientations du Comité de Direction et à la volonté de la FOS-Agri, cet évènement est célébré annuellement d'une manière alternée dans diverses régions de royaume tout en choisissant une thématique bien spécifique. Cette journée est marquée par la remise des prix aux femmes, ayant prouvé leurs engagements et professionnalismes au fil du temps au sein du Département."
+        ] },
+        { title: 'Cérémonie des retraités', body: [
+          "Pour exprimer sa reconnaissance aux retraités du département, la FOS-Agri organise une cérémonie en leur honneur, afin de leur témoigner ses remerciements pour leurs efforts inlassables, les sacrifices consentis et leur dévouement durant leur carrière administrative."
+        ] },
+        { title: 'Pèlerins', body: [
+          'Cérémonie des pèlerins',
+          'Cette cérémonie est dédiée pour la remise des chèques aux pèlerins ayant effectués leur pèlerinage.'
+        ] },
+        { title: 'Bacheliers', body: [
+          "Cérémonie au profit des adhérents et leurs enfants bénéficiaires du programme de Bourses d'excellence",
+          "Cette cérémonie est une opportunité pour récompenser les enfants d'adhérents qui se sont distingués à l'Examen National du Baccalauréat et renforcer leur motivation pour la poursuite de leurs études supérieures, à travers la remise de bourses d'excellence et de prix d'encouragement."
+        ] }
+      ] },
+    { navIndex: 9, type: 'culturePartners', icon: 'fa-handshake', badge: 'Partenariats', title: 'Partenariats',
+      intro: ['Pour les prestations : Veuillez consulter le fichier joint.'],
+      groups: [
+        { title: 'Hôtels et complexes touristiques', items: [
+          { name: 'Agence Location et Vacances', pdf: 'assets/culture/partenariats/agence-location-vacances.pdf' }
+        ] },
+        { title: 'Établissements de loisirs conventionnés', items: [
+          { name: 'mWellness',              pdf: 'assets/culture/partenariats/mwellness.pdf' },
+          { name: 'Club STCO Oujda',        pdf: 'assets/culture/partenariats/club-stco-oujda.pdf' },
+          { name: 'Club Lixus Move Larache',pdf: 'assets/culture/partenariats/club-lixus.pdf' },
+          { name: 'Sonarges',               pdf: 'assets/culture/partenariats/sonarges.pdf' },
+          { name: 'Zoo de Rabat',           pdf: 'assets/culture/partenariats/zoo-de-rabat.pdf' }
+        ] }
+      ] }
+  ];
+
+  function renderCultureBlock(label, innerHtml) {
+    if (!innerHtml) return '';
+    return `<div class="culture-block"><h3>${esc(label)}</h3>${innerHtml}</div>`;
+  }
+
+  function renderCultureSection(section, navIndex) {
+    const blocks = [
+      section.apercu && section.apercu.length ? renderCultureBlock('Aperçu', renderParagraphs(section.apercu)) : '',
+      section.beneficiaires ? renderCultureBlock('Bénéficiaires', `<p>${esc(section.beneficiaires)}</p>`) : '',
+      section.inscription && section.inscription.length ? renderCultureBlock('Inscription et modalités', renderBulletList(section.inscription)) : '',
+      section.pieces && section.pieces.length ? renderCultureBlock('Pièces à fournir', renderBulletList(section.pieces)) : '',
+      section.destinations && section.destinations.length ? renderCultureBlock('Destinations', renderBulletList(section.destinations)) : ''
+    ].filter(Boolean).join('');
+    let celeb = '';
+    if (section.celebrations && section.celebrations.length) {
+      celeb = `<div class="prestation-accordion culture-accordion" data-prestation-accordion>${section.celebrations.map((c) => `
+        <article class="prestation-accordion-item">
+          <button class="prestation-accordion-trigger" type="button" aria-expanded="false">
+            <span class="prestation-accordion-title"><i class="fa-solid fa-star" aria-hidden="true"></i><span>${esc(c.title)}</span></span>
+            <i class="fa-solid fa-plus prestation-accordion-toggle" aria-hidden="true"></i>
+          </button>
+          <div class="prestation-accordion-content" hidden>${renderParagraphs(c.body)}</div>
+        </article>`).join('')}</div>`;
+    }
+    return `
+      <section class="section page-section-soft prestation-extra-section culture-section" id="${subrubriqueId(navIndex)}" data-prestation-extra-panel data-prestation-extra-index="${navIndex}" hidden>
+        <div class="container">
+          <article class="prestation-extra-card">
+            <span class="section-tag"><i class="fa-solid ${esc(section.icon || 'fa-circle-check')}" aria-hidden="true"></i> ${esc(section.badge)}</span>
+            <h2>${esc(section.title)}</h2>
+            ${section.intro && section.intro.length ? renderParagraphs(section.intro) : ''}
+          </article>
+          ${blocks ? `<div class="culture-blocks">${blocks}</div>` : ''}
+          ${celeb}
+        </div>
+      </section>`;
+  }
+
+  function renderCulturePartnersSection(section, navIndex) {
+    const groups = (section.groups || []).map((g) => `
+      <div class="culture-partner-group">
+        <h3 class="culture-partner-group-title"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> ${esc(g.title)}</h3>
+        <div class="culture-partner-grid">
+          ${g.items.map((it) => `
+            <article class="culture-partner-card">
+              <h4>${esc(it.name)}</h4>
+              <a class="bank-card-download" href="${esc(asset(it.pdf))}" download><i class="fa-solid fa-download" aria-hidden="true"></i> Télécharger</a>
+            </article>`).join('')}
+        </div>
+      </div>`).join('');
+    return `
+      <section class="section page-section-soft prestation-extra-section culture-section" id="${subrubriqueId(navIndex)}" data-prestation-extra-panel data-prestation-extra-index="${navIndex}" hidden>
+        <div class="container">
+          <article class="prestation-extra-card">
+            <span class="section-tag"><i class="fa-solid ${esc(section.icon || 'fa-handshake')}" aria-hidden="true"></i> ${esc(section.badge)}</span>
+            <h2>${esc(section.title)}</h2>
+            ${section.intro && section.intro.length ? renderParagraphs(section.intro) : ''}
+          </article>
+          ${groups}
+        </div>
+      </section>`;
+  }
+
   function serviceText(key) {
     const text = services[key]?.[lang] || services[key]?.fr;
     if (!text) return text;
+    if (key === 'culture') {
+      const menuItems = localizedCultureMenu();
+      return { ...text, menuItems, chips: menuItems.map((item) => item.label), centerMedical: cultureCenter, extraSections: cultureExtra };
+    }
     if (key === 'prevoyance') {
       const menuItems = localizedPrevoyanceMenu(lang);
       return { ...text, menuItems, chips: menuItems.map((item) => item.label) };
@@ -2249,6 +2421,8 @@
       const navIndex = Number.isInteger(section.navIndex) ? section.navIndex : firstIndex + index;
       if (section.type === 'medicalPartners') return renderMedicalPartnersSection(section, navIndex);
       if (section.type === 'bankOffers') return renderBankOffersSection(section, navIndex);
+      if (section.type === 'cultureRubrique') return renderCultureSection(section, navIndex);
+      if (section.type === 'culturePartners') return renderCulturePartnersSection(section, navIndex);
       return `
       <section class="section page-section-soft prestation-extra-section" id="${subrubriqueId(navIndex)}" data-prestation-extra-panel data-prestation-extra-index="${navIndex}" hidden>
         <div class="container">
@@ -2904,7 +3078,7 @@
         </div>
       </section>
       <section class="prestation-nav">
-        <div class="container prestation-nav-inner ${detailMenuItems.length > 5 ? 'is-split-nav' : ''}">
+        <div class="container prestation-nav-inner ${detailMenuItems.length === 7 ? 'is-split-nav' : ''}">
           ${/*
             Prévoyance menu checklist:
             - 7 items must be rendered for every language.

@@ -2897,3 +2897,80 @@ html[dir='rtl'] .prestation-keypoints-panel::before {
 @media (prefers-reduced-motion: reduce) {
   .bank-offer-card, .bank-logo, .bank-card-download { transition: none; }
 }
+
+/* ============================================================
+   Culture, loisirs et voyages — blocs de rubrique + partenaires
+   ============================================================ */
+.culture-blocks {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.culture-block {
+  background: #fff;
+  border: 1px solid rgba(28, 82, 55, 0.12);
+  border-radius: 1.1rem;
+  padding: 1.15rem 1.35rem;
+  box-shadow: 0 14px 38px rgba(16, 55, 35, 0.06);
+}
+
+.culture-block h3 {
+  margin: 0 0 0.6rem;
+  color: #143b28;
+  font-size: 1.12rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.culture-block p { margin: 0 0 0.55rem; color: #536a5d; line-height: 1.72; }
+.culture-block p:last-child { margin-bottom: 0; }
+.culture-block ul { margin: 0; padding-inline-start: 1.2rem; }
+.culture-block li { color: #536a5d; line-height: 1.65; margin-bottom: 0.3rem; }
+
+.culture-accordion { margin-top: 1.25rem; }
+
+/* Partenariats — groupes + cartes de téléchargement */
+.culture-partner-group { margin-top: 1.4rem; }
+.culture-partner-group-title {
+  margin: 0 0 0.85rem;
+  color: #143b28;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.culture-partner-group-title i { color: #c8a44d; font-size: 0.85em; }
+
+.culture-partner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.culture-partner-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.2rem 1.25rem;
+  background: #fff;
+  border: 1px solid rgba(28, 82, 55, 0.12);
+  border-radius: 1.1rem;
+  box-shadow: 0 14px 38px rgba(16, 55, 35, 0.06);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.culture-partner-card:hover,
+.culture-partner-card:focus-within {
+  transform: translateY(-3px);
+  border-color: rgba(214, 169, 65, 0.5);
+  box-shadow: 0 20px 46px rgba(16, 55, 35, 0.12);
+}
+.culture-partner-card h4 {
+  margin: 0;
+  color: #143b28;
+  font-size: 1.02rem;
+  line-height: 1.3;
+}
