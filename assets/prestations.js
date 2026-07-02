@@ -1745,14 +1745,14 @@
       intro: ['Pour les prestations : Veuillez consulter le fichier joint.'],
       groups: [
         { title: 'Hôtels et complexes touristiques', items: [
-          { name: 'Agence Location et Vacances', statut: 'Confirmé', pdf: 'assets/culture/partenariats/agence-location-vacances.pdf' }
+          { name: 'Agence Location et Vacances', statut: 'Confirmé', logo: 'assets/images/Partenariats/Location et Vacances.png', pdf: 'assets/culture/partenariats/agence-location-vacances.pdf' }
         ] },
         { title: 'Établissements de loisirs conventionnés', items: [
-          { name: 'mWellness',              statut: 'Confirmé', pdf: 'assets/culture/partenariats/mwellness.pdf' },
-          { name: 'Club STCO Oujda',        statut: 'Confirmé', pdf: 'assets/culture/partenariats/club-stco-oujda.pdf' },
-          { name: 'Club Lixus Move Larache',statut: 'Confirmé', pdf: 'assets/culture/partenariats/club-lixus.pdf' },
-          { name: 'Sonarges',               statut: 'Confirmé', pdf: 'assets/culture/partenariats/sonarges.pdf' },
-          { name: 'Zoo de Rabat',           statut: 'Confirmé', pdf: 'assets/culture/partenariats/zoo-de-rabat.pdf' }
+          { name: 'mWellness',              statut: 'Confirmé', logo: 'assets/images/Partenariats/mWellness.png', pdf: 'assets/culture/partenariats/mwellness.pdf' },
+          { name: 'Club STCO Oujda',        statut: 'Confirmé', logo: 'assets/images/Partenariats/Club STCO Oujda.webp', pdf: 'assets/culture/partenariats/club-stco-oujda.pdf' },
+          { name: 'Club Lixus Move Larache',statut: 'Confirmé', logo: 'assets/images/Partenariats/Club-Lixus-Move-Larache.png', pdf: 'assets/culture/partenariats/club-lixus.pdf' },
+          { name: 'Sonarges',               statut: 'Confirmé', logo: 'assets/images/Partenariats/sonarges.png', pdf: 'assets/culture/partenariats/sonarges.pdf' },
+          { name: 'Zoo de Rabat',           statut: 'Confirmé', logo: 'assets/images/Partenariats/Zoo de Rabat.png', pdf: 'assets/culture/partenariats/zoo-de-rabat.pdf' }
         ] }
       ] }
   ];
@@ -2175,10 +2175,15 @@
     const groups = (section.groups || []).map((g) => `
       <div class="culture-partner-group">
         <h3 class="culture-partner-group-title"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> ${esc(g.title)}</h3>
-        <div class="culture-partner-grid">
+        <div class="bank-offers-grid culture-partner-grid">
           ${g.items.map((it) => `
-            <article class="culture-partner-card">
-              <h4>${esc(it.name)}</h4>
+            <article class="bank-offer-card culture-partner-card">
+              <div class="bank-card-logo culture-partner-logo">
+                ${it.logo ? `<img class="bank-logo" src="${esc(asset(it.logo))}" alt="${esc(it.name)}" loading="eager" decoding="async"
+                 onerror="this.closest('.bank-card-logo').classList.add('is-fallback');this.remove();" />` : ''}
+                <span class="bank-logo-fallback">${esc(it.name)}</span>
+              </div>
+              <h4 class="bank-card-name">${esc(it.name)}</h4>
               ${it.statut ? `<span class="culture-partner-status"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> ${esc(it.statut)}</span>` : ''}
               <a class="bank-card-download" href="${esc(asset(it.pdf))}" download><i class="fa-solid fa-download" aria-hidden="true"></i> ${esc(labels.download)}</a>
             </article>`).join('')}
@@ -3533,7 +3538,7 @@
         </div>
       </section>
       <section class="prestation-nav">
-        <div class="container prestation-nav-inner ${detailMenuItems.length === 7 ? 'is-split-nav' : ''}">
+        <div class="container prestation-nav-inner ${detailMenuItems.length === 7 ? 'is-split-nav' : ''} ${key === 'culture' ? 'is-culture-nav' : ''}">
           ${/*
             Prévoyance menu checklist:
             - 7 items must be rendered for every language.
