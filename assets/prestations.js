@@ -153,6 +153,8 @@
         results: 'résultat(s)',
         noResults: 'Aucun partenaire ne correspond aux filtres.',
         noRegional: 'Aucun partenaire régional renseigné pour cette région.',
+        selectRegionalFilter: 'Sélectionnez une région ou une catégorie pour afficher les partenaires.',
+        selectCentralFilter: 'Sélectionnez une catégorie pour afficher les partenaires du niveau central.',
         downloadNotice: 'Télécharger avis',
         downloadContact: 'Télécharger contact',
         downloadUnavailable: 'Avis indisponible',
@@ -217,6 +219,8 @@
         results: 'نتيجة',
         noResults: 'لا يوجد شريك مطابق للمرشحات.',
         noRegional: 'لا يوجد شريك جهوي مسجل لهذه الجهة.',
+        selectRegionalFilter: 'اختر جهة أو فئة لعرض الشركاء.',
+        selectCentralFilter: 'اختر فئة لعرض شركاء المستوى المركزي.',
         downloadNotice: 'تحميل الإشعار',
         downloadContact: 'تحميل جهة الاتصال',
         downloadUnavailable: 'الإشعار غير متوفر',
@@ -281,6 +285,8 @@
         results: 'ⵜⵉⴼⵔⵉⵏ',
         noResults: 'ⵓⵔ ⵉⵍⵍⵉ ⵓⵣⴷⴰⵢ ⵉⵎⵙⴰⵙⴰⵏ ⴷ ⵉⵙⵜⴰⵢⵏ.',
         noRegional: 'ⵓⵔ ⵉⵍⵍⵉ ⵓⵣⴷⴰⵢ ⴰⵏⵏⴰⵡ ⵉ ⵜⵎⵏⴰⴹⵜ ⴰⴷ.',
+        selectRegionalFilter: 'ⴼⵔⵏ ⵜⴰⵎⵏⴰⴹⵜ ⵏⵖ ⵜⴰⴳⴳⴰⵢⵜ ⴰⴷ ⵜⵙⴽⵏⴷ ⵉⵣⴷⴰⵢⵏ.',
+        selectCentralFilter: 'ⴼⵔⵏ ⵜⴰⴳⴳⴰⵢⵜ ⴰⴷ ⵜⵙⴽⵏⴷ ⵉⵣⴷⴰⵢⵏ ⵏ ⵓⵙⵡⵉⵔ ⴰⵎⵎⴰⵙ.',
         downloadNotice: 'ⵙⵉⴷⵔ ⴰⵙⴰⵍⵉ',
         downloadContact: 'ⵙⵉⴷⵔ ⴰⵎⵢⴰⵡⴰⴹ',
         downloadUnavailable: 'ⴰⵙⴰⵍⵉ ⵓⵔ ⵉⵍⵍⵉ',
@@ -2631,6 +2637,10 @@
     return medicalCategoryIcons[category] || 'fa-stethoscope';
   }
 
+  function medicalCategoryFilterValue(category) {
+    return category === 'CLINIQUE' ? 'CLINIQUES' : category;
+  }
+
   function medicalCopy() {
     return labels[lang]?.medicalPartners || labels.fr.medicalPartners;
   }
@@ -3181,7 +3191,9 @@
   }
 
   function uniqueMedicalValues(entries, key) {
-    return [...new Set(entries.map((entry) => entry[key]).filter(Boolean))]
+    return [...new Set(entries.map((entry) => (
+      key === 'categorie' ? medicalCategoryFilterValue(entry[key]) : entry[key]
+    )).filter(Boolean))]
       .sort((a, b) => String(a).localeCompare(String(b), 'fr'));
   }
 
@@ -3314,7 +3326,7 @@
     const getRegionId = (entry) => medicalRegionFromName(entry.region)?.id || '';
     const getRegionalEntries = () => (
       !selectedRegion
-        ? bySection.regional
+        ? bySection.regional.concat(bySection.central)
         : selectedRegion === 'rabat-sale-kenitra'
         ? bySection.central
         : bySection.regional.filter((entry) => getRegionId(entry) === selectedRegion)
@@ -3327,7 +3339,7 @@
       const source = scope === 'regional' ? getRegionalEntries() : bySection[scope];
       return source.filter((entry) => {
         if (city && entry.ville !== city) return false;
-        if (category && entry.categorie !== category) return false;
+        if (category && medicalCategoryFilterValue(entry.categorie) !== category) return false;
         if (!query) return true;
         return normalizeMedicalValue([entry.medecin, entry.organisme, entry.categorie, entry.adresse, entry.ville].join(' ')).includes(query);
       });
@@ -3376,6 +3388,20 @@
       setMedicalSelectOptions(controls.category, categories, copy.allCategories, translateMedicalCategory);
       setMedicalCategoryButtons(controls, categories, copy.allCategories);
       const entries = applyFilters(scope);
+      const hasCategory = !!controls.category?.value;
+      const shouldShowEntries = scope === 'regional'
+        ? (!!selectedRegion || hasCategory)
+        : hasCategory;
+      if (!shouldShowEntries) {
+        pages[scope] = 1;
+        if (controls.count) controls.count.textContent = '';
+        if (controls.results) {
+          const prompt = scope === 'regional' ? copy.selectRegionalFilter : copy.selectCentralFilter;
+          controls.results.innerHTML = `<p class="medical-partner-empty">${esc(prompt)}</p>`;
+        }
+        renderPagination(controls, scope, 1);
+        return;
+      }
       const totalPages = Math.max(1, Math.ceil(entries.length / pageSize));
       pages[scope] = Math.min(Math.max(1, pages[scope]), totalPages);
       const visibleEntries = entries.slice((pages[scope] - 1) * pageSize, pages[scope] * pageSize);
