@@ -1745,12 +1745,12 @@
       { navIndex: 1, icon: 'fa-medal', badge: 'Préparation aux grandes écoles', title: 'Préparation aux grandes écoles, bourses d’excellence et prix d’encouragement',
         intro: ['La FOS-Agri accompagne les enfants des adhérents les plus brillants dans leur préparation aux grandes écoles, à travers deux dispositifs complémentaires : les bourses d’excellence et les prix d’encouragement.', 'En sus des bourses d’excellence, la FOS-Agri octroie aux autres bacheliers ayant obtenu une moyenne supérieure ou égale à 15 à l’examen national des prix d’encouragement matérialisés en ordinateurs portables, tablettes… utiles pour la poursuite de leur parcours universitaire.'],
         beneficiariesTitle: 'Bénéficiaires',
-        beneficiaries: ['Les enfants des adhérents en deuxième année du baccalauréat ayant obtenu les moyennes les plus élevées à l’examen national (moyenne supérieure ou égale à 15, aussi bien au niveau central que régional), et ce dans la limite du budget disponible.'],
+        beneficiaries: [{ number: '01', text: 'Les enfants des adhérents en deuxième année du baccalauréat ayant obtenu les moyennes les plus élevées à l’examen national (moyenne supérieure ou égale à 15, aussi bien au niveau central que régional), et ce dans la limite du budget disponible.' }],
         blocks: [{ icon: 'fa-clipboard-list', title: 'Inscription et modalités', items: [{ title: 'Comment s’inscrire', body: 'Inscription en ligne.' }] }] },
       { navIndex: 2, icon: 'fa-hand-holding-heart', badge: 'Bourse sociale', title: 'Bourse sociale',
         intro: ['Dans le cadre de son engagement en faveur de l’accompagnement de l’excellence scolaire des enfants des adhérents, la Fondation met en place un programme de bourses sociales destiné aux bacheliers relevant des échelles 9 et inférieures, ayant obtenu une moyenne égale ou supérieure à 10 à l’examen national et poursuivant leurs études dans un établissement d’enseignement public ou privé reconnu, au Maroc ou à l’étranger.', 'Cette bourse est accordée à hauteur de 500 DH par mois pendant 10 mois par an, sur une durée de 3 ans.'],
         beneficiariesTitle: 'Bénéficiaires',
-        beneficiaries: ['Les enfants des adhérents en deuxième année de baccalauréat ayant obtenu une moyenne égale ou supérieure à 10 à l’examen national et poursuivant leurs études dans un établissement d’enseignement public ou privé reconnu, au Maroc ou à l’étranger.'],
+        beneficiaries: [{ number: '01', text: 'Les enfants des adhérents en deuxième année de baccalauréat ayant obtenu une moyenne égale ou supérieure à 10 à l’examen national et poursuivant leurs études dans un établissement d’enseignement public ou privé reconnu, au Maroc ou à l’étranger.' }],
         blocks: [
           { icon: 'fa-clipboard-list', title: 'Inscription et modalités', items: [{ title: 'Comment s’inscrire', body: 'Inscription en ligne.' }] },
           { icon: 'fa-file-lines', title: 'Pièces à fournir', items: [{ title: 'Documents requis', bullets: ['Inscription en ligne', 'Acte d’engagement de l’adhérent', 'Copie de l’attestation du baccalauréat de l’année en cours', 'Copie du relevé de notes du baccalauréat', 'Original ou copie de l’attestation d’inscription dans l’un des établissements d’enseignement publics au Maroc ou privé reconnu par l’État', 'Copie de la CIN du bachelier', 'Extrait d’acte de naissance du bachelier', 'Une photo d’identité'] }] }
@@ -1758,7 +1758,7 @@
       { navIndex: 3, icon: 'fa-sack-dollar', badge: 'Primes de rentrée scolaire', title: 'Primes de rentrée scolaire',
         intro: ['Parallèlement aux autres actions d’accompagnement des enfants de ses adhérents scolarisés, la FOS-Agri leur octroie également une aide financière afin de faire face aux dépenses de la rentrée scolaire.', 'Le montant de la prime varie en fonction du nombre d’enfants scolarisés au niveau primaire à charge.'],
         beneficiariesTitle: 'Bénéficiaires',
-        beneficiaries: ['Adhérents classés de l’échelle 6 à 9 ayant des enfants scolarisés en primaire âgés de 12 ans maximum.'],
+        beneficiaries: [{ number: '01', text: 'Adhérents classés de l’échelle 6 à 9 ayant des enfants scolarisés en primaire âgés de 12 ans maximum.' }],
         blocks: [
           { icon: 'fa-sack-dollar', title: 'Montant de la prime', mode: 'cards', items: [{ amount: '400 DH', label: '1 enfant' }, { amount: '600 DH', label: '2 enfants' }, { amount: '800 DH', label: '3 enfants' }] },
           { icon: 'fa-clipboard-list', title: 'Inscription et modalités', items: [{ title: 'Comment s’inscrire', body: 'Inscription en ligne.' }] },
@@ -1772,12 +1772,12 @@
       { navIndex: 1, icon: 'fa-medal', badge: 'التحضير للمدارس العليا', title: 'التحضير للمدارس العليا، منح التميز وجوائز التشجيع',
         intro: ['تواكب FOS-Agri أبناء المنخرطين المتفوقين في تحضيرهم لولوج المدارس العليا، من خلال آليتين متكاملتين: منح التميز وجوائز التشجيع.', 'بالإضافة إلى منح التميز، تمنح FOS-Agri للحاصلين على معدل يفوق أو يساوي 15 في الامتحان الوطني جوائز تشجيعية على شكل حواسيب محمولة وأجهزة لوحية... مفيدة لمتابعة مسارهم الجامعي.'],
         beneficiariesTitle: 'المستفيدون',
-        beneficiaries: ['أبناء المنخرطين في السنة الثانية من سلك البكالوريا الحاصلون على أعلى المعدلات في الامتحان الوطني (معدل يفوق أو يساوي 15، على المستويين المركزي والجهوي)، وذلك في حدود الميزانية المتاحة.'],
+        beneficiaries: [{ number: '01', text: 'أبناء المنخرطين في السنة الثانية من سلك البكالوريا الحاصلون على أعلى المعدلات في الامتحان الوطني (معدل يفوق أو يساوي 15، على المستويين المركزي والجهوي)، وذلك في حدود الميزانية المتاحة.' }],
         blocks: [{ icon: 'fa-clipboard-list', title: 'التسجيل والكيفية', items: [{ title: 'كيفية التسجيل', body: 'التسجيل عبر الإنترنت.' }] }] },
       { navIndex: 2, icon: 'fa-hand-holding-heart', badge: 'المنحة الاجتماعية', title: 'المنحة الاجتماعية',
         intro: ['في إطار التزامها بمواكبة التفوق الدراسي لأبناء المنخرطين، تضع المؤسسة برنامجا للمنح الاجتماعية موجها لخريجي البكالوريا المصنفين في السلم 9 وما دونه، الحاصلين على معدل يساوي أو يفوق 10 في الامتحان الوطني والمتابعين لدراستهم في مؤسسة تعليمية عمومية أو خاصة معترف بها، بالمغرب أو بالخارج.', 'تُمنح هذه المنحة بقيمة 500 درهم شهريا لمدة 10 أشهر في السنة، على مدى 3 سنوات.'],
         beneficiariesTitle: 'المستفيدون',
-        beneficiaries: ['أبناء المنخرطين في السنة الثانية من سلك البكالوريا الحاصلون على معدل يساوي أو يفوق 10 في الامتحان الوطني والمتابعون لدراستهم في مؤسسة تعليمية عمومية أو خاصة معترف بها، بالمغرب أو بالخارج.'],
+        beneficiaries: [{ number: '01', text: 'أبناء المنخرطين في السنة الثانية من سلك البكالوريا الحاصلون على معدل يساوي أو يفوق 10 في الامتحان الوطني والمتابعون لدراستهم في مؤسسة تعليمية عمومية أو خاصة معترف بها، بالمغرب أو بالخارج.' }],
         blocks: [
           { icon: 'fa-clipboard-list', title: 'التسجيل والكيفية', items: [{ title: 'كيفية التسجيل', body: 'التسجيل عبر الإنترنت.' }] },
           { icon: 'fa-file-lines', title: 'الوثائق المطلوبة', items: [{ title: 'الوثائق المطلوبة', bullets: ['التسجيل عبر الإنترنت', 'تعهد المنخرط', 'نسخة من شهادة النجاح في البكالوريا للسنة الجارية', 'نسخة من كشف نقط البكالوريا', 'أصل أو نسخة من شهادة التسجيل في إحدى المؤسسات التعليمية العمومية بالمغرب أو الخاصة المعترف بها من طرف الدولة', 'نسخة من البطاقة الوطنية للتعريف الخاصة بالحاصل على البكالوريا', 'مستخرج من رسم الولادة الخاص بالحاصل على البكالوريا', 'صورة شمسية'] }] }
@@ -1785,7 +1785,7 @@
       { navIndex: 3, icon: 'fa-sack-dollar', badge: 'منح الدخول المدرسي', title: 'منح الدخول المدرسي',
         intro: ['بالتوازي مع الإجراءات الأخرى لمواكبة أبناء منخرطيها المتمدرسين، تمنحهم FOS-Agri كذلك دعما ماليا لمواجهة نفقات الدخول المدرسي.', 'يختلف مبلغ المنحة حسب عدد الأبناء المتمدرسين في السلك الابتدائي والمتكفل بهم.'],
         beneficiariesTitle: 'المستفيدون',
-        beneficiaries: ['المنخرطون المصنفون من السلم 6 إلى 9 الذين لديهم أبناء متمدرسون في السلك الابتدائي لا تتجاوز أعمارهم 12 سنة.'],
+        beneficiaries: [{ number: '01', text: 'المنخرطون المصنفون من السلم 6 إلى 9 الذين لديهم أبناء متمدرسون في السلك الابتدائي لا تتجاوز أعمارهم 12 سنة.' }],
         blocks: [
           { icon: 'fa-sack-dollar', title: 'مبلغ المنحة', mode: 'cards', items: [{ amount: '400 درهم', label: 'طفل واحد' }, { amount: '600 درهم', label: 'طفلان' }, { amount: '800 درهم', label: '3 أطفال' }] },
           { icon: 'fa-clipboard-list', title: 'التسجيل والكيفية', items: [{ title: 'كيفية التسجيل', body: 'التسجيل عبر الإنترنت.' }] },
@@ -1799,12 +1799,12 @@
       { navIndex: 1, icon: 'fa-medal', badge: 'ⴰⵙⵎⵓⵜⵜⴳ ⵉ ⵜⵎⴰⵣⵉⵔⵉⵏ', title: 'ⴰⵙⵎⵓⵜⵜⴳ ⵉ ⵜⵎⴰⵣⵉⵔⵉⵏ ⵏ ⵓⵙⵍⵎⴷ, ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⵎⵥⵉ ⴷ ⵜⵉⵎⵓⴷⴰ ⵏ ⵓⵙⵏⵜⴰⵍ',
         intro: ['ⵜⵙⴽⴰ FOS-Agri ⴰⵙⵎⵓⵜⵜⴳ ⵏ ⵜⴰⵔⵡⴰ ⵉⵎⵥⵢⴰⵏⵏ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵉ ⵓⴱⵔⵉⴷ ⵏ ⵜⵎⴰⵣⵉⵔⵉⵏ ⵏ ⵓⵙⵍⵎⴷ, ⵙ ⵙⵉⵏ ⵉⵙⵏⴼⴰⵔⵏ: ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⵎⵥⵉ ⴷ ⵜⵉⵎⵓⴷⴰ ⵏ ⵓⵙⵏⵜⴰⵍ.', 'ⵜⵙⴽⴰ FOS-Agri ⵉ ⵉⵏⵍⵎⴰⴷⵏ ⵢⵓⵙⵏ ⵜⵉⵍⴰⵍ ⵏ 15 ⴳ ⵓⵙⵎⵏⵉⴷ ⴰⵏⴰⵎⵓⵔ ⵜⵉⵎⵓⴷⴰ ⵏ ⵓⵙⵏⵜⴰⵍ (ⵉⴱⴰⵏⴰⵏ, ⵜⵉⵎⵥⵉⵢⵉⵏ ⵏ ⵓⴼⵓⵙ) ⵉ ⵓⵎⵓⴷⴷⵓ ⵏⵏⵙⵏ.'],
         beneficiariesTitle: 'ⵉⵎⵙⵜⴼⵉⴷⵏ',
-        beneficiaries: ['ⵜⴰⵔⵡⴰ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ ⵡⵉⵙⵙ ⵙⵉⵏ ⵏ ⵍⴱⴰⴽ ⵢⵓⵙⵏ ⵜⵉⵍⴰⵍ ⵢⴰⵜⵜⵓⵢⵏ ⴳ ⵓⵙⵎⵏⵉⴷ ⴰⵏⴰⵎⵓⵔ (15 ⵏⵖ ⵓⴳⴳⴰⵔ), ⴳ ⵓⵥⴹⴹⴰⵕ ⵏ ⵜⴰⴷⴷⴰⵙⵜ ⵢⵍⵍⴰⵏ.'],
+        beneficiaries: [{ number: '01', text: 'ⵜⴰⵔⵡⴰ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ ⵡⵉⵙⵙ ⵙⵉⵏ ⵏ ⵍⴱⴰⴽ ⵢⵓⵙⵏ ⵜⵉⵍⴰⵍ ⵢⴰⵜⵜⵓⵢⵏ ⴳ ⵓⵙⵎⵏⵉⴷ ⴰⵏⴰⵎⵓⵔ (15 ⵏⵖ ⵓⴳⴳⴰⵔ), ⴳ ⵓⵥⴹⴹⴰⵕ ⵏ ⵜⴰⴷⴷⴰⵙⵜ ⵢⵍⵍⴰⵏ.' }],
         blocks: [{ icon: 'fa-clipboard-list', title: 'ⴰⵙⵎⴰⴳⵍ ⴷ ⵜⵎⴰⵎⴽⵜ', items: [{ title: 'ⵎⴰⵎⴽ ⴰⵙⵎⴰⴳⵍ', body: 'ⵙⵉⴷⵔ ⴰⵙⵎⴰⴳⵍ ⵖⴼ ⵜⵉⵔⵎⵜ.' }] }] },
       { navIndex: 2, icon: 'fa-hand-holding-heart', badge: 'ⵜⴰⵎⵓⴷⴰ ⵜⴰⵏⴰⵎⵓⵏⵜ', title: 'ⵜⴰⵎⵓⴷⴰ ⵜⴰⵏⴰⵎⵓⵏⵜ',
         intro: ['ⴳ ⵓⵙⵎⵓⵜⵜⵉ ⵏⵏⵙ ⵉ ⵓⵎⵓⴷⴷⵓ ⵏ ⵜⵣⵎⵎⴰⵔ ⵏ ⵜⴰⵔⵡⴰ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ, ⵜⵙⴽⴰ ⵜⴰⵎⴰⵡⴰⵙⵜ ⴰⵙⵏⴼⵍ ⵏ ⵜⵎⵓⴷⴰ ⵜⵉⵏⴰⵎⵓⵏⵉⵏ ⵉ ⵉⵎⵙⵙⵍⵎⴰⴷⵏ ⵏ ⵓⵙⵎⵏⵉⴷ 9 ⵏⵖ ⵓⴹⴹⴰⵢ, ⵢⵓⵙⵏⵉⵏ ⵜⵉⵍⴰⵍ 10 ⵏⵖ ⵓⴳⴳⴰⵔ.', 'ⵜⵜⵢⴰⴽⴼ ⵜⵎⵓⴷⴰ ⴰⴷ ⵙ 500 ⴷⵔⵀⵎ ⴳ ⵡⴰⵢⵢⵓⵔ ⵉ 10 ⵡⴰⵢⵢⵓⵔⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ, ⴳ 3 ⵉⵙⴳⴳⵯⴰⵙⵏ.'],
         beneficiariesTitle: 'ⵉⵎⵙⵜⴼⵉⴷⵏ',
-        beneficiaries: ['ⵜⴰⵔⵡⴰ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ ⵡⵉⵙⵙ ⵙⵉⵏ ⵏ ⵍⴱⴰⴽ ⵢⵓⵙⵏⵉⵏ ⵜⵉⵍⴰⵍ 10 ⵏⵖ ⵓⴳⴳⴰⵔ.'],
+        beneficiaries: [{ number: '01', text: 'ⵜⴰⵔⵡⴰ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ ⵡⵉⵙⵙ ⵙⵉⵏ ⵏ ⵍⴱⴰⴽ ⵢⵓⵙⵏⵉⵏ ⵜⵉⵍⴰⵍ 10 ⵏⵖ ⵓⴳⴳⴰⵔ.' }],
         blocks: [
           { icon: 'fa-clipboard-list', title: 'ⴰⵙⵎⴰⴳⵍ ⴷ ⵜⵎⴰⵎⴽⵜ', items: [{ title: 'ⵎⴰⵎⴽ ⴰⵙⵎⴰⴳⵍ', body: 'ⵙⵉⴷⵔ ⴰⵙⵎⴰⴳⵍ ⵖⴼ ⵜⵉⵔⵎⵜ.' }] },
           { icon: 'fa-file-lines', title: 'ⵉⵙⴻⵎⴹⴰⵍ ⵢⵜⵜⵓⵙⵜⴰⵏⵏ', items: [{ title: 'ⵉⵙⴻⵎⴹⴰⵍ', bullets: ['ⵙⵉⴷⵔ ⴰⵙⵎⴰⴳⵍ ⵖⴼ ⵜⵉⵔⵎⵜ', 'ⵜⴰⵙⵔⵜⵉⵜ ⵏ ⵓⵎⵏⵅⵔⴰⵟ', 'ⵜⴰⴽⵓⵜⵜ ⵏ ⵓⵙⵍⵎⴷ', 'ⵜⴰⴽⵓⵜⵜ ⵏ ⵜⵉⵍⴰⵍ', 'ⵜⴰⵙⵔⵜⵉⵜ ⵏ ⵓⵙⵎⴰⴳⵍ', 'ⵜⴰⴽⵓⵜⵜ ⵏ CIN', 'ⵜⴰⴽⵓⵜⵜ ⵏ ⵜⵍⴰⵍⵉⵜ', 'ⵜⴰⵡⵍⴰⴼⵜ'] }] }
@@ -1812,7 +1812,7 @@
       { navIndex: 3, icon: 'fa-sack-dollar', badge: 'ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⴰⵣⵡⴰⵔⵜ', title: 'ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⴰⵣⵡⴰⵔⵜ ⵏ ⵓⵙⵍⵎⴷ',
         intro: ['ⵜⵙⴽⴰ FOS-Agri ⵉ ⵜⴰⵔⵡⴰ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴰⴼⵓⵙ ⵏ ⵉⴷⵔⵉⵎⵏ ⵉ ⵜⴰⵣⵡⴰⵔⵜ ⵏ ⵓⵙⵍⵎⴷ.', 'ⵜⴰⵍⵍⴰⵙⵜ ⵏ ⵜⵎⵓⴷⴰ ⵜⵜⵓⴱⴷⴰⵍ ⵙ ⵓⵎⵉⴹⴰⵏ ⵏ ⵜⴰⵔⵡⴰ.'],
         beneficiariesTitle: 'ⵉⵎⵙⵜⴼⵉⴷⵏ',
-        beneficiaries: ['ⵉⵎⵏⵅⵔⴰⵟⵏ ⵏ ⵓⵙⵎⵏⵉⴷ 6 ⴰⵔ 9 ⵢⵓⵙⵏⵉⵏ ⵜⴰⵔⵡⴰ ⴳ ⵓⵙⵍⵎⴷ ⴰⵎⵣⵡⴰⵔⵓ ⴰⵔ 12 ⵏ ⵉⵙⴳⴳⵯⴰⵙⵏ.'],
+        beneficiaries: [{ number: '01', text: 'ⵉⵎⵏⵅⵔⴰⵟⵏ ⵏ ⵓⵙⵎⵏⵉⴷ 6 ⴰⵔ 9 ⵢⵓⵙⵏⵉⵏ ⵜⴰⵔⵡⴰ ⴳ ⵓⵙⵍⵎⴷ ⴰⵎⵣⵡⴰⵔⵓ ⴰⵔ 12 ⵏ ⵉⵙⴳⴳⵯⴰⵙⵏ.' }],
         blocks: [
           { icon: 'fa-sack-dollar', title: 'ⵜⴰⵍⵍⴰⵙⵜ ⵏ ⵜⵎⵓⴷⴰ', mode: 'cards', items: [{ amount: '400 ⴷⵔⵀⵎ', label: 'ⴰⴼⵔⵓⵅ ⵢⴰⵜ' }, { amount: '600 ⴷⵔⵀⵎ', label: 'ⵙⵉⵏ ⵉⴼⵔⴰⵅⵏ' }, { amount: '800 ⴷⵔⵀⵎ', label: 'ⴽⵕⴰⴹ ⵉⴼⵔⴰⵅⵏ' }] },
           { icon: 'fa-clipboard-list', title: 'ⴰⵙⵎⴰⴳⵍ ⴷ ⵜⵎⴰⵎⴽⵜ', items: [{ title: 'ⵎⴰⵎⴽ ⴰⵙⵎⴰⴳⵍ', body: 'ⵙⵉⴷⵔ ⴰⵙⵎⴰⴳⵍ ⵖⴼ ⵜⵉⵔⵎⵜ.' }] },
