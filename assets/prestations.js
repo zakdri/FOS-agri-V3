@@ -1631,24 +1631,54 @@
     }
   };
 
+  const logementPromoteursItems = [
+    { name: 'Al Omrane', logo: 'assets/images/Partenariats/AL OMRANE.png', pdfs: [
+        { label: 'offre', pdf: 'assets/logement/promoteurs/al-omrane-offre.pdf' },
+        { label: 'projets', pdf: 'assets/logement/promoteurs/al-omrane-liste-projets.xlsx' }
+      ] },
+    { name: 'CGI', logo: 'assets/images/Partenariats/CGI.gif', pdf: 'assets/logement/promoteurs/cgi.pdf' },
+    { name: 'Chaabi Lil Iskane', logo: 'assets/images/Partenariats/CHAABI LIL ISKANE.png', pdf: 'assets/logement/promoteurs/chaabi-lil-iskane.pdf' },
+    { name: 'Dyar Al Mansour', logo: 'assets/images/Partenariats/DYAR AL MANSOUR.png', pdf: 'assets/logement/promoteurs/dyar-al-mansour.pdf' },
+    { name: 'El Mahi Sarl', logo: 'assets/images/Partenariats/EL-MAHI-SARL.png', pdf: 'assets/logement/promoteurs/el-mahi-sarl.pdf' },
+    { name: 'Fadaat Assaada', logo: 'assets/images/Partenariats/FADAAT ASSAADA.jpeg', pdf: 'assets/logement/promoteurs/fadaat-assaada.pdf' },
+    { name: 'Groupe La Manoussa', pdf: 'assets/logement/promoteurs/groupe-la-manoussa.pdf' },
+    { name: 'Alliances Darna', logo: 'assets/images/Partenariats/Alliances-darna.png', pdf: 'assets/logement/promoteurs/alliance-darna.pdf' },
+    { name: 'Palmerie Immobilier', logo: 'assets/images/Partenariats/PALMERIE IMMOBILIER.png', pdf: 'assets/logement/promoteurs/palmerie-immobilier.pdf' }
+  ];
+
+  function logementPromoteursItemsFor(downloadLabel, projetsLabel) {
+    return logementPromoteursItems.map((it) => it.pdfs
+      ? { ...it, pdfs: it.pdfs.map((p) => ({ ...p, label: p.label === 'offre' ? downloadLabel : projetsLabel })) }
+      : it);
+  }
+
   const logementExtra = {
     fr: [
       { navIndex: 1, type: 'bankOffers', category: 'immobilier', icon: 'fa-building-columns', badge: 'Crédits immobiliers', title: 'Offres bancaires — crédits immobiliers', intro: 'Crédits immobiliers négociés avec des banques partenaires. Téléchargez la fiche de chaque banque pour consulter l’offre et l’âge limite de crédit.' },
       { navIndex: 2, type: 'bankOffers', category: 'consommation', icon: 'fa-credit-card', badge: 'Crédits à la consommation', title: 'Offres bancaires — crédits à la consommation', intro: 'Crédits à la consommation à conditions préférentielles auprès des banques et sociétés de financement partenaires.' },
-      { navIndex: 3, icon: 'fa-building', badge: 'Promoteurs immobiliers', title: 'Promoteurs immobiliers', intro: ['Mise en relation des adhérents avec les promoteurs immobiliers partenaires et les offres de logement validées.'] },
-      { navIndex: 4, icon: 'fa-helmet-safety', badge: 'Projets logement FOS-Agri', title: 'Mise en place des projets logement par la FOS-Agri', intro: ['Suivi des projets de logement mis en place par la Fondation au bénéfice des adhérents.'] }
+      { navIndex: 3, type: 'culturePartners', icon: 'fa-building', badge: 'Promoteurs immobiliers', title: 'Promoteurs immobiliers',
+        intro: ['La Fos-Agri développe des partenariats avec plusieurs promoteurs immobiliers pour contribuer, à travers des taux préférentiels, à la concrétisation de leurs projets d’acquisition d’un logement neuf ou ancien, la construction, l’aménagement ou l’achat d’un lot de terrain et sa construction.', 'Ci-après le détail des offres proposées :'],
+        groups: [{ title: 'Promoteurs immobiliers partenaires', items: logementPromoteursItemsFor('Télécharger l’offre', 'Liste des projets') }] },
+      { navIndex: 4, icon: 'fa-helmet-safety', badge: 'Projets logement FOS-Agri', title: 'Mise en place des projets logement par la FOS-Agri',
+        intro: ['Dans le cadre de la poursuite des efforts de prospection de nouveaux projets en faveur de ses adhérents, la Fos-Agri a initié les démarches administratives pour l’acquisition du foncier en vue de la construction de logements sociaux sur des terrains domaniaux appartenant au Département de l’Agriculture.', 'Des projets sont en cours d’étude aux niveaux des villes de Temara, de Meknès, d’Oujda…'] }
     ],
     ar: [
       { navIndex: 1, type: 'bankOffers', category: 'immobilier', icon: 'fa-building-columns', badge: 'القروض العقارية', title: 'عروض بنكية — القروض العقارية', intro: 'قروض عقارية متفاوض بشأنها مع أبناك شريكة. حمّل بطاقة كل بنك للاطلاع على العرض والسن الأقصى للقرض.' },
       { navIndex: 2, type: 'bankOffers', category: 'consommation', icon: 'fa-credit-card', badge: 'قروض الاستهلاك', title: 'عروض بنكية — قروض الاستهلاك', intro: 'قروض استهلاكية بشروط تفضيلية لدى الأبناك وشركات التمويل الشريكة.' },
-      { navIndex: 3, icon: 'fa-building', badge: 'المنعشون العقاريون', title: 'المنعشون العقاريون', intro: ['ربط المنخرطين بالمنعشين العقاريين الشركاء والعروض السكنية المصادق عليها.'] },
-      { navIndex: 4, icon: 'fa-helmet-safety', badge: 'مشاريع السكن FOS-Agri', title: 'إحداث مشاريع السكن من طرف FOS-Agri', intro: ['تتبع المشاريع السكنية التي تضعها المؤسسة لفائدة المنخرطين.'] }
+      { navIndex: 3, type: 'culturePartners', icon: 'fa-building', badge: 'المنعشون العقاريون', title: 'المنعشون العقاريون',
+        intro: ['تطور Fos-Agri شراكات مع العديد من المنعشين العقاريين للمساهمة، من خلال معدلات تفضيلية، في إنجاز مشاريعهم المتعلقة باقتناء سكن جديد أو قديم، أو البناء، أو التهيئة، أو شراء قطعة أرض وبنائها.', 'وفيما يلي تفاصيل العروض المقترحة:'],
+        groups: [{ title: 'المنعشون العقاريون الشركاء', items: logementPromoteursItemsFor('تحميل العرض', 'لائحة المشاريع') }] },
+      { navIndex: 4, icon: 'fa-helmet-safety', badge: 'مشاريع السكن FOS-Agri', title: 'إحداث مشاريع السكن من طرف FOS-Agri',
+        intro: ['في إطار مواصلة جهود التنقيب عن مشاريع جديدة لفائدة منخرطيها، شرعت Fos-Agri في المساطر الإدارية لاقتناء العقار من أجل بناء سكن اجتماعي فوق أراضي الدولة التابعة لقطاع الفلاحة.', 'وتوجد مشاريع قيد الدراسة على مستوى مدن تمارة ومكناس ووجدة...'] }
     ],
     zgh: [
       { navIndex: 1, type: 'bankOffers', category: 'immobilier', icon: 'fa-building-columns', badge: 'ⴰⴽⵔⵉⴹⵉ ⵏ ⵓⵙⵖⵉⵎ', title: 'ⵉⴼⵔⴰⵏ ⵏ ⵉⴱⴰⵏⴽⵏ — ⴰⴽⵔⵉⴹⵉ ⵏ ⵓⵙⵖⵉⵎ', intro: 'ⴰⴽⵔⵉⴹⵉ ⵏ ⵓⵙⵖⵉⵎ ⴷ ⵉⴱⴰⵏⴽⵏ ⵉⵣⴷⵉⵏ. ⵙⵉⴷⵔ ⵜⴰⴽⴰⵔⴹⴰ ⵏ ⴽⵓ ⴱⴰⵏⴽ.' },
       { navIndex: 2, type: 'bankOffers', category: 'consommation', icon: 'fa-credit-card', badge: 'ⴰⴽⵔⵉⴹⵉ ⵏ ⵓⵙⵙⵉⵜⵎ', title: 'ⵉⴼⵔⴰⵏ ⵏ ⵉⴱⴰⵏⴽⵏ — ⴰⴽⵔⵉⴹⵉ ⵏ ⵓⵙⵙⵉⵜⵎ', intro: 'ⴰⴽⵔⵉⴹⵉ ⵏ ⵓⵙⵙⵉⵜⵎ ⵙ ⵜⵎⴰⵏⴰⵡⵜ ⵉⵎⵥⵍⵉⵢⵏ.' },
-      { navIndex: 3, icon: 'fa-building', badge: 'ⵉⵎⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ', title: 'ⵉⵎⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ', intro: ['ⴰⵣⴷⴰⵢ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴷ ⵉⵎⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ.'] },
-      { navIndex: 4, icon: 'fa-helmet-safety', badge: 'ⵉⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ FOS-Agri', title: 'ⴰⵙⴱⵓⵖⵍⵓ ⵏ ⵉⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ ⵙ FOS-Agri', intro: ['ⵓⵜⵜⴰⴱⴰⵄ ⵏ ⵉⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ ⵏ ⵜⵎⴰⵡⴰⵙⵜ.'] }
+      { navIndex: 3, type: 'culturePartners', icon: 'fa-building', badge: 'ⵉⵎⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ', title: 'ⵉⵎⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ',
+        intro: ['ⵜⵙⴽⴰ FOS-Agri ⵉⵣⴷⵡⵉⵢⵏ ⴷ ⵉⵎⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ ⵉ ⵓⵙⵎⵓⵜⵜⵉ, ⵙ ⵜⵎⴰⵏⴰⵡⵜ ⵉⵎⵥⵍⵉⵢⵏ, ⵏ ⵉⵙⵏⴼⴰⵔⵏ ⵏⵏⵙⵏ ⵏ ⵓⵙⵖⵉⵎ ⴰⵎⴰⵢⵏⵓ ⵏⵖ ⴰⵇⴱⵓⵔ, ⴰⴱⵏⵏⵓ, ⴰⵙⵣⵡⵔ ⵏⵖ ⴰⵙⵖ ⵏ ⵢⴰⵜ ⵜⵥⴰⵍⴰ ⴷ ⵓⴱⵏⵏⵓ ⵏⵏⵙ.', 'ⴳ ⵓⴷⴷⴰⵢ ⴰⵢⴰ, ⵉⴼⵔⴰⵏ ⵉⵜⵜⵓⵙⵙⵏⵏ:'],
+        groups: [{ title: 'ⵉⵎⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ ⵉⵣⴷⵉⵏ', items: logementPromoteursItemsFor('ⵙⵉⴷⵔ ⴰⴼⵔⴰⵏ', 'ⵜⴰⵍⵍⴰⵙⵜ ⵏ ⵉⵙⵏⴼⴰⵔⵏ') }] },
+      { navIndex: 4, icon: 'fa-helmet-safety', badge: 'ⵉⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ FOS-Agri', title: 'ⴰⵙⴱⵓⵖⵍⵓ ⵏ ⵉⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵖⵉⵎ ⵙ FOS-Agri',
+        intro: ['ⴳ ⵓⵙⵎⵓⵜⵜⵉ ⵏ ⵉⵅⴷⴷⴰⵎⵏ ⵏ ⵓⴼⴰⵔⵙ ⵏ ⵉⵙⵏⴼⴰⵔⵏ ⵉⵎⴰⵢⵏⵓⵜⵏ ⵉ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵏⵏⵙ, ⵜⴱⴷⴰ FOS-Agri ⴰⵙⵏⴼⵍ ⵏ ⵜⵥⴰⵍⵉⵡⵉⵏ ⵉ ⵓⴱⵏⵏⵓ ⵏ ⵓⵙⵖⵉⵎ ⴰⵏⴰⵎⵓⵔ ⴳ ⵜⵎⵓⵔⴰ ⵏ ⵜⵎⴰⵡⴰⵙⵜ ⵏ ⵜⴼⵍⴰⵃⵜ.', 'ⵉⵙⵏⴼⴰⵔⵏ ⴳⴳⵓⵔⵏⵉⵏ ⴳ ⵜⵎⴷⵉⵏⵉⵏ ⵏ ⵟⵎⴰⵕⴰ, ⵎⴽⵏⴰⵙ, ⵡⵊⴷⴰ...'] }
     ]
   };
 
@@ -2178,14 +2208,17 @@
         <div class="bank-offers-grid culture-partner-grid">
           ${g.items.map((it) => `
             <article class="bank-offer-card culture-partner-card">
-              <div class="bank-card-logo culture-partner-logo">
+              <div class="bank-card-logo culture-partner-logo${it.logo ? '' : ' is-fallback'}">
                 ${it.logo ? `<img class="bank-logo" src="${esc(asset(it.logo))}" alt="${esc(it.name)}" loading="eager" decoding="async"
                  onerror="this.closest('.bank-card-logo').classList.add('is-fallback');this.remove();" />` : ''}
                 <span class="bank-logo-fallback">${esc(it.name)}</span>
               </div>
               <h4 class="bank-card-name">${esc(it.name)}</h4>
               ${it.statut ? `<span class="culture-partner-status"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> ${esc(it.statut)}</span>` : ''}
-              <a class="bank-card-download" href="${esc(asset(it.pdf))}" download><i class="fa-solid fa-download" aria-hidden="true"></i> ${esc(labels.download)}</a>
+              ${Array.isArray(it.pdfs) ? `
+              <div class="bank-card-downloads">
+                ${it.pdfs.map((p) => `<a class="bank-card-download" href="${esc(asset(p.pdf))}" download><i class="fa-solid fa-download" aria-hidden="true"></i> ${esc(p.label || labels.download)}</a>`).join('')}
+              </div>` : `<a class="bank-card-download" href="${esc(asset(it.pdf))}" download><i class="fa-solid fa-download" aria-hidden="true"></i> ${esc(labels.download)}</a>`}
             </article>`).join('')}
         </div>
       </div>`).join('');

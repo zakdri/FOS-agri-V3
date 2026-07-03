@@ -2981,6 +2981,20 @@ html[dir='rtl'] .prestation-keypoints-panel::before {
   outline: none;
 }
 
+.bank-card-downloads {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+}
+.bank-card-downloads .bank-card-download {
+  margin-top: 0;
+  width: 100%;
+  justify-content: center;
+}
+
 @media (min-width: 700px) {
   .bank-offers-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
