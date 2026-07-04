@@ -4094,6 +4094,11 @@
     const hashIndex = getHashIndex();
     if (hashIndex > 0) {
       showTabContent(hashIndex, navLinks[hashIndex], false);
+    } else if (!centerPanel && extraPanels.length) {
+      /* Services without a "center" tab (e.g. Appui aux projets personnels)
+         have no panel visible by default in the static markup — show the
+         first sous-rubrique explicitly instead of leaving it `hidden`. */
+      showTabContent(0, navLinks[0], false);
     }
   }
 
