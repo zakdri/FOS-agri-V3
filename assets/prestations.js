@@ -3976,7 +3976,7 @@
           </div>
         </div>
       </section>`}
-      ${item.centerMedical ? '' : `
+      ${item.centerMedical || key === 'projets' ? '' : `
       <section class="section" id="partners">
         <div class="container">
           <div class="prestation-section-head">
