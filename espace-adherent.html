@@ -1,102 +1,156 @@
 <!doctype html>
 <html lang="fr">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FOS-Agri | Espace adherent</title>
+  <meta name="description" content="Espace adhérent FOS-Agri : connexion sécurisée, mot de passe oublié et accompagnement des adhérents." />
+  <title>FOS-Agri | Espace adhérent</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tifinagh:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tifinagh:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="assets/styles.css?v=4" />
   <link rel="stylesheet" href="assets/secondary-pages.css?v=12" />
+  <link rel="stylesheet" href="assets/espace-adherent.css?v=1" />
 </head>
-
-<body class="secondary-page service-page page-espace-adherent" data-page="special">
+<body class="secondary-page service-page espace-page page-espace-adherent" data-page="espace-adherent">
   <header class="site-header" id="top">
     <div class="container nav-shell">
-      <a class="brand" href="index.html" aria-label="FOS-Agri accueil">
-        <span class="brand-mark"><img src="assets/images/logo.png" alt="Logo FOS-Agri" width="78" height="60" decoding="async" /></span>
-        <span class="brand-copy"><strong>FOS-Agri</strong><small data-i18n="brand.subtitle">Ministère de l'Agriculture</small></span>
-      </a>
-
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
-        aria-label="Ouvrir le menu">
-        <span class="burger-box">
-          <span class="burger-inner"></span>
-        </span>
-      </button>
-
-      <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
-        <a href="index.html" data-i18n="nav.home"></a>
-        <a href="index.html#about" data-i18n="nav.foundation"></a>
-        <a href="index.html#services" data-i18n="nav.services"></a>
-        <a href="index.html#news" data-i18n="nav.news"></a>
-        <a href="index.html#events" data-i18n="nav.events"></a>
-        <a href="index.html#contact" data-i18n="nav.contact"></a>
-        <a class="member-link mobile-only btn-cta-nav" href="index.html#member-space" data-i18n="nav.member"></a>
-        <div class="lang-toggle mobile-nav-lang" role="group" aria-label="Choix de langue">
-          <button class="lang-btn is-active" type="button" data-lang="fr">FR</button>
-          <button class="lang-btn" type="button" data-lang="ar">AR</button>
-          <button class="lang-btn" type="button" data-lang="zgh">ⵜⵎⵣⵉⵖⵜ</button>
-        </div>
-      </nav>
-
-      <div class="nav-actions">
-        <div class="lang-select-wrap desktop-only">
-          <select class="lang-select secondary-lang-select" aria-label="Choix de langue">
-            <option value="fr">FR</option>
-            <option value="ar">AR</option>
-            <option value="zgh">ⵜⵎⵣⵉⵖⵜ</option>
-          </select>
-          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-        </div>
-        <a class="btn-cta-nav desktop-only" href="index.html#member-space" data-i18n="nav.member"></a>
-      </div>
+      <a class="brand" href="index.html" aria-label="FOS-Agri accueil"><span class="brand-mark"><img src="assets/images/logo.png" alt="Logo FOS-Agri" width="78" height="60" decoding="async" /></span><span class="brand-copy"><strong>FOS-Agri</strong><small>Ministère de l'agriculture</small></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+      <nav class="site-nav" id="site-nav"></nav>
+      <div class="nav-actions"><div class="lang-select-wrap desktop-only"><select class="lang-select secondary-lang-select" aria-label="Choix de langue"><option value="fr">FR</option><option value="ar">AR</option><option value="zgh">ⵜⵎⵣⵉⵖⵜ</option></select><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></div><a class="member-link desktop-only" href="espace-adherent.html" data-static-i18n="member"></a></div>
     </div>
   </header>
+
   <main>
-    <section class="hero service-hero">
-      <div class="hero-media" aria-hidden="true"></div>
-      <div class="container hero-content">
-        <div class="service-meta"><i class="fa-solid fa-user-group"></i><span>Espace adhérent</span>
-        </div>
-        <h1>Espace adhérent</h1>
-        <p class="hero-description">Des services et un accompagnement social dédiés aux adhérents de la Fondation.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="index.html#contact">Nous contacter</a>
-          <a class="btn btn-secondary" href="index.html#services">Prestations</a>
-        </div>
+    <section class="page-hero-secondary">
+      <div class="container">
+        <span class="page-kicker"><i class="fa-solid fa-user-shield" aria-hidden="true"></i> <span data-espace-i18n="kicker">Espace adhérent</span></span>
+        <h1 data-espace-i18n="title">Espace adhérent</h1>
+        <p data-espace-i18n="body">Connectez-vous pour suivre vos démarches, consulter vos prestations et échanger avec la Fondation.</p>
       </div>
     </section>
-    <section class="section">
-      <div class="container service-layout">
-        <article class="service-box">
-          <h3>Informations adhérents</h3>
-          <p>Consultez les prestations, conditions et démarches utiles pour accéder aux services FOS-Agri.</p>
+
+    <section class="section espace-section">
+      <div class="container espace-grid">
+        <article class="espace-auth-card">
+          <!-- Login view -->
+          <div class="espace-view" id="espace-view-login">
+            <div class="espace-auth-head">
+              <h2 data-espace-i18n="loginHeading">Connexion</h2>
+              <p data-espace-i18n="loginSub">Accédez à votre espace personnel à l’aide de votre identifiant.</p>
+            </div>
+
+            <div class="espace-alert is-info" id="espace-login-alert" role="alert">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+              <span>
+                <span data-espace-i18n="loginAlert">Cet espace sera relié à la plateforme sécurisée des adhérents. Nos équipes vous contacteront pour finaliser votre accès.</span>
+                <a href="contact.html" data-espace-i18n="loginAlertCta">Contacter la Fondation</a>
+              </span>
+            </div>
+
+            <form class="espace-form" id="espace-login-form" novalidate>
+              <div class="espace-field" id="espace-login-id-field">
+                <label for="espace-login-id" data-espace-i18n="labelId">Identifiant (matricule ou CIN)</label>
+                <div class="espace-input-wrap">
+                  <i class="fa-solid fa-id-badge espace-input-icon" aria-hidden="true"></i>
+                  <input type="text" id="espace-login-id" name="identifiant" autocomplete="username" data-espace-i18n-placeholder="placeholderId" placeholder="Ex. 123456 ou AB12345" />
+                </div>
+                <span class="espace-field-error"><i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i> <span></span></span>
+              </div>
+
+              <div class="espace-field" id="espace-login-password-field">
+                <label for="espace-login-password" data-espace-i18n="labelPassword">Mot de passe</label>
+                <div class="espace-input-wrap has-toggle">
+                  <i class="fa-solid fa-lock espace-input-icon" aria-hidden="true"></i>
+                  <input type="password" id="espace-login-password" name="password" autocomplete="current-password" data-espace-i18n-placeholder="placeholderPassword" placeholder="••••••••" />
+                  <button class="espace-toggle-visibility" type="button" data-state="hidden" data-espace-i18n-aria="showPassword" aria-label="Afficher le mot de passe">
+                    <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <span class="espace-field-error"><i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i> <span></span></span>
+              </div>
+
+              <div class="espace-row-between">
+                <label class="espace-checkbox">
+                  <input type="checkbox" name="remember" />
+                  <span data-espace-i18n="rememberMe">Se souvenir de moi</span>
+                </label>
+                <button type="button" class="espace-link-inline" data-espace-view="forgot" data-espace-i18n="forgotLink">Mot de passe oublié ?</button>
+              </div>
+
+              <button type="submit" class="btn btn-primary espace-submit">
+                <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+                <span data-espace-i18n="submitLogin">Se connecter</span>
+              </button>
+            </form>
+
+            <div class="espace-divider" data-espace-i18n="dividerOr">ou</div>
+
+            <p class="espace-footnote">
+              <strong data-espace-i18n="noAccount">Pas encore de compte ?</strong>
+              <span data-espace-i18n="noAccountBody">Contactez votre gestionnaire RH ou la Fondation pour activer votre accès.</span>
+              <a href="contact.html" data-espace-i18n="noAccountLink">Nous contacter</a>
+            </p>
+          </div>
+
+          <!-- Forgot password view -->
+          <div class="espace-view" id="espace-view-forgot" hidden>
+            <button type="button" class="espace-back-link" data-espace-view="login">
+              <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+              <span data-espace-i18n="backToLogin">Retour à la connexion</span>
+            </button>
+
+            <div class="espace-auth-head" style="margin-top: 1rem">
+              <h2 data-espace-i18n="forgotHeading">Mot de passe oublié</h2>
+              <p data-espace-i18n="forgotSub">Saisissez votre identifiant ou votre email pour recevoir un lien de réinitialisation.</p>
+            </div>
+
+            <div class="espace-alert is-info" id="espace-forgot-alert" role="alert">
+              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+              <span data-espace-i18n="forgotAlert">Si un compte correspond à cet identifiant, un lien de réinitialisation sera envoyé dès l’activation de cette fonctionnalité.</span>
+            </div>
+
+            <form class="espace-form" id="espace-forgot-form" novalidate>
+              <div class="espace-field" id="espace-forgot-id-field">
+                <label for="espace-forgot-id" data-espace-i18n="labelIdOrEmail">Identifiant ou email</label>
+                <div class="espace-input-wrap">
+                  <i class="fa-solid fa-envelope espace-input-icon" aria-hidden="true"></i>
+                  <input type="text" id="espace-forgot-id" name="identifiant-email" autocomplete="username" data-espace-i18n-placeholder="placeholderIdOrEmail" placeholder="Identifiant, CIN ou email" />
+                </div>
+                <span class="espace-field-error"><i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i> <span></span></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary espace-submit">
+                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                <span data-espace-i18n="submitForgot">Envoyer le lien</span>
+              </button>
+            </form>
+          </div>
         </article>
-        <aside class="service-summary">
-          <h3>Orientation</h3>
-          <p>Un accompagnement est proposé pour orienter chaque adhérent vers le service adapté à sa situation.</p>
+
+        <aside class="espace-info-card">
+          <h2 data-espace-i18n="infoTitle">Pourquoi un espace adhérent ?</h2>
+          <p data-espace-i18n="infoBody">Un accès dédié pour simplifier vos démarches auprès de la Fondation.</p>
+          <ul class="espace-benefits">
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span data-espace-i18n="benefit1">Suivre l’état de vos demandes et dossiers.</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span data-espace-i18n="benefit2">Télécharger vos attestations et documents utiles.</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span data-espace-i18n="benefit3">Consulter les prestations auxquelles vous avez droit.</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span data-espace-i18n="benefit4">Échanger directement avec les équipes de la Fondation.</span></li>
+          </ul>
+          <div class="espace-info-contact">
+            <h3 data-espace-i18n="helpTitle">Besoin d’aide ?</h3>
+            <p data-espace-i18n="helpBody">Notre équipe reste à votre disposition pour toute question liée à votre accès.</p>
+            <a href="contact.html"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i> <span data-espace-i18n="helpContact">Voir la page contact</span></a>
+          </div>
         </aside>
       </div>
     </section>
-    <section class="section">
-      <div class="container">
-        <article class="service-box">
-          <h3>Support et suivi</h3>
-          <p>Les équipes de la Fondation assurent un suivi de proximité pour faciliter l’accès aux dispositifs sociaux.</p>
-        </article>
-      </div>
-    </section>
   </main>
-  <footer class="site-footer"></footer>
-  <script src="assets/data.js?v=4"></script>
-  <script src="assets/app.js?v=4"></script>
-  <script src="assets/secondary-pages.js?v=12"></script>
-</body>
 
+  <footer class="site-footer"></footer>
+  <script src="assets/secondary-pages.js?v=12"></script>
+  <script src="assets/espace-adherent.js?v=1"></script>
+</body>
 </html>
