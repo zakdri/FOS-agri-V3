@@ -1878,7 +1878,7 @@
   /* Organismes d'ameublement — "Organismes d'ameublement.xlsx" : Mon Jouet = Résilié, donc exclu. */
   const projetsAmeublementItems = [
     { name: 'Kitea', logo: 'assets/images/Partenariats/Kitea.png', pdf: 'assets/projets/ameublement/kitea-offre.pdf' },
-    { name: 'Biougnach', pdf: 'assets/projets/ameublement/biougnach-liste-magasins.pdf' },
+    { name: 'Biougnach', logo: 'assets/images/Partenariats/biougnach.png', pdf: 'assets/projets/ameublement/biougnach-liste-magasins.pdf' },
     { name: 'Mobilia Triangle d’Or', logo: 'assets/images/Partenariats/Mobilia-Triangle-dOr.png', pdf: 'assets/projets/ameublement/mobilia-triangle-or-offre.pdf' }
   ];
 
@@ -1889,7 +1889,7 @@
   /* Organismes de transport — deux conventions distinctes (ONCF, Supratours). */
   const projetsTransportItems = [
     { name: 'ONCF', logo: 'assets/images/Partenariats/ONCF.png', pdf: 'assets/projets/transport/oncf-offre.pdf' },
-    { name: 'Supratours', pdf: 'assets/projets/transport/supratours-offre.pdf' }
+    { name: 'Supratours', logo: 'assets/images/Partenariats/supratours.svg', pdf: 'assets/projets/transport/supratours-offre.pdf' }
   ];
 
   function projetsTransportItemsFor(statut, downloadLabel) {
@@ -3976,7 +3976,7 @@
           </div>
         </div>
       </section>`}
-      ${item.centerMedical ? '' : `
+      ${item.centerMedical || key === 'projets' ? '' : `
       <section class="section" id="partners">
         <div class="container">
           <div class="prestation-section-head">
