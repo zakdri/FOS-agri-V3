@@ -1727,10 +1727,10 @@
   };
 
   const formationConventionsItems = [
-    { name: 'Institut Français Rabat', pdfs: [{ label: 'offre', pdf: 'assets/formation/conventions/institut-francais-rabat-offre.pdf' }] },
-    { name: 'Institut Cervantes de Rabat', pdfs: [{ label: 'offre', pdf: 'assets/formation/conventions/institut-cervantes-offre.pdf' }, { label: 'note', pdf: 'assets/formation/conventions/institut-cervantes-note.pdf' }] },
-    { name: 'Institut Américain Témara', pdfs: [{ label: 'note', pdf: 'assets/formation/conventions/institut-americain-temara-note.pdf' }] },
-    { name: 'Paaty Academy', pdfs: [{ label: 'note', pdf: 'assets/formation/conventions/paaty-academy-note.pdf' }] }
+    { name: 'Institut Français Rabat', logo: 'assets/images/Partenariats/Institut Français Rabat.png', pdfs: [{ label: 'offre', pdf: 'assets/formation/conventions/institut-francais-rabat-offre.pdf' }] },
+    { name: 'Institut Cervantes de Rabat', logo: 'assets/images/Partenariats/Institut-Cervantes-de-Rabat.png', pdfs: [{ label: 'offre', pdf: 'assets/formation/conventions/institut-cervantes-offre.pdf' }, { label: 'note', pdf: 'assets/formation/conventions/institut-cervantes-note.pdf' }] },
+    { name: 'Institut Américain Témara', logo: 'assets/images/Partenariats/Institut Américain Témara.webp', pdfs: [{ label: 'note', pdf: 'assets/formation/conventions/institut-americain-temara-note.pdf' }] },
+    { name: 'Paati Academy', logo: 'assets/images/Partenariats/Paati-Academy.png', pdfs: [{ label: 'note', pdf: 'assets/formation/conventions/paaty-academy-note.pdf' }] }
   ];
 
   function formationConventionsItemsFor(statut, offreLabel, noteLabel) {
