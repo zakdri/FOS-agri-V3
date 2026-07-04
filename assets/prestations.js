@@ -3935,7 +3935,7 @@
             </a>`).join('')}
         </div>
       </section>
-      ${item.centerMedical ? '' : `
+      ${item.centerMedical || key === 'projets' ? '' : `
       <section class="section" id="overview">
         <div class="container prestation-content-grid ${item.centerMedical ? 'is-single' : ''}">
           <article class="prestation-panel">
@@ -3956,7 +3956,7 @@
       ${renderAmcDetailSection(item)}
       ${renderAmtsDetailSection(item)}
       ${renderExtraPrestationSections(item)}
-      ${item.centerMedical ? '' : `
+      ${item.centerMedical || key === 'projets' ? '' : `
       <section class="section page-section-soft" id="subrubriques">
         <div class="container">
           <div class="prestation-section-head centered">
