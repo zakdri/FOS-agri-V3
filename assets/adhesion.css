@@ -1,0 +1,584 @@
+/* Adhésion pages only. The approved homepage does not load this file. */
+.adhesion-page,
+.adhesion-detail-page {
+  background: #f7f4ec;
+}
+
+.adhesion-detail-hero {
+  position: relative;
+  min-height: 72vh;
+  padding: 10rem 0 5rem;
+  overflow: hidden;
+  color: #fff;
+  background:
+    linear-gradient(110deg, rgba(8, 39, 25, 0.97) 0%, rgba(20, 89, 57, 0.88) 47%, rgba(20, 89, 57, 0.28) 100%),
+    var(--hero-image) center/cover no-repeat;
+}
+
+.adhesion-detail-hero:not(.is-detail) {
+  min-height: 78vh;
+  padding-bottom: 6.5rem;
+  background-position: center right;
+}
+
+.adhesion-detail-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 75% 22%, rgba(214, 169, 65, 0.2), transparent 28%),
+    linear-gradient(90deg, rgba(8, 39, 25, 0.12), rgba(8, 39, 25, 0.42));
+  pointer-events: none;
+}
+
+.adhesion-detail-hero .container {
+  position: relative;
+  z-index: 3;
+}
+
+.adhesion-detail-hero h1 {
+  max-width: 900px;
+  margin: 0 0 1.2rem;
+  color: #fff;
+  font-size: clamp(2.45rem, 5.5vw, 5rem);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.adhesion-detail-hero p {
+  max-width: 820px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.91);
+  font-size: clamp(1.02rem, 1.7vw, 1.28rem);
+  line-height: 1.75;
+}
+
+.adhesion-hero-actions,
+.adhesion-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.35rem;
+}
+
+.adhesion-floating-icons {
+  position: absolute;
+  right: clamp(1rem, 5vw, 4rem);
+  bottom: 3rem;
+  display: grid;
+  gap: 0.8rem;
+  z-index: 4;
+}
+
+html[dir='rtl'] .adhesion-floating-icons {
+  right: auto;
+  left: clamp(1rem, 5vw, 4rem);
+}
+
+.adhesion-floating-icons span {
+  width: 3.25rem;
+  height: 3.25rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.95rem;
+  background: rgba(255, 255, 255, 0.92);
+  color: #17683f;
+  box-shadow: 0 14px 40px rgba(9, 38, 25, 0.22);
+  animation: adhesion-float 4.8s ease-in-out infinite;
+}
+
+.adhesion-floating-icons span:nth-child(2) { animation-delay: 0.5s; }
+.adhesion-floating-icons span:nth-child(3) { animation-delay: 1s; }
+
+@keyframes adhesion-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.adhesion-section-head {
+  max-width: 880px;
+  margin-bottom: 2rem;
+}
+
+.adhesion-section-head.centered {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.adhesion-section-head h2 {
+  margin: 0;
+  color: #143b28;
+  font-size: clamp(2rem, 4vw, 3.45rem);
+  line-height: 1;
+}
+
+.adhesion-section-head p {
+  margin: 0.75rem 0 0;
+  color: #52685c;
+  line-height: 1.75;
+}
+
+.adhesion-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.adhesion-catalog-card {
+  min-height: 100%;
+}
+
+.adhesion-catalog-card a {
+  display: grid;
+  grid-template-rows: 220px 1fr;
+  min-height: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(28, 82, 55, 0.12);
+  border-radius: 1.15rem;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 18px 48px rgba(16, 55, 35, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.adhesion-catalog-card a:hover,
+.adhesion-catalog-card a:focus-visible {
+  transform: translateY(-5px);
+  border-color: rgba(214, 169, 65, 0.32);
+  box-shadow: 0 26px 64px rgba(16, 55, 35, 0.14);
+  outline: none;
+}
+
+.adhesion-catalog-media {
+  position: relative;
+  overflow: hidden;
+  background: var(--image) center/cover no-repeat;
+}
+
+.adhesion-catalog-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.01);
+  transition: transform 0.35s ease;
+}
+
+.adhesion-catalog-card a:hover .adhesion-catalog-media img,
+.adhesion-catalog-card a:focus-visible .adhesion-catalog-media img {
+  transform: scale(1.07);
+}
+
+.adhesion-catalog-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent, rgba(10, 42, 27, 0.68));
+}
+
+.adhesion-catalog-media span {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 1;
+  width: 3.25rem;
+  height: 3.25rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.9rem;
+  background: #fff;
+  color: #17683f;
+  box-shadow: 0 10px 26px rgba(9, 38, 25, 0.18);
+}
+
+html[dir='rtl'] .adhesion-catalog-media span {
+  left: auto;
+  right: 1rem;
+}
+
+.adhesion-catalog-body {
+  display: grid;
+  gap: 0.7rem;
+  padding: 1.2rem;
+}
+
+.adhesion-catalog-body small {
+  color: #17683f;
+  font-weight: 800;
+}
+
+.adhesion-catalog-body strong {
+  color: #143b28;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.adhesion-catalog-body span {
+  color: #536a5d;
+  line-height: 1.65;
+}
+
+.adhesion-catalog-body em {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #17683f;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.adhesion-detail-nav {
+  position: sticky;
+  top: 0.85rem;
+  z-index: 5;
+  margin-top: -3.05rem;
+  padding: 0 0 1.65rem;
+}
+
+.adhesion-detail-nav-inner {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 0.85rem;
+  border-radius: 1.15rem;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(28, 82, 55, 0.09);
+  box-shadow: 0 20px 52px rgba(16, 55, 35, 0.105);
+  backdrop-filter: blur(10px);
+}
+
+.adhesion-nav-chip {
+  position: relative;
+  min-height: 6.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem;
+  border: 1px solid rgba(28, 82, 55, 0.1);
+  border-radius: 0.9rem;
+  background: #fff;
+  color: #13452d;
+  font-size: clamp(0.86rem, 1vw, 1rem);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: start;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(16, 55, 35, 0.055);
+  transition: background 0.22s ease, border-color 0.22s ease, color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.adhesion-nav-chip i {
+  width: 3.2rem;
+  height: 3.2rem;
+  display: inline-grid;
+  flex: 0 0 3.2rem;
+  place-items: center;
+  border-radius: 999px;
+  background: #eef5ea;
+  border: 1px solid rgba(28, 82, 55, 0.12);
+  color: #17683f;
+  font-size: 1.08rem;
+  box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0.55);
+}
+
+.adhesion-nav-chip span {
+  min-width: 0;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.adhesion-nav-chip::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  width: 0;
+  height: 3px;
+  border-radius: 999px 999px 0 0;
+  background: #d6a941;
+  transform: translateX(-50%);
+  transition: width 0.22s ease;
+}
+
+.adhesion-nav-chip:hover,
+.adhesion-nav-chip:focus-visible,
+.adhesion-nav-chip.is-active {
+  background: linear-gradient(135deg, var(--green-deep), var(--green));
+  color: #fff;
+  border-color: rgba(214, 169, 65, 0.28);
+  box-shadow: 0 18px 38px rgba(16, 55, 35, 0.16);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.adhesion-nav-chip:hover i,
+.adhesion-nav-chip:focus-visible i,
+.adhesion-nav-chip.is-active i {
+  background: #fff;
+  color: #17683f;
+}
+
+.adhesion-nav-chip:hover::after,
+.adhesion-nav-chip:focus-visible::after,
+.adhesion-nav-chip.is-active::after {
+  width: min(5.25rem, 44%);
+}
+
+.adhesion-feature-grid,
+.adhesion-procedure-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.adhesion-procedure-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.adhesion-feature-card,
+.adhesion-procedure-card,
+.adhesion-fee-card {
+  background: #fff;
+  border: 1px solid rgba(28, 82, 55, 0.12);
+  border-radius: 1.1rem;
+  padding: clamp(1.15rem, 2.2vw, 1.45rem);
+  box-shadow: 0 18px 48px rgba(16, 55, 35, 0.08);
+  transition: transform 0.26s ease, box-shadow 0.26s ease, border-color 0.26s ease;
+}
+
+.adhesion-feature-card:hover,
+.adhesion-feature-card:focus-within,
+.adhesion-procedure-card:hover,
+.adhesion-procedure-card:focus-within,
+.adhesion-fee-card:hover,
+.adhesion-fee-card:focus-within {
+  transform: translateY(-4px);
+  border-color: rgba(214, 169, 65, 0.32);
+  box-shadow: 0 24px 58px rgba(16, 55, 35, 0.12);
+}
+
+.adhesion-card-icon {
+  width: 3.1rem;
+  height: 3.1rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.9rem;
+  margin-bottom: 0.9rem;
+  background: #e9f5ee;
+  color: #17683f;
+}
+
+.adhesion-feature-card h3,
+.adhesion-procedure-card h3,
+.adhesion-fee-card h3 {
+  margin: 0 0 0.65rem;
+  color: #143b28;
+  line-height: 1.2;
+}
+
+.adhesion-feature-card p,
+.adhesion-procedure-card p,
+.adhesion-procedure-card li {
+  color: #536a5d;
+  line-height: 1.7;
+}
+
+.adhesion-doc-list {
+  display: grid;
+  gap: 0.72rem;
+  padding: 0;
+  margin: 1rem 0 0;
+  list-style: none;
+}
+
+.adhesion-doc-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-top: 1px solid rgba(28, 82, 55, 0.1);
+}
+
+.adhesion-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.42rem;
+  min-height: 2.1rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: #17683f;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.adhesion-download:hover,
+.adhesion-download:focus-visible {
+  background: #277a50;
+  outline: none;
+}
+
+.adhesion-fee-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.adhesion-fee-card {
+  display: grid;
+  min-height: 180px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.adhesion-fee-card h3 {
+  padding: 1.15rem 1.2rem 0;
+}
+
+.adhesion-fee-amount {
+  align-self: end;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1rem 1.2rem;
+  background: linear-gradient(135deg, #123b28, #1e7247);
+  color: #fff;
+}
+
+.adhesion-fee-amount small {
+  color: rgba(255, 255, 255, 0.76);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.adhesion-fee-amount strong {
+  color: #ffd96f;
+  font-size: clamp(1.25rem, 2.2vw, 1.85rem);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.adhesion-cta-panel {
+  margin-top: 1.6rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: clamp(1.35rem, 3vw, 2rem);
+  border-radius: 1.15rem;
+  background: linear-gradient(135deg, #123b28, #1e7247);
+  color: #fff;
+}
+
+.adhesion-cta-panel h2,
+.adhesion-cta-panel p {
+  margin: 0;
+}
+
+.adhesion-cta-panel p {
+  margin-top: 0.55rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+}
+
+html[dir='rtl'] .adhesion-section-head,
+html[dir='rtl'] .adhesion-catalog-body,
+html[dir='rtl'] .adhesion-nav-chip,
+html[dir='rtl'] .adhesion-feature-card,
+html[dir='rtl'] .adhesion-procedure-card,
+html[dir='rtl'] .adhesion-fee-card {
+  text-align: right;
+}
+
+@media (max-width: 1120px) {
+  .adhesion-catalog-grid,
+  .adhesion-feature-grid,
+  .adhesion-fee-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .adhesion-page .site-nav:not(.is-open),
+  .adhesion-page .site-nav:not(.is-open) *,
+  .adhesion-detail-page .site-nav:not(.is-open),
+  .adhesion-detail-page .site-nav:not(.is-open) * {
+    display: none;
+    pointer-events: none;
+  }
+
+  .adhesion-detail-hero {
+    min-height: auto;
+    padding: 8rem 0 4rem;
+  }
+
+  .adhesion-detail-hero:not(.is-detail) {
+    padding-bottom: 3.5rem;
+  }
+
+  .adhesion-detail-hero:not(.is-detail) h1,
+  .adhesion-detail-hero:not(.is-detail) p {
+    max-width: 100%;
+  }
+
+  .adhesion-floating-icons {
+    display: none;
+  }
+
+  .adhesion-detail-nav {
+    position: relative;
+    top: auto;
+    margin-top: -1.1rem;
+  }
+
+  .adhesion-detail-nav-inner,
+  .adhesion-procedure-grid,
+  .adhesion-cta-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .adhesion-nav-chip {
+    min-height: 4.25rem;
+    justify-content: center;
+  }
+
+  .adhesion-cta-panel .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 680px) {
+  .adhesion-catalog-grid,
+  .adhesion-feature-grid,
+  .adhesion-fee-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .adhesion-catalog-card a {
+    grid-template-rows: 190px 1fr;
+  }
+
+  .adhesion-doc-list li {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .adhesion-floating-icons span,
+  .adhesion-catalog-card a,
+  .adhesion-nav-chip,
+  .adhesion-feature-card,
+  .adhesion-procedure-card,
+  .adhesion-fee-card {
+    animation: none;
+    transition: none;
+  }
+}

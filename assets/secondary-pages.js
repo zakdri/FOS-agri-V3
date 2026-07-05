@@ -501,9 +501,9 @@
     { key: 'values',        url: 'nos-valeurs.html',                      icon: 'fa-gem' },
     { key: 'governance',    url: 'la-fondation/gouvernance/index.html',   icon: 'fa-scale-balanced' },
     { key: 'adhesion',      url: 'adhesion.html',                         icon: 'fa-id-card' },
-    { key: 'adherents',     url: 'adhesion.html#adherents-beneficiaires', icon: 'fa-users' },
-    { key: 'procedure',     url: 'adhesion.html#procedure-adhesion',      icon: 'fa-file-signature' },
-    { key: 'cotisations',   url: 'adhesion.html#cotisations',             icon: 'fa-coins' },
+    { key: 'adherents',     url: 'adhesion/adherents-beneficiaires.html', icon: 'fa-users' },
+    { key: 'procedure',     url: 'adhesion/procedure-adhesion.html',      icon: 'fa-file-signature' },
+    { key: 'cotisations',   url: 'adhesion/cotisations.html',             icon: 'fa-coins' },
     { key: 'services',      url: 'prestations.html',                      icon: 'fa-hand-holding-heart' },
     { key: 'prevoyance',    url: 'services/prevoyance.html',              icon: 'fa-heart-pulse' },
     { key: 'culture',       url: 'services/culture-loisirs-voyages.html', icon: 'fa-plane' },
@@ -826,9 +826,9 @@
         { href: 'la-fondation/gouvernance/index.html', key: 'governance' }
       ])}
       ${submenu(page, 'adhesion', 'adhesion.html', 'adhesion', [
-        { href: 'adhesion.html#adherents-beneficiaires', key: 'adherents' },
-        { href: 'adhesion.html#procedure-adhesion', key: 'procedure' },
-        { href: 'adhesion.html#cotisations', key: 'cotisations' }
+        { href: 'adhesion/adherents-beneficiaires.html', key: 'adherents' },
+        { href: 'adhesion/procedure-adhesion.html', key: 'procedure' },
+        { href: 'adhesion/cotisations.html', key: 'cotisations' }
       ])}
       ${submenu(page, 'prestations', 'prestations.html', 'services', [
         { href: 'services/prevoyance.html', key: 'prevoyance' },

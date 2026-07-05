@@ -67,7 +67,7 @@
       'org.audit.title': "Service de l'audit & contrôle de gestion",
       'org.sg.title': 'Secrétaire générale',
       'org.sg.name': 'Mme Neilya AMARA',
-      'org.communication.title': 'Service de la communication',
+      'org.communication.title': 'Cheffe de Service de la communication',
 
       /* Directions */
       'org.dir.prestations.title': 'Direction des prestations',
@@ -137,7 +137,7 @@
       'org.audit.title': 'مصلحة التدقيق ومراقبة التسيير',
       'org.sg.title': 'الكاتبة العامة',
       'org.sg.name': 'السيدة نيلية أمارا',
-      'org.communication.title': 'مصلحة التواصل',
+      'org.communication.title': 'رئيسة مصلحة التواصل',
 
       'org.dir.prestations.title': 'مديرية الخدمات',
       'org.dir.prestations.manager': 'السيدة سناء الحمامي',
@@ -203,7 +203,7 @@
       'org.audit.title': 'ⴰⵙⵏⵉⵏ ⵏ ⵓⵎⵙⵏⵏⴹ ⴷ ⵓⵙⵏⵇⴹ ⵏ ⵜⵏⴱⴰⴹⵜ',
       'org.sg.title': 'ⵜⴰⵎⴰⵔⴰⵜ ⵜⴰⵎⴰⵜⴰⵢⵜ',
       'org.sg.name': 'ⵎⵎ. Neilya AMARA',
-      'org.communication.title': 'ⴰⵙⵏⵉⵏ ⵏ ⵓⵎⵢⴰⵡⴰⴹ',
+      'org.communication.title': 'ⵜⴰⵎⴰⵙⵜ ⵏ ⵓⵙⵏⵉⵏ ⵏ ⵓⵎⵢⴰⵡⴰⴹ',
 
       'org.dir.prestations.title': 'ⵜⴰⵎⵙⵉⵔⵜ ⵏ ⵜⵏⴼⴰⵙ',
       'org.dir.prestations.manager': 'ⵎⵎ. Sanae LEHMAMI',
@@ -308,9 +308,9 @@
             supports: [
               {
                 id: 'communication', order: 1, isActive: true,
-                title: 'Service de la communication',
-                titleAr: 'مصلحة التواصل',
-                titleZgh: 'ⴰⵙⵏⵓⴱⴳ ⵏ ⵜⵎⵢⴰⵡⴰⴹⵜ',
+                title: 'Cheffe de Service de la communication',
+                titleAr: 'رئيسة مصلحة التواصل',
+                titleZgh: 'ⵜⴰⵎⴰⵙⵜ ⵏ ⵓⵙⵏⵉⵏ ⵏ ⵓⵎⵢⴰⵡⴰⴹ',
                 name: 'Mme FAIZA JABIRI',
                 nameAr: 'السيدة فائزة جابري',
                 nameZgh: 'FAIZA JABIRI',
@@ -376,9 +376,9 @@
             title: 'Cheffe de service du suivi des adhésions et du contentieux',
             titleAr: 'رئيسة مصلحة تتبع الانخراطات والمنازعات',
             titleZgh: 'ⵜⴰⵎⴰⵙⴰⵢⵜ ⵏ ⵓⵙⴼⴰⵔ ⵏ ⵓⵙⵏⵓⴱⴳ ⴷ ⵉⵎⵙⵓⴳⴰⵔ',
-            managerName: 'Mme SEKAINA EL-MJID',
-            managerNameAr: 'السيدة سكينة المجيد',
-            managerNameZgh: 'SEKAINA EL-MJID'
+            managerName: 'Mme SEKAINA EL-MJIDI',
+            managerNameAr: 'السيدة سكينة المجيدي',
+            managerNameZgh: 'SEKAINA EL-MJIDI'
           },
           {
             id: 'svc-cooperation', order: 2, isActive: true,
