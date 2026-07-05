@@ -204,6 +204,79 @@ html[dir='rtl'] .page-list-item:focus-within {
   font-weight: 800;
 }
 
+.doc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: 0.5rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  background: var(--green, #1f6a43);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.doc-link:hover,
+.doc-link:focus-visible {
+  background: #277a50;
+  transform: translateY(-1px);
+  outline: none;
+}
+
+html[dir='rtl'] .doc-link {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+.cot-list {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1.75rem;
+}
+
+.cot-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: #fff;
+  border: 1px solid rgba(28, 82, 55, 0.12);
+  border-radius: 1.25rem;
+  padding: 1rem 1.35rem;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cot-row:hover,
+.cot-row:focus-within {
+  transform: translateX(4px);
+  border-color: rgba(31, 106, 67, 0.24);
+  box-shadow: 0 16px 38px rgba(16, 55, 35, 0.09);
+}
+
+html[dir='rtl'] .cot-row:hover,
+html[dir='rtl'] .cot-row:focus-within {
+  transform: translateX(-4px);
+}
+
+.cot-row-label {
+  color: #143b28;
+  font-weight: 700;
+}
+
+.cot-row-amount {
+  background: #17683f;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
 .page-map-card iframe {
   width: 100%;
   min-height: 420px;
