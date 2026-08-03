@@ -1,7 +1,6 @@
 window.siteData = {
   translations: {
     fr: {
-      brand: { subtitle: "Ministere de l'agriculture" },
       nav: {
         home: "Accueil",
         foundation: "La Fondation",
@@ -151,7 +150,6 @@ window.siteData = {
       formNotice: "Votre message a bien ete envoye. Nous vous recontacterons rapidement."
     },
     ar: {
-      brand: { subtitle: "وزارة الفلاحة" },
       nav: {
         home: "الرئيسية",
         foundation: "المؤسسة",
@@ -301,7 +299,6 @@ window.siteData = {
       formNotice: "تم إرسال رسالتكم بنجاح. سنتواصل معكم في أقرب وقت."
     },
     zgh: {
-      brand: { subtitle: "ⵜⴰⵎⴰⵣⵔⵜ ⵏ ⵜⴼⵍⴰⵃⵜ" },
       nav: {
         home: "ⴰⵙⵏⵓⴱⴳ",
         foundation: "ⵜⴰⴷⵓⵙⵉ",

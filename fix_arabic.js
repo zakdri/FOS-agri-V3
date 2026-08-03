@@ -3,7 +3,6 @@ const fs = require('fs');
 let content = fs.readFileSync('assets/data.js', 'utf8');
 
 const arSection = `    ar: {
-      brand: { subtitle: "وزارة الفلاحة" },
       nav: {
         home: "الرئيسية",
         foundation: "المؤسسة",

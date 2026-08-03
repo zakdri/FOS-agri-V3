@@ -24,7 +24,7 @@
       coordinates: 'Coordonnées', regional: 'Relais régionaux', social: 'Réseaux sociaux',
       search: 'Rechercher', searchPlaceholder: 'Rechercher sur FOS-Agri…', searchHint: 'Échap pour fermer',
       searchEmpty: 'Aucun résultat. Essayez un autre mot-clé.', searchStart: 'Commencez à taper pour voir les résultats…',
-      brandSubtitle: 'Ministère de l\'Agriculture', langLabel: 'Langue', langMenuLabel: 'Choix de langue',
+      langLabel: 'Langue', langMenuLabel: 'Choix de langue',
       navLabel: 'Navigation principale', submenuLabel: 'Sous-menu',
       memberClose: 'Fermer',
       /* Hero sections — secondary pages */
@@ -130,7 +130,7 @@
       coordinates: 'المعلومات', regional: 'المنسقون الجهويون', social: 'الشبكات الاجتماعية',
       search: 'بحث', searchPlaceholder: 'ابحث في موقع FOS-Agri…', searchHint: 'إسكاب للإغلاق',
       searchEmpty: 'لا توجد نتائج. جرّب كلمة أخرى.', searchStart: 'ابدأ الكتابة لعرض النتائج…',
-      brandSubtitle: 'وزارة الفلاحة', langLabel: 'اللغة', langMenuLabel: 'اختيار اللغة',
+      langLabel: 'اللغة', langMenuLabel: 'اختيار اللغة',
       navLabel: 'التنقل الرئيسي', submenuLabel: 'قائمة فرعية',
       memberClose: 'إغلاق',
       adhesionKicker: 'الانخراط', adhesionTitle: 'المنخرطون والمستفيدون والمساطر',
@@ -235,7 +235,7 @@
       coordinates: 'ⵉⵙⴰⵍⵏ', regional: 'ⵉⵎⵙⵏⴰⵡⵏ ⵉⵎⵏⴰⴹⵏ', social: 'ⵉⵥⴹⵡⴰⵏ ⵉⵏⴰⵎⵓⵏⵏ',
       search: 'ⴰⵔⵣⵣⵓ', searchPlaceholder: 'ⵔⵣⵣⵓ ⴷⴻⴳ FOS-Agri…', searchHint: 'ⵙⵏⵙ ⵙ Échap',
       searchEmpty: 'ⵓⵍⴰ ⴰⵔⵔⴰⵙⵎ. ⴰⵔⵎ ⴰⵡⴰⵍ ⵏⵏⵉⴹⵏ.', searchStart: 'ⵙⵏⵜⵉ ⴰⴷ ⵜⴻⵜⵉ ⵉ ⵉⴽⴻⴽ ⵉⴰⵔⵎ…',
-      brandSubtitle: 'ⵜⴰⵎⴰⵡⴰⵙⵜ ⵏ ⵜⴼⵍⴰⵃⵜ', langLabel: 'ⵜⵓⵜⵍⴰⵢⵜ', langMenuLabel: 'ⴰⴼⵔⴰⵏ ⵏ ⵜⵓⵜⵍⴰⵢⵜ',
+      langLabel: 'ⵜⵓⵜⵍⴰⵢⵜ', langMenuLabel: 'ⴰⴼⵔⴰⵏ ⵏ ⵜⵓⵜⵍⴰⵢⵜ',
       navLabel: 'ⴰⵙⵓⴷⴷⵓ ⴰⵎⴰⵟⵟⴰⵍ', submenuLabel: 'ⴰⵙⵓⴷⴷⵓ ⴰⴷⴷⴰⵢ',
       memberClose: 'ⵙⵏⵙ',
       adhesionKicker: 'ⴰⵎⵓⵏ', adhesionTitle: 'ⵉⵎⵓⵏⵏ, ⵉⵎⵙⴼⵔⴽⵏ ⴷ ⵜⵎⵙⵙⴰⵔⵉⵏ',
@@ -335,7 +335,6 @@
      translated title/description and a target URL. */
   const extra = {
     fr: {
-      'brand.subtitle': "Ministere de l'agriculture",
       'footer.about': "Fondation pour la promotion des oeuvres sociales du personnel du ministere de l'agriculture.",
       'footer.usefulTitle': 'Liens utiles',
       'footer.useful1': "Appels d'offres",
@@ -387,7 +386,6 @@
       prestationsBandCta: 'Nous contacter'
     },
     ar: {
-      'brand.subtitle': 'وزارة الفلاحة',
       'footer.about': 'مؤسسة النهوض بالأعمال الاجتماعية لموظفي وزارة الفلاحة.',
       'footer.usefulTitle': 'روابط مفيدة',
       'footer.useful1': 'طلبات العروض',
@@ -439,7 +437,6 @@
       prestationsBandCta: 'اتصل بنا'
     },
     zgh: {
-      'brand.subtitle': 'ⵜⴰⵎⴰⵣⴰⵔⵜ ⵏ ⵜⴼⵍⴰⵃⵜ',
       'footer.about': 'ⵜⴰⵎⵙⵙⵓⵔⵜ ⵏ ⵜⵏⵀⵓⵔⵜ ⵙ ⵡⵓⵎⴰⵍ ⵏ ⵉⵎⵙⵙⵓⵔⴰ ⵏ ⵜⴰⵎⴰⵣⴰⵔⵜ ⵏ ⵜⴼⵍⴰⵃⵜ.',
       'footer.usefulTitle': 'ⵉⵙⵖⵡⴰⵏ ⵉⵏⴼⴰⵏ',
       'footer.useful1': 'ⵉⵙⵙⵓⵜⵔⵏ ⵏ ⵓⴼⴰⵔⵙ',
@@ -634,11 +631,10 @@
     buttons.slice(1).forEach((el) => el.remove());
   }
 
-  /* Tag the header's brand subtitle for i18n if it's not already.
-     Centralised here so we don't have to touch every HTML file. */
-  function tagBrandSubtitle() {
+  /* Remove legacy brand subtitles from headers/footers. */
+  function removeBrandSubtitle() {
     document.querySelectorAll('.brand-copy small').forEach((el) => {
-      if (!el.dataset.staticI18n) el.dataset.staticI18n = 'brandSubtitle';
+      el.remove();
     });
   }
 
@@ -931,7 +927,7 @@
         <div>
           <a class="brand footer-brand" href="${href('index.html')}">
             <span class="brand-mark footer-brand-mark"><img src="${href('assets/images/logo.png')}" alt="Logo FOS-Agri" width="78" height="60" loading="lazy" decoding="async" /></span>
-            <span class="brand-copy"><strong>FOS-Agri</strong><small>${t('brandSubtitle')}</small></span>
+            <span class="brand-copy"><strong>FOS-Agri</strong></span>
           </a>
           <p class="footer-copy">${t('footerAbout')}</p>
         </div>
@@ -979,7 +975,7 @@
     root.dir = lang === 'ar' ? 'rtl' : 'ltr';
     body.dataset.lang = lang;
     ensureSubmenuCss();
-    tagBrandSubtitle();
+    removeBrandSubtitle();
     renderNavigation();
     renderNavActions();
     normalizeMenuToggle();
