@@ -323,6 +323,61 @@ html[dir='rtl'] .cot-row:focus-within {
   margin-bottom: 0.65rem;
 }
 
+.page-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 2rem;
+}
+
+.page-pagination-button,
+.page-pagination-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(23, 104, 63, 0.18);
+  background: #fff;
+  color: #17683f;
+  font: inherit;
+  font-weight: 800;
+  min-height: 2.7rem;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.page-pagination-number {
+  min-width: 2.7rem;
+  padding-inline: 0.8rem;
+}
+
+.page-pagination-button:hover,
+.page-pagination-button:focus-visible,
+.page-pagination-number:hover,
+.page-pagination-number:focus-visible,
+.page-pagination-number.is-active {
+  background: #17683f;
+  border-color: #17683f;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.page-pagination-button.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+  transform: none;
+}
+
+.page-pagination-status {
+  color: #5c6c61;
+  font-weight: 700;
+  padding-inline: 0.35rem;
+}
+
 /* Shared performance + interaction layer for secondary pages.
    The homepage does not load this file. */
 body.secondary-page main > .section,

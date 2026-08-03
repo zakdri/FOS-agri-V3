@@ -10,6 +10,8 @@
   const isNested = window.location.pathname.includes('/services/');
   const base = typeof explicitBase === 'string' && explicitBase.length ? explicitBase : (isNested ? '../' : '');
   let footerTemplatePromise = null;
+  let actualitesCurrentPage = 1;
+  const actualitesPerPage = 3;
 
   const nav = {
     fr: {
@@ -79,7 +81,7 @@
       med_orgBody: 'Les albums réels pourront être ajoutés après réception des images validées.',
 
       actualitesKicker: 'Centre d\'information', actualitesTitle: 'Actualités de la Fondation',
-      actualitesBody: 'Annonces, conventions, campagnes et programmes sociaux.',
+      actualitesBody: 'Toutes les annonces, conventions, campagnes et programmes sociaux de FOS-Agri.',
       act_card1Date: 'Programme 2025', act_card1Title: 'Vacances et loisirs',
       act_card1Body: 'Présentation des programmes de vacances, loisirs et accompagnement familial.',
       act_card2Date: 'Convention', act_card2Title: 'Partenariats médicaux',
@@ -90,6 +92,11 @@
       act_editBody: 'Cette page peut recevoir les actualités validées par le client : titre, date, image, résumé et détail.',
       act_nextTitle: 'Prochaine étape',
       act_nextBody: 'Après validation, chaque actualité pourra avoir sa propre page statique.',
+      newsPaginationNav: 'Pagination des actualités',
+      newsPaginationPrev: 'Précédent',
+      newsPaginationNext: 'Suivant',
+      newsPaginationPage: 'Page',
+      newsPaginationOf: 'sur',
 
       agendaKicker: 'Agenda solidaire', agendaTitle: 'Programmes et événements à venir',
       agendaBody: 'Calendrier des activités sociales, culturelles et de solidarité.',
@@ -184,7 +191,7 @@
       med_orgBody: 'يمكن إضافة الألبومات الحقيقية بعد توصل الصور المصادق عليها.',
 
       actualitesKicker: 'مركز المعلومات', actualitesTitle: 'مستجدات المؤسسة',
-      actualitesBody: 'الإعلانات، الاتفاقيات، الحملات والبرامج الاجتماعية.',
+      actualitesBody: 'جميع إعلانات واتفاقيات وحملات وبرامج FOS-Agri الاجتماعية.',
       act_card1Date: 'برنامج 2025', act_card1Title: 'العطل والترفيه',
       act_card1Body: 'تقديم برامج العطل والترفيه ومرافقة الأسر.',
       act_card2Date: 'اتفاقية', act_card2Title: 'الشراكات الطبية',
@@ -195,6 +202,11 @@
       act_editBody: 'يمكن لهذه الصفحة أن تستقبل المستجدات المصادق عليها: العنوان، التاريخ، الصورة، الملخص والتفاصيل.',
       act_nextTitle: 'الخطوة القادمة',
       act_nextBody: 'بعد المصادقة، يمكن لكل خبر أن يحظى بصفحة ثابتة خاصة به.',
+      newsPaginationNav: 'تصفح المستجدات',
+      newsPaginationPrev: 'السابق',
+      newsPaginationNext: 'التالي',
+      newsPaginationPage: 'الصفحة',
+      newsPaginationOf: 'من',
 
       agendaKicker: 'الأجندة التضامنية', agendaTitle: 'برامج وفعاليات قادمة',
       agendaBody: 'روزنامة الأنشطة الاجتماعية والثقافية والتضامنية.',
@@ -289,7 +301,7 @@
       med_orgBody: 'ⵉⵍⴱⵓⵎⴰⵜ ⵉⴷⴰⵎⵏⴻⵏ ⴰⴷ ⵜⵜⵓⵙⵙⴽⴰⵏ ⴷⴻⴼⴼⵉⵔ ⵏ ⵓⵙⴻⴼⵙⵉ.',
 
       actualitesKicker: 'ⵜⴰⵎⴻⵍⵍⴰⵍⵜ ⵏ ⵉⵙⴰⵍⵏ', actualitesTitle: 'ⵉⵙⴰⵍⵏ ⵏ ⵜⵎⵙⵙⵓⵔⵜ',
-      actualitesBody: 'ⵉⵙⵉⵡⵍⵏ, ⵉⵎⵢⴰⴽⵏ, ⴰⴽⴽⵯ ⴷ ⵉⵖⴰⵡⴰⵙⵏ ⵉⵏⴰⵎⵓⵏⵏ.',
+      actualitesBody: 'ⴰⴽⴽⵯ ⵉⵙⵉⵡⵍⵏ, ⵉⵎⵢⴰⴽⵏ, ⵜⵉⴽⵍⵉⵡⵉⵏ ⴷ ⵉⵖⴰⵡⴰⵙⵏ ⵉⵏⴰⵎⵓⵏⵏ ⵏ FOS-Agri.',
       act_card1Date: 'ⴰⵖⴰⵡⴰⵙ 2025', act_card1Title: 'ⵜⵉⴽⴽⵉⵏ ⴷ ⵓⵙⴰⵢⵔⴰⵔ',
       act_card1Body: 'ⴰⵙⵏⵓⵍⴼⵓ ⵏ ⵉⵖⴰⵡⴰⵙⵏ ⵏ ⵜⵉⴽⴽⵉⵏ ⴷ ⵓⵙⴰⵢⵔⴰⵔ.',
       act_card2Date: 'ⵉⵎⵢⴰⵏ', act_card2Title: 'ⵉⵎⵢⴰⵏ ⵉⵙⵏⵓⵇⴱⵉⵍⵏ',
@@ -300,6 +312,11 @@
       act_editBody: 'ⵜⵙⴻⵏⵟⵉ ⵜⵉⴼⴰⵡⵜ ⴰⴷ ⵜⵙⵙⴻⵟⵟⵕ ⵉⵙⴰⵍⵏ ⵉⵎⵙⵙⴰⵏⴻⵏ: ⴰⵣⵡⴻⵍ, ⴰⵎⵉⴹⵉ, ⵜⴰⵡⵍⴰⴼⵜ.',
       act_nextTitle: 'ⴰⵙⵓⵔⴻⴼ ⵉⴳⴻⵔ',
       act_nextBody: 'ⴷⴻⴼⴼⵉⵔ ⵓⵙⴻⴼⵙⵉ, ⴽⵓⵍ ⴰⴽⴰⵍⴻⵏ ⴰⴷ ⵉⵙⴻⵎⵎⴰⵍ ⵙ ⵜⵉⴼⴰⵡⵜ ⵏⵏⵙ.',
+      newsPaginationNav: 'ⴰⵙⵏⵓⴱⴳ ⵏ ⵉⵙⴰⵍⵏ',
+      newsPaginationPrev: 'ⵣⵡⴰⵔ',
+      newsPaginationNext: 'ⵉⴳⴻⵔ',
+      newsPaginationPage: 'ⵜⴰⵙⵏⴰ',
+      newsPaginationOf: 'ⵙⴳ',
 
       agendaKicker: 'ⴰⴳⵏⴷⴰ ⵏ ⵜⴰⵏⴼⴰ', agendaTitle: 'ⵉⵖⴰⵡⴰⵙⵏ ⴷ ⵜⴻⵎⵍⵍⵉⵍⵉⵏ ⴷ ⵉⵜⴻⴷⴷⵓⵏ',
       agendaBody: 'ⴰⵙⵙⴻⴷⵎⵎⴻⵔ ⵏ ⵜⵏⵓⴼⵉⵡⵉⵏ ⵜⵉⵏⴰⵎⵓⵏⵉⵏ, ⵜⵉⴷⴻⵍⵙⴰⵏⵉⵏ ⴷ ⵜⵉⵏ ⵜⴰⵏⴼⴰ.',
@@ -566,6 +583,119 @@
 
   function href(path) {
     return `${base}${path}`;
+  }
+
+  function escapeHtml(value) {
+    return (value || '').toString().replace(/[&<>"']/g, (char) => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    }[char]));
+  }
+
+  function getLocalizedNewsEntry(item) {
+    return item?.[lang] || item?.fr || item?.ar || item?.zgh || {};
+  }
+
+  function getNewsImageUrl(index, item) {
+    const image = item?.image || [
+      'assets/images/news-vacances-2025.webp',
+      'assets/images/news-pathologie-bouregreg.jpg',
+      'assets/images/news-omra-2025.jpg',
+      'assets/images/news-partenariat-sportif.jpg',
+      'https://images.unsplash.com/photo-1576671081837-49000212a370?auto=format&fit=crop&w=900&q=80',
+      'assets/images/news-campagne-info.jpg'
+    ][index % 6];
+    if (/^(https?:|\/\/)/i.test(image)) return image;
+    return href(image.replace(/^\.\//, 'assets/'));
+  }
+
+  function localizeNewsDate(dateStr) {
+    if (lang === 'fr') return dateStr;
+    const monthMap = lang === 'ar'
+      ? {
+        Janvier: 'يناير', Fevrier: 'فبراير', Mars: 'مارس', Avril: 'أبريل',
+        Mai: 'ماي', Juin: 'يونيو', Juillet: 'يوليوز', Aout: 'غشت',
+        Septembre: 'شتنبر', Octobre: 'أكتوبر', Novembre: 'نونبر', Decembre: 'دجنبر'
+      }
+      : {
+        Janvier: 'ⵉⵏⵏⴰⵢⵔ', Fevrier: 'ⴼⵓⵕⴰⵕ', Mars: 'ⵎⴰⵕⵚ', Avril: 'ⵉⴱⵔⵉⵔ',
+        Mai: 'ⵎⴰⵢⵢⵓ', Juin: 'ⵢⵓⵏⵢⵓ', Juillet: 'ⵢⵓⵍⵢⵓⵣ', Aout: 'ⵖⵓⵛⵜ',
+        Septembre: 'ⵛⵓⵜⴰⵏⴱⵉⵔ', Octobre: 'ⴽⵜⵓⴱⵔ', Novembre: 'ⵏⵓⵡⴰⵏⴱⵉⵔ', Decembre: 'ⴷⵓⵊⴰⵏⴱⵉⵔ'
+      };
+    const match = (dateStr || '').match(/^(\d{1,2})\s+(.+)\s+(\d{4})$/);
+    if (!match) return dateStr;
+    const [, day, month, year] = match;
+    return `${day} ${monthMap[month] || month} ${year}`;
+  }
+
+  function getNewsMeta(index, item) {
+    const categories = {
+      fr: ['Portée stratégique', 'Gouvernance', 'Formation & Développement', 'Direction digitale', 'Comité innovation', 'Ressources humaines'],
+      ar: ['بعد استراتيجي', 'الحكامة', 'التكوين والتطوير', 'التحول الرقمي', 'لجنة الابتكار', 'الموارد البشرية'],
+      zgh: ['ⴰⵙⵓⵍⴰⵏ ⴰⵎⵓⵙⵙⵓ', 'ⴰⵏⴰⴹⴰⵎ', 'ⴰⵙⴳⵎⵉ ⴷ ⵜⵏⴼⵍⵉⵜ', 'ⴰⵙⵏⴼⵍ ⴰⵎⴰⵜⴰⵢ', 'ⴰⵙⵇⵇⵉⵎ ⵏ ⵓⵙⵏⴽⵔ', 'ⵉⵎⴰⵍⴰⵙⵏ ⵉⵎⴷⴰⵏⵏ']
+    };
+    const activeCategories = categories[lang] || categories.fr;
+    return `${activeCategories[index % activeCategories.length]} • ${localizeNewsDate(item.date)}`;
+  }
+
+  function renderActualitesPage() {
+    if (body.dataset.page !== 'actualites') return;
+    const list = document.querySelector('[data-actualites-list]');
+    const pagination = document.querySelector('[data-actualites-pagination]');
+    const newsItems = window.siteData?.news || [];
+    if (!list || !newsItems.length) return;
+
+    const totalPages = Math.max(1, Math.ceil(newsItems.length / actualitesPerPage));
+    const requestedPage = Number(new URLSearchParams(window.location.search).get('page'));
+    if (requestedPage) actualitesCurrentPage = requestedPage;
+    actualitesCurrentPage = Math.min(Math.max(actualitesCurrentPage, 1), totalPages);
+    const start = (actualitesCurrentPage - 1) * actualitesPerPage;
+
+    list.innerHTML = newsItems.slice(start, start + actualitesPerPage).map((item, offset) => {
+      const index = start + offset;
+      const content = getLocalizedNewsEntry(item);
+      const imageUrl = getNewsImageUrl(index, item);
+      return `
+        <article class="page-card page-news-card">
+          <div class="page-news-media" style="background-image:url('${escapeHtml(imageUrl)}')" aria-hidden="true"></div>
+          <div class="page-news-body">
+            <span class="page-date">${escapeHtml(getNewsMeta(index, item))}</span>
+            <h3>${escapeHtml(content.title)}</h3>
+            <p>${escapeHtml(content.excerpt)}</p>
+          </div>
+        </article>
+      `;
+    }).join('');
+
+    if (!pagination) return;
+    const pageUrl = (page) => `${href('actualites.html')}${page > 1 ? `?page=${page}` : ''}`;
+    pagination.setAttribute('aria-label', t('newsPaginationNav'));
+    pagination.innerHTML = `
+      ${actualitesCurrentPage === 1
+        ? `<span class="page-pagination-button is-disabled" aria-disabled="true">${escapeHtml(t('newsPaginationPrev'))}</span>`
+        : `<a class="page-pagination-button" href="${pageUrl(actualitesCurrentPage - 1)}" data-news-page="${actualitesCurrentPage - 1}">${escapeHtml(t('newsPaginationPrev'))}</a>`}
+      <span class="page-pagination-status">${escapeHtml(t('newsPaginationPage'))} ${actualitesCurrentPage} ${escapeHtml(t('newsPaginationOf'))} ${totalPages}</span>
+      ${Array.from({ length: totalPages }, (_, index) => {
+        const page = index + 1;
+        return `<a class="page-pagination-number${page === actualitesCurrentPage ? ' is-active' : ''}" href="${pageUrl(page)}" data-news-page="${page}" aria-label="${escapeHtml(t('newsPaginationPage'))} ${page}">${page}</a>`;
+      }).join('')}
+      ${actualitesCurrentPage === totalPages
+        ? `<span class="page-pagination-button is-disabled" aria-disabled="true">${escapeHtml(t('newsPaginationNext'))}</span>`
+        : `<a class="page-pagination-button" href="${pageUrl(actualitesCurrentPage + 1)}" data-news-page="${actualitesCurrentPage + 1}">${escapeHtml(t('newsPaginationNext'))}</a>`}
+    `;
+
+    pagination.querySelectorAll('a[data-news-page]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        actualitesCurrentPage = Number(link.dataset.newsPage) || 1;
+        const nextUrl = pageUrl(actualitesCurrentPage);
+        window.history.pushState(null, '', nextUrl);
+        renderActualitesPage();
+      });
+    });
   }
 
   function goToSearchPage(query) {
@@ -987,6 +1117,8 @@
       const key = el.dataset.staticI18n;
       el.textContent = t(key);
     });
+
+    renderActualitesPage();
 
     document.querySelectorAll('.lang-btn').forEach((btn) => {
       btn.classList.toggle('is-active', btn.dataset.lang === lang);
