@@ -5,6 +5,9 @@ REM FOS-Agri helper: stage, commit, and push the current Git branch.
 REM Usage:
 REM   push.bat
 REM   push.bat "feat: update prestations"
+REM
+REM After creating a commit, the script prints the changed-file summary
+REM required by the project workflow.
 
 cd /d "%~dp0"
 
@@ -90,6 +93,13 @@ if errorlevel 1 (
   pause
   exit /b 1
 )
+
+echo.
+echo [INFO] Commit summary:
+git show --stat --oneline --summary --format="%%h %%s" HEAD
+echo.
+echo [INFO] Changed files in this commit:
+git diff-tree --no-commit-id --name-only -r HEAD
 
 echo.
 echo [INFO] Pushing %BRANCH% to origin...
