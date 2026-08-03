@@ -13,9 +13,9 @@ window.siteData = {
         memberSpace: "Espace adherent"
       },
       hero: {
-        eyebrow: "Fondation pour la Promotion des Oeuvres Sociales",
-        title: "Au service de la famille du Ministere de l'Agriculture",
-        description: "Accompagner, soutenir et valoriser l'engagement des femmes et des hommes du secteur agricole a travers des prestations sociales innovantes et de proximite.",
+        eyebrow: "Solidaires par nature",
+        title: "L'engagement au service de celles et ceux qui cultivent l'avenir.",
+        description: "Chaque prestation, chaque initiative et chaque partenariat refletent notre ambition de batir une action sociale d'excellence, innovante, inclusive et durable, au service des adherents et de leurs familles.",
         ctaPrincipal: "Decouvrir nos prestations",
         ctaSecondary: "Actualite FOS",
         ctaServices: "Decouvrir les services",
@@ -162,9 +162,9 @@ window.siteData = {
         memberSpace: "فضاء المنخرط"
       },
       hero: {
-        eyebrow: "مؤسسة النهوض بالأعمال الاجتماعية",
-        title: "في خدمة أسرة وزارة الفلاحة",
-        description: "مواكبة ودعم وتثمين التزام نساء ورجال القطاع الفلاحي من خلال خدمات اجتماعية مبتكرة وقريبة.",
+        eyebrow: "متضامنون بالفطرة",
+        title: "التزام في خدمة من يزرعون المستقبل.",
+        description: "تعكس كل خدمة وكل مبادرة وكل شراكة طموحنا في بناء عمل اجتماعي متميز، مبتكر، شامل ومستدام، في خدمة المنخرطين وأسرهم.",
         ctaPrincipal: "اكتشف خدماتنا",
         ctaSecondary: "أخبار المؤسسة",
         ctaServices: "اكتشف الخدمات",
@@ -311,9 +311,9 @@ window.siteData = {
         memberSpace: "ⴰⵙⴰⵢⵍⴰ ⵏ ⵓⵎⵣⵔⴰⵢ"
       },
       hero: {
-        eyebrow: "ⵜⴰⴷⵓⵙⵉ ⵏ ⵓⵙⵙⴼⵍⴷ ⵏ ⵉⴳⵓⵍⵏ ⵉⵏⵎⴰⵍⴰⵏ",
-        title: "ⴳ ⵓⵎⴻⵣⵣⵓⵔ ⵏ ⵜⵡⴰⵛⵓⵍⵜ ⵏ ⵜⴰⵎⴰⵣⵔⵜ ⵏ ⵜⴼⵍⴰⵃⵜ",
-        description: "ⴰⴷ ⵏⴼⴽ ⴰⵎⵎⴰⵏ, ⴰⵏⴱⴹ ⴷ ⴰⵙⵙⵎⵖⵔ ⵉ ⵜⵎⵜⵜⴰⵏⵜ ⵏ ⵓⴳⵔⴰⵡ ⴰⴼⵍⴰⵃⵉ ⵙ ⵉⵎⴰⵍⴰⵙⵙⵏ ⵉⵏⵎⴰⵍⴰⵏ ⵉⵜⵜⵡⴰⴽⵙⵏ.",
+        eyebrow: "ⵏⴻⵜⵜⵎⵓⵏ ⵙ ⵜⴰⴱⵉⵄⵜ",
+        title: "ⴰⵣⴷⴰⵢ ⴳ ⵓⵙⵙⴼⵍⴷ ⵏ ⵡⵉⵏⵏⴰ ⴷ ⵜⵉⵏⵏⴰ ⵉⵙⵙⴽⵔⵏ ⴰⵣⴰⵍ ⵏ ⵉⵎⴰⵍ.",
+        description: "ⴽⵓ ⴰⵎⴰⵍⴰⵙ, ⴽⵓ ⵜⴰⵙⵓⵜⵔⵜ ⴷ ⴽⵓ ⴰⵎⵛⵉⵡⵔ ⵉⵙⴽⴰⵏⴰⵢ ⴰⵎⵓⵔ ⵏⵏⵖ ⵉ ⵓⴱⵏⵉ ⵏ ⵓⵎⵓⵔⵙ ⴰⵏⴰⵎⵓⵏ ⵏ ⵜⴼⵓⵍⴽⵉ, ⴰⵎⴰⵢⵏⵓ, ⴰⵎⴰⵙⴰⵢ ⴷ ⴰⵎⵙⴷⵓⵙ, ⴳ ⵓⵙⵙⴼⵍⴷ ⵏ ⵉⵎⵓⵏⵏ ⴷ ⵜⵡⴰⵛⵓⵍⵉⵏ ⵏⵏⵙⵏ.",
         ctaPrincipal: "ⵙⵙⵏ ⵉⵎⴰⵍⴰⵙⵙⵏ ⵏⵏⵖ",
         ctaSecondary: "ⵉⵎⵉⵏⵉⴷⵏ ⵏ FOS-Agri",
         ctaServices: "ⵙⵙⵏ ⵉⵎⴰⵍⴰⵙⵙⵏ",
