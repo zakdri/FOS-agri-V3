@@ -294,6 +294,9 @@ html[dir='rtl'] .cot-row:focus-within {
 .page-news-card {
   overflow: hidden;
   padding: 0;
+  display: block;
+  color: inherit;
+  text-decoration: none;
 }
 
 .page-news-card .page-news-media {
@@ -315,6 +318,14 @@ html[dir='rtl'] .cot-row:focus-within {
   padding: 1.4rem;
 }
 
+.page-news-more {
+  display: inline-flex;
+  align-items: center;
+  color: #17683f;
+  font-weight: 800;
+  margin-top: 0.85rem;
+}
+
 .page-date {
   display: inline-flex;
   color: #17683f;
@@ -328,8 +339,15 @@ html[dir='rtl'] .cot-row:focus-within {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.65rem;
-  margin-top: 2rem;
+  gap: 0.35rem;
+  width: max-content;
+  max-width: 100%;
+  margin: 2.4rem auto 0;
+  padding: 0.45rem;
+  border: 1px solid rgba(23, 104, 63, 0.12);
+  border-radius: 999px;
+  background: #f8fbf9;
+  box-shadow: 0 14px 36px rgba(16, 55, 35, 0.08);
 }
 
 .page-pagination-button,
@@ -337,22 +355,23 @@ html[dir='rtl'] .cot-row:focus-within {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(23, 104, 63, 0.18);
-  background: #fff;
+  gap: 0.45rem;
+  border: 0;
+  background: transparent;
   color: #17683f;
   font: inherit;
   font-weight: 800;
-  min-height: 2.7rem;
-  padding: 0.6rem 1rem;
-  border-radius: 0.5rem;
+  min-height: 2.45rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
   cursor: pointer;
   text-decoration: none;
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .page-pagination-number {
-  min-width: 2.7rem;
-  padding-inline: 0.8rem;
+  min-width: 2.45rem;
+  padding-inline: 0.75rem;
 }
 
 .page-pagination-button:hover,
@@ -361,7 +380,6 @@ html[dir='rtl'] .cot-row:focus-within {
 .page-pagination-number:focus-visible,
 .page-pagination-number.is-active {
   background: #17683f;
-  border-color: #17683f;
   color: #fff;
   transform: translateY(-1px);
 }
@@ -375,7 +393,49 @@ html[dir='rtl'] .cot-row:focus-within {
 .page-pagination-status {
   color: #5c6c61;
   font-weight: 700;
-  padding-inline: 0.35rem;
+  font-size: 0.86rem;
+  padding-inline: 0.75rem;
+}
+
+.actualite-detail {
+  max-width: 920px;
+}
+
+.actualite-detail-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.actualite-detail-media {
+  min-height: clamp(260px, 42vw, 430px);
+  background-size: cover;
+  background-position: center;
+}
+
+.actualite-detail-content {
+  padding: clamp(1.5rem, 4vw, 2.6rem);
+}
+
+.actualite-detail-content p,
+.actualite-detail-empty p {
+  color: #43594b;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin: 0;
+}
+
+.article-back-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 1.5rem;
+  color: #17683f;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.article-back-link:hover,
+.article-back-link:focus-visible {
+  color: #c8a44d;
 }
 
 /* Shared performance + interaction layer for secondary pages.

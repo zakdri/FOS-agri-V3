@@ -11,7 +11,7 @@
   const base = typeof explicitBase === 'string' && explicitBase.length ? explicitBase : (isNested ? '../' : '');
   let footerTemplatePromise = null;
   let actualitesCurrentPage = 1;
-  const actualitesPerPage = 3;
+  const actualitesPerPage = 6;
 
   const nav = {
     fr: {
@@ -97,6 +97,11 @@
       newsPaginationNext: 'Suivant',
       newsPaginationPage: 'Page',
       newsPaginationOf: 'sur',
+      articleKicker: 'Article',
+      articleBack: 'Retour aux actualités',
+      articleRead: 'Lire l\'article',
+      articleNotFoundTitle: 'Article introuvable',
+      articleNotFoundBody: 'Cette actualité n\'est pas disponible ou le lien a été modifié.',
 
       agendaKicker: 'Agenda solidaire', agendaTitle: 'Programmes et événements à venir',
       agendaBody: 'Calendrier des activités sociales, culturelles et de solidarité.',
@@ -207,6 +212,11 @@
       newsPaginationNext: 'التالي',
       newsPaginationPage: 'الصفحة',
       newsPaginationOf: 'من',
+      articleKicker: 'مقال',
+      articleBack: 'العودة إلى المستجدات',
+      articleRead: 'قراءة المقال',
+      articleNotFoundTitle: 'المقال غير موجود',
+      articleNotFoundBody: 'هذا الخبر غير متاح أو تم تغيير الرابط.',
 
       agendaKicker: 'الأجندة التضامنية', agendaTitle: 'برامج وفعاليات قادمة',
       agendaBody: 'روزنامة الأنشطة الاجتماعية والثقافية والتضامنية.',
@@ -317,6 +327,11 @@
       newsPaginationNext: 'ⵉⴳⴻⵔ',
       newsPaginationPage: 'ⵜⴰⵙⵏⴰ',
       newsPaginationOf: 'ⵙⴳ',
+      articleKicker: 'ⴰⵎⴰⴳⵔⴰⴷ',
+      articleBack: 'ⵓⵖⵓⵍ ⵖⵔ ⵉⵙⴰⵍⵏ',
+      articleRead: 'ⵖⵔ ⴰⵎⴰⴳⵔⴰⴷ',
+      articleNotFoundTitle: 'ⵓⵔ ⵉⵜⵜⵓⴼ ⵓⵎⴰⴳⵔⴰⴷ',
+      articleNotFoundBody: 'ⵓⵔ ⵜⵍⵍⵉ ⵜⵖⴱⴰⵔⵜ ⴰⴷ ⵏⵖ ⵉⵜⵜⵓⴱⴷⴷⵍ ⵓⵙⵖⵏ.',
 
       agendaKicker: 'ⴰⴳⵏⴷⴰ ⵏ ⵜⴰⵏⴼⴰ', agendaTitle: 'ⵉⵖⴰⵡⴰⵙⵏ ⴷ ⵜⴻⵎⵍⵍⵉⵍⵉⵏ ⴷ ⵉⵜⴻⴷⴷⵓⵏ',
       agendaBody: 'ⴰⵙⵙⴻⴷⵎⵎⴻⵔ ⵏ ⵜⵏⵓⴼⵉⵡⵉⵏ ⵜⵉⵏⴰⵎⵓⵏⵉⵏ, ⵜⵉⴷⴻⵍⵙⴰⵏⵉⵏ ⴷ ⵜⵉⵏ ⵜⴰⵏⴼⴰ.',
@@ -612,6 +627,11 @@
     return href(image.replace(/^\.\//, 'assets/'));
   }
 
+  function getNewsArticleUrl(item, index) {
+    const slug = item?.slug || `actualite-${index + 1}`;
+    return `${href('actualite.html')}?article=${encodeURIComponent(slug)}`;
+  }
+
   function localizeNewsDate(dateStr) {
     if (lang === 'fr') return dateStr;
     const monthMap = lang === 'ar'
@@ -658,15 +678,17 @@
       const index = start + offset;
       const content = getLocalizedNewsEntry(item);
       const imageUrl = getNewsImageUrl(index, item);
+      const articleUrl = getNewsArticleUrl(item, index);
       return `
-        <article class="page-card page-news-card">
+        <a class="page-card page-news-card" href="${articleUrl}" aria-label="${escapeHtml(content.title)}">
           <div class="page-news-media" style="background-image:url('${escapeHtml(imageUrl)}')" aria-hidden="true"></div>
           <div class="page-news-body">
             <span class="page-date">${escapeHtml(getNewsMeta(index, item))}</span>
             <h3>${escapeHtml(content.title)}</h3>
             <p>${escapeHtml(content.excerpt)}</p>
+            <span class="page-news-more">${escapeHtml(t('articleRead'))}</span>
           </div>
-        </article>
+        </a>
       `;
     }).join('');
 
@@ -676,7 +698,7 @@
     pagination.innerHTML = `
       ${actualitesCurrentPage === 1
         ? `<span class="page-pagination-button is-disabled" aria-disabled="true">${escapeHtml(t('newsPaginationPrev'))}</span>`
-        : `<a class="page-pagination-button" href="${pageUrl(actualitesCurrentPage - 1)}" data-news-page="${actualitesCurrentPage - 1}">${escapeHtml(t('newsPaginationPrev'))}</a>`}
+        : `<a class="page-pagination-button" href="${pageUrl(actualitesCurrentPage - 1)}" data-news-page="${actualitesCurrentPage - 1}"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i><span>${escapeHtml(t('newsPaginationPrev'))}</span></a>`}
       <span class="page-pagination-status">${escapeHtml(t('newsPaginationPage'))} ${actualitesCurrentPage} ${escapeHtml(t('newsPaginationOf'))} ${totalPages}</span>
       ${Array.from({ length: totalPages }, (_, index) => {
         const page = index + 1;
@@ -684,7 +706,7 @@
       }).join('')}
       ${actualitesCurrentPage === totalPages
         ? `<span class="page-pagination-button is-disabled" aria-disabled="true">${escapeHtml(t('newsPaginationNext'))}</span>`
-        : `<a class="page-pagination-button" href="${pageUrl(actualitesCurrentPage + 1)}" data-news-page="${actualitesCurrentPage + 1}">${escapeHtml(t('newsPaginationNext'))}</a>`}
+        : `<a class="page-pagination-button" href="${pageUrl(actualitesCurrentPage + 1)}" data-news-page="${actualitesCurrentPage + 1}"><span>${escapeHtml(t('newsPaginationNext'))}</span><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>`}
     `;
 
     pagination.querySelectorAll('a[data-news-page]').forEach((link) => {
@@ -696,6 +718,48 @@
         renderActualitesPage();
       });
     });
+  }
+
+  function renderActualiteArticle() {
+    const article = document.querySelector('[data-actualite-article]');
+    if (!article) return;
+    const newsItems = window.siteData?.news || [];
+    const slug = new URLSearchParams(window.location.search).get('article');
+    const index = newsItems.findIndex((item, itemIndex) => (item.slug || `actualite-${itemIndex + 1}`) === slug);
+    const item = newsItems[index];
+    const title = document.querySelector('[data-article-title]');
+    const excerpt = document.querySelector('[data-article-excerpt]');
+
+    if (!item) {
+      if (title) title.textContent = t('articleNotFoundTitle');
+      if (excerpt) excerpt.textContent = t('articleNotFoundBody');
+      article.innerHTML = `
+        <div class="page-card actualite-detail-card actualite-detail-empty">
+          <p>${escapeHtml(t('articleNotFoundBody'))}</p>
+          <a class="article-back-link" href="${href('actualites.html')}">${escapeHtml(t('articleBack'))}</a>
+        </div>
+      `;
+      document.title = `FOS-Agri | ${t('articleNotFoundTitle')}`;
+      return;
+    }
+
+    const content = getLocalizedNewsEntry(item);
+    const imageUrl = getNewsImageUrl(index, item);
+    if (title) title.textContent = content.title || '';
+    if (excerpt) excerpt.textContent = content.excerpt || '';
+    document.title = `FOS-Agri | ${content.title || t('articleKicker')}`;
+
+    const image = article.querySelector('[data-article-image]');
+    const meta = article.querySelector('[data-article-meta]');
+    const bodyText = article.querySelector('[data-article-body]');
+    const backLink = article.querySelector('.article-back-link');
+    if (image) image.style.backgroundImage = `url("${imageUrl.replace(/"/g, '\\"')}")`;
+    if (meta) meta.textContent = getNewsMeta(index, item);
+    if (bodyText) bodyText.textContent = content.detail || content.excerpt || '';
+    if (backLink) {
+      backLink.href = href('actualites.html');
+      backLink.textContent = t('articleBack');
+    }
   }
 
   function goToSearchPage(query) {
@@ -1119,6 +1183,7 @@
     });
 
     renderActualitesPage();
+    renderActualiteArticle();
 
     document.querySelectorAll('.lang-btn').forEach((btn) => {
       btn.classList.toggle('is-active', btn.dataset.lang === lang);

@@ -34,6 +34,21 @@ function getTranslationValue(key, lang = currentLang) {
   return null;
 }
 
+function escapeHtml(value) {
+  return (value || "").toString().replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    "\"": "&quot;",
+    "'": "&#39;"
+  }[char]));
+}
+
+function getNewsArticleUrl(item, index) {
+  const slug = item?.slug || `actualite-${index + 1}`;
+  return `actualite.html?article=${encodeURIComponent(slug)}`;
+}
+
 function syncLanguageControls() {
   qsa(".lang-btn").forEach((btn) => {
     btn.classList.toggle("is-active", btn.dataset.lang === currentLang);
@@ -263,13 +278,14 @@ function renderNews() {
       .map((item, index) => {
         const content = getLocalizedEntry(item);
         const imageUrl = getNewsImageUrl(index, item);
+        const articleUrl = getNewsArticleUrl(item, index);
         return `
-          <a href="#" class="news-slide-mini ${index === 0 ? "active" : ""}" data-mini-index="${index}">
-              <img src="${imageUrl}" alt="${content.title}">
+          <a href="${articleUrl}" class="news-slide-mini ${index === 0 ? "active" : ""}" data-mini-index="${index}" aria-label="${escapeHtml(content.title)}">
+              <img src="${imageUrl}" alt="${escapeHtml(content.title)}">
               <div class="mini-overlay">
-                  <div class="mini-news-title">${content.title}</div>
+                  <div class="mini-news-title">${escapeHtml(content.title)}</div>
                   <div class="news-item-meta-mini" style="color: rgba(255,255,255,0.7)">
-                    ${getMeta(index, item)}
+                    ${escapeHtml(getMeta(index, item))}
                   </div>
               </div>
           </a>
@@ -281,13 +297,14 @@ function renderNews() {
       .map((item, index) => {
         const actualIndex = newsItems.indexOf(item);
         const content = getLocalizedEntry(item);
-        const imageUrl = getNewsImageUrl(actualIndex);
+        const imageUrl = getNewsImageUrl(actualIndex, item);
+        const articleUrl = getNewsArticleUrl(item, actualIndex);
         return `
-          <a href="#" class="news-item-mini">
-              <img src="${imageUrl}" alt="${content.title}">
+          <a href="${articleUrl}" class="news-item-mini" aria-label="${escapeHtml(content.title)}">
+              <img src="${imageUrl}" alt="${escapeHtml(content.title)}">
               <div class="news-item-content-mini">
-                  <div class="news-item-title-mini">${content.title}</div>
-                  <div class="news-item-meta-mini">${getMeta(actualIndex, item)}</div>
+                  <div class="news-item-title-mini">${escapeHtml(content.title)}</div>
+                  <div class="news-item-meta-mini">${escapeHtml(getMeta(actualIndex, item))}</div>
               </div>
           </a>
         `;
@@ -299,19 +316,20 @@ function renderNews() {
   // --- MOBILE RENDER (Original Cards) ---
   const mobileContainer = qs("#news-grid");
   if (mobileContainer) {
-    mobileContainer.innerHTML = newsItems
+    mobileContainer.innerHTML = newsItems.slice(0, 6)
       .map((item, index) => {
         const content = getLocalizedEntry(item);
         const imageUrl = getNewsImageUrl(index, item);
+        const articleUrl = getNewsArticleUrl(item, index);
         return `
-          <article class="news-card" data-news-index="${index}">
+          <a class="news-card" href="${articleUrl}" data-news-index="${index}" aria-label="${escapeHtml(content.title)}">
             <div class="news-media" style="background-image: url('${imageUrl}')" aria-hidden="true"></div>
             <div class="news-body">
-              <span class="news-date">${getMeta(index, item)}</span>
-              <h3>${content.title}</h3>
-              <p>${content.excerpt}</p>
+              <span class="news-date">${escapeHtml(getMeta(index, item))}</span>
+              <h3>${escapeHtml(content.title)}</h3>
+              <p>${escapeHtml(content.excerpt)}</p>
             </div>
-          </article>
+          </a>
         `;
       })
       .join("");

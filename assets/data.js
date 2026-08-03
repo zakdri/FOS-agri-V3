@@ -592,100 +592,244 @@ window.siteData = {
   ],
   news: [
     {
+      slug: "programme-vacances-loisirs-2025",
       date: "20 Mars 2024",
       fr: {
         title: "Programme de vacances et loisirs 2025",
-        excerpt: "Calendrier des activites et inscriptions ouvertes pour les adherents."
+        excerpt: "Calendrier des activites et inscriptions ouvertes pour les adherents.",
+        detail: "La Fondation lance le programme vacances et loisirs 2025 afin de faciliter l'acces des adherents et de leurs familles aux sejours, centres d'estivage et activites recreatives. Les modalites d'inscription, les periodes disponibles et les pieces a fournir sont precisees dans les canaux d'information officiels."
       },
       ar: {
         title: "برنامج العطل والترفيه 2025",
-        excerpt: "جدولة الانشطة وفتح التسجيلات لفائدة المنخرطين."
+        excerpt: "جدولة الانشطة وفتح التسجيلات لفائدة المنخرطين.",
+        detail: "تطلق المؤسسة برنامج العطل والترفيه 2025 لتيسير استفادة المنخرطين وأسرهم من مراكز الاصطياف والرحلات والأنشطة الترفيهية. وسيتم الإعلان عن شروط التسجيل والفترات المتاحة والوثائق المطلوبة عبر القنوات الرسمية."
       },
       zgh: {
         title: "ⴰⵙⵏⴰⵎⴰⵍ ⵏ ⵓⵙⵔⴼ ⴷ ⵓⵔⴰⵔ 2025",
-        excerpt: "ⴰⵡⵉⵏⴰⵙ ⵏ ⵜⵉⵎⵙⴽⵔⵉⵏ ⴷ ⵓⵔⵣⵣⵓ ⵏ ⵓⵣⵎⵎⴻⵎ ⵉ ⵉⵎⵣⵔⴰⵢⵏ."
+        excerpt: "ⴰⵡⵉⵏⴰⵙ ⵏ ⵜⵉⵎⵙⴽⵔⵉⵏ ⴷ ⵓⵔⵣⵣⵓ ⵏ ⵓⵣⵎⵎⴻⵎ ⵉ ⵉⵎⵣⵔⴰⵢⵏ.",
+        detail: "ⵜⵙⵙⵏⵜⵉ ⵜⵎⵙⵙⵓⵔⵜ ⴰⵙⵏⴰⵎⴰⵍ ⵏ ⵓⵙⵔⴼ ⴷ ⵓⵔⴰⵔ 2025 ⵉ ⵓⵙⵀⵀⵍ ⵏ ⵓⴽⵛⵛⵓⵎ ⵏ ⵉⵎⵣⵔⴰⵢⵏ ⴷ ⵜⵡⴰⵛⵓⵍⵉⵏ ⵏⵏⵙⵏ ⵖⵔ ⵉⵎⵔⴽⴰⵣ ⵏ ⵓⵙⵔⴼ ⴷ ⵜⵎⵙⴽⵔⵉⵏ ⵏ ⵓⵔⴰⵔ."
       },
       image: "./images/news-vacances-2025.webp"
     },
     {
+      slug: "convention-cabinet-pathologie-bouregreg",
       date: "15 Mars 2024",
       fr: {
         title: "Convention avec le cabinet de pathologie Bouregreg",
-        excerpt: "Remises preferentielles pour les adherents, conjoints et enfants a Rabat."
+        excerpt: "Remises preferentielles pour les adherents, conjoints et enfants a Rabat.",
+        detail: "Cette convention renforce l'offre medico-sociale en proposant des conditions preferentielles aux adherents, conjoints et enfants. Elle s'inscrit dans la demarche de proximite de FOS-Agri pour ameliorer l'acces aux prestations de sante."
       },
       ar: {
         title: "اتفاقية مع مختبر بوريكراك للتشريح المرضي",
-        excerpt: "تخفيضات تفضيلية لفائدة المنخرطين والازواج والابناء بالرباط."
+        excerpt: "تخفيضات تفضيلية لفائدة المنخرطين والازواج والابناء بالرباط.",
+        detail: "تعزز هذه الاتفاقية عرض الخدمات الطبية والاجتماعية من خلال شروط تفضيلية لفائدة المنخرطين والأزواج والأبناء. وتندرج ضمن مقاربة القرب التي تعتمدها FOS-Agri لتحسين الولوج إلى خدمات الصحة."
       },
       zgh: {
         title: "ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⴷ ⵍⴽⴰⴱⵉⵏⵉ ⵏ Bouregreg",
-        excerpt: "ⵜⵉⵖⴼⵉⴹⵉⵏ ⵉ ⵉⵎⵣⵔⴰⵢⵏ, ⵉⵎⵢⴰⴳⴳⴰⵏ ⴷ ⵜⴰⵔⵡⴰ ⴳ ⵔⵔⴱⴰⵟ."
+        excerpt: "ⵜⵉⵖⴼⵉⴹⵉⵏ ⵉ ⵉⵎⵣⵔⴰⵢⵏ, ⵉⵎⵢⴰⴳⴳⴰⵏ ⴷ ⵜⴰⵔⵡⴰ ⴳ ⵔⵔⴱⴰⵟ.",
+        detail: "ⵜⵙⵎⵖⵔ ⵜⵎⵙⴰⵙⴽⴰⵏ ⴰⴷ ⵜⴰⵡⵙⵉ ⵜⴰⵎⴰⴹⴰⵏⵜ ⵙ ⵜⵉⵖⴼⵉⴹⵉⵏ ⵉ ⵉⵎⵣⵔⴰⵢⵏ, ⵉⵎⵢⴰⴳⴳⴰⵏ ⴷ ⵜⴰⵔⵡⴰ. ⵜⴷⴷⵓ ⴳ ⵓⵙⵎⵓⵔⵙ ⵏ FOS-Agri ⵉ ⵓⵙⵀⵀⵍ ⵏ ⵜⴰⴷⵓⵙⵉⵜ."
       },
       image: "./images/news-pathologie-bouregreg.jpg"
     },
     {
+      slug: "operation-omra-2025-logistique",
       date: "10 Mars 2024",
       fr: {
         title: "Operation Omra 2025 - dispositions logistiques",
-        excerpt: "Publication des dispositions logistiques relatives au deroulement de l'operation."
+        excerpt: "Publication des dispositions logistiques relatives au deroulement de l'operation.",
+        detail: "Les beneficiaires de l'operation Omra 2025 sont invites a consulter les informations pratiques relatives aux deplacements, a l'accompagnement administratif et aux rendez-vous de preparation. La Fondation assure un suivi coordonne afin de garantir une experience organisee et sereine."
       },
       ar: {
         title: "عملية العمرة 2025 - الترتيبات اللوجستيكية",
-        excerpt: "نشر الترتيبات اللوجستيكية المتعلقة بسير العملية."
+        excerpt: "نشر الترتيبات اللوجستيكية المتعلقة بسير العملية.",
+        detail: "تدعو المؤسسة المستفيدين من عملية العمرة 2025 إلى الاطلاع على المعلومات العملية المتعلقة بالتنقلات والمواكبة الإدارية ومواعيد التحضير. وتضمن المؤسسة تتبعا منسقا من أجل تنظيم العملية في أفضل الظروف."
       },
       zgh: {
         title: "ⵄⵓⵎⵔⴰ 2025 - ⵜⵉⵙⵖⵓⵏⵉⵏ ⵏ ⵍⵓⵊⵉⵙⵜⵉⴽ",
-        excerpt: "ⴰⵙⵙⵓⴼⵖ ⵏ ⵜⵉⵙⵖⵓⵏⵉⵏ ⵏ ⵍⵓⵊⵉⵙⵜⵉⴽ ⵉⵣⴷⵉⵏ ⴷ ⵓⵙⵉⵔ ⵏ ⵜⵎⵀⵍⴰ."
+        excerpt: "ⴰⵙⵙⵓⴼⵖ ⵏ ⵜⵉⵙⵖⵓⵏⵉⵏ ⵏ ⵍⵓⵊⵉⵙⵜⵉⴽ ⵉⵣⴷⵉⵏ ⴷ ⵓⵙⵉⵔ ⵏ ⵜⵎⵀⵍⴰ.",
+        detail: "ⵜⵜⵓⵜⵜⵔⴰⵏ ⵉⵎⵙⵜⴼⵉⴷⵏ ⵏ ⵄⵓⵎⵔⴰ 2025 ⴰⴷ ⵙⵙⵏⵏ ⵉⵙⴰⵍⵏ ⵏ ⵓⵎⵓⴷⴷⵓ, ⵓⵙⵎⵓⵜⵜⴳ ⴰⴷⵎⵉⵏⵉⵙⵜⵔⴰⵜⵉⴼ ⴷ ⵜⵎⵍⵉⵍⵉⵏ ⵏ ⵓⵙⵎⵓⵜⵜⴳ."
       },
       image: "./images/news-omra-2025.jpg"
     },
     {
+      slug: "partenariat-sportif-tarifs-preferentiels",
       date: "08 Mars 2024",
       fr: {
         title: "Partenariat a tarifs preferentiels pour l'activite sportive",
-        excerpt: "Convention avec Joude Gestion Sport pour des remises aux adherents."
+        excerpt: "Convention avec Joude Gestion Sport pour des remises aux adherents.",
+        detail: "FOS-Agri poursuit l'elargissement de son reseau de partenaires en integrant une offre sportive a tarifs preferentiels. Cette initiative encourage le bien-etre, la prevention et l'equilibre familial au profit des adherents."
       },
       ar: {
         title: "شراكة باسعار تفضيلية للانشطة الرياضية",
-        excerpt: "اتفاقية مع جود سبور لتخفيضات موجهة للمنخرطين."
+        excerpt: "اتفاقية مع جود سبور لتخفيضات موجهة للمنخرطين.",
+        detail: "تواصل FOS-Agri توسيع شبكة شركائها عبر إدراج عرض رياضي بأسعار تفضيلية. وتهدف هذه المبادرة إلى تشجيع الرفاه والوقاية والتوازن الأسري لفائدة المنخرطين."
       },
       zgh: {
         title: "ⵜⵉⵎⵙⴷⵓⴽⴽⴰⵍ ⵙ ⵜⵉⵖⴼⵉⴹⵉⵏ ⵉ ⵓⵏⴰⵎⵎⴰⵙ ⴰⵎⵔⵣⵉ",
-        excerpt: "ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⴷ Joude Gestion Sport ⵉ ⵜⵉⵖⴼⵉⴹⵉⵏ ⵏ ⵉⵎⵣⵔⴰⵢⵏ."
+        excerpt: "ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⴷ Joude Gestion Sport ⵉ ⵜⵉⵖⴼⵉⴹⵉⵏ ⵏ ⵉⵎⵣⵔⴰⵢⵏ.",
+        detail: "ⵜⴽⵎⵎⵍ FOS-Agri ⴰⵙⵎⵖⵔ ⵏ ⵓⵥⴰⵡⴰⵏ ⵏ ⵉⵎⵎⴷⴷⴰⵏ ⵙ ⵓⵙⵙⴽⵛⵎ ⵏ ⵜⴰⵡⵙⵉ ⵜⴰⵎⵔⵣⵉⵜ ⵙ ⵜⵉⵖⴼⵉⴹⵉⵏ. ⵜⵙⵙⵎⵖⵔ ⵜⴰⵎⵀⵍⴰ ⴰⴷ ⴰⵙⵓⵙⴰⵏ ⴷ ⵜⴰⴷⵓⵙⵉⵜ."
       },
       image: "./images/news-partenariat-sportif.jpg"
     },
     {
+      slug: "nouvelle-convention-sante",
       date: "04 Mars 2024",
       fr: {
         title: "Nouvelle convention de sante",
-        excerpt: "Avantages exclusifs pour les adherents et leurs familles."
+        excerpt: "Avantages exclusifs pour les adherents et leurs familles.",
+        detail: "La nouvelle convention de sante offre aux adherents et a leurs familles des avantages exclusifs sur des prestations ciblees. Elle complete les dispositifs existants et contribue a renforcer la protection sociale."
       },
       ar: {
         title: "اتفاقية صحية جديدة",
-        excerpt: "امتيازات حصرية لفائدة المنخرطين وافراد اسرهم."
+        excerpt: "امتيازات حصرية لفائدة المنخرطين وافراد اسرهم.",
+        detail: "توفر الاتفاقية الصحية الجديدة امتيازات حصرية لفائدة المنخرطين وأسرهم في خدمات محددة. وتكمل هذه الاتفاقية الآليات القائمة وتساهم في تعزيز الحماية الاجتماعية."
       },
       zgh: {
         title: "ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⵜⴰⴷⵓⵙⵉⵜ ⵜⴰⵎⴰⵢⵏⵓⵜ",
-        excerpt: "ⵉⵎⵏⴼⴰⵄⵏ ⵉⵎⵥⵍⵉⵏ ⵉ ⵉⵎⵣⵔⴰⵢⵏ ⴷ ⵜⵡⴰⵛⵓⵍⵉⵏ ⵏⵏⵙⵏ."
+        excerpt: "ⵉⵎⵏⴼⴰⵄⵏ ⵉⵎⵥⵍⵉⵏ ⵉ ⵉⵎⵣⵔⴰⵢⵏ ⴷ ⵜⵡⴰⵛⵓⵍⵉⵏ ⵏⵏⵙⵏ.",
+        detail: "ⵜⴼⴽⴰ ⵜⵎⵙⴰⵙⴽⴰⵏ ⵜⴰⵎⴰⵢⵏⵓⵜ ⵉⵎⵏⴼⴰⵄⵏ ⵉⵎⵥⵍⵉⵏ ⵉ ⵉⵎⵣⵔⴰⵢⵏ ⴷ ⵜⵡⴰⵛⵓⵍⵉⵏ ⵏⵏⵙⵏ. ⵜⵙⵎⴷ ⵉⵎⵙⵓⵜⴰⵍ ⵉⵍⵍⴰⵏ ⴷ ⵜⵙⵙⵎⵖⵔ ⴰⵃⵟⵟⵓ ⴰⵏⴰⵎⵓⵏ."
       },
       image: "https://images.unsplash.com/photo-1576671081837-49000212a370?auto=format&fit=crop&w=900&q=80"
     },
     {
+      slug: "campagne-information-regionale",
       date: "28 Fevrier 2024",
       fr: {
         title: "Campagne d'information regionale",
-        excerpt: "Rencontres de proximite autour des prestations et conventions FOS-Agri."
+        excerpt: "Rencontres de proximite autour des prestations et conventions FOS-Agri.",
+        detail: "La campagne regionale permet d'aller a la rencontre des adherents, de presenter les prestations disponibles et de recueillir les besoins exprimes sur le terrain. Elle renforce le dialogue direct entre la Fondation et ses beneficiaires."
       },
       ar: {
         title: "حملة تواصل جهوية",
-        excerpt: "لقاءات للقرب حول خدمات واتفاقيات فوس-أكري."
+        excerpt: "لقاءات للقرب حول خدمات واتفاقيات فوس-أكري.",
+        detail: "تمكن الحملة الجهوية من التواصل المباشر مع المنخرطين وتقديم الخدمات المتاحة والإنصات للحاجيات المعبر عنها ميدانيا. كما تعزز الحوار بين المؤسسة والمستفيدين."
       },
       zgh: {
         title: "ⵜⴰⴽⵎⵉⵜ ⵏ ⵓⵙⵉⵏⴼⵓ ⴰⵎⵏⴰⴹ",
-        excerpt: "ⵉⵎⵍⴰⵏ ⵏ ⵓⵣⴷⵉ ⵅⴼ ⵉⵎⴰⵍⴰⵙⵙⵏ ⴷ ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⵏ FOS-Agri."
+        excerpt: "ⵉⵎⵍⴰⵏ ⵏ ⵓⵣⴷⵉ ⵅⴼ ⵉⵎⴰⵍⴰⵙⵙⵏ ⴷ ⵜⵉⵎⵙⴰⵙⴽⴰⵏ ⵏ FOS-Agri.",
+        detail: "ⵜⴰⴽⵎⵉⵜ ⴰⴷ ⵜⵙⵙⵀⵀⵍ ⴰⵎⵍⴰⵍ ⴷ ⵉⵎⵣⵔⴰⵢⵏ, ⴰⵙⵙⴽⵏ ⵏ ⵉⵎⴰⵍⴰⵙⵙⵏ ⵉⵍⵍⴰⵏ ⴷ ⵓⵙⵍⵍⵉ ⵉ ⵉⵙⵔⵙⴰⵏ ⵏ ⵓⴽⴰⵍ."
       },
       image: "./images/news-campagne-info.jpg"
+    },
+    {
+      slug: "journee-portes-ouvertes-adhesion",
+      date: "22 Fevrier 2024",
+      fr: {
+        title: "Journee portes ouvertes pour les nouveaux adherents",
+        excerpt: "Accueil et orientation autour des droits, prestations et demarches d'adhesion.",
+        detail: "FOS-Agri organise une journee portes ouvertes dediee aux nouveaux adherents. Les equipes presentent les prestations sociales, les conditions d'eligibilite et les demarches utiles pour faciliter l'acces aux services."
+      },
+      ar: {
+        title: "يوم الابواب المفتوحة للمنخرطين الجدد",
+        excerpt: "استقبال وتوجيه حول الحقوق والخدمات ومساطر الانخراط.",
+        detail: "تنظم FOS-Agri يوما للأبواب المفتوحة لفائدة المنخرطين الجدد. وتقدم الفرق معلومات حول الخدمات الاجتماعية وشروط الاستفادة والمساطر العملية لتيسير الولوج إلى الخدمات."
+      },
+      zgh: {
+        title: "ⴰⵙⵙ ⵏ ⵜⴳⴳⵓⵔⴰ ⵉⵍⴷⵉⵏ ⵉ ⵉⵎⵣⵔⴰⵢⵏ ⵉⵎⴰⵢⵏⵓⵜⵏ",
+        excerpt: "ⴰⵙⵏⵓⴱⴳ ⴷ ⵓⵙⵏⵎⵍ ⵅⴼ ⵉⵣⵔⴼⴰⵏ, ⵉⵎⴰⵍⴰⵙⵙⵏ ⴷ ⵜⵎⵙⴽⴰⵔ.",
+        detail: "ⵜⵙⵎⵓⵜⵜⴳ FOS-Agri ⴰⵙⵙ ⵏ ⵜⴳⴳⵓⵔⴰ ⵉⵍⴷⵉⵏ ⵉ ⵉⵎⵣⵔⴰⵢⵏ ⵉⵎⴰⵢⵏⵓⵜⵏ. ⵜⵙⵙⴽⴰⵏ ⵜⵔⴱⴰⵄⵉⵏ ⵉⵎⴰⵍⴰⵙⵙⵏ, ⵜⵉⵡⵉⵙⵉⵏ ⴷ ⵜⵎⵙⴽⴰⵔ ⵏ ⵓⴽⵛⵛⵓⵎ."
+      },
+      image: "./images/news-vacances-2025.webp"
+    },
+    {
+      slug: "renforcement-relais-regionaux",
+      date: "18 Fevrier 2024",
+      fr: {
+        title: "Renforcement des relais regionaux",
+        excerpt: "Nouveaux points d'orientation pour rapprocher les prestations des adherents.",
+        detail: "La Fondation poursuit le renforcement de ses relais regionaux afin d'assurer une information plus rapide et un accompagnement plus proche. Cette organisation facilite l'orientation des adherents vers les services adaptes."
+      },
+      ar: {
+        title: "تعزيز نقط التواصل الجهوية",
+        excerpt: "نقط توجيه جديدة لتقريب الخدمات من المنخرطين.",
+        detail: "تواصل المؤسسة تعزيز نقط التواصل الجهوية لضمان إعلام أسرع ومواكبة أقرب. ويساعد هذا التنظيم على توجيه المنخرطين نحو الخدمات الملائمة لحاجياتهم."
+      },
+      zgh: {
+        title: "ⴰⵙⵎⵖⵔ ⵏ ⵉⵎⵍⴰⵍⵏ ⵉⵎⵏⴰⴹⵏ",
+        excerpt: "ⵜⵉⵏⵇⵇⵉⴹⵉⵏ ⵜⵉⵎⴰⵢⵏⵓⵜⵉⵏ ⵉ ⵓⵙⵏⵎⵍ ⴷ ⵓⵙⵀⵀⵍ ⵏ ⵓⴽⵛⵛⵓⵎ.",
+        detail: "ⵜⴽⵎⵎⵍ ⵜⵎⵙⵙⵓⵔⵜ ⴰⵙⵎⵖⵔ ⵏ ⵉⵎⵍⴰⵍⵏ ⵉⵎⵏⴰⴹⵏ ⵉ ⵓⵙⵉⵡⴹ ⵏ ⵓⵙⵉⵏⴼⵓ ⵙ ⵜⵉⴷⵜ ⴷ ⵓⵎⵎⴰⵏ ⵏ ⵓⵣⴷⵉ."
+      },
+      image: "./images/news-campagne-info.jpg"
+    },
+    {
+      slug: "atelier-prevention-sante-famille",
+      date: "12 Fevrier 2024",
+      fr: {
+        title: "Atelier de prevention sante et famille",
+        excerpt: "Session de sensibilisation consacree aux gestes de prevention et au suivi medical.",
+        detail: "Cet atelier propose aux adherents des informations pratiques sur la prevention, le suivi medical et les bons reflexes a adopter au quotidien. Il s'inscrit dans une action sociale orientee vers l'anticipation et la protection des familles."
+      },
+      ar: {
+        title: "ورشة للوقاية الصحية والاسرة",
+        excerpt: "حصة تحسيسية حول الوقاية والتتبع الطبي.",
+        detail: "تقدم هذه الورشة للمنخرطين معلومات عملية حول الوقاية والتتبع الطبي والسلوكيات الصحية اليومية. وتندرج ضمن عمل اجتماعي يركز على الاستباق وحماية الأسر."
+      },
+      zgh: {
+        title: "ⵜⴰⵎⵙⴽⵔⵜ ⵏ ⵓⵃⵟⵟⵓ ⴰⴷⵓⵙⴰⵏ ⴷ ⵜⵡⴰⵛⵓⵍⵜ",
+        excerpt: "ⵜⴰⵎⵙⴽⵔⵜ ⵏ ⵓⵙⵏⵉⵖⵙ ⵅⴼ ⵓⵃⵟⵟⵓ ⴷ ⵓⵜⵜⴱⴰⵄ ⴰⵎⴰⴹⴰⵏ.",
+        detail: "ⵜⴼⴽⴰ ⵜⵎⵙⴽⵔⵜ ⴰⴷ ⵉ ⵉⵎⵣⵔⴰⵢⵏ ⵉⵙⴰⵍⵏ ⵅⴼ ⵓⵃⵟⵟⵓ, ⵓⵜⵜⴱⴰⵄ ⴰⵎⴰⴹⴰⵏ ⴷ ⵉⵎⵓⵙⵙⵓⵜⵏ ⵉⴼⵓⵍⴽⵉⵏ."
+      },
+      image: "https://images.unsplash.com/photo-1576671081837-49000212a370?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      slug: "mise-a-jour-guide-prestations",
+      date: "06 Fevrier 2024",
+      fr: {
+        title: "Mise a jour du guide des prestations",
+        excerpt: "Nouvelles informations pratiques pour mieux orienter les adherents.",
+        detail: "Le guide des prestations a ete actualise pour clarifier les parcours, les conditions d'acces et les documents a preparer. Cette mise a jour aide les adherents a identifier rapidement les services correspondants a leur situation."
+      },
+      ar: {
+        title: "تحيين دليل الخدمات",
+        excerpt: "معلومات عملية جديدة لتوجيه أفضل للمنخرطين.",
+        detail: "تم تحيين دليل الخدمات لتوضيح المسارات وشروط الولوج والوثائق الواجب إعدادها. ويساعد هذا التحيين المنخرطين على التعرف بسرعة على الخدمات المناسبة لوضعيتهم."
+      },
+      zgh: {
+        title: "ⴰⵙⵙⵎⴰⵢⵏⵓ ⵏ ⵓⵎⵏⵉⵔ ⵏ ⵉⵎⴰⵍⴰⵙⵙⵏ",
+        excerpt: "ⵉⵙⴰⵍⵏ ⵉⵎⴰⵢⵏⵓⵜⵏ ⵉ ⵓⵙⵏⵎⵍ ⵉⴼⵓⵍⴽⵉⵏ.",
+        detail: "ⵉⵜⵜⵓⵙⵙⵎⴰⵢⵏⵓ ⵓⵎⵏⵉⵔ ⵏ ⵉⵎⴰⵍⴰⵙⵙⵏ ⵉ ⵓⵙⵎⴷ ⵏ ⵉⴱⵔⵉⴷⵏ, ⵜⵉⵡⵉⵙⵉⵏ ⴷ ⵜⵉⵔⴰⵜⵉⵏ ⵏ ⵓⵙⵎⵓⵜⵜⴳ."
+      },
+      image: "./images/news-pathologie-bouregreg.jpg"
+    },
+    {
+      slug: "convention-transport-familles",
+      date: "30 Janvier 2024",
+      fr: {
+        title: "Convention transport au profit des familles",
+        excerpt: "Conditions preferentielles pour faciliter les deplacements des adherents.",
+        detail: "Une nouvelle convention de transport propose des conditions preferentielles aux adherents et a leurs familles. Elle vise a alleger les couts de deplacement et a soutenir les parcours familiaux, professionnels et sociaux."
+      },
+      ar: {
+        title: "اتفاقية النقل لفائدة الاسر",
+        excerpt: "شروط تفضيلية لتسهيل تنقلات المنخرطين.",
+        detail: "تقترح اتفاقية النقل الجديدة شروطا تفضيلية لفائدة المنخرطين وأسرهم. وتهدف إلى التخفيف من تكاليف التنقل ودعم المسارات الأسرية والمهنية والاجتماعية."
+      },
+      zgh: {
+        title: "ⵜⴰⵎⵙⴰⵙⴽⴰⵏⵜ ⵏ ⵓⵙⵙⵉⵡⴹ ⵉ ⵜⵡⴰⵛⵓⵍⵉⵏ",
+        excerpt: "ⵜⵉⵖⴼⵉⴹⵉⵏ ⵉ ⵓⵙⵀⵀⵍ ⵏ ⵉⵎⵓⴷⴷⴰ ⵏ ⵉⵎⵣⵔⴰⵢⵏ.",
+        detail: "ⵜⴼⴽⴰ ⵜⵎⵙⴰⵙⴽⴰⵏⵜ ⴰⴷ ⵜⵉⵖⴼⵉⴹⵉⵏ ⵉ ⵉⵎⵣⵔⴰⵢⵏ ⴷ ⵜⵡⴰⵛⵓⵍⵉⵏ ⵏⵏⵙⵏ. ⵜⵔⴰ ⴰⴷ ⵜⵙⵙⵉⴼⵙⵙ ⵜⵉⵣⵉ ⵏ ⵓⵎⵓⴷⴷⵓ."
+      },
+      image: "./images/news-omra-2025.jpg"
+    },
+    {
+      slug: "plateforme-information-digitale",
+      date: "24 Janvier 2024",
+      fr: {
+        title: "Plateforme d'information digitale",
+        excerpt: "Un acces simplifie aux annonces et documents utiles.",
+        detail: "La Fondation prepare de nouveaux supports digitaux pour centraliser les annonces, documents utiles et informations pratiques. Cette demarche accompagne la modernisation du service rendu aux adherents."
+      },
+      ar: {
+        title: "منصة رقمية للاعلام",
+        excerpt: "ولوج مبسط للاعلانات والوثائق المفيدة.",
+        detail: "تعد المؤسسة دعامات رقمية جديدة لتجميع الإعلانات والوثائق المفيدة والمعلومات العملية. وتواكب هذه الخطوة تحديث الخدمات المقدمة للمنخرطين."
+      },
+      zgh: {
+        title: "ⵜⴰⵏⵏⵓⵔⵣⵎⵜ ⵜⴰⵎⴰⵜⴰⵢⵜ ⵏ ⵓⵙⵉⵏⴼⵓ",
+        excerpt: "ⴰⴽⵛⵛⵓⵎ ⵉⵙⵀⵍⵏ ⵖⵔ ⵉⵙⵉⵡⵍⵏ ⴷ ⵜⵉⵔⴰⵜⵉⵏ.",
+        detail: "ⵜⵙⵎⵓⵜⵜⴳ ⵜⵎⵙⵙⵓⵔⵜ ⵉⵎⴰⵙⵙⵏ ⵉⵎⴰⵜⴰⵢⵏ ⵉ ⵓⵙⴳⵔⵓ ⵏ ⵉⵙⵉⵡⵍⵏ, ⵜⵉⵔⴰⵜⵉⵏ ⴷ ⵉⵙⴰⵍⵏ ⵉⵎⴰⵙⵙⴰⵏⵏ."
+      },
+      image: "./images/news-partenariat-sportif.jpg"
     }
   ],
   events: [
