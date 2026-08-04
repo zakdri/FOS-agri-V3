@@ -508,7 +508,7 @@ window.siteData = {
     {
       key: "aides-sociales",
       id: "social-aid",
-      href: "index.html#services",
+      href: "services/prevoyance.html#subrubrique-5",
       icon: "fa-hand-holding-heart",
       fr: {
         title: "Aides Sociales",
