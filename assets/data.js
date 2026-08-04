@@ -571,7 +571,7 @@ window.siteData = {
     {
       key: "education-culture",
       id: "conventions",
-      href: "services/education-culture.html",
+      href: "services/formation-scolarisation.html",
       icon: "fa-file-signature",
       fr: {
         title: "Conventions",
