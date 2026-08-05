@@ -1116,7 +1116,7 @@
               navIndex: 6,
               title: 'CONVENTIONS ET PARTENARIATS MEDICALES',
               body: [
-                'TABLEAU CONVENTIONS (LABO, MEDECINS, CABINETS)'
+                'Consultez le réseau des partenaires médicaux conventionnés : laboratoires, médecins, cabinets, cliniques, opticiens, pharmacies et centres de soins, avec un accès par région et par catégorie.'
               ]
             }
           ]
@@ -1174,7 +1174,7 @@
               navIndex: 6,
               title: 'الاتفاقيات والشراكات الطبية',
               body: [
-                'جدول الاتفاقيات (مختبرات، أطباء، عيادات)'
+                'اطلعوا على شبكة الشركاء الطبيين المتعاقدين: مختبرات، أطباء، عيادات، مصحات، نظارات، صيدليات ومراكز علاج، مع إمكانية البحث حسب الجهة والفئة.'
               ]
             }
           ]
@@ -1232,7 +1232,7 @@
               navIndex: 6,
               title: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏⵏ',
               body: [
-                'ⵜⴰⴱⵍⵓⵜ ⵏ ⵉⵎⵙⴰⵡⴰⴹⵏ (ⵉⵎⵣⵣⴰⵔⵏ, ⵉⵎⵙⵙⵉⵊⵊⵉⵏ, ⵜⵉⵔⵣⴰ)'
+                'ⵙⵙⵏ ⴰⵥⴰⵡⴰⵏ ⵏ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏⵏ: ⵉⵎⵣⵣⴰⵔⵏ, ⵉⵎⵙⵙⵉⵊⵊⵉⵏ, ⵜⵉⵔⵣⴰ, ⵉⵙⵉⴱⵉⵜⴰⵍⵏ, ⵉⵎⵙⵡⴰⵍⵏ ⵏ ⵜⵉⵟⵟ, ⵜⵉⴼⴰⵔⵎⴰⵙⵉⵜⵉⵏ ⴷ ⵉⵎⵎⴰⵙⵏ ⵏ ⵓⵅⵙⴰⵏ, ⵙ ⵓⵙⵙⵉⴷⴼ ⵙ ⵜⵎⵏⴰⴹⵜ ⴷ ⵜⴰⴳⴳⴰⵢⵜ.'
               ]
             }
           ]
@@ -3895,7 +3895,7 @@
     const key = body.dataset.service;
     if (!mount || !services[key]) return;
     const item = serviceText(key);
-    const journeyIcons = ['fa-compass', 'fa-folder-open', 'fa-hand-holding-medical', 'fa-map-location-dot'];
+    const shouldRenderStandaloneKeypoints = (item.centerMedical || key === 'projets') && item.highlights?.length;
     const detailMenuItems = item.menuItems || item.chips.map((chip, index) => ({
       id: `subrubrique-${index + 1}`,
       icon: subIcons[key]?.[index] || 'fa-circle-check',
@@ -3956,6 +3956,23 @@
       ${renderAmcDetailSection(item)}
       ${renderAmtsDetailSection(item)}
       ${renderExtraPrestationSections(item)}
+      ${shouldRenderStandaloneKeypoints ? `
+      <section class="section page-section-soft prestation-keypoints-section" id="keypoints">
+        <div class="container">
+          <aside class="prestation-center-keypoints prestation-keypoints-panel">
+            <div class="prestation-keypoints-head">
+              <span><i class="fa-solid fa-list-check" aria-hidden="true"></i></span>
+              <div>
+                <small>${esc(item.meta)}</small>
+                <h3>${esc(t('highlights'))}</h3>
+              </div>
+            </div>
+            <ul class="prestation-highlight-list">
+              ${item.highlights.map((entry) => `<li><i class="fa-solid fa-check" aria-hidden="true"></i><span>${esc(entry)}</span></li>`).join('')}
+            </ul>
+          </aside>
+        </div>
+      </section>` : ''}
       ${item.centerMedical || key === 'projets' ? '' : `
       <section class="section page-section-soft" id="subrubriques">
         <div class="container">
@@ -3988,39 +4005,6 @@
           </div>
         </div>
       </section>`}
-      <section class="section page-section-soft prestation-journey-section" id="steps">
-        <div class="container">
-          <div class="prestation-section-head prestation-journey-head">
-            <span class="section-tag"><i class="fa-solid fa-route" aria-hidden="true"></i> ${esc(item.meta)}</span>
-            <h2>${esc(t('steps'))}</h2>
-            <p>${esc(t('flowBody'))}</p>
-          </div>
-          <div class="prestation-timeline prestation-journey-grid">
-            ${item.steps.map(([title, body], index) => `
-              <article class="prestation-timeline-item prestation-journey-card">
-                <div class="prestation-journey-card-top">
-                  <span class="prestation-journey-icon"><i class="fa-solid ${journeyIcons[index] || 'fa-circle-check'}" aria-hidden="true"></i></span>
-                  <span class="prestation-journey-number">${String(index + 1).padStart(2, '0')}</span>
-                </div>
-                <h3>${esc(title)}</h3>
-                <p>${esc(body)}</p>
-              </article>`).join('')}
-          </div>
-          ${item.centerMedical ? `
-          <aside class="prestation-center-keypoints prestation-keypoints-panel">
-            <div class="prestation-keypoints-head">
-              <span><i class="fa-solid fa-list-check" aria-hidden="true"></i></span>
-              <div>
-                <small>${esc(item.centerMedical.badge)}</small>
-                <h3>${esc(t('highlights'))}</h3>
-              </div>
-            </div>
-            <ul class="prestation-highlight-list">
-              ${item.highlights.map((entry) => `<li><i class="fa-solid fa-check" aria-hidden="true"></i><span>${esc(entry)}</span></li>`).join('')}
-            </ul>
-          </aside>` : ''}
-        </div>
-      </section>
       <section class="section">
         <div class="container">
           <div class="prestation-cta-panel">
