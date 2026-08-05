@@ -178,17 +178,15 @@ function renderServices() {
   container.innerHTML = siteData.services
     .map((service) => {
       const content = getLocalizedEntry(service);
-      const href = service.href || "#services";
       const description = content?.description || content?.excerpt || "";
       return `
-        <a href="${href}" class="service-card">
+        <article class="service-card">
           <div class="service-icon" aria-hidden="true">
             <i class="fa-solid ${service.icon}"></i>
           </div>
           <h3>${content.title}</h3>
           <p>${description}</p>
-          <span class="service-link">${getTranslationValue("services.more", currentLang) || ""}</span>
-        </a>
+        </article>
       `;
     })
     .join("");

@@ -35,8 +35,7 @@ window.siteData = {
       services: {
         tag: "Prestations",
         title: "Tout un ecosysteme de soutien",
-        link: "Acceder a l'espace adherent",
-        more: "Voir plus"
+        link: "Acceder a l'espace adherent"
       },
       news: {
         tag: "Actualites",
@@ -55,11 +54,7 @@ window.siteData = {
         hint: "Cliquez sur une date pour voir les événements prévus pour ce jour.",
         tabUpcoming: "À venir",
         tabPast: "Historique",
-        viewAll: "Voir tous les événements à venir",
-        subscribeTitle: "Restez informé",
-        subscribeBody: "Ne manquez aucun événement important de FOS-Agri.",
-        subscribeBtn: "S'abonner à l'agenda",
-        subscribeBtnHtml: "<i class=\"fa-regular fa-bell\"></i> S'abonner a l'agenda"
+        viewAll: "Voir tous les événements à venir"
       },
       testimonials: {
         tag: "Temoignage"
@@ -184,8 +179,7 @@ window.siteData = {
       services: {
         tag: "الخدمات",
         title: "منظومة متكاملة للدعم",
-        link: "الدخول إلى فضاء المنخرط",
-        more: "عرض المزيد"
+        link: "الدخول إلى فضاء المنخرط"
       },
       news: {
         tag: "المستجدات",
@@ -204,11 +198,7 @@ window.siteData = {
         hint: "انقر على تاريخ لعرض الأحداث المقررة في ذلك اليوم.",
         tabUpcoming: "قادمة",
         tabPast: "الأرشيف",
-        viewAll: "عرض جميع الأحداث القادمة",
-        subscribeTitle: "ابقوا على اطلاع",
-        subscribeBody: "لا تفوتوا أي حدث مهم من أحداث فوس-أكري.",
-        subscribeBtn: "الاشتراك في الأجندة",
-        subscribeBtnHtml: "<i class=\"fa-regular fa-bell\"></i> الاشتراك في الأجندة"
+        viewAll: "عرض جميع الأحداث القادمة"
       },
       testimonials: {
         tag: "شهادة"
@@ -333,8 +323,7 @@ window.siteData = {
       services: {
         tag: "ⵉⵎⴰⵍⴰⵙⵙⵏ",
         title: "ⴰⴽⴽⵯ ⴰⵏⴰⵎⵎⴰⵙ ⵏ ⵓⵎⵎⴰⵏ",
-        link: "ⴽⵛⵎ ⵖⵔ ⵓⵙⴰⵢⵍⴰ ⵏ ⵓⵎⵣⵔⴰⵢ",
-        more: "ⵙⵙⵏ ⵓⴳⴳⴰⵔ"
+        link: "ⴽⵛⵎ ⵖⵔ ⵓⵙⴰⵢⵍⴰ ⵏ ⵓⵎⵣⵔⴰⵢ"
       },
       news: {
         tag: "ⵉⵎⵉⵏⵉⴷⵏ",
@@ -353,11 +342,7 @@ window.siteData = {
         hint: "ⴽⴽⵉ ⵅⴼ ⵓⵙⴰⴽⵓⴷ ⴰⴷ ⵜⵥⵕⵜ ⵉⵙⴳⵔⴰⵡⵏ ⵏ ⵡⴰⵙⵙ.",
         tabUpcoming: "ⵉⴷ ⴷⴷⵓⵏ",
         tabPast: "ⴰⵎⴰⵣⵔⴰⵢ",
-        viewAll: "ⵙⵙⵏ ⴽⵓⵍⵍⵓ ⵉⵙⴳⵔⴰⵡⵏ ⵉⴷ ⴷⴷⵓⵏ",
-        subscribeTitle: "ⵇⵇⵉⵎ ⵜⵙⵙⵏⵜ",
-        subscribeBody: "ⵓⵔ ⵜⵜⵓⵜ ⵓⵍⴰ ⵢⴰⵏ ⵓⵙⴳⵔⴰⵡ ⵉⵅⴰⵜⴰⵔ ⵏ FOS-Agri.",
-        subscribeBtn: "ⵎⵎⴰⵍ ⵖⵔ ⵓⵎⵙⴰⵔⵓ",
-        subscribeBtnHtml: "<i class=\"fa-regular fa-bell\"></i> ⵎⵎⴰⵍ ⵖⵔ ⵓⵎⵙⴰⵔⵓ"
+        viewAll: "ⵙⵙⵏ ⴽⵓⵍⵍⵓ ⵉⵙⴳⵔⴰⵡⵏ ⵉⴷ ⴷⴷⵓⵏ"
       },
       testimonials: {
         tag: "ⵜⴰⵏⴰⵢⵜ"
@@ -512,12 +497,12 @@ window.siteData = {
       icon: "fa-hand-holding-heart",
       fr: {
         title: "Aides Sociales",
-        excerpt: "Soutien financier pour les grands événements de la vie (mariage, naissance, retraite).",
+        excerpt: "Soutien financier pour les grands événements de la vie.",
         detail: "Soutiens exceptionnels et aides ciblées pour accompagner les moments importants de la vie."
       },
       ar: {
         title: "المساعدات الاجتماعية",
-        excerpt: "دعم مالي لمواكبة الأحداث الكبرى في الحياة (زواج، ولادة، تقاعد).",
+        excerpt: "دعم مالي لمواكبة الأحداث الكبرى في الحياة.",
         detail: "دعم استثنائي ومساعدات موجهة لمواكبة المحطات الكبرى في الحياة."
       },
       zgh: {
