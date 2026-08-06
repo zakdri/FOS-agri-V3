@@ -3247,16 +3247,74 @@
     target.classList.add('is-service-scroll-reveal');
   }
 
-  function scrollToServiceTarget(target, scope) {
+  let activeScrollAnimation = 0;
+  let activeScrollBehavior = '';
+  let activeBodyScrollBehavior = '';
+
+  function stopAnimatedScroll() {
+    if (!activeScrollAnimation) return;
+    window.cancelAnimationFrame(activeScrollAnimation);
+    activeScrollAnimation = 0;
+    root.style.scrollBehavior = activeScrollBehavior;
+    body.style.scrollBehavior = activeBodyScrollBehavior;
+  }
+
+  function animatePageScrollTo(top, duration = 480) {
+    stopAnimatedScroll();
+    if (prefersReducedMotion() || duration <= 0) {
+      const previousRootBehavior = root.style.scrollBehavior;
+      const previousBodyBehavior = body.style.scrollBehavior;
+      root.style.scrollBehavior = 'auto';
+      body.style.scrollBehavior = 'auto';
+      window.scrollTo({ top, behavior: 'auto' });
+      root.style.scrollBehavior = previousRootBehavior;
+      body.style.scrollBehavior = previousBodyBehavior;
+      return;
+    }
+
+    const start = window.scrollY;
+    const distance = top - start;
+    if (Math.abs(distance) < 2) return;
+
+    const startedAt = window.performance.now();
+    activeScrollBehavior = root.style.scrollBehavior;
+    activeBodyScrollBehavior = body.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+    body.style.scrollBehavior = 'auto';
+
+    const step = (now) => {
+      const progress = Math.min(1, (now - startedAt) / duration);
+      const eased = progress < 0.5
+        ? 4 * progress * progress * progress
+        : 1 - (Math.pow(-2 * progress + 2, 3) / 2);
+      window.scrollTo(0, start + (distance * eased));
+      if (progress < 1) {
+        activeScrollAnimation = window.requestAnimationFrame(step);
+        return;
+      }
+      activeScrollAnimation = 0;
+      root.style.scrollBehavior = activeScrollBehavior;
+      body.style.scrollBehavior = activeBodyScrollBehavior;
+    };
+
+    activeScrollAnimation = window.requestAnimationFrame(step);
+  }
+
+  function scrollToServiceTarget(target, scope, options = {}) {
     if (!target) return;
     const header = document.querySelector('.site-header');
     const serviceNav = scope?.querySelector?.('.prestation-nav');
     const offset = visibleStickyHeight(header) + visibleStickyHeight(serviceNav) + 28;
     const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - offset);
-    window.scrollTo({
-      top,
-      behavior: prefersReducedMotion() ? 'auto' : 'smooth'
-    });
+    if (options.duration) {
+      animatePageScrollTo(top, options.duration);
+    } else {
+      stopAnimatedScroll();
+      window.scrollTo({
+        top,
+        behavior: prefersReducedMotion() ? 'auto' : 'smooth'
+      });
+    }
     revealScrollTarget(target);
   }
 
@@ -3792,7 +3850,7 @@
       const controls = getControls(scope);
       if (!controls?.results) return;
       window.requestAnimationFrame(() => {
-        scrollToServiceTarget(controls.results, widget.closest('[data-prestation-panel]') || widget);
+        scrollToServiceTarget(controls.results, widget.closest('[data-prestation-panel]') || widget, { duration: 480 });
       });
     };
 
