@@ -3689,7 +3689,7 @@
 
     let activeMapPath = null;
     const pageSize = 4;
-    const pages = { regional: 1, central: 1 };
+    const pages = { regional: 1 };
     const getRegionId = (entry) => medicalRegionFromName(entry.region)?.id || '';
     const getRegionalEntries = () => (
       !selectedRegion
@@ -3788,6 +3788,24 @@
       renderScope('regional');
     };
 
+    const scrollToMedicalResults = (scope) => {
+      const controls = getControls(scope);
+      if (!controls?.results) return;
+      window.requestAnimationFrame(() => {
+        scrollToServiceTarget(controls.results, widget.closest('[data-prestation-panel]') || widget);
+      });
+    };
+
+    const selectMedicalCategory = (scope, value, shouldScroll = false) => {
+      if (!scope || !pages[scope]) return;
+      const controls = getControls(scope);
+      if (!controls?.category) return;
+      controls.category.value = value || '';
+      pages[scope] = 1;
+      renderScope(scope);
+      if (shouldScroll) scrollToMedicalResults(scope);
+    };
+
     const toggleMedicalPanel = (scope) => {
       const panel = widget.querySelector(`[data-medical-panel="${scope}"]`);
       if (!panel) return;
@@ -3826,9 +3844,9 @@
       });
     });
 
-    ['regional', 'central'].forEach((scope) => {
+    ['regional'].forEach((scope) => {
       const controls = getControls(scope);
-      [controls.search, controls.city, controls.category].forEach((control) => {
+      [controls.search, controls.city].forEach((control) => {
         control?.addEventListener('input', () => {
           pages[scope] = 1;
           renderScope(scope);
@@ -3837,6 +3855,9 @@
           pages[scope] = 1;
           renderScope(scope);
         });
+      });
+      controls.category?.addEventListener('change', () => {
+        selectMedicalCategory(scope, controls.category.value, true);
       });
       controls.region?.addEventListener('change', () => {
         selectedRegion = controls.region.value || '';
@@ -3851,11 +3872,7 @@
       if (categoryButton && widget.contains(categoryButton)) {
         const filter = categoryButton.closest('[data-medical-filter]');
         const scope = filter?.getAttribute('data-medical-filter');
-        const controls = scope ? getControls(scope) : null;
-        if (!scope || !controls?.category || !pages[scope]) return;
-        controls.category.value = categoryButton.getAttribute('data-medical-category-value') || '';
-        pages[scope] = 1;
-        renderScope(scope);
+        selectMedicalCategory(scope, categoryButton.getAttribute('data-medical-category-value'), true);
         return;
       }
       const button = event.target.closest('[data-medical-page]');
