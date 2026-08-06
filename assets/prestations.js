@@ -3250,6 +3250,7 @@
   let activeScrollAnimation = 0;
   let activeScrollBehavior = '';
   let activeBodyScrollBehavior = '';
+  let activeOverflowAnchor = '';
 
   function stopAnimatedScroll() {
     if (!activeScrollAnimation) return;
@@ -3257,16 +3258,24 @@
     activeScrollAnimation = 0;
     root.style.scrollBehavior = activeScrollBehavior;
     body.style.scrollBehavior = activeBodyScrollBehavior;
+    root.style.overflowAnchor = activeOverflowAnchor;
   }
 
-  function animatePageScrollTo(top, duration = 480) {
+  function setPageScrollTop(top) {
+    const scroller = document.scrollingElement || root;
+    scroller.scrollTop = top;
+    if (scroller !== body) body.scrollTop = top;
+  }
+
+  function animatePageScrollTo(top, duration = 720, options = {}) {
     stopAnimatedScroll();
-    if (prefersReducedMotion() || duration <= 0) {
+    const shouldReduceMotion = options.respectReducedMotion !== false && prefersReducedMotion();
+    if (shouldReduceMotion || duration <= 0) {
       const previousRootBehavior = root.style.scrollBehavior;
       const previousBodyBehavior = body.style.scrollBehavior;
       root.style.scrollBehavior = 'auto';
       body.style.scrollBehavior = 'auto';
-      window.scrollTo({ top, behavior: 'auto' });
+      setPageScrollTop(top);
       root.style.scrollBehavior = previousRootBehavior;
       body.style.scrollBehavior = previousBodyBehavior;
       return;
@@ -3279,15 +3288,15 @@
     const startedAt = window.performance.now();
     activeScrollBehavior = root.style.scrollBehavior;
     activeBodyScrollBehavior = body.style.scrollBehavior;
+    activeOverflowAnchor = root.style.overflowAnchor;
     root.style.scrollBehavior = 'auto';
     body.style.scrollBehavior = 'auto';
+    root.style.overflowAnchor = 'none';
 
     const step = (now) => {
       const progress = Math.min(1, (now - startedAt) / duration);
-      const eased = progress < 0.5
-        ? 4 * progress * progress * progress
-        : 1 - (Math.pow(-2 * progress + 2, 3) / 2);
-      window.scrollTo(0, start + (distance * eased));
+      const eased = -(Math.cos(Math.PI * progress) - 1) / 2;
+      setPageScrollTop(start + (distance * eased));
       if (progress < 1) {
         activeScrollAnimation = window.requestAnimationFrame(step);
         return;
@@ -3295,6 +3304,7 @@
       activeScrollAnimation = 0;
       root.style.scrollBehavior = activeScrollBehavior;
       body.style.scrollBehavior = activeBodyScrollBehavior;
+      root.style.overflowAnchor = activeOverflowAnchor;
     };
 
     activeScrollAnimation = window.requestAnimationFrame(step);
@@ -3307,7 +3317,7 @@
     const offset = visibleStickyHeight(header) + visibleStickyHeight(serviceNav) + 28;
     const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - offset);
     if (options.duration) {
-      animatePageScrollTo(top, options.duration);
+      animatePageScrollTo(top, options.duration, options);
     } else {
       stopAnimatedScroll();
       window.scrollTo({
@@ -3849,9 +3859,12 @@
     const scrollToMedicalResults = (scope) => {
       const controls = getControls(scope);
       if (!controls?.results) return;
-      window.requestAnimationFrame(() => {
-        scrollToServiceTarget(controls.results, widget.closest('[data-prestation-panel]') || widget, { duration: 480 });
-      });
+      window.setTimeout(() => {
+        scrollToServiceTarget(controls.results, widget.closest('[data-prestation-panel]') || widget, {
+          duration: 850,
+          respectReducedMotion: false
+        });
+      }, 80);
     };
 
     const selectMedicalCategory = (scope, value, shouldScroll = false) => {
