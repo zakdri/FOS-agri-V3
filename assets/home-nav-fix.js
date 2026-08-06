@@ -376,12 +376,44 @@
   }
 
   function bindSearchTriggers() {
+    var isMobile = function () { return window.matchMedia('(max-width: 980px)').matches; };
+    var isVisibleTrigger = function (button) {
+      if (!button) return false;
+      var rect = button.getBoundingClientRect();
+      var style = window.getComputedStyle(button);
+      return rect.width > 0 &&
+        rect.height > 0 &&
+        style.display !== 'none' &&
+        style.visibility !== 'hidden' &&
+        style.pointerEvents !== 'none';
+    };
+    var canOpenSearchFrom = function (button) {
+      if (!button || !isVisibleTrigger(button)) return false;
+      if (!isMobile()) return true;
+      if (button.classList.contains('mobile-search-btn')) {
+        var menu = document.querySelector('.site-nav');
+        return document.body.classList.contains('menu-open') && menu && menu.classList.contains('is-open');
+      }
+      return !button.closest('.nav-actions');
+    };
+
     document.querySelectorAll('.nav-search-btn, .mobile-search-btn[data-header-search]').forEach(function (button) {
       button.onclick = function (e) {
         e.preventDefault();
+        if (!canOpenSearchFrom(button)) return;
         if (window.__openSearchModal) window.__openSearchModal();
       };
     });
+
+    if (!document.__homeSearchGuardBound) {
+      document.__homeSearchGuardBound = true;
+      document.addEventListener('click', function (event) {
+        var button = event.target.closest && event.target.closest('[data-header-search]');
+        if (!button || canOpenSearchFrom(button)) return;
+        event.preventDefault();
+        event.stopImmediatePropagation();
+      }, true);
+    }
   }
 
   /* ── Search modal with live results ─────────────────────────────────────── */

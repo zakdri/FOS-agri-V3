@@ -1051,8 +1051,19 @@
 
   function initSearchTriggers() {
     const isMobile = () => window.matchMedia('(max-width: 980px)').matches;
+    const isVisibleTrigger = (button) => {
+      if (!button) return false;
+      const rect = button.getBoundingClientRect();
+      const style = window.getComputedStyle(button);
+      return rect.width > 0 &&
+        rect.height > 0 &&
+        style.display !== 'none' &&
+        style.visibility !== 'hidden' &&
+        style.pointerEvents !== 'none';
+    };
     const canOpenSearchFrom = (button) => {
       if (!button) return false;
+      if (!isVisibleTrigger(button)) return false;
       if (!isMobile()) return true;
       if (button.classList.contains('mobile-search-btn')) {
         return body.classList.contains('menu-open') && document.querySelector('.site-nav')?.classList.contains('is-open');
@@ -1067,6 +1078,16 @@
         window.__openSearchModal?.();
       };
     });
+
+    if (!document.__secSearchGuardBound) {
+      document.__secSearchGuardBound = true;
+      document.addEventListener('click', (event) => {
+        const button = event.target.closest?.('[data-header-search]');
+        if (!button || canOpenSearchFrom(button)) return;
+        event.preventDefault();
+        event.stopImmediatePropagation();
+      }, true);
+    }
   }
 
   function getHomeFooterTemplate() {
