@@ -3152,8 +3152,6 @@
 
   function renderMedicalPartnersSection(section, navIndex) {
     const copy = medicalCopy();
-    const data = Array.isArray(window.medicalPartnersData) ? window.medicalPartnersData : [];
-    const central = data.filter((entry) => entry.section === 'central');
     return `
       <section class="section page-section-soft prestation-extra-section medical-partners-section" id="${subrubriqueId(navIndex)}" data-prestation-extra-panel data-prestation-extra-index="${navIndex}" hidden>
         <div class="container" data-medical-partners data-default-region="">
@@ -3186,24 +3184,6 @@
                 </div>
                 <div class="medical-partner-results" data-medical-results="regional"></div>
                 <div class="medical-pagination" data-medical-pagination="regional"></div>
-              </div>
-            </section>
-
-            <section class="medical-partner-panel medical-partner-central is-open" aria-label="${esc(copy.centralTitle)}" data-medical-panel="central">
-              <button class="medical-partner-panel-head" type="button" data-medical-panel-toggle="central" aria-expanded="true">
-                <div>
-                  <span class="section-tag"><i class="fa-solid fa-hospital" aria-hidden="true"></i> ${esc(copy.centralTitle)}</span>
-                  <p>${esc(copy.centralIntro)}</p>
-                </div>
-                <span class="medical-panel-meta">
-                  <strong data-medical-count="central">${central.length} ${esc(copy.results)}</strong>
-                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-                </span>
-              </button>
-              <div class="medical-partner-panel-body" data-medical-panel-body="central">
-                ${renderMedicalFilter('central')}
-                <div class="medical-partner-results" data-medical-results="central"></div>
-                <div class="medical-pagination" data-medical-pagination="central"></div>
               </div>
             </section>
           </div>
@@ -3806,7 +3786,6 @@
     const renderAll = () => {
       syncRegionUi();
       renderScope('regional');
-      renderScope('central');
     };
 
     const toggleMedicalPanel = (scope) => {

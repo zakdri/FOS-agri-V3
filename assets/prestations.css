@@ -1048,10 +1048,6 @@ body[data-service='prevoyance'] .prestation-extra-section {
   margin-bottom: 1rem;
 }
 
-.medical-partner-central .medical-partner-filters {
-  grid-template-columns: minmax(240px, 1.35fr) repeat(2, minmax(170px, 0.8fr));
-}
-
 .medical-partner-filters label {
   display: grid;
   gap: 0.35rem;
@@ -2728,7 +2724,6 @@ html[dir='rtl'] .prestation-keypoints-panel::before {
   }
 
   .medical-partner-filters,
-  .medical-partner-central .medical-partner-filters,
   .medical-map-layout,
   .medical-partner-results {
     grid-template-columns: 1fr;
