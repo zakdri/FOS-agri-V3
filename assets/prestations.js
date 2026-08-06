@@ -1684,6 +1684,7 @@
 
   /* ===== Appui à la scolarisation et formation : même logique que logement (chips + panneaux) ===== */
   const formationMenuItems = [
+    { id: 'a-propos',      icon: 'fa-circle-info',      labels: { fr: 'A PROPOS', ar: 'حول الخدمة', zgh: 'ⵅⴼ ⵜⵏⴼⵍⵉⵜ' } },
     { id: 'coaching',      icon: 'fa-chalkboard-user', labels: { fr: 'Coaching scolaire et parental', ar: 'المواكبة الدراسية والأسرية', zgh: 'ⴰⵎⵓⴷⴷⵓ ⴰⵙⵍⵎⴰⴷ ⴷ ⵏ ⵜⵡⴰⵛⵓⵍⵜ' } },
     { id: 'grandes-ecoles',icon: 'fa-school',          labels: { fr: 'Préparation aux grandes écoles', ar: 'التحضير للمدارس العليا', zgh: 'ⴰⵙⵎⵓⵜⵜⴳ ⵉ ⵜⵎⴰⵣⵉⵔⵉⵏ ⵏ ⵓⵙⵍⵎⴷ' } },
     { id: 'bourses-excellence', icon: 'fa-medal',      labels: { fr: 'Bourses d’excellence', ar: 'منح التميز', zgh: 'ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⵎⵥⵉ' } },
@@ -1698,30 +1699,72 @@
 
   const formationCenter = {
     fr: {
-      badge: 'Coaching scolaire et parental', title: 'Coaching scolaire et parental',
-      intro: 'La FOS-Agri contribue au développement et à l’épanouissement des enfants de ses adhérents à travers l’organisation de programmes ayant trait à leur développement personnel.',
+      icon: 'fa-circle-info',
+      badge: 'A PROPOS', title: 'Appui à la scolarisation et formation',
+      intro: 'La FOS-Agri accompagne les familles dans les étapes importantes de la scolarité, de l’orientation et de la formation, avec des dispositifs dédiés aux enfants des adhérents et à leurs parents.',
       items: [
-        { navIndex: 91, icon: 'fa-graduation-cap', title: 'Coaching scolaire', body: 'Le Coaching scolaire accompagne les élèves de la 2ème année baccalauréat, toutes options confondues, dans le développement du savoir-faire (méthodes de travail, organisation, concentration et mémorisation), et du savoir-être (gestion du stress et des émotions).' },
-        { navIndex: 92, icon: 'fa-people-roof', title: 'Coaching parental', body: 'La FOS-Agri met en place un programme de coaching parental au profit des adhérents afin de favoriser une relation positive parent-enfant et de leur permettre d’acquérir les outils de communication adaptés à chacun de leurs enfants, de mieux saisir leur rôle dans la sphère familiale et de développer leur leadership éducatif au sein de leurs foyers.' },
-        { navIndex: 93, icon: 'fa-clipboard-list', title: 'Inscription et pièces à fournir', bullets: ['Inscription en ligne.', 'Attestation de scolarité.'] }
+        { navIndex: 1, icon: 'fa-chalkboard-user', title: 'Coaching scolaire et parental', body: 'Ateliers et accompagnement pour mieux orienter les enfants, renforcer leurs méthodes de travail et soutenir les parents dans leur rôle éducatif.' },
+        { navIndex: 2, icon: 'fa-school', title: 'Préparation aux grandes écoles', body: 'Accompagnement des enfants des adhérents dans leur préparation aux grandes écoles à travers des dispositifs qui valorisent les meilleurs résultats.' },
+        { navIndex: 3, icon: 'fa-medal', title: 'Bourses d’excellence', body: 'Valorisation des parcours scolaires remarquables et encouragement des bacheliers ayant obtenu de bons résultats.' },
+        { navIndex: 4, icon: 'fa-hand-holding-heart', title: 'Bourse sociale', body: 'Appui social aux bacheliers éligibles afin de soutenir la poursuite de leurs études dans de bonnes conditions.' },
+        { navIndex: 5, icon: 'fa-sack-dollar', title: 'Primes de rentrée scolaire', body: 'Aide financière accordée aux familles concernées afin de faire face aux dépenses de la rentrée scolaire.' },
+        { navIndex: 6, icon: 'fa-handshake', title: 'Conventions éducatives', body: 'Accès à des centres culturels et de langues partenaires selon les conventions validées.' }
       ]
     },
     ar: {
-      badge: 'المواكبة الدراسية والأسرية', title: 'المواكبة الدراسية والأسرية',
-      intro: 'تساهم FOS-Agri في نماء وازدهار أبناء منخرطيها من خلال تنظيم برامج تتعلق بتنميتهم الشخصية.',
+      icon: 'fa-circle-info',
+      badge: 'حول الخدمة', title: 'دعم التمدرس والتكوين',
+      intro: 'تواكب FOS-Agri الأسر في المراحل الأساسية للتمدرس والتوجيه والتكوين، عبر آليات موجهة لأبناء المنخرطين وآبائهم.',
       items: [
-        { navIndex: 91, icon: 'fa-graduation-cap', title: 'المواكبة الدراسية', body: 'يواكب التوجيه المدرسي تلاميذ السنة الثانية من سلك البكالوريا، بجميع الشعب، في تطوير المهارات العملية (طرق العمل والتنظيم والتركيز والحفظ) والمهارات السلوكية (التحكم في التوتر والانفعالات).' },
-        { navIndex: 92, icon: 'fa-people-roof', title: 'المواكبة الأسرية', body: 'تضع FOS-Agri برنامجا للمواكبة الأسرية لفائدة المنخرطين بهدف تعزيز علاقة إيجابية بين الآباء والأبناء وتمكينهم من اكتساب أدوات التواصل الملائمة لكل طفل، وفهم دورهم داخل الأسرة بشكل أفضل، وتطوير قيادتهم التربوية داخل بيوتهم.' },
-        { navIndex: 93, icon: 'fa-clipboard-list', title: 'التسجيل والوثائق المطلوبة', bullets: ['التسجيل عبر الإنترنت.', 'شهادة التمدرس.'] }
+        { navIndex: 1, icon: 'fa-chalkboard-user', title: 'المواكبة الدراسية والأسرية', body: 'ورشات ومواكبة لتوجيه الأبناء وتعزيز طرق العمل ودعم الآباء في دورهم التربوي.' },
+        { navIndex: 2, icon: 'fa-school', title: 'التحضير للمدارس العليا', body: 'مواكبة أبناء المنخرطين في التحضير لولوج المدارس العليا عبر آليات تثمن أفضل النتائج.' },
+        { navIndex: 3, icon: 'fa-medal', title: 'منح التميز', body: 'تثمين المسارات الدراسية المتميزة وتشجيع الحاصلين على نتائج جيدة.' },
+        { navIndex: 4, icon: 'fa-hand-holding-heart', title: 'المنحة الاجتماعية', body: 'دعم اجتماعي للبكالوريين المؤهلين لمواصلة دراستهم في ظروف مناسبة.' },
+        { navIndex: 5, icon: 'fa-sack-dollar', title: 'منح الدخول المدرسي', body: 'دعم مالي للأسر المعنية لمواجهة مصاريف الدخول المدرسي.' },
+        { navIndex: 6, icon: 'fa-handshake', title: 'الاتفاقيات التربوية', body: 'ولوج إلى مراكز ثقافية ولغوية شريكة حسب الاتفاقيات المصادق عليها.' }
       ]
     },
     zgh: {
-      badge: 'ⴰⵎⵓⴷⴷⵓ ⴰⵙⵍⵎⴰⴷ ⴷ ⵏ ⵜⵡⴰⵛⵓⵍⵜ', title: 'ⴰⵎⵓⴷⴷⵓ ⴰⵙⵍⵎⴰⴷ ⴷ ⵏ ⵜⵡⴰⵛⵓⵍⵜ',
-      intro: 'ⵜⵙⴽⴰ FOS-Agri ⴰⵙⵏⴼⵍ ⴷ ⵓⵎⵥⵉⵢ ⵏ ⵜⴰⵔⵡⴰ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵙ ⵉⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵏⴼⵍ ⵓⵙⵍⵉⴳ.',
+      icon: 'fa-circle-info',
+      badge: 'ⵅⴼ ⵜⵏⴼⵍⵉⵜ', title: 'ⴰⵙⴷⵓ ⵏ ⵓⵙⵍⵎⴷ ⴷ ⵓⵙⴼⵙⵔ',
+      intro: 'FOS-Agri ⵜⵜⵎⵓⴷⴷⵓ ⵜⵉⵡⵉⵙⵉ ⵉ ⵜⵡⴰⵛⵓⵍⵉⵏ ⴳ ⵜⵎⵙⴽⵔⵉⵏ ⵏ ⵓⵙⵍⵎⴷ, ⴰⵙⵏⵓⴱⴳ ⴷ ⵓⵙⴼⵙⵔ, ⵙ ⵜⵎⵙⵙⵓⵜⴰⵍ ⵉ ⵜⴰⵔⵡⴰ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴷ ⵉⵎⴰⵡⵍⴰⵏ.',
       items: [
-        { navIndex: 91, icon: 'fa-graduation-cap', title: 'ⴰⵎⵓⴷⴷⵓ ⴰⵙⵍⵎⴰⴷ', body: 'ⴰⵎⵓⴷⴷⵓ ⴰⵙⵍⵎⴰⴷ ⵉⵜⵜⵓⵎⵓⴷⴷⵓ ⵉ ⵉⵏⵍⵎⴰⴷⵏ ⵏ ⵓⵙⴳⴳⵯⴰⵙ ⵡⵉⵙⵙ ⵙⵉⵏ ⵏ ⵍⴱⴰⴽ ⴳ ⵓⵙⵏⴼⵍ ⵏ ⵜⵣⵎⵎⴰⵔ (ⵜⵉⵔⵔⴰⵢⵉⵏ ⵏ ⵓⵅⴷⴷⵉⵎ, ⴰⵙⵎⴽⵜⵉ) ⴷ ⵓⵏⵥⴰⴹ ⵏ ⵢⵉⴹ.' },
-        { navIndex: 92, icon: 'fa-people-roof', title: 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵜⵡⴰⵛⵓⵍⵜ', body: 'ⵜⵙⴽⴰ FOS-Agri ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⵎⴰⵡⴰⵙⵏ ⵉ ⵓⵙⵎⵓⵜⵜⵉ ⵏ ⵜⵎⵢⴰⵡⴰⴹⵜ ⴳⵔ ⵉⵎⴰⵡⴰⵙⵏ ⴷ ⵜⴰⵔⵡⴰ ⵏⵏⵙⵏ.' },
-        { navIndex: 93, icon: 'fa-clipboard-list', title: 'ⴰⵙⵎⴰⴳⵍ ⴷ ⵉⵙⴻⵎⴹⴰⵍ', bullets: ['ⵙⵉⴷⵔ ⴰⵙⵎⴰⴳⵍ ⵖⴼ ⵜⵉⵔⵎⵜ.', 'ⵜⴰⵙⵔⵜⵉⵜ ⵏ ⵓⵙⵍⵎⴷ.'] }
+        { navIndex: 1, icon: 'fa-chalkboard-user', title: 'ⴰⵎⵓⴷⴷⵓ ⴰⵙⵍⵎⴰⴷ ⴷ ⵏ ⵜⵡⴰⵛⵓⵍⵜ', body: 'ⵜⵉⵡⵉⵙⵉ ⴷ ⵜⵎⵙⵙⵓⵜⴰⵍ ⵉ ⵓⵙⵏⵓⴱⴳ ⵏ ⵜⴰⵔⵡⴰ ⴷ ⵓⵙⴷⵓ ⵏ ⵉⵎⴰⵡⵍⴰⵏ.' },
+        { navIndex: 2, icon: 'fa-school', title: 'ⴰⵙⵎⵓⵜⵜⴳ ⵉ ⵜⵎⴰⵣⵉⵔⵉⵏ ⵏ ⵓⵙⵍⵎⴷ', body: 'ⴰⵙⴷⵓ ⵏ ⵜⴰⵔⵡⴰ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵉ ⵓⴽⵛⵓⵎ ⵖⵔ ⵜⵎⴰⵣⵉⵔⵉⵏ ⵏ ⵓⵙⵍⵎⴷ.' },
+        { navIndex: 3, icon: 'fa-medal', title: 'ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⵎⵥⵉ', body: 'ⴰⵙⵎⵓⵙⵙⵓ ⵏ ⵉⵎⴰⵏⵏ ⵉⴱⵔⵉⴷⵏ ⴳ ⵓⵙⵍⵎⴷ.' },
+        { navIndex: 4, icon: 'fa-hand-holding-heart', title: 'ⵜⴰⵎⵓⴷⴰ ⵜⴰⵏⴰⵎⵓⵏⵜ', body: 'ⵜⵉⵡⵉⵙⵉ ⵜⴰⵏⴰⵎⵓⵏⵜ ⵉ ⵉⵎⵙⵜⴰⵢⵏ ⵉⵍⵍⴰⵏ ⴷ ⵓⵣⵔⴼ.' },
+        { navIndex: 5, icon: 'fa-sack-dollar', title: 'ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⴰⵣⵡⴰⵔⵜ', body: 'ⵜⵉⵡⵉⵙⵉ ⵜⴰⴷⵔⵉⵎⴰⵏⵜ ⵉ ⵜⵡⴰⵛⵓⵍⵉⵏ ⴳ ⵜⴰⵣⵡⴰⵔⵜ ⵏ ⵓⵙⵍⵎⴷ.' },
+        { navIndex: 6, icon: 'fa-handshake', title: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⵏ ⵓⵙⵍⵎⴷ', body: 'ⴰⴽⵛⵓⵎ ⵖⵔ ⵉⵣⴷⴰⵢⵏ ⵏ ⵜⵖⴰⵔⵉⵡⵉⵏ ⴷ ⵜⵓⵜⵍⴰⵢⵉⵏ ⵙ ⵉⵎⵙⴰⵡⴰⴹⵏ.' }
+      ]
+    }
+  };
+
+  const formationCoachingSection = {
+    fr: {
+      navIndex: 1, icon: 'fa-chalkboard-user', badge: 'Coaching scolaire et parental', title: 'Coaching scolaire et parental',
+      intro: ['La FOS-Agri contribue au développement et à l’épanouissement des enfants de ses adhérents à travers l’organisation de programmes ayant trait à leur développement personnel.'],
+      blocks: [
+        { icon: 'fa-graduation-cap', title: 'Coaching scolaire', items: [{ title: 'Accompagnement scolaire', body: 'Le Coaching scolaire accompagne les élèves de la 2ème année baccalauréat, toutes options confondues, dans le développement du savoir-faire (méthodes de travail, organisation, concentration et mémorisation), et du savoir-être (gestion du stress et des émotions).' }] },
+        { icon: 'fa-people-roof', title: 'Coaching parental', items: [{ title: 'Accompagnement parental', body: 'La FOS-Agri met en place un programme de coaching parental au profit des adhérents afin de favoriser une relation positive parent-enfant et de leur permettre d’acquérir les outils de communication adaptés à chacun de leurs enfants, de mieux saisir leur rôle dans la sphère familiale et de développer leur leadership éducatif au sein de leurs foyers.' }] },
+        { icon: 'fa-clipboard-list', title: 'Inscription et pièces à fournir', items: [{ title: 'Documents requis', bullets: ['Inscription en ligne.', 'Attestation de scolarité.'] }] }
+      ]
+    },
+    ar: {
+      navIndex: 1, icon: 'fa-chalkboard-user', badge: 'المواكبة الدراسية والأسرية', title: 'المواكبة الدراسية والأسرية',
+      intro: ['تساهم FOS-Agri في نماء وازدهار أبناء منخرطيها من خلال تنظيم برامج تتعلق بتنميتهم الشخصية.'],
+      blocks: [
+        { icon: 'fa-graduation-cap', title: 'المواكبة الدراسية', items: [{ title: 'مواكبة دراسية', body: 'يواكب التوجيه المدرسي تلاميذ السنة الثانية من سلك البكالوريا، بجميع الشعب، في تطوير المهارات العملية (طرق العمل والتنظيم والتركيز والحفظ) والمهارات السلوكية (التحكم في التوتر والانفعالات).' }] },
+        { icon: 'fa-people-roof', title: 'المواكبة الأسرية', items: [{ title: 'مواكبة أسرية', body: 'تضع FOS-Agri برنامجا للمواكبة الأسرية لفائدة المنخرطين بهدف تعزيز علاقة إيجابية بين الآباء والأبناء وتمكينهم من اكتساب أدوات التواصل الملائمة لكل طفل، وفهم دورهم داخل الأسرة بشكل أفضل، وتطوير قيادتهم التربوية داخل بيوتهم.' }] },
+        { icon: 'fa-clipboard-list', title: 'التسجيل والوثائق المطلوبة', items: [{ title: 'الوثائق المطلوبة', bullets: ['التسجيل عبر الإنترنت.', 'شهادة التمدرس.'] }] }
+      ]
+    },
+    zgh: {
+      navIndex: 1, icon: 'fa-chalkboard-user', badge: 'ⴰⵎⵓⴷⴷⵓ ⴰⵙⵍⵎⴰⴷ ⴷ ⵏ ⵜⵡⴰⵛⵓⵍⵜ', title: 'ⴰⵎⵓⴷⴷⵓ ⴰⵙⵍⵎⴰⴷ ⴷ ⵏ ⵜⵡⴰⵛⵓⵍⵜ',
+      intro: ['ⵜⵙⴽⴰ FOS-Agri ⴰⵙⵏⴼⵍ ⴷ ⵓⵎⵥⵉⵢ ⵏ ⵜⴰⵔⵡⴰ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵙ ⵉⵙⵏⴼⴰⵔⵏ ⵏ ⵓⵙⵏⴼⵍ ⵓⵙⵍⵉⴳ.'],
+      blocks: [
+        { icon: 'fa-graduation-cap', title: 'ⴰⵎⵓⴷⴷⵓ ⴰⵙⵍⵎⴰⴷ', items: [{ title: 'ⴰⵙⴷⵓ ⴰⵙⵍⵎⴰⴷ', body: 'ⴰⵎⵓⴷⴷⵓ ⴰⵙⵍⵎⴰⴷ ⵉⵜⵜⵓⵎⵓⴷⴷⵓ ⵉ ⵉⵏⵍⵎⴰⴷⵏ ⵏ ⵓⵙⴳⴳⵯⴰⵙ ⵡⵉⵙⵙ ⵙⵉⵏ ⵏ ⵍⴱⴰⴽ ⴳ ⵓⵙⵏⴼⵍ ⵏ ⵜⵣⵎⵎⴰⵔ (ⵜⵉⵔⵔⴰⵢⵉⵏ ⵏ ⵓⵅⴷⴷⵉⵎ, ⴰⵙⵎⴽⵜⵉ) ⴷ ⵓⵏⵥⴰⴹ ⵏ ⵢⵉⴹ.' }] },
+        { icon: 'fa-people-roof', title: 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵜⵡⴰⵛⵓⵍⵜ', items: [{ title: 'ⴰⵙⴷⵓ ⵏ ⵜⵡⴰⵛⵓⵍⵜ', body: 'ⵜⵙⴽⴰ FOS-Agri ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⵎⴰⵡⴰⵙⵏ ⵉ ⵓⵙⵎⵓⵜⵜⵉ ⵏ ⵜⵎⵢⴰⵡⴰⴹⵜ ⴳⵔ ⵉⵎⴰⵡⴰⵙⵏ ⴷ ⵜⴰⵔⵡⴰ ⵏⵏⵙⵏ.' }] },
+        { icon: 'fa-clipboard-list', title: 'ⴰⵙⵎⴰⴳⵍ ⴷ ⵉⵙⴻⵎⴹⴰⵍ', items: [{ title: 'ⵉⵙⴻⵎⴹⴰⵍ', bullets: ['ⵙⵉⴷⵔ ⴰⵙⵎⴰⴳⵍ ⵖⴼ ⵜⵉⵔⵎⵜ.', 'ⵜⴰⵙⵔⵜⵉⵜ ⵏ ⵓⵙⵍⵎⴷ.'] }] }
       ]
     }
   };
@@ -1747,9 +1790,10 @@
 
   const formationExtra = {
     fr: [
-      { navIndex: 1, icon: 'fa-school', badge: 'Préparation aux grandes écoles', title: 'Préparation aux grandes écoles',
+      formationCoachingSection.fr,
+      { navIndex: 2, icon: 'fa-school', badge: 'Préparation aux grandes écoles', title: 'Préparation aux grandes écoles',
         intro: ['La FOS-Agri accompagne les enfants des adhérents dans leur préparation aux grandes écoles, à travers deux dispositifs complémentaires qui valorisent les meilleurs résultats obtenus à l’examen national du baccalauréat : les bourses d’excellence et les prix d’encouragement.'] },
-      { navIndex: 2, icon: 'fa-medal', badge: 'Bourses d’excellence', title: 'Bourses d’excellence et prix d’encouragement',
+      { navIndex: 3, icon: 'fa-medal', badge: 'Bourses d’excellence', title: 'Bourses d’excellence et prix d’encouragement',
         intro: ['En sus des bourses d’excellence, la FOS-Agri octroie aux autres bacheliers ayant obtenu de bonnes moyennes à l’examen national des prix d’encouragement matérialisés en ordinateurs portables, tablettes… utiles pour la poursuite de leur parcours universitaire.'],
         beneficiariesTitle: 'Bénéficiaires',
         beneficiaries: [{ number: '01', text: 'Les enfants des adhérents en deuxième année du baccalauréat ayant obtenu les moyennes les plus élevées à l’examen national (moyenne supérieure ou égale à 15 à l’examen national, aussi bien au niveau central que régional), et ce dans la limite du budget disponible.' }],
@@ -1757,7 +1801,7 @@
           { icon: 'fa-clipboard-list', title: 'Inscription et modalités', items: [{ title: 'Comment s’inscrire', body: 'Inscription en ligne.' }] },
           { icon: 'fa-file-lines', title: 'Pièces à fournir', items: [{ title: 'Documents requis', bullets: formationExcellenceBullets }] }
         ] },
-      { navIndex: 3, icon: 'fa-hand-holding-heart', badge: 'Bourse sociale', title: 'Bourse sociale',
+      { navIndex: 4, icon: 'fa-hand-holding-heart', badge: 'Bourse sociale', title: 'Bourse sociale',
         intro: ['Dans le cadre de son engagement en faveur de l’accompagnement de l’excellence scolaire des enfants des adhérents, la Fondation met en place un programme de bourses sociales destiné aux bacheliers relevant des échelles 9 et inférieures, ayant obtenu une moyenne égale ou supérieure à 10 à l’examen national et poursuivant leurs études dans un établissement d’enseignement public ou privé reconnu, au Maroc ou à l’étranger.', 'Cette bourse est accordée à hauteur de 500 DH par mois pendant 10 mois par an, sur une durée de 3 ans.'],
         beneficiariesTitle: 'Bénéficiaires',
         beneficiaries: [{ number: '01', text: 'Les enfants des adhérents en deuxième année de baccalauréat ayant obtenu une moyenne égale ou supérieure à 10 à l’examen national et poursuivant leurs études dans un établissement d’enseignement public ou privé reconnu, au Maroc ou à l’étranger.' }],
@@ -1765,7 +1809,7 @@
           { icon: 'fa-clipboard-list', title: 'Inscription et modalités', items: [{ title: 'Comment s’inscrire', body: 'Inscription en ligne.' }] },
           { icon: 'fa-file-lines', title: 'Pièces à fournir', items: [{ title: 'Documents requis', bullets: formationExcellenceBullets }] }
         ] },
-      { navIndex: 4, icon: 'fa-sack-dollar', badge: 'Primes de rentrée scolaire', title: 'Primes de rentrée scolaire',
+      { navIndex: 5, icon: 'fa-sack-dollar', badge: 'Primes de rentrée scolaire', title: 'Primes de rentrée scolaire',
         intro: ['Parallèlement aux autres actions d’accompagnement des enfants de ses adhérents scolarisés, la FOS-Agri leur octroie également une aide financière afin de faire face aux dépenses de la rentrée scolaire.', 'Le montant de la prime varie en fonction du nombre d’enfants scolarisés au niveau primaire à charge.'],
         beneficiariesTitle: 'Bénéficiaires',
         beneficiaries: [{ number: '01', text: 'Adhérents classés de l’échelle 6 à 9 ayant des enfants scolarisés en primaire âgés de 12 ans maximum.' }],
@@ -1774,14 +1818,15 @@
           { icon: 'fa-clipboard-list', title: 'Inscription et modalités', items: [{ title: 'Comment s’inscrire', body: 'Inscription en ligne.' }] },
           { icon: 'fa-file-lines', title: 'Pièces à fournir', items: [{ title: 'Documents requis', bullets: ['Inscription en ligne', 'Acte de naissance de l’enfant', 'Certificat de scolarité'] }] }
         ] },
-      { navIndex: 5, type: 'culturePartners', icon: 'fa-handshake', badge: 'Conventions éducatives', title: 'Conventions éducatives',
+      { navIndex: 6, type: 'culturePartners', icon: 'fa-handshake', badge: 'Conventions éducatives', title: 'Conventions éducatives',
         intro: ['Soucieuse de favoriser les conditions propices pour développer le capital linguistique et culturel aussi bien des adhérents que de leurs conjoints et enfants, et de faire de la diversité une source d’enrichissement, la FOS-Agri a conclu des conventions avec des centres culturels et de langues reconnus, notamment :', 'Bénéficiaires : les adhérents, leurs conjoints et enfants.'],
         groups: [{ title: 'Centres culturels et de langues partenaires', items: formationConventionsItemsFor('Confirmé', 'Télécharger l’offre', 'Télécharger la note') }] }
     ],
     ar: [
-      { navIndex: 1, icon: 'fa-school', badge: 'التحضير للمدارس العليا', title: 'التحضير للمدارس العليا',
+      formationCoachingSection.ar,
+      { navIndex: 2, icon: 'fa-school', badge: 'التحضير للمدارس العليا', title: 'التحضير للمدارس العليا',
         intro: ['تواكب FOS-Agri أبناء المنخرطين في تحضيرهم لولوج المدارس العليا، من خلال آليتين متكاملتين تثمّنان أفضل النتائج المحرزة في الامتحان الوطني للبكالوريا: منح التميز وجوائز التشجيع.'] },
-      { navIndex: 2, icon: 'fa-medal', badge: 'منح التميز', title: 'منح التميز وجوائز التشجيع',
+      { navIndex: 3, icon: 'fa-medal', badge: 'منح التميز', title: 'منح التميز وجوائز التشجيع',
         intro: ['بالإضافة إلى منح التميز، تمنح FOS-Agri للحاصلين على معدلات جيدة في الامتحان الوطني جوائز تشجيعية على شكل حواسيب محمولة وأجهزة لوحية... مفيدة لمتابعة مسارهم الجامعي.'],
         beneficiariesTitle: 'المستفيدون',
         beneficiaries: [{ number: '01', text: 'أبناء المنخرطين في السنة الثانية من سلك البكالوريا الحاصلون على أعلى المعدلات في الامتحان الوطني (معدل يفوق أو يساوي 15 في الامتحان الوطني، على المستويين المركزي والجهوي)، وذلك في حدود الميزانية المتاحة.' }],
@@ -1789,7 +1834,7 @@
           { icon: 'fa-clipboard-list', title: 'التسجيل والكيفية', items: [{ title: 'كيفية التسجيل', body: 'التسجيل عبر الإنترنت.' }] },
           { icon: 'fa-file-lines', title: 'الوثائق المطلوبة', items: [{ title: 'الوثائق المطلوبة', bullets: formationExcellenceBulletsAr }] }
         ] },
-      { navIndex: 3, icon: 'fa-hand-holding-heart', badge: 'المنحة الاجتماعية', title: 'المنحة الاجتماعية',
+      { navIndex: 4, icon: 'fa-hand-holding-heart', badge: 'المنحة الاجتماعية', title: 'المنحة الاجتماعية',
         intro: ['في إطار التزامها بمواكبة التفوق الدراسي لأبناء المنخرطين، تضع المؤسسة برنامجا للمنح الاجتماعية موجها لخريجي البكالوريا المصنفين في السلم 9 وما دونه، الحاصلين على معدل يساوي أو يفوق 10 في الامتحان الوطني والمتابعين لدراستهم في مؤسسة تعليمية عمومية أو خاصة معترف بها، بالمغرب أو بالخارج.', 'تُمنح هذه المنحة بقيمة 500 درهم شهريا لمدة 10 أشهر في السنة، على مدى 3 سنوات.'],
         beneficiariesTitle: 'المستفيدون',
         beneficiaries: [{ number: '01', text: 'أبناء المنخرطين في السنة الثانية من سلك البكالوريا الحاصلون على معدل يساوي أو يفوق 10 في الامتحان الوطني والمتابعون لدراستهم في مؤسسة تعليمية عمومية أو خاصة معترف بها، بالمغرب أو بالخارج.' }],
@@ -1797,7 +1842,7 @@
           { icon: 'fa-clipboard-list', title: 'التسجيل والكيفية', items: [{ title: 'كيفية التسجيل', body: 'التسجيل عبر الإنترنت.' }] },
           { icon: 'fa-file-lines', title: 'الوثائق المطلوبة', items: [{ title: 'الوثائق المطلوبة', bullets: formationExcellenceBulletsAr }] }
         ] },
-      { navIndex: 4, icon: 'fa-sack-dollar', badge: 'منح الدخول المدرسي', title: 'منح الدخول المدرسي',
+      { navIndex: 5, icon: 'fa-sack-dollar', badge: 'منح الدخول المدرسي', title: 'منح الدخول المدرسي',
         intro: ['بالتوازي مع الإجراءات الأخرى لمواكبة أبناء منخرطيها المتمدرسين، تمنحهم FOS-Agri كذلك دعما ماليا لمواجهة نفقات الدخول المدرسي.', 'يختلف مبلغ المنحة حسب عدد الأبناء المتمدرسين في السلك الابتدائي والمتكفل بهم.'],
         beneficiariesTitle: 'المستفيدون',
         beneficiaries: [{ number: '01', text: 'المنخرطون المصنفون من السلم 6 إلى 9 الذين لديهم أبناء متمدرسون في السلك الابتدائي لا تتجاوز أعمارهم 12 سنة.' }],
@@ -1806,14 +1851,15 @@
           { icon: 'fa-clipboard-list', title: 'التسجيل والكيفية', items: [{ title: 'كيفية التسجيل', body: 'التسجيل عبر الإنترنت.' }] },
           { icon: 'fa-file-lines', title: 'الوثائق المطلوبة', items: [{ title: 'الوثائق المطلوبة', bullets: ['التسجيل عبر الإنترنت', 'رسم ازدياد الطفل', 'شهادة التمدرس'] }] }
         ] },
-      { navIndex: 5, type: 'culturePartners', icon: 'fa-handshake', badge: 'الاتفاقيات التربوية', title: 'الاتفاقيات التربوية',
+      { navIndex: 6, type: 'culturePartners', icon: 'fa-handshake', badge: 'الاتفاقيات التربوية', title: 'الاتفاقيات التربوية',
         intro: ['حرصا منها على توفير الظروف الملائمة لتنمية الرصيد اللغوي والثقافي للمنخرطين وأزواجهم وأبنائهم، وجعل التنوع مصدر إغناء، أبرمت FOS-Agri اتفاقيات مع مراكز ثقافية ولغوية معترف بها، لا سيما:', 'المستفيدون: المنخرطون وأزواجهم وأبناؤهم.'],
         groups: [{ title: 'المراكز الثقافية واللغوية الشريكة', items: formationConventionsItemsFor('مؤكد', 'تحميل العرض', 'تحميل المذكرة') }] }
     ],
     zgh: [
-      { navIndex: 1, icon: 'fa-school', badge: 'ⴰⵙⵎⵓⵜⵜⴳ ⵉ ⵜⵎⴰⵣⵉⵔⵉⵏ', title: 'ⴰⵙⵎⵓⵜⵜⴳ ⵉ ⵜⵎⴰⵣⵉⵔⵉⵏ ⵏ ⵓⵙⵍⵎⴷ',
+      formationCoachingSection.zgh,
+      { navIndex: 2, icon: 'fa-school', badge: 'ⴰⵙⵎⵓⵜⵜⴳ ⵉ ⵜⵎⴰⵣⵉⵔⵉⵏ', title: 'ⴰⵙⵎⵓⵜⵜⴳ ⵉ ⵜⵎⴰⵣⵉⵔⵉⵏ ⵏ ⵓⵙⵍⵎⴷ',
         intro: ['ⵜⵙⴽⴰ FOS-Agri ⴰⵙⵎⵓⵜⵜⴳ ⵏ ⵜⴰⵔⵡⴰ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⵉ ⵓⴱⵔⵉⴷ ⵏ ⵜⵎⴰⵣⵉⵔⵉⵏ ⵏ ⵓⵙⵍⵎⴷ, ⵙ ⵙⵉⵏ ⵉⵙⵏⴼⴰⵔⵏ: ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⵎⵥⵉ ⴷ ⵜⵉⵎⵓⴷⴰ ⵏ ⵓⵙⵏⵜⴰⵍ.'] },
-      { navIndex: 2, icon: 'fa-medal', badge: 'ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⵎⵥⵉ', title: 'ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⵎⵥⵉ ⴷ ⵜⵉⵎⵓⴷⴰ ⵏ ⵓⵙⵏⵜⴰⵍ',
+      { navIndex: 3, icon: 'fa-medal', badge: 'ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⵎⵥⵉ', title: 'ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⵎⵥⵉ ⴷ ⵜⵉⵎⵓⴷⴰ ⵏ ⵓⵙⵏⵜⴰⵍ',
         intro: ['ⵜⵙⴽⴰ FOS-Agri ⵉ ⵉⵏⵍⵎⴰⴷⵏ ⵢⵓⵙⵏ ⵜⵉⵍⴰⵍ ⵢⴼⵓⵍⴽⵉⵏ ⴳ ⵓⵙⵎⵏⵉⴷ ⴰⵏⴰⵎⵓⵔ ⵜⵉⵎⵓⴷⴰ ⵏ ⵓⵙⵏⵜⴰⵍ (ⵉⴱⴰⵏⴰⵏ, ⵜⵉⵎⵥⵉⵢⵉⵏ ⵏ ⵓⴼⵓⵙ) ⵉ ⵓⵎⵓⴷⴷⵓ ⵏⵏⵙⵏ.'],
         beneficiariesTitle: 'ⵉⵎⵙⵜⴼⵉⴷⵏ',
         beneficiaries: [{ number: '01', text: 'ⵜⴰⵔⵡⴰ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ ⵡⵉⵙⵙ ⵙⵉⵏ ⵏ ⵍⴱⴰⴽ ⵢⵓⵙⵏ ⵜⵉⵍⴰⵍ ⵢⴰⵜⵜⵓⵢⵏ ⴳ ⵓⵙⵎⵏⵉⴷ ⴰⵏⴰⵎⵓⵔ (15 ⵏⵖ ⵓⴳⴳⴰⵔ), ⴳ ⵓⵥⴹⴹⴰⵕ ⵏ ⵜⴰⴷⴷⴰⵙⵜ ⵢⵍⵍⴰⵏ.' }],
@@ -1821,7 +1867,7 @@
           { icon: 'fa-clipboard-list', title: 'ⴰⵙⵎⴰⴳⵍ ⴷ ⵜⵎⴰⵎⴽⵜ', items: [{ title: 'ⵎⴰⵎⴽ ⴰⵙⵎⴰⴳⵍ', body: 'ⵙⵉⴷⵔ ⴰⵙⵎⴰⴳⵍ ⵖⴼ ⵜⵉⵔⵎⵜ.' }] },
           { icon: 'fa-file-lines', title: 'ⵉⵙⴻⵎⴹⴰⵍ ⵢⵜⵜⵓⵙⵜⴰⵏⵏ', items: [{ title: 'ⵉⵙⴻⵎⴹⴰⵍ', bullets: formationExcellenceBulletsZgh }] }
         ] },
-      { navIndex: 3, icon: 'fa-hand-holding-heart', badge: 'ⵜⴰⵎⵓⴷⴰ ⵜⴰⵏⴰⵎⵓⵏⵜ', title: 'ⵜⴰⵎⵓⴷⴰ ⵜⴰⵏⴰⵎⵓⵏⵜ',
+      { navIndex: 4, icon: 'fa-hand-holding-heart', badge: 'ⵜⴰⵎⵓⴷⴰ ⵜⴰⵏⴰⵎⵓⵏⵜ', title: 'ⵜⴰⵎⵓⴷⴰ ⵜⴰⵏⴰⵎⵓⵏⵜ',
         intro: ['ⴳ ⵓⵙⵎⵓⵜⵜⵉ ⵏⵏⵙ ⵉ ⵓⵎⵓⴷⴷⵓ ⵏ ⵜⵣⵎⵎⴰⵔ ⵏ ⵜⴰⵔⵡⴰ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ, ⵜⵙⴽⴰ ⵜⴰⵎⴰⵡⴰⵙⵜ ⴰⵙⵏⴼⵍ ⵏ ⵜⵎⵓⴷⴰ ⵜⵉⵏⴰⵎⵓⵏⵉⵏ ⵉ ⵉⵎⵙⵙⵍⵎⴰⴷⵏ ⵏ ⵓⵙⵎⵏⵉⴷ 9 ⵏⵖ ⵓⴹⴹⴰⵢ, ⵢⵓⵙⵏⵉⵏ ⵜⵉⵍⴰⵍ 10 ⵏⵖ ⵓⴳⴳⴰⵔ.', 'ⵜⵜⵢⴰⴽⴼ ⵜⵎⵓⴷⴰ ⴰⴷ ⵙ 500 ⴷⵔⵀⵎ ⴳ ⵡⴰⵢⵢⵓⵔ ⵉ 10 ⵡⴰⵢⵢⵓⵔⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ, ⴳ 3 ⵉⵙⴳⴳⵯⴰⵙⵏ.'],
         beneficiariesTitle: 'ⵉⵎⵙⵜⴼⵉⴷⵏ',
         beneficiaries: [{ number: '01', text: 'ⵜⴰⵔⵡⴰ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴳ ⵓⵙⴳⴳⵯⴰⵙ ⵡⵉⵙⵙ ⵙⵉⵏ ⵏ ⵍⴱⴰⴽ ⵢⵓⵙⵏⵉⵏ ⵜⵉⵍⴰⵍ 10 ⵏⵖ ⵓⴳⴳⴰⵔ.' }],
@@ -1829,7 +1875,7 @@
           { icon: 'fa-clipboard-list', title: 'ⴰⵙⵎⴰⴳⵍ ⴷ ⵜⵎⴰⵎⴽⵜ', items: [{ title: 'ⵎⴰⵎⴽ ⴰⵙⵎⴰⴳⵍ', body: 'ⵙⵉⴷⵔ ⴰⵙⵎⴰⴳⵍ ⵖⴼ ⵜⵉⵔⵎⵜ.' }] },
           { icon: 'fa-file-lines', title: 'ⵉⵙⴻⵎⴹⴰⵍ ⵢⵜⵜⵓⵙⵜⴰⵏⵏ', items: [{ title: 'ⵉⵙⴻⵎⴹⴰⵍ', bullets: formationExcellenceBulletsZgh }] }
         ] },
-      { navIndex: 4, icon: 'fa-sack-dollar', badge: 'ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⴰⵣⵡⴰⵔⵜ', title: 'ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⴰⵣⵡⴰⵔⵜ ⵏ ⵓⵙⵍⵎⴷ',
+      { navIndex: 5, icon: 'fa-sack-dollar', badge: 'ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⴰⵣⵡⴰⵔⵜ', title: 'ⵜⵉⵎⵓⴷⴰ ⵏ ⵜⴰⵣⵡⴰⵔⵜ ⵏ ⵓⵙⵍⵎⴷ',
         intro: ['ⵜⵙⴽⴰ FOS-Agri ⵉ ⵜⴰⵔⵡⴰ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴰⴼⵓⵙ ⵏ ⵉⴷⵔⵉⵎⵏ ⵉ ⵜⴰⵣⵡⴰⵔⵜ ⵏ ⵓⵙⵍⵎⴷ.', 'ⵜⴰⵍⵍⴰⵙⵜ ⵏ ⵜⵎⵓⴷⴰ ⵜⵜⵓⴱⴷⴰⵍ ⵙ ⵓⵎⵉⴹⴰⵏ ⵏ ⵜⴰⵔⵡⴰ.'],
         beneficiariesTitle: 'ⵉⵎⵙⵜⴼⵉⴷⵏ',
         beneficiaries: [{ number: '01', text: 'ⵉⵎⵏⵅⵔⴰⵟⵏ ⵏ ⵓⵙⵎⵏⵉⴷ 6 ⴰⵔ 9 ⵢⵓⵙⵏⵉⵏ ⵜⴰⵔⵡⴰ ⴳ ⵓⵙⵍⵎⴷ ⴰⵎⵣⵡⴰⵔⵓ ⴰⵔ 12 ⵏ ⵉⵙⴳⴳⵯⴰⵙⵏ.' }],
@@ -1838,7 +1884,7 @@
           { icon: 'fa-clipboard-list', title: 'ⴰⵙⵎⴰⴳⵍ ⴷ ⵜⵎⴰⵎⴽⵜ', items: [{ title: 'ⵎⴰⵎⴽ ⴰⵙⵎⴰⴳⵍ', body: 'ⵙⵉⴷⵔ ⴰⵙⵎⴰⴳⵍ ⵖⴼ ⵜⵉⵔⵎⵜ.' }] },
           { icon: 'fa-file-lines', title: 'ⵉⵙⴻⵎⴹⴰⵍ ⵢⵜⵜⵓⵙⵜⴰⵏⵏ', items: [{ title: 'ⵉⵙⴻⵎⴹⴰⵍ', bullets: ['ⵙⵉⴷⵔ ⴰⵙⵎⴰⴳⵍ ⵖⴼ ⵜⵉⵔⵎⵜ', 'ⵜⴰⴽⵓⵜⵜ ⵏ ⵜⵍⴰⵍⵉⵜ ⵏ ⵓⴼⵔⵓⵅ', 'ⵜⴰⵙⵔⵜⵉⵜ ⵏ ⵓⵙⵍⵎⴷ'] }] }
         ] },
-      { navIndex: 5, type: 'culturePartners', icon: 'fa-handshake', badge: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⵏ ⵓⵙⵍⵎⴷ', title: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⵏ ⵓⵙⵍⵎⴷ',
+      { navIndex: 6, type: 'culturePartners', icon: 'fa-handshake', badge: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⵏ ⵓⵙⵍⵎⴷ', title: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⵏ ⵓⵙⵍⵎⴷ',
         intro: ['ⵙ ⵓⵙⵎⵓⵜⵜⵉ ⵏⵏⵙ ⵉ ⵓⵙⵏⴼⵍ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⴷ ⵜⴷⵍⵙⴰ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ, ⵜⵉⵔⴳⴰⵣⵉⵏ ⵏⵏⵙⵏ ⴷ ⵜⴰⵔⵡⴰ ⵏⵏⵙⵏ, ⵜⵙⴽⴰ FOS-Agri ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⵉⵜⵜⵓⵙⵙⵏⵏ:', 'ⵉⵎⵙⵜⴼⵉⴷⵏ: ⵉⵎⵏⵅⵔⴰⵟⵏ, ⵜⵉⵔⴳⴰⵣⵉⵏ ⵏⵏⵙⵏ ⴷ ⵜⴰⵔⵡⴰ ⵏⵏⵙⵏ.'],
         groups: [{ title: 'ⵉⵣⴷⴰⵢⵏ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⵉⵣⴷⵉⵏ', items: formationConventionsItemsFor('ⵢⵜⵜⵓⵙⵙⵏ', 'ⵙⵉⴷⵔ ⴰⴼⵔⴰⵏ', 'ⵙⵉⴷⵔ ⵜⴰⴱⵔⴰⵜ') }] }
     ]
