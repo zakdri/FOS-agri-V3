@@ -1050,9 +1050,20 @@
   }
 
   function initSearchTriggers() {
+    const isMobile = () => window.matchMedia('(max-width: 980px)').matches;
+    const canOpenSearchFrom = (button) => {
+      if (!button) return false;
+      if (!isMobile()) return true;
+      if (button.classList.contains('mobile-search-btn')) {
+        return body.classList.contains('menu-open') && document.querySelector('.site-nav')?.classList.contains('is-open');
+      }
+      return !button.closest('.nav-actions');
+    };
+
     document.querySelectorAll('[data-header-search]').forEach((button) => {
       button.onclick = (event) => {
         event.preventDefault();
+        if (!canOpenSearchFrom(button)) return;
         window.__openSearchModal?.();
       };
     });

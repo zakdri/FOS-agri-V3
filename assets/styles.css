@@ -683,6 +683,14 @@ textarea {
     visibility: visible !important;
     width: calc(100% - 2rem) !important;
     height: auto !important;
+  }
+
+  .site-nav:not(.is-open) .mobile-search-btn[data-header-search] {
+    pointer-events: none !important;
+  }
+
+  .site-nav.is-open .mobile-search-btn[data-header-search],
+  body.menu-open .site-nav .mobile-search-btn[data-header-search] {
     pointer-events: auto !important;
   }
 }
@@ -3708,6 +3716,17 @@ html[dir="rtl"] .service-layout {
     transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
                 opacity 0.35s ease,
                 visibility 0s linear 0s !important;
+  }
+
+  body:not(.menu-open) .site-header .site-nav > *,
+  body:not(.menu-open) .site-nav > * {
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  body.menu-open .site-header .site-nav > *,
+  body.menu-open .site-nav > * {
+    visibility: visible !important;
   }
 
   /* Staggered fade-in for each top-level menu item when the panel
