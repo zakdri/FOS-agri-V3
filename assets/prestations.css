@@ -1726,7 +1726,7 @@ html[dir='rtl'] .prestation-amc-block-head.is-split {
 }
 
 .prestation-amc-card-icon,
-.prestation-amc-case-card span,
+.prestation-amc-case-icon,
 .prestation-amc-note > span {
   display: inline-grid;
   place-items: center;
