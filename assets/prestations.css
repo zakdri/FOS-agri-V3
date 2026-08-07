@@ -2067,28 +2067,79 @@ html[dir='rtl'] .prestation-amc-guarantee-trigger {
 }
 
 .prestation-amc-case-card {
-  padding: 1rem;
+  overflow: hidden;
+  padding: 0;
   border: 1px solid rgba(20, 59, 40, 0.1);
   border-radius: 0.9rem;
   background: rgba(255, 255, 255, 0.82);
   box-shadow: 0 14px 34px rgba(16, 55, 35, 0.06);
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
 }
 
-.prestation-amc-case-card span {
+.prestation-amc-case-card:hover,
+.prestation-amc-case-card:focus-within,
+.prestation-amc-case-card.is-open {
+  border-color: rgba(214, 169, 65, 0.38);
+  box-shadow: 0 18px 42px rgba(16, 55, 35, 0.1);
+}
+
+.prestation-amc-case-trigger {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: 4.8rem;
+  padding: 1rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+
+.prestation-amc-case-trigger:focus-visible {
+  outline: 3px solid rgba(214, 169, 65, 0.42);
+  outline-offset: -3px;
+}
+
+.prestation-amc-case-icon {
   width: 2.35rem;
   height: 2.35rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0;
   border-radius: 0.72rem;
 }
 
-.prestation-amc-case-card h4 {
-  margin: 0 0 0.45rem;
+.prestation-amc-case-title {
+  min-width: 0;
   color: #143b28;
+  font-family: inherit;
   font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.25;
 }
 
-.prestation-amc-case-card p {
-  margin: 0;
+.prestation-amc-case-toggle {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: rgba(214, 169, 65, 0.14);
+  color: #0f5f3d;
+  font-size: 0.82rem;
+  transition: background 0.22s ease, transform 0.22s ease;
+}
+
+.prestation-amc-case-card.is-open .prestation-amc-case-toggle {
+  background: rgba(15, 95, 61, 0.12);
+  transform: rotate(180deg);
+}
+
+.prestation-amc-case-copy {
+  margin: -0.2rem 1rem 1rem;
+  padding: 0.85rem 0 0;
+  border-top: 1px solid rgba(20, 59, 40, 0.08);
   color: #536a5d;
   font-size: 0.92rem;
   line-height: 1.65;

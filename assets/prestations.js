@@ -2764,13 +2764,17 @@
       </article>`;
   }
 
-  function renderAmcCaseCard(entry) {
+  function renderAmcCaseCard(entry, index, optionIndex, detail) {
     const [icon, title, body] = entry;
+    const contentId = `amc-case-${optionIndex}-${index}`;
     return `
-      <article class="prestation-amc-case-card">
-        <span><i class="fa-solid ${esc(icon)}" aria-hidden="true"></i></span>
-        <h4>${esc(title)}</h4>
-        <p>${esc(body)}</p>
+      <article class="prestation-amc-case-card" data-amc-case-card>
+        <button class="prestation-amc-case-trigger" type="button" aria-expanded="false" aria-controls="${contentId}" aria-label="${esc(detail.expandLabel)} : ${esc(title)}">
+          <span class="prestation-amc-case-icon"><i class="fa-solid ${esc(icon)}" aria-hidden="true"></i></span>
+          <span class="prestation-amc-case-title">${esc(title)}</span>
+          <i class="fa-solid fa-plus prestation-amc-case-toggle" aria-hidden="true"></i>
+        </button>
+        <p class="prestation-amc-case-copy" id="${contentId}" hidden>${esc(body)}</p>
       </article>`;
   }
 
@@ -2789,7 +2793,7 @@
             <span class="section-tag"><i class="fa-solid fa-notes-medical" aria-hidden="true"></i> ${esc(detail.casesTitle)} — ${esc(option.title)}</span>
           </div>
           <div class="prestation-amc-case-grid">
-            ${option.cases.map(renderAmcCaseCard).join('')}
+            ${option.cases.map((entry, caseIndex) => renderAmcCaseCard(entry, caseIndex, index, detail)).join('')}
           </div>
         </div>
       </section>`;
@@ -3479,6 +3483,26 @@
       });
 
       updateDots();
+    });
+
+    scope.querySelectorAll('[data-amc-case-card]').forEach((card) => {
+      const trigger = card.querySelector('.prestation-amc-case-trigger');
+      const content = card.querySelector('.prestation-amc-case-copy');
+      const icon = card.querySelector('.prestation-amc-case-toggle');
+      const title = card.querySelector('.prestation-amc-case-title')?.textContent?.trim() || '';
+      const detail = serviceText('prevoyance')?.amcDetail || amcDetailFr;
+      if (!trigger || !content) return;
+      trigger.addEventListener('click', () => {
+        const expanded = !card.classList.contains('is-open');
+        card.classList.toggle('is-open', expanded);
+        trigger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        trigger.setAttribute('aria-label', `${expanded ? detail.collapseLabel : detail.expandLabel} : ${title}`);
+        content.hidden = !expanded;
+        if (icon) {
+          icon.classList.toggle('fa-plus', !expanded);
+          icon.classList.toggle('fa-minus', expanded);
+        }
+      });
     });
 
     scope.querySelectorAll('.prestation-amc-option-tabs').forEach((tabs) => {
