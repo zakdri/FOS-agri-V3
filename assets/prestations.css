@@ -2098,6 +2098,11 @@ html[dir='rtl'] .prestation-amc-guarantee-trigger {
   cursor: pointer;
 }
 
+html[dir='rtl'] .prestation-amc-case-trigger {
+  direction: rtl;
+  text-align: right;
+}
+
 .prestation-amc-case-trigger:focus-visible {
   outline: 3px solid rgba(214, 169, 65, 0.42);
   outline-offset: -3px;
@@ -2117,6 +2122,11 @@ html[dir='rtl'] .prestation-amc-guarantee-trigger {
   font-size: 1rem;
   font-weight: 800;
   line-height: 1.25;
+}
+
+html[dir='rtl'] .prestation-amc-case-title,
+html[dir='rtl'] .prestation-amc-case-copy {
+  text-align: right;
 }
 
 .prestation-amc-case-toggle {

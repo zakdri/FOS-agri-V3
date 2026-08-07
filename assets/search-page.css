@@ -113,6 +113,17 @@ html[dir='rtl'] .search-page-form i {
   padding-right: 0.45rem;
 }
 
+html[dir='rtl'] .search-page-form,
+html[dir='rtl'] .search-page-result {
+  direction: rtl;
+}
+
+html[dir='rtl'] .search-page-summary,
+html[dir='rtl'] .search-page-result h2,
+html[dir='rtl'] .search-page-result p {
+  text-align: right;
+}
+
 html[dir='rtl'] .search-page-result-arrow {
   transform: scaleX(-1);
 }

@@ -149,7 +149,40 @@
   }
 
   function searchText(entry) {
-    return normalize([t(entry.key), entry.key, entry.url, SEARCH_KEYWORDS[entry.key] || ''].join(' '));
+    return normalize([entry.label || t(entry.key), entry.key, entry.url, entry.searchText || '', SEARCH_KEYWORDS[entry.key] || ''].join(' '));
+  }
+
+  function getLocalizedNewsEntry(item) {
+    return item?.[lang] || item?.fr || item?.ar || item?.zgh || {};
+  }
+
+  function getNewsSearchEntries() {
+    const newsItems = Array.isArray(window.siteData?.news) ? window.siteData.news : [];
+    return newsItems.map((item, index) => {
+      const content = getLocalizedNewsEntry(item);
+      const allContent = [item.fr, item.ar, item.zgh].filter(Boolean);
+      const slug = item.slug || `actualite-${index + 1}`;
+      return {
+        key: `news-${slug}`,
+        url: `actualite.html?article=${encodeURIComponent(slug)}`,
+        icon: 'fa-newspaper',
+        label: content.title || slug,
+        summary: content.excerpt || content.detail || '',
+        searchText: [
+          slug,
+          item.date || '',
+          ...allContent.flatMap((entry) => [
+            entry.title || '',
+            entry.excerpt || '',
+            entry.detail || ''
+          ])
+        ].join(' ')
+      };
+    });
+  }
+
+  function getSearchEntries() {
+    return SEARCH_INDEX.concat(getNewsSearchEntries());
   }
 
   function currentQuery() {
@@ -185,7 +218,7 @@
       return;
     }
 
-    const hits = SEARCH_INDEX.filter((entry) => searchText(entry).includes(q));
+    const hits = getSearchEntries().filter((entry) => searchText(entry).includes(q));
     summary.textContent = `${hits.length} ${t('search.count')} ${t('search.for')} "${query}"`;
 
     if (!hits.length) {
@@ -197,8 +230,8 @@
       <a class="search-page-result" href="${entry.url}">
         <span class="search-page-result-icon"><i class="fa-solid ${entry.icon}" aria-hidden="true"></i></span>
         <span>
-          <h2>${t(entry.key)}</h2>
-          <p>${entry.url}</p>
+          <h2>${entry.label || t(entry.key)}</h2>
+          <p>${entry.summary || entry.url}</p>
         </span>
         <i class="fa-solid fa-arrow-right search-page-result-arrow" aria-hidden="true"></i>
       </a>

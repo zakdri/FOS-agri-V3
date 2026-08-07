@@ -184,6 +184,41 @@
     return (T[l] && T[l][key]) || T.fr[key] || '';
   }
 
+  function getLocalizedNewsEntry(item) {
+    var l = getLang();
+    return (item && (item[l] || item.fr || item.ar || item.zgh)) || {};
+  }
+
+  function getNewsSearchEntries() {
+    var newsItems = Array.isArray(window.siteData && window.siteData.news) ? window.siteData.news : [];
+    return newsItems.map(function (item, index) {
+      var content = getLocalizedNewsEntry(item);
+      var allContent = [item.fr, item.ar, item.zgh].filter(Boolean);
+      var slug = item.slug || ('actualite-' + (index + 1));
+      return {
+        key: 'news-' + slug,
+        url: 'actualite.html?article=' + encodeURIComponent(slug),
+        icon: 'fa-newspaper',
+        label: content.title || slug,
+        searchText: [
+          slug,
+          item.date || '',
+          allContent.map(function (entry) {
+            return [
+              entry.title || '',
+              entry.excerpt || '',
+              entry.detail || ''
+            ].join(' ');
+          }).join(' ')
+        ].join(' ')
+      };
+    });
+  }
+
+  function getSearchEntries() {
+    return SEARCH_INDEX.concat(getNewsSearchEntries());
+  }
+
   function goToSearchPage(query) {
     var q = (query || '').trim();
     window.location.href = 'search.html' + (q ? '?q=' + encodeURIComponent(q) : '');
@@ -492,10 +527,10 @@
       box.innerHTML = '<p class="search-results-empty" data-state="initial">' + t('searchStart') + '</p>';
       return;
     }
-    var hits = SEARCH_INDEX
-      .map(function (entry) { return { entry: entry, label: t(entry.key) || entry.key }; })
+    var hits = getSearchEntries()
+      .map(function (entry) { return { entry: entry, label: entry.label || t(entry.key) || entry.key }; })
       .filter(function (h) {
-        var text = normalize([h.label, h.entry.key, h.entry.url, SEARCH_KEYWORDS[h.entry.key] || ''].join(' '));
+        var text = normalize([h.label, h.entry.key, h.entry.url, h.entry.searchText || '', SEARCH_KEYWORDS[h.entry.key] || ''].join(' '));
         return text.indexOf(q) !== -1;
       });
     if (!hits.length) {

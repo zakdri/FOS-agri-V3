@@ -600,6 +600,20 @@
     return `${base}${path}`;
   }
 
+  let searchDataRequested = false;
+
+  function ensureSearchData(onReady) {
+    if (window.siteData?.news?.length) return false;
+    if (searchDataRequested) return true;
+    searchDataRequested = true;
+    const script = document.createElement('script');
+    script.src = href('assets/data.js?v=7');
+    script.onload = () => { if (typeof onReady === 'function') onReady(); };
+    script.onerror = () => { searchDataRequested = false; };
+    document.head.appendChild(script);
+    return true;
+  }
+
   function escapeHtml(value) {
     return (value || '').toString().replace(/[&<>"']/g, (char) => ({
       '&': '&amp;',
@@ -970,8 +984,37 @@
       label,
       entry.key,
       entry.url,
+      entry.searchText || '',
       SEARCH_KEYWORDS[entry.key] || ''
     ].join(' '));
+  }
+
+  function getNewsSearchEntries() {
+    const newsItems = Array.isArray(window.siteData?.news) ? window.siteData.news : [];
+    return newsItems.map((item, index) => {
+      const content = getLocalizedNewsEntry(item);
+      const allContent = [item.fr, item.ar, item.zgh].filter(Boolean);
+      const slug = item.slug || `actualite-${index + 1}`;
+      return {
+        key: `news-${slug}`,
+        url: `actualite.html?article=${encodeURIComponent(slug)}`,
+        icon: 'fa-newspaper',
+        label: content.title || slug,
+        searchText: [
+          slug,
+          item.date || '',
+          ...allContent.flatMap((entry) => [
+            entry.title || '',
+            entry.excerpt || '',
+            entry.detail || ''
+          ])
+        ].join(' ')
+      };
+    });
+  }
+
+  function getSearchEntries() {
+    return SEARCH_INDEX.concat(getNewsSearchEntries());
   }
 
   /* Live in-menu search — keeps the existing modal and lists every
@@ -984,12 +1027,13 @@
       box.innerHTML = `<p class="search-results-empty" data-state="initial">${t('searchStart')}</p>`;
       return;
     }
-    const hits = SEARCH_INDEX
-      .map((entry) => ({ entry, label: t(entry.key) || entry.key }))
+    const isLoadingSearchData = ensureSearchData(() => renderSearchResults(query));
+    const hits = getSearchEntries()
+      .map((entry) => ({ entry, label: entry.label || t(entry.key) || entry.key }))
       .filter(({ entry, label }) => searchText(entry, label).includes(q));
 
     if (!hits.length) {
-      box.innerHTML = `<p class="search-results-empty" data-state="empty">${t('searchEmpty')}</p>`;
+      box.innerHTML = `<p class="search-results-empty" data-state="${isLoadingSearchData ? 'initial' : 'empty'}">${isLoadingSearchData ? t('searchStart') : t('searchEmpty')}</p>`;
       return;
     }
     box.innerHTML = hits.map(({ entry, label }) => `

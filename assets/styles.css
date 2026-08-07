@@ -33,6 +33,8 @@ body {
 
 html[dir="rtl"] body {
   font-family: "Tajawal", sans-serif;
+  direction: rtl;
+  text-align: right;
 }
 
 html[lang="zgh"] body {
@@ -62,6 +64,11 @@ button,
 input,
 textarea {
   font: inherit;
+}
+
+html[dir="rtl"] input,
+html[dir="rtl"] textarea {
+  text-align: right;
 }
 
 .skip-link {
@@ -4885,6 +4892,11 @@ body.search-modal-open { overflow: hidden; }
 
 html[dir='rtl'] .search-modal-close { right: auto; left: 1rem; }
 
+html[dir='rtl'] .search-modal-form,
+html[dir='rtl'] .search-result-item {
+  direction: rtl;
+}
+
 /* ── Live search results inside the modal ─────────────────── */
 .search-results {
   margin-top: 1rem;
@@ -4945,6 +4957,10 @@ html[dir='rtl'] .search-result-item:focus-visible {
   flex: 1;
   font-weight: 600;
   font-size: 0.96rem;
+}
+
+html[dir='rtl'] .search-result-text {
+  text-align: right;
 }
 
 .search-result-arrow {
