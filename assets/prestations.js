@@ -322,7 +322,7 @@
       {
         icon: 'fa-people-roof',
         title: 'Bénéficiaires',
-        body: ['Option 1 : L’Adhérent-Assuré actif et retraité, sans limite d’âge.', 'Option 2 : L’Adhérent-Assuré actif.', 'Pour les options 1 et 2 :'],
+        body: ['Option 1 et 2 : L’Adhérent-Assuré actif et retraité, sans limite d’âge.', 'Pour les options 1 et 2 :'],
         bullets: ['Le ou les conjoints sans limite d’âge.', 'Les veuves et orphelins jusqu’à l’âge de 26 ans révolus, du personnel décédé.', 'Les enfants à charge jusqu’à l’âge de 26 ans révolus.']
       },
       {
@@ -442,7 +442,7 @@
       {
         icon: 'fa-people-roof',
         title: 'المستفيدون',
-        body: ['الخيار 1: المنخرط المؤمن النشيط أو المتقاعد دون حد للسن.', 'الخيار 2: المنخرط المؤمن النشيط.', 'بالنسبة للخيارين 1 و2:'],
+        body: ['الخياران 1 و2: المنخرط المؤمن النشيط أو المتقاعد دون حد للسن.', 'بالنسبة للخيارين 1 و2:'],
         bullets: ['الزوج أو الأزواج دون حد للسن.', 'الأرامل والأيتام إلى غاية 26 سنة كاملة بالنسبة لموظف متوفى.', 'الأطفال المتكفل بهم إلى غاية 26 سنة كاملة.']
       },
       {
@@ -562,7 +562,7 @@
       {
         icon: 'fa-people-roof',
         title: 'ⵉⵎⵙⵜⴼⴰⴷⴰⵏ',
-        body: ['ⵜⴰⴼⵔⵏⵜ 1: ⴰⵎⵏⵅⵔⴰⵟ ⴰⵎⴰⵍⵍⴰⵍ ⵏⵖ ⴰⵎⵇⵇⵔⴰⵏ, ⴱⵍⴰ ⵜⵉⵍⴰⵍ ⵏ ⵓⵙⴳⴳⵯⴰⵙ.', 'ⵜⴰⴼⵔⵏⵜ 2: ⴰⵎⵏⵅⵔⴰⵟ ⴰⵎⴰⵍⵍⴰⵍ.', 'ⵉ ⵜⴼⵔⵏⵉⵡⵉⵏ 1 ⴷ 2:'],
+        body: ['ⵜⴰⴼⵔⵏⵉⵡⵉⵏ 1 ⴷ 2: ⴰⵎⵏⵅⵔⴰⵟ ⴰⵎⴰⵍⵍⴰⵍ ⵏⵖ ⴰⵎⵇⵇⵔⴰⵏ, ⴱⵍⴰ ⵜⵉⵍⴰⵍ ⵏ ⵓⵙⴳⴳⵯⴰⵙ.', 'ⵉ ⵜⴼⵔⵏⵉⵡⵉⵏ 1 ⴷ 2:'],
         bullets: ['ⴰⵙⵍⵉ ⵏⵖ ⵉⵙⵍⴰⵏ ⴱⵍⴰ ⵜⵉⵍⴰⵍ ⵏ ⵓⵙⴳⴳⵯⴰⵙ.', 'ⵜⵉⴳⵯⵊⴷⴰⵏ ⴷ ⵉⴳⵓⵊⵉⵍⵏ ⴰⵔ 26 ⵏ ⵓⵙⴳⴳⵯⴰⵙ.', 'ⵉⴼⵔⵅⴰⵏ ⵉⵜⵜⵓⵙⵜⴰⵍⵏ ⴰⵔ 26 ⵏ ⵓⵙⴳⴳⵯⴰⵙ.']
       },
       {
@@ -3974,13 +3974,13 @@
         </div>
       </section>
       <section class="prestation-nav">
-        <div class="container prestation-nav-inner ${detailMenuItems.length === 7 ? 'is-split-nav' : ''} ${key === 'culture' ? 'is-culture-nav' : ''}">
+        <div class="container prestation-nav-inner ${detailMenuItems.length === 7 ? 'is-split-nav' : ''} ${key === 'culture' ? 'is-culture-nav' : ''} ${key === 'prevoyance' ? 'is-prevoyance-nav' : ''}">
           ${/*
             Prévoyance menu checklist:
-            - 7 items must be rendered for every language.
+            - All items must be rendered for every language.
             - All labels come from translation/data file.
             - No hardcoded menu labels.
-            - No sub-menu for these 7 items.
+            - No sub-menu for these items.
           */''}
           ${detailMenuItems.map((navItem, index) => `
             <a class="prestation-nav-chip" href="#${subrubriqueId(index)}" data-nav-id="${esc(navItem.id)}">

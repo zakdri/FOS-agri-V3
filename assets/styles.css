@@ -37,6 +37,29 @@ html[dir="rtl"] body {
   text-align: right;
 }
 
+html[dir="rtl"] p,
+html[dir="rtl"] li,
+html[dir="rtl"] dd,
+html[dir="rtl"] dt,
+html[dir="rtl"] figcaption,
+html[dir="rtl"] summary,
+html[dir="rtl"] td,
+html[dir="rtl"] th {
+  unicode-bidi: plaintext;
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6,
+html[dir="rtl"] a,
+html[dir="rtl"] button,
+html[dir="rtl"] label {
+  unicode-bidi: isolate;
+}
+
 html[lang="zgh"] body {
   font-family: "Noto Sans Tifinagh", "Poppins", sans-serif;
 }
