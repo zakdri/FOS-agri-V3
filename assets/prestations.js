@@ -49,15 +49,6 @@
       }
     },
     {
-      id: 'forfait-funeraire',
-      icon: 'fa-ribbon',
-      labels: {
-        fr: 'FORFAIT FUNERAIRE',
-        ar: 'منحة الوفاة',
-        zgh: 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵜⵎⵜⵜⴰⵏⵜ'
-      }
-    },
-    {
       id: 'centre-medico-social',
       icon: 'fa-house-medical',
       labels: {
@@ -644,6 +635,7 @@
     beneficiariesTitle: 'Bénéficiaires',
     prestationsTitle: 'Prestations garanties',
     funeralTitle: 'Processus de demande d’octroi',
+    funeralSubtitle: 'Pièces à fournir',
     contactTitle: 'Comment contacter Wafa IMA ?',
     contactIntro: 'Pour toute demande d’assistance, le plateau est opérationnel 24h/24, 7j/7, et met en place les solutions prévues contractuellement.',
     contactInstruction: 'L’adhérent se fait identifier par son nom, prénom, numéro d’adhésion à la Fondation ou numéro de CIN.',
@@ -683,7 +675,7 @@
       ['Décès de l’adhérent', ['Acte de décès.', 'Copie d’acte de mariage.', 'RIB du conjoint survivant.', 'Copie CIN et copie carte d’adhérent.', 'En cas d’absence de conjoint : attestation de lien de parenté avec le défunt, acte d’hérédité et RIB du bénéficiaire.']],
       ['Décès du conjoint', ['Acte de décès.', 'Copie d’acte de mariage.', 'CIN du conjoint survivant.', 'RIB du conjoint survivant.']],
       ['Décès de l’enfant', ['Acte de décès du défunt.', 'Acte de naissance du défunt.', 'RIB du bénéficiaire.', 'Copie CIN et copie carte d’adhérent.']],
-      ['Contribution financière', ['7 000 DH en cas de décès de l’adhérent âgé au plus de 75 ans.', '2 500 DH en cas de décès du conjoint.', '1 000 DH en cas de décès d’un enfant.']]
+      ['Contribution financière', ['7 000 DH en cas de décès de l’adhérent.', '2 500 DH en cas de décès du conjoint.', '1 000 DH en cas de décès d’un enfant.']]
     ]
   };
 
@@ -697,6 +689,7 @@
     beneficiariesTitle: 'المستفيدون',
     prestationsTitle: 'الخدمات المضمونة',
     funeralTitle: 'مسطرة طلب الاستفادة',
+    funeralSubtitle: 'الوثائق المطلوبة',
     contactTitle: 'كيف يمكن الاتصال بـ Wafa IMA ؟',
     contactIntro: 'لكل طلب مساعدة، يعمل مركز النداء 24 ساعة على 24 و7 أيام على 7 لتفعيل الحلول المنصوص عليها تعاقديا.',
     contactInstruction: 'يتعين على المنخرط التعريف بنفسه عبر الاسم والنسب ورقم الانخراط بالمؤسسة أو رقم البطاقة الوطنية.',
@@ -735,7 +728,7 @@
       ['وفاة المنخرط', ['عقد الوفاة.', 'نسخة من عقد الزواج.', 'كشف التعريف البنكي للزوج أو الزوجة الباقية على قيد الحياة.', 'نسخة من البطاقة الوطنية ونسخة من بطاقة الانخراط.', 'في حالة غياب الزوج أو الزوجة: شهادة صلة القرابة بالمتوفى، رسم الإراثة وكشف التعريف البنكي للمستفيد.']],
       ['وفاة الزوج أو الزوجة', ['عقد الوفاة.', 'نسخة من عقد الزواج.', 'البطاقة الوطنية للزوج أو الزوجة الباقية على قيد الحياة.', 'كشف التعريف البنكي للزوج أو الزوجة الباقية على قيد الحياة.']],
       ['وفاة الطفل', ['عقد وفاة المتوفى.', 'عقد ازدياد المتوفى.', 'كشف التعريف البنكي للمستفيد.', 'نسخة من البطاقة الوطنية ونسخة من بطاقة الانخراط.']],
-      ['المساهمة المالية', ['7 000 درهم في حالة وفاة المنخرط البالغ 75 سنة على الأكثر.', '2 500 درهم في حالة وفاة الزوج أو الزوجة.', '1 000 درهم في حالة وفاة طفل.']]
+      ['المساهمة المالية', ['7 000 درهم في حالة وفاة المنخرط.', '2 500 درهم في حالة وفاة الزوج أو الزوجة.', '1 000 درهم في حالة وفاة طفل.']]
     ]
   };
 
@@ -749,6 +742,7 @@
     beneficiariesTitle: 'ⵉⵎⵏⴼⴰⵄⵏ',
     prestationsTitle: 'ⵜⵉⵏⴼⵓⵙⵉⵏ ⵉⵜⵜⵓⴹⵎⴰⵏⵏ',
     funeralTitle: 'ⴰⵙⴽⴰⵔ ⵏ ⵓⵙⵓⵜⵔ',
+    funeralSubtitle: 'ⵜⵉⵡⴰⵔⴰⵇⵉⵏ ⵉⵍⴰⵇⵏ',
     contactTitle: 'ⵎⴰⵎⵏⴽ ⴰⴷ ⵜⵏⵢⵉⵍⵉ ⴷ Wafa IMA ?',
     contactIntro: 'ⴰⵙⴰⵜⵉ ⵏ ⵜⴰⵍⵍⴰⵍⵜ ⵉⵍⵍⴰ 24h/24 ⴷ 7j/7 ⵉ ⵓⵙⴽⵔ ⵏ ⵉⴼⵔⴰⵏ ⵉⵍⵍⴰⵏ ⴳ ⵓⵎⵙⴰⵡⴰⴹ.',
     contactInstruction: 'ⴰⵎⵏⵅⵔⴰⵟ ⴰⴷ ⵉⵙⵎⵓⵏ ⵉⵙⵎ, ⵉⵙⵎ ⵏ ⵜⵡⴰⵛⵓⵍⵜ, ⵓⵟⵟⵓⵏ ⵏ ⵓⵏⵅⵔⴰⵟ ⵏⵖ CIN.',
@@ -787,45 +781,13 @@
       ['ⵜⴰⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵎⵏⵅⵔⴰⵟ', ['ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵎⵜⵜⴰⵏⵜ.', 'ⵏⵙⵅⴰ ⵏ ⵓⵎⵙⵍⴰⵢ ⵏ ⵓⵣⵡⴰⵊ.', 'RIB ⵏ ⵓⵙⵍⵉ ⵉⴷⴷⵔⵏ.', 'ⵏⵙⵅⴰ ⵏ CIN ⴷ ⵏⵙⵅⴰ ⵏ ⵜⴽⴰⵕⴹⴰ ⵏ ⵓⵏⵅⵔⴰⵟ.', 'ⵎⴰ ⵓⵔ ⵉⵍⵍⵉ ⵓⵙⵍⵉ: ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵓⵣⴷⴰⵢ ⵏ ⵜⵡⴰⵛⵓⵍⵜ, ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵔⵉⴽⴰ ⴷ RIB ⵏ ⵓⵎⵏⴼⴰⵄ.']],
       ['ⵜⴰⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵙⵍⵉ', ['ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵎⵜⵜⴰⵏⵜ.', 'ⵏⵙⵅⴰ ⵏ ⵓⵎⵙⵍⴰⵢ ⵏ ⵓⵣⵡⴰⵊ.', 'CIN ⵏ ⵓⵙⵍⵉ ⵉⴷⴷⵔⵏ.', 'RIB ⵏ ⵓⵙⵍⵉ ⵉⴷⴷⵔⵏ.']],
       ['ⵜⴰⵎⵜⵜⴰⵏⵜ ⵏ ⵓⴼⵔⵓⵅ', ['ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵎⵎⵓⵜ.', 'ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵓⵍⴰⵍ ⵏ ⵓⵎⵎⵓⵜ.', 'RIB ⵏ ⵓⵎⵏⴼⴰⵄ.', 'ⵏⵙⵅⴰ ⵏ CIN ⴷ ⵏⵙⵅⴰ ⵏ ⵜⴽⴰⵕⴹⴰ ⵏ ⵓⵏⵅⵔⴰⵟ.']],
-      ['ⵜⴰⵎⵓⵏⵜ ⵜⴰⴷⵔⵉⵎⵜ', ['7 000 DH ⴳ ⵜⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵎⵏⵅⵔⴰⵟ ⴰⵔ 75 ⵓⵙⴳⴳⵯⴰⵙ.', '2 500 DH ⴳ ⵜⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵙⵍⵉ.', '1 000 DH ⴳ ⵜⵎⵜⵜⴰⵏⵜ ⵏ ⵓⴼⵔⵓⵅ.']]
+      ['ⵜⴰⵎⵓⵏⵜ ⵜⴰⴷⵔⵉⵎⵜ', ['7 000 DH ⴳ ⵜⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵎⵏⵅⵔⴰⵟ.', '2 500 DH ⴳ ⵜⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵙⵍⵉ.', '1 000 DH ⴳ ⵜⵎⵜⵜⴰⵏⵜ ⵏ ⵓⴼⵔⵓⵅ.']]
     ]
   };
 
   const prevoyanceExtraFr = [
-    {
+        {
       navIndex: 3,
-      badge: 'FORFAIT FUNERAIRE',
-      title: 'FORFAIT FUNERAIRE',
-      intro: 'La prise en charge des forfaits funéraires par la FOS-Agri au profit des retraités âgés de plus de 75 ans constituerait une avancée sociale significative en faveur de cette catégorie de bénéficiaires. Cette intervention vient compléter le dispositif existant et renforcer la vocation solidaire, tout en garantissant un accompagnement adapté à l’ensemble de ses bénéficiaires, quel que soit leur âge.',
-      beneficiariesTitle: 'Bénéficiaires',
-      beneficiaries: [{ number: '01', text: 'Adhérents âgés de plus de 75 ans.' }, { number: '02', text: 'Ayants droit : conjoints et enfants.' }],
-      blocks: [
-        {
-          title: 'Forfait funéraire de plus de 75 ans',
-          icon: 'fa-file-signature',
-          intro: 'Tout dossier transmis à la Fondation pour bénéficier de cette aide financière doit contenir, selon le cas, les documents justificatifs suivants. La copie de la CIN et de la carte FOS-Agri de l’adhérent principal est obligatoire dans tous les cas.',
-          items: [
-            { title: 'Décès de l’adhérent principal avec conjoint', icon: 'fa-user-shield', bullets: ['Acte de décès.', 'Copie d’acte de mariage.', 'RIB du conjoint survivant.', 'Acte d’hérédité.'] },
-            { title: 'Décès de l’adhérent sans conjoint', icon: 'fa-user', bullets: ['Acte de décès.', 'Attestation de lien de parenté avec le défunt.', 'Acte d’hérédité.', 'RIB du bénéficiaire.'] },
-            { title: 'Décès du conjoint', icon: 'fa-people-arrows', bullets: ['Acte de décès.', 'Attestation de lien de parenté avec le défunt.', 'RIB du bénéficiaire.'] },
-            { title: 'Décès d’un adhérent célibataire', icon: 'fa-person', body: 'Bénéficiaires : parents.', bullets: ['Acte de décès.', 'Attestation de lien de parenté avec le défunt.', 'RIB du bénéficiaire.'] },
-            { title: 'Décès de l’enfant', icon: 'fa-child', body: 'Concerne l’enfant de moins de 21 ans, ou de moins de 26 ans s’il poursuit ses études au Maroc, ou s’il est scolarisé à l’étranger lors d’un séjour au Maroc.', bullets: ['Acte de décès du défunt.', 'Acte de naissance du défunt.', 'RIB du bénéficiaire.'] }
-          ]
-        },
-        {
-          title: 'Contribution financière',
-          icon: 'fa-hand-holding-dollar',
-          mode: 'cards',
-          items: [
-            { amount: '7 000 DH', label: 'Adhérent principal.' },
-            { amount: '2 500 DH', label: 'Conjoint.' },
-            { amount: '1 000 DH', label: 'Enfant.' }
-          ]
-        }
-      ]
-    },
-    {
-      navIndex: 4,
       badge: 'CENTRE MEDICO-SOCIAL',
       title: 'CENTRE MEDICO-SOCIAL',
       intro: ['La FOS-Agri assure via son centre médico-social les consultations données par une équipe médicale spécialisée et performante.', 'Le centre assure également l’accompagnement et le suivi des adhérents en situation de pré ou post hospitalisation, ainsi que le conseil et l’orientation des adhérents.'],
@@ -866,7 +828,7 @@
       ]
     },
     {
-      navIndex: 5,
+      navIndex: 4,
       badge: 'AIDES AUX PERSONNES AUX BESOINS SPECIFIQUES',
       title: 'AIDES AUX PERSONNES AUX BESOINS SPECIFIQUES',
       intro: 'La FOS-Agri a mis en place un programme d’aide aux enfants des adhérents en situations d’handicap présentant des besoins spécifiques, en contribuant à la prise en charge de leurs besoins particuliers à travers une aide d’un montant de 5 000 DH.',
@@ -878,7 +840,7 @@
       ]
     },
     {
-      navIndex: 6,
+      navIndex: 5,
       type: 'medicalPartners',
       badge: 'CONVENTIONS ET PARTENARIATS MEDICALES',
       title: labels.fr.medicalPartners.title,
@@ -887,31 +849,8 @@
   ];
 
   const prevoyanceExtraAr = [
-    {
-      navIndex: 3,
-      badge: 'منحة الوفاة',
-      title: 'منحة الوفاة',
-      intro: 'يشكل التكفل بمنحة الوفاة من طرف FOS-Agri لفائدة المتقاعدين الذين تتجاوز أعمارهم 75 سنة خطوة اجتماعية مهمة لفائدة هذه الفئة من المستفيدين. وتأتي هذه المبادرة لتكمل المنظومة القائمة وتعزز البعد التضامني، مع ضمان مواكبة ملائمة لجميع المستفيدين مهما كان سنهم.',
-      beneficiariesTitle: 'المستفيدون',
-      beneficiaries: [{ number: '01', text: 'المنخرطون الذين تتجاوز أعمارهم 75 سنة.' }, { number: '02', text: 'ذوو الحقوق: الأزواج والأبناء.' }],
-      blocks: [
         {
-          title: 'منحة الوفاة لأكثر من 75 سنة',
-          icon: 'fa-file-signature',
-          intro: 'كل ملف يوجه إلى المؤسسة للاستفادة من هذه المساعدة المالية يجب أن يتضمن، حسب الحالة، الوثائق المثبتة التالية. نسخة البطاقة الوطنية ونسخة بطاقة FOS-Agri للمنخرط الرئيسي إلزاميتان في جميع الحالات.',
-          items: [
-            { title: 'وفاة المنخرط الرئيسي مع وجود الزوج أو الزوجة', icon: 'fa-user-shield', bullets: ['عقد الوفاة.', 'نسخة من عقد الزواج.', 'كشف التعريف البنكي للزوج أو الزوجة الباقية على قيد الحياة.', 'رسم الإراثة.'] },
-            { title: 'وفاة المنخرط في غياب الزوج أو الزوجة', icon: 'fa-user', bullets: ['عقد الوفاة.', 'شهادة صلة القرابة بالمتوفى.', 'رسم الإراثة.', 'كشف التعريف البنكي للمستفيد.'] },
-            { title: 'وفاة الزوج أو الزوجة', icon: 'fa-people-arrows', bullets: ['عقد الوفاة.', 'شهادة صلة القرابة بالمتوفى.', 'كشف التعريف البنكي للمستفيد.'] },
-            { title: 'وفاة منخرط أعزب', icon: 'fa-person', body: 'المستفيدون: الوالدان.', bullets: ['عقد الوفاة.', 'شهادة صلة القرابة بالمتوفى.', 'كشف التعريف البنكي للمستفيد.'] },
-            { title: 'وفاة الطفل', icon: 'fa-child', body: 'تهم الطفل الأقل من 21 سنة، أو الأقل من 26 سنة إذا كان يتابع دراسته بالمغرب، أو كان متمدرسا بالخارج أثناء مقامه بالمغرب.', bullets: ['عقد وفاة المتوفى.', 'عقد ازدياد المتوفى.', 'كشف التعريف البنكي للمستفيد.'] }
-          ]
-        },
-        { title: 'المساهمة المالية', icon: 'fa-hand-holding-dollar', mode: 'cards', items: [{ amount: '7 000 DH', label: 'المنخرط الرئيسي.' }, { amount: '2 500 DH', label: 'الزوج أو الزوجة.' }, { amount: '1 000 DH', label: 'الطفل.' }] }
-      ]
-    },
-    {
-      navIndex: 4,
+      navIndex: 3,
       badge: 'المركز الطبي الاجتماعي',
       title: 'المركز الطبي الاجتماعي',
       intro: ['تضمن FOS-Agri عبر مركزها الطبي الاجتماعي استشارات تقدمها فرق طبية متخصصة وذات كفاءة.', 'كما يؤمن المركز المواكبة وتتبع المنخرطين قبل أو بعد الاستشفاء، إضافة إلى النصح والتوجيه.'],
@@ -952,7 +891,7 @@
       ]
     },
     {
-      navIndex: 5,
+      navIndex: 4,
       badge: 'دعم الأشخاص ذوي الاحتياجات الخاصة',
       title: 'دعم الأشخاص ذوي الاحتياجات الخاصة',
       intro: 'وضعت FOS-Agri برنامجا لمساعدة أبناء المنخرطين في وضعية إعاقة ولديهم احتياجات خاصة، عبر المساهمة في التكفل باحتياجاتهم الخاصة بمنحة قدرها 5 000 درهم.',
@@ -964,7 +903,7 @@
       ]
     },
     {
-      navIndex: 6,
+      navIndex: 5,
       type: 'medicalPartners',
       badge: 'الاتفاقيات والشراكات الطبية',
       title: labels.ar.medicalPartners.title,
@@ -973,31 +912,8 @@
   ];
 
   const prevoyanceExtraZgh = [
-    {
-      navIndex: 3,
-      badge: 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵜⵎⵜⵜⴰⵏⵜ',
-      title: 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵜⵎⵜⵜⴰⵏⵜ',
-      intro: 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵜⵎⵜⵜⴰⵏⵜ ⵙ FOS-Agri ⵉ ⵉⵎⴰⵖⴰⵔⵏ ⵉⵣⵔⵉⵏ 75 ⵏ ⵓⵙⴳⴳⵯⴰⵙ ⵉⴳⴰ ⴰⵙⵓⵔⵉⴼ ⴰⵏⴰⵎⵓⵏ ⴰⵎⵇⵔⴰⵏ. ⵜⴰⵏⴼⵓⵙⵜ ⴰⴷ ⵜⵙⵎⴷ ⴰⵙⵎⵓⵜⵜⴳ ⵉⵍⵍⴰⵏ ⴷ ⵜⵙⵙⴷⵓⵙ ⵜⵉⵡⵉⵙⵉ ⴷ ⵓⵎⵓⴷⴷⵓ ⵉⵍⴰⵇⵏ ⵉ ⵎⴰⵕⵕⴰ ⵉⵎⵏⴼⴰⵄⵏ.',
-      beneficiariesTitle: 'ⵉⵎⵏⴼⴰⵄⵏ',
-      beneficiaries: [{ number: '01', text: 'ⵉⵎⵏⵅⵔⴰⵟⵏ ⵉⵣⵔⵉⵏ 75 ⵏ ⵓⵙⴳⴳⵯⴰⵙ.' }, { number: '02', text: 'ⵉⵎⵏⴼⴰⵄⵏ: ⵉⵙⵍⵉⵜⵏ ⴷ ⵉⴼⵔⵅⴰⵏ.' }],
-      blocks: [
         {
-          title: 'ⴰⵎⵓⴷⴷⵓ ⵏ ⵜⵎⵜⵜⴰⵏⵜ ⵉ ⵉⵣⵔⵉⵏ 75',
-          icon: 'fa-file-signature',
-          intro: 'ⴽⵓ ⴰⴼⴰⵢⵍⵓ ⵉⵜⵜⵓⵙⵙⴼⴽⵏ ⵉ FOS-Agri ⵉ ⵓⵙⵎⵔⵙ ⵏ ⵜⵉⵡⵉⵙⵉ ⵉⵎⴰⵍⵉⵢⵏ ⴰⴷ ⵉⵙⵎⵓⵏ ⵉⵙⵍⴽⴰⵎⵏ ⵉⵍⴰⵇⵏ. ⵏⵙⵅⴰ ⵏ CIN ⴷ ⵜⴽⴰⵕⴹⴰ ⵏ FOS-Agri ⵏ ⵓⵎⵏⵅⵔⴰⵟ ⴰⵎⵣⵡⴰⵔⵓ ⵉⵍⴰⵇⵏ ⴳ ⵎⴰⵕⵕⴰ ⵜⵉⵎⵙⴰⵍ.',
-          items: [
-            { title: 'ⵜⴰⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵎⵏⵅⵔⴰⵟ ⴰⵎⵣⵡⴰⵔⵓ ⵎⴰ ⵉⵍⵍⴰ ⵓⵙⵍⵉ', icon: 'fa-user-shield', bullets: ['ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵎⵜⵜⴰⵏⵜ.', 'ⵏⵙⵅⴰ ⵏ ⵓⵎⵙⵍⴰⵢ ⵏ ⵓⵣⵡⴰⵊ.', 'RIB ⵏ ⵓⵙⵍⵉ ⵉⴷⴷⵔⵏ.', 'ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵔⵉⴽⴰ.'] },
-            { title: 'ⵜⴰⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵎⵏⵅⵔⴰⵟ ⵎⴰ ⵓⵔ ⵉⵍⵍⵉ ⵓⵙⵍⵉ', icon: 'fa-user', bullets: ['ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵎⵜⵜⴰⵏⵜ.', 'ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵓⵣⴷⴰⵢ ⵏ ⵜⵡⴰⵛⵓⵍⵜ ⴷ ⵓⵎⵎⵓⵜ.', 'ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵔⵉⴽⴰ.', 'RIB ⵏ ⵓⵎⵏⴼⴰⵄ.'] },
-            { title: 'ⵜⴰⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵙⵍⵉ', icon: 'fa-people-arrows', bullets: ['ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵎⵜⵜⴰⵏⵜ.', 'ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵓⵣⴷⴰⵢ ⵏ ⵜⵡⴰⵛⵓⵍⵜ ⴷ ⵓⵎⵎⵓⵜ.', 'RIB ⵏ ⵓⵎⵏⴼⴰⵄ.'] },
-            { title: 'ⵜⴰⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵎⵏⵅⵔⴰⵟ ⵓⵔ ⵉⵣⵡⵉⵊⵏ', icon: 'fa-person', body: 'ⵉⵎⵏⴼⴰⵄⵏ: ⵉⵎⵖⴰⵔⵏ.', bullets: ['ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵎⵜⵜⴰⵏⵜ.', 'ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵓⵣⴷⴰⵢ ⵏ ⵜⵡⴰⵛⵓⵍⵜ ⴷ ⵓⵎⵎⵓⵜ.', 'RIB ⵏ ⵓⵎⵏⴼⴰⵄ.'] },
-            { title: 'ⵜⴰⵎⵜⵜⴰⵏⵜ ⵏ ⵓⴼⵔⵓⵅ', icon: 'fa-child', body: 'ⵜⵙⵎⵓⵏ ⴰⴼⵔⵓⵅ ⴷⴷⴰⵡ 21 ⵏⵖ ⴷⴷⴰⵡ 26 ⵎⴰ ⵉⵙⵙⵎⴷ ⵜⵉⵖⵔⵉ ⴳ ⵍⵎⵖⵔⵉⴱ, ⵏⵖ ⵉⵍⵍⴰ ⴳ ⵓⵙⵍⵎⴷ ⴱⵕⵕⴰ ⴰⵙⵙ ⵏ ⵜⵉⵔⵣⴰ ⴳ ⵍⵎⵖⵔⵉⴱ.', bullets: ['ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵜⵎⵜⵜⴰⵏⵜ ⵏ ⵓⵎⵎⵓⵜ.', 'ⵜⴰⵙⵍⴽⵉⵏⵜ ⵏ ⵓⵍⴰⵍ ⵏ ⵓⵎⵎⵓⵜ.', 'RIB ⵏ ⵓⵎⵏⴼⴰⵄ.'] }
-          ]
-        },
-        { title: 'ⵜⵉⵡⵉⵙⵉ ⵉⵎⴰⵍⵉⵢⵏ', icon: 'fa-hand-holding-dollar', mode: 'cards', items: [{ amount: '7 000 DH', label: 'ⴰⵎⵏⵅⵔⴰⵟ ⴰⵎⵣⵡⴰⵔⵓ.' }, { amount: '2 500 DH', label: 'ⴰⵙⵍⵉ.' }, { amount: '1 000 DH', label: 'ⴰⴼⵔⵓⵅ.' }] }
-      ]
-    },
-    {
-      navIndex: 4,
+      navIndex: 3,
       badge: 'ⴰⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ',
       title: 'ⴰⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ',
       intro: ['FOS-Agri ⵜⴰⵎⵓⴷⴷⵓ ⵙ ⵓⵎⵎⴰⵙ ⴰⴷⵓⵙⴰⵏ ⴰⵏⴰⵎⵓⵏ ⵜⵉⵔⵣⴰ ⵏ ⵢⴰⵜ ⵜⴰⵔⴱⴰⵄⵜ ⵜⴰⴷⵓⵙⴰⵏⵜ ⵜⵉⵎⵥⵍⵉⵢⵜ.', 'ⴰⵎⵎⴰⵙ ⵉⵜⵜⴰⵡⵙ ⴳ ⵓⵎⵓⴷⴷⵓ ⴷ ⵓⵜⵜⴰⴱⴰⵄ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴷⴰⵜ ⵏⵖ ⴹⴼⵕ ⴰⵙⵉⴱⵉⵜⴰⵍ, ⴷ ⵓⵙⴷⵓ ⴷ ⵜⵎⵙⵍⵉⵡⵜ.'],
@@ -1023,7 +939,7 @@
         {
           title: 'ⵜⵉⵎⵥⵍⵉⵢⵉⵏ ⴳ ⵜⵎⵏⴰⴹⵉⵏ',
           icon: 'fa-map-location-dot',
-          items: prevoyanceExtraFr[1].blocks[1].items.map((entry) => ({
+          items: prevoyanceExtraFr[0].blocks[1].items.map((entry) => ({
             title: entry.title.replace('Région de ', 'ⵜⴰⵎⵏⴰⴹⵜ ⵏ '),
             icon: 'fa-location-dot',
             rows: entry.rows.map(([label, value]) => [{
@@ -1038,7 +954,7 @@
       ]
     },
     {
-      navIndex: 5,
+      navIndex: 4,
       badge: 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⵎⵓⵔⴰⵏ ⵉⵎⵥⵍⵉⵢⵏ',
       title: 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⵎⵓⵔⴰⵏ ⵉⵎⵥⵍⵉⵢⵏ',
       intro: 'FOS-Agri ⵜⵙⵎⵓⵜⵜⴳ ⵢⴰⵜ ⵜⴰⵏⴼⵓⵙⵜ ⵉ ⵉⴼⵔⵅⴰⵏ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴳ ⵓⵙⵔⵓⵜ ⵉⵎⵥⵍⵉ, ⵙ ⵓⵎⵓⴷⴷⵓ ⵏ 5 000 DH ⵉ ⵓⵙⵎⵔⵙ ⵏ ⵉⵙⵡⵉⵔⵏ ⵏⵏⵙⵏ.',
@@ -1050,7 +966,7 @@
       ]
     },
     {
-      navIndex: 6,
+      navIndex: 5,
       type: 'medicalPartners',
       badge: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏⵏ',
       title: labels.zgh.medicalPartners.title,
@@ -1105,7 +1021,7 @@
             },
             {
               icon: 'fa-hands-holding-child',
-              navIndex: 5,
+              navIndex: 4,
               title: 'AIDES AUX PERSONNES AUX BESOINS SPECIFIQUES',
               body: [
                 'La FOS-Agri a mis en place un programme d’aide aux enfants des adhérents en situations d’handicap présentant des besoins spécifiques, et ce en contribuant à la prise en charge de leurs besoins particuliers à travers une aide d’un montant de 5000 dhs.'
@@ -1113,7 +1029,7 @@
             },
             {
               icon: 'fa-file-contract',
-              navIndex: 6,
+              navIndex: 5,
               title: 'CONVENTIONS ET PARTENARIATS MEDICALES',
               body: [
                 'Consultez le réseau des partenaires médicaux conventionnés : laboratoires, médecins, cabinets, cliniques, opticiens, pharmacies et centres de soins, avec un accès par région et par catégorie.'
@@ -1163,7 +1079,7 @@
             },
             {
               icon: 'fa-hands-holding-child',
-              navIndex: 5,
+              navIndex: 4,
               title: 'دعم الأشخاص ذوي الاحتياجات الخاصة',
               body: [
                 'أطلقت FOS-Agri برنامج دعم لفائدة أطفال المنخرطين في وضعية إعاقة ممن لديهم احتياجات خاصة، وذلك بالمساهمة في التكفل باحتياجاتهم الخاصة عبر منحة قدرها 5000 درهم.'
@@ -1171,7 +1087,7 @@
             },
             {
               icon: 'fa-file-contract',
-              navIndex: 6,
+              navIndex: 5,
               title: 'الاتفاقيات والشراكات الطبية',
               body: [
                 'اطلعوا على شبكة الشركاء الطبيين المتعاقدين: مختبرات، أطباء، عيادات، مصحات، نظارات، صيدليات ومراكز علاج، مع إمكانية البحث حسب الجهة والفئة.'
@@ -1221,7 +1137,7 @@
             },
             {
               icon: 'fa-hands-holding-child',
-              navIndex: 5,
+              navIndex: 4,
               title: 'ⴰⵎⵓⴷⴷⵓ ⵉ ⵉⵙⵡⵉⵔⵏ ⵉⵎⵥⵍⵉⵢⵏ',
               body: [
                 'FOS-Agri ⵜⵙⵎⵓⵜⵜⴳ ⵢⴰⵜ ⵜⴰⵏⴼⵓⵙⵜ ⵉ ⵉⴼⵔⵅⴰⵏ ⵏ ⵉⵎⵏⵅⵔⴰⵟⵏ ⴳ ⵓⵙⵔⵓⵜ, ⵙ ⵓⵎⵓⴷⴷⵓ ⵏ 5000 DH.'
@@ -1229,7 +1145,7 @@
             },
             {
               icon: 'fa-file-contract',
-              navIndex: 6,
+              navIndex: 5,
               title: 'ⵉⵎⵙⴰⵡⴰⴹⵏ ⴷ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏⵏ',
               body: [
                 'ⵙⵙⵏ ⴰⵥⴰⵡⴰⵏ ⵏ ⵉⵣⴷⴰⵢⵏ ⵉⴷⵓⵙⴰⵏⵏ: ⵉⵎⵣⵣⴰⵔⵏ, ⵉⵎⵙⵙⵉⵊⵊⵉⵏ, ⵜⵉⵔⵣⴰ, ⵉⵙⵉⴱⵉⵜⴰⵍⵏ, ⵉⵎⵙⵡⴰⵍⵏ ⵏ ⵜⵉⵟⵟ, ⵜⵉⴼⴰⵔⵎⴰⵙⵉⵜⵉⵏ ⴷ ⵉⵎⵎⴰⵙⵏ ⵏ ⵓⵅⵙⴰⵏ, ⵙ ⵓⵙⵙⵉⴷⴼ ⵙ ⵜⵎⵏⴰⴹⵜ ⴷ ⵜⴰⴳⴳⴰⵢⵜ.'
@@ -2919,6 +2835,7 @@
             <div class="prestation-amc-block-head">
               <span class="section-tag"><i class="fa-solid fa-file-signature" aria-hidden="true"></i> ${esc(detail.funeralTitle)}</span>
             </div>
+            ${detail.funeralSubtitle ? `<h3 class="prestation-amts-funeral-subtitle">${esc(detail.funeralSubtitle)}</h3>` : ''}
             <div class="prestation-amts-funeral-grid">
               ${detail.funeralCards.map(([title, bullets]) => `
                 <article class="prestation-amts-funeral-card">
