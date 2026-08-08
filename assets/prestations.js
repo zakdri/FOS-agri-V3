@@ -814,15 +814,18 @@
           title: 'Spécialités au niveau régional',
           icon: 'fa-map-location-dot',
           items: [
-            { title: 'Région de Laâyoune - Sakia El Hamra', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur LAJOUAD BAIHI'], ['Adresse', 'Av Hassan II, Phosboukraâ, LAAYOUNE'], ['Prise de RDV', '0661 26 99 97'], ['Relais régional', 'MOUSSAOUI MOHAMED ALI'], ['Téléphone du relais', '0657 83 20 46']] },
-            { title: 'Région de Dakhla - Oued Eddahab', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur SADIK YOUNESS'], ['Adresse', 'App N°4, N° 17/1105, rue mosquée, Hay Massira, Dakhla'], ['Prise de RDV', '0667 98 08 77'], ['Relais régional', 'MINA SAAD ALLAH'], ['Téléphone du relais', '0657 83 17 87']] },
-            { title: 'Région de Guelmim - Oued Noun', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur HAIDAR KHAIR'], ['Adresse', 'Imm Assafae, 3ème étage, App N°9, Bir Inzarane, Guelmim'], ['Prise de RDV', '0528 87 34 61'], ['Relais régional', 'LATIF AIDA'], ['Téléphone du relais', '0657 83 15 04']] },
-            { title: 'Région de Drâa - Tafilalet', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur GHANEME ABDELAZIZ'], ['Adresse', '14, Rue de la mosquée, Errachidia'], ['Prise de RDV', '0535 57 27 76'], ['Relais régional', 'BRITEL ABDESSAMAD'], ['Téléphone du relais', '06 68 90 90 84']] },
-            { title: 'Région de Béni Mellal - Khénifra', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur MALKY ABDELHAMID'], ['Adresse', 'Avenue 2 Mars, Sidi Abdelhalim, Béni Mellal'], ['Prise de RDV', '—'], ['Relais régional', 'MALIHY AMAL'], ['Téléphone du relais', '06 57 83 18 94']] },
-            { title: 'Région de Casablanca - Settat', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur MOUFTADI ABDELFATTAH'], ['Adresse', 'Avenue Bir Anzarane N° 16, El Jadida'], ['Prise de RDV', '0523 39 42 03'], ['Relais régional', 'GUADDA MOHAMED'], ['Téléphone du relais', '36 16 83 57 06']] },
+            { title: 'Région de Tanger - Tétouan - Al Hoceima', icon: 'fa-location-dot', rows: [['Statut', 'en cours']] },
+            { title: "Région de L'Oriental", icon: 'fa-location-dot', rows: [['Statut', 'en cours']] },
+            { title: 'Région de Rabat - Salé - Kénitra', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur IBNABDALLAH MOHAMED'], ['Adresse', '15, Rue Jabel El Ayachi, Centre Khmisset'], ['Prise de RDV', '0537 55 05 00'], ['Relais régional', 'EL BERIRI SAMIRA'], ['Téléphone du relais', '06 57 83 16 63']] },
             { title: 'Région de Fès - Meknès', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur DBAB Mohamed'], ['Adresse', '4, Rue Omar Ben Chamsi, Hamria, Meknès'], ['Prise de RDV', '0661 15 93 56'], ['Relais régional', 'SAID AIT BERRI'], ['Téléphone du relais', '0657 83 20 37']] },
+            { title: 'Région de Casablanca - Settat', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur MOUFTADI ABDELFATTAH'], ['Adresse', 'Avenue Bir Anzarane N° 16, El Jadida'], ['Prise de RDV', '0523 39 42 03'], ['Relais régional', 'GUADDA MOHAMED'], ['Téléphone du relais', '36 16 83 57 06']] },
+            { title: 'Région de Béni Mellal - Khénifra', icon: 'fa-location-dot', rows: [['Statut', 'en cours']] },
             { title: 'Région de Marrakech - Safi', icon: 'fa-location-dot', rows: [['Médecin', 'BELAHNECH ABDOULMOUTTALIB'], ['Adresse', '49, Bd Rabat, Safi'], ['Prise de RDV', '05 24 46 37 97'], ['Relais régional', 'SERFATI CHOUAIB'], ['Téléphone du relais', '06 57 83 17 37']] },
-            { title: 'Région de Rabat - Salé - Kénitra', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur IBNABDALLAH MOHAMED'], ['Adresse', '15, Rue Jabel El Ayachi, Centre Khmisset'], ['Prise de RDV', '0537 55 05 00'], ['Relais régional', 'EL BERIRI SAMIRA'], ['Téléphone du relais', '06 57 83 16 63']] }
+            { title: 'Région de Drâa - Tafilalet', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur GHANEME ABDELAZIZ'], ['Adresse', '14, Rue de la mosquée, Errachidia'], ['Prise de RDV', '0535 57 27 76'], ['Relais régional', 'BRITEL ABDESSAMAD'], ['Téléphone du relais', '06 68 90 90 84']] },
+            { title: 'Région de Souss - Massa', icon: 'fa-location-dot', rows: [['Statut', 'en cours']] },
+            { title: 'Région de Guelmim - Oued Noun', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur HAIDAR KHAIR'], ['Adresse', 'Imm Assafae, 3ème étage, App N°9, Bir Inzarane, Guelmim'], ['Prise de RDV', '0528 87 34 61'], ['Relais régional', 'LATIF AIDA'], ['Téléphone du relais', '0657 83 15 04']] },
+            { title: 'Région de Laâyoune - Sakia El Hamra', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur LAJOUAD BAIHI'], ['Adresse', 'Av Hassan II, Phosboukraâ, LAAYOUNE'], ['Prise de RDV', '0661 26 99 97'], ['Relais régional', 'MOUSSAOUI MOHAMED ALI'], ['Téléphone du relais', '0657 83 20 46']] },
+            { title: 'Région de Dakhla - Oued Eddahab', icon: 'fa-location-dot', rows: [['Médecin', 'Docteur SADIK YOUNESS'], ['Adresse', 'App N°4, N° 17/1105, rue mosquée, Hay Massira, Dakhla'], ['Prise de RDV', '0667 98 08 77'], ['Relais régional', 'MINA SAAD ALLAH'], ['Téléphone du relais', '0657 83 17 87']] }
           ]
         }
       ]
@@ -877,15 +880,18 @@
           title: 'التخصصات على المستوى الجهوي',
           icon: 'fa-map-location-dot',
           items: [
-            { title: 'جهة العيون - الساقية الحمراء', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur LAJOUAD BAIHI'], ['العنوان', 'Av Hassan II, Phosboukraâ, LAAYOUNE'], ['أخذ الموعد', '0661 26 99 97'], ['المنسق الجهوي', 'MOUSSAOUI MOHAMED ALI'], ['هاتف المنسق', '0657 83 20 46']] },
-            { title: 'جهة الداخلة - وادي الذهب', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur SADIK YOUNESS'], ['العنوان', 'App N°4, N° 17/1105, rue mosquée, Hay Massira, Dakhla'], ['أخذ الموعد', '0667 98 08 77'], ['المنسق الجهوي', 'MINA SAAD ALLAH'], ['هاتف المنسق', '0657 83 17 87']] },
-            { title: 'جهة كلميم - واد نون', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur HAIDAR KHAIR'], ['العنوان', 'Imm Assafae, 3ème étage, App N°9, Bir Inzarane, Guelmim'], ['أخذ الموعد', '0528 87 34 61'], ['المنسق الجهوي', 'LATIF AIDA'], ['هاتف المنسق', '0657 83 15 04']] },
-            { title: 'جهة درعة - تافيلالت', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur GHANEME ABDELAZIZ'], ['العنوان', '14, Rue de la mosquée, Errachidia'], ['أخذ الموعد', '0535 57 27 76'], ['المنسق الجهوي', 'BRITEL ABDESSAMAD'], ['هاتف المنسق', '06 68 90 90 84']] },
-            { title: 'جهة بني ملال - خنيفرة', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur MALKY ABDELHAMID'], ['العنوان', 'Avenue 2 Mars, Sidi Abdelhalim, Béni Mellal'], ['أخذ الموعد', '—'], ['المنسق الجهوي', 'MALIHY AMAL'], ['هاتف المنسق', '06 57 83 18 94']] },
-            { title: 'جهة الدار البيضاء - سطات', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur MOUFTADI ABDELFATTAH'], ['العنوان', 'Avenue Bir Anzarane N° 16, El Jadida'], ['أخذ الموعد', '0523 39 42 03'], ['المنسق الجهوي', 'GUADDA MOHAMED'], ['هاتف المنسق', '36 16 83 57 06']] },
+            { title: 'جهة طنجة - تطوان - الحسيمة', icon: 'fa-location-dot', rows: [['الحالة', 'قيد الإنجاز']] },
+            { title: 'جهة الشرق', icon: 'fa-location-dot', rows: [['الحالة', 'قيد الإنجاز']] },
+            { title: 'جهة الرباط - سلا - القنيطرة', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur IBNABDALLAH MOHAMED'], ['العنوان', '15, Rue Jabel El Ayachi, Centre Khmisset'], ['أخذ الموعد', '0537 55 05 00'], ['المنسق الجهوي', 'EL BERIRI SAMIRA'], ['هاتف المنسق', '06 57 83 16 63']] },
             { title: 'جهة فاس - مكناس', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur DBAB Mohamed'], ['العنوان', '4, Rue Omar Ben Chamsi, Hamria, Meknès'], ['أخذ الموعد', '0661 15 93 56'], ['المنسق الجهوي', 'SAID AIT BERRI'], ['هاتف المنسق', '0657 83 20 37']] },
+            { title: 'جهة الدار البيضاء - سطات', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur MOUFTADI ABDELFATTAH'], ['العنوان', 'Avenue Bir Anzarane N° 16, El Jadida'], ['أخذ الموعد', '0523 39 42 03'], ['المنسق الجهوي', 'GUADDA MOHAMED'], ['هاتف المنسق', '36 16 83 57 06']] },
+            { title: 'جهة بني ملال - خنيفرة', icon: 'fa-location-dot', rows: [['الحالة', 'قيد الإنجاز']] },
             { title: 'جهة مراكش - آسفي', icon: 'fa-location-dot', rows: [['الطبيب', 'BELAHNECH ABDOULMOUTTALIB'], ['العنوان', '49, Bd Rabat, Safi'], ['أخذ الموعد', '05 24 46 37 97'], ['المنسق الجهوي', 'SERFATI CHOUAIB'], ['هاتف المنسق', '06 57 83 17 37']] },
-            { title: 'جهة الرباط - سلا - القنيطرة', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur IBNABDALLAH MOHAMED'], ['العنوان', '15, Rue Jabel El Ayachi, Centre Khmisset'], ['أخذ الموعد', '0537 55 05 00'], ['المنسق الجهوي', 'EL BERIRI SAMIRA'], ['هاتف المنسق', '06 57 83 16 63']] }
+            { title: 'جهة درعة - تافيلالت', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur GHANEME ABDELAZIZ'], ['العنوان', '14, Rue de la mosquée, Errachidia'], ['أخذ الموعد', '0535 57 27 76'], ['المنسق الجهوي', 'BRITEL ABDESSAMAD'], ['هاتف المنسق', '06 68 90 90 84']] },
+            { title: 'جهة سوس - ماسة', icon: 'fa-location-dot', rows: [['الحالة', 'قيد الإنجاز']] },
+            { title: 'جهة كلميم - واد نون', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur HAIDAR KHAIR'], ['العنوان', 'Imm Assafae, 3ème étage, App N°9, Bir Inzarane, Guelmim'], ['أخذ الموعد', '0528 87 34 61'], ['المنسق الجهوي', 'LATIF AIDA'], ['هاتف المنسق', '0657 83 15 04']] },
+            { title: 'جهة العيون - الساقية الحمراء', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur LAJOUAD BAIHI'], ['العنوان', 'Av Hassan II, Phosboukraâ, LAAYOUNE'], ['أخذ الموعد', '0661 26 99 97'], ['المنسق الجهوي', 'MOUSSAOUI MOHAMED ALI'], ['هاتف المنسق', '0657 83 20 46']] },
+            { title: 'جهة الداخلة - وادي الذهب', icon: 'fa-location-dot', rows: [['الطبيب', 'Docteur SADIK YOUNESS'], ['العنوان', 'App N°4, N° 17/1105, rue mosquée, Hay Massira, Dakhla'], ['أخذ الموعد', '0667 98 08 77'], ['المنسق الجهوي', 'MINA SAAD ALLAH'], ['هاتف المنسق', '0657 83 17 87']] }
           ]
         }
       ]
@@ -947,8 +953,9 @@
               'Adresse': 'ⵜⴰⵏⵙⴰ',
               'Prise de RDV': 'ⵜⵉⵣⵉ ⵏ ⵜⵉⵔⵣⴰ',
               'Relais régional': 'ⴰⵎⵙⵏⴰⵡ ⵏ ⵜⵎⵏⴰⴹⵜ',
-              'Téléphone du relais': 'ⵜⵉⵍⵉⴼⵓⵏ ⵏ ⵓⵎⵙⵏⴰⵡ'
-            }[label] || label, value])
+              'Téléphone du relais': 'ⵜⵉⵍⵉⴼⵓⵏ ⵏ ⵓⵎⵙⵏⴰⵡ',
+              'Statut': 'ⴰⴷⴷⴰⴷ'
+            }[label] || label, value === 'en cours' ? 'ⴳ ⵓⵙⵎⴰⵜⵜⴳ' : value])
           }))
         }
       ]
